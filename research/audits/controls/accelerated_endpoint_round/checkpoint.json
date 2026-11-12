@@ -1,0 +1,218 @@
+{
+  "captured_at_utc": "2026-11-12T09:17:15.020267+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_internal_reviews": [
+    {
+      "bytes": 17655,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-surface-native-module.md",
+      "sha256": "8b0dd30d7e29e9bfc051d61ef2b3d472e5d8fde41ec472dd96c0acd1f0e93276"
+    },
+    {
+      "bytes": 12378,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-kummer-grid-resultant.md",
+      "sha256": "d21ee2bffe588427ac0d7d9654cb581e637342f76538dbe38886fd390a06baf0"
+    },
+    {
+      "bytes": 9368,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-kummer-coset-volume-report.md",
+      "sha256": "e693ed80e7b77fde8a8a1798832d1ba8dfdc4d2a3e58613cc664e202a8ac3e29"
+    },
+    {
+      "bytes": 11610,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-character-broad-phase.md",
+      "sha256": "005f773e67c0f757cdc02f732512b4748b7b454c97d70bc622233e702bf8b3a8"
+    }
+  ],
+  "current_closure_files_skipped": [
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-basepoint",
+      "observed_status": "pending_uninspected",
+      "provider": "Anthropic",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-coefficient-action",
+      "observed_status": "pending_uninspected",
+      "provider": "Anthropic",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-faltings",
+      "observed_status": "pending_uninspected",
+      "provider": "Anthropic",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-lift",
+      "observed_status": "pending_uninspected",
+      "provider": "Anthropic",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-level-cover",
+      "observed_status": "pending_uninspected",
+      "provider": "OpenAI",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-torsion-height",
+      "observed_status": "pending_uninspected",
+      "provider": "OpenAI",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    }
+  ],
+  "dispatch": {
+    "bytes": 2293,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-12-accelerated/dispatch.json",
+    "sha256": "646f3d8991bf0ef413c85adf9a8681598b45267edb40f353b58c50365758f5c2"
+  },
+  "dispatch_mutation_scope": "Only observed_status for the eight existing jobs; no new dispatch or request.",
+  "eight_terminal_results_and_responses": [
+    {
+      "obligation": "surface-build",
+      "response": {
+        "bytes": 31070,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-surface-build/response.md",
+        "sha256": "a52ffe3302125eb28ec6fc2777d57f4863c551939a93efac7edbc63e8fe0021a"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1935,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-surface-build/result.json",
+        "sha256": "96c1c740b8b18f0b9014d7aa62ac917284624cb36622a4e25f87d0ffcc62d0dd"
+      },
+      "status": "completed"
+    },
+    {
+      "obligation": "kummer-build",
+      "response": {
+        "bytes": 14433,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-kummer-build/response.md",
+        "sha256": "b12d4ae07d38176da1980613ff713e9d0c37c39de4fde8d19755dd21e5dda919"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1894,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-kummer-build/result.json",
+        "sha256": "e43ddd88ca0d013cae81e9fccbfb215e5dff4d27f4e2dd811f9ecf7de67dde6a"
+      },
+      "status": "completed"
+    },
+    {
+      "obligation": "character-build",
+      "response": {
+        "bytes": 14067,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-character-build/response.md",
+        "sha256": "d8dc0912cb26a5180ec94f48f0f75cb72b3953c346dd6ef6602bd57bc3f51d69"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2073,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-character-build/result.json",
+        "sha256": "fd3f0fc54b755c8b566b5cdf6039ee835890b7618337440f78d52b72cb6e6d2f"
+      },
+      "status": "completed"
+    },
+    {
+      "obligation": "surface-source",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-surface-source/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_nonempty": false,
+      "result": {
+        "bytes": 1914,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-surface-source/result.json",
+        "sha256": "922b540916f32fe1437cc391325a94c3461c7152721863c9b84da2dec7f43c11"
+      },
+      "status": "truncated"
+    },
+    {
+      "obligation": "kummer-attack",
+      "response": {
+        "bytes": 7267,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-kummer-attack/response.md",
+        "sha256": "87fe8559610b441cfd01394ea29381f59ae9232359d52641ad8ab5e503d6701c"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2058,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-kummer-attack/result.json",
+        "sha256": "e0da9e341bf239aba46b9b27d048642905a64ac5802ec1b40ae37642860af83c"
+      },
+      "status": "completed"
+    },
+    {
+      "obligation": "character-decode",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-character-decode/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2089,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-character-decode/result.json",
+        "sha256": "dbf5e3c0c28c1c57a1d5020a45a5d96b1557a91c82c56dfe33905031d4590a6f"
+      },
+      "status": "truncated"
+    },
+    {
+      "obligation": "merkl-proof",
+      "response": {
+        "bytes": 15523,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-proof/response.md",
+        "sha256": "6a6018625a15824d807eda5c13481530ceadbd02e348c716f7a948a8b184a905"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1836,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-proof/result.json",
+        "sha256": "0a420d0ede9683501e84dd9776122dc4512c10fdb2c3e1b72658894220ba1a77"
+      },
+      "status": "completed"
+    },
+    {
+      "obligation": "merkl-transfer",
+      "response": {
+        "bytes": 2711,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-transfer/response.md",
+        "sha256": "c344205c19f6178270a344bf1e10a635590215c697b7199955609ee83ff7cc69"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2340,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-transfer/result.json",
+        "sha256": "188674488f0cbf13ed5f17b86bc86c8347e6c0c2ab6e87286ef541bc4a29ebe8"
+      },
+      "status": "truncated"
+    }
+  ],
+  "not_frozen": "No live closure result/response files, provisional Merkl review, or shared STATE/HANDOFF/workflow files hashed or changed.",
+  "scope": "Bookkeeping only, not scientific closure or certification. Existing terminal eight-job artifacts and four completed internal review snapshots only.",
+  "skipped_review_files": [],
+  "status": "TERMINAL_ACCELERATED_USAGE_MILESTONE",
+  "usage_snapshot": {
+    "bytes": 17083,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/accelerated_endpoint_round/usage.json",
+    "sha256": "b7739e73c22dca316fdaf6c54382137456192af41d988429686f20486d43b5a4"
+  }
+}

@@ -1,0 +1,101 @@
+Been tried? picket-fence Gaudin equally spaced joint charge gap
+
+Killed before
+  1. negative   NEG-COSET-TYPICAL-FINITE-NONSCALAR-NOT-GAP  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT]
+     research/registry/negative_results.json:64508
+     Claim: Finite nonzero multiplicity-space variance of a bounded-support orbit average establishes an efficient typical-irrep resolving measurement.
+     Why not: Variance proves only non-scalarity. It does not prove simple spectrum, a minimum inverse-polynomial gap, a uniform circuit, or a decoder.
+  2. negative   NEG-COSET-COMPLETE-S6-RACAH-AS-STABLE-N-CIRCUIT  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-HIERARCHICAL-RACAH-CONTROL]
+     research/registry/negative_results.json:62219
+     Claim: A complete finite S_6 hierarchical Racah table establishes a uniform efficient associator.
+     Why not: The table is obtained by dense 729-dimensional diagonalization; no stable-n joint-gap bound, compressed formula, or coherent circuit is proved.
+  3. negative   NEG-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL, PO-MEASUREMENT]
+     research/registry/negative_results.json:69796
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL.
+     Why not: Falsified or refined by exact theorem evaluation.
+  4. negative   NEG-DCP-DETERMINISTIC-FAVORABLE-BRANCH  [retained · DHS-GOWERS-SIEVE, HYP-LIT-HIDDEN-SHIFT-SIEVE, EXP-DHS-PHASE-SIEVE]
+     research/registry/negative_results.json:65579
+     Claim: A bucketed phase-label trace may deterministically subtract matched labels when estimating sample yield.
+     Why not: The physical CNOT combine produces sum and difference labels with probability 1/2. The live audit found an optimism gap of 15578 outputs.
+  5. negative   NEG-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-FREENESS  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-FREENESS, PO-MEASUREMENT]
+     research/registry/negative_results.json:71942
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-FREENESS.
+     Why not: Falsified or refined by exact theorem evaluation.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-PAIR-GAUDIN-HIERARCHY-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:11172
+     Claim: RESULT-EXP-COSET-HIDDEN-INVOLUTION-PAIR-GAUDIN-HIERARCHY-DCP-SUBSET-SUM-MARKER-COSET: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-COSET-COMPLETE-S6-RACAH-NOT-STABLE-N-CIRCUIT  [high]
+     research/registry/dequantization_checks.json:4935
+     Claim: A complete finite S_6 joint Racah basis establishes a scalable coherent measurement.
+     Why not: Prove stable-n joint spectral gaps for the hierarchical orbit operators, derive compressed Racah matrix elements, implement phase estimation coherently, and audit decoder information and classical simulation.
+  3. dequant    DEQ-COSET-TYPICAL-SINGLE-GENERATOR-SCALAR-BLOCKS  [critical]
+     research/registry/dequantization_checks.json:1085
+     Claim: The primary bounded-support orbit average alone uniformly resolves typical Kronecker multiplicity spaces.
+     Why not: Abandon every one-generator extrapolation. Extend exact contractions to a fixed portfolio, test joint-spectrum collisions, and require all-n inverse-polynomial separation plus a coherent decoder.
+  4. dequant    DEQ-DCP-IID-RANK-ONE-IMPLICIT-CONTRACTION-NOGO  [critical]
+     research/registry/dequantization_checks.json:315
+     Claim: A rank-one elementary-symmetric implicit contraction yields a joint-polynomial DCP bucket decoder.
+     Why not: Exclude scalar rank-one power kernels. Require explicit polynomial-rank projection cancellation or a low-bond tensor contraction with coefficient norm, precision, and intermediate dimension charged.
+  5. dequant    DEQ-SELF-DUAL-WREATH-RESTRICTED-GAP-FACTORIAL-COVERAGE  [critical]
+     research/registry/dequantization_checks.json:1393
+     Claim: One inverse-polynomial multiplicity gap supplies nonnegligible coverage of the wreath carrier.
+     Why not: Prove general equal-source separators and cross-source carrier action on blocks carrying nonnegligible natural mass.
+
+Notes and handoff
+  1. note       Richardson-Gaudin preparation by joint-charge randomization  [unlabelled]
+     research/GAUDIN_JOINT_CHARGE_TRAVERSAL.md:1
+     The accepted Lutzv3 source still explicitly leaves the general gap open; no proved theorem or tested equally-spaced/random family is refuted.
+  2. handoff    2026-11-07 Gaudin Joint Charge Traversal  [journal]
+     research/MECHANICAL_FOLLOW_UP_PLAN.md:470
+     Read GAUDIN_JOINT_CHARGE_TRAVERSAL.md and the saved scoped checkpoint at research/audits/controls/gaudin_charge_tracking/checkpoint.json.
+  3. note       Richardson-Gaudin preparation by joint-charge randomization › Next decisive question  [unlabelled]
+     research/GAUDIN_JOINT_CHARGE_TRAVERSAL.md:192
+     Prove or falsify polynomial SAME-SECTOR joint separation for an explicit natural growing-N family (e.g.
+  4. note       Richardson-Gaudin preparation by joint-charge randomization › Prior work and source admission  [unlabelled]
+     research/GAUDIN_JOINT_CHARGE_TRAVERSAL.md:54
+     Corpus been-tried queries: adiabatic Richardson Gaudin parent Hamiltonian complete conserved charges; quantum Zeno eigenpath traversal joint commuting charges unknown eigenvalues.
+  5. handoff    2026-11-07 Gaudin Joint Charge Traversal  [journal]
+     research/AGENT_HANDOFF.md:1485
+     CLOSED conditional constructive theorem in GAUDIN_JOINT_CHARGE_TRAVERSAL.md: commuting-charge random dephasing prepares the initial-label joint branch without q(s)/Bethe-root advice.
+
+Code and experiments
+  1. theorem    A commuting pair-Gaudin hierarchy for hyperoctahedral recoupling.  [code]
+     theorems/coset_hidden_involution_pair_gaudin_hierarchy.py:1
+     infinitesimalbraidcontrol chargehierarchycontrol jointspectrumfinitecontrol pairgaudinhierarchytheorem pairgaudinhierarchyreport pair interaction relative charge terms audit infinitesimal braid relations audit charge hierarchy audit joint spectra build pair gaudin hierarchy report write pair gaudin…
+  2. experiment Coset Hidden Involution Pair Gaudin Hierarchy  [planned]
+     research/registry/experiments.json:17401
+     exp coset hidden involution pair gaudin hierarchy.
+  3. theorem    A K-adapted commuting charge pair from pair-Gaudin interactions.  [code]
+     theorems/coset_hidden_involution_pair_matching_charge_hierarchy.py:1
+     A K-adapted commuting charge pair from pair-Gaudin interactions.
+  4. result     EXP-COSET-HIDDEN-INVOLUTION-PAIR-GAUDIN-HIERARCHY marker-filter-reduced-to-original-subset-sum-search  [marker-filter-reduced-to-original-subset-sum-search]
+     research/registry/experiment_results.json:16197
+     exp coset hidden involution pair gaudin hierarchy.
+  5. theorem    Natural conditional spectral diameter for the matching charge ``D_m``.  [code]
+     theorems/coset_hidden_involution_matching_charge_conditional_diameter.py:1
+     It
+is not a lower bound on the *minimum* adjacent gap of the full joint spectrum,
+does not bound residual multiplicity, and supplies neither a coherent
+diagonalization nor correlation with the source-aware CS likelihood.
+
+Literature
+  1. literature Quantum Fourier transform for the symmetric group  [seed · symmetric-qft, subgroup-chain, gate-accounting]
+     research/literature_records.json
+     Multi-register symmetric-group involution coset states and representation-theoretic multiplicity problems with explicit partition, dimension-ratio, and multiplicity-space promises.
+  2. literature High-dimensional quantum Schur transforms  [seed · schur-transform, multiplicity-space, recoupling, representation-theory]
+     research/literature_records.json
+     High-dimensional quantum Schur transforms Corrects a multiplicity-space step that had been treated as a classical permutation and makes the required quantum isometry/F-moves explicit, a direct warning against hand-waving recoupling registers.
+  3. literature A remark on the quantum complexity of the Kronecker coefficients  [seed · kronecker-coefficient, sharp-bqp, invariant-projector, representation-theory]
+     research/literature_records.json
+     A remark on the quantum complexity of the Kronecker coefficients Places exact Kronecker multiplicity counting in #BQP using commuting projectors; counting an invariant space is weaker than coherently resolving a basis and its state-dependent transition amplitudes.
+  4. literature hermite_decoder_prior_art  [audit]
+     research/literature_audits/hermite_decoder_prior_art.json
+     tests/test_hermite_prior_art_interface.py 1/4 (X^17-X)*f^[1] One Appendix A proof step, not the dimension theorem 2026-10-21 HERMITE-DECODER-EXACT-PRIOR-ART Deterministic polynomial-time construction of a small-characteristic differential decoding space Random-coordinate pruning of an affine space…
+  5. literature Random dilation superchannel  [seed · kronecker-transform, schur-transform, multiplicity-space, representation-theory]
+     research/literature_records.json
+     Multi-register symmetric-group involution coset states and representation-theoretic multiplicity problems with explicit partition, dimension-ratio, and multiplicity-space promises.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

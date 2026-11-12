@@ -1,0 +1,98 @@
+Been tried? Merkl atlas Green function logarithmic branch collision covers
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY, PO-MEASUREMENT]
+     research/registry/negative_results.json:69270
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY.
+     Why not: Falsified or refined by exact theorem evaluation.
+  2. negative   NEG-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM, PO-MEASUREMENT]
+     research/registry/negative_results.json:69315
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM.
+     Why not: Falsified or refined by exact theorem evaluation.
+  3. negative   NEG-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM, PO-MEASUREMENT]
+     research/registry/negative_results.json:70266
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM.
+     Why not: Falsified or refined by exact theorem evaluation.
+  4. negative   NEG-COSET-TYPICAL-N10-LOW-MULTIPLICITY-TARGET-MASS  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-TYPICAL-SOURCE-COVERAGE]
+     research/registry/negative_results.json:64715
+     Claim: The exact n=10 low-multiplicity collision ladder covers most dimension-weighted target mass for its fixed source.
+     Why not: The 12 exactly certified nontrivial targets plus multiplicity-one targets cover only 1.139% of exact Kronecker coupling mass.
+  5. negative   LEGACY-CUSTOM_LOGARITHMIC_SECRET_FINDING  [retained · NO-TOY-ORACLE, PO-FAMILY, PO-CLASSICAL-BASELINE, PO-FALSIFIERS]
+     research/registry/negative_results.json:56329
+     Claim: Custom_Logarithmic_Secret_Finding: Quadratic speedup
+     Why not: arbitrary oracle_secret_finding proposal; N=3 simulation cap; claimed speedup despite zero simulation success; secret-finding framing with no natural scalable family
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7190
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7916
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-DHS-DCP-TWO-ADIC-FIBER-TRANSPORT-DCP-TWO-ADIC-FIBER-TRANSPORT-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:14043
+     Claim: RESULT-EXP-DHS-DCP-TWO-ADIC-FIBER-TRANSPORT-DCP-TWO-ADIC-FIBER-TRANSPORT: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7168
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-DHS-TRACE-FUNCTION-SEARCH-TRACE-FUNCTION-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:14131
+     Claim: RESULT-EXP-DHS-TRACE-FUNCTION-SEARCH-TRACE-FUNCTION-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Quantum Phase Estimation on Continuous Spectrum Hamiltonians and Singular Spectral Measures: Resolvent Broaden  [proved]
+     research/CONTINUOUS_SPECTRUM_QPE_SINGULAR_MEASURE_BARRIER.md:107
+     To extract spectral properties on the continuum, quantum algorithms frequently simulate the resolvent Green's operator $G(z) = (z - H)^{-1}$.
+  2. note       Quantum Walks, Continuous-Time Quantum Search, and the Spatial Graph Topology Horizon: Glued Trees, Childs-Gol  [quarantined]
+     research/QUANTUM_WALKS_SPATIAL_TOPOLOGY_BARRIER.md:225
+     | Problem / Topology | Classical Complexity | Quantum Walk Complexity | Speedup Factor | Limitation / Dequantization Barrier | | :--- | :--- | :--- | :--- | :--- | | **Glued Trees (Black-Box Oracle)** | $2^{\Omega(n)} = \Omega(N)$ queries | $O(n^2) = O(\log^2 N)$ queries | **Exponential** | Require…
+  3. note       Nonlinear Three-Cycle Compiler: Avoid Global Fiber Ranking › Executable Controls And Falsifiers  [review-pending]
+     research/TERNARY_NONLINEAR_CYCLE_COMPILER.md:111
+     All accepted branch phases are checked against the true original full-root source.
+  4. handoff    Natural Component-Commutator Gate Is Now A Pinned Growing-Word Problem  [journal]
+     research/AGENT_HANDOFF.md:52375
+     Latest focused checks before this handoff: - collision-free transfer: 13 tests passed; - Green/ridge stability: 6 tests passed; - Hamming-orbit reduction: 5 tests passed; - exact natural leaf trace profile: 9 tests passed after the exact-rational and cancellation-stable variance patch; - leaf-marke…
+  5. note       Quantum Walks, Continuous-Time Quantum Search, and the Spatial Graph Topology Horizon: Glued Trees, Childs-Gol  [quarantined]
+     research/QUANTUM_WALKS_SPATIAL_TOPOLOGY_BARRIER.md:100
+     The perturbed energy eigenvalues $E$ satisfy the Green's function secular equation: $$\langle w | \frac{1}{H_0' - E} | w \rangle = 1 \implies \frac{1}{N} \sum_k \frac{1}{\omega(k) - E} = 1$$ At critical resonance $\gamma = \gamma_c$, the ground state $|E_0\rangle$ and first excited state $|E_1\rang…
+
+Code and experiments
+  1. experiment Exp Code Self Dual Wreath Component Leaf Resolved Green Normal Form  [planned]
+     research/registry/experiments.json:4518
+     Exp Code Self Dual Wreath Component Leaf Resolved Green Normal Form Derived the exact leaf-marked Green-function trace word whose natural AABB-minus-ABAB gap would prove component noncommutative mass.
+  2. result     EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM exact-leaf-resolved-green-target-derived-n  [exact-leaf-resolved-green-target-derived-natural-gap-open]
+     research/registry/experiment_results.json:4840
+     Derived the exact leaf-marked Green-function trace word whose natural AABB-minus-ABAB gap would prove component noncommutative mass.
+  3. theorem    Leaf-resolved Green-function normal form for compressed component M4.  [code]
+     theorems/self_dual_wreath_component_leaf_resolved_green_normal_form.py:1
+     Leaf-resolved Green-function normal form for compressed component M4.
+  4. result     EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM exact-leaf-marked-green-word-reduction-growing-ri  [exact-leaf-marked-green-word-reduction-growing-rigidity-open]
+     research/registry/experiment_results.json:6954
+     Reduced the exact natural sibling-common Green pair functional to partially pinned A/B word-map strata and removed the common span as a separate probabilistic input.
+  5. experiment Exp Code Self Dual Wreath Leaf Marked Green Word Normal Form  [planned]
+     research/registry/experiments.json:7579
+     Exp Code Self Dual Wreath Leaf Marked Green Word Normal Form Reduced the exact natural sibling-common Green pair functional to partially pinned A/B word-map strata and removed the common span as a separate probabilistic input.
+
+Literature
+  1. literature dhsp_domain_collision_walk_sources  [audit]
+     research/literature_audits/dhsp_domain_collision_walk_sources.json
+     AUDIT-DHSP-DOMAIN-COLLISION-WALK 2026-10-05 Official arXiv abstracts; no full-paper theorem audit in this pass.
+  2. literature Pretty simple bounds on quantum state discrimination  [seed · state-discrimination, pretty-good-measurement, mixed-states, fidelity-bound]
+     research/literature_records.json
+     Can natural carrier branches be proved to have bounded self-purity inflation and collision burden at the information-threshold copy count?
+  3. literature dhsp_codomain_instrument_sources  [audit]
+     research/literature_audits/dhsp_codomain_instrument_sources.json
+     Matthew Moore Grace Young ARXIV-2202.09697-WITHDRAWN Inferring coherent pure hash amplitudes from diagonal probabilities after tracing entangled domain/function registers.
+  4. literature A Tight Lower Bound for Non-coherent Index Erasure  [seed · state-generation, index-erasure, query-lower-bound, black-box]
+     research/literature_records.json
+     Coherent or non-coherent state generation that erases a function preimage register while retaining a superposition over image or fiber labels.
+  5. literature Span programs and quantum query complexity: The general adversary bound is nearly tight for every boolean func  [seed · query-complexity, span-programs, adversary-bound, quantum-walks]
+     research/literature_records.json
+     Span programs and quantum query complexity: The general adversary bound is nearly tight for every boolean function Turns lower-bound machinery into algorithm synthesis machinery for query problems.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

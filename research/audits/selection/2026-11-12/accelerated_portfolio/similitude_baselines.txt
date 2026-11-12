@@ -1,0 +1,13 @@
+Classical baselines for: full GSp torsor arithmetic descent Frobenius Shapiro induced module
+
+  1. LLL reduction with Babai rounding  [lll-babai-dcp]  score 0.1
+     why: no keyword matched; cited by research/WILD_LOCAL_SELMER_ADMISSION.md:7
+     LLL-reduce the basis, then round with Babai's nearest-plane algorithm or coordinate rounding,
+     optionally with small repair menus or a Kannan embedding; polynomial time, and exact when the
+     target lies within the Gram-Schmidt decoding radius. The baseline for any lattice or subset-sum
+     reduction of DCP or ternary decoding.
+     references: research/DCP_BABAI_DEVIATION_DEPTH_BARRIER.md, research/DCP_BABAI_LATTICE_ROUNDING_WITNESS_OBSTRUCTION.md, research/TERNARY_FULL_RECORD_CVP.md
+
+Score: the share of a baseline's keywords found in the idea, plus 0.1 for each note or negative
+among the ten nearest documents that names it (a note once, however many of its sections are near).
+Run the baseline before claiming an advantage; a high score is a lead, not a verdict.

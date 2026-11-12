@@ -1,0 +1,62 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2577,
+      "path": "research/audits/api_inputs/2026-11-12-surface-closure/state-excerpt.md",
+      "sha256": "de556a93af6d7182f1495380c1b24b9e1c0154059341ffe077ff07cbdea4fdb4",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 60009,
+      "path": "research/audits/api_inputs/2026-11-12-surface-closure/book-height-source.md",
+      "sha256": "cf7cae455cf0d3786e758b9b4fc9ad9dce1f3669376bd0b36a291bfedfc6dbd5",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 55837,
+      "path": "research/audits/api_inputs/2026-11-12-surface-closure/javan-arithmetic.md",
+      "sha256": "fec343b624afe513bfe290ca03f898412da9657d994110f0ac8f591a68c375e3",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 6663,
+      "path": "research/MERKL_LOG_COLLISION_ATLAS.md",
+      "sha256": "7de09e3993ffc9f0c818a3274cd365f3a0c852df1b12550104dd4e4326b82ecb",
+      "snapshot": "context/003.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 47016,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T09:41:45.771823+00:00",
+  "input_token_allowance": 47957,
+  "max_budget_usd": 7.0,
+  "max_tokens": 64000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 3.67957,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-surface-closure/book-height.md",
+    "sha256": "a9f2c48a870aeadc75b8ebdc19846f1efd7e690295258c6b2f4f0d2b05a6da94",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "constructive",
+  "run_id": "20261112T092744.163320Z-65aafe98",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 47016,
+    "output_tokens": 64000
+  },
+  "usage_cost_estimate_usd": 3.67016
+}

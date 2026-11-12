@@ -1,0 +1,61 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2054,
+      "path": "research/audits/api_inputs/2026-11-12-accelerated/state-excerpt.md",
+      "sha256": "0944ba5bda705139c7c915be3ee271f2518cae390bb0e3c914591566c91163fd",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 13497,
+      "path": "research/audits/api_inputs/2026-11-12-accelerated/stoll-excerpts.md",
+      "sha256": "b070c2014d9d7797704161bfc67476014b3c69a5bfe5b001e26ba33d03de3158",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 14343,
+      "path": "research/LOCAL_SATURATION_FINITE_PRECISION.md",
+      "sha256": "c0b8a102526400b7abb412d6b89eb2a841d5096ee6e5576b874c7d44f4b688d8",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 15922,
+      "path": "research/LOCAL_HALVING_SATURATION.md",
+      "sha256": "85598e08eba11022f074738099cbeb9c0d89d7a532472c296a60093a64fd322d",
+      "snapshot": "context/003.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 19325,
+  "effort": "high",
+  "finished_at": "2026-11-12T08:24:09.878000+00:00",
+  "input_token_allowance": 19712,
+  "max_budget_usd": 3.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.734208,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-accelerated/kummer-attack.md",
+    "sha256": "83f2333f384e529cb7f33405168625ce96c588b9e60b8e3cff701af4a51f82a7",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T081924.834470Z-2ccf79ba",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 19325,
+    "output_tokens": 27260
+  },
+  "usage_cost_estimate_usd": 0.6225
+}

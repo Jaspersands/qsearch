@@ -30,17 +30,45 @@ A local PDF control-character validation failure made NO API call; sanitized
 excerpts were then submitted. The recovered Nov7 sampler report completed at
 estimatedUSD0.277960; include it at the next ledger milestone.
 
-Usage checkpoint, 12November2026, after the closed OPI pass: Anthropic82
-saved nonpartial estimates totalUSD62.891114;40 completed/nonempty reports.
-Two older terminal ReadTimeout totals remain UNKNOWN and excluded; partial
-countersUSD0.006250/0.027600 are not final charges. OpenAI2 completed/nonempty
-reports totalUSD3.302960. Saved provider-separated audit:
-audits/controls/opi_tilted_walk/usage.json. These historical totals are neither
-invoices nor remaining balances and must not be subtracted from owner anchors.
-OPI added/recovered AnthropicUSD2.529980 and OpenAIUSD3.302960. Four complete
-reports and one truncated source report were parent-read; source mistakes and
-finite-clock overstatement were rejected, substantive fixes recorded. No retry.
-The minimal OpenAI runner passed syntax and one offline overbudget guard.
+Usage checkpoint, 12 November2026, after closed OPI, conductivity and surface
+passes: Anthropic86 saved nonpartial estimates totalUSD69.029680;41 completed/
+nonempty reports. Two historical terminal ReadTimeout totals remain UNKNOWN
+and excluded; partial countersUSD0.006250/0.027600 are not final charges.
+OpenAI4 completed reports totalUSD7.432790. Provider-separated audit:
+audits/controls/surface_modular_descent/usage.json. Ten Nov12 requests total
+estimatedUSD15.823376; the surface's three requests USD4.628216 (two completed,
+one empty truncation). These are historical runner estimates, neither invoices
+nor measured remaining balances; do not subtract them from owner anchors.
+All surface requests were terminal and their material findings parent-checked.
+No failed request was retried. Source and control hashes are in the neighboring
+checkpoint.json. The minimal OpenAI runner previously passed syntax and one
+offline overbudget guard.
+
+
+Owner acceleration, Nov12: explicitly asked to use API credit faster. Dispatch
+six distinct obligations in parallel across three constructive endpoints,
+with the prior Gaudin request still running. Three OpenAI/max constructions
+(surface torsion-module input, Q2 controlled halving, non-split character source)
+are paired with three distinct Claude source/attack/decoder obligations.
+This expands throughput; it does not authorize redundant agreement, automatic
+retries or promotion from a report label. Local request ceilings totalUSD23
+for the six new calls, NOT actual spend/provider billing caps. Exact briefs,
+selected context and session/bundle locators: audits/api_inputs/2026-11-12-
+accelerated/dispatch.json. Parent verifies the strongest actionable results,
+selects one scientific continuation by external value, and records dispositions
+for every completed/empty request. No unrelated service or Git action.
+
+Usage acceleration milestone, Nov12: the eight-job round is terminal with
+five completed/nonempty, one truncated/nonempty, two truncated/empty reports.
+EstimatedUSD11.141382 (Anth4.506662/OpenAI6.634720). With the terminal Gaudin
+attempts, cumulative nonpartial estimates are Anth92 recordsUSD74.251518,
+43 completed/nonempty; OpenAI8 terminalUSD16.571020,7 completed/nonempty.
+Two historical timeout bills remain unknown/excluded. Frozen ledger/hashes:
+audits/controls/accelerated_endpoint_round/. Six further DISTINCT surface
+closure obligations now run (fourClaude,twoOpenAI; ceilingsUSD28, not charges).
+Selected by concrete end-to-end progress, not to repeat agreement or empty
+runs. Their exact packets/statuses are in audits/api_inputs/2026-11-12-surface-
+closure/dispatch.json. Reconcile them only at the next clean milestone.
 
 ## Scientific placement
 

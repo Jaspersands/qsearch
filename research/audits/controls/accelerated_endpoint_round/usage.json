@@ -1,0 +1,426 @@
+{
+  "accelerated_round": {
+    "by_provider_usd": {
+      "Anthropic": "4.506662",
+      "OpenAI": "6.634720"
+    },
+    "completed_nonempty_reports": 5,
+    "jobs": 8,
+    "jobs_detail": [
+      {
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-surface-build",
+        "completed_review": true,
+        "obligation": "surface-build",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 31070,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-surface-build/response.md",
+          "sha256": "a52ffe3302125eb28ec6fc2777d57f4863c551939a93efac7edbc63e8fe0021a"
+        },
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1935,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-surface-build/result.json",
+          "sha256": "96c1c740b8b18f0b9014d7aa62ac917284624cb36622a4e25f87d0ffcc62d0dd"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 14887,
+          "input_tokens_details": {
+            "cache_write_tokens": 14884,
+            "cached_tokens": 0
+          },
+          "output_tokens": 42384,
+          "output_tokens_details": {
+            "reasoning_tokens": 33834
+          },
+          "total_tokens": 57271
+        },
+        "usage_cost_estimate_usd": "2.268070"
+      },
+      {
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-kummer-build",
+        "completed_review": true,
+        "obligation": "kummer-build",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 14433,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-kummer-build/response.md",
+          "sha256": "b12d4ae07d38176da1980613ff713e9d0c37c39de4fde8d19755dd21e5dda919"
+        },
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1894,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-kummer-build/result.json",
+          "sha256": "e43ddd88ca0d013cae81e9fccbfb215e5dff4d27f4e2dd811f9ecf7de67dde6a"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 12491,
+          "input_tokens_details": {
+            "cache_write_tokens": 12488,
+            "cached_tokens": 0
+          },
+          "output_tokens": 39964,
+          "output_tokens_details": {
+            "reasoning_tokens": 35740
+          },
+          "total_tokens": 52455
+        },
+        "usage_cost_estimate_usd": "2.123110"
+      },
+      {
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-character-build",
+        "completed_review": true,
+        "obligation": "character-build",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 14067,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-character-build/response.md",
+          "sha256": "d8dc0912cb26a5180ec94f48f0f75cb72b3953c346dd6ef6602bd57bc3f51d69"
+        },
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2073,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-fast-character-build/result.json",
+          "sha256": "fd3f0fc54b755c8b566b5cdf6039ee835890b7618337440f78d52b72cb6e6d2f"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 14949,
+          "input_tokens_details": {
+            "cache_write_tokens": 14946,
+            "cached_tokens": 0
+          },
+          "output_tokens": 41881,
+          "output_tokens_details": {
+            "reasoning_tokens": 38118
+          },
+          "total_tokens": 56830
+        },
+        "usage_cost_estimate_usd": "2.243540"
+      },
+      {
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-surface-source",
+        "completed_review": false,
+        "obligation": "surface-source",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-surface-source/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1914,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-surface-source/result.json",
+          "sha256": "922b540916f32fe1437cc391325a94c3461c7152721863c9b84da2dec7f43c11"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 13578,
+          "output_tokens": 16384
+        },
+        "usage_cost_estimate_usd": "0.190996"
+      },
+      {
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-kummer-attack",
+        "completed_review": true,
+        "obligation": "kummer-attack",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 7267,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-kummer-attack/response.md",
+          "sha256": "87fe8559610b441cfd01394ea29381f59ae9232359d52641ad8ab5e503d6701c"
+        },
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2058,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-kummer-attack/result.json",
+          "sha256": "e0da9e341bf239aba46b9b27d048642905a64ac5802ec1b40ae37642860af83c"
+        },
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 19325,
+          "output_tokens": 27260
+        },
+        "usage_cost_estimate_usd": "0.622500"
+      },
+      {
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-character-decode",
+        "completed_review": false,
+        "obligation": "character-decode",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-character-decode/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_nonempty": false,
+        "result": {
+          "bytes": 2089,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-character-decode/result.json",
+          "sha256": "dbf5e3c0c28c1c57a1d5020a45a5d96b1557a91c82c56dfe33905031d4590a6f"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 20552,
+          "output_tokens": 32768
+        },
+        "usage_cost_estimate_usd": "0.737568"
+      },
+      {
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-proof",
+        "completed_review": true,
+        "obligation": "merkl-proof",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 15523,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-proof/response.md",
+          "sha256": "6a6018625a15824d807eda5c13481530ceadbd02e348c716f7a948a8b184a905"
+        },
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1836,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-proof/result.json",
+          "sha256": "0a420d0ede9683501e84dd9776122dc4512c10fdb2c3e1b72658894220ba1a77"
+        },
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 9760,
+          "output_tokens": 41419
+        },
+        "usage_cost_estimate_usd": "2.168550"
+      },
+      {
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-transfer",
+        "completed_review": false,
+        "obligation": "merkl-transfer",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 2711,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-transfer/response.md",
+          "sha256": "c344205c19f6178270a344bf1e10a635590215c697b7199955609ee83ff7cc69"
+        },
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2340,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-fast-merkl-transfer/result.json",
+          "sha256": "188674488f0cbf13ed5f17b86bc86c8347e6c0c2ab6e87286ef541bc4a29ebe8"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 32922,
+          "output_tokens": 32768
+        },
+        "usage_cost_estimate_usd": "0.787048"
+      }
+    ],
+    "truncated_empty_reports": 2,
+    "truncated_nonempty_reports": 1,
+    "usage_estimate_usd": "11.141382"
+  },
+  "captured_at_utc": "2026-11-12T09:17:15.018469+00:00",
+  "cost_note": "Runner usage estimates only, not invoices, actual charges, remaining balances or spend caps. Partial historical ReadTimeout totals remain UNKNOWN and excluded. Terminal incomplete/truncated usage can be known while no completed report exists. Current closure billing is not classified.",
+  "dispatch_observed_status_changes": [
+    {
+      "after": "completed",
+      "before": "in_flight",
+      "obligation": "merkl-proof"
+    },
+    {
+      "after": "truncated",
+      "before": "in_flight",
+      "obligation": "merkl-transfer"
+    }
+  ],
+  "previous_surface_snapshot": {
+    "bytes": 22384,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/surface_modular_descent/usage.json",
+    "sha256": "170157debc0fe9cbc6a903ae60447cfc1bfc1f007bd3c3025cc8fe09f0ead483"
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 43,
+      "empty_response_count": 13,
+      "incomplete_and_empty": 0,
+      "known_estimate_by_status_usd": {
+        "completed": "27.266936",
+        "empty_response": "0.789814",
+        "truncated": "46.194768"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "74.251518",
+      "known_terminal_nonpartial_usage_records": 92,
+      "not_started_count": 2,
+      "other_live_pending": [],
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "result_files_inspected_excluding_closure": 96,
+      "status_counts_excluding_closure": {
+        "completed": 43,
+        "dry_run": 1,
+        "empty_response": 13,
+        "failed": 3,
+        "truncated": 36
+      },
+      "terminal_results": 95,
+      "truncated_and_empty": 28,
+      "truncated_and_nonempty": 8
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 7,
+      "empty_response_count": 0,
+      "incomplete_and_empty": 1,
+      "known_estimate_by_status_usd": {
+        "completed": "14.067510",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "16.571020",
+      "known_terminal_nonpartial_usage_records": 8,
+      "not_started_count": 0,
+      "other_live_pending": [],
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "result_files_inspected_excluding_closure": 8,
+      "status_counts_excluding_closure": {
+        "completed": 7,
+        "incomplete": 1
+      },
+      "terminal_results": 8,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0
+    }
+  },
+  "reconciliation_from_surface_snapshot": {
+    "Anthropic": {
+      "Gaudin_estimate_usd": "0.715176",
+      "Gaudin_runs": [
+        {
+          "estimate_usd": "0.715176",
+          "response_nonempty": false,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-gaudin-picket-attack/result.json",
+          "status": "truncated"
+        }
+      ],
+      "accelerated_eight_job_estimate_usd": "4.506662",
+      "added_estimate_usd": "5.221838",
+      "added_known_terminal_records": 6,
+      "previous_surface_estimate_usd": "69.029680",
+      "previous_surface_nonpartial_records": 86,
+      "unexplained_delta_usd": "0.000000"
+    },
+    "OpenAI": {
+      "Gaudin_estimate_usd": "2.503510",
+      "Gaudin_runs": [
+        {
+          "estimate_usd": "2.503510",
+          "response_nonempty": false,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-gaudin-picket-gap/result.json",
+          "status": "incomplete"
+        }
+      ],
+      "accelerated_eight_job_estimate_usd": "6.634720",
+      "added_estimate_usd": "9.138230",
+      "added_known_terminal_records": 4,
+      "previous_surface_estimate_usd": "7.432790",
+      "previous_surface_nonpartial_records": 4,
+      "unexplained_delta_usd": "0.000000"
+    }
+  },
+  "scope": "One terminal-usage milestone across saved provider result files, excluding six current closure-* bundles entirely. No provider request, polling, retry, network or tests.",
+  "six_current_closure_requests_excluded": [
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-basepoint",
+      "observed_status": "pending_uninspected",
+      "provider": "Anthropic",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-coefficient-action",
+      "observed_status": "pending_uninspected",
+      "provider": "Anthropic",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-faltings",
+      "observed_status": "pending_uninspected",
+      "provider": "Anthropic",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-closure-lift",
+      "observed_status": "pending_uninspected",
+      "provider": "Anthropic",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-level-cover",
+      "observed_status": "pending_uninspected",
+      "provider": "OpenAI",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    },
+    {
+      "billing": "NOT_CLASSIFIED",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-closure-torsion-height",
+      "observed_status": "pending_uninspected",
+      "provider": "OpenAI",
+      "reason": "Current closure request excluded by parent instruction; result and response not opened or hashed."
+    }
+  ]
+}

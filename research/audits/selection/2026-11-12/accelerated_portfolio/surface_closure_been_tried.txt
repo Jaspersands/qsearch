@@ -1,0 +1,98 @@
+Been tried? surface level cover symplectic torsion frame elimination coefficient height Wronskian nonspecial divisor Faltings Merkl
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION, PO-MEASUREMENT]
+     research/registry/negative_results.json:71731
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION.
+     Why not: Falsified or refined by exact theorem evaluation.
+  2. negative   NEG-CODE-WREATH-ALL-ORDER-WORD-MAP-NOT-GROWING-CONTRACTION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-NATURAL-MOMENT-WORD-MAP, PO-COMPLEXITY, PO-SUCCESS]
+     research/registry/negative_results.json:60959
+     Claim: Eliminating the physical-irrep sum from natural frame moments already gives a polynomial high-order moment algorithm.
+     Why not: The exact replacement enumerates (n!)^m bridge sequences and 2^m subset words. No compressed recurrence is proved at the required growing moment order.
+  3. negative   NEG-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE, PO-MEASUREMENT]
+     research/registry/negative_results.json:72510
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE.
+     Why not: Falsified or refined by exact theorem evaluation.
+  4. negative   NEG-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED, PO-MEASUREMENT]
+     research/registry/negative_results.json:72329
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED.
+     Why not: Falsified or refined by exact theorem evaluation.
+  5. negative   NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-RECOUPLING-CAPABILITY-LEDGER, PO-CLASSICAL-BASELINE]
+     research/registry/negative_results.json:63477
+     Claim: Restricted multiplicity estimation alone is a Shor-level quantum advantage.
+     Why not: Known promises cover restricted dimension-ratio regimes, and polynomial classical algorithms match many proposed families without producing a natural hidden-involution decoder.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8015
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:10017
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9522
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:10160
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-CODE-WREATH-NATURAL-WORD-MAP-NOT-GROWING-CONTRACTION  [critical]
+     research/registry/dequantization_checks.json:1525
+     Claim: An all-order source-averaged character identity already provides the high-order frame moment algorithm.
+     Why not: Derive a compressed surface-word, cycle-index, or harmonic recurrence for identity and bridge-class subset products at growing order, then prove that the source-averaged normalized moments control individual natural tuple success.
+
+Notes and handoff
+  1. note       Surface point counting: the classical height-uniformity gate › Parent finite-field repair construction  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:294
+     For a monic primitive polynomial with coefficient pole divisor A on P1, every root lying in L_h belongs to L_Y(q^*A), of dimension at most D*deg(A)+1.
+  2. note       Surface point counting: the classical height-uniformity gate › Selection and native question  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:19
+     Proof obligations: uniform coefficient/branch/curve/torsion-divisor height, small good auxiliary prime, exact arithmetic action and reconstruction degree, no supplied curve torsion or normalized representatives, bounded failure clocks.
+  3. handoff    2026-11-12 Native Surface Torsion-Module Construction Under Review  [journal]
+     research/AGENT_HANDOFF.md:3
+     Hard parent construction in SURFACE_NATIVE_TORSION_MODULE.md removes supplied zeta and full torsion-basis advice for the small-characteristic geometric cover input.
+  4. note       Quartic-surface P2 from explicit torsion-cover twists  [unlabelled]
+     research/SURFACE_TORSION_COVER_RECONSTRUCTION.md:1
+     See SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md; this quantum G0/Euler route is unaffected.
+  5. note       Surface point counting: the classical height-uniformity gate › Completed height attack and empty repair reques  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:334
+     OpenAI surface-height completed, estimatedUSD2.075060, full report parent-read.
+
+Code and experiments
+  1. theorem    Exact surface law for the target-survival identity-frame lift.  [code]
+     theorems/self_dual_wreath_target_survival_surface_seed.py:1
+     Exact surface law for the target-survival identity-frame lift.
+  2. theorem    Public odd-prime Clifford plans with exact symmetric-Weyl conventions.  [code]
+     theorems/prime_clifford_realization.py:1
+     Deterministic symplectic elimination, including singular X/X blocks.
+  3. theorem    Divisor-free public kernel construction from two split polynomial fibers.  [code]
+     theorems/interval_split_fibers.py:1
+     Divisor-free public kernel construction from two split polynomial fibers.
+  4. result     EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED identity-frame-lift-natural-standard-signal-dequantized  [identity-frame-lift-natural-standard-signal-dequantized]
+     research/registry/experiment_results.json:13022
+     Classified both identity-frame support lifts as fixed genus-two surface laws and proved quadratic decay of their natural standard target character.
+  5. experiment Exp Code Self Dual Wreath Target Survival Surface Seed  [planned]
+     research/registry/experiments.json:14227
+     Exp Code Self Dual Wreath Target Survival Surface Seed Classified both identity-frame support lifts as fixed genus-two surface laws and proved quadratic decay of their natural standard target character.
+
+Literature
+  1. literature ternary_cyclic_extractor_sources  [audit]
+     research/literature_audits/ternary_cyclic_extractor_sources.json
+     1503.09016 Gabor Ivanyos Miklos Santha Proposition 9 and its proof Definition of SDE Theorem 5 and source/access definitions All affine pointed-cover incoming witnesses at n+2 variables Original native higher-root source acquisition or full-depth quantum receiver Polynomial root-depth throughput or…
+  2. literature Pretty simple bounds on quantum state discrimination  [seed · state-discrimination, pretty-good-measurement, mixed-states, fidelity-bound]
+     research/literature_records.json
+     Pretty-good measurements convert quantitative mixed-state overlap, fidelity, rank, or frame-purity control into direct hypothesis-identification success bounds.
+  3. literature cyclotomic_rescaling_sources  [audit]
+     research/literature_audits/cyclotomic_rescaling_sources.json
+     All six qutrit permutations are covered, not arbitrary collective instruments.
+  4. literature Asymptotics of characters of symmetric groups related to Stanley character formula  [seed · symmetric-character, character-ratio, plancherel-typical, representation-theory]
+     research/literature_records.json
+     This is the main available route from collision-free typical partitions to quantitative wreath-frame moment contraction.
+  5. literature Automated near-term quantum algorithm discovery for molecular ground states  [seed · automated-discovery, quantum-chemistry, heuristics, interpretability]
+     research/literature_records.json
+     Automated near-term quantum algorithm discovery for molecular ground states Shows useful automation patterns, but targets heuristic near-term chemistry rather than Shor-level complexity.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

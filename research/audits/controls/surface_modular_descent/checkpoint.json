@@ -1,0 +1,279 @@
+{
+  "API_reports": [
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-surface-parabolic-repair",
+      "counted_as_completed": false,
+      "provider": "Anthropic",
+      "request": {
+        "bytes": 64584,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-surface-parabolic-repair/request.json",
+        "sha256": "b0e97eab785333c90eccdb92127b0907a419e4750020bb3344f578c01400a3ba"
+      },
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-surface-parabolic-repair/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_nonempty": false,
+      "result": {
+        "bytes": 1909,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-surface-parabolic-repair/result.json",
+        "sha256": "5ef7716a7b1726aba2e6f1d196f63a26b31a158c094d709eeef342e3c44b17eb"
+      },
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "terminal": true,
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 22708,
+        "output_tokens": 32768
+      },
+      "usage_cost_estimate_usd": "1.865480"
+    },
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-surface-scope",
+      "counted_as_completed": true,
+      "provider": "Anthropic",
+      "request": {
+        "bytes": 75224,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-surface-scope/request.json",
+        "sha256": "9b2b7df1d751978496366ad2e38a35a6e7c660be84540be798a889327b8d2fce"
+      },
+      "response": {
+        "bytes": 18822,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-surface-scope/response.md",
+        "sha256": "4d93421907cb53f4a63a7c2c30aa2a7f6430915c64fa9a5e39f3dd4bc3f6c242"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1902,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-surface-scope/result.json",
+        "sha256": "47645d3cd9f0ab4a7be363eeac03504a21ca58caada6168ef4c6bd129273abbc"
+      },
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "terminal": true,
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 25284,
+        "output_tokens": 29327
+      },
+      "usage_cost_estimate_usd": "0.687676"
+    },
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-surface-height",
+      "counted_as_completed": true,
+      "provider": "OpenAI",
+      "request": {
+        "bytes": 74934,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-surface-height/request.json",
+        "sha256": "c064f804e03848e2af0ca8ad9ceb3e26ee990a0e9142dddb388bba4a217fccb6"
+      },
+      "response": {
+        "bytes": 16237,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-surface-height/response.md",
+        "sha256": "735792e36119540207670260ec80680d9f0ee189659b03d7b6bf5e1c57ab5e45"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1804,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-surface-height/result.json",
+        "sha256": "e9dc8c7c333e73f9f8da13ecb8593843b494d37fef2348c5bc7de4ed06871763"
+      },
+      "status": "completed",
+      "stop_reason": null,
+      "terminal": true,
+      "usage": {
+        "input_tokens": 17056,
+        "input_tokens_details": {
+          "cache_write_tokens": 17053,
+          "cached_tokens": 0
+        },
+        "output_tokens": 38090,
+        "output_tokens_details": {
+          "reasoning_tokens": 33937
+        },
+        "total_tokens": 55146
+      },
+      "usage_cost_estimate_usd": "2.075060"
+    }
+  ],
+  "captured_at_utc": "2026-11-12T07:49:36.576862+00:00",
+  "disposition_source": "Final parent-owned note and independent internal proof; this checkpoint adds no new mathematical certification.",
+  "expected_totals_discrepancies": [],
+  "frozen_control": {
+    "claim_gates": {
+      "all_surface_result": false,
+      "asymptotic_complexity_claim": false,
+      "classical_hardness": false,
+      "finite_control_only": true,
+      "general_algorithm_refutation": false,
+      "new_quantum_algorithm": false,
+      "separation": false
+    },
+    "existing_status": "PASS_FINITE_EXACT",
+    "rerun": false,
+    "result": {
+      "bytes": 4699,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/surface_modular_descent/result.json",
+      "sha256": "1c223446f31a9f905083ebc505c4bdb0c80dc9e8c12b129ceda06d8edf0bab5a"
+    },
+    "saved_values_checked_without_recomputing": true,
+    "scope": "One ell=3 SL2(F3) regular thrice-punctured sphere cover. Explicit compact invariant tensor dimension 2 versus parabolic local-system dimension 0; not an all-surface proof.",
+    "script": {
+      "bytes": 11432,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/surface_modular_descent/control.py",
+      "sha256": "1a832551b6e1eb70aa2c804b2569f49f56aa1a1daaebd8639e60ac30e95d6d90"
+    },
+    "script_hash_matches_existing_result": true
+  },
+  "independent_completed_review": {
+    "bytes": 29109,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-surface-modular-descent.md",
+    "sha256": "27f55eaa381040a262e3c3fe24d5dd5cd84e5db4aee356250b20562525a41e51"
+  },
+  "note": {
+    "bytes": 24049,
+    "path": "/Users/jaspersands/Developer/qsearch/research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md",
+    "sha256": "1007e2ea01578bbbcc9a0c499dd7c8b38307344e024c8f540f24638359586797"
+  },
+  "scientific_scope_gates": {
+    "classical_hardness_claim": false,
+    "constructs_module_from_native_surface": false,
+    "empty_truncated_repair_run_counted_as_completed_review": false,
+    "finite_control_proves_general_surface_theorem": false,
+    "full_native_classical_algorithm_established": false,
+    "new_quantum_algorithm_claim": false,
+    "novelty_claim": false,
+    "ordinary_invariant_identity_refuted": true,
+    "primitive_cost_polynomial_in_log_P_established": false,
+    "primitive_cost_polynomial_in_numerical_P": true,
+    "primitive_requires_genuine_supplied_Frobenius": true,
+    "quantum_execution_claim": false,
+    "separation_claim": false,
+    "supplied_complete_module_filter_written": true,
+    "uniform_reconstruction_height_bound_established": false,
+    "whole_paper_rehabilitation": false
+  },
+  "scope": "Surface modular descent falsifier and supplied-module finite primitive. Artifact-only bookkeeping; no reruns, tests, Git, network, API or scientific edits.",
+  "sources": [
+    {
+      "PDF": {
+        "bytes": 513480,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/function_factor.pdf",
+        "sha256": "62d3205e4e68e83a295a3c8e82e5a4de636843c120b3d1c64f054ec16e3fac19"
+      },
+      "metadata": {
+        "bytes": 171,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/function_factor-source.json",
+        "sha256": "efa8744096072289530de6c7ea6fda0e30416cf7854b4f10c4897e7a477b0437"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://antsmath.org/ANTSXVI/papers/Voloch.pdf"
+    },
+    {
+      "PDF": {
+        "bytes": 704375,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/function_rr.pdf",
+        "sha256": "fc05b14946763ddfe68af3de8ff9645ae7cd48e0e591035b2197866be8fa3edd"
+      },
+      "metadata": {
+        "bytes": 173,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/function_rr-source.json",
+        "sha256": "37435e90d7ad0dcc2fb71ee175513665f211d333f7b908c1b28650f202a8b82e"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://msp.org/obs/2013/1-1/obs-v1-n1-p17-p.pdf"
+    },
+    {
+      "PDF": {
+        "bytes": 510651,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/javanpeykar.pdf",
+        "sha256": "106a5a5161212cd2dd91318aa0a6f94f836d8b21f0db1911bd9074db9db3aef2"
+      },
+      "metadata": {
+        "bytes": 156,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/javanpeykar-source.json",
+        "sha256": "b1d5fcf2c69ec980b9f1aa5278c5bc8c59040aff1fc9a0ccc6127238062c08f4"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://arxiv.org/pdf/1403.6404"
+    },
+    {
+      "PDF": {
+        "bytes": 405621,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/monodromy.pdf",
+        "sha256": "d0a8fd605cc6f37b858f8adf14d74eb1c5c3ef87105432d3430760493c96ddb9"
+      },
+      "metadata": {
+        "bytes": 157,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/monodromy-source.json",
+        "sha256": "6261b825d25f8884a7c1e460ff8445c727bea5e2103944faaa33c964ed4a89f2"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://arxiv.org/pdf/2511.00431"
+    },
+    {
+      "PDF": {
+        "bytes": 578622,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/surfaces.pdf",
+        "sha256": "9693872f277e305a9175471193bf7ff28e8161e1e5e38d92c9d50940fc428351"
+      },
+      "metadata": {
+        "bytes": 183,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/source.json",
+        "sha256": "5660790ca74a4b3d84d6c402d798d4cf3832ff1d6d5c99ed7cb661452cd4d881"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://www.cse.iitk.ac.in/users/nitin/papers/Surfaces.pdf"
+    },
+    {
+      "PDF": {
+        "bytes": 719423,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/surfaces-arxiv.pdf",
+        "sha256": "c11807b90ab78528102ddb69fb46b3e7009bcd5c60c023de6326d7591c73e5ba"
+      },
+      "metadata": {
+        "bytes": 157,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/classical_surface_2026/surfaces-arxiv-source.json",
+        "sha256": "63951bed73897c117d8b1bf55ac928ed03ace176739938e547c312e9a7e068ff"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://arxiv.org/pdf/2511.05272"
+    },
+    {
+      "PDF": {
+        "bytes": 264150,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_torsion_selection/kozen_resolution.pdf",
+        "sha256": "4f5cf58fcf5f29bd5a6f6bc402e1caa1309a129bf6d8756e293be2531525cdac"
+      },
+      "metadata": {
+        "bytes": 169,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/surface_torsion_selection/kozen_source.json",
+        "sha256": "ba6cf94c506d2bc79d274df95d7a4cfcd0366c5791303aab2cd3b36abfc1a3ec"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://www.cs.cornell.edu/kozen/Papers/resolution.pdf"
+    }
+  ],
+  "status": "CLOSED_SCOPED_CHECKPOINT",
+  "title_alignment": {
+    "STATE": {
+      "bytes": 252796,
+      "path": "/Users/jaspersands/Developer/qsearch/research/STATE.md",
+      "sha256": "ee8a6468937b242f1251b264bfea5795be57b4fd493a38b288ba7365a048c18a"
+    },
+    "STATE_title": "2026-11-12 Surface Modular Descent Refuted and Finite Filter Repaired",
+    "handoff_path": "/Users/jaspersands/Developer/qsearch/research/AGENT_HANDOFF.md",
+    "latest_handoff_title": "2026-11-12 Surface Modular Descent Refuted and Finite Filter Repaired",
+    "limitations": "Only newest header inspected; alignment is time-specific and a later pass may supersede it.",
+    "status": "PASS_AT_CAPTURE"
+  },
+  "usage_snapshot": {
+    "bytes": 22384,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/surface_modular_descent/usage.json",
+    "sha256": "170157debc0fe9cbc6a903ae60447cfc1bfc1f007bd3c3025cc8fe09f0ead483"
+  }
+}

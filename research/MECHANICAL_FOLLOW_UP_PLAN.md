@@ -1,4 +1,114 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+
+## 2026-11-12 Uniform Stable Height and Canonical Divisor Choice
+
+Eight closure jobs total now; exact new packets/sessions in their dispatch.
+Wait for their terminal result files and completed reviews before ONE ledger/
+hash update. Empty or truncated reports remain marked as such. Keep the
+proven stable height and common-basepoint results separate from open support
+height, good-model/lift and original arithmetic-action inputs. No tests,
+quantum code, broad validation, Git, or paper modifications required here.
+Book mathematical signs need original-PDF inspection where extraction fails.
+
+## 2026-11-12 Logarithmic-Collision Green Bound Established
+
+Independent Merkl review is now complete and parent-read. Include its hash
+at the NEXT closure milestone; do not rerun the eight-job ledger. No numerical
+atlas sweep or code is required. Preserve geometric-only scope and reject the
+paid source mix-up. Six API closure jobs and source-focused Mascot review are
+pending; follow the preceding queue only when terminal/stable.
+
+## 2026-11-12 Accelerated Endpoint Results and Native Surface Closure
+
+The eight-request milestone ledger/hashes are frozen in
+`audits/controls/accelerated_endpoint_round/`; no duplicate scan now.
+Six new closure requests remain live in their dispatch.json. Keep their exact
+request snapshots and final status/usage, never retry unknown billing. At their
+ONE clean closure milestone, reap saved process sessions, inspect all result
+files, retain empty/partial distinctions, update their dispatch statuses, and
+extend provider-separated estimates. Do not infer remaining account balances.
+Do not hash files while reviewers are writing. No quantum code, broad tests,
+registry migration, Git or paper editing. Mathematical review/claim admission
+remains with Codex; preserve OPEN native height/lift/Frobenius gates.
+
+## 2026-11-12 Native Surface Torsion-Module Construction Under Review
+
+Three OpenAI endpoint requests are terminal/reaped; reviewers are checking
+substantive constructions. Do not run tests while reviews are being written.
+Two Claude Merkl requests remain live (dispatch.json). No retries, full suite,
+registry sweep or quantum implementation. Final usage/hash checkpoint only
+when this accelerated round closes scientifically.
+
+
+## 2026-11-12 Merkl Log-Collision Atlas Candidate
+
+Eight accelerated calls now have durable session/bundle locators in
+api_inputs/2026-11-12-accelerated/dispatch.json. Three first-wave Claude calls
+are terminal/reaped; two empty, one Q2 report completed. Parent verifies math;
+no retries, broad checks or numerical controls. Merkl proof and arithmetic
+transfer are new obligations. Keep all earlier Rees queues unchanged.
+
+
+## 2026-11-12 Accelerated Three-Endpoint Construction Round
+
+Six paid processes/bundles are listed in audits/api_inputs/2026-11-12-
+accelerated/dispatch.json. Preserve terminal reports/usage, no auto retry.
+Parent owns scientific verification and selection. Prior Gaudin's two empty
+requests are terminal; one small scoped usage/hash checkpoint may be captured
+without touching the six running calls. No tests, sweep or API infrastructure.
+
+
+## 2026-11-12 Rees H_3(Z) Theorem A Second Referee
+
+Rerun `nice -n 19 /opt/anaconda3/bin/python step1_sim.py 1` and `struct_referee.py 3 3000 7`
+in research/audits/reviews/2026-11-12-rees-h3z-referee/ and confirm the outputs match the
+committed .out files. No new computation is needed for Theorem A.
+
+## 2026-11-12 Picket-Fence Classical Prefix Shortcut Refuted
+
+Classical proof and analytic controls completed; no new numerical control
+needed. Claude empty truncation is terminal and reaped; no retry. Sole OpenAI
+constructive request remains live. Preserve terminal artifacts; after parent
+closure one usage/hash checkpoint. No quantum code or generic solver.
+
+
+## 2026-11-12 Evenly Spaced Gaudin Joint-Gap Admission
+
+Two scoped paid Gaudin proof requests are live; no retries or numerical sweep.
+Parent owns proof and source checks. Preserve terminal usage and reports; after
+scientific closure one scoped checkpoint only. Surface checkpoint is DONE.
+No quantum implementation, generic solver or expanded MPS benchmark is queued.
+
+
+## 2026-11-12 Surface Modular Descent Refuted and Finite Filter Repaired
+
+Scientific proof, independent review and one exact control are final and
+parent-read. Save ONE scoped source/report/control hash and provider usage
+checkpoint in audits/controls/surface_modular_descent/{checkpoint,usage}.json;
+no reruns, paid retries, registry sweep, full suite or point-count backend.
+Preserve the source-version distinction, numerical-P primitive cost and all
+upstream input promises. Parent owns the next scientific selection. Preserve
+all Rees queues.
+
+## 2026-11-12 Surface Modular Descent Falsifier Under Review
+
+ONE Sage SL2F3 compact-cover cellular cohomology control is delegated; freeze
+its result after parent review. No reruns/sweep/point-count backend. Parent
+owns source/cocycle proof and any repair. Two paid requests remain live.
+
+## 2026-11-12 Surface Classical Comparator and Uniform Height Gate
+
+No implementation/sweep. Keep two API requests and selected source snapshots.
+After parent closes the scientific obligations, one scoped usage/hash checkpoint.
+Prior conductivity checkpoint is DONE; preserve all Rees queues.
+
+## 2026-11-12 Periodic Conductivity Quantum Endpoint and Fixed-Precision Classical Match
+
+All scientific reviews and the frozen exact control are terminal and parent-read.
+One scoped milestone: save source/report/control hashes and reconciled provider
+usage in audits/controls/periodic_conductivity/{checkpoint,usage}.json. No rerun,
+API retry, quantum code, generic PDE runner or broad suite. Preserve Rees queues.
+
 ## 2026-11-12 Rees arXiv Readiness and Research Attacks (Claude)
 
 - Fix the exponent-discharge note per its referee: 342 rather than 414 members; 2521 ∈ E₂(8) and E₂(9); label T2/T3 conditional.

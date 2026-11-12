@@ -338,12 +338,13 @@ uses complex floats only to compare with exact counts), `nice -n 19`, at most 2 
   - κ = 4: m1 = 3, m2 = 6 at p = 13; m1 = 2, m2 = 5 at p = 17.
   - The run was stopped by hand during κ = 4, p = 29 (the DFS was too slow). κ = 4 at p ≥ 29,
     κ = 5 and κ = 6 were not computed.
-  - Integrator's re-run, 11–12 Nov (`dead_w2_rerun.out`, same script, no time limit). It reproduces
+  - Re-run by the SDE coordinating session, 11–12 Nov (`dead_w2_rerun.out`, same script, no time limit). It reproduces
     every row above (timings aside) and adds the following [exact]:
     - κ = 4: m2 = 6 at p = 29 (m1 = 3); m2 = 4 at p = 37, 41, 53.
     - κ = 5: m2 = 6 at p = 11 (m1 = 3); 5 at p = 31, 41; 4 at p = 61.
-    - κ = 6: m2 = 7 at p = 13 (m1 = 3).
-    - κ = 6 at p = 19, 31, 37, 43 is still running.
+    - κ = 6: m2 = 7 at p = 13 and at p = 19 (m1 = 3 both; p = 19 took 17.1 h).
+    - κ = 6 at p = 31, 37, 43: NOT computed. macOS killed the run about 2 min into p = 31 for low
+      swap (> 80 GB compressed memory). This DFS cannot reach these cells on this machine.
     So, at a = 2, N(κ, 2, p) reaches 2a + 1 = 5 already at p = 37 (κ = 4) and p = 61 (κ = 5), far
     below Theorem E′'s range. All rows are within Chevalley–Warning (m2 ≤ κa). This is
     falsification-level evidence for the a-independent-threshold question at a = 2 only, not a

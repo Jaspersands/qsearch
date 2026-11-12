@@ -1,4 +1,363 @@
 # Research Agent Handoff
+
+## 2026-11-12 Uniform Stable Height and Canonical Divisor Choice
+
+SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md records two independently proved,
+parent/source-checked subresults. For fixed branch TOTAL Galois-orbit bound r,
+every degree-d cover Y/P1/Qbar of positive genus has
+h_Fal(Y)<=C_r*d^5*(d+1+hB), hB ABSOLUTE LOGARITHMIC branch height. Actual
+Javan general-cover finite-place theorems plus the full Merkl atlas pay
+normalized collision averages, d²logd wild terms, differential/Wronskian
+norms and a low-base-height non-Weierstrass fibre. No supplied semistable
+extension or numerical-height computation: field enlargement is only an
+existence argument in a normalized intrinsic inequality.
+
+For any N degree0 classes, char0 or P>2g-2, at mostNg³ points prevent
+simultaneous unique effective representatives D_E~E+gb. Wronskian weights
+prove the sharper constants in the note; one closed fibre place plus exact
+RR certifies a common b in polynomial degree for fixed-rank T. Char3 smooth
+quartic y³z+yz³=x⁴ is a decisive unrestricted-characteristic counterexample.
+Original Frobenius needs D_(sigma E)^b in |sigma D_E+gb-g sigma b|.
+Uniqueness gives closed-divisor descent, not split supports or their heights.
+
+Also Merkl now has an independently checked global lower bound for distinct
+base images: gr(b,x)>=log dist_ch(pi b,pi x)-log(Cd)-C_r*d³*(d+L).
+Use the same atlas at7/8, a1/8 circle and the superharmonic minimum principle;
+this is a geometric inequality only. Paid generic torsion-height report
+confirms omitted-basepoint-height and exponential-growing-genus source gaps;
+it does NOT falsify controlled small-b construction. The ell2 example is
+not an odd-ell surface counterfamily. Chapter9 book height chain is under
+separate source attack, including its model and vertical-term hypotheses.
+
+Eight closure obligations dispatched, ceilingsUSD41 NOT spend. Three initial
+reports are completed/partial with material conclusions checked as above;
+empty lifting report provides no evidence. Level-cover, full-similitude and
+book-height tasks remain pending at this entry. Native coefficient/arithmetic,
+closed-divisor height and compatible good-reduction model gates stay OPEN.
+Source-focused Mascot review is pending. No full classical match, paper
+rehabilitation, novelty, hardness or speedup. No quantum code/sweep.
+
+Next command: read terminal closure reports and the Mascot review, then
+construct or falsify the remaining torsion-coordinate height interface.
+Expected artifact: exact global inequality with all model/vertical charges,
+or one explicit missing quantitative term. Acceptance cannot be a successful
+finite reconstruction. Source/response locators in closure dispatch.json;
+Gemini queue under this title, ONE terminal usage/hash milestone later.
+
+## 2026-11-12 Logarithmic-Collision Green Bound Established
+
+MERKL_LOG_COLLISION_ATLAS.md and independent review
+audits/reviews/2026-11-12-merkl-log-atlas.md prove for EVERY finite degree-d
+holomorphic cover Y/P1(C), genus>=1 and <=r specified branch points, a
+canonical-measure Merkl atlas with r1=3/4, N<=C_r*d*(d+L), c1<=d² and
+M<=500d(4/3)^d, L=1+log(1/min chordal separation). Thus sup gr<=
+C_r*d³*(d+L), plus the actual local two-sided regularization bound.
+All full-unit density and ordered full-overlap hypotheses are paid; no
+Belyi, spectral, supplied-chart or monodromy promise. This is analytic
+existence, not an implemented chart algorithm. Actual source appendix
+checked; no numerical optimization needed for the fixed-radius asymptotic.
+
+Strongest prior bound here used exponential logarithmic-branch-height
+Belyi conversion or exponential cover degree. No arithmetic transfer yet:
+averaged collisions, stable Faltings, model/torsion coordinates and lifting
+remain explicit obligations. Completed paid proof's source mix-up is rejected;
+partial transfer report supplies no completed proof. Next hard question is
+joint-polynomial arithmetic transfer from the full atlas, not sup gr alone.
+Six API closure jobs remain live in the preceding entry/dispatch; no retry.
+Next command: inspect terminal closure-faltings response and source packet;
+expected artifact a full general-branch finite-place/Wronskian proof or exact
+gap. Acceptance requires charged heights/model terms and actual source scope.
+No full classical match, point count, hardness, novelty or quantum claim.
+Gemini queue under this title preserves the same gates; no sweep/code needed.
+
+## 2026-11-12 Accelerated Endpoint Results and Native Surface Closure
+
+Eight-request round CLOSED with five completed reports, two empty truncations,
+and one partial transfer report. Parent checked completed material findings
+and independent reviews. SURFACE_NATIVE_TORSION_MODULE.md now proves the
+presented-cover geometric module construction in poly(ell, NUMERICAL P, bits)
+for fixed n,r, including native zeta and full-rank pairing certification.
+Natural-module preservation must be certified; original coefficient A remains
+an input unless constructed. No arbitrary scalar normalization or full torsion
+splitting. Merkl logarithmic-collision atlas survives independent core attack;
+final review is being written, so its arithmetic use remains conditional.
+
+LOCAL_KUMMER_NATIVE_PERTURBATION.md records actual original-E subgroup sampling
+and the finite branch-resultant repair. The signed-divisor-to-conditioned-
+Mumford interface remains OPEN; no complete half or local Kummer algorithm.
+CHARACTER_BROAD_PHASE_SOURCE.md closes only public bounded-parity-l1 sources,
+with an averaged joint-success bound. Explicit4d-query nonlinear BIT processing
+escapes that model; no generic source lower bound. Exact assumptions, classical
+baselines and falsifiers are in these notes and the linked completed reviews.
+No numerical controls or quantum implementation are needed for these proofs.
+
+Selected ONE continuation by external value: can the strongest classical
+surface competitor now be made uniform on native coefficients? This is the
+closest concrete end-to-end comparison after independent endpoint review.
+Six distinct owner-authorized paid obligations are running: level-cover
+presentation, general-branch Faltings transfer, common nonspecial basepoint,
+genuine coefficient action, torsion support heights, good-reduction lifting.
+Corpus then primary checks preceded briefs; explicit packets/commands/bundles
+in audits/api_inputs/2026-11-12-surface-closure/dispatch.json. Request ceilings
+USD28 are NOT actual charges. The lift input was locally rejected for PDF
+control characters BEFORE any API call; its sanitized mathematical packet
+then dispatched once. No unknown-charge or paid failed call was retried.
+
+Usage milestone: acceleratedUSD11.141382 (Anth4.506662, OpenAI6.634720).
+Terminal cumulative runner estimates excluding new closure jobs: Anth92
+nonpartialUSD74.251518 (43 completed/nonempty); OpenAI8 USD16.571020
+(7 completed/nonempty). Two historical timeout bills UNKNOWN/excluded.
+Artifacts: audits/controls/accelerated_endpoint_round/{usage,checkpoint}.json.
+Estimates are neither invoices nor measured balances. Do not subtract owner
+anchors. All whole-algorithm, speedup, hardness, novelty gates stay false.
+
+Next command: read each terminal closure response.md plus result.json in
+bounded excerpts; independently prove its specific interface and check actual
+source assumptions. Expected artifact: scoped closure/obstruction note, not
+another blanket acceptance label. Acceptance: every charged field, coefficient
+height, arithmetic action and certified divisor map explicit, or precise OPEN
+obligation. Gemini mechanical queue has this title; no Git, sweep or full suite.
+
+## 2026-11-12 Native Surface Torsion-Module Construction Under Review
+
+Hard parent construction in SURFACE_NATIVE_TORSION_MODULE.md removes supplied
+zeta and full torsion-basis advice for the small-characteristic geometric cover
+input. Actual Lauder--Wan Theorems1/37 and Cor3 proof pay smooth-model zeta
+in poly(plane degree, NUMERICAL P,logq). With m=(r-2)n fixed, union of all
+Frobenius primary factors of degree<=m contains the natural isotypic span and
+is Weil-self-dual. Common H=ell^ceil(log_ell(2g))*product_(j<=m)(ell^j-1)
+kills its semisimple/unipotent parts, polynomial at fixed m. Couveignes partial
+outputs are accepted only after a full known-dimension Weil-pairing rank
+certificate; G-Hom and genuine Frob on E then come from divisor arithmetic.
+No full ambient splitting field, prime-support splitting or hidden zeta oracle.
+
+UNDER independent review: audits/reviews/2026-11-12-surface-native-module.md.
+Coefficient-module scalar linearization is still required for the ORIGINAL
+family W-Frobenius; cover normalizer alone does not determine it. Divisors are
+rational CLOSED-place representations over one field, not all geometric
+supports rational. Native cover construction, lifting, uniform height and full
+point count remain separate. No speedup/novelty/execution gate promoted.
+
+All three accelerated OpenAI requests completed with substantive reports;
+separate reviewers check Q2 actual-point grid/resultant and character restricted
+phase falsifier. Two new Claude Merkl proof/transfer calls remain live. Next
+command: read stable independent reviews/terminal Merkl reports, verify exact
+scope, select next constructive endpoint. No numerical control or quantum
+backend. Mechanical queue at top; dispatch.json stores all paid sessions.
+
+
+## 2026-11-12 Merkl Log-Collision Atlas Candidate
+
+New concrete parent derivation UNDER ATTACK: MERKL_LOG_COLLISION_ATLAS.md.
+For EVERY degree-d cover of the complex sphere with fixed r branch points,
+minimum chordal separation delta, proposes Merkl atlas r1=3/4,
+N<=C_r*d*(d+log1/delta), c1<=Cd², logM<=Cd. Whitney base disks lifted
+unramified, root charts extending to radius2^(1/e), Bergman mean-value bounds
+and full-overlap transition estimates would give sup canonicalGreen<=
+C_r*d³*(d+log1/delta). Primary Merkl definition/theorem read; all chart/count/
+density steps await independent attack. This directly targets the exponential
+branch-height obstruction, not another geometry subsystem. No full Faltings,
+finite-place, supplied-coordinate or point-count theorem is promoted.
+
+Two NEW Claude obligations (Fable/high64k proof, Opus/high32k arithmetic transfer)
+join the accelerated round; not retries of closed empty gap/source requests.
+Eight distinct requests dispatched total; local ceilingsUSD32, not actual spend.
+Three OpenAI endpoint constructions still pending. First Claude Q2 report is
+completed and independently checked: volume transfer valid, global loss tail
+as written impossible outside2G, existential good charts do not construct them,
+and E-level materialization does not preserve a much finer good-loss event.
+The other two first-wave Claude reports are EMPTY truncations. No result from
+those, no retry. Dispositions review: audits/reviews/2026-11-12-kummer-coset-
+volume-report.md. Next: verify atlas/transfer and endpoint reports, then choose
+ONE constructive continuation. Session/bundle locators in accelerated/dispatch.json;
+mechanical queue at top. No quantum code, numerical sweep or claims from labels.
+
+
+## 2026-11-12 Accelerated Three-Endpoint Construction Round
+
+Owner explicitly requested faster API use. Six independent paid obligations
+are running across three constructive endpoints; exact contracts/baselines/
+falsifiers in ACCELERATED_ENDPOINT_SELECTION.md and dispatch.json under
+api_inputs/2026-11-12-accelerated. Three OpenAI/max constructions plus Claude
+surface source audit, native Q2 obstruction, and exact character-law decoder.
+Local preflight ceilingsUSD23 total, NOT spend/billing caps. No retries or
+unrelated service/Git actions. Corpus then actual sources precede dispatch.
+Select ONE continuation by external value after verifying returned mathematics.
+
+Prior Gaudin pass CLOSED scoped attempt: GAUDIN_PICKET_FENCE_ADMISSION.md and
+independent classical review establish only weak-window gap>=1/2 and sampler
+TV<=8NH²t², plus exact N4 native deleted-norm falsifier. Full interval OPEN;
+no new quantum algorithm/hardness/separation. Both paid gap attempts EMPTY at
+token limits (ClaudeUSD0.715176, OpenAIUSD2.503510 estimates); no evidence or
+retry. Do not continue nearby gaps by inertia. Surface arithmetic coefficient
+Frobenius versus a merely scalar-ambiguous normalizer lift is an explicit guard.
+Next command: read terminal batches, check exact proof/source assumptions,
+choose a concrete endpoint. Expected artifact: verified individual dispositions
+and one next theorem; no quantum code/sweep. Mechanical queue at top.
+
+
+## 2026-11-12 Rees H_3(Z) Theorem A Second Referee (GAP, repaired)
+
+Claim: in H_3(Z), every hidden H with H ∩ Z ≠ 1 (generators |entries| < 2^b, b given,
+oracle coherent on signed box (−2^B,2^B)) is found in quantum poly(b, w, log 1/ε); "H ∩ Z ≠ 1"
+answers are always correct. Status: proved given Kuperberg Thm 1.5/7.1 and cor:utz (itself
+AI-checked); AI-refereed twice; pending human review; not in the paper. Hostile referee
+(audits/reviews/2026-11-12-rees-h3z-referee.md) found two GAPs, both re-checked and repaired
+in audits/reviews/2026-11-12-rees-h3z-infinite-index.md §2: (1) Step 1 accepted multiples of e
+(e = 3, b = 1, outcome 34/512 gives r = 15); fix: gcd of accepted values. (2) Kuperberg's query
+box: Algorithm A (§7.1, read in the PDF) queries only ‖x‖_∞ < Q/2, Q = exp(poly(n)), so
+B = poly(b), not O(b). Also: b must be an input; rk-2 calls cor:utz at b' = 4b+2; n = 3 needs
+Imran–Ivanyos for q = 2; Lemma E is sharp to a factor 2. Gates stay false; the cyclic case
+(H ∩ Z = 1) is still open. Human items: Kuperberg §§7.4–7.8 (upper bound on n as input,
+error constant), Mosca–Ekert §§2/4.2, cor:utz at n = 3. Next hard question unchanged (QZS,
+note §9). Mechanical item: top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-12 Picket-Fence Classical Prefix Shortcut Refuted
+
+Hard derivation in GAUDIN_PICKET_FENCE_ADMISSION.md, independently reviewed in
+audits/reviews/2026-11-12-gaudin-picket-classical.md. SAME evenly spaced family,
+N4,label0101,eps_i=i/4,g=t/4: for all sufficiently small t>0, deleting first
+site from the full on-shell Gaudin norm matrix gives the WRONG empty-prefix
+norm. Exact error (v1+v2-2e)²/[(v2-v1)²(v1-e)²(v2-e)²] tends to1024/9.
+IFT proves the real native branch; parent derived the identity independently.
+No finite experiment or sampling lower bound. Relative error can vanish as t->0.
+
+Actual classical formulas pay specified amplitudes/full norms/local observables,
+not extensive conditional norms. Uniform native root/charge tracking also OPEN.
+Weak-window gap>=1/2 independently checked for t<=1/(8H_(N-1)); deterministic
+outputb has TV<=8NH²t² there, hence matched when t<=sqrt(eta)/(2sqrt(2N)H)
+as well. No extension to full interval. Claude counterattack truncated EMPTY,
+estimatedUSD0.715176, no retry/evidence. Sole OpenAI constructive request LIVE.
+Next: read terminal proof attempt, verify full-interval argument or record OPEN;
+expected artifact scoped final disposition. No more classical control/sweep or
+quantum implementation. All full-algorithm/hardness/novelty/separation gates false.
+Mechanical queue: preserve report/usage, one checkpoint only after closure.
+
+
+## 2026-11-12 Evenly Spaced Gaudin Joint-Gap Admission
+
+OPEN decisive candidate: GAUDIN_PICKET_FENCE_ADMISSION.md. Independent selection
+after surface closure compared modular coefficients (actual Bruin conditional
+classical theorem), split-order lattice isomorphism (known BHJ scope) and this
+explicit quantum endpoint. Fixed eps_i=i/N, physical g=t/N,t in[0,1], even N,
+ALL half-filled bit-labelled branches. A uniform inverse-polynomial SAME-sector
+joint gap would finish the existing no-charge-advice random-dephasing traversal.
+Norms/derivatives are polynomial; no scalar-energy or different-sector substitute.
+
+Cheap analytic control: for t<=1/(8H_(N-1)), ||Q_i-n_i||<=1/4. Continuous
+commuting spectral projectors retain rank-one bit labels, so same-weight squared
+joint separation>=1/2. Product sampling matches only the smaller interval
+2*sqrt(2N)*H*t<=eta. No extension to t=1, hardness or novelty follows. Prior
+clustered-site1/N falsifier is outside the evenly spaced promise. Two distinct
+paid proof attacks LIVE; internal review checks exact classical sampling costs.
+Next command: read terminal reports, verify their actual full-interval theorem
+or counterfamily, then at most one targeted algebra control. Expected artifact:
+scoped proof/OPEN disposition in the topic note. No quantum implementation or
+parameter sweep. Mechanical queue at top; all full-algorithm gates stay false.
+
+
+## 2026-11-12 Surface Modular Descent Refuted and Finite Filter Repaired
+
+CLOSED scoped audit: SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md and independent
+review audits/reviews/2026-11-12-surface-modular-descent.md. For odd prime ell,
+full natural Sp monodromy and nontrivial transvection inertia, compact-cover
+ordinary invariant tensors equal OPEN cohomology, not parabolic cohomology:
+dimensions (r-2)n versus r-2n. This refutes displayed Theorem4.1 in BOTH the
+author-hosted and arXiv2511.05272v1 sources. The latter's excision injection
+has kernel dimension r. Explicit Legendre cover gives2 versus0 (one exact
+SL2F3 cellular control); quintic dimensions13516 versus96. No universal
+nontermination claim for Algorithm8, no classical lower bound or separation.
+
+Constructive repair: from a SUPPLIED complete torsion module, genuine
+compatible Frobenius, explicit separable cover/deck maps and charged common
+divisor fields, enumerate Kummer subcovers and recover inertia. Parabolicity
+is the intrinsic test C_E(tau) intersect preimage(-I) nonempty. Fixed n,r cost
+is polynomial in ell, NUMERICAL auxiliary characteristic P, presented sizes
+and log1/eta. The Aut(E) bound gives a polynomial constant-field clock; actual
+RR/factorization/local-resolution sources pay representation costs. This
+removes a finite filter blocker only. Native module/Frobenius construction,
+auxiliary-prime selection, arithmetic lifting and uniform height remain OPEN.
+Cited branch-height bound is exponential in logarithmic input height; twist
+family y²=a*x(x-1)(x-2) also refutes free supplied-model coordinate heights.
+Neither observation is hardness. Quantum G0/Euler route remains unaffected.
+
+Two completed paid reports checked; one empty truncation supplies no evidence.
+All requests terminal. Keep novelty, separation, full classical match, whole-
+paper rehabilitation and execution gates false. Next hard action: independent
+selection comparing constructive endpoints; no further height barrier sweep.
+Next command: one scoped hash/usage checkpoint, no rerun; expected artifacts
+controls/surface_modular_descent/{checkpoint,usage}.json. Acceptance: exact
+source-version/input/cost boundaries retained. Mechanical queue at top.
+
+## 2026-11-12 Surface Modular Descent Falsifier Under Review
+
+Hard derivation recorded in SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md: for oddell,
+full Sp natural monodromy and nodal transvections, compact-cover ordinary
+invariant tensors equal OPEN H1(U,M), because pullback boundary norm
+sum_{k<ell}(I+N)^k=0. They do not equal parabolic H1(P1,j_*M): dimensions
+(r-2)2g versus r-4g (quintic13516 vs96; generic cubic20 vs8). Central -I
+makes H1/H2(G,M)=0, so Hochschild--Serre does not remove this defect.
+Independent core review confirms the mechanism and is writing exact proof;
+one SL2F3 cellular control pending. This specifically challenges classical
+source2511.05272 Theorem4.1 purity/descent, not a classical lower bound or
+refutation of all possible repairs. Earlier native height-uniformity issue
+also remains; two paid reports are live. Existing quantum G0/Euler route did
+not assume ordinary modular invariant descent. No claim gates promoted.
+Next command: read completed proof/control and paid reports; acceptance is
+exact compact/open/parabolic distinction with arithmetic repair obligations.
+Expected artifacts in audits/reviews and controls/surface_modular_descent;
+mechanical queue below, no full point-count implementation or sweep.
+
+## 2026-11-12 Surface Classical Comparator and Uniform Height Gate
+
+PROVISIONAL source audit: SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md. Fresh actual
+Saxena--Venkatesh2511.05272 Theorem5.1 gives classical poly(logp) point counting
+for each FIXED characteristic-zero surface. This is a stronger comparator for
+prior quartic/quintic work, without a Hodge-compatible abelian replacement.
+Native EVERY-Fp-input transfer remains OPEN: canonical lift has logarithmic
+height O(logp), but cited Javanpeykar6.0.4 uses EXPONENTIAL branch height H_B.
+Its bound is poly(d)*exp(C_r*h_B), not polynomial in bit height;6.0.6 merely
+absorbs that factor into a height-dependent degree exponent. This is no height
+lower bound and does not refute the fixed-X theorem. Primary PDFs/locators and
+parameter substitutions saved in note. Two paid obligations live (Claude scope,
+OpenAI constructive uniform height); no quantum implementation or numerical sweep.
+Next command: read terminal reports, verify uniform height/reconstruction or
+record exact missing lemma. Expected artifact: scoped comparator decision;
+accept native classical matching only with all access/bit obligations paid.
+All novelty/hardness/separation gates remain false. Mechanical queue at top.
+
+## 2026-11-12 Periodic Conductivity Quantum Endpoint and Fixed-Precision Classical Match
+
+CLOSED written algorithms: PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md. For EVERY
+size-B circuit specifying {1,rho} edge conductivities on the L=2^n two-dimensional
+torus, fixed rational contrast, scalar effective conductivity has a paid quantum
+poly(B,n,1/epsilon,log1/delta) gate algorithm. A finite contrast series, Fourier
+gradient reflection, fresh LCU flags and unpostselected Hadamard tests close the
+endpoint without normalized source advice or a QSVT inverse backend.
+
+Strongest checked classical attack: marked heat-kernel signed paths give cost
+poly(B,n,1/epsilon,log1/delta) times
+[n+loglog(e^2/epsilon)]^O_rho(log(1/epsilon)+1). This matches fixed precision;
+inverse-polynomial precision gives only a quasi-polynomial upper bound.
+The finite implementation pays full-matrix quadrature, binary binomial sampling,
+whole-transcript coupling, capped interval choice and per-path dyadic rounding.
+No weighted-expectation inference from TV, l1 heat-tail claim or exact Poisson
+oracle. Known Eyre--Milton reflection acceleration improves contrast constants.
+
+Two completed independent core reviews and one completed OpenAI report were
+parent-read; two truncated Claude reports supplied checked partial reasoning,
+not completed reviews. One frozen six-case Sage control checks identities only.
+False gates: novelty, hardness, separation, practical advantage, general PDEs,
+growing contrast, full-field output and quantum execution. Full joint-polynomial
+classical precision dependence remains OPEN, not evidence of a speedup.
+
+Next hard question: independently choose an externally valuable native endpoint
+with a new paid constructive mechanism. Next command: corpus been-tried for
+candidate mechanisms, then primary-source/baseline comparison; expected artifact
+is a narrow admission decision with an end-to-end resource obligation and cheapest
+falsifier. No further mesh sweep/framework. Mechanical milestone (hashes/usage,
+no reruns) is at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
 ## 2026-11-12 Rees arXiv Readiness, Source Checks and Three Research Attacks
 
 Claude session; AI only, pending human review; claim gates unchanged. Papers are local (gitignored).

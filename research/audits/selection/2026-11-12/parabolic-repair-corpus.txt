@@ -1,0 +1,98 @@
+Been tried? parabolic modular cohomology Kummer torsor centralizer
+
+Killed before
+  1. negative   NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND  [retained · NONABELIAN-COSET-COLLECTIVE-OBSERVABLES, LIE-TYPE-MATRIX-HSP, SYMPLECTIC-PARABOLIC-HSP, ISOTROPIC-PARABOLIC-SPECTRUM]
+     research/registry/negative_results.json:68122
+     Claim: Quantum algorithms can achieve an exponential speedup for finding unknown isotropic parabolic subgroups P_U in Sp(2n, F_q) over classical algorithms.
+     Why not: For every k-dimensional isotropic subspace U in F_q^{2n} (1 <= k <= n) and every non-zero vector u, the symplectic transvection T_u belongs to P_U if and only if u in U^perp. This algebraic equivalence allows an explicit classical randomized algorithm to reconstruct U in expected O(n q^k) queries an
+  2. negative   NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND  [retained · NONABELIAN-COSET-COLLECTIVE-OBSERVABLES, LIE-TYPE-MATRIX-HSP, UNITARY-PARABOLIC-HSP, HERMITIAN-INVARIANT-OBSTRUCTION]
+     research/registry/negative_results.json:72760
+     Claim: Quantum algorithms can achieve an exponential speedup for finding unknown parabolic subgroups P_U stabilizing isotropic subspaces in unitary groups U(n, F_{q^2}) and SU(n, F_{q^2}) over classical algorithms.
+     Why not: For every k-dimensional isotropic subspace U in F_{q^2}^n (1 <= k <= m = floor(n/2)), every non-zero skew-Hermitian scalar lam, and every non-zero isotropic vector v, the unitary transvection T_{v, lam} belongs to P_U if and only if v in U^perp. An explicit classical randomized algorithm finds a bas
+  3. negative   NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND  [retained · NONABELIAN-COSET-COLLECTIVE-OBSERVABLES, LIE-TYPE-MATRIX-HSP, ORTHOGONAL-PARABOLIC-HSP, QUADRATIC-INVARIANT-OBSTRUCTION]
+     research/registry/negative_results.json:68286
+     Claim: Quantum algorithms can achieve an exponential speedup for finding unknown parabolic subgroups P_U stabilizing isotropic subspaces in orthogonal groups O(d, F_q) and SO(d, F_q) over classical algorithms.
+     Why not: For every k-dimensional isotropic subspace U in F_q^d (1 <= k <= m = floor(d/2)) and every non-singular vector v in F_q^d, the orthogonal reflection R_v (for p > 2) or transvection T_v (for p = 2) belongs to P_U if and only if v in U^perp. In SO(d, F_q) for k < m, bireflections R_{v0} R_v satisfy th
+  4. negative   NEG-COSET-TYPICAL-PURE-PYTHON-MODULAR-YJM-N10-KERNEL  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION]
+     research/registry/negative_results.json:64934
+     Claim: The exact modular YJM projector is ready for an n=10 multi-prime run in the current pure-Python kernel.
+     Why not: Nine projected trials require 819396 full sparse-axis passes over 589,824 coordinates before CRT repetition.
+  5. negative   LEGACY-NOVEL_MODULAR_PRODUCT_SECRET_FINDING  [retained · NO-TOY-ORACLE, PO-FAMILY, PO-CLASSICAL-BASELINE, PO-FALSIFIERS]
+     research/registry/negative_results.json:56909
+     Claim: Novel_Modular_Product_Secret_Finding: Quadratic speedup
+     Why not: arbitrary oracle_secret_finding proposal; N=3 simulation cap; claimed speedup despite zero simulation success; secret-finding framing with no natural scalable family
+
+Dequantization checks
+  1. dequant    DEQ-COSET-TYPICAL-MODULAR-YJM-IS-FINITE-CERTIFIER-NOT-SCALABLE-ALGORITHM  [critical]
+     research/registry/dequantization_checks.json:1162
+     Claim: Replacing factorial pair-group expansion with exact modular YJM contraction establishes a scalable nonabelian HSP algorithm.
+     Why not: Use the modular method only as an exact finite-block certifier. Compile the kernel and reconstruct the n=10 sextic, while keeping the exponential state dimension, all-n gap, transform, decoder, and classical-separation obligations blocked.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIES  [high]
+     research/registry/dequantization_checks.json:3186
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+  3. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7454
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-SELF-DUAL-WREATH-CENTRALIZER-NOT-HIDDEN-SUBGROUP  [critical]
+     research/registry/dequantization_checks.json:1492
+     Claim: The centralizer Gelfand pair makes the hidden-subgroup PGM optimal for every register count.
+     Why not: Apply any all-register Gelfand-pair theorem to H=<h_e>, not to its conjugacy stabilizer C_W(h_e). Keep PGM optimality unproved unless a different sufficient condition is established.
+  5. dequant    DEQ-DCP-TESTED-LLL-DENSITY-ONE-TAIL-COLLAPSE  [critical]
+     research/registry/dequantization_checks.json:755
+     Claim: Finite modular LLL recovery near density one establishes inverse-polynomial coverage for Regev's partial solver.
+     Why not: Treat the tested centered modular LLL embeddings and fixed-arity basis scans as baselines. Require a new short-vector geometry or structural preprocessing plus a uniform average-case coverage and reversible complexity theorem; do not generalize this finite search to all lattice-based subset-sum solv
+
+Notes and handoff
+  1. note       Surface point counting: the classical height-uniformity gate › New core falsifier: modular compactification lo  [unlabelled]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:108
+     Work geometrically in characteristic zero with odd ell, U=P1 minus r nodes, M=Fell^(2g) the natural Lefschetz module, G=Sp_2g(Fell), and the full G-torsor V->U trivializing M.
+  2. note       Quartic-surface P2 from explicit torsion-cover twists › Construction and proof ledger  [unlabelled]
+     research/SURFACE_TORSION_COVER_RECONSTRUCTION.md:80
+     With right torsor/deck PULLBACK, that module corresponds to the chi^-1 sector, projector |H|^-1 sum_h chi(h)h.
+  3. handoff    2026-11-12 Surface Modular Descent Falsifier Under Review  [journal]
+     research/MECHANICAL_FOLLOW_UP_PLAN.md:2
+     ONE Sage SL2F3 compact-cover cellular cohomology control is delegated; freeze its result after parent review.
+  4. note       Cyclic support for multiplicative Galois descent › Native question and selection  [unlabelled]
+     research/CYCLIC_SUPPORT_MONOMIAL_DESCENT.md:7
+     Prior art to retain: Magma's SUnitCohomologyProcess and classical Galois cohomology/S-unit methods; Kutas--Montessinos uses bounded tensor powers for central simple algebras.
+  5. note       Arithmetic Tensor Isomorphism: Constructive Baselines First › Why The Tempting Quantum Extension Is Weak  [unlabelled]
+     research/ARITHMETIC_TENSOR_DIRECTION_AUDIT.md:102
+     - A Jacobian and marked Jacobian point do not identify the genus-one torsor or supply a rational point on it.
+
+Code and experiments
+  1. theorem    Certificate and scaling gate for exact modular YJM contraction.  [code]
+     theorems/coset_typical_modular_yjm_contraction.py:1
+     coset typical modular yjm contraction.
+  2. experiment Exact spatial transfer and all-copy decay of the one-round echo  [planned]
+     research/registry/experiments.json:18888
+     Derive alternating endpoint transfers, quotient by the correct conjugation group, reconstruct exact moments with bounded modular arithmetic, compare quantum pair-event baselines, and replay positive-vector decay certificates with integer inequalities.
+  3. experiment Self Dual Wreath Dyadic Modular Fiber Torsion No Go  [planned]
+     research/registry/experiments.json:5562
+     exp code self dual wreath dyadic modular fiber torsion no go.
+  4. hypothesis dcp_quantum_linear_systems_hhl_condition_number_modular_inversion_bridge_contract
+     research/hypotheses/dcp_quantum_linear_systems_hhl_condition_number_modular_inversion_bridge_contract.json
+     Continuous HHL/QSVT real matrix inversion of modular syndrome equations suffers from both condition number blowup kappa(H) > 1 and unknown integer wrap-around k in Z^m, whereas discrete reversible modular CNOT/Hensel row reduction is a permutation unitary with kappa = 1 and 100% recovery.
+  5. theorem    Public prime-field arithmetic for a proposed Siegel-parabolic reduction.  [code]
+     theorems/symplectic_field_chart.py:1
+     Public prime-field arithmetic for a proposed Siegel-parabolic reduction.
+
+Literature
+  1. literature Diameters of finite simple groups: sharp bounds and applications  [seed · symmetric-group, centralizer-bound, fixed-point-free-permutation, conjugacy-class]
+     research/literature_records.json
+     Diameters of finite simple groups: sharp bounds and applications Records the perfect-matching involution as the maximal-centralizer fixed-point-free even permutation.
+  2. literature Learning With Errors and Extrapolated Dihedral Cosets  [audit]
+     research/literature_audits/ternary_covariant_noise_sources.json
+     Zvika Brakerski Elena Kirshanova Damien Stehle Weiqiang Wen arXiv:1710.08223 https://www.iacr.org/archive/pkc2018/10770194/10770194.pdf Section4 and Theorem4, pages22-23 Known Fourier readout of Gaussian EDCP gives Gaussian-noisy modular linear samples under the stated parameters.
+  3. literature dcp_projective_code_admission_sources  [audit]
+     research/literature_audits/dcp_projective_code_admission_sources.json
+     AUDIT-DCP-PROJECTIVE-CODE-ADMISSION DCP_BELL_INFERENCE_KERNEL.md DCP_NATIVE_SCHUR_EXPANSION.md DCP_BOOLEAN_PHASE_PULLBACK.md STATE_HSP_DHSP_SCOPE.md odd-secret Pauli target equivalence noncentral dihedral commutator criterion native fixed-CSS code shortened-kernel formula systematic-tail Bell signa…
+  4. literature Quantum Fourier transform toolbox  [seed · wreath-qft-toolbox, clifford-theory, mackey-qft]
+     research/literature_records.json
+     Efficient group QFT does not provide a subgroup copy decoder, useful HSP measurement, or unknown-centralizer alignment.
+  5. literature ternary_posterior_dual_sources  [audit]
+     research/literature_audits/ternary_posterior_dual_sources.json
+     LIT-NATIVE-PAIRED-POSTERIOR-DUAL research/TERNARY_COVARIANT_NOISE.md research/TERNARY_LIKELIHOOD_GATE.md research/TERNARY_LEAST_TRIT_BOOTSTRAP.md research/TERNARY_INCIDENCE_DECODER.md Exact paired-record least-trit posterior as three weighted signed-root convolution coefficients All-secret raw-reco…
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

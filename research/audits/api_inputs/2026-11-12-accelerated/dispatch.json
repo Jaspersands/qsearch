@@ -1,0 +1,71 @@
+{
+  "owner_acceleration": "2026-11-12 explicit request to use credits faster",
+  "local_ceiling_total_usd": 32,
+  "cost_note": "Preflight request ceilings, not account billing caps or actual spend; no retries.",
+  "jobs": [
+    {
+      "provider": "openai",
+      "obligation": "surface-build",
+      "bundle": "research/audits/openai_runs/2026-11-12-fast-surface-build",
+      "session_id": 34682,
+      "local_request_ceiling_usd": 5,
+      "observed_status": "completed"
+    },
+    {
+      "provider": "openai",
+      "obligation": "kummer-build",
+      "bundle": "research/audits/openai_runs/2026-11-12-fast-kummer-build",
+      "session_id": 49740,
+      "local_request_ceiling_usd": 5,
+      "observed_status": "completed"
+    },
+    {
+      "provider": "openai",
+      "obligation": "character-build",
+      "bundle": "research/audits/openai_runs/2026-11-12-fast-character-build",
+      "session_id": 89433,
+      "local_request_ceiling_usd": 5,
+      "observed_status": "completed"
+    },
+    {
+      "provider": "claude",
+      "obligation": "surface-source",
+      "bundle": "research/audits/claude_runs/2026-11-12-fast-surface-source",
+      "session_id": 64126,
+      "local_request_ceiling_usd": 2,
+      "observed_status": "truncated"
+    },
+    {
+      "provider": "claude",
+      "obligation": "kummer-attack",
+      "bundle": "research/audits/claude_runs/2026-11-12-fast-kummer-attack",
+      "session_id": 10813,
+      "local_request_ceiling_usd": 3,
+      "observed_status": "completed"
+    },
+    {
+      "provider": "claude",
+      "obligation": "character-decode",
+      "bundle": "research/audits/claude_runs/2026-11-12-fast-character-decode",
+      "session_id": 65923,
+      "local_request_ceiling_usd": 3,
+      "observed_status": "truncated"
+    },
+    {
+      "provider": "claude",
+      "obligation": "merkl-proof",
+      "bundle": "research/audits/claude_runs/2026-11-12-fast-merkl-proof",
+      "session_id": 66233,
+      "local_request_ceiling_usd": 6,
+      "observed_status": "completed"
+    },
+    {
+      "provider": "claude",
+      "obligation": "merkl-transfer",
+      "bundle": "research/audits/claude_runs/2026-11-12-fast-merkl-transfer",
+      "session_id": 75848,
+      "local_request_ceiling_usd": 3,
+      "observed_status": "truncated"
+    }
+  ]
+}

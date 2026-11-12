@@ -1,0 +1,68 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2054,
+      "path": "research/audits/api_inputs/2026-11-12-accelerated/state-excerpt.md",
+      "sha256": "0944ba5bda705139c7c915be3ee271f2518cae390bb0e3c914591566c91163fd",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 17367,
+      "path": "research/audits/api_inputs/2026-11-12-accelerated/merkl-source.md",
+      "sha256": "4b44b8a0f78c420985986d47a476f54c47387097dbc3281aa51215693c5c846c",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 42266,
+      "path": "research/audits/api_inputs/2026-11-12-accelerated/javan-proof-sections.md",
+      "sha256": "323556d350cb4fdc88fd1221fd196653c12a01e889fe10d9fea64452ddfafa24",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 4865,
+      "path": "research/MERKL_LOG_COLLISION_ATLAS.md",
+      "sha256": "d69ada7fe9db10e8c0d01290ab6e2a59c12dcd2eed84ac7f6bf9bc3576d8d653",
+      "snapshot": "context/003.txt"
+    },
+    {
+      "bytes": 24049,
+      "path": "research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md",
+      "sha256": "1007e2ea01578bbbcc9a0c499dd7c8b38307344e024c8f540f24638359586797",
+      "snapshot": "context/004.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 32922,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T08:48:19.076799+00:00",
+  "input_token_allowance": 33581,
+  "max_budget_usd": 3.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.789684,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-accelerated/merkl-transfer.md",
+    "sha256": "1c5abba4eb8df1cbba4951ca0a8a746b80ceebac86158b8554983c4e0ff2fea7",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T084252.124388Z-32682fe6",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 32922,
+    "output_tokens": 32768
+  },
+  "usage_cost_estimate_usd": 0.787048
+}

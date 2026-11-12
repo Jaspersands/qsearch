@@ -1,0 +1,269 @@
+{
+  "API_reports": [
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-endpoint",
+      "counted_as_completed": false,
+      "provider": "Anthropic",
+      "request": {
+        "bytes": 68556,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-endpoint/request.json",
+        "sha256": "da7471045a7c3adc308e5839eca7a4cb92a6fc4452fe1193a73d966181c56de0"
+      },
+      "response": {
+        "bytes": 6795,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-endpoint/response.md",
+        "sha256": "3ae9f35de253da2e564d70c04c25b7d10ab9a673f9df81262ca735a767397e8b"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1661,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-endpoint/result.json",
+        "sha256": "8c913fa8863b06c04eb9c562f7393b6f631c9880db723f79f134315cef1e72dd"
+      },
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "terminal": true,
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 23544,
+        "output_tokens": 32768
+      },
+      "usage_cost_estimate_usd": "1.873840"
+    },
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-heat",
+      "counted_as_completed": false,
+      "provider": "Anthropic",
+      "request": {
+        "bytes": 17787,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-heat/request.json",
+        "sha256": "da6b9f80f848eecc4b4f16883bc82080c1dfd3e53f6f0a6eba37adff720de524"
+      },
+      "response": {
+        "bytes": 12916,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-heat/response.md",
+        "sha256": "f0aab65c3a2b8ffb4d78d7407cbd254f98017a4cffa60b94a1b4799df6317eac"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1663,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-heat/result.json",
+        "sha256": "6636d33252d5d6330b21a0e386b601200c99d81333888e18046890a98a340bf8"
+      },
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "terminal": true,
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 7317,
+        "output_tokens": 32768
+      },
+      "usage_cost_estimate_usd": "1.711570"
+    },
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-classical",
+      "counted_as_completed": true,
+      "provider": "OpenAI",
+      "request": {
+        "bytes": 18779,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-classical/request.json",
+        "sha256": "2a829c97dceb206dc0a0880ae167c1f028d80ce59df3b0773e79c961ee84d5e2"
+      },
+      "response": {
+        "bytes": 15440,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-classical/response.md",
+        "sha256": "afa6f3211c25087a4cc8aee82d17e61cdd4d35c04aca6b9702a7993ade21a595"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1575,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-classical/result.json",
+        "sha256": "fbb374efabce924d6e0a8b32968bb1986a9afb7e990876400825fcb2381ac6c4"
+      },
+      "status": "completed",
+      "stop_reason": null,
+      "terminal": true,
+      "usage": {
+        "input_tokens": 3792,
+        "input_tokens_details": {
+          "cache_write_tokens": 3789,
+          "cached_tokens": 0
+        },
+        "output_tokens": 40337,
+        "output_tokens_details": {
+          "reasoning_tokens": 35804
+        },
+        "total_tokens": 44129
+      },
+      "usage_cost_estimate_usd": "2.054770"
+    }
+  ],
+  "captured_at_utc": "2026-11-12T07:07:26.403969+00:00",
+  "disposition_source": "Final parent-owned note and completed independent internal reviews; bookkeeping checkpoint does not constitute a new mathematical review.",
+  "frozen_control": {
+    "claim_gates": {
+      "asymptotic_scaling_claim": false,
+      "classical_hardness": false,
+      "finite_control_only": true,
+      "fixture_tuning": false,
+      "matrix_square_root_used": false,
+      "quantum_circuit_execution": false,
+      "quantum_speedup": false,
+      "separation": false,
+      "succinct_all_input_estimator_implemented": false
+    },
+    "existing_status": "PASS_FINITE_EXACT",
+    "rerun": false,
+    "result": {
+      "bytes": 12950,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/periodic_conductivity/result.json",
+      "sha256": "fc67616eebb064dcaa2c587629eb75d0f6ff2ac5bb7e827b63c8b8f87bfef063"
+    },
+    "saved_direct_projection_values_and_tail_inequalities_verified": true,
+    "scope": "Exactly six L=4, rho=2, QQ cases: three fixed phase patterns, both forcing directions; checks energy transcription and a contrast Neumann bound only.",
+    "script": {
+      "bytes": 8222,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/periodic_conductivity/control.py",
+      "sha256": "8e2e91a258594700f18d8c0c31895467159f6fa058ebc8fd1a183f8e091568e9"
+    },
+    "script_hash_matches_existing_result": true
+  },
+  "internal_completed_reviews": [
+    {
+      "bytes": 9986,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-conductivity-quantum.md",
+      "sha256": "b1dd5090ae589ba2fd933ef4b5ac8764a8a5d807f6325a37a7e7b8922c9f96ba"
+    },
+    {
+      "bytes": 11923,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-conductivity-heat.md",
+      "sha256": "aebbdba302663757443b23c6f9c53e7fe5e8732f0ecca83ac715150c03e4a5ee"
+    }
+  ],
+  "note": {
+    "bytes": 23967,
+    "path": "/Users/jaspersands/Developer/qsearch/research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md",
+    "sha256": "4aae2d6ddf87d7afb01b47157c940829b5fea647c47b8cb30cfde79908a7e9a0"
+  },
+  "scientific_scope_gates": {
+    "classical_hardness_claim": false,
+    "classical_joint_polynomial_precision_bound_established": false,
+    "finite_control_proves_asymptotic_bounds": false,
+    "full_grid_comparison_alone_used_as_advantage": false,
+    "general_elliptic_PDE_theorem_claim": false,
+    "novelty_claim": false,
+    "practical_speedup_claim": false,
+    "quantum_execution_claim": false,
+    "separation_claim": false,
+    "two_truncated_API_reports_counted_as_completed": false,
+    "written_all_circuit_quantum_scalar_upper_bound": true,
+    "written_classical_match_at_fixed_precision": true
+  },
+  "scope": "Conductivity written endpoint plus fixed-precision classical match; artifact-only verification. No control reruns, Git, network, API or broad tests.",
+  "sources": [
+    {
+      "PDF": {
+        "bytes": 1405943,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/accelerated.pdf",
+        "sha256": "8f4b3b2a891934754c4118bc6b97cfd9187eab5f4b6233ece759ac3472d051bc"
+      },
+      "metadata": {
+        "bytes": 152,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/accelerated-source.json",
+        "sha256": "5db981d2f953705c9da59f8d5faab087ec5025a5830540873abe1c0be05f4aa4"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://arxiv.org/pdf/1711.05880"
+    },
+    {
+      "PDF": {
+        "bytes": 926418,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/interference.pdf",
+        "sha256": "25e4307f58ef1a7fa3b1effe6a3807e7f26d6c428de163f680b6d4c4fe27771d"
+      },
+      "metadata": {
+        "bytes": 151,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/interference-source.json",
+        "sha256": "4b7e325f244988cdc7b30f8a414cbcae0f5406dff8d350f043b2c7bfe9da7797"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://arxiv.org/pdf/1305.2186"
+    },
+    {
+      "PDF": {
+        "bytes": 787552,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/mourrat.pdf",
+        "sha256": "9bc4d5f09b657c7afb02082dab9d9d8107da42b3d8184ebfdc30a96e96067abf"
+      },
+      "metadata": {
+        "bytes": 152,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/mourrat-source.json",
+        "sha256": "ab77b5192209e8c99106fc0d23bd703769367bc1dd4937e0f5ddfde34c8b9761"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://arxiv.org/pdf/1609.06674"
+    },
+    {
+      "PDF": {
+        "bytes": 1257483,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/qsvt.pdf",
+        "sha256": "0326a3de56b10c9805074031a827b1ac4c5ee526c5ad362096adfbacc261c60d"
+      },
+      "metadata": {
+        "bytes": 152,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/qsvt-source.json",
+        "sha256": "5fd394295303e54432d2ca9f8749d7e400c2e8bc725c0a73e0dae1e83870232d"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://arxiv.org/pdf/1806.01838"
+    },
+    {
+      "PDF": {
+        "bytes": 599532,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/paper.pdf",
+        "sha256": "bb5ff0b283056e65cf2463c39ff2837578e8c0f40d49f2274a1b4792c889dbaf"
+      },
+      "metadata": {
+        "bytes": 173,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/source.json",
+        "sha256": "3b78fac01ed8a7929af6db209ca881eacb227ff31245e3a6384014afbdbffa9a"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://arxiv.org/pdf/2610.41690v1"
+    },
+    {
+      "PDF": {
+        "bytes": 830308,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/wavelet_pde/paper.pdf",
+        "sha256": "b24b1434f129447a7d8d109358af83366219056ee6033d827910dec20f8387b2"
+      },
+      "metadata": {
+        "bytes": 171,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/wavelet_pde/source.json",
+        "sha256": "cbefdbd6bca8f0a24cbb45b37df430ac057973e6431caf855ca737a45c66122b"
+      },
+      "metadata_hash_matches_PDF": true,
+      "recorded_source_url": "https://arxiv.org/pdf/2306.11802"
+    }
+  ],
+  "status": "CLOSED_SCOPED_CHECKPOINT",
+  "title_alignment": {
+    "STATE": {
+      "bytes": 251461,
+      "path": "/Users/jaspersands/Developer/qsearch/research/STATE.md",
+      "sha256": "1cd4f646e83dfc233e525e278046210f75eabb48b187cd7d519561f8d0152256"
+    },
+    "STATE_title": "2026-11-12 Periodic Conductivity Quantum Endpoint and Fixed-Precision Classical Match",
+    "handoff_path": "/Users/jaspersands/Developer/qsearch/research/AGENT_HANDOFF.md",
+    "latest_handoff_title": "2026-11-12 Periodic Conductivity Quantum Endpoint and Fixed-Precision Classical Match",
+    "limitations": "Alignment is captured now. Later research passes can legitimately supersede STATE and the top handoff title; no archive contents were read.",
+    "status": "PASS_AT_CAPTURE"
+  },
+  "usage_snapshot": {
+    "bytes": 18130,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/periodic_conductivity/usage.json",
+    "sha256": "dd064cb1f23da9dd10f1ce0e27e12137ccf271a80c66bd533be4e2ae2512aaef"
+  }
+}

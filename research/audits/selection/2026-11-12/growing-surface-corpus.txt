@@ -1,0 +1,105 @@
+Been tried? growing degree surfaces cohomology Frobenius point counting
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-NAIMARK-COMPRESSED-PERMUTATION-BARRIER  [retained · CODE-COSET-COLLECTIVE, CODE-EQUIVALENCE-HARD-FAMILY-SEARCH, UNIFORM-HARMONIC-NAIMARK-DILATION, COMPRESSED-PERMUTATION-POVM]
+     research/registry/negative_results.json:70656
+     Claim: A uniform harmonic Naimark dilation with compressed permutation outcomes (point-stabilizer or cycle-type) on the growing-width carrier space can bypass the Holevo information collapse and identify the hidden permutation 
+     Why not: By the Peter-Weyl decomposition and Frobenius reciprocity on S_n downarrow S_{n-1}, any covariant point POVM has diagonal matrix elements [M_j]_{g, g} = 1/n! identically across all group elements g, producing exactly flat outcome distributions p(j | tau) = 1/n with zero mutual information. When coup
+  2. negative   NEG-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM, PO-MEASUREMENT]
+     research/registry/negative_results.json:69956
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM.
+     Why not: Falsified or refined by exact theorem evaluation.
+  3. negative   NEG-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY, PO-MEASUREMENT]
+     research/registry/negative_results.json:71763
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY.
+     Why not: Falsified or refined by exact theorem evaluation.
+  4. negative   NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER (quarantined)  [QUARANTINED_OVERBROAD_NO_GO · ARBITRARY-DEGREE-NUMBER-FIELD, MULTIDIMENSIONAL-CONTINUOUS-HSP, HALLGREN-SCHMIDT-VOLLMER, EXPONENTIAL-DEGREE-BARRIER]
+     research/registry/quarantined_campaign_negatives.json:622
+     Claim: Quantum algorithms can compute the unit group regulator and solve the Principal Ideal Problem in polynomial time for algebraic number fields of arbitrary, growing degree n = [K : Q].
+     Why not: The multi-dimensional continuous torus HSP over R^r / Lambda_K (where r = r_1 + r_2 - 1 = Theta(n)) avoids non-abelian representation obstacles because the torus is abelian, yielding dual lattice characters chi_u(x) = exp(2 pi i u . x). However, inverting the dual lattice from noisy quantum samples 
+  5. negative   FULL-SOURCE-SELECTOR-SCHUR-NOT-POLYNOMIAL-COMPRESSION  [derived-review-pending · CODE-COSET-COLLECTIVE, source-stabilizer selector measurement compilation]
+     research/registry/negative_results.json:55419
+     Claim: Radializing a fixed selector mask guarantees polynomial-size output matrices or an efficient final measurement through copy-permutation symmetry alone, with all irrep source labels retained at growing degree.
+     Why not: The exact source-stabilizer Schur decomposition retains all spin sectors and both spin/source multiplicities. Its total matrix entries are binomial(K+4r-1,4r-1), polynomial in K only at fixed category count r, before factorial group-pair contraction and precision costs. Under full irrep sources p=d^
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8004
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9533
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-SELF-DUAL-WREATH-PURE-COMMUTATOR-NOT-MIXED-RECOUPLING  [critical]
+     research/registry/dequantization_checks.json:1437
+     Claim: The unconditioned Frobenius commutator formula contracts class-conditioned mixed third-moment terms.
+     Why not: Construct the four-class recoupling kernel or directly contract its action on physical character portfolios.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7718
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-DHS-DCP-IID-USTATISTIC-VARIANCE-DCP-USTATISTIC-VARIANCE-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13152
+     Claim: RESULT-EXP-DHS-DCP-IID-USTATISTIC-VARIANCE-DCP-USTATISTIC-VARIANCE: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Quartic-surface P2 from explicit torsion-cover twists › Scientific question and exact contract  [unlabelled]
+     research/SURFACE_TORSION_COVER_RECONSTRUCTION.md:9
+     Quartic degree and ambient dimension are FIXED; growing genus/degree is excluded.
+  2. handoff    2026-11-07 Surface P2 Torsion-Cover Reduction  [journal]
+     research/AGENT_HANDOFF.md:1923
+     No novelty/speedup, practicalcost, growing- degree, shortcertificate, human/formal verification or full/quantumexecution.
+  3. note       Mersenne Carry Walsh Evaluation: Reviewed Local Construction › 11. Relation To The Investigated Literature  [unlabelled]
+     research/MERSENNE_CARRY_WALSH_DRAFT.md:662
+     <https://arxiv.org/pdf/math/0607346> - Lauder and Wan, *Counting points on varieties over finite fields of small characteristic*: point counting with degree/Newton-polytope dependence.
+  4. note       Native quintic-surface P2 beyond the K3-type abelian mechanism › Selection, input and endpoint  [unlabelled]
+     research/QUINTIC_SURFACE_P2_ADMISSION.md:16
+     Question: compute exact FULL degree53 P2 of EVERY smooth quintic SURFACE X in P3/Fp from binary coefficients/p only, in bounded-error quantum poly(logp,log1/eta) BIT/gate time at FIXED degree5.
+  5. note       Exact Surface Counts: CM Reconstruction And A Real Classical Attack › Research Decision  [unlabelled]
+     research/JACOBI_SURFACE_RECONSTRUCTION.md:22
+     Selected question: can that arithmetic yield a charged exact point-count reduction for split Fermat SURFACES, and what can a serious classical attack already reconstruct?
+
+Code and experiments
+  1. theorem    Exact ribbon-surface topology for two ordered binary partitions.  [code]
+     theorems/self_dual_wreath_two_partition_ribbon_surface.py:1
+     A full
+support profile contains many partitions; selecting one pair gives a rigorous
+upper bound, but a growing-degree theorem must exploit several support cells
+simultaneously when their support entropy is large.
+  2. result     EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH growing-degree-pressure-proof-debt-localized  [growing-degree-pressure-proof-debt-localized]
+     research/registry/experiment_results.json:7221
+     Localized growing-degree marked-word pressure proof debt with deterministic best-first support mutation and exact presentation records.
+  3. theorem    Gauge homology of overlapping affine-plane carrier channels.  [code]
+     theorems/self_dual_wreath_interplane_gauge_homology.py:1
+     Point-basis and line-channel
+sign changes are vertex gauges on this bipartite graph, so gauge classes are
+its first ``F_2`` cohomology:
+
+    dim H^1 = E - V + c.
+  4. theorem    Exact Jacobi/CM experiment for split Fermat SURFACES, not a quantum oracle.  [code]
+     theorems/jacobi_surface_reconstruction.py:1
+     cyclotomic referencecharacters valuation profile surface bound lift surface residue native surface count public ideal basis classical lll attempt identify root turns primary normalize public surface attempt surface control large public ideal control run controls main.
+  5. theorem    White-box mixed-Frobenius lifting, not a general circuit factorizer.  [code]
+     theorems/frobenius_circuit_lift.py:1
+     frobenius circuit lift.
+
+Literature
+  1. literature Diameters of finite simple groups: sharp bounds and applications  [seed · symmetric-group, centralizer-bound, fixed-point-free-permutation, conjugacy-class]
+     research/literature_records.json
+     Cycle-centralizer formulas, strong induction on moved degree, fixed-point factorization, falling factorial bounds, and exact hyperoctahedral intersection counting.
+  2. literature ternary_phase_depth_sources  [audit]
+     research/literature_audits/ternary_phase_depth_sources.json
+     2026-10-06 Native exact factored mixed derivative engine and sharp growing-depth degree controls Depth-independent minus sign in the weighted L-fold Schur top tensor Actual native cubic-admitted subspace failing at the fifth derivative Conditional native secret visibility consequence and full-order…
+  3. literature Quantum Algorithms for Gowers Norm Estimation, Polynomial Structure Testing, and Counting Arithmetic Progressi  [seed · gowers-norm, property-testing, higher-order-fourier, finite-fields]
+     research/literature_records.json
+     Quantum Algorithms for Gowers Norm Estimation, Polynomial Structure Testing, and Counting Arithmetic Progressions Recent signal that higher-order harmonic analysis is an active quantum algorithms interface.
+  4. literature hermite_decoder_prior_art  [audit]
+     research/literature_audits/hermite_decoder_prior_art.json
+     A polynomial with a nonzero highest derivative coefficient need not have a regular base-field point in the high-degree regime.
+  5. literature ARXIV-2609.40321-v1  [audit]
+     research/literature_audits/binary_error_frontier_sources.json
+     Ternary Section4.2 quotient primitive only; not complete published sample-time algorithm or growing-modulus DCP conversion.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

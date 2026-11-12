@@ -1,0 +1,103 @@
+Been tried? surface torsion Edixhoven module finite field Frobenius primary component
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION, PO-MEASUREMENT]
+     research/registry/negative_results.json:71731
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION.
+     Why not: Falsified or refined by exact theorem evaluation.
+  2. negative   NEG-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED, PO-MEASUREMENT]
+     research/registry/negative_results.json:72329
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED.
+     Why not: Falsified or refined by exact theorem evaluation.
+  3. negative   NEG-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE, PO-MEASUREMENT]
+     research/registry/negative_results.json:72510
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE.
+     Why not: Falsified or refined by exact theorem evaluation.
+  4. negative   NEG-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM, PO-MEASUREMENT]
+     research/registry/negative_results.json:69956
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM.
+     Why not: Falsified or refined by exact theorem evaluation.
+  5. negative   NEG-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY, PO-MEASUREMENT]
+     research/registry/negative_results.json:71763
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY.
+     Why not: Falsified or refined by exact theorem evaluation.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9522
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:10160
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8015
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:10017
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9566
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Surface point counting: the classical height-uniformity gate › Selection and native question  [unlabelled]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:6
+     Constructive classical mechanism under examination: construct the torsion cover of a fixed-genus Lefschetz pencil; isolate a fixed-dimensional Edixhoven module at a SMALL auxiliary prime; Hensel lift that module with paid precision; recover its arithmetic Galois action; evaluate Frobenius at p and…
+  2. note       Surface point counting: the classical height-uniformity gate › Parent finite-field repair construction  [unlabelled]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:281
+     Voloch, *Factoring polynomials over function fields*, Lemma3.1 and Theorems3.2/4.1 give a factor/root algorithm polynomial in numerical P and the supplied coefficient spaces, modulo finite-field factorization.
+  3. handoff    2026-11-07 Surface Torsion-Cover Candidate  [journal]
+     research/AGENT_HANDOFF.md:2079
+     SURFACE_TORSION_COVER_RECONSTRUCTION.md selects exact full P2 of smooth quartic K3/Fp via explicit torsion-cover TWISTS and known genus-polynomial quantum curve zeta, targetpoly(logp), fixeddegree only.
+  4. note       Surface point counting: the classical height-uniformity gate › Parent finite-field repair construction  [unlabelled]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:210
+     Input: ell odd PRIME, a finite field k of characteristic P prime toell|G|, an explicit geometrically connectedG=Sp_n(Fell) coverV->U whose local monodromies are nontrivial transvections, and its compact curveC in a separable plane/function-field presentation.
+  5. handoff    2026-11-07 Surface Torsion Character Repair  [journal]
+     research/MECHANICAL_FOLLOW_UP_PLAN.md:652
+     Exact classical control is already saved at research/audits/controls/surface_torsion_cover/control.json, with all claim gatesFALSE.
+
+Code and experiments
+  1. theorem    Exact public arithmetic for the p-torsion Lie algebra of an explicit ring.  [code]
+     theorems/lie_torsion_reduction.py:1
+     lie torsion reduction.
+  2. theorem    Exact ribbon-surface topology for two ordered binary partitions.  [code]
+     theorems/self_dual_wreath_two_partition_ribbon_surface.py:1
+     The original one-vertex presentation
+identifies all surface vertices, so its group is
+
+    (*_j pi_1(Sigma_{g_j})) * F_(sum_j(f_j-1)),
+
+where ``f_j`` is the number of ribbon faces in component ``j``.
+  3. theorem    Exact Jacobi/CM experiment for split Fermat SURFACES, not a quantum oracle.  [code]
+     theorems/jacobi_surface_reconstruction.py:1
+     cyclotomic referencecharacters valuation profile surface bound lift surface residue native surface count public ideal basis classical lll attempt identify root turns primary normalize public surface attempt surface control large public ideal control run controls main.
+  4. experiment Self Dual Wreath Separating Surface Target Mixing  [planned]
+     research/registry/experiments.json:12731
+     Future obstruction searches should reject certified surface-boundary targets before expensive finite character screens.
+  5. theorem    Full p-torsion words from a public integer relation lattice.  [code]
+     theorems/abelian_quotient_torsion.py:1
+     abelian quotient torsion.
+
+Literature
+  1. literature Critical pairs for the Product Singleton Bound  [audit]
+     research/literature_audits/dcp_native_schur_sources.json
+     Theorem3.3 and its proof, Lemmas2.7/2.9/2.10 and the finite-field descent; no MDS hypothesis is needed for this use.
+  2. literature Large affine spaces of non-singular matrices  [audit]
+     research/literature_audits/dcp_conditional_carry_sources.json
+     PRIMARY_ABSTRACT_CHECKED Background context for the dedicated binary-field source above.
+  3. literature A reduction from Hawk to the principal ideal problem in a quaternion algebra  [audit]
+     research/literature_audits/native_rlwe_quaternion_sources.json
+     Current primary abstract and metadata; NOT the merged current full proof.
+  4. literature singer_shor_access_closure_sources  [audit]
+     research/literature_audits/singer_shor_access_closure_sources.json
+     https://arxiv.org/abs/quant-ph/9508027 Known public-field coordinate logarithm and final residual logarithm; cannot classify their composition as a new breakthrough.
+  5. literature Solving Shift Problems and Hidden Coset Problem Using the Fourier Transform  [seed · hidden-shift, shifted-character, multiplicative-character, finite-fields]
+     research/literature_records.json
+     Solving Shift Problems and Hidden Coset Problem Using the Fourier Transform Generalizes shifted multiplicative-character recovery through finite-field Fourier deconvolution.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

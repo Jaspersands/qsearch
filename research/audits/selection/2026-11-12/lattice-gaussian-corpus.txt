@@ -1,0 +1,102 @@
+Been tried? quantum Gibbs log concave lattice discrete Gaussian partition function
+
+Killed before
+  1. negative   NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER (quarantined)  [QUARANTINED_OVERBROAD_NO_GO · ARBITRARY-DEGREE-NUMBER-FIELD, MULTIDIMENSIONAL-CONTINUOUS-HSP, HALLGREN-SCHMIDT-VOLLMER, EXPONENTIAL-DEGREE-BARRIER]
+     research/registry/quarantined_campaign_negatives.json:622
+     Claim: Quantum algorithms can compute the unit group regulator and solve the Principal Ideal Problem in polynomial time for algebraic number fields of arbitrary, growing degree n = [K : Q].
+     Why not: The multi-dimensional continuous torus HSP over R^r / Lambda_K (where r = r_1 + r_2 - 1 = Theta(n)) avoids non-abelian representation obstacles because the torus is abelian, yielding dual lattice characters chi_u(x) = exp(2 pi i u . x). However, inverting the dual lattice from noisy quantum samples 
+  2. negative   NEG-CONTINUOUS-VARIABLE-GKP-NON-GAUSSIAN-BARRIER  [retained · CONTINUOUS-VARIABLE-QUANTUM-COMPUTING, GAUSSIAN-DEQUANTIZATION, HUDSON-THEOREM, GKP-CODE]
+     research/registry/negative_results.json:62055
+     Claim: Continuous-variable quantum computing using Gaussian states or finite-squeezing Gottesman-Kitaev-Preskill (GKP) codes achieves scalable fault-tolerant quantum advantage without high-overhead non-Gaussian magic distillati
+     Why not: Pure Gaussian CV quantum algorithms have non-negative Wigner functions and are simulated classically in O(N^3) time, providing zero quantum speedup. In GKP bosonic error correction, Gaussian operations only implement the Clifford group, which is dequantized in O(N^2) time via the Gottesman-Knill the
+  3. negative   NEG-PARITY-BLOCK-USD-MATCHED-CLASSICAL-PRANGE  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID]
+     research/registry/negative_results.json:68323
+     Claim: Collective three-message parity block USD decoding establishes a quantum Gibbs sampling advantage over classical Prange methods.
+     Why not: Eliminating the Hamiltonian block spin yields a correlated classical block-Prange sampler whose constraint load 2*c^2 exactly matches the joint quantum erasure load, matching the random-sign Gibbs sampling threshold.
+  4. negative   NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER  [retained · SL2R-HSP, NONCOMPACT-LIE-GROUP, HARISH-CHANDRA-CHARACTERS, CONTINUOUS-PLANCHEREL-MEASURE]
+     research/registry/negative_results.json:72715
+     Claim: The Hidden Subgroup Problem over the non-compact Lie group SL(2, R) with respect to discrete Fuchsian subgroups can be solved in polynomial time by quantum Fourier sampling.
+     Why not: In SL(2, R), spherical principal series representations are infinite-dimensional on L^2(R), and Harish-Chandra characters are class functions invariant under conjugation. By the Selberg trace formula, weak Fourier sampling on the continuous unitary spectrum provides identically 0.000 bits of mutual 
+  5. negative   NEG-DCP-SUBSET-SUM-VOLUME-ONLY-LATTICE-GAP  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-EMBEDDING-VOLUME-THEOREM]
+     research/registry/negative_results.json:67773
+     Claim: The standard or O(log n) carry-sliced density-one embedding creates an asymptotic planted short-vector separation visible from covolume alone.
+     Why not: Both exact determinant roots tend to four, placing the planted witness at limiting ratio sqrt(2*pi*e)/4 to the Gaussian volume scale.
+
+Dequantization checks
+  1. dequant    DEQ-SELF-DUAL-WREATH-TYPICAL-PRECERTIFIED-CATALOG-SUPERPOLYNOMIAL  [critical]
+     research/registry/dequantization_checks.json:1712
+     Claim: A polynomial list of partition-specific recoupling certificates covers constant natural physical-label mass.
+     Why not: Construct one uniform reversible rule parameterized by sampled partition descriptions, with no explicit catalog.
+  2. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13647
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-SELF-DUAL-WREATH-STABLE-PARTITION-MASS-VANISHES  [critical]
+     research/registry/dequantization_checks.json:1646
+     Claim: A bounded-tail stable-partition recoupling rule covers typical natural physical irrep labels.
+     Why not: Handle Plancherel-typical partitions with growing rows and columns; do not condition the algorithm on a vanishing-mass stable sector.
+  4. dequant    DEQ-RESULT-EXP-DHS-DCP-IID-LOW-RANK-CONTRACTION-DCP-LOW-RANK-CONTRACTION-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13130
+     Claim: RESULT-EXP-DHS-DCP-IID-LOW-RANK-CONTRACTION-DCP-LOW-RANK-CONTRACTION: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:10160
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Structured EDCP: Fiber-Adaptive Canonical Gaussian Obstruction › 4. Arbitrarily Narrow Targets: Interpolate Pr  [review-pending]
+     research/STRUCTURED_EDCP_CONDITIONAL_METRIC_AUDIT.md:117
+     If psi(t) is the log partition function along this affine log-density path, then its affinity with p_0 has logarithm log H(p_0,p_t)=psi(t/2)-(psi(0)+psi(t))/2.
+  2. note       Superlattice conditional records: paid source audit › Source and question  [proved]
+     research/SUPERLATTICE_CONDITIONAL_RECORD_AUDIT.md:7
+     Native candidate: given a rational n-dimensional lattice basis and width s, prepare a pure discrete-Gaussian state with all lattice, precision, memory and success costs charged.
+  3. note       Constructive Research Priority Decision › 2026-10-22 Induced-Phase Public Algebra Implemented  [unlabelled]
+     research/RESEARCH_PRIORITY_DECISION.md:3148
+     A special prime-log dual-lattice search is not a genericCVP/LWE solver; the required external reduction is absent.
+  4. note       Next Source Direction: Coherent Sine Windows, Not Easy Polynomial-Gap Cubes › Why This Is Higher Leverage  [unlabelled]
+     research/LATTICE_SINE_WINDOW_SOURCE_SPEC.md:10
+     A smoother PUBLIC localization instrument can reduce the gap needed for the noisy coset-state promise without assuming a free discrete-Gaussian state on a hard lattice.
+  5. note       Structured EDCP: A Profile-Matched Classical List Decoder › 3. The Actual Randomized Decoder  [review-pending]
+     research/STRUCTURED_EDCP_PROFILE_LIST_DECODER.md:83
+     At coordinate i, conditioned on already selected later coefficients, draw an integer from the one-dimensional discrete Gaussian with center given by that residual and width beta_i=tau/h_i=g_(D+1-i)/(2*s_G).
+
+Code and experiments
+  1. theorem    Test local orbit-span repair against an EXACT matched classical Gibbs walk.  [code]
+     theorems/gibbs_orbit_parent.py:1
+     One exact local update; no partition function, matrix or orbit table.
+  2. theorem    DCP discrete Gaussian vs. sine vs. box window LWE Fourier leakage and unit-shift optimality bridge.  [code]
+     theorems/dcp_gaussian_vs_sine_window_lwe_fourier_leakage_bridge.py:1
+     DCP discrete Gaussian vs.
+  3. hypothesis parity_block_usd_prange_contract  [CONSTRUCTIVE_LOCAL_DECODER_CLASSICALLY_MATCHED_EXTERNAL_REVIEW_PENDING]
+     research/hypotheses/parity_block_usd_prange_contract.json
+     public signed-XOR Ising clauses and known binary pure-state overlap; classical sampler receives the full public problem, not an unknown quantum codeword research/PARITY_BLOCK_USD_PRANGE.md parity promise removed scratch or failure state silently discarded coherent prior assigned classical-codeword…
+  4. theorem    All-n Holevo budget for carrier-label pinching hierarchies.  [code]
+     theorems/self_dual_wreath_carrier_holevo_budget_theorem.py:1
+     The partition generating function gives
+the self-contained bound
+
+    log p(n) <= t n + pi^2/(6t),
+    log_2 p(n) <= pi sqrt(2n/3)/ln 2.
+  5. theorem    Positive affine-subspace instruments and matched affine Gibbs samplers.  [code]
+     theorems/linear_erasure_prange_duality.py:1
+     No global quantum Gibbs algorithm is supplied.
+
+Literature
+  1. literature singer_shor_access_closure_sources  [audit]
+     research/literature_audits/singer_shor_access_closure_sources.json
+     AUDIT-SINGER-KNOWN-SHOR-ACCESS-CLOSURE Clean zero-input/XOR coordinate phase construction using paid known DLog Complete unheralded amplified hyperplane Fourier output law Exact randomized sqrt(q) schedule with constant mean recovery Matching to the previous sparse membership lower bound under iden…
+  2. literature Sample-Preserving Search-to-Decision Reduction for Noisy Linear Equations over Large Moduli  [audit]
+     research/literature_audits/native_recursive_quotient_sources.json
+     derive rounded-continuous-Gaussian tolerance for the general-noise theorem at every used root; do not substitute the discrete-Gaussian corollary LIT-BTV-2026-SAMPLE-PRESERVING c is explicitly nonzero in Z_q, not just a nonzero integer bounded multiple lists with explicit coefficient ambiguity and r…
+  3. literature Algorithms for quantum computation: discrete logarithms and factoring  [seed · period-finding, abelian-hsp, number-theory, breakthrough-template]
+     research/literature_records.json
+     Algorithms for quantum computation: discrete logarithms and factoring Reference model for a Shor-level algorithm: reduction plus Fourier sampling plus classical postprocessing.
+  4. literature singer_residual_hardness_sources  [audit]
+     research/literature_audits/singer_residual_hardness_sources.json
+     Quantum algorithms for abelian difference sets and applications to dihedral hidden subgroups No independent theorem review, complete coherent Gauss-sum implementation audit or generic lattice reduction into this source.
+  5. literature Quantum Computation and Lattice Problems  [seed · lattice, dihedral-hsp, unique-svp, reduction]
+     research/literature_records.json
+     Quantum Computation and Lattice Problems Connects efficient dihedral HSP progress to lattice breakthroughs.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

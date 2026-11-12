@@ -1,0 +1,278 @@
+{
+  "arithmetic": "Sage GF(3); exact ranks, kernels, quotients and finite group enumeration",
+  "claim_gates": {
+    "all_surface_result": false,
+    "asymptotic_complexity_claim": false,
+    "classical_hardness": false,
+    "finite_control_only": true,
+    "general_algorithm_refutation": false,
+    "new_quantum_algorithm": false,
+    "separation": false
+  },
+  "compact_cover": {
+    "Euler_characteristic": -4,
+    "boundary1_rank": 23,
+    "boundary2_rank": 19,
+    "coboundary_dimension": 23,
+    "compact_H1_cohomology_dimension": 6,
+    "compact_H1_cohomology_tensor_natural_invariant_dimension": 2,
+    "compact_cocycle_dimension": 29,
+    "convention": "Edges right-multiply; left deck cochains pull back by inverse left multiplication. Homology action is separately computed as inverse transpose of cohomology action.",
+    "d1_d0_zero": true,
+    "directed_edges": 48,
+    "dual_homology_tensor_natural_invariant_dimension": 2,
+    "face_orbits_by_inertia": {
+      "a": {
+        "3": 8
+      },
+      "b": {
+        "3": 8
+      },
+      "c=(ab)^-1": {
+        "6": 4
+      }
+    },
+    "filled_faces": 20,
+    "genus": 3,
+    "left_deck_cohomology_a": [
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        2,
+        2,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2
+      ]
+    ],
+    "left_deck_cohomology_b": [
+      [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        1,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "natural_selfdual_alternating_form_verified": true,
+    "open_H1_dimension": 25,
+    "tensor_invariant_equation_rank": 10,
+    "vertices": 24
+  },
+  "comparison": {
+    "anticipated_values_observed": true,
+    "compact_tensor_invariant_dimension": 2,
+    "explicit_finite_representation_identity_falsified": true,
+    "ordinary_invariant_descent_identity_holds": false,
+    "parabolic_local_system_dimension": 0,
+    "values_computed_not_imposed": true
+  },
+  "control_sha256": "1a832551b6e1eb70aa2c804b2569f49f56aa1a1daaebd8639e60ac30e95d6d90",
+  "group": {
+    "a": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "b": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "boundary_word_product_abc_identity": true,
+    "c=(ab)^-1": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "generated_group_equals_all_det_one_matrices": true,
+    "name": "SL2(F3)",
+    "order": 24
+  },
+  "inertia_natural_module": [
+    {
+      "coinvariant_dimension": 1,
+      "matrix": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "name": "a",
+      "norm_sum": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "norm_sum_is_zero": true,
+      "order": 3
+    },
+    {
+      "coinvariant_dimension": 1,
+      "matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "name": "b",
+      "norm_sum": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "norm_sum_is_zero": true,
+      "order": 3
+    },
+    {
+      "coinvariant_dimension": 0,
+      "matrix": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "name": "c=(ab)^-1",
+      "norm_sum": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "norm_sum_is_zero": true,
+      "order": 6
+    }
+  ],
+  "natural_local_system": {
+    "H1_open_dimension": 2,
+    "H1_parabolic_dimension": 0,
+    "coboundary_dimension": 2,
+    "free_group_cocycle_dimension": 4,
+    "global_invariant_dimension": 0,
+    "inertia_restriction_rank": 2,
+    "parabolic_cocycle_dimension": 2,
+    "restriction_convention": "f(c)=-c*(f(a)+a*f(b)); quotient each inertia value by im(t-I)"
+  },
+  "status": "PASS_FINITE_EXACT"
+}

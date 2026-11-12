@@ -1,0 +1,148 @@
+# Surface point counting: the classical height-uniformity gate
+
+2026-11-12. PROVISIONAL source-based admission; two paid obligations LIVE.
+No new quantum algorithm, classical full match, lower bound or implementation.
+
+## Selection and native question
+
+Start STATE/TRAPS after conductivity closure. Saved corpus lookups in
+`audits/selection/2026-11-12/` compare growing-degree surfaces, growing-genus
+Jacobians, lattice Gaussians and stochastic games before literature. Curve
+zeta is already a known quantum polynomial algorithm (Kedlaya, retained source);
+growing-degree surface torsion frames cost ell^Theta(g^2), with no new compression.
+Game-tree min/max and Gibbs annealing sources offer polynomial improvements,
+not a newly identified polynomial-time mechanism for their hard native regimes.
+Those directions are not admitted merely because their general problem is open.
+The decisive new comparator is the actual Saxena--Venkatesh surface paper,
+not the keyword catalog (which had no applicable named baseline).
+
+Single selected question: can the known classical Edixhoven-subspace algorithm
+be made polynomial in the NATIVE binary input for EVERY smooth degree-five
+hypersurface X/P3/Fp? Input is p and all coefficients; output exact degree53
+P2(T). No fixed characteristic-zero model, cohomology, torsion field or low-height
+lifting advice. The prior written quantum poly(logp,log1/eta) algorithm is in
+QUINTIC_SURFACE_P2_ADMISSION.md, with fixed degree and huge constant exponents.
+Its Hodge obstruction never implied a classical algorithmic lower bound.
+
+Constructive classical mechanism under examination: construct the torsion cover
+of a fixed-genus Lefschetz pencil; isolate a fixed-dimensional Edixhoven module
+at a SMALL auxiliary prime; Hensel lift that module with paid precision; recover
+its arithmetic Galois action; evaluate Frobenius at p and reconstruct by CRT.
+This would match the written quantum asymptotic upper bound if all coefficients,
+heights, primes, reconstruction and finite clocks were polynomial in logp.
+It is a stronger baseline than a p-dependent direct point count or abelian KS
+replacement, and works by modular torsion, not a Hodge-compatible abelian motive.
+
+Proof obligations: uniform coefficient/branch/curve/torsion-divisor height,
+small good auxiliary prime, exact arithmetic action and reconstruction degree,
+no supplied curve torsion or normalized representatives, bounded failure clocks.
+Falsifiers: a source with fixed-X constants only; exponential dependence on the
+input's logarithmic height; support-point degrees inferred from divisor-class
+fields without a canonical representative; or a missing arithmetic descent.
+None of these alone is a lower bound or a refutation of the source's fixed-X theorem.
+
+## Checked primary sources and parameter substitution
+
+Saxena--Venkatesh, author PDF `https://www.cse.iitk.ac.in/users/nitin/papers/Surfaces.pdf`,
+arXiv2511.05272. Local `audits/sources/classical_surface_2026/surfaces.pdf`,
+SHA256 9693872f277e305a9175471193bf7ff28e8161e1e5e38d92c9d50940fc428351.
+Actual Theorem5.1 fixes the smooth projective surface over a number field.
+Algorithm9 step5 chooses a good auxiliary prime of size O(ell); Theorem4.5
+uses an Arakelov height bound for the growing-genus cover. The proof of6.7
+then needs that height to bound the p-adic reconstruction precision. Conclusion
+explicitly leaves polynomial dependence on growing surface degree open.
+This is an important existing classical comparator for reductions of fixed
+characteristic-zero surfaces. Its theorem statement does not by itself give
+a uniform arbitrary-coefficient finite-field bound. Source correctness beyond
+the stated scope is under targeted review; no full independent certification.
+
+Javanpeykar with Bruin appendix, arXiv1403.6404, actual Theorems6.0.4/6.0.6
+and definition in section1.3. Local javanpeykar.pdf SHA256
+106a5a5161212cd2dd91318aa0a6f94f836d8b21f0db1911bd9074db9db3aef2.
+The branch-set height H_B is EXponential Weil height, h_B=log(H_B).
+For branch Galois-orbit cardinality r fixed, define
+ A_r=45*r^3*2^(r-2)*r!, c_B=(4*r*H_B)^A_r.
+For degree-d cover Y of P1, genus g<=r*d, Theorem6.0.4 gives
+ h_Fal(Y)<=13*10^6*g*c_B*d^5,
+ Delta(Y)<=5*10^8*g^2*c_B*d^5,
+ and corresponding two-sided delta_Fal bounds.
+Thus the stated bound is poly_r(d)*exp(A_r*h_B), not poly_r(d,h_B).
+Theorem6.0.6 absorbs c_B into exponent a=6+log(13*10^6*r*c_B),
+so a=O_r(1+h_B). With d=ell^O(1), ell=O(logp), h_B=O(logp),
+that rewritten upper bound is exp(O(logp*loglogp)); retaining c_B gives
+p^O_r(1)*poly(logp), still not polylogp. These are INSUFFICIENT UPPER
+bounds, not lower bounds on actual heights or algorithmic work.
+
+Canonical coefficient lifting is not hidden advice: coefficients in[0,p)
+have logarithmic height O(logp), and smoothness modp implies a smooth
+characteristic-zero generic fiber. A fixed-degree elimination for a Lefschetz
+pencil can keep branch orbit size fixed and logarithmic branch height O(logp).
+It does NOT make the branch locus independent of p or its height constant.
+For a sanity family B={0,1,2^m,infinity}, H_B=2^m and the quoted c_B grows
+exponentially in m. This only checks the meaning of the bound: it does not
+show the degree-two Legendre cover has exponential Faltings height.
+Twisting or rescaling a fixed curve cannot refute a bound for STABLE height.
+
+The original primary paper explicitly remarks after6.0.4 that Belyi reduction
+makes branch dependence enormous and improving it may be possible. Its cited
+Bilu--Strambi bound instead has exponential cover-degree dependence; no such
+bound may be silently substituted as polynomial in both parameters.
+
+## Current work and claim gates
+
+Paid Claude `audits/claude_runs/2026-11-12-surface-scope` audits exact scope,
+parameter substitution and any material arithmetic-action defects. Paid OpenAI
+`audits/openai_runs/2026-11-12-surface-height` attacks the constructive uniform
+Arakelov/torsion-height lemma. Explicit excerpts, current STATE excerpt only;
+no archives, credentials or external tools sent. Reports are advisory.
+Parent is checking primary bounds and considering direct geometry in place of
+Belyi conversion. No new subsystem or full implementation is authorized by
+an incomplete height argument. No classical hardness, separation or novelty.
+
+Next concrete action: read both terminal reports and check every claimed
+height bound against a derivation/actual source. Accept a uniform classical
+match only after all reconstruction/access obligations close, not merely h_Fal.
+Otherwise record the fixed-X baseline and exact remaining native obligation,
+then independently reselect. No numerical height sweep is a substitute.
+
+## New core falsifier: modular compactification loses parabolic conditions
+
+Parent derivation, independent review LIVE (the reviewer confirms the mechanism).
+Work geometrically in characteristic zero with odd ell, U=P1 minus r nodes,
+M=Fell^(2g) the natural Lefschetz module, G=Sp_2g(Fell), and the full G-torsor
+V->U trivializing M. Assume vanishing cycles span M, as in the hypersurface
+pencils. The central element -I acts by -1 on M, so H^i(G,M)=0 for all i:
+restrict through central C2, whose higher cohomology vanishes since2 is invertible,
+and whose invariants on M vanish. Hochschild--Serre therefore identifies
+ H1(U,M) = (H1(V,Fell) tensor M)^G.
+
+For each nodal loop t, monodromy T=I+N has N^2=0, N nonzero and orderell.
+A crossed cocycle c pulls back on the covering boundary loop t^ell as
+ c(t^ell)=(I+T+...+T^(ell-1))*c(t)=0,
+since that norm equals ell*I+ell(ell-1)/2*N over Fell. The same holds on
+all conjugate boundary loops. Thus EVERY class of H1(U,M) extends to the
+compactified cover. The extension is unique since H1(Vcompact)->H1(V) is
+injective, and remains G-equivariant. Consequently the compact ordinary
+invariant tensor space equals H1(U,M), not generally H1(P1,j_*M).
+For no global invariants and r transvections, their dimensions are
+ (r-2)*2g versus r-4g.
+Quintic cubic-Veronese pencil: g31,r220, dimensions13516 versus96.
+A generic cubic elliptic pencil already gives20 versus8.
+
+This directly targets source Theorem4.1's purity passage, not the valid central
+vanishing of group cohomology. The full isotypic Edixhoven space computed from
+compact invariants is too large. Merely changing Algorithm8's target dimension
+would retain the unwanted open-boundary classes. An intermediate extension
+could accidentally satisfy the old stop dimension; no nontermination claim.
+No impossibility for classical point counting follows. A correction must retain
+parabolic restriction during arithmetic descent. Existing quantum reconstruction
+explicitly uses G0/Euler induction and avoids ordinary modular invariants.
+
+Candidate repair (UNPROVED end-to-end): reconstruct an equivariant M-torsor
+above V from Kummer functions of the selected Jac(V)[ell] classes. Split its
+finite extension by G using H2(G,M)=0, then compute local inertia as(a_z,T_z)
+and impose a_z in(T_z-I)M. Degree ell^dimM is polynomialell at fixedg, but
+actual function representatives, arithmetic linearization, inertia transport
+and heights must all be paid. Linear action on divisor classes alone is not
+this additional structure. Independent reviewer is assessing the exact boundary.
+A single SL2F3 cellular-cover control is queued as an exact falsifier only.

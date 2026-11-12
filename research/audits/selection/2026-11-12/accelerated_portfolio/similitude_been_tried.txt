@@ -1,0 +1,98 @@
+Been tried? similitude frame torsor disconnected cyclotomic cover arithmetic Frobenius Tate twist
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION, PO-MEASUREMENT]
+     research/registry/negative_results.json:72021
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION.
+     Why not: Falsified or refined by exact theorem evaluation.
+  2. negative   NEG-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM, PO-MEASUREMENT]
+     research/registry/negative_results.json:69956
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM.
+     Why not: Falsified or refined by exact theorem evaluation.
+  3. negative   NEG-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY, PO-MEASUREMENT]
+     research/registry/negative_results.json:71763
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY.
+     Why not: Falsified or refined by exact theorem evaluation.
+  4. negative   CODE-LOW-WEIGHT-MATROID-REJECTED-HAMMING_7_4_COLUMN_TWIST-HAMMING_7_4_COLUMN_TWIST  [rejected-by-low-weight-matroid-structure · CODE-COSET-COLLECTIVE, PO-DEQUANTIZATION, PO-FALSIFIERS]
+     research/registry/negative_results.json:47079
+     Claim: hamming-7-4-column-twist supplies hard code-equivalence evidence beyond classical low-weight structure.
+     Why not: Low-weight codeword support hypergraphs separate this row: minimum_weight, max_weight_evaluated, spectrum, coordinate_profiles, pair_profiles, incidence_wl.
+  5. negative   CODE-INFORMATION-SET-REJECTED-HAMMING_7_4_COLUMN_TWIST  [rejected-by-information-set-canonicalization · CODE-COSET-COLLECTIVE, PO-DEQUANTIZATION, PO-FALSIFIERS]
+     research/registry/negative_results.json:46953
+     Claim: hamming-7-4-column-twist supplies hard code-equivalence coset evidence beyond information-set baselines.
+     Why not: Information-set canonical signatures differ; this row is classically rejected.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-MP-MOMENTS-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9654
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-MP-MOMENTS-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9533
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-SELF-DUAL-WREATH-UNEQUAL-FINITE-NOT-MIXED-TUPLES  [high]
+     research/registry/dequantization_checks.json:5386
+     Claim: Repeated finite unequal-irrep blocks cover the physical tuple distribution needed by the full frame.
+     Why not: Construct mixed equal/unequal irrep tuples, charge their natural mass, and derive a uniform spectral recurrence and worst-sector conditioning theorem.
+  4. dequant    DEQ-SELF-DUAL-WREATH-PURE-COMMUTATOR-NOT-MIXED-RECOUPLING  [critical]
+     research/registry/dequantization_checks.json:1437
+     Claim: The unconditioned Frobenius commutator formula contracts class-conditioned mixed third-moment terms.
+     Why not: Construct the four-class recoupling kernel or directly contract its action on physical character portfolios.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:9709
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Quartic-surface P2 from explicit torsion-cover twists › Construction and proof ledger  [unlabelled]
+     research/SURFACE_TORSION_COVER_RECONSTRUCTION.md:93
+     **Full arithmetic torsor and twists.** Build A^tensor38, rankell^1444, and impose every nonzero Fell^38 linear-combination test by idempotents in the fixed ambient algebra.
+  2. note       Accelerated constructive endpoint selection › Parent arithmetic-action guard  [unlabelled]
+     research/ACCELERATED_ENDPOINT_SELECTION.md:76
+     A curve cover and geometric Sp-module identification alone may not determine which scalar arithmetic twist matches a specified family's fibre cohomology.
+  3. note       Surface point counting: the classical height-uniformity gate › Parent finite-field repair construction  [audited]
+     research/SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md:223
+     Include the genuine compatible arithmetic Frobenius matrix onW (andM), with normalizer/Tate-twist conventions paid by its producer.
+  4. note       Arithmetic Tensor Isomorphism: Constructive Baselines First › Why The Tempting Quantum Extension Is Weak  [unlabelled]
+     research/ARITHMETIC_TENSOR_DIRECTION_AUDIT.md:102
+     - A Jacobian and marked Jacobian point do not identify the genus-one torsor or supply a rational point on it.
+  5. handoff    2026-11-07 Surface P2 Torsion-Cover Reduction  [journal]
+     research/AGENT_HANDOFF.md:2206
+     No GRH/Tate or supplied torsion, cohomology, monodromy, cover or localFrobenius.
+
+Code and experiments
+  1. theorem    DCP cyclotomic Galois / Frobenius automorphism prime-power peeling bridge.  [code]
+     theorems/dcp_galois_frobenius_automorphism_prime_power_peeling_bridge.py:1
+     DCP cyclotomic Galois / Frobenius automorphism prime-power peeling bridge.
+  2. hypothesis dcp_cyclotomic_ring_rlwe_circulant_cnot_shift_invariance_bridge_contract  [VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING]
+     research/hypotheses/dcp_cyclotomic_ring_rlwe_circulant_cnot_shift_invariance_bridge_contract.json
+     R_8 = Z_8[X]/(X^4 + 1) across all r = 0, 1, 2, 3 shifts dcp_cyclotomic_ring_rlwe_circulant_cnot_shift_invariance_bridge VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING Cyclotomic Ring-LWE Negacyclic CNOT Shift-Orbit Invariance and Wrap-Around Pauli-X Frame
+  3. hypothesis dcp_galois_frobenius_automorphism_prime_power_peeling_bridge_contract  [VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING]
+     research/hypotheses/dcp_galois_frobenius_automorphism_prime_power_peeling_bridge_contract.json
+     R_16[X]/(X^4+1) and R_32[X]/(X^8+1) group homomorphism and midpoint annihilation audits dcp_galois_frobenius_automorphism_prime_power_peeling_bridge VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING Cyclotomic Galois Automorphism Witness Equivariance and Conjugation Constant-Term Projection
+  4. result     EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM grading-compatible-zero-state-loss-constant-gap-proved-hierarc  [grading-compatible-zero-state-loss-constant-gap-proved-hierarchical-frame-comparability-open]
+     research/registry/experiment_results.json:6356
+     exp code self dual wreath graded frobenius trim.
+  5. theorem    All-n inverse-polynomial collective activation from a sign-twist portfolio.  [code]
+     theorems/self_dual_wreath_sign_twist_collective_activation.py:1
+     self dual wreath sign twist collective activation.
+
+Literature
+  1. literature Signature ranks of units in cyclotomic extensions of abelian number fields  [audit]
+     research/literature_audits/native_rlwe_quaternion_sources.json
+     Only the zero graph ratio is principal over O_q=R+qRj Section3, Proposition3 and following discussion; PDF page8, journal page291 PJM-2019-UNIT-SIGNATURES Full circular-unit signature rank for real 2-power cyclotomic fields Real cyclotomic unit signatures Published Weber/Hasse full-signature result…
+  2. literature cyclotomic_rescaling_sources  [audit]
+     research/literature_audits/cyclotomic_rescaling_sources.json
+     All six qutrit permutations are covered, not arbitrary collective instruments.
+  3. literature Cyclotomic Cosets: Hidden Subgroup and Quantum Sieving Algorithm for Prime-Power Moduli  [audit]
+     research/literature_audits/ternary_incidence_sources.json
+     Cyclotomic Cosets: Hidden Subgroup and Quantum Sieving Algorithm for Prime-Power Moduli Our weighted integer-secret line source has its own exact unimodular proof; it is not automatically a general ring-secret sieve improvement.
+  4. literature Cyclotomic Cosets: Hidden Subgroup and Quantum Sieving Algorithm for Prime-Power Moduli  [audit]
+     research/literature_audits/ternary_pointed_triples_sources.json
+     Cyclotomic Cosets: Hidden Subgroup and Quantum Sieving Algorithm for Prime-Power Moduli The local pointed constructor uses nonlinear word-dependent integer-secret triples.
+  5. literature cyclotomic_fiber_receiver_sources  [audit]
+     research/literature_audits/cyclotomic_fiber_receiver_sources.json
+     Cyclotomic Cosets: Hidden Subgroup and Quantum Sieving Algorithm for Prime-Power Moduli https://arxiv.org/html/2609.34996v1 Known DCP/CCP equivalence, same integer secret and charged conversion probabilities.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

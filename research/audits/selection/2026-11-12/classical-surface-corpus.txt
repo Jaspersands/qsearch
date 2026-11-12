@@ -1,0 +1,103 @@
+Been tried? Counting points surfaces polynomial time Saxena
+
+Killed before
+  1. negative   NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER  [retained · DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER, DCP-SUBSET-SUM-AFFINE-BDD-GEOMETRY, DCP-BABAI-DEVIATION-DEPTH-BARRIER]
+     research/registry/negative_results.json:67433
+     Claim: Euclidean lattice reduction, BDD algorithms, or nearest-plane list decoders can achieve polynomial-time or inverse-polynomial coverage for density-one modular subset sum.
+     Why not: For all density-one modular subset-sum instances (modulus D approx 2^n), the Euclidean ball of radius sqrt(n) contains Vol / 2^n = 2^{1.047 n - 0.5 log2(pi n)} = 2^{Omega(n)} integer lattice points by the Gaussian volume heuristic. The true binary witness has norm sqrt(n), which is a factor of 4.13 
+  2. negative   POLYNOMIAL-READOUT-TIME-NOT-SMALL-FOURIER-NORM  [retained · CODE-COSET-COLLECTIVE, efficient-terminal-rule bound transfers]
+     research/registry/negative_results.json:72978
+     Claim: Because parity-transfer bounds handle polynomial Fourier l1 norm, they rule out every polynomial-time classifier of the Walsh output.
+     Why not: Strict majority is evaluated by a linear-time count but its exact odd-k Fourier norm is at least 2^((k-1)/2)/k. An independent binomial formula checks the Krawtchouk recurrence; at k=127 the norm exceeds 2^60. Fourier degree, norm and classical evaluation time are different resources.
+  3. negative   NEG-CODE-SELF-DUAL-WREATH-GENERIC-POLAR-BLOCK-ENCODING  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT]
+     research/registry/negative_results.json:60635
+     Claim: A compact block encoding of the k-copy average frame immediately gives a polynomial-time PGM.
+     Why not: At k=ceil(log2(n!)), the exact frame moments place broad spectral mass at eigenvalue scale Theta(1/n!), requiring Theta(1/sqrt(n!)) polar resolution. No structured preconditioner or frame inverse is registered.
+  4. negative   NEG-STRONGLY-COSPECTRAL-QUANTUM-WALK-BLINDNESS  [retained · GRAPH-ISOMORPHISM-QUANTUM-WALK, STRONGLY-REGULAR-GRAPHS, BOSE-MESNER-ALGEBRA, COSPECTRAL-QUANTUM-BLINDNESS]
+     research/registry/negative_results.json:72738
+     Claim: Continuous-time quantum walks or spectral graph invariants can efficiently distinguish non-isomorphic strongly regular graphs with identical parameters (such as the 4x4 Rook graph and the Shrikhande graph) with quantum a
+     Why not: Both graphs generate isomorphic 3-dimensional Bose-Mesner algebras, guaranteeing identical eigenvalues and walk moments Tr(A^k) and Tr(L^k) for all k >= 0. Because both graphs are vertex-transitive, the return amplitude <v|exp(-i A t)|v> = (1/16) (e^{-6it} + 6 e^{-2it} + 9 e^{2it}) is vertex-invaria
+  5. negative   NEG-SELF-DUAL-WREATH-NAIMARK-COMPRESSED-PERMUTATION-BARRIER  [retained · CODE-COSET-COLLECTIVE, CODE-EQUIVALENCE-HARD-FAMILY-SEARCH, UNIFORM-HARMONIC-NAIMARK-DILATION, COMPRESSED-PERMUTATION-POVM]
+     research/registry/negative_results.json:70656
+     Claim: A uniform harmonic Naimark dilation with compressed permutation outcomes (point-stabilizer or cycle-type) on the growing-width carrier space can bypass the Holevo information collapse and identify the hidden permutation 
+     Why not: By the Peter-Weyl decomposition and Frobenius reciprocity on S_n downarrow S_{n-1}, any covariant point POVM has diagonal matrix elements [M_j]_{g, g} = 1/n! identically across all group elements g, producing exactly flat outcome distributions p(j | tau) = 1/n with zero mutual information. When coup
+
+Dequantization checks
+  1. dequant    DEQ-CODE-COSET-COLLECTIVE-TERMINAL-FOURIER-NORM-VERSUS-TIME  [high]
+     research/registry/dequantization_checks.json:2130
+     Claim: Because parity-transfer bounds handle polynomial Fourier l1 norm, they rule out every polynomial-time classifier of the Walsh output.
+     Why not: Charge the actual Fourier coefficient norm or prove a separate distribution-specific approximation argument. Do not transfer low-marginal, low-degree or bounded-norm obstructions to a threshold merely because its arithmetic is cheap. Escaping this bound is not evidence of quantum advantage. This is 
+  2. dequant    DEQ-DCP-RANDOM-DESIGN-SAMPLE-TIME-GAP  [critical]
+     research/registry/dequantization_checks.json:546
+     Claim: Polynomially many local DCP quadrature samples yield a polynomial-time reflection decoder.
+     Why not: Find a poly(log N)-time random-label frequency decoder without chosen-label access, or retain the gap as computational proof debt rather than algorithmic evidence.
+  3. dequant    DEQ-SELF-DUAL-WREATH-ALL-UNEQUAL-SUBEXPONENTIAL-NOT-POLYNOMIAL  [high]
+     research/registry/dequantization_checks.json:5331
+     Claim: Replacing factorial pair enumeration by p(n)^4 character terms gives a polynomial-time contraction.
+     Why not: Find stable character-polynomial, tensor-network, or recoupling structure with polynomial state support.
+  4. dequant    DEQ-CODE-CLOSURE-CONDUCTOR-REJECTIONS  [high]
+     research/registry/dequantization_checks.json:4484
+     Claim: Current algebraic code pairs survive polynomial-time conductor/support-recovery attacks.
+     Why not: Reject separated rows. Require larger-field closure, explicit support recovery, automorphism recovery, and canonical labeling before any surviving code family feeds coset-state measurement design.
+  5. dequant    DEQ-DCP-RANDOM-FOURIER-INFORMATION-NOT-COMPUTATION  [critical]
+     research/registry/dequantization_checks.json:557
+     Claim: Polynomial-sample random-label quadrature recovery is an efficient DCP algorithm.
+     Why not: Solve random-label frequency localization in poly(log N) time and memory without N-frequency enumeration, then re-prove f=1 robustness for that efficient transform.
+
+Notes and handoff
+  1. note       Exact Surface Counts: CM Reconstruction And A Real Classical Attack › Research Decision  [unlabelled]
+     research/JACOBI_SURFACE_RECONSTRUCTION.md:22
+     - Curve point counting is NOT a new opening: [Kedlaya](https://arxiv.org/abs/math/0411623) already gives quantum polynomial time in genus and log field size.
+  2. handoff    Independent Arithmetic Route: Real Classical 61-Bit Surface Reconstruction  [journal]
+     research/AGENT_HANDOFF.md:23847
+     Curve point counting was rejected as rediscovery (Kedlaya2006), and the recent Gaussian sampler has a quadratic, not identified Shor-level, gain.
+  3. note       Reciprocal Trace: The Fourier Source Is Classically Accessible › Research Decision  [audited]
+     research/RECIPROCAL_TRACE_SOURCE_ACCESS.md:6
+     Both have polynomial-time classical algorithms by known binary elliptic-curve point counting.
+  4. note       Known Relative Norm Removes The Prime-Conductor Quantum Opening › Question And Decision  [unlabelled]
+     research/JACOBI_KNOWN_NORM_REDUCTION.md:16
+     **Decision:** for odd prime conductor and the stated public split-root input, this published theorem plus the Jacobi identities and primary congruence gives classical polynomial-time exact surface counting in ell and log p.
+  5. note       Native quintic-surface P2 beyond the K3-type abelian mechanism › Selection, input and endpoint  [unlabelled]
+     research/QUINTIC_SURFACE_P2_ADMISSION.md:16
+     Question: compute exact FULL degree53 P2 of EVERY smooth quintic SURFACE X in P3/Fp from binary coefficients/p only, in bounded-error quantum poly(logp,log1/eta) BIT/gate time at FIXED degree5.
+
+Code and experiments
+  1. theorem    Exact Jacobi/CM experiment for split Fermat SURFACES, not a quantum oracle.  [code]
+     theorems/jacobi_surface_reconstruction.py:1
+     cyclotomic referencecharacters valuation profile surface bound lift surface residue native surface count public ideal basis classical lll attempt identify root turns primary normalize public surface attempt surface control large public ideal control run controls main.
+  2. theorem    Exact ribbon-surface topology for two ordered binary partitions.  [code]
+     theorems/self_dual_wreath_two_partition_ribbon_surface.py:1
+     ribbonsurfacecomponent twopartitionribboncontrol ribbonsurfacescalingrecord twopartitionribbonsurfacereport ribbon surface components symmetric group leading solution exponent predicted symmetric group solution count exact symmetric group solution count audit two partition ribbon surface run two pa…
+  3. theorem    Classical Fourier-source access via known binary elliptic point counting.  [code]
+     theorems/reciprocal_trace_source_access.py:1
+     Classical Fourier-source access via known binary elliptic point counting.
+  4. theorem    Conjugacy-class compression for bounded-support character contractions.  [code]
+     theorems/symmetric_marked_class_contraction.py:1
+     For fixed permutations ``a,b`` supported on ``s=O(1)`` points, the signature
+counts of
+
+    (cycle_type(g), cycle_type(g a), cycle_type(g b)),  g in S_n
+
+do not require enumerating ``n!`` permutations.
+  5. experiment Hidden-shift query/time lower-bound fingerprint probes  [planned]
+     research/registry/experiments.json:25666
+     Hidden-shift query/time lower-bound fingerprint probes A hidden-shift family cannot be evidence for a Shor-level idea merely because sampled access is under-tested; polynomial sample fingerprints must be separated from polynomial-time decoding.
+
+Literature
+  1. literature hermite_decoder_prior_art  [audit]
+     research/literature_audits/hermite_decoder_prior_art.json
+     tests/test_hermite_prior_art_interface.py 1/4 (X^17-X)*f^[1] One Appendix A proof step, not the dimension theorem 2026-10-21 HERMITE-DECODER-EXACT-PRIOR-ART Deterministic polynomial-time construction of a small-characteristic differential decoding space Random-coordinate pruning of an affine space…
+  2. literature Polynomial-Time Quantum Algorithms for Pell's Equation and the Principal Ideal Problem  [seed · number-theory, principal-ideal, infrastructure, periodicity]
+     research/literature_records.json
+     Polynomial-Time Quantum Algorithms for Pell's Equation and the Principal Ideal Problem A non-Shor number-theoretic breakthrough template based on hidden periodic structure.
+  3. literature Polynomial time key-recovery attack on high rate random alternant codes  [seed · code-equivalence, alternant-code, schur-product, support-recovery]
+     research/literature_records.json
+     Polynomial time key-recovery attack on high rate random alternant codes Shows that shortening, componentwise products, conductors, and algebraic recovery can destroy apparent alternant-code hardness.
+  4. literature Constructive noncommutative rank computation is in deterministic polynomial time  [audit]
+     research/literature_audits/dcp_pivot_span_sources.json
+     Constructive noncommutative rank computation is in deterministic polynomial time ARXIV-1512.03531-v6 https://arxiv.org/abs/1512.03531
+  5. literature Polynomial time classical versus quantum algorithms for representation theoretic multiplicities  [seed · kronecker-coefficient, classical-algorithm, dequantization, representation-theory]
+     research/literature_records.json
+     Polynomial time classical versus quantum algorithms for representation theoretic multiplicities Classically resolves many restricted Kronecker and plethysm instances previously proposed as quantum speedups, sharply limiting multiplicity estimation as an independent breakthrough direction.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

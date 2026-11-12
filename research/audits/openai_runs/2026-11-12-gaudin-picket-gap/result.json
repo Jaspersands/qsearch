@@ -1,0 +1,59 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-12-gaudin-picket/constructive-prompt.md",
+      "sha256": "6e9aba90ce82d3f3c90450aabbce6a7ee9aaa185b45887effdc94ee3eea4e0b1"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-12-gaudin-picket/state-excerpt.md",
+      "sha256": "d29f9c0d270cb3d92b49b1657da256727a86db9feccc643abd1db08081dfb80f"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-12-gaudin-picket/contract.md",
+      "sha256": "de79ab36bdc861b943468cc3380a7357cc02e0e92c20cf466ab8a57c90afb3d5"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-12-gaudin-picket/source-excerpts.md",
+      "sha256": "89d72cf3fcd5bcfd39df46c55cbafb29a961767e1a618b561c82e77190857136"
+    },
+    {
+      "path": "research/GAUDIN_JOINT_CHARGE_TRAVERSAL.md",
+      "sha256": "17efec774df9b3de2cc6d1fc54212fc96b316dab92d5db377729096b733b2a9d"
+    }
+  ],
+  "finished_at": "2026-11-12T08:16:27.626956+00:00",
+  "incomplete_details": {
+    "reason": "max_output_tokens"
+  },
+  "max_budget_usd": "4",
+  "max_tokens": 48000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "2.91598",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_0294270c562875b8016af56ffe645487d0ae2359c8886ee015",
+  "started_at": "2026-11-12T07:51:24.836113+00:00",
+  "status": "incomplete",
+  "usage": {
+    "input_tokens": 10351,
+    "input_tokens_details": {
+      "cache_write_tokens": 10348,
+      "cached_tokens": 0
+    },
+    "output_tokens": 48000,
+    "output_tokens_details": {
+      "reasoning_tokens": 48000
+    },
+    "total_tokens": 58351
+  },
+  "usage_cost_estimate_usd": "2.50351"
+}

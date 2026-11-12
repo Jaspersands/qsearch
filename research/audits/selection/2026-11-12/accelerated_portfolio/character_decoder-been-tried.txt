@@ -1,0 +1,102 @@
+Been tried? uniform Hankel character receiver complete syndrome decoder
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-PLANCHEREL-SIGN-ORBIT-MASS-EXTINCTION-BARRIER  [retained · CODE-EQUIVALENCE-HARD-FAMILY-SEARCH, WREATH-ORIENTATION-PROJECTOR, RACAH-CUMULANT-PROBE, SIGN-ORBIT-SYNDROME]
+     research/registry/negative_results.json:71450
+     Claim: Multi-copy collective orientation-syndrome conditioning or Racah associator cumulants in W_n = S_n wr Z_2 yield asymptotic quantum speedups for code equivalence.
+     Why not: By the exact factorization of wreath Plancherel measure and the Biane-Kerov-Sniady character theorem, the physical probability of sign-swap self-dual irreps and repeated sign-orbit tuples decays exponentially as 2^{-Omega(sqrt(n))}. Typical partitions have vanishing normalized characters r_lambda(w)
+  2. negative   NEG-CODE-SELF-DUAL-WREATH-COMPLETE-W3-NOT-ALL-N-INVERSE  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES]
+     research/registry/negative_results.json:60544
+     Claim: Complete mild conditioning of all naturally occupied W_3 threshold blocks supplies a scalable frame inverse.
+     Why not: The result is confined to n=3, uses dense finite diagonalization, and supplies no character recurrence, coherent pseudoinverse, harmonic transform, or decoder.
+  3. negative   CHARACTER-QUERY-ADVANTAGE-KILLED-QUARTIC_CHARACTER  [retained · DHS-GOWERS-SIEVE, HYP-LIT-HIDDEN-SHIFT-SIEVE, PO-DEQUANTIZATION, PO-FALSIFIERS]
+     research/registry/negative_results.json:44688
+     Claim: quartic_character supplies a character-shift query advantage or unconditional online decoding separation.
+     Why not: Known hidden-shifted-power upper bounds use logarithmically many classical queries with domain-scale uniform time, and every tested row admits fixed-prefix online decoding after modulus-dependent domain-size preprocessing/advice.
+  4. negative   CLASS-UNIFORM-COMMUTATOR-BOUND-NOT-DIRECT-PLANCHEREL-TAIL-PROOF  [retained · CODE-COSET-COLLECTIVE, class-uniform commutator filtering, character-squared commuting tail]
+     research/registry/negative_results.json:44718
+     Claim: The existing class-uniform 7/(4p(n)) theorem directly proves the character-squared weighted commuting tail vanishes.
+     Why not: The character-squared law is nonuniform on conjugacy classes; the class-uniform proof supplies no domination or kernel comparison.
+  5. negative   NEG-COSET-COMPLETE-QUARTIC-AS-RACAH-ALGORITHM  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE]
+     research/registry/negative_results.json:62187
+     Claim: A complete exact stable Racah quartic establishes an efficient collective measurement or speedup.
+     Why not: Root separation, uniform coherent implementation, sector coverage, and hidden-involution decoding remain open.
+
+Dequantization checks
+  1. dequant    DEQ-CHARACTER-SHIFT-CONDITIONAL-ORACLE-GAP  [high]
+     research/registry/dequantization_checks.json:4385
+     Claim: The unresolved uniform shifted-character decoder gap is evidence for a Shor-level route.
+     Why not: Attach a natural reduction or named hardness assumption with explicit average/worst-case and preprocessing semantics; otherwise treat this as an oracle separation and retire it from the top frontier.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SYNDROME-COMPONENT-REDUCTION-DCP-SUBSET-SUM-MARKER-COSET-FALS  [medium]
+     research/registry/dequantization_checks.json:8444
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SYNDROME-COMPONENT-REDUCTION-DCP-SUBSET-SUM-MARKER-COSET: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-DHS-CHARACTER-DECODER-SEARCH-CHARACTER-DECODER-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:12635
+     Claim: RESULT-EXP-DHS-CHARACTER-DECODER-SEARCH-CHARACTER-DECODER: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-CHARACTER-MOMENT-FINITE-SIZE-SIGNAL  [medium]
+     research/registry/dequantization_checks.json:14329
+     Claim: Small-n multiplicative-character moment signals prove a scalable classical decoder.
+     Why not: Do not generalize the small-n signal. Track first-nonzero degree scaling and only build a decoder if the signal remains low degree asymptotically.
+  5. dequant    DEQ-COSET-COMPLETE-FINITE-RACAH-NOT-UNIFORM  [high]
+     research/registry/dequantization_checks.json:4902
+     Claim: Complete finite Racah matrices constitute a scalable coherent associator and support a speedup.
+     Why not: Resolve the remaining second-stage multiplicity spaces, derive a compressed stable-n Racah rule, compile it coherently with polynomial precision and cost, and connect outcomes to a decoder.
+
+Notes and handoff
+  1. note       Native character Fourier features and the exact mask marginal › 2. Syndrome marginal is mask-only; the full la  [audited]
+     research/LEGENDRE_FOURIER_FEATURE_CLASSICAL_MATCH.md:99
+     The zero label is singular for Hankel decoding, but is a legitimate receiver outcome.
+  2. handoff    2026-11-05 Reviewed Uniform Hankel Character Decoder  [journal]
+     research/AGENT_HANDOFF.md:5367
+     - Independently reviewed WRITTEN uniform theorem in LEGENDRE_HANKEL_RESULTANT_READOUT.md: every d>=2, monic squarefree Q over odd prime p, fresh exact pure native padded-character copies.
+  3. note       One-sample Hankel readout for native character reconstruction  [unlabelled]
+     research/LEGENDRE_HANKEL_RESULTANT_READOUT.md:1
+     Independently reviewed written uniform parameterized algorithm.
+  4. note       Actual success boundary of the split-source Hankel receiver  [unlabelled]
+     research/LEGENDRE_HANKEL_SUCCESS_BOUNDARY.md:1
+     Closed mathematical question: a sharper analysis of the SAME 2d-1-root coefficient Fourier/Hankel operation cannot give inverse-polynomial success in growing d.
+  5. note       One-sample Hankel readout for native character reconstruction › 3. Every virtual supported outcome determines   [unlabelled]
+     research/LEGENDRE_HANKEL_RESULTANT_READOUT.md:123
+     Let D_Q be the set of measured labels whose Hankel decoder actually returns Q.
+
+Code and experiments
+  1. theorem    DCP prime-field F_p Cayley-Hamilton / Hankel linear recurrence peeling bridge.  [code]
+     theorems/dcp_prime_field_f_p_berlekamp_massey_linear_recurrence_peeling_bridge.py:1
+     Establishes that when a sequence of DCP phase evaluations z_k = <u, M^k s> (mod p) over
+a prime field F_p is generated by powers of an n x n transition matrix M in F_p^{n x n},
+collecting just 2n scalar evaluations z_0, z_1, ..., z_{2n-1} suffices to recover the
+exact characteristic recurrence poly…
+  2. theorem    Pinned Hasse-differential decoding; no native quantum execution or novelty claim.  [code]
+     theorems/hermite_pinned_decoder.py:1
+     Equality with the syndrome-only decoder AND the smaller source cap.
+  3. theorem    Explicit full-RS interval search: execute a known receiver and try to kill it.  [code]
+     theorems/interval_soft_decoder.py:1
+     Small quantum controls enumerate an EXACT-MAP syndrome table, NOT a scalable
+Koetter--Vardy decoder.
+  4. theorem    Costed collective frequency evaluation with exact character feedforward.  [code]
+     theorems/ternary_collective_character_receiver.py:1
+     ternary collective character receiver.
+  5. hypothesis ternary_syndrome_phase_compiler_contract  [CONSTRUCTIVE_UNIFORM_PRIOR_RISK_EQUIVALENCE_REVIEW_PENDING]
+     research/hypotheses/ternary_syndrome_phase_compiler_contract.json
+     research/TERNARY_SYNDROME_PHASE_COMPILER.md The complete secret-bearing source batch used by the remaining receiver must be included in F.
+
+Literature
+  1. literature Efficient Quantum Algorithms for Shifted Quadratic Character Problems  [seed · hidden-shift, shifted-character, multiplicative-character, finite-fields]
+     research/literature_records.json
+     Is there a uniform polylogarithmic classical decoder, or a natural reduction or named assumption supporting superpolynomial uniform decoding hardness?
+  2. literature On the Hidden Shifted Power Problem  [seed · hidden-shifted-power, shifted-character, multiplicative-character, finite-fields]
+     research/literature_records.json
+     Is there a uniform polylogarithmic classical decoder, or a natural reduction or named assumption supporting superpolynomial uniform decoding hardness?
+  3. literature Solving Shift Problems and Hidden Coset Problem Using the Fourier Transform  [seed · hidden-shift, shifted-character, multiplicative-character, finite-fields]
+     research/literature_records.json
+     Is there a uniform polylogarithmic classical decoder, or a natural reduction or named assumption supporting superpolynomial uniform decoding hardness?
+  4. literature cyclotomic_fiber_receiver_sources  [audit]
+     research/literature_audits/cyclotomic_fiber_receiver_sources.json
+     2026-10-06 Trace-dual unimodular native frequency coordinates with explicit integer-secret scope Known post-Fourier one-hot conversion conformance and complete source costs Public exact suffix-rank receiver replay on original even-level full-secret samples IID native collision moment, information l…
+  5. literature Sharp character bounds and cutoff profiles for symmetric groups  [seed · symmetric-character, character-ratio, random-walk, cutoff]
+     research/literature_records.json
+     Sharp character bounds and cutoff profiles for symmetric groups Develops sharp uniform character bounds and class-walk cutoff tools that may control the low-support word classes left by the conditioned collision-free wreath moment expansion.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

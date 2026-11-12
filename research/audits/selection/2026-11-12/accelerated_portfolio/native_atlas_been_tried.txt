@@ -1,0 +1,99 @@
+Been tried? fixed genus uniform Jacobian addition atlas Anderson abeliant native family
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS, PO-MEASUREMENT]
+     research/registry/negative_results.json:70550
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS.
+     Why not: Falsified or refined by exact theorem evaluation.
+  2. negative   NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER (quarantined)  [QUARANTINED_OVERBROAD_NO_GO · QUANTUM-WALKS, CONTINUOUS-TIME-QUANTUM-WALK, DISCRETE-TIME-QUANTUM-WALK, GLUED-TREES]
+     research/registry/quarantined_campaign_negatives.json:79
+     Claim: Quantum random walks (continuous or discrete) provide scalable superpolynomial speedups for search, optimization, or graph exploration on arbitrary spatial graph topologies or without highly artificial black-box oracles.
+     Why not: The glued-trees speedup requires an artificial black-box oracle model and collapses under explicit adjacency representations or random perturbations. Continuous-time quantum walk spatial search suffers from energy dispersion collapse in low dimensions d <= 4, yielding zero speedup in 1D. Spatial dis
+  3. negative   NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER (quarantined)  [QUARANTINED_OVERBROAD_NO_GO · QUANTUM-ANNEALING, ADIABATIC-QUANTUM-COMPUTING, SPECTRAL-GAP-BARRIER, LANDAU-ZENER]
+     research/registry/quarantined_campaign_negatives.json:3
+     Claim: Quantum Annealing and Adiabatic Quantum Computing achieve polynomial or super-polynomial speedups over classical algorithms on NP-hard combinatorial optimization problems via quantum tunneling.
+     Why not: First-order quantum phase transitions across extensive Hamming distances force the minimum spectral gap to vanish exponentially Delta_min = Theta(e^(-alpha n)), demanding exponentially large annealing runtimes T = Omega(e^(2 alpha n)) under the adiabatic theorem. Anderson localization traps the stat
+  4. negative   NEG-COSET-FIXED-BOUNDED-TAIL-FOURIER-ROUTE  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT]
+     research/registry/negative_results.json:62737
+     Claim: A polynomial recoupling algorithm restricted to a predetermined bounded-tail partition family can process natural coset states efficiently.
+     Why not: For every fixed tail budget K, the entire family's weak-Fourier probability is at most 2*P_K*n^(2K)/n!, smaller than every inverse polynomial.
+  5. negative   NEG-CODE-SELF-DUAL-FIXED-ORDER-RIGIDITY-SCALING  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-FIXED-ORDER-SPARSITY-OBSTRUCTION]
+     research/registry/negative_results.json:59205
+     Claim: The successful fixed weight-ten support certificate scales to a growing random self-dual family.
+     Why not: Weight-ten expected support count drops below one on 7/11 scaling rows; the entropy threshold for nonvanishing mass is relative weight 0.1100, forcing growing-order explicit enumeration.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8081
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8004
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-DHS-DCP-SAMPLE-NATIVE-SIEVE-DCP-SAMPLE-NATIVE-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13460
+     Claim: RESULT-EXP-DHS-DCP-SAMPLE-NATIVE-SIEVE-DCP-SAMPLE-NATIVE: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7553
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SUPPORT-CONTROL-VARIATE-CODE-FAMILY-SEARCH-NEGATIVE-FAM  [high]
+     research/registry/dequantization_checks.json:3230
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SUPPORT-CONTROL-VARIATE-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+
+Notes and handoff
+  1. note       Logarithmic-collision Merkl atlas  [proved]
+     research/MERKL_LOG_COLLISION_ATLAS.md:1
+     Precise proof: audits/reviews/2026-11-12-merkl-log-atlas.md.
+  2. handoff    2026-11-12 Logarithmic-Collision Green Bound Established  [journal]
+     research/AGENT_HANDOFF.md:47
+     MERKL_LOG_COLLISION_ATLAS.md and independent review audits/reviews/2026-11-12-merkl-log-atlas.md prove for EVERY finite degree-d holomorphic cover Y/P1(C), genus>=1 and <=r specified branch points, a canonical-measure Merkl atlas with r1=3/4, N<=C_r*d*(d+L), c1<=d² and M<=500d(4/3)^d, L=1+log(1/min…
+  3. note       Logarithmic-collision Merkl atlas › Proposed construction and exact risks  [proved]
+     research/MERKL_LOG_COLLISION_ATLAS.md:64
+     These give precisely the four hypotheses of the actual Merkl definition, with fixed r1>1/2.
+  4. note       Uniform arithmetic height: established pieces and remaining coordinate bound › Stable Faltings height is now b  [proved]
+     research/SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md:8
+     For every finite degree-d map pi:Y->P1 over Qbar with Y smooth, projective, connected of genus g>=1 and total Galois orbit of branch points of cardinality <=r, put hB=max h(beta), ABSOLUTE LOGARITHMIC projective height.
+  5. handoff    2026-11-07 Surface Torsion Character Repair  [journal]
+     research/AGENT_HANDOFF.md:2330
+     OPEN native target: exact degree22 P2 of ANY smooth quartic overFp, binary coefficients/p only, prospective quantum poly(logp) at FIXED degree.
+
+Code and experiments
+  1. theorem    Genus-zero norm search for trace-affine targets on the native relation.  [code]
+     theorems/inverse_trace_genus_zero.py:1
+     Genus-zero norm search for trace-affine targets on the native relation.
+  2. theorem    Genus-uniform mixing of separating surface targets in ``S_n``.  [code]
+     theorems/self_dual_wreath_separating_surface_target_mixing.py:1
+     Genus-uniform mixing of separating surface targets in ``S_n``.
+  3. theorem    Canonical three-cycle coordinates erase the original index without ranks.  [code]
+     theorems/ternary_nonlinear_cycle_compiler.py:1
+     Reference atlas evaluation is exponential;
+the clean cheap affine control has its actual small coverage charged.
+  4. experiment Exp Code Self Dual Wreath Exceptional Block Graph Core Pressure  [planned]
+     research/registry/experiments.json:5665
+     Exp Code Self Dual Wreath Exceptional Block Graph Core Pressure Classified the globally all-cancelling graph code as a fixed genus-two law times free check generators and proved it subleading.
+  5. experiment Exp Code Self Dual Wreath Target Survival Surface Seed  [planned]
+     research/registry/experiments.json:14227
+     Exp Code Self Dual Wreath Target Survival Surface Seed Classified both identity-frame support lifts as fixed genus-two surface laws and proved quadratic decay of their natural standard target character.
+
+Literature
+  1. literature dcp_projective_code_admission_sources  [audit]
+     research/literature_audits/dcp_projective_code_admission_sources.json
+     AUDIT-DCP-PROJECTIVE-CODE-ADMISSION DCP_BELL_INFERENCE_KERNEL.md DCP_NATIVE_SCHUR_EXPANSION.md DCP_BOOLEAN_PHASE_PULLBACK.md STATE_HSP_DHSP_SCOPE.md odd-secret Pauli target equivalence noncentral dihedral commutator criterion native fixed-CSS code shortened-kernel formula systematic-tail Bell signa…
+  2. literature ternary_cyclic_extractor_sources  [audit]
+     research/literature_audits/ternary_cyclic_extractor_sources.json
+     AUDIT-NATIVE-CURVATURE-CYCLIC-EXTRACTOR Fixed curvature-only translation cycles partition the entire original source word space and have a SUM-gate inverse.
+  3. literature ternary_phase_depth_sources  [audit]
+     research/literature_audits/ternary_phase_depth_sources.json
+     2026-10-06 Native exact factored mixed derivative engine and sharp growing-depth degree controls Depth-independent minus sign in the weighted L-fold Schur top tensor Actual native cubic-admitted subspace failing at the fifth derivative Conditional native secret visibility consequence and full-order…
+  4. literature native_generalized_dihedral_sources  [audit]
+     research/literature_audits/native_generalized_dihedral_sources.json
+     AUDIT-NATIVE-GENERALIZED-DIHEDRAL-PHASE-BRIDGE Carried additive charts and unimodular perfect-pairing matrices for all supported native levels.
+  5. literature dcp_path_code_fusion_sources  [audit]
+     research/literature_audits/dcp_path_code_fusion_sources.json
+     KUPERBERG-2003-DHSP Section3, pages2-3, native uniformly labelled phase states, CNOT/parity sum-difference extraction and its sieve role.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

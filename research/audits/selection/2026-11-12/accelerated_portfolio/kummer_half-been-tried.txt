@@ -1,0 +1,101 @@
+Been tried? dyadic local Kummer image one half conditioning
+
+Killed before
+  1. negative   NEG-CODE-WREATH-ALL-UNEQUAL-NOT-GLOBALLY-DISTINCT  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION, PO-NATURAL-ACCESS, PO-SUCCESS]
+     research/registry/negative_results.json:61018
+     Claim: Within-label inequality is the strongest natural source conditioning needed for growing frame moments.
+     Why not: The full source is 2k iid Plancherel draws. Repeated partitions across labels are asymptotically absent and support known finite half-norm counterexamples.
+  2. negative   NEG-DCP-SUBSET-SUM-QTT-FINITE-DENSE-CONTRACTION  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION]
+     research/registry/negative_results.json:67629
+     Claim: The tested natural, structured, or random target-bit ordering gives a QTT with the registered R=n bond cap and additive count error below one half.
+     Why not: Every tail source unfolding in the finite audit has best rank-cap Frobenius error above the necessary additive-half threshold and tracks histogram-preserving random controls.
+  3. negative   DCP-LOCAL-PAIRING-COVERAGE-NOISE-TRADEOFF  [retained · DHS-GOWERS-SIEVE]
+     research/registry/negative_results.json:55056
+     Claim: Short moves or high-density tables automatically give polynomial signal for noisy half-period pairing readouts.
+     Why not: For natural independent uniform labels, average distance-w edge mass is <=C(m,w)/N and total mass <=1. Under independent product dephasing the weighted relaxation is superpolynomially small at fixed eta<1 and polynomial m; correlated faults are not covered by this conclusion.
+  4. negative   NEG-DCP-SUBSET-SUM-SUB-HALF-LOG-MOMENT-ORDER  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM]
+     research/registry/negative_results.json:67749
+     Claim: A nonnegative bad-tuple moment with 4^k log n=o(n) retains persistent source signal for density-one modular subset sum.
+     Why not: At most 2^k non-self lattice transitions occur, and their full path overhead is dominated by the strict bad-state contraction whenever 4^k log n=o(n).
+  5. negative   NEG-CODE-WREATH-ALL-UNEQUAL-HALF-NORM-NOT-K-SCALE  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL, PO-COMPLEXITY, PO-SUCCESS]
+     research/registry/negative_results.json:60990
+     Claim: Removing equal source sectors and proving B<=I/2 closes the all-unequal moment certificate.
+     Why not: The required frame-eigenvalue scale is approximately 2^{1-k}; single-coordinate projection domination loses roughly k-1 bits in operator norm.
+
+Dequantization checks
+  1. dequant    DEQ-DCP-SUB-HALF-LOG-GROWING-MOMENT-ORDER  [critical]
+     research/registry/dequantization_checks.json:645
+     Claim: A nonnegative bad-tuple moment schedule below half-logarithmic order retains generic density-one subset-sum source signal.
+     Why not: Reject every schedule with 4^k log n=o(n). A moment survivor must reach the half-log boundary or higher and charge q=2^k patterns, samples, memory, estimation variance, and decoder complexity.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7454
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7366
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIES  [high]
+     research/registry/dequantization_checks.json:3186
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIE  [high]
+     research/registry/dequantization_checks.json:3164
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+
+Notes and handoff
+  1. note       Local Kummer images by halving and saturation › Polynomial dyadic index via a proof-only volume cover  [unlabelled]
+     research/LOCAL_HALVING_SATURATION.md:128
+     This removes the dyadic iteration-count blocker WITHOUT a conductor- discriminant theorem, Neron basis or component algorithm.
+  2. handoff    2026-11-06 Large-Prime Local Kummer Image Composition  [journal]
+     research/AGENT_HANDOFF.md:3188
+     - LARGE_PRIME_LOCAL_KUMMER_IMAGE.md is a reviewed WRITTEN CLASSICAL polynomial-BIT complete local-image algorithm for monic separable f in Z[X], d=2g+1>=3, p>d, growing g, arbitrary bad reduction.
+  3. note       Good-dyadic local images and growing-genus two-Selmer dimension › 4. Paid global composition  [unlabelled]
+     research/GOOD_DYADIC_GROWING_SELMER.md:155
+     At p>d use LARGE_PRIME_LOCAL_KUMMER_IMAGE.md.
+  4. note       Local Kummer images by halving and saturation  [unlabelled]
+     research/LOCAL_HALVING_SATURATION.md:1
+     Uniform finite-precision ONE-half remains OPEN; full native algorithm NOT established.
+  5. note       Growing-genus local Kummer images at large primes › 9. Exact control and next decision  [audited]
+     research/LARGE_PRIME_LOCAL_KUMMER_IMAGE.md:388
+     One Sage control is retained in audits/controls/local_kummer_span/.
+
+Code and experiments
+  1. hypothesis dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge_contract  [VERIFIED_SCOPED_BRIDGE]
+     research/hypotheses/dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge_contract.json
+     At the half-period shift Delta = 2^{t-1}, 1[x_1 + 2^{t-1} >= 2^t] == MSB(x_1), enabling deterministic single-shot X-basis extraction of s_1 mod 2.
+  2. theorem    Exact pre-complement single-direction descent law; local proof, review pending.  [code]
+     theorems/dcp_adaptive_direction_rank_gate.py:1
+     Exact pre-complement single-direction descent law; local proof, review pending.
+  3. theorem    DCP dyadic valuation and mod-2^k anchor-invariance hierarchy bridge.  [code]
+     theorems/dcp_dyadic_valuation_anchor_invariance_hierarchy_bridge.py:1
+     dcp dyadic valuation anchor invariance hierarchy bridge.
+  4. theorem    DCP dyadic Heisenberg H_3(Z_{2^t}) coherent boundary-cocycle phase-repair bridge.  [code]
+     theorems/dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge.py:1
+     repaired heisenberg qft distribution verify cocycle repair and half period orthogonality generate dcp heisenberg dyadic boundary cocycle repair certificate.
+  5. theorem    DCP noisy cascaded dyadic bit-peeling vs. unpruned CNOT tree sample complexity bridge.  [code]
+     theorems/dcp_noisy_cascaded_dyadic_peeling_sample_complexity_bridge.py:1
+     Exact Per-Level Visibility and Fisher Information per Raw Input Qubit (n = 1):
+   At dyadic level ell in {1, ..., t} (where ell = 1 uses 1 raw wire of visibility
+   V_0 = gamma_0, ell = 2 uses 2 raw wires in a Stage-1 mod-2 pair of visibility
+   V_1 = gamma_0^2, and ell >= 3 uses 2^{ell - 1} raw wi…
+
+Literature
+  1. literature A Tight Lower Bound for Non-coherent Index Erasure  [seed · state-generation, index-erasure, query-lower-bound, black-box]
+     research/literature_records.json
+     A Tight Lower Bound for Non-coherent Index Erasure Proves a tight square-root quantum query lower bound for black-box non-coherent image-state generation.
+  2. literature state_isomorphism_transfer_sources  [audit]
+     research/literature_audits/state_isomorphism_transfer_sources.json
+     AUDIT-CIRCUIT-STATE-ISOMORPHISM-TRANSFER native packet mean squared orbit overlaps and source union bound cyclic lifted image order and order-two aliases full real graph lift physical supports and exact reflection stabilizer exact finite-copy reflection-program counterexample native unrestricted de…
+  3. literature EPRINT-2024-1147  [audit]
+     research/literature_audits/native_rlwe_quaternion_sources.json
+     Earlier full PDF, before merger into 2025/287; later refresh returned 403 EPRINT-2024-1147 Norm-reduced quaternion principal-ideal reduction for rank-two module-LIP Number-field units or principal ideals do not automatically solve quaternion short-generator search Preserve the metric and integral p…
+  4. literature dhsp_codomain_instrument_sources  [audit]
+     research/literature_audits/dhsp_codomain_instrument_sources.json
+     AUDIT-DHSP-CODOMAIN-INSTRUMENT 2026-10-05 PRIMARY_SOURCE_INSPECTION_AND_LOCAL_DERIVATION_NOT_INDEPENDENT_REVIEW Local repaired instrument and explicit source controls, not a generic HSP impossibility claim.
+  5. literature Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial  [seed · code-equivalence, graph-isomorphism, hull, projector]
+     research/literature_records.json
+     Orthogonal direct sums, basis-independent projectors, permutation conjugacy, image recovery, shortening, and graph isomorphism.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

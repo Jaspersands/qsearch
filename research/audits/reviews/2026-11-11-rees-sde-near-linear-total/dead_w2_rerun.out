@@ -18,6 +18,8 @@ kappa p (-1 in P) m1 m2 #max_ext #cand_3 seconds
 5 41 True 2 5 6080 200 1454.9
 5 61 True 2 4 24520 296 455.8
 6 13 True 3 7 1524 80 6254.7
-# re-run 11-11/12 by the integrator (same dead_w2.py and sdecore.py as in the repo, sha256 below); rows for kappa=6, p in {19,31,37,43} still running at the time of this snapshot
+6 19 False 3 7 522 115 61664.2
+# re-run 11-11 to 11-12 by the SDE coordinating session (Claude Code), same dead_w2.py and sdecore.py as in the repo (sha256 below), no time limit
+# kappa=6 p=31: killed by macOS at 19:58 on 11-12 about 2 min after starting (memorystatus: >80 GB compressed memory, low swap); kappa=6 p=31,37,43 NOT computed
 # c5a47b1555ae90cd50966bca8bc567540d36e7ba55b447e97586796b05ce71ef  dead_w2.py
 # 922b1c887242b13e30bb8e4a6f160750114997f99ad90d0b0249f685fa6c6ee5  sdecore.py

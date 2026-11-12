@@ -1,0 +1,108 @@
+Been tried? abelian varieties group order growing genus hyperelliptic Jacobian zeta
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS, PO-MEASUREMENT]
+     research/registry/negative_results.json:70550
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS.
+     Why not: Falsified or refined by exact theorem evaluation.
+  2. negative   NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER (quarantined)  [QUARANTINED_OVERBROAD_NO_GO · ARBITRARY-DEGREE-NUMBER-FIELD, MULTIDIMENSIONAL-CONTINUOUS-HSP, HALLGREN-SCHMIDT-VOLLMER, EXPONENTIAL-DEGREE-BARRIER]
+     research/registry/quarantined_campaign_negatives.json:622
+     Claim: Quantum algorithms can compute the unit group regulator and solve the Principal Ideal Problem in polynomial time for algebraic number fields of arbitrary, growing degree n = [K : Q].
+     Why not: The multi-dimensional continuous torus HSP over R^r / Lambda_K (where r = r_1 + r_2 - 1 = Theta(n)) avoids non-abelian representation obstacles because the torus is abelian, yielding dual lattice characters chi_u(x) = exp(2 pi i u . x). However, inverting the dual lattice from noisy quantum samples 
+  3. negative   NEG-CODE-SELF-DUAL-FIXED-ORDER-RIGIDITY-SCALING  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-FIXED-ORDER-SPARSITY-OBSTRUCTION]
+     research/registry/negative_results.json:59205
+     Claim: The successful fixed weight-ten support certificate scales to a growing random self-dual family.
+     Why not: Weight-ten expected support count drops below one on 7/11 scaling rows; the entropy threshold for nonvanishing mass is relative weight 0.1100, forcing growing-order explicit enumeration.
+  4. negative   NEG-CODE-WREATH-ALL-ORDER-WORD-MAP-NOT-GROWING-CONTRACTION  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-NATURAL-MOMENT-WORD-MAP, PO-COMPLEXITY, PO-SUCCESS]
+     research/registry/negative_results.json:60959
+     Claim: Eliminating the physical-irrep sum from natural frame moments already gives a polynomial high-order moment algorithm.
+     Why not: The exact replacement enumerates (n!)^m bridge sequences and 2^m subset words. No compressed recurrence is proved at the required growing moment order.
+  5. negative   NEG-CODE-WREATH-FINITE-SUBPOVM-MOMENTS-NOT-CIRCUIT  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-SUBPOVM-MOMENTS, PO-MEASUREMENT, PO-SUCCESS]
+     research/registry/negative_results.json:61274
+     Claim: Finite high-order moment certificates already implement the code-equivalence projector sub-POVM.
+     Why not: The complete calculation is confined to W_3. Natural equal sectors can be discarded asymptotically, but no growing-order all-unequal contraction, structured maximal-effect dilation, or permutation decoder is known.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8081
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-DCP-SAMPLED-SMITH-SPECTRUM-RARE-EVENT-BLINDNESS  [critical]
+     research/registry/dequantization_checks.json:579
+     Claim: Polynomially many sampled assignment tuples can establish absence of atypical fifth-order, order>=6, or growing-order structure in density-one modular subset sum.
+     Why not: Derive uniform counts for every proposed Smith dependency class. Treat sampled spectra only as class generators: exponentially rare tuples may carry nonnegligible factorial-moment mass. Then provide an implicit statistic and witness-decoder implication.
+  3. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM-GROWING-ORDER-MOMENT-THEOREM-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13757
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM-GROWING-ORDER-MOMENT-THEOREM: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PRODUCT-CHARACTER-ZETA-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:6563
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PRODUCT-CHARACTER-ZETA-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PRODUCT-CHARACTER-ZETA-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIES  [high]
+     research/registry/dequantization_checks.json:3065
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PRODUCT-CHARACTER-ZETA-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+
+Notes and handoff
+  1. note       Growing-genus local Kummer images at large primes › 1. Question, selection and native contract  [audited]
+     research/LARGE_PRIME_LOCAL_KUMMER_IMAGE.md:15
+     Can the full local two-descent image of a growing-genus hyperelliptic Jacobian be computed in randomized polynomial BIT time at every prime p>2g+1, including arbitrary bad reduction?
+  2. note       Good-dyadic local images and growing-genus two-Selmer dimension › 2. The concrete dyadic operation  [unlabelled]
+     research/GOOD_DYADIC_GROWING_SELMER.md:64
+     Thus all allowed point traces span J(F_2)/2 without computing the group or its order.
+  3. note       Quartic-surface P2 from explicit torsion-cover twists › Scientific question and exact contract  [unlabelled]
+     research/SURFACE_TORSION_COVER_RECONSTRUCTION.md:9
+     Quartic degree and ambient dimension are FIXED; growing genus/degree is excluded.
+  4. note       Mersenne Carry Walsh Evaluation: Reviewed Local Construction › 11. Relation To The Investigated Literature  [unlabelled]
+     research/MERSENNE_CARRY_WALSH_DRAFT.md:662
+     <https://library.slmath.org/books/Book44/files/18lauder.pdf> - Harvey, *Computing zeta functions of arithmetic schemes*: elementary finite-precision point-counting methods, with explicit dependence on the defining variety in its bounds.
+  5. note       Arithmetic Tensor Isomorphism: Constructive Baselines First › Why The Tempting Quantum Extension Is Weak  [unlabelled]
+     research/ARITHMETIC_TENSOR_DIRECTION_AUDIT.md:102
+     - A Jacobian and marked Jacobian point do not identify the genus-one torsor or supply a rational point on it.
+
+Code and experiments
+  1. theorem    Genus-uniform mixing of separating surface targets in ``S_n``.  [code]
+     theorems/self_dual_wreath_separating_surface_target_mixing.py:1
+     (4)
+
+The fixed-exponent symmetric-group Witten-zeta estimate
+``zeta^*(s)=O(n^-s)`` makes (4) ``O(n^-(2 min(a,b)-1))``.
+  2. theorem    Exact character-zeta formulas kill the order-three and order-four blocks.  [code]
+     theorems/self_dual_wreath_alternating_product_character_zeta.py:1
+     The symmetric-group Witten
+zeta estimate ``Zeta_2^*=O(n^-2)`` proves order-three decay.
+  3. theorem    Exact surface law for the target-survival identity-frame lift.  [code]
+     theorems/self_dual_wreath_target_survival_surface_seed.py:1
+     (1)
+
+Using the symmetric-group Witten-zeta estimates zeta_n(1)=2+O(n^-1) and
+zeta_n(2)=2+O(n^-2), together with at most O(sqrt(n)) removable corners, the
+two extreme (trivial/standard and sign/sign-standard) branches dominate (1):
+
+    average_Std = 2/(n-1)^2 + O(n^-5/2).
+  4. theorem    Exact target-character topology generated by the sibling split relations.  [code]
+     theorems/self_dual_wreath_mixed_split_target_genus.py:1
+     splittargetgenuscontrol splittargetgenusscalingrecord mixedsplittargetgenusreport cyclic one run count split target orientable genus split target orientable genus for pattern audit split target genus split only normalized character factor symmetric group standard character average run mixed split t…
+  5. experiment Self Dual Wreath Separating Surface Target Mixing  [planned]
+     research/registry/experiments.json:12731
+     The exact finite S3 handle-character bias does not survive growing S_n.
+
+Literature
+  1. literature Quantum Algorithms for Gowers Norm Estimation, Polynomial Structure Testing, and Counting Arithmetic Progressi  [seed · gowers-norm, property-testing, higher-order-fourier, finite-fields]
+     research/literature_records.json
+     Hidden shift and dihedral HSP families over growing abelian groups and group actions.
+  2. literature state_hsp_dhsp_scope_sources  [audit]
+     research/literature_audits/state_hsp_dhsp_scope_sources.json
+     AUDIT-STATE-HSP-DHSP-TRANSFER dihedral reflection core is trivial Baer norm equals dihedral center weak labels retain no shift beyond rare parity A and inverse are already available in the same full-function oracle model 7.1 normal-core statement and graph-state reduction 7.2.2 Baer-norm definition…
+  3. literature Quantum algorithms to solve the hidden shift problem for quadratics and for functions of large Gowers norm  [seed · hidden-shift, gowers-norm, quadratic-forms, harmonic-analysis]
+     research/literature_records.json
+     Hidden shift and dihedral HSP families over growing abelian groups and group actions.
+  4. literature Quantum Computation and Lattice Problems  [seed · lattice, dihedral-hsp, unique-svp, reduction]
+     research/literature_records.json
+     Hidden shift and dihedral HSP families over growing abelian groups and group actions.
+  5. literature A subexponential-time quantum algorithm for the dihedral hidden subgroup problem  [seed · dihedral-hsp, hidden-shift, sieve, lattice-adjacent]
+     research/literature_records.json
+     Hidden shift and dihedral HSP families over growing abelian groups and group actions.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

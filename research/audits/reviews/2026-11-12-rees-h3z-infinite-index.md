@@ -8,8 +8,9 @@ command was run. Claim gates are unchanged: `speedup_claim_allowed` and `novelty
 stay false. There is no application: f is an arbitrary oracle.
 
 **Verdict.**
-* Every subgroup H with H ∩ Z(G) ≠ 1 is found in quantum polynomial time (Theorem A, PROVED
-  given cited theorems).
+* Every subgroup H with H ∩ Z(G) ≠ 1 is found in quantum polynomial time (Theorem A, proved
+  given Kuperberg Thm 1.5/7.1 and cor:utz; AI-checked and refereed twice by AI, pending human
+  review).
 * The only remaining case is H = ⟨h⟩ with h non-central and H ∩ Z = 1, or H = 1. This case
   reduces in polynomial time to a classical **zero-sum problem over R/Z at precision
   2^{-Θ(b)}** for exactly uniform samples (Theorem B1, CONDITIONAL on Kuperberg's Z^2 step
@@ -78,47 +79,84 @@ A_v = ⟨g_v, z⟩ with g_v = (v_1,v_2,0) is abelian and isomorphic to Z^2 via
 
 Output: `h3z_struct.out`.
 
+The constant in Lemma E is sharp up to a factor 2. For v = (1,1), t_1 = 2^b − 1 and
+t_2 = −(2^b − 2), e ≈ 2^{3b}, with e/2^{3b+1} → 1/2 (second referee, `struct_referee.py`;
+exhaustive two-generator search agrees for b ≤ 3). The ratio 2.4 above reflects random
+sampling only, so Step 1 really needs Q ≈ 2^{6b+3}.
+
 ## 2. Theorem A: H ∩ Z ≠ 1 is polynomial
 
-**Theorem A (PROVED, given cited theorems).** There is a quantum algorithm with the following
-guarantee. For every b, ε, and every H with H ∩ Z ≠ 1 and generators of bit size b, it returns
-generators of H with probability ≥ 1 − ε. It uses poly(b, log 1/ε) queries and
-poly(b, w, log 1/ε) gates. It also decides whether H ∩ Z = 1, with one-sided error ε.
+**Theorem A (proved given cited theorems: Kuperberg 2025 Thm 1.5 via its Thm 7.1, and cor:utz,
+itself AI-checked, pending human review; second referee 2026-11-12-rees-h3z-referee.md).**
+There is a quantum algorithm with the following guarantee. Input: b ≥ 1, ε ∈ (0,1), and an
+oracle for f as in §0, coherent on matrices with entries in (−2^B, 2^B), where
+B = B(b) = max(20b+11, 2P_K + 3b + 3) = poly(b) and 2^{P_K} bounds the entries of Kuperberg's
+query vectors at answer size n_L = O(b). Promise: H has a generating set with all entries of
+absolute value < 2^b. If H ∩ Z ≠ 1, the algorithm returns generators of H, with entries of
+bit size poly(b), with probability ≥ 1 − ε. It decides whether H ∩ Z = 1, and the answer
+"H ∩ Z ≠ 1" is always correct. It uses poly(b, log 1/ε) queries and poly(b, w, log 1/ε) gates.
+b must be given: doubling is sound for Step 1 alone, not for the whole theorem (a failed run
+returning too small an S cannot be detected, and with H ∩ Z = 1 doubling never stops).
 
 Imported results:
-* Kuperberg 2025, arXiv:2507.18499, Thm 1.5 and Cor 1.7: HSP for arbitrary subgroups of Z^k
-  and of finitely generated abelian groups in quantum poly time in the answer's bit size. Read
-  in the HTML (statements and the input model, binary vectors).
-* Mosca–Ekert finite-index period finding.
-* rem:utz-scope(b) for finite index in H_3(Z), via ISS 2012.
+* Kuperberg 2025, arXiv:2507.18499v1, Thm 1.5 (HSP in Z^k for arbitrary hidden subgroups,
+  poly(k, n) with n the bit complexity of the answer, elements of Z^k in binary) and its proof
+  Thm 7.1 / Algorithm A (§7.1, read in the PDF on 2026-11-12). Algorithm A applies the
+  hiding function only on the cube ‖x‖_∞ < Q/2, with Q, R, S, T of order exp(poly(n)), and
+  Thm 7.1 says it "succeeds with good probability". Thm 1.8 is the one labelled outlined;
+  Thm 7.1 is proved in §§7.4–7.8 (not checked here). Cor 1.7 pulls back to Z^k, as below.
+* Shor/Kitaev period finding (Mosca–Ekert §§2, 4.2, not re-read).
+* cor:utz / rem:utz-scope(b) for finite index in H_3(Z): ISS 2012 for q ≥ 3 and
+  Imran–Ivanyos 2023 Thm 1 for q = 2.
 
 *Algorithm and proof.*
-1. **Detection.** Run period finding on t ↦ f(z^t), t ∈ [0, 2^{6b+3}). Accept a candidate
-   r with 1 ≤ r ≤ 2^{3b+1} only if f(z^r) = f(1), which is an exact check. Continued
-   fractions return divisors of e, so a candidate passes the check only if it equals e. Take
-   the lcm of the candidates from two runs, then check it. A single run returns e with
-   probability Ω(1/log log e). So O(log b · log 1/ε) runs return e with probability
-   ≥ 1 − ε/4 when H ∩ Z = ⟨z^e⟩ (Lemma E). If H ∩ Z = 1, nothing is ever accepted. So the
-   answer "H ∩ Z ≠ 1" is always certified, and the answer "H ∩ Z = 1" is wrong with
-   probability ≤ ε/4. (Referee fixes: divisors, not multiples; r = 0 excluded; success
-   probability not constant.)
+1. **Detection.** Run period finding on t ↦ f(z^t), t ∈ [0, 2^{6b+3}). Accept a candidate r
+   with 1 ≤ r ≤ 2^{3b+1} only if f(z^r) = f(1). This test holds iff e | r, so every accepted
+   value is a positive multiple of e. A run whose outcome is close to jQ/e with gcd(j,e) = 1
+   returns exactly e (Q = 2R^2, R = 2^{3b+1}), with probability Ω(1/log log e). Other outcomes
+   may return proper multiples of e: e = 3, b = 1, outcome 34 of Q = 512 gives the convergent
+   1/15 and r = 15, which passes (second referee, `step1_sim.py`; recomputed). Let ê be the
+   **gcd** of all values accepted in O(log b · log 1/ε) runs. Then e | ê, and ê = e with
+   probability ≥ 1 − ε/4. If H ∩ Z = 1, nothing is accepted. So "H ∩ Z ≠ 1" is always
+   certified, and "H ∩ Z = 1" is wrong with probability ≤ ε/4. Queries: z^t, 0 ≤ t < 2^{6b+3}.
+   (An earlier draft took the lcm and said only e passes; both wrong.)
 2. **Abelian layer.** Let A = ⟨x^e, y, z⟩ = π^{-1}(eZ × Z), a subgroup of index e. Modulo
-   ⟨z^e⟩ it is abelian, since [x^e, y] = z^e. The map x^{eα}y^βz^γ ↦ (α, β, γ mod e) is an
-   isomorphism A/⟨z^e⟩ → Z^2 × Z_e (checked in `h3z_struct.py` on random pairs). Since
-   z^e ∈ H, f(gz^e) = f(g), so F(α,β,γ) = f(x^{eα}y^βz^γ) hides S = (H∩A)/⟨z^e⟩. Kuperberg
-   Cor 1.7 returns S.
+   ⟨z^e⟩ it is abelian, since [x^e, y] = z^e. The map x^{eα}y^βz^γ = (eα, β, γ + eαβ) ↦
+   (α, β, γ mod e) is an isomorphism A/⟨z^e⟩ → Z^2 × Z_e (checked in `h3z_struct.py` and the
+   referee's `struct_referee.py` on random signed pairs). Since z^e ∈ H, F̃(α,β,γ) =
+   f(x^{eα}y^βz^γ) on Z^3 hides the lattice L = ψ^{-1}(S) ∋ (0,0,e), S = (H∩A)/⟨z^e⟩. This is
+   Kuperberg's proof of Cor 1.7. L has a basis with entries < 2^{4b+2}: in rk 2,
+   [Z^3:L] = [A:H∩A] ≤ [G:H] < 2^{4b+2}; in rk 1 the basis is (u'_1, u'_2, γ_0), (0,0,e) with
+   |u'_2| < 2^{4b+1}; in rk 0 it is (0,0,e). So the answer size is n_L = O(b). Run Algorithm A
+   at that n_L. Its queries have entries < 2^{P_K}, P_K = poly(n_L), so the matrix entries are
+   < e·2^{2P_K} + 2^{P_K} < 2^B. Repeat O(log 1/ε) times and keep the vectors v with
+   F̃(v) = F̃(0); every kept vector lies in L, and the lattice they generate is L with
+   probability ≥ 1 − ε/4. (Assumes Thm 7.1 holds when run with an upper bound on n, and that
+   "good probability" means a constant; not checked in §§7.4–7.8.)
 3. **Rank of S** (it equals rk π(H), since π(h^e) ∈ eZ × Z for every h ∈ H):
-   * rk 0: H = ⟨z^e⟩.
-   * rk 2: [G:H] = [Z^2:π(H)]·e is finite, at most 2^{O(b)}. This is the finite-index case,
-     rem:utz-scope(b), which uses known results only.
-   * rk 1: a generator of S lifts to h^m z^{·} with π(h^m) = m·w', where π(H) = Zw'. Its
-     primitive direction v satisfies H ⊆ A_v. Restrict f to A_v ≅ Z^2. There H has rank 2
-     (it contains z^e and h), so finite index, and finite-index abelian HSP returns it.
+   * rk 0: π(H∩A) = 0, so π(H) = 0 since eπ(H) ⊆ π(H∩A), and H = ⟨z^e⟩.
+   * rk 2: [G:H] = [Z^2:π(H)]·e ≤ d^2 < 2^{4b+2}, where d = ω(πg,πg') for two generators
+     with independent projections (e | d). Apply cor:utz with index parameter b' = 4b+2 and
+     error ε/2. Its box [0, 2^{20b+11}) lies inside the signed box, and the coset convention
+     matches. For n = 3 it uses ISS 2012 (q ≥ 3) and Imran–Ivanyos 2023 Thm 1 (q = 2), and not
+     Thm is-import. cor:utz is AI-checked, pending human review.
+   * rk 1: π(H∩A) = π(H) ∩ (eZ × Z) = Zu with u ≠ 0, so the primitive direction v = u/gcd(u)
+     is read off any element of L with (α,β) ≠ 0, and H ⊆ A_v. Restrict f to A_v via
+     ι(t,s) = g_v^t z^s = (tv_1, tv_2, s + C(t,2)v_1v_2). Then f∘ι hides L_v = ι^{-1}(H), of
+     index d·e < 2^{3b+1}. The HNF row (u'_1, u'_2, γ_0) of L gives
+     (eu'_1, u'_2, γ_0 + eu'_1u'_2) ∈ H, with A_v-coordinates (t_0, s_0), |t_0| < 2^{4b+1}. So
+     N = e|t_0| < 2^{7b+2} satisfies NZ^2 ⊆ L_v. Finite abelian HSP in Z_N^2 (Kitaev /
+     Mosca–Ekert), queried on [0,N)^2, returns L_v with error ε/2; the matrix entries are
+     < 2^{16b+5}. Output ι of an HNF basis of L_v.
 
    [computed] For 661/661 rank-1 instances, H ∩ A contains h^m, the direction v is correct,
-   and every basis element lies in A_v.
+   and every basis element lies in A_v. The referee's check regenerates H from ι(basis) and
+   z^e on 357 instances.
 
-All coordinates stay 2^{O(b)}, so B = O(b) suffices. The errors add up by a union bound. ∎
+The outputs generate H itself: z^e (rk 0), ι(HNF basis of L_v) (rk 1), cor:utz's output (rk 2).
+Every step except Kuperberg's queries the box of exponent max(6b+4, 16b+6, 20b+11) = 20b+11;
+Kuperberg's step needs 2P_K + 3b + 3 = poly(b). So B = poly(b), not O(b) as an earlier draft
+said. Errors: ε/4 + ε/4 + ε/2 = ε. ∎
 
 *Remark (Kuperberg Cor 1.9 is not enough here).* G/⟨z^e⟩ is virtually abelian, and f descends
 to it, so the reduction to it is legitimate once e is known. But Cor 1.9 gives only
@@ -332,9 +370,11 @@ New relative to the sources read (pending specialist check):
 ## 7. Adversarial self-check
 
 * **Is e (or the bound) circular?** No. Lemma E bounds e by the generator bit size, and the
-  algorithm never uses [G:H].
-* **Kuperberg Cor 1.7 in step 2 needs the answer's bit size.** S is generated by h^m with
-  m ≤ e, coordinates 2^{O(b)}: fine.
+  algorithm uses only bounds derived from b (e < 2^{3b+1}, [G:H] < 2^{4b+2} in rank 2), so
+  there is no circularity.
+* **Kuperberg Cor 1.7 in step 2 needs the answer's bit size.** L has a basis with entries
+  < 2^{4b+2} (index bound in rank 2, explicit basis in rank 1), so n_L = O(b). Kuperberg's
+  query box is exp(poly(n_L)) (Algorithm A), so B = poly(b), not O(b).
 * **Signed box.** Required (§0); with [0,2^B) the model cannot express some cyclic H.
 * **Does Ψ hide K or only K's direction?** With φ = id, it hides exactly K = HZ.
   Orthogonality across cosets is exact (Part B: overlap 0).
@@ -357,7 +397,7 @@ New relative to the sources read (pending specialist check):
 | Lemma E | CORRECT with small gaps (negative t, constant) | Fixed; e ≤ 2^{3b+1} |
 | §0 | false reason given | Fixed |
 | Thm A isomorphism, rank, A_v | CORRECT | — |
-| Detection | GAP (divisors, not multiples; r = 0; success probability Ω(1/log log e)) | Fixed |
+| Detection | GAP (divisors, not multiples; r = 0; success probability Ω(1/log log e)) | Partly fixed; the second referee found that accepted multiples were not handled (gcd fix) |
 | §3 phase law and state preparation | CORRECT | — |
 | D_h non-uniform | WRONG: θ is exactly uniform | Fixed; Lemma S simplified, next command redirected |
 | Prop N | CORRECT given χ on Z trivial, but that assumption was unjustified (counterexample g ↦ g^{-1}) | Justification added: χ(z) ≠ 0 does not descend to G/Z |

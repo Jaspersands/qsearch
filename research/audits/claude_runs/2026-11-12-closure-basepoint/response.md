@@ -1,0 +1,242 @@
+# Canonical degree-g representatives at a common base point: proof, characteristic counterexample, finite-field algorithm and cost accounting
+
+## Verdict
+
+**Status labels.** PROVED means proved here. IMPORTED means a standard published theorem that is used but not reproved. ASSUMED means an algorithmic cost contract. OPEN means not established.
+
+1. **The lemma is true, with explicit constants, when p = 0 or p > 2g − 2.** The bound is strictly better than O(N·g³) per class.
+   - At most g³ − g bad geometric points come from E = O (the Weierstrass points).
+   - At most ⌊g(g−1)²/2⌋ bad points come from each nontrivial E.
+   - Status: PROVED. The only background used is the derivation calculus on a smooth curve (Kähler differentials).
+2. **Some characteristic hypothesis is necessary.** In characteristic 3, the genus-3 curve y³ + y = x⁴ has h⁰(O(3b)) ≥ 2 at *every* point b. So the case E = O fails everywhere. The threshold p > 2g − 2 = 4 is therefore not removable for g = 3. Status: PROVED by explicit computation.
+3. **Finite-field algorithm.** One separable degree-D map is used. Polynomially many base values are tried, but the output is ONE closed fibre place. There is no torsion enumeration beyond T itself and no common support splitting. Three variants are given:
+   - deterministic in the base value;
+   - Las Vegas with expected O(1) fibres;
+   - a degree-one-point variant.
+   
+   Status: PROVED, given the ASSUMED Riemann–Roch (RR) and factoring costs.
+4. **Fixed-rank ℓ-torsion module.** The cost is poly(ℓ^m, g, D, model, log q) for fixed m. For a module of growing rank u (for example V_small with u ≤ 2g), the following holds:
+   - The *choice* of b is still cheap; the field degree is O(u log ℓ + log g + log 1/η).
+   - Exact certification for *all* ℓ^u elements is OPEN.
+   - Lazy per-element certification is PROVED to be Las Vegas for the elements actually used.
+5. **Characteristic 0.** There is a base point of height at most log(M+1) above an integer base value. A specialization lemma shows that a unique mod-P representative is the reduction of the unique characteristic-0 representative. No height bound is claimed for representatives or torsion supports.
+
+Throughout, k̄ is an algebraic closure. C is smooth, projective and geometrically connected of genus g ≥ 1. "Point" means a k̄-point unless it is called a closed place.
+
+---
+
+## 1. Exact statement
+
+**Theorem A (PROVED).**
+
+*Setting.* Let C/k have genus g ≥ 1, and let p = char k satisfy p = 0 or p > 2g − 2. Let T ⊂ Pic⁰(C_k̄) be a finite set, with N = |T|. Define
+
+  M_T = [O ∈ T]·(g³ − g) + |T∖{O}|·⌊g(g−1)²/2⌋ ≤ N·g³.
+
+*Conclusion.* There is a set B_T ⊂ C(k̄) with |B_T| ≤ M_T such that for every b ∉ B_T and every E ∈ T:
+
+  h⁰(E(gb)) = 1.
+
+*Descent.* Suppose k is perfect and k′ ⊇ k is a field with b ∈ C(k′) and E Gal(k̄/k′)-invariant. Then the unique effective D_E ∈ |E(gb)| is a k′-rational divisor of degree g. Moreover, the map E ↦ D_E is equivariant for every automorphism of k̄/k that fixes b.
+
+*Bad sets.*
+- **E = O:** B_O is the Weierstrass-point set.
+- **E ≠ O, g ≥ 2:** B_E is the set of b at which some section of K − E vanishes to order ≥ g.
+- **g = 1:** B_T = ∅.
+
+## 2. Reduction by Riemann–Roch and Serre duality
+
+E(gb) has degree g, so χ(E(gb)) = g − g + 1 = 1. Serre duality then gives
+
+  h⁰(E(gb)) = 1 + h⁰(K ⊗ E⁻¹(−gb)).
+
+Here H⁰(K − E − gb) is the space of sections of K − E vanishing to order ≥ g at b.
+
+- **Case E = O.** H⁰(K) has dimension g.
+- **Case E ≠ O.** Degree zero and nontrivial gives h⁰(E) = 0. Riemann–Roch for K − E then gives h⁰(K − E) = (2g−2) − g + 1 + h⁰(E) = g − 1.
+
+Let V = H⁰(K − E) be the complete series, of dimension r + 1. Then r = g − 1 if E = O, and r = g − 2 otherwise. In both cases d = deg = 2g − 2.
+
+At a point b, the vanishing orders of nonzero sections of V take exactly r + 1 distinct values a₀(b) < … < a_r(b) ≤ d. This is elementary: filter V by order of vanishing, and each successive quotient injects into a one-dimensional jet space.
+
+A section vanishing to order ≥ g exists iff a_r(b) ≥ g. Define the weight w(b) = Σᵢ (aᵢ(b) − i). Since each aᵢ − i ≥ 0 and a_r − r ≥ g − r, a bad point has
+
+  w(b) ≥ g − r,  that is, w ≥ 1 for E = O and w ≥ 2 for E ≠ O.  (★)
+
+So it suffices to prove that Σ_b w(b) equals the classical Plücker number and is finite. That is a Wronskian statement.
+
+## 3. The Wronskian in characteristic 0 or p > d (self-contained)
+
+**Lemma 3.1 (PROVED).** Let V ⊂ H⁰(C, L) have dimension r + 1, with deg L = d. Suppose p = 0 or p > d. Then
+
+  Σ_{b∈C(k̄)} w_V(b) = (r+1)d + r(r+1)(g−1),
+
+and in particular only finitely many b have w_V(b) > 0.
+
+**Ingredients.** All are elementary, using ordinary derivatives only.
+
+- **(a) Separating element and derivation.** k̄(C) has a separating transcendental element t, so Ω_{k̄(C)} = k̄(C)·dt. Define ∂_t f by df = (∂_t f) dt.
+- **(b) Local behaviour.** At a point Q with uniformizer u, the module Ω_{O_Q} is generated by du. Hence ∂_u maps O_Q into O_Q. Writing f = u^n w with w a unit gives ord_Q(∂_u f) ≥ ord_Q f − 1. Also ∂_u(u^m) = m u^{m−1} formally.
+- **(c) Chain rule.** ∂_u = (∂_u t)·∂_t. By induction, ∂_u^j = Σ_{i≤j} c_{ij} ∂_t^i, with c_{jj} = (∂_u t)^j.
+- **(d) Leibniz rule.** ∂^j(hf) = Σ_i C(j,i)·∂^i h·∂^{j−i} f.
+
+**Proof.**
+
+*Step 1: the global Wronskian section.* Fix a nonzero rational section s₀ of L and a basis σ₀,…,σ_r of V. Put fᵢ = σᵢ/s₀ and Wr_t = det(∂_t^j fᵢ)_{0≤i,j≤r}. Write N_r = r(r+1)/2 and set
+
+  ω = Wr_t · s₀^{⊗(r+1)} ⊗ (dt)^{⊗N_r},
+
+a rational section of L^{r+1} ⊗ Ω^{⊗N_r}.
+
+*Step 2: local form of ω.* Let Q be a point, e a local generator of L at Q, and u a uniformizer at Q. Write σᵢ = gᵢ e and h = e/s₀, so that fᵢ = h·gᵢ.
+
+- By (d), the matrix (∂_t^j(h gᵢ)) is the matrix (∂_t^j gᵢ) multiplied by a triangular matrix with diagonal h. Hence Wr_t(f) = h^{r+1}·Wr_t(g).
+- By (c) with the roles of t and u exchanged, Wr_t(g) = (∂_t u)^{N_r}·Wr_u(g).
+
+Therefore
+
+  ω = Wr_u(g₀,…,g_r)·e^{r+1}·(du)^{N_r}.
+
+*Step 3: the local order.* Change the basis by a constant invertible matrix so that ord_Q gᵢ = aᵢ := aᵢ(Q). This multiplies ω by a nonzero constant. Write
+
+  gᵢ = cᵢ u^{aᵢ} + u^{aᵢ+1}hᵢ, with cᵢ ≠ 0 and hᵢ ∈ O_Q.
+
+By (b), the entry ∂_u^j gᵢ lies in O_Q and has order ≥ aᵢ − j. When j ≤ aᵢ, its coefficient of u^{aᵢ−j} is cᵢ·aᵢ^{(j)}, where a^{(j)} = a(a−1)…(a−j+1) is the falling factorial. When j > aᵢ, that coefficient is 0, which is consistent with aᵢ^{(j)} = 0.
+
+Every term of the determinant expansion has order ≥ Σaᵢ − N_r. The coefficient of u^{Σaᵢ−N_r} is
+
+  Πcᵢ · det(aᵢ^{(j)}).
+
+Since a^{(j)} is a monic integer polynomial of degree j in a, column operations over ℤ give
+
+  det(aᵢ^{(j)}) = Π_{i<k}(a_k − aᵢ).
+
+Each factor is an integer in [1, d]. If p > d (or p = 0), none is divisible by p, so this coefficient is nonzero in k̄. Hence ω ≠ 0, ω is regular at Q, and
+
+  ord_Q ω = Σaᵢ(Q) − N_r = w_V(Q).
+
+*Step 4: degree count.* Summing over all Q,
+
+  Σ w_V(Q) = deg(L^{r+1} ⊗ Ω^{N_r}) = (r+1)d + N_r(2g−2). ∎
+
+**Remark (ordinary versus Hasse Wronskian).** Only ordinary derivatives were used. They suffice because r ≤ d < p. When p ≤ d this argument breaks down, and it genuinely must (see §4).
+
+**Proof of Theorem A.**
+
+*Plücker numbers.*
+- For E = O: r = g − 1 and d = 2g − 2, so the total weight is g(2g−2) + g(g−1)² = g³ − g.
+- For E ≠ O: r = g − 2, so the total weight is (g−1)(2g−2) + (g−2)(g−1)² = g(g−1)².
+
+*Counting bad points.* By (★), |B_O| ≤ g³ − g and |B_E| ≤ ⌊g(g−1)²/2⌋. Take B_T = ∪_E B_E.
+
+*Hypothesis used.* The condition p > d = 2g − 2 is exactly the hypothesis of Lemma 3.1. In particular p > 2g suffices.
+
+*Descent.* Let σ ∈ Gal(k̄/k′). Then σ fixes b and the class of E, so σ(D_E) is an effective divisor in |E(gb)|. By uniqueness σ(D_E) = D_E. Over a perfect field, a Galois-invariant divisor is rational. Equivariance follows from the same uniqueness argument.
+
+*Small genus.* For g = 1 all bounds are 0. For g = 2, the bound 1 for E ≠ O matches the direct argument: E(2b) is special iff K − E ~ 2b, and |K − E| contains a single divisor. ∎
+
+## 4. The characteristic hypothesis cannot be dropped: explicit counterexample
+
+**Proposition 4.1 (PROVED).** Let k have characteristic 3, and let C : y³z + yz³ = x⁴ in ℙ². Then C is smooth of genus 3, and h⁰(O_C(3b)) ≥ 2 for every b ∈ C(k̄). So the case E = O of the lemma fails at every point.
+
+**Proof.**
+
+*Smoothness.* With F = y³z + yz³ − x⁴, in characteristic 3:
+
+  F_x = −4x³ = 2x³, F_y = z³, F_z = y³.
+
+These vanish simultaneously only at x = y = z = 0. So C is a smooth plane quartic, of genus 3, and K_C = O(1)|_C: canonical divisors are line sections.
+
+*Affine points.* Take an affine point (a, b₀) with b₀³ + b₀ = a⁴. Its tangent line is y = a³x − b₀³. Substitute into y³ + y − x⁴. Using b₀⁹ + b₀³ = (b₀³ + b₀)³ = a¹², we get
+
+  −x⁴ + a⁹x³ + a³x − a¹² = (x − a⁹)(a³ − x³) = (x − a⁹)(a − x)³.
+
+So the tangent line meets C with multiplicity ≥ 3 at (a, b₀).
+
+*The point at infinity.* The unique point at infinity is (0:1:0). There the line z = 0 meets C with multiplicity 4, since x⁴ = 0.
+
+*Conclusion.* Every b admits an effective canonical divisor ≥ 3b. Hence h⁰(K − 3b) ≥ 1, and so h⁰(3b) = 1 + h⁰(K − 3b) ≥ 2. ∎
+
+Here p = 3 ≤ 2g − 2 = 4. The canonical series is nonclassical: its generic orders are 0, 1, 3, and the ordinary Wronskian vanishes identically. No ramification-divisor bound exists. The threshold p > 2g − 2 is therefore sharp in the sense that it cannot be removed for g = 3. Optimality for larger g is not claimed.
+
+**Caveat.** For 2 < p ≤ 2g − 2 the lemma may or may not hold for a particular curve. Theorem A makes no claim there. A finite-field algorithm must check p > 2g − 2 explicitly and otherwise return OUT_OF_SCOPE.
+
+## 5. Finite-field algorithm
+
+### 5.1 Inputs and representations (all charged)
+
+- **Plane model.** F ∈ 𝔽_q[x, y] is absolutely irreducible, with ∂F/∂y ≢ 0, deg_y F = D and deg_x F = d_x. The map x : C → ℙ¹ is separable of degree D. Its size is measured in bits.
+- **Genus.** g is supplied or computed by the charged normalization (the repository's reused Kozen/RR costs). The algorithm checks p > 2g − 2.
+- **Classes.** Each E ∈ T is a pair (A_E, B_E) of effective divisors of equal degree δ_E. They are given in closed-place/ideal representation over 𝔽_{q^{c_E}}, with E = [A_E − B_E]. No geometric support points are required, and no common field of definition of the classes is required.
+- **ASSUMED cost RR(δ, Q).** Exact computation of a basis of L(G) for a divisor G of degree ≤ δ, over 𝔽_Q, on the normalized model. The cost is poly(model size, δ, g, log Q) (Hess-type). This is the repository's charged RR contract and is not reproved here.
+- **ASSUMED cost Fact(D, Q).** Las Vegas factorization of a degree-D polynomial over 𝔽_Q in time poly(D, log Q), together with Las Vegas construction of 𝔽_{q^s}. Deterministic poly(log p) versions are not available, so the algorithm is Las Vegas.
+
+### 5.2 The model-excluded set
+
+Let Δ(x) = lc_y(F)·disc_y(F) ∈ 𝔽_q[x]. Then deg Δ ≤ d_x + (2D−2)d_x, and let R := (2D−1)d_x. Suppose α satisfies Δ(α) ≠ 0. Then F(α, y) is squarefree of degree D. The plane model is nonsingular at its D roots. So the fibre x⁻¹(α) consists of exactly D points, and these are read off from the factorization. A closed place above α is a pair (α, h), where h is an irreducible factor of F(α, y) of degree f ≤ D, with residue field 𝔽_{q^{sf}}.
+
+**Key observation.** If α ∉ x(B_T) and Δ(α) ≠ 0, then *every* point of the fibre is good. So one closed place suffices, and no fibre splitting is needed. At most M_T + R values α ∈ 𝔽_{q^s} are bad.
+
+### 5.3 Testing one candidate (exact)
+
+Let b be one of the conjugate geometric points of a closed place (α, h), so b is rational over k_b = 𝔽_{q^{sf}}. For each E:
+
+1. Work over 𝔽_{Q_E} with Q_E = q^{lcm(sf, c_E)}, a separate field for each E.
+2. Compute dim L(A_E − B_E + g·b).
+3. Accept E iff the dimension is 1. Then record the unique effective D_E.
+
+Base change does not alter dim L, so the test is exact. Positive cycles have degree ≤ δ_E + g. If some class fails, abort the candidate.
+
+The divisor g·(closed place) must **not** be used in place of g·b when f > 1. It has degree gf and a different linear system.
+
+### 5.4 Algorithm CANON-BASE
+
+**Variant 1 (deterministic in the choice of base value).**
+1. Choose s minimal with q^s ≥ M_T + R + 1.
+2. Enumerate M_T + R + 1 distinct values α ∈ 𝔽_{q^s} with Δ(α) ≠ 0. If too few exist, enlarge s by 1; the cost of this is bounded.
+3. For each α, factor F(α, y), take ONE irreducible factor, and run the test of §5.3.
+4. Return the first accepted b.
+
+Correctness: some enumerated α avoids x(B_T), and every point above it passes. The number of trials is ≤ M_T + R + 1.
+
+  Cost ≤ (M_T + R + 1)·[Fact(D, q^s) + Σ_E RR(δ_E + g, Q_E)].
+
+This is poly(N, g, D, d_x, max_E δ_E, max_E c_E, log q) at s = ⌈log_q(N g³ + R + 1)⌉.
+
+**Variant 2 (Las Vegas).**
+1. Choose q^s ≥ 2(M_T + R).
+2. Draw α uniformly among the values of 𝔽_{q^s} with Δ(α) ≠ 0. The probability of failure is ≤ 1/2.
+3. Repeat until acceptance.
+
+The expected number of trials is ≤ 2, so the expected cost is 2·[Fact + Σ_E RR]. The output is always certified by exact RR, never by probability. Capping the clock at O(log 1/η) multiples of the expectation gives FAIL ≤ η with bounded time.
+
+**Variant 3 (degree-one point; uses the IMPORTED Weil bound #C(𝔽_Q) ≥ Q + 1 − 2g√Q).**
+1. Take Q = q^s ≥ max(16g², 4D(M_T + R + 1)).
+2. Count good points:
+   - Points above Δ-roots, above x(B_T) or above ∞ number ≤ D(M_T + R + 1) ≤ Q/4.
+   - Since Q ≥ 16g², we have 2g√Q ≤ Q/2.
+   - So there are ≥ Q/4 rational points above good α.
+3. Each α carries ≤ D such points, so a uniform α has a rational point above it with probability ≥ 1/(4D).
+4. Rational roots are found via gcd(F(α, y), y^Q − y).
+
+The expected number of trials is ≤ 4D, and the output b ∈ C(𝔽_Q) is rational. This removes the residue degree f ≤ D from all subsequent fields.
+
+**Field bookkeeping.**
+- D_E is rational over 𝔽_{Q_E}.
+- If the repository's working field K = 𝔽_{q^{bH}} must contain b, multiply the working degree by sf. In Variant 3, multiply it by s only.
+- s = O(log(N g³ + D d_x)/log q + 1), so this is polynomial.
+
+### 5.5 Arithmetic in canonical form
+
+Once b is certified for T:
+
+- **Canonical sum.** D_{E₁+E₂} is the unique effective member of |D_{E₁} + D_{E₂} − g·b|. This requires one RR computation, valid if E₁ + E₂ ∈ T.
+- **Equality.** Equality of classes is equality of ideals.
+- **Frobenius.** Frobenius acts on canonical forms by acting on coefficients, *provided Frobenius fixes b*. This holds over k_b.
+- **Deck automorphisms.** A deck automorphism τ does not fix b in general. τ(D_E) is canonical for τ(b), not for b, and must be re-reduced at the cost of one RR computation. The descent statement of Theorem A covers exactly the automorphisms fixing b, and no more.
+
+## 6. T a supplied ℓ-torsion module
+
+### 6.1 Fixed rank m
+
+Suppose a basis e₁,…

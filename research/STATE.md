@@ -5,29 +5,79 @@ pass. `research/GOAL.md` is binding. Search the handoff/priority archives
 only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
-As of 2026-11-12, during handoff entry
-"2026-11-12 Native Conductivity Endpoint and Classical Heat-Kernel Attack".
-Current provisional note PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md:
-succinct periodic conductivity via normalized gradient/QSVT scalar readout;
-classical signed heat-kernel/Neumann attack may match fixedprecision. Three
-independent API obligations pending. One fixed exact classical controlPASS
-is transcription only. No complete reviewed algorithm or advantage yet.
+As of 2026-11-12, handoff entry
+"2026-11-12 Uniform Stable Height and Canonical Divisor Choice".
+Owner asked faster API use: eight distinct requests are now terminal; eight distinct
+closure obligations have been dispatched across both providers. Explicit
+packets/statuses: audits/api_inputs/2026-11-12-{accelerated,surface-closure}/.
+No automatic retries or theorem promotion from reports; no quantum code.
 
-Previous pass:
-SCALAR_OPI_TILTED_WALK_ADMISSION.md is CLOSED for the stated filter family:
-source-prescribed bM=O(log(D)^-2); a paired killed-walk classical sampler
-matches stationary output. Uniform identity-containing filters with arbitrary
-tilt, polynomial M and bounded sM are also matched on the original random
-halfset ensemble, except probability<=2^m/q^k. This is an existence/normalizer
-promise, not an efficient perfect-word finder or per-table certificate.
-Actual flat-conditioned marked amplitude gains at most exp(sM); conditioning
-and full-versus-projected output costs stay explicit. Exact gap sr is not
-an optimization theorem. Four completed API reviews checked; two fixed exact
-controls PASS; truncated source review not counted as completed.
-Generic OPI, longer/repeated filters and non-flat starts remain OPEN.
-Independently reselect; fresh periodic-conduction endpoint under comparison.
-Other collaborators' Rees work below is preserved. Latest Nov11 p13 re-check
-is terminal37/37 with the fixed checker, not a pending run.
+Selected single continuation: native classical surface closure, based on the
+strongest constructive progress among independently compared endpoints.
+SURFACE_NATIVE_TORSION_MODULE.md is now independently reviewed/source-checked:
+complete geometric natural module from the presented Sp cover, no supplied
+zeta or basis, in poly(ell, NUMERICAL P, presented bits) at fixed n,r. Closed
+place divisors suffice; one common polynomial-degree field and pairing rank
+certify completeness. Certify natural-module preservation before restricting
+original Frobenius; genuine coefficient linearization A remains separate.
+Closure obligations address cover presentation, Faltings transfer,
+basepoint choice, coefficient action, torsion coordinates and lifting, plus
+new full-GSp arithmetic and primary-book intersection routes.
+MERKL_LOG_COLLISION_ATLAS.md is independently proved/parent-checked:
+sup gr<=C_r*d³*(d+L) with full Merkl chart hypotheses and local two-sided
+regularization bound; a global lower bound away from equal base images is
+also independently checked. SURFACE_UNIFORM_ARITHMETIC_HEIGHT.md now proves
+h_Fal<=C_r*d^5*(d+1+hB) for logarithmic branch height and fixed total branch
+orbit, and simultaneous unique divisors outside<=Ng³ bad basepoints in
+char0/P>2g-2. These do NOT pay torsion support coordinates or reconstruction.
+
+Two other endpoints recorded without inertial extensions:
+LOCAL_KUMMER_NATIVE_PERTURBATION.md proves original-E subgroup sampling with
+actual signed-divisor certificates and a separate branch-resultant repair.
+Conditioned Mumford materialization/ONE-HALF remains OPEN.
+CHARACTER_BROAD_PHASE_SOURCE.md proves an averaged joint-success bound only
+for bounded public parity-l1 sources. A4d-query nonlinear native BIT operation
+escapes that restriction; general phase synthesis/decoding remains OPEN.
+
+Closed surface audit SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md: ordinary modular
+invariants retain open cohomology, not parabolic; displayed Theorem4.1 is false
+in BOTH retained surface sources (quintic13516 vs96; exact Legendre2 vs0).
+The finite parabolic filter is written for complete module/genuine arithmetic
+input with charged fields. The new module result pays one input; native cover,
+coefficient action, lifting/heights/reconstruction remain separate. No full
+classical match, whole-paper rehabilitation, hardness or separation. Existing
+quantum G0/Euler route is unaffected.
+
+Gaudin picket-fence pass CLOSED scoped attempt: weak-window gap/sampler and
+native prefix falsifier checked; full interval OPEN/parked. Both paid gap
+attempts ended EMPTY (estimatesUSD3.218686), no evidence/retry.
+Accelerated eight-job estimatesUSD11.141382; terminal cumulative AnthUSD74.251518
+and OpenAIUSD16.571020 excluding new closure calls; old unknown bills excluded.
+These are runner estimates, not invoices/balances. Frozen milestone:
+audits/controls/accelerated_endpoint_round/{usage,checkpoint}.json.
+
+Now, Codex research: PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md is CLOSED for
+written all-circuit scalar algorithms on a 2D succinct periodic resistor network
+at fixed contrast. Quantum poly(B,n,1/epsilon,log1/delta) is paid by a finite
+contrast series, Fourier gradient reflection and unpostselected Hadamard tests.
+Classical marked heat paths match fixed precision in poly(B,n); their established
+inverse-polynomial precision cost is quasi-polynomial. Joint-polynomial classical
+dependence is OPEN, not hardness. Two independent completed core reviews, one
+completed paid classical report and two truncated advisory reports were checked;
+one frozen six-case exact control checks transcription, not asymptotics. No
+novelty, separation, general PDE theorem, practical advantage or quantum execution.
+Independently reselect by external value; no PDE framework or mesh sweep queued.
+
+Previous pass: SCALAR_OPI_TILTED_WALK_ADMISSION.md is CLOSED for the stated
+positive-filter family. Source-prescribed bM=O(log(D)^-2), plus arbitrary tilt
+with a uniform identity term, polynomial M and bounded sM are classically matched
+on original halfset tables except probability<=2^m/q^k. The maximum promise is
+not a perfect-word finder or per-table certificate; conditioning costs stay paid.
+Four completed reports and one truncated report checked; two frozen controls.
+Generic OPI/longer filters remain OPEN. Both providers are integrated, terminal
+usage saved separately from owner-reported balances; no unknown-billing retry.
+Other collaborators' Rees work below is preserved. Their Nov12 arXiv/readiness
+handoff entry is separate from these Codex passes. Latest p13 re-check is37/37.
 
 Now (11-11, AI only, pending human review): SDE open items worked; repo wiring audited. Paper NOT edited.
 - Earlier (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2 (Theorem B′). Theorem C:
@@ -1324,8 +1374,10 @@ or separation is claimed.
   - Exponent: 2c−1 for p > T_A(c) and 145 → 53 (Schedule 1 at ⌈log₂ t⌉) are refereed CORRECT
     WITH FIXES. 2c−1 stays CONDITIONAL; both are in the core Outlook only, and the theorem and
     macros are unchanged (owner decision).
-  - H_3(Z) infinite index: H ∩ Z ≠ 1 polynomial given Kuperberg; the cyclic case reduces to a
-    zero-sum problem, polynomial time UNKNOWN; not refereed.
+  - H_3(Z) infinite index: H ∩ Z ≠ 1 polynomial given Kuperberg Thm 1.5/7.1 and cor:utz
+    (second AI referee: two GAPs repaired, gcd rule in Step 1 and B = poly(b);
+    audits/reviews/2026-11-12-rees-h3z-referee.md). The cyclic case reduces to a zero-sum
+    problem; polynomial time UNKNOWN. Not in the paper.
   - Cover-free twists: none is polynomial; in the source-only model the hard case is
     equivalent to random zero-sum in F_p².
   - Handoff "2026-11-12 Rees arXiv Readiness, Source Checks and Three Research Attacks".
@@ -2789,6 +2841,8 @@ or separation is claimed.
 
 | Direction | Established result and scope | File |
 |---|---|---|
+| Surface classical descent and finite parabolic repair | Reviewed ordinary modular descent REFUTED in both source versions; explicit Legendre2 vs0 and quintic13516 vs96. Written supplied-module finite filter via Kummer inertia/centralizers costs poly(ell, numerical auxiliary P, presented size), fixed rank/branches. Native module/Frobenius construction and uniform lifting OPEN; no full classical match, hardness, separation or execution. | `SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md` |
+| Succinct periodic conductivity | Reviewed written quantum poly(B,n,1/epsilon) scalar estimator for every fixed-contrast 2D circuit material. Constructive classical heat-path estimator matches fixed precision, quasi-polynomial for inverse-polynomial precision. Joint-polynomial match OPEN; no hardness, novelty, separation or quantum execution. Two core reviews and one frozen exact control. | `PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md` |
 | Scalar OPI root-anchor tilted filter | Reviewed exact paired classical sampler; prescribed bM=O(log(D)^-2). Arbitrary tilt with uniform identity term, polynomial M and bounded sM matched with high probability over original halfset tables; native maximum attainment paid by second moment. Flat-conditioned actual amplitude bounded, paid projected sampler only. Two frozen controls; no generic OPI no-go, hardness, novelty or separation. | `SCALAR_OPI_TILTED_WALK_ADMISSION.md` |
 | Two-cluster Gaudin joint-gap counterfamily | Reviewed finite-distinct rational sites, spacingn^-8,g1/(2n),N=2n,M=n give squared gap<=2312n^-5/3 by fusion/min-max; exact128-site bound<1/400. Uniform1/N floor refuted, weaker polynomial preparation OPEN. Known critical BCS mechanism; no novelty, superpoly-gap or separation. | `GAUDIN_TWO_CLUSTER_GAP.md` |
 | Binary-Fock passive/Kerr circuit sampling | Reviewed WRITTEN full native quantum polynomial(nativebits,logK,log1epsilon) count sampler, known Prakash Cor2.3. Common coherent QHT/cutoff/phases paid. Classical bounded-time sampler matches BUNCHED input with polynomial numerical chi, using coherent rejection and binary-binomial precision; not arbitrary Fock/exponentialchi. Three reviews, five primary PDFs and exact mixture/CZ/parity controls. No novelty/separation, physical exponential-photon preparation or full/quantum execution. | `BINARY_FOCK_KERR_SAMPLING.md` |

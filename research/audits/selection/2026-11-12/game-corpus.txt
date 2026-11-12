@@ -1,0 +1,98 @@
+Been tried? quantum stochastic games mean payoff graph parity strategy
+
+Killed before
+  1. negative   GRAPH-INDIVIDUALIZED-WL-DEQUANTIZED-CFI_K4_PARITY_TWIST  [dequantized-by-individualized-wl · CODE-COSET-COLLECTIVE, PO-DEQUANTIZATION, PO-FALSIFIERS]
+     research/registry/negative_results.json:55588
+     Claim: cfi-k4-parity-twist supplies nonclassical coset-state evidence.
+     Why not: 2-vertex individualization plus color refinement separates the pair; any matching coset observable is classically shadowed by individualization-refinement.
+  2. negative   GRAPH-INDIVIDUALIZED-WL-DEQUANTIZED-CFI_K5_PARITY_TWIST  [dequantized-by-individualized-wl · CODE-COSET-COLLECTIVE, PO-DEQUANTIZATION, PO-FALSIFIERS]
+     research/registry/negative_results.json:55611
+     Claim: cfi-k5-parity-twist supplies nonclassical coset-state evidence.
+     Why not: 3-vertex individualization plus color refinement separates the pair; any matching coset observable is classically shadowed by individualization-refinement.
+  3. negative   COSET-FRONTIER-TRIAGE-CFI_K6_PARITY_TWIST  [retained · CODE-COSET-COLLECTIVE, HYP-LIT-COSET-OBSERVABLES, PO-DEQUANTIZATION]
+     research/registry/negative_results.json:48758
+     Claim: cfi-k6-parity-twist is a viable nonabelian coset-state measurement frontier row.
+     Why not: Classical baseline evidence rejects the row: cfi_parity_solver: dequantized-by-promised-cfi-parity-decoder.
+  4. negative   COSET-FRONTIER-TRIAGE-CFI_K8_PARITY_TWIST  [retained · CODE-COSET-COLLECTIVE, HYP-LIT-COSET-OBSERVABLES, PO-DEQUANTIZATION]
+     research/registry/negative_results.json:48798
+     Claim: cfi-k8-parity-twist is a viable nonabelian coset-state measurement frontier row.
+     Why not: Classical baseline evidence rejects the row: cfi_parity_solver: dequantized-by-promised-cfi-parity-decoder.
+  5. negative   COSET-FRONTIER-TRIAGE-CFI_K7_PARITY_TWIST  [retained · CODE-COSET-COLLECTIVE, HYP-LIT-COSET-OBSERVABLES, PO-DEQUANTIZATION]
+     research/registry/negative_results.json:48778
+     Claim: cfi-k7-parity-twist is a viable nonabelian coset-state measurement frontier row.
+     Why not: Classical baseline evidence rejects the row: cfi_parity_solver: dequantized-by-promised-cfi-parity-decoder.
+
+Dequantization checks
+  1. dequant    DEQ-DCP-FINITE-FIT-NO-STOCHASTIC-RECURRENCE  [high]
+     research/registry/dequantization_checks.json:2196
+     Claim: Finite DCP endpoint-yield fits establish a uniform multi-round sieve recurrence.
+     Why not: Prove concentration for adaptive bucket occupancies and dependent pair depletion, then compose the stage bounds under an explicit total failure budget.
+  2. dequant    DEQ-GRAPH-INDIVIDUALIZED-WL-SEPARATION  [high]
+     research/registry/dequantization_checks.json:4847
+     Claim: Graph/coset rows separated by observables require quantum explanations.
+     Why not: Reject separated rows as positive evidence unless a future claim exceeds individualization-refinement baselines.
+  3. dequant    DEQ-RESULT-CODE-CFI-FAITHFUL-REDUCTION-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:5496
+     Claim: RESULT-CODE-CFI-FAITHFUL-REDUCTION-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-DCP-FINITE-FIBER-GRAPH-NEEDS-GAP-AND-STATE-PREPARATION-THEOREMS  [critical]
+     research/registry/dequantization_checks.json:194
+     Claim: Finite cross-child connectivity or positive transport-graph spectral gaps establish a polynomial quantum walk relation solver.
+     Why not: Prove uniform random-fiber conductance, polynomial linear-depth state preparation and coherent updates, verified relation output, and an asymptotic advantage over classical access to the same graph.
+  5. dequant    DEQ-RESULT-EXP-CODE-CFI-FAITHFUL-REDUCTION-CFI-CODE-REDUCTION-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:5925
+     Claim: RESULT-EXP-CODE-CFI-FAITHFUL-REDUCTION-CFI-CODE-REDUCTION: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Native Ring-LWE: Chosen Short Preimages Suffice › 6. Generic Grover Search Still Fails  [review-pending]
+     research/NATIVE_RLWE_CHOSEN_PREIMAGE_REDUCTION.md:229
+     A strategy only alternating uniform-fiber source reflections and shortness phases has mean success <=(2*T+1)^2*p_mean after at most T amplification rotations, including input-dependent bounded schedules.
+  2. handoff    Current High-Reasoning Result: Adaptive Syndrome Is Positive Channel Variance (2026-08-13)  [journal]
+     research/AGENT_HANDOFF.md:46986
+     Files: - `self_dual_wreath_parity_projector_orbit_variance.py` - `research/representation/self_dual_wreath_parity_projector_orbit_variance.json` - `tests/test_self_dual_wreath_parity_projector_orbit_variance.py` Experiment ID: `EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-ORBIT-VARIANCE` For every fu…
+  3. note       Cai-Fürer-Immerman (CFI) Graph Isomorphism Obstruction: Multi-Particle Quantum Walk Blindness, Weisfeiler-Lehm  [unlabelled]
+     research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md:79
+     - **Untwisted Graph $X(G_0)$**: Set $\sigma(v) = 0$ for all $v \in V_0$.
+  4. note       Spectral Repair Of A Gibbs Decoder: The Real Remaining Cost  [review-pending]
+     research/GIBBS_ORBIT_PARENT.md:1
+     Known PGM, singular-value transformation and stochastic-Hamiltonian mechanisms; no novelty, efficient span reflection, classical hardness or quantum speedup is claimed.
+  5. handoff    Completion Status (2026-08-11)  [journal]
+     research/MECHANICAL_FOLLOW_UP_PLAN.md:11776
+     > Also wire `EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PARITY-COSET-CHANNEL` > from `self_dual_wreath_alternating_parity_coset_channel.py`, with the > matching representation artifact.
+
+Code and experiments
+  1. theorem    Split adaptive parity information into Racah rank and arithmetic terms.  [code]
+     theorems/self_dual_wreath_parity_racah_rank_residual_decomposition.py:1
+     self dual wreath parity racah rank residual decomposition.
+  2. experiment Exp Code Self Dual Wreath Point Stabilizer Quotient  [planned]
+     research/registry/experiments.json:11654
+     Exp Code Self Dual Wreath Point Stabilizer Quotient Point-image extraction is now an exact Young-edge-local weak-learning target with a stabilizer-chain payoff.
+  3. theorem    Finite randomness budget for the symmetric SDE, not a quantum clock proof.  [code]
+     theorems/power_sde_budget.py:1
+     Finite randomness budget for the symmetric SDE, not a quantum clock proof.
+  4. hypothesis dcp_pauli_twirling_coherent_carry_to_stochastic_dephasing_bridge_contract  [VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING]
+     research/hypotheses/dcp_pauli_twirling_coherent_carry_to_stochastic_dephasing_bridge_contract.json
+     Sweep across delta in {0.02, 0.05, 0.10, 0.25, pi/2, pi} (>20.0x suppression at delta = 0.10 rad) dcp_pauli_twirling_coherent_carry_to_stochastic_dephasing_bridge VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING Pauli-X / Sign Twirling Conversion of Coherent Carry Error to Stochastic Dephasing
+  5. theorem    Bounded-valence classical baseline for the implemented CFI parity graphs.  [code]
+     theorems/cfi_graph_coset_luks_subsumption_barrier.py:1
+     Bounded-valence classical baseline for the implemented CFI parity graphs.
+
+Literature
+  1. literature The Symmetric Group Defies Strong Fourier Sampling  [seed · graph-isomorphism, nonabelian-hsp, no-go, fourier-sampling]
+     research/literature_records.json
+     The Symmetric Group Defies Strong Fourier Sampling Prevents the project from rediscovering a known-dead GI strategy.
+  2. literature ternary_least_trit_bootstrap_sources  [audit]
+     research/literature_audits/ternary_least_trit_bootstrap_sources.json
+     LIT-NATIVE-LEAST-TRIT-BOOTSTRAP Exact original even-native known-prefix diagonal phase correction and uniform frequency lift count Average-all-secret least-trit learner self-reduction with scalar sign error symmetry Fresh-call Hoeffding amplification and earliest-prefix-error union bound Uniform na…
+  3. literature Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entangleme  [seed · graph-isomorphism, nonabelian-hsp, multiregister, entanglement-width]
+     research/literature_records.json
+     Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement Proves that nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset states, so bounded-copy recoupling controls can…
+  4. literature Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosyst  [seed · code-equivalence, nonabelian-hsp, reduction, classical-no-go]
+     research/literature_records.json
+     Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems States the search code-equivalence HSP construction and warns that HSP measurement hardness is irrelevant when support splitting or other classical invariants solve the code family.
+  5. literature Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial  [seed · code-equivalence, graph-isomorphism, hull, projector]
+     research/literature_records.json
+     Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial Gives an exact polynomial reduction from trivial-hull permutation code equivalence to weighted graph isomorphism and a shortening upper bound parameterized by hull dimension, preventing random planted codes fro…
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

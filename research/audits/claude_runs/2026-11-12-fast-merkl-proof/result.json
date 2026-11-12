@@ -1,0 +1,55 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2054,
+      "path": "research/audits/api_inputs/2026-11-12-accelerated/state-excerpt.md",
+      "sha256": "0944ba5bda705139c7c915be3ee271f2518cae390bb0e3c914591566c91163fd",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 17367,
+      "path": "research/audits/api_inputs/2026-11-12-accelerated/merkl-source.md",
+      "sha256": "4b44b8a0f78c420985986d47a476f54c47387097dbc3281aa51215693c5c846c",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 4865,
+      "path": "research/MERKL_LOG_COLLISION_ATLAS.md",
+      "sha256": "d69ada7fe9db10e8c0d01290ab6e2a59c12dcd2eed84ac7f6bf9bc3576d8d653",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 9760,
+  "effort": "high",
+  "finished_at": "2026-11-12T08:51:20.105155+00:00",
+  "input_token_allowance": 10016,
+  "max_budget_usd": 6.0,
+  "max_tokens": 64000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 3.30016,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-accelerated/merkl-proof.md",
+    "sha256": "364c7d2e6c80326b4cc97b7c8a4b0a4a2c162cb383c2184ff3d88b18465ee761",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261112T084252.122032Z-3a458059",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 9760,
+    "output_tokens": 41419
+  },
+  "usage_cost_estimate_usd": 2.16855
+}

@@ -1,0 +1,77 @@
+# Candidate logarithmic-collision Merkl atlas
+
+2026-11-12. Parent derivation UNDER INDEPENDENT ATTACK, not an admitted theorem.
+This directly targets the branch-height exponential in the surface classical
+comparator, not a general-purpose geometry subsystem. Corpus query and primary
+Javanpeykar1403.6404 Definition3.1.1/Theorem3.1.2 preceded this candidate.
+The strongest existing bound uses a Belyi conversion with exponential dependence
+on logarithmic branch height; Remark6.0.5 separately notes exponential degree
+but logarithmic branch-height dependence in Bilu--Strambi. Neither is joint
+polynomial. No full Faltings/coordinate-height or point-count claim follows yet.
+
+Claim to prove or falsify: fix r>=3. For EVERY finite holomorphic map
+pi:Y->P1(C) of degree d, with Y compact connected genus>=1 and branch locus
+contained in a set B of r distinct points, put delta=min pairwise chordal
+separation and L=1+log(1/delta). There is a Merkl atlas for the CANONICAL
+probability Arakelov measure with r1=3/4, chart count N<=C_r*d*(d+L),
+c1<=C*d², and log M<=C*d. Consequently Theorem3.1.2 gives
+sup gr_Y <= C_r*d³*(d+L). All constants uniform in the cover and branch positions.
+No irreducibility, monodromy, real coordinates or supplied analytic charts
+beyond the finite cover hypothesis are additional advice. This is a geometric
+bound; implementing chart coordinates is not itself a claimed BIT algorithm.
+
+## Proposed construction and exact risks
+
+Use unitary Möbius coordinates on the sphere so local derivative ratios on
+small spherical caps are universally controlled. For each branch point b,
+choose a disjoint base disk |phi_b|<2h with h comparable to delta/100. A cover
+component above that disk has a root coordinate w with phi_b(pi(w))=h*w^e,
+1<=e<=d. Take the branch chart |w|<1; it extends to |w|<2^(1/e).
+Its inner |w|<r1 contains all points over |phi_b|<h*r1^d.
+There are at most r*d branch charts.
+
+Cover the remaining base sphere by Whitney disks centered outside these tiny
+inner holes, of radius a fixed small multiple of distance to B, capped by a
+fixed spherical radius. Choose a maximal variable-radius net whose r1-inner
+disks cover the complement. Their doubled disks avoid B. A dyadic packing
+count gives at most C_r*(L+d) disks: at each distance scale the relevant area
+is O_r(scale²), so only O_r(1) disks; the smallest required scale is comparable
+to h*r1^d. Every disk lifts to d disjoint unramified charts. The lift extends
+to a coordinate disk of radius at least3/2. Hence N<=C_r*d*(d+L).
+CHECK the packing and coverage uniformly for clusters and hole boundaries;
+no assertion based only on a picture is accepted.
+
+Canonical density: write each globally L2-orthonormal holomorphic differential
+in any enlarged chart. Mean-value bounds on a disk of radius R-1 around a
+point of the unit chart give |f_nu|²<=C/(R-1)². Summing g such bounds and
+normalizing the canonical measure by g cancels g. Unramified charts give
+constant c1. Branch charts have R-1=2^(1/e)-1>=c/e, so c1<=C*d² on the
+ENTIRE unit disk, not only its smaller inner disk. The larger branch disk is
+essential; ordinary Bergman bounds on only the unit disk blow up at its boundary.
+
+Transitions: overlapping unramified Whitney disks have comparable radii and
+bounded unitary-Möbius factors, so derivatives and reciprocals are bounded.
+Distinct branch disks/preimages do not overlap. On a branch/Whitney overlap,
+the base Whitney radius is comparable to |phi_b|=h|w|^e. Thus derivative of
+the normalized base coordinate with respect to w is comparable to e/|w|,
+and its inverse to |w|/e. All Whitney centers lie outside |phi_b|<h*r1^d;
+their small relative radius gives |w|>=c*r1^(d/e)>=c*r1^d throughout an
+overlap. Hence M<=C*d*r1^(-d), and logM<=C*d. M itself need not be polynomial:
+Merkl charges logM. CHECK transitions on ALL overlaps, not just inner overlaps.
+
+These give precisely the four hypotheses of the actual Merkl definition,
+with fixed r1>1/2. If any extension, density, overlap or counting assertion
+fails, exhibit the offending finite cover/degeneration and correct the bound.
+No finite numerical scan can establish this uniform claim.
+
+## Arithmetic use stays separate
+
+For algebraic B with bounded total Galois orbit, averaged log chordal collision
+is bounded by C_r*(1+h_B) via projective height/product-formula inequalities.
+Thus the proposed analytic bound would avoid exponential h_B in this Green
+quantity. It does NOT alone prove stable Faltings height, finite-place
+intersection estimates, bounded supplied-coordinate divisor heights, or
+uniform CRT reconstruction. The known twist family y²=a*x(x-1)(x-2) still
+forces charging model height. A separate source-proof audit identifies exactly
+which steps of the source can use this bound and what remains. No quantum
+algorithm, speedup, novelty or full classical matching is asserted.
