@@ -1,0 +1,98 @@
+Been tried? homogenization periodic two-phase heat conduction preconditioned
+
+Killed before
+  1. negative   NEG-QUANTUM-CHAOS-SFF-PERIOD-FINDING-BARRIER  [retained · QUANTUM-CHAOS, SPECTRAL-FORM-FACTOR, RANDOM-MATRIX-THEORY, WIGNER-SURMISE-REPULSION]
+     research/registry/negative_results.json:68371
+     Claim: Quantum Fourier Sampling or Quantum Phase Estimation can extract periods or harmonic structures from quantum chaotic Hamiltonians whose spectra obey Random Matrix Theory.
+     Why not: Quantum period finding fundamentally requires harmonic arithmetic eigenvalue progressions En = n Delta. In quantum chaotic systems (by the Bohigas-Giannoni-Schmit conjecture), energy levels obey Random Matrix Theory with Wigner level repulsion P(0) = 0 and zero harmonic coherence. The Spectral Form 
+  2. negative   NEG-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE, PO-MEASUREMENT]
+     research/registry/negative_results.json:71192
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE.
+     Why not: Falsified or refined by exact theorem evaluation.
+  3. negative   NEG-QUANTUM-SCRAMBLING-OTOC-MSS-COMPLEXITY-BARRIER  [retained · QUANTUM-SCRAMBLING, OUT-OF-TIME-ORDER-CORRELATOR, MSS-CHAOS-BOUND, OPERATOR-SIZE-GROWTH]
+     research/registry/negative_results.json:68441
+     Claim: Quantum algorithms can efficiently extract local phases, period structures, or hidden subgroups after time evolution under fast-scrambling quantum chaotic Hamiltonians.
+     Why not: Quantum phase estimation and Fourier sampling fundamentally require observables that maintain localized support and coherent periodic revivals. In chaotic many-body systems, quantum scrambling rapidly delocalizes local operators across the entire Hilbert space, saturating the average operator size t
+  4. negative   NEG-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY, PO-MEASUREMENT]
+     research/registry/negative_results.json:71170
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY.
+     Why not: Falsified or refined by exact theorem evaluation.
+  5. negative   NEG-DCP-DETERMINISTIC-FAVORABLE-BRANCH  [retained · DHS-GOWERS-SIEVE, HYP-LIT-HIDDEN-SHIFT-SIEVE, EXP-DHS-PHASE-SIEVE]
+     research/registry/negative_results.json:65579
+     Claim: A bucketed phase-label trace may deterministically subtract matched labels when estimating sample yield.
+     Why not: The physical CNOT combine produces sum and difference labels with probability 1/2. The live audit found an optimism gap of 15578 outputs.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13823
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8807
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8796
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-LOW-BIT-BDD-DCP-SUBSET-SUM-LOW-BIT-BDD-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13779
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-LOW-BIT-BDD-DCP-SUBSET-SUM-LOW-BIT-BDD: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-DHS-PHASE-NATURALNESS-PHASE-NATURALNESS-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:14076
+     Claim: RESULT-EXP-DHS-PHASE-NATURALNESS-PHASE-NATURALNESS: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Inverse-Trace Residual Sampling By Global Binary Hash Heat Baths › 10. Exact SAT/XOR Probe Contract For A Late  [unlabelled]
+     research/INVERSE_TRACE_HASH_HEATBATH.md:352
+     This is a specification, not an implementation request in this change.
+  2. note       A Costed Native Block Heat Bath, And Its Missing Moves  [review-pending]
+     research/TERNARY_NATIVE_BLOCK_WALK.md:1
+     IMPLEMENTED / LOCAL DERIVATIONS REVIEW PENDING.
+  3. note       A Costed Native Block Heat Bath, And Its Missing Moves › Complete Finite Native Replay, Not A Scaling Fit  [review-pending]
+     research/TERNARY_NATIVE_BLOCK_WALK.md:95
+     The original native family is stationary under the full-prefix kernel: every allowed neighbor has the same F, hence the same secret phase.
+  4. note       Relative Decoding Meets Correlated Classical Pinning › Falsifiers And Decision  [review-pending]
+     research/RELATIVE_GIBBS_WORLDLINE.md:200
+     - Check the periodic conditional against its entire direct probability law, both in floating point and inside certified outward rational intervals, and target Trotter diagonals against independent matrix exponentiation.
+  5. note       Balanced MPI: A Certified Coordinate Heat-Bath Trap › Fixed Input And Chain  [unlabelled]
+     research/BALANCED_MPI_HEATBATH_TRAP.md:23
+     Strict positivity makes this an irreducible heat-bath chain with stationary law pi.
+
+Code and experiments
+  1. result     EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY log-low-bit-conditioning-preserves-expected-residual-density  [log-low-bit-conditioning-preserves-expected-residual-density]
+     research/registry/experiment_results.json:24297
+     exp dhs dcp subset sum preconditioned geometry.
+  2. theorem    Actual paired-word heat bath, ground-space decision and local classical test.  [code]
+     theorems/native_word_local_decision.py:1
+     Actual paired-word heat bath, ground-space decision and local classical test.
+  3. theorem    Exact residual-density audit for low-bit-conditioned modular subset sum.  [code]
+     theorems/dcp_subset_sum_preconditioned_geometry.py:1
+     dcp subset sum preconditioned geometry.
+  4. theorem    Interval certificate for a fixed-state coordinate heat-bath mixing obstruction.  [code]
+     theorems/balanced_mpi_heatbath_trap.py:1
+     Interval certificate for a fixed-state coordinate heat-bath mixing obstruction.
+  5. theorem    Costed native block heat-bath sampler and exact local-move falsifiers.  [code]
+     theorems/ternary_native_block_walk.py:1
+     Costed native block heat-bath sampler and exact local-move falsifiers.
+
+Literature
+  1. literature Polynomial-Time Quantum Algorithms for Pell's Equation and the Principal Ideal Problem  [seed · number-theory, principal-ideal, infrastructure, periodicity]
+     research/literature_records.json
+     Polynomial-Time Quantum Algorithms for Pell's Equation and the Principal Ideal Problem A non-Shor number-theoretic breakthrough template based on hidden periodic structure.
+  2. literature A subexponential-time quantum algorithm for the dihedral hidden subgroup problem  [seed · dihedral-hsp, hidden-shift, sieve, lattice-adjacent]
+     research/literature_records.json
+     A subexponential-time quantum algorithm for the dihedral hidden subgroup problem Core algorithmic template for hidden shift and phase-state combining.
+  3. literature ternary_phase_qubit_decoder_sources  [audit]
+     research/literature_audits/ternary_phase_qubit_decoder_sources.json
+     AUDIT-COPY-ONLY-TERNARY-PHASE-QUBIT-BASE-DECODER The fixed anti-trine source measurement supplies affine exclusions for every secret including zero.
+  4. literature Optimal algorithms for learning quantum phase states  [audit]
+     research/literature_audits/ternary_incidence_sources.json
+     arXiv:2208.07851v2 Boolean-domain phase-state definition Section5.1 Theorem8 The generalized separable learner uses copies of one Boolean-domain unknown polynomial, assumes even q and explicitly charges q dependence.
+  5. literature Quantum Computation and Lattice Problems  [seed · lattice, dihedral-hsp, unique-svp, reduction]
+     research/literature_records.json
+     Phase-state Fourier sampling, higher-order harmonic analysis, and family-specific sieving.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

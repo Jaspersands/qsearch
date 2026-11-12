@@ -5,10 +5,29 @@ pass. `research/GOAL.md` is binding. Search the handoff/priority archives
 only for a specific term; never read them whole. Paths below are relative
 to `research/`. Rewrite at the end of each pass; detail belongs in notes.
 
-As of 2026-11-11, after the handoff entry
-"2026-11-11 Rees SDE Open Items Worked (`p7_L4b`, `six m=3`, `dead_w3_search`, `q=17` CPU) & Harsh Repo Wiring Audit (AI Only)"
-(and earlier "2026-11-11 Rees Square Gap: κ = 7 Spread Test Scored...");
-the SDE entry below summarises the worked open-items queue and repo audit (first Now block); the earlier square-gap entries are summarised in the second Now block.
+As of 2026-11-12, during handoff entry
+"2026-11-12 Native Conductivity Endpoint and Classical Heat-Kernel Attack".
+Current provisional note PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md:
+succinct periodic conductivity via normalized gradient/QSVT scalar readout;
+classical signed heat-kernel/Neumann attack may match fixedprecision. Three
+independent API obligations pending. One fixed exact classical controlPASS
+is transcription only. No complete reviewed algorithm or advantage yet.
+
+Previous pass:
+SCALAR_OPI_TILTED_WALK_ADMISSION.md is CLOSED for the stated filter family:
+source-prescribed bM=O(log(D)^-2); a paired killed-walk classical sampler
+matches stationary output. Uniform identity-containing filters with arbitrary
+tilt, polynomial M and bounded sM are also matched on the original random
+halfset ensemble, except probability<=2^m/q^k. This is an existence/normalizer
+promise, not an efficient perfect-word finder or per-table certificate.
+Actual flat-conditioned marked amplitude gains at most exp(sM); conditioning
+and full-versus-projected output costs stay explicit. Exact gap sr is not
+an optimization theorem. Four completed API reviews checked; two fixed exact
+controls PASS; truncated source review not counted as completed.
+Generic OPI, longer/repeated filters and non-flat starts remain OPEN.
+Independently reselect; fresh periodic-conduction endpoint under comparison.
+Other collaborators' Rees work below is preserved. Latest Nov11 p13 re-check
+is terminal37/37 with the fixed checker, not a pending run.
 
 Now (11-11, AI only, pending human review): SDE open items worked; repo wiring audited. Paper NOT edited.
 - Earlier (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2 (Theorem B′). Theorem C:
@@ -1295,6 +1314,28 @@ or separation is claimed.
 
 ## Now
 
+- **Rees arXiv readiness and attacks (11-12 late, Claude, AI only, pending human review).**
+  - Papers (local): core 45 pp. is self-contained; the full 223 pp. is synced and ships as the
+    arXiv ancillary file; package built (docs/papers/rees-hsp/arxiv/build_package.sh,
+    METADATA.md). The AI-use paragraph is a DRAFT. NOT for posting.
+  - Source checks: 26 CONFIRMED, 4 WRONG (applied), 6 NEEDS HUMAN
+    (audits/reviews/2026-11-12-rees-source-checks.md). The IS solver facts are confirmed from
+    the source, and II23 Thm 1 takes a purification oracle.
+  - Exponent: 2c−1 for p > T_A(c) and 145 → 53 (Schedule 1 at ⌈log₂ t⌉) are refereed CORRECT
+    WITH FIXES. 2c−1 stays CONDITIONAL; both are in the core Outlook only, and the theorem and
+    macros are unchanged (owner decision).
+  - H_3(Z) infinite index: H ∩ Z ≠ 1 polynomial given Kuperberg; the cyclic case reduces to a
+    zero-sum problem, polynomial time UNKNOWN; not refereed.
+  - Cover-free twists: none is polynomial; in the source-only model the hard case is
+    equivalent to random zero-sum in F_p².
+  - Handoff "2026-11-12 Rees arXiv Readiness, Source Checks and Three Research Attacks".
+    Next: referee the H_3(Z) H ∩ Z ≠ 1 theorem; human read of Sections 3–4.
+- **Scalar OPI positive filter (11-12): CLOSED scoped classical match.**
+  See SCALAR_OPI_TILTED_WALK_ADMISSION.md and the newest handoff. Exact
+  two-path sampler, drift/product bound, arbitrary-tilt identity-term bound,
+  native second moment and spectrum checked. No general OPI no-go. Next
+  independently selected native endpoint; no more nearby filter controls.
+
 - **Rees priority, applications, headline (11-12, AI only, pending human review).** (i) Algebra of
   Lemma lem:homogeneous is STANDARD (Rees homogenization, DELT arXiv:1704.02852 Def. 9; interpolation,
   Shpilka-Yehudayoff §2.5); its algorithmic use NOT FOUND in CGT or quantum literature read
@@ -1321,7 +1362,7 @@ or separation is claimed.
   (viii) ePrint 2026/2678 survey read (-eprint-2026-2678-check.md): no class >= 3 or UT_n(Z)
   finite-index result (it also misses II 2023); its open problem 5 (HSP in H_3(Z)) is answered
   only for finite index, by known results combined (rem:utz-scope(b)).
-  Next: specialist priority check (p-group isomorphism; cor:nilpotent) and human check of II Thm 1.
+  Next: specialist priority check (p-group isomorphism; cor:nilpotent); II Thm 1 input model now source-checked (purification oracle), human check still wanted.
 - **Rees, rest of 11-09 (AI only, pending human review).** (i) Non-unique encodings: HSP for
   arbitrary H still works (normal H was IMS Thm 8); acquiring the chart needs Omega(sqrt p)
   identity tests (2026-11-09-rees-nonunique-encoding-blackbox.md). (ii) Local paper patch,
@@ -2748,6 +2789,7 @@ or separation is claimed.
 
 | Direction | Established result and scope | File |
 |---|---|---|
+| Scalar OPI root-anchor tilted filter | Reviewed exact paired classical sampler; prescribed bM=O(log(D)^-2). Arbitrary tilt with uniform identity term, polynomial M and bounded sM matched with high probability over original halfset tables; native maximum attainment paid by second moment. Flat-conditioned actual amplitude bounded, paid projected sampler only. Two frozen controls; no generic OPI no-go, hardness, novelty or separation. | `SCALAR_OPI_TILTED_WALK_ADMISSION.md` |
 | Two-cluster Gaudin joint-gap counterfamily | Reviewed finite-distinct rational sites, spacingn^-8,g1/(2n),N=2n,M=n give squared gap<=2312n^-5/3 by fusion/min-max; exact128-site bound<1/400. Uniform1/N floor refuted, weaker polynomial preparation OPEN. Known critical BCS mechanism; no novelty, superpoly-gap or separation. | `GAUDIN_TWO_CLUSTER_GAP.md` |
 | Binary-Fock passive/Kerr circuit sampling | Reviewed WRITTEN full native quantum polynomial(nativebits,logK,log1epsilon) count sampler, known Prakash Cor2.3. Common coherent QHT/cutoff/phases paid. Classical bounded-time sampler matches BUNCHED input with polynomial numerical chi, using coherent rejection and binary-binomial precision; not arbitrary Fock/exponentialchi. Three reviews, five primary PDFs and exact mixture/CZ/parity controls. No novelty/separation, physical exponential-photon preparation or full/quantum execution. | `BINARY_FOCK_KERR_SAMPLING.md` |
 | Compact integral similarity, growing binary integer matrices | Reviewed WRITTEN bounded-error quantum poly(native bits,log1eta) compact INTEGER unimodular witness or NO, conservatively under GRH. Known BHJ algorithm; paid compact Steinitz/conductor descent, reused local residues, fractional-sum guard, Z-linear section and Jordan-length/small-covolume determinant test. Verified unit union amplifies completeness. Two reviews and one exact classical control; expanded witness obstruction retained. No tuple extension, generic compact PIT, novelty, separation or quantum execution. | `COMPACT_INTEGRAL_SIMILARITY.md` |

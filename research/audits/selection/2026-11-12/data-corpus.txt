@@ -1,0 +1,98 @@
+Been tried? massive classical data quantum memory
+
+Killed before
+  1. negative   MISSING-SIGN-SELECTOR-ONLY-QUERY-BOUND  [retained · CODE-COSET-COLLECTIVE]
+     research/registry/negative_results.json:57199
+     Claim: Changing ancilla schedules or adding coherent selector memory yields a short missing-sign detector without other data operations.
+     Why not: With only selected missing-sign phase calls as data coupling and ancilla-only readout, the raw-null identity-prefix hybrid gives output T<=2q/sqrt(n!) for arbitrary K. One-sided acceptance is <=4q^2/n!.
+  2. negative   INDEPENDENT-REFERENCE-CARRIER-DISCARD-ERASES-BINARY-INFORMATION  [retained · CODE-COSET-COLLECTIVE, independent reference-carrier discard]
+     research/registry/negative_results.json:55854
+     Claim: After independent reference-type dephasing and carrier discard, polynomially many single-copy multiplicity registers permit constant-advantage binary detection.
+     Why not: Independent reference-carrier discard suppresses binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1) for predetermined references. Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction. A single g
+  3. negative   NEG-DCP-QW-0218-AS-POLYNOMIAL-PARTIAL-SOLVER  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-QUANTUM-WALK-SOURCE-AUDIT]
+     research/registry/negative_results.json:66994
+     Claim: The 0.2182 quantum walk supplies the polynomial partial subset-sum solver required by the DCP reduction.
+     Why not: Its time and memory are both exponential with exponent 0.2182, and the memory model is QRAQM.
+  4. negative   NEG-QUANTUM-MACHINE-LEARNING-KERNEL-CONCENTRATION-BARRIER  [retained · QUANTUM-MACHINE-LEARNING, QUANTUM-KERNEL-METHODS, PROJECTED-QUANTUM-KERNELS, QUANTUM-TANGENT-KERNEL]
+     research/registry/negative_results.json:68418
+     Claim: Quantum kernel methods and quantum neural networks achieve scalable super-polynomial quantum speedup over classical machine learning algorithms on general data distributions without exponential measurement shot overhead 
+     Why not: Expressive quantum kernels concentrate exponentially to the identity matrix due to Haar measure geometry, requiring exponentially many measurement shots Omega(4^n) to resolve kernel values. Local projected kernels that avoid concentration are classically simulable in linear time O(n) as standard cla
+  5. negative   NEG-COSET-TYPICAL-N9-LOW-MULTIPLICITY-SURVIVAL-NOT-ALL-TARGET  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE]
+     research/registry/negative_results.json:64862
+     Claim: Survival on every n=9 target of multiplicity at most ten establishes adjacent-size robustness.
+     Why not: Thirteen n=9 targets of multiplicity 11 through 28 remain unaudited and may contain collisions or much smaller gaps.
+
+Dequantization checks
+  1. dequant    DEQ-CODE-COSET-COLLECTIVE-MISSING-SIGN-ANCILLA-ONLY-QUERY-HYBRID  [high]
+     research/registry/dequantization_checks.json:1932
+     Claim: Changing ancilla schedules or adding coherent selector memory yields a short missing-sign detector without other data operations.
+     Why not: A faster retained-data compiler must leave this restricted access architecture. Data-dependent preprocessing, nonmissing-sector operations and terminal data measurements are excluded, not lower-bounded; each needs an explicit charged implementation. This is an access or symmetry boundary, not classi
+  2. dequant    DEQ-CODE-COSET-COLLECTIVE-REFERENCE-TWIRL-INFORMATION-LOSS  [high]
+     research/registry/dequantization_checks.json:1965
+     Claim: After independent reference-type dephasing and carrier discard, polynomially many single-copy multiplicity registers permit constant-advantage binary detection.
+     Why not: Retain charged cross-input carrier correlations. Predetermined references and classical adaptation with fresh-block twirling before memory coupling obey separate bounds. Quantum-controlled references and pre-twirl memory interaction remain outside scope. This is not a general HSP lower bound or clas
+  3. dequant    DEQ-DCP-QW-SOURCE-CERTIFIED-RESOURCE-AND-OUTPUT-GAP  [critical]
+     research/registry/dequantization_checks.json:535
+     Claim: The source's 0.2182 subset-sum quantum walk either fails because of internal path history or already supplies a polynomial coherent partial solver for the DCP reduction.
+     Why not: Retain the source-certified history-independent update as a valid mechanism. Separately construct and prove a polynomial-resource output circuit with canonical or aligned marked witnesses, inverse-polynomial paired workspace fidelity, reversible cleanup, and the exact Regev source contract.
+  4. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-RESOURCE-FRONTIER-DCP-SUBSET-SUM-RESOURCE-FRONTIER-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13889
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-RESOURCE-FRONTIER-DCP-SUBSET-SUM-RESOURCE-FRONTIER: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-DCP-RECURSIVE-NO-ASYMPTOTIC-IMPROVEMENT  [high]
+     research/registry/dequantization_checks.json:2284
+     Claim: The recursive decoder improves a named Kuperberg/Regev resource bound.
+     Why not: Derive the physical merge recurrence, optimize stage budgets, and compare sample, time, and memory exponents against named generic baselines.
+
+Notes and handoff
+  1. note       Weighted moments and sampled-oracle admission › Contract and comparison  [unlabelled]
+     research/WEIGHTED_MOMENT_CHARACTER_ADMISSION.md:8
+     Corpus lookup `Exponential quantum advantage processing massive classical data succinct classical models` gives only generic nearby kernel/memory entries; none substitutes for reading this source.
+  2. note       Retained-Data Missing-Harmonic Detector › Stronger Selector-Only Query Boundary  [review-pending]
+     research/MISSING_HARMONIC_DETECTOR.md:224
+     The finite audit retains this explicit counterexample, as well as random complex ancilla programs, controlled query phases, quantum memory, and each hidden transposition.
+  3. note       Reference Twirling and Lost Binary Information › Classical Adaptive References with Quantum Memory  [review-pending]
+     research/REFERENCE_TWIRL_INFORMATION.md:134
+     Their identical null prefix has a classical history and a conditional quantum memory state independent of h.
+  4. note       Native Inputs Have A Generalized-Dihedral Baseline › Why This Changes The Research Baseline  [review-pending]
+     research/NATIVE_GENERALIZED_DIHEDRAL_BRIDGE.md:7
+     The original sieve has large quantum memory.
+  5. note       Dimension-Free Codomain Channel Simulation › An Actual Classical-Query / Quantum-Processing Simulator  [review-pending]
+     research/DHSP_CODOMAIN_SAMPLE_SIMULATION.md:52
+     For T calls with arbitrary quantum memory and classical adaptive subgroup choices, an input/reference-uniform channel hybrid gives TOTAL simulation error at most T/m for EACH fixed oracle and hidden hypothesis.
+
+Code and experiments
+  1. hypothesis dcp_adaptive_readout_research_contract  [MEASUREMENT_CLASS_DIAGNOSTIC_LOCAL_DERIVATION_REVIEW_PENDING]
+     research/hypotheses/dcp_adaptive_readout_research_contract.json
+     Classically simulating known-secret calibration does not solve unknown-secret recovery; compare with legal measured-data attacks and known quantum algorithms.
+  2. experiment Primary-source audit of the 0.2182 subset-sum quantum walk  [planned]
+     research/registry/experiments.json:23789
+     Parse the cached arXiv LaTeX and fingerprint claims about time, memory, QRAQM, heuristic removal, history-independent updates, data-independent error, deterministic data structures, marked-set preservation, output type, and remaining heuristics.
+  3. hypothesis dhsp_codomain_sample_simulation_contract  [DIMENSION_FREE_INSTRUMENT_SCREEN_LOCAL_DERIVATION_REVIEW_PENDING]
+     research/hypotheses/dhsp_codomain_sample_simulation_contract.json
+     research/DHSP_CODOMAIN_SAMPLE_SIMULATION.md dihedral-hsp full-function-oracle-access codomain-instrument-simulation adaptive-quantum-memory classical-query-quantum-processing retained domains or detailed failed-domain outcomes known operations controlled jointly by domain and codomain coherent subg…
+  4. result     EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION derived-blockwise-reference-information-loss-review-pe  [derived-blockwise-reference-information-loss-review-pending]
+     research/registry/experiment_results.json:16457
+     Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction.
+  5. hypothesis native_full_root_slice_contract  [EXACT_CONSTRUCTIVE_CLASSICAL_BASELINE_EXTERNAL_REVIEW_PENDING]
+     research/hypotheses/native_full_root_slice_contract.json
+     research/NATIVE_FULL_ROOT_SLICE.md theorems/native_full_root_slice.py do not promote mod9 witnesses to full-root words do not replace actual paired choices by independent arbitrary vectors charge exponential compilation, all samples, memory and lost full-row mass do not call one restricted witness…
+
+Literature
+  1. literature Quantum singular value transformation and beyond  [seed · qsvt, block-encoding, hamiltonian-simulation, linear-algebra]
+     research/literature_records.json
+     Data loading, QRAM assumptions, and classical dequantization can erase apparent speedups.
+  2. literature Randomized Quantum Singular Value Transformation  [seed · qsvt, randomization, early-fault-tolerant, linear-systems]
+     research/literature_records.json
+     Data loading, QRAM assumptions, and classical dequantization can erase apparent speedups.
+  3. literature A CS guide to the quantum singular value transformation  [seed · qsvt, exposition, block-encoding, algorithm-framework]
+     research/literature_records.json
+     Data loading, QRAM assumptions, and classical dequantization can erase apparent speedups.
+  4. literature goppa_holdout_quantum_access  [audit]
+     research/literature_audits/goppa_holdout_quantum_access.json
+     Construct a compact parity-preserving representation of the local-relation quotient with a direct useful output map, beating the matrix-free classical baseline Unconditional key recovery, a quantum solver, or a characteristic-preserving complex lift Sections 1-5, Claim 6.2, Theorem 7.2 and referenc…
+  5. literature ternary_pair_collimation_sources  [audit]
+     research/literature_audits/ternary_pair_collimation_sources.json
+     Algorithm4.1 and Proposition4.2, explicit collimation/indexing/classical memory costs.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

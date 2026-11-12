@@ -1,4 +1,162 @@
 # Research Agent Handoff
+## 2026-11-12 Rees arXiv Readiness, Source Checks and Three Research Attacks
+
+Claude session; AI only, pending human review; claim gates unchanged. Papers are local (gitignored).
+- Paper (core 45 pp., full 223 pp., both clean): the core is self-contained. The full version
+  ships as the arXiv ancillary file anc/rees-hsp-full.pdf, with anc/make_numbers.py
+  (docs/papers/rees-hsp/arxiv/build_package.sh, METADATA.md). The full version is synced with
+  today's core (-full-version-sync.md). The AI-use paragraph is in as a DRAFT for the owner.
+  Abstract metadata form: 1,916 characters.
+- Source checks (-source-checks.md): 26 CONFIRMED, 4 WRONG (applied), 6 NEEDS HUMAN.
+  Ivanyos–Santha returns the scalars deterministically, with no condition on q beyond d | q−1.
+  II23 Thm 1 takes a purification oracle and its inverse, not U_f. II22 leaves the workspace in
+  a fixed state, not |0>; Lemma 1 absorbs it, and the wording is fixed.
+- Exponent of m (-exponent-discharge.md and its -referee.md): CORRECT WITH FIXES, but still
+  CONDITIONAL. Claims:
+  - 2c−1 for p > T_A(c), with T_A(9) ≈ 3.10e9, and for c ≤ 8 at p > 14281;
+  - the law-free worst case at c = 9 is 37.
+  The conditions are human review of Schedule 2 and the finite E₂ tables. Schedule 1 charged at
+  ⌈log₂ t_d⌉ gives 53 instead of 145 at c = 9 (same status as thm:main). Both are in the core
+  Outlook; the theorem and macros are unchanged (owner decision).
+  New routes (-exponent-new-routes.md, not refereed): window [c−1, 2c+o(c)] in the
+  label-combining model; Theorem MO2 (stage-2 multi-output merges).
+- H_3(Z), infinite index (-h3z-infinite-index.md, -h3z-hardness.md; independent, they agree):
+  H ∩ Z ≠ 1 is polynomial given Kuperberg Thm 1.5. H ∩ Z = 1 forces H cyclic; that case
+  reduces to a zero-sum problem (subexponential sieve, CONDITIONAL); polynomial time is UNKNOWN.
+  HSP(UT_3(Z)) reduces to HSP(UT_n(Z)). Not in the paper.
+- Cover-free twists (-entangled-twist-construction.md, -entangled-twist-impossibility.md):
+  - no polynomial scheme;
+  - the obstruction is label alignment;
+  - in the source-only twist model, the hard case is equivalent to random 0/1 zero-sum in F_p²;
+  - an unconditional lower bound there implies P ≠ NP;
+  - the broad model is REFUTED as an impossibility target, since it contains the cover.
+Gates that stay false: no unconditional exponent change, no H_3(Z) infinite-index claim, no
+cover-free claim. Next hard question: a law-free O(a)-column Las Vegas node at κ = 8, p = 41.
+Next command: referee -h3z-infinite-index.md's H ∩ Z ≠ 1 theorem, including Kuperberg's input
+model and the box size. Expected artifact: -h3z-referee.md. Acceptance test: a verdict on each step.
+Mechanical items: top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-12 Native Conductivity Endpoint and Classical Heat-Kernel Attack
+
+PROVISIONAL independent direction: PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md.
+Corpus then actual sources compared ternary subset-sum/data sketch/PDEs; first
+two had no new operation. Fresh normalized-gradient factorization2610.41690v1
+provides a paid route to effective conductivity, a scalar physical endpoint.
+Native input: arbitrary sizeB Boolean circuit for{1,rho} edge conductivities
+on L=2^n 2D torus, fixedrho; no IID/field/QRAM. Output additiveepsilon K_j.
+Energy formula K/rho=<eta,S eta>-<q,M^-1q>, q=V*Seta UNNORMALIZED,
+M=V*SV+Pconstant, spectrum[1/rho,1]. Fourier unit gradient pays V; direct
+bilinear QSVT readout avoids rareq normalization. No circuit implemented.
+Actual2306.11802v3 norm<=1 to min>=1/kappa inference is not imported.
+
+Hard derivation: contrast Neumann series has only O(log1/epsilon) terms.
+A KERNEL-FREE classical signed sampler uses Pi=integral D exp(-tK0)D*,
+independent Poisson counts for free heat propagation, marks
+(N_i+/t-1)(N_j-/t-1) of secondmoment1/t^2 even wheni=j. Dyadic time bands
+and T~L^2 log1/tau give one-step variance O((n+loglog1/tau)^2). Binary
+binomial approximation, weight clipping and dyadic grids appear to pay
+finite BIT work; independent proof review pending. If sound, fixedprecision
+is classically poly(B,n); epsilon=n^-O(1) gives only quasipolynomial upper.
+No full polynomial precision match or hardness follows.
+
+New simpler quantum construction uses the SAME finite Neumann series:
+Fourier Rgrad=I-2Pi, Hadamard LCU for Pi, fresh flags per factor, and a
+random degree followed by an unpostselected Hadamard matrix-element test.
+No QSVT phase backend or normalizedq is needed. Complete BIT/error review
+is LIVE internally. Classical finite-BIT closure now couples the ENTIRE
+capped Poisson transcript to binary binomial samples; no unbounded-weight
+TV expectation claim. Round each finished path product to a common dyadic
+grid before averaging, to avoid accumulating rational denominator sizes.
+Two Claude requests are terminalTRUNCATED with useful partial proof,
+not completed reviews, no retries; OpenAI classical search stillLIVE15613.
+
+One exact L4/rho2 control ran once: six constant/layer/nonlayer direction
+cases; direct rational minimization equals projection ENERGY, zeroq cases
+correct, harmonic/arithmetic layer values and six-term Neumann tails pass.
+Parent read the complete script and exact result fields. Exactcontrols neverprove scaling.
+Paid LIVE: OpenAI classical session15613; two internal core reviews LIVE.
+Claude endpoint/heat requests are terminalTRUNCATED and parent-read.
+Poll existing handles; no retry. Gates false: full reviewed algorithm, genericdequantization, advantage,
+novelty, separation, practicalcost, quantumexecution. Previous OPI CLOSED
+checkpoint and usage snapshot saved; Rees work untouched.
+Next hard question is the all-circuit classical scalar complexity, especially
+whether variance can be paid polynomially in BOTHn and1/epsilon.
+Next command: read exact control; check the three pending reports and actual
+source scope; expected artifact revised note with every claim disposition,
+then one scoped checkpoint. Mechanicaltopitem; no new framework/sweep.
+
+## 2026-11-12 Scalar OPI Positive Filter Classically Matched
+
+CLOSED written admission test: SCALAR_OPI_TILTED_WALK_ADMISSION.md. Native
+q=2^t,m=q-1,k=floor(Rm), fixed0<R<1, original IID explicit halfset tables.
+For the root-anchor lazy mixer and affine score, exact drift and pointmass
+LSI test force the source-prescribed bM=O(log(D)^-2), so stationary-output
+likelihood ratios are1+O(log(D)^-2). Constructive paired killed-walk sampler
+uses SAME start and INDEPENDENT degrees/paths; finite-bit/clock costs paid.
+
+Stronger: uniform averaged powers including the identity, paid nu>=E,
+known attainedmaxG=1, ANY b>=0 and polynomial M give coefficient mass
+A<=exp(sM), rejection cost polynomial when sM=O(loginput). Flat conditioned
+starts have actual heralded marked amplitude<=exp(sM)*sqrt(piS/piT).
+Their projected output is classically sampled only with paid pi_T/membership.
+Source degree gives sM=O(1); no free conditioned start or postselection.
+
+Exact second moment pays maxG=1 with failure<=2^m/q^k on original tables,
+without finding/supplying a perfect polynomial. Exceptional legal tables
+exist for EVERY k<m; capped runtime includes this ensemble failure, not an
+unconditional expected-time claim. Deterministic anchor-line completion pays
+constant score spread on every input. Mixer exact spectral gap is
+s(m-k+1)/m by Vandermonde span recurrence, not a hitting-time theorem.
+
+Four completed API reports parent-read (old sampler, core, norm, maximum);
+truncated source report is NOT completed, mistakes rejected. Actual source
+Condition3.4/Thm4.6/sec7.3 checked separately. Frozen q8 exact filter/Prange
+control and q4 exhaustive moment control each ran once. Prange beats tested
+filter on that q8 fixture; asymptotics come only from written proofs.
+Gates false: generic OPI/tilted-walk no-go, all starts/longer/repeated filters,
+hardness, novelty, separation, full implementation and quantum execution.
+Known Johnson-list DQI comparator and full classical OPI matching stayOPEN.
+
+Next hard question: independent native endpoint selection; fresh periodic
+conduction norm-preserving gradient factorization is being compared with
+accounted ternary subset-sum/data-sketch routes. No nearby tilt sweep.
+Next command: finish one scoped checkpoint at audits/controls/opi_tilted_walk/
+(check current source/review/control hashes and STATE alignment, NO reruns),
+then write the chosen endpoint contract and run its classical attack first.
+Mechanicaltopitem preserves other actors' Rees queues. OwnerNov12 balance
+anchors OpenAI142USD/9days and Anthropic136USD; usage estimates are separate.
+
+## 2026-11-12 OPI Positive-Filter Research Resume
+
+Resumed the interrupted Nov7 scalar OPI pass after reading currentSTATE/TRAPS.
+Nov11 Rees records/finite certificates remain intact; no Rees job is launched.
+New provisional norm argument in SCALAR_OPI_TILTED_WALK_ADMISSION.md sections4-5:
+for lazy P_s, known ATTAINED maxG=gbar and paid nu>=lambda_max,
+(1+b gbar)/nu<=1+s. The averaged filter has coefficient mass A<=exp(sM).
+Its identity term then pays TWO-killed-walk sampling in polynomial time when
+sM=O(loginput), even for arbitraryb. For S subsetT its actual heralded marked
+amplitude is <=exp(sM)*sqrt(piS/piT); source-prescribed M has sM=O(1) here.
+Native root-anchor Fourier eigenvalues have exact max(k-1)/m, so gapr is
+proved by Vandermonde span-incidence recurrence, pending independent review.
+
+NEW native promise proof: exact second moment of the numberZ of perfect
+RS codewords gives Pr(Z=0)<=2^m/q^k. At fixedpositiveR,m=q-1 this is
+exp[-Omega(m logq)]. Thus the original explicit score has attainedmax1
+with high probability, with NO supplied perfect witness or optimum oracle.
+This closes the specific maximum-advice gate IF independently accepted;
+existence does not solve search. The derivation is section6 of the note.
+
+Older completed Claude sampler report recovered and checked; finite q8
+control now PASS, including a shared-degree falsifier and actual native
+Prange comparator. No asymptotic inference from controls. Paid OpenAI core
+and Claude source reviews are LIVE; a distinct norm/identity-term review is
+next. No full OPI no-go, arbitrary-start dequantization, novelty, separation
+or quantum execution. Do not promote until actual reports are checked.
+Next command: poll existing sessions62228/97921, review newnorm proof,
+then scoped checkpoint. Mechanicaltopitem. No old controls/broad suites.
+OwnerNov12 authorizes OpenAIUSD142 (9days) and AnthropicUSD136, use wisely/all;
+record usage separately from these owner-reported balances.
+
 ## 2026-11-11 Rees SDE p = 13 κ = 2 Re-Check Done: 37/37 Cases LRAT-Verified With the Fixed Checker (Streamed Proofs) (AI Only)
 
 AI-only; no git; paper NOT edited. Closes mechanical item 1 of "2026-11-11 Rees SDE Open Items".

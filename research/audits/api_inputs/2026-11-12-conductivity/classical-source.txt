@@ -1,0 +1,131 @@
+SOURCE research/audits/sources/periodic_conduction/mourrat.txt, original lines 1-130:
+                                                 EFFICIENT METHODS FOR THE ESTIMATION OF
+                                                         HOMOGENIZED COEFFICIENTS
+
+                                                                      JEAN-CHRISTOPHE MOURRAT
+
+                                                  Abstract. The main goal of this paper is to define and study new meth-
+                                                  ods for the computation of effective coefficients in the homogenization of
+
+
+
+
+arXiv:1609.06674v3 [math.NA] 31 Oct 2017
+                                                  divergence-form operators with random coefficients. The methods introduced
+                                                  here are proved to have optimal computational complexity, and are shown
+                                                  numerically to display small constant prefactors. In the spirit of multiscale
+                                                  methods, the main idea is to rely on a progressive coarsening of the problem,
+                                                  which we implement via a generalization of the Green-Kubo formula. The
+                                                  technique can be applied more generally to compute the effective diffusivity
+                                                  of any additive functional of a Markov process. In this broader context,
+                                                  we also discuss the alternative possibility of using Monte-Carlo sampling,
+                                                  and show how a simple one-step extrapolation can considerably improve the
+                                                  performance of this alternative method.
+
+
+
+
+                                                                             1. Introduction
+                                              Let −∇ · a(x)∇ be a divergence-form operator with random coefficients. If
+                                           the law of the matrix field (a(x)) is stationary and ergodic, then the operator
+                                           homogenizes over large scales to an operator with constant, deterministic
+                                           coefficients −∇ · a∇. The main goal of this paper is to explore numerical
+                                           methods to estimate the homogenized matrix a. We can formalize this task as
+                                           follows.
+                                           Problem. Find an algorithm that, given δ > 0 and a realization of the random
+                                           coefficient field (a(x)), outputs a matrix abδ such that
+                                                                                         1
+                                                                                   bδ |2 2 ⩽ δ.
+                                                                              
+                                           (1.1)                           E |a − a
+
+                                              In (1.1), we chose to measure the quality of the approximation a   bδ in an L2
+                                           sense for definiteness, but other choices (e.g. convergence in probability, or
+                                           higher moments) are equally valid, and in fact would only marginally alter the
+                                           results presented below. The point is that a  bδ should typically be within δ or
+                                           less from a.
+                                              Naturally, the real question is to find an efficient algorithm. We focus on a
+                                           discrete-space setting, and assume throughout that the coefficients are uniformly
+                                           elliptic, independent and identically distributed (i.i.d.). In order to measure
+                                           computational effort, we use a slightly loosely defined notion of “elementary”
+                                           operation: any memory access, boolean operation, floating point addition or
+
+                                             Date: October 5, 2018.
+                                             2010 Mathematics Subject Classification. 35B27.
+                                             Key words and phrases. homogenization, multiscale methods.
+                                                                                       1
+ 2                                         J.-C. MOURRAT
+
+multiplication counts as one operation. We first give a lower bound on the
+number of operations any algorithm must use.
+Proposition 1.1 (Complexity lower bound). No algorithm can output an
+              bδ of a in the sense of (1.1) within o(δ −2 ) operations.
+approximation a
+ The main method we propose to compute an approximation of a is as follows.
+We fix ξ ∈ Rd of unit norm, set
+                         v−1 (x) := (∇ · aξ)(x)             (x ∈ Zd ),
+and for each k ∈ N, we let vk be the solution to
+(1.2)               (2−k − ∇ · a∇)vk = 2−k vk−1                     on Zd .
+(We refer to Section 8 for precise notation and assumptions.) Note that the
+functions (vk )k⩾−1 depend on the coefficient field a, although we keep this
+dependence implicit. For each r ⩾ 0, we write
+                                 Br := {−brc, . . . , brc}d .
+Theorem 1.2 (Efficient approximation of a). For each ε ∈ (0, d−1
+                                                              2d
+                                                                 ), there exists
+a constant C < ∞ such that the following holds. Fix n ∈ N, and denote
+                                      1
+(1.3)                   rk := 2n−( 2 −ε)k         (k ∈ {0, . . . , n}),
+                         n
+                         X     1 X k
+                bn2 :=                  2 vk−1 (x)vk (x) + vk2 (x) .
+                                                                   
+(1.4)           σ
+                         k=0
+                             |Brk | x∈B
+                                            rk
+
+
+We have
+                         h                             2   i 21          dn
+(1.5)               E                             bn2
+                             ξ · aξ − E[ξ · aξ] + σ               ⩽ C2− 2 .
+
+                       bn2 can be computed in at most Cn2dn operations.
+Moreover, the quantity σ
+   By the central limit theorem, the quantity E[ξ · aξ] can be computed at
+precision δ > 0 in Cδ −2 operations. Hence, Theorem 1.2 gives us a method that
+requires δ −2 log(δ −1 ) operations to compute an approximation of a at precision
+δ > 0 in the sense of (1.1), essentially matching the lower bound given by
+Proposition 1.1.
+   For ε = 0, the statement of Theorem 1.2 remains valid provided that we
+                                          dn
+replace the right side of (1.5) by Cn2− 2 . I expect that the sharp upper bound
+                    1    dn
+in this case is Cn 2 2− 2 . Whatever may be, this additional multiplicative factor
+          1
+of n or n 2 does not degrade the bound much. For simplicity, it is the version
+with ε = 0 that was implemented numerically.
+   The proof of Theorem 1.2 relies in particular on the assumption that the law
+of the coefficient field P is invariant under the action of Zd . If this assumption
+is weakened and the law is only assumed to be invariant under the action of a
+sublattice of Zd which may be unknown to us a priori, then one can use masks
+in the spatial averages over Brk appearing in (1.4) in order to avoid boundary
+layer effects. When weakening the independence assumption on the coefficients,
+I expect Theorem 1.2 to remain unchanged provided that the field x 7→ a(x) is
+      EFFICIENT METHODS FOR ESTIMATION OF HOMOGENIZED COEFFICIENTS                 3
+
+sufficiently uncorrelated for partial sums over boxes to satisfy a central limit
+theorem.
+   The power of the method presented in Theorem 1.2 comes from the fact that
+the domain of interest shrinks rapidly as k increases. Moreover, when k is of
+order one, the condition number of the elliptic problems we need to solve and
+the size of the associated boundary layers are also of order one. As k increases,
+condition numbers and boundary layers become larger, but these adverse effects
+are more than compensated by the reduction of size of the domain of interest.
+In fact, in order to prove the complexity upper bound in Theorem 1.2, we do
+not need to use any preconditioner for the resolution of the elliptic problems:
+a direct application of the conjugate gradient method suffices. Moreover, the
+overhead caused by the presence of boundary layers only participates to a
+negligible fraction of the total computational time: this fraction of time is of the
+             n

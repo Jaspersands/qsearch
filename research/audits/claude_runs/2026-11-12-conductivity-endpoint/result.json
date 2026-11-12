@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 6951,
+      "path": "research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md",
+      "sha256": "2994c83a4be014ce6ba4aa217501974d6b71056e51e8c69c521c2a00a12d7bfc",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 48309,
+      "path": "research/audits/api_inputs/2026-11-12-conductivity/factorization-source.txt",
+      "sha256": "244df32d3ceedf965423e4cb6c6068385ec0c8a2817e1cdf8447bf85cb8aaf70",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 23544,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T06:42:32.110126+00:00",
+  "input_token_allowance": 24015,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.87855,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-conductivity/quantum-prompt.md",
+    "sha256": "0baa6103ec4c41ad422777942a1cc645780164048dadbc5691d8ac5a042222dc",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "constructive",
+  "run_id": "20261112T063508.115512Z-fac0de2e",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 23544,
+    "output_tokens": 32768
+  },
+  "usage_cost_estimate_usd": 1.87384
+}

@@ -1,0 +1,564 @@
+SOURCE research/audits/sources/periodic_conduction/paper.txt, original lines 340-560:
+2.4. Quantum Singular Value Transformation
+    The quantum singular value transformation (QSVT) [3, 4] applies a polynomial to a block-encoded matrix. Given
+a block encoding  of a symmetric matrix 𝐀 with subnormalization 𝛼, and a polynomial 𝑝 with |𝑝(𝑥)| ≤ 1 on [−1, 1],
+QSVT uses a number of queries to  equal to the degree of 𝑝 to block-encode
+                ∑
+      𝑝(𝐀∕𝛼) =     𝑝(𝜆𝑗 ) 𝒖𝑗 𝒖𝑇𝑗 ,                                                                           (14)
+                   𝑗
+
+where 𝜆𝑗 and 𝒖𝑗 are the eigenvalues and eigenvectors of 𝐀∕𝛼. For 𝑝(𝑥) ≈ 1∕𝑥, the polynomial must follow 1∕𝑥 down
+to the smallest eigenvalue of 𝐀∕𝛼, so the degree is set by the condition number seen by the circuit,
+
+      𝜅 = 𝛼 ‖𝐀+ ‖2 ,                                                                                                  (15)
+
+as 𝑑𝑡 = 𝑂(𝜅 log(𝜅∕𝜖)) for accuracy 𝜖 [2, 3].We use the odd Chebyshev-iteration polynomial 𝑞𝑡 of degree 2𝑡 − 1 of
+Gribling et al. [26, Cor. 12], which minimizes the relative residual max1∕𝜅≤|𝑥|≤1 |𝑥 𝑞𝑡 (𝑥) − 1| among odd polynomials
+of that degree.
+    For 𝐀 = 𝐊𝜒 ∕𝜎max , 𝛼 ≥ ‖𝐊𝜒 ‖2 ∕𝜎max (Section 2.3), so 𝜅 is at least the condition number of 𝐊𝜒 , which grows as
+Θ(𝑁 2 ) (Section 2.2). For the encoding of [17], 𝛼 exceeds ‖𝐊𝜒 ‖2 ∕𝜎max by a factor bounded in 𝑁, so 𝜅, and with it 𝑑𝑡 ,
+grows as Θ(𝑁 2 ).
+
+2.5. Quantum Preconditioning
+    Multiplying block encodings multiplies their subnormalizations [3], so a preconditioner encoded as a separate
+factor cannot lower the condition number seen by QSVT. Under block encoding, (𝐊+ )1∕2 must itself be encoded as the
+                                                                                1∕2
+leading block of a unitary, with a subnormalization 𝛼𝑃 ≥ ‖(𝐊+ )1∕2 ‖2 = ‖𝐊+ ‖2 (Section 2.3), which grows as 𝑁. In
+this subsection, we show that this scaling cancels the benefit of the preconditioner and relate the result to prior work.
+
+The product barrier. Let  and 𝑃 block-encode 𝐀 = 𝐊𝜒 ∕𝜎max and (𝐊+ )1∕2 with subnormalizations 𝛼 and 𝛼𝑃 .
+The product 𝑃  𝑃 block-encodes (𝐊+ )1∕2 𝐀(𝐊+ )1∕2 = 𝐌 (Equation (9)) with subnormalization 𝛼𝑃2 𝛼 [3], so the
+condition number seen by QSVT (Equation (15)) is 𝜅𝑃 = 𝛼𝑃2 𝛼 ‖𝐌+ ‖2 . On the complement of the constant fields,
+𝐀+ = (𝐊+ )1∕2 𝐌+ (𝐊+ )1∕2 , so ‖𝐀+ ‖2 ≤ 𝛼𝑃2 ‖𝐌+ ‖2 . Hence
+
+      𝜅𝑃 = 𝛼𝑃2 𝛼 ‖𝐌+ ‖2 ≥ 𝛼 ‖𝐀+ ‖2 = 𝜅 ∶                                                                              (16)
+
+the preconditioned solve is never cheaper than the unpreconditioned one of Section 2.4, and 𝜅𝑃 grows at least as Θ(𝑁 2 ).
+Pechan et al. [12] prove the same inequality for every preconditioner encoded as separate factors.
+
+
+
+
+K. Suresh: Preprint submitted to Elsevier                                                                     Page 6 of 23
+                               Preconditioned Quantum Linear Solver for Periodic Conduction
+
+An explicit bound. The lower bound on 𝜅𝑃 can be made explicit. If some node lies outside the closure of the inclusion,
+the nodal field equal to 1 at that node and 0 elsewhere has zero gradient in every inclusion element and gives the
+eigenvalue 1∕𝜌 of 𝐌 (Section 2.2). Then ‖𝐌+ ‖2 = 𝜌, and
+
+      𝜅𝑃 ≥ 𝛼 𝜌 ‖𝐊+ ‖2 .                                                                                              (17)
+
+For all three cells of Section 5.2 at 𝑁 = 1024 and 𝜌 = 10, with the subnormalization 𝛼 = 16∕3 of the encoding of [17],
+this bound is 1.4 × 106 ; the encoding of Section 3 has a condition number of at most 10 on the same mesh.
+
+Prior work. The barrier is related to four earlier work.
+1. Preconditioned block encodings: Lapworth et al. [11] report it numerically for preconditioned quantum linear
+   solvers.
+2. Inverse-Laplacian preconditioning: Golden et al. [10] precondition hydrological flow, a scalar elliptic problem
+   of the type treated here, by the inverse Laplacian, and find that its norm grows linearly in the number of unknowns,
+   so that its block encoding carries the mesh dependence it removes classically.
+3. FFT-based fixed-point iteration: Liu et al. [8] implement the iteration of Moulinec and Suquet [18] for the cell
+   problem with quantum Fourier transforms, encoding each of its 𝑆 steps as a separate non-unitary map. The 𝑆 steps
+   form a polynomial of degree 𝑆 in the preconditioned operator, composing them multiplies their subnormalizations,
+   and the success probability of the composed circuit is not analyzed.
+ 4. Wavelet preconditioning: Bagherimehrab et al. [27] and Gharat et al. [28] transform the operator to a wavelet
+    basis and apply a diagonal preconditioner, which bounds the condition number of the preconditioned matrix
+    independently of 𝑁. The cost of QSVT depends instead on the condition number seen by the circuit, which includes
+    the subnormalization of the preconditioner and, for factors encoded separately, is bounded below by Equation (16)
+    [12].
+    Deiml and Peterseim [29] avoid the barrier by building the preconditioner into the encoding, with a multilevel
+construction that does not require periodicity, at a subnormalization that grows with the fine-scale resolution and with
+the coefficient contrast. A preconditioner therefore lowers the cost of QSVT only if it is built into the block encoding
+of the preconditioned operator, not multiplied onto an encoding of 𝐊𝜒 ; such an encoding is built in Section 3.
+
+
+3. Fast-Inversion Block Encoding
+   Several concepts and equations were introduced in Section 2, and four of them are used in this section.
+ • Factored form: 𝐊𝜒 = 𝐆𝑇 𝐖𝚺 𝐆 and 𝐊 = 𝐆𝑇 𝐖𝐆 (Equation (5)), where 𝐆 maps nodal values to gradients at the
+   quadrature points.
+                                          (     )
+ • Fourier diagonalization: 𝐊 =  † diag𝒌 𝑆(𝒌)
+                                            ̂      (Equation (1)), so functions of 𝐊, such as (𝐊+ )1∕2 , are diagonal
+   in the Fourier basis.
+ • Preconditioned operator: 𝐌 of Equation (9), whose nonzero eigenvalues lie in [1∕𝜌, 1] for every 𝑁 (Equa-
+   tion (10)).
+ • Cost of QSVT: the number of queries grows with the condition number seen by the circuit, 𝜅 = 𝛼 ‖𝐀+ ‖2
+    (Equation (15)), which includes the subnormalization; encoding (𝐊+ )1∕2 as a separate factor makes it grow as
+    𝑁 2 (Equation (17)).
+    The aim of this section is a block encoding of 𝐌 with subnormalization 1, so that the condition number seen by
+QSVT is at most 𝜌 for every 𝑁, and a block encoding of its inverse. The construction follows the FFT-based solvers of
+homogenization step by step, and Table 2 lists the correspondence. In those solvers, a transform to wavenumbers, one
+small operation at each wavenumber, and a transform back apply the preconditioner in 𝑂(𝑁dof log 𝑁dof ) operations.
+The circuit has the same three stages, with quantum Fourier transforms in place of FFTs and a rotation of a small
+register in place of the multiplication at each wavenumber.
+    In Section 3.1, we review fast inversion of Tong et al. [30], which applies to 𝐊, and explain why it does not apply
+directly to the two-phase operator. In Section 3.2, we write 𝐌 as a product of three factors of norm 1, 𝐕𝑇 ̃𝚺 𝐕. We
+derive the Fourier structure of 𝐕 in one and two dimensions in Sections 3.3 and 3.4, and build its circuit in Section 3.5.
+
+K. Suresh: Preprint submitted to Elsevier                                                                    Page 7 of 23
+                               Preconditioned Quantum Linear Solver for Periodic Conduction
+
+Table 2
+The FFT-based classical solver and the block-encoded circuit of this section, step by step. Read each row across: the right
+column is the quantum counterpart of the left. The costs are counts per application or per solve, not run times, and the
+two columns are not comparable in absolute terms.
+
+ Step                         FFT-based solver                             Circuit (this paper)
+ Preconditioner               𝐊+ applied to a vector by two FFTs           (𝐊+ )1∕2 absorbed into the gradient operator
+                                                                           𝐕; never encoded on its own
+ To wavenumbers               FFT, 𝑂(𝑁dof log 𝑁dof ) operations            quantum Fourier transform, 𝑂(log2 𝑁dof )
+                                                                           gates
+ At each wavenumber           multiply by ̂
+                                          𝑆(𝒌)−1                           rotate the local register to the unit vector
+                                                                            ̂
+                                                                           𝐕(𝒌)
+ Back to the mesh             inverse FFT                                  inverse quantum Fourier transform
+ Conductivity                 multiply by 𝚺 at each quadrature point       Σ , one controlled material reflection
+ Condition number             at most 𝜌, every 𝑁                           at most 𝜌, every 𝑁
+                                                     √
+ Solve                        conjugate gradients, 𝑂( 𝜌 log(1∕𝜖))          QSVT, 𝑂(𝜌 log(1∕𝜖𝑝 )) queries
+                              iterations
+
+
+We encode 𝚺
+          ̃ and 𝐌 in Section 3.6 and the inverse in Section 3.7, and in Section 3.8 we give the gate-level circuit for
+the wavenumber-controlled stage, choose its precision, and state its cost.
+
+3.1. Fast Inversion
+    Tong et al. [30] introduced fast inversion in the context of quantum preconditioning. A matrix is fast-invertible
+if a block encoding of its inverse can be built at a cost independent of its condition number. This holds when the
+matrix is diagonalized by a quantum Fourier transform and its eigenvalues are known in closed form [30, Prop. 2].
+The homogeneous matrix 𝐊 is of this kind (Section 2.2). For an operator 𝐀 + 𝐁 with 𝐀 fast-invertible, Tong et al.
+apply QSVT to the preconditioned operator 𝐼 + 𝐀−1 𝐁, with a number of queries that grows with the product of the
+subnormalizations of 𝐀−1 and 𝐁 [30, Thm. 1]. This product does not grow with the mesh when 𝐁 is a lower-order term,
+such as a bounded potential added to the Laplacian [30].
+    However, this approach fails for the two-phase operator. In the natural splitting, 𝐀 = 𝜎min 𝐊 is the operator of a cell
+made entirely of the soft matrix, and 𝐁 = 𝐊𝜒 − 𝜎min 𝐊 is the additional stiffness contributed by the inclusion. Unlike
+that of a potential, the norm of 𝐁 is proportional to the largest eigenvalue of 𝐊, while the norm of 𝐀−1 is set by the
+smallest nonzero eigenvalue of 𝐊. Their product grows as Θ(𝑁 2 ), and the query count of [30, Thm. 1] grows at least
+in proportion to 𝑁 2 , as in Equation (16).
+    In this paper, we use fast inversion for 𝐊 in a different way. Instead of preconditioning from the left, we apply
+(𝐊+ )1∕2 on both sides and absorb it into the factors of 𝐊𝜒 (Section 3.2). The preconditioner is then never encoded as
+a separate factor, and the preconditioned operator is encoded with subnormalization 1, and it is inverted by QSVT in
+Section 3.7.
+
+3.2. Unit-Norm Factorization
+   Our goal is a block encoding of the preconditioned operator 𝐌 of Equation (9) with subnormalization 1. We first
+rewrite 𝐌 so that the preconditioner does not appear as a separate factor. The idea is to apply the preconditioner to the
+gradients rather than to the stiffness matrix.
+   We start from the factored form 𝐊𝜒 = 𝐆𝑇 𝐖𝚺 𝐆 of Equation (5). Substituting it into Equation (9) gives
+              1
+        𝐌=          (𝐊+ )1∕2 𝐆𝑇 𝐖𝚺 𝐆 (𝐊+ )1∕2 .
+             𝜎max
+Two steps put this product in a symmetric form. First, we write ̃𝚺 = 𝚺∕𝜎max for the scaled conductivity, a diagonal
+matrix whose entries are 1 at the quadrature points of the inclusion and 1∕𝜌 at those of the matrix.
+                                                                                               √ Second, we split
+𝐖 = 𝐖 𝐖 and move one factor 𝐖 to the right of 𝚺, which is allowed because 𝐖 = 𝑤 𝐈 commutes with
+       1∕2   1∕2                        1∕2                ̃                              1∕2
+
+every matrix. The result is
+           [                ]𝑇 [ 1∕2             ]
+      𝐌 = 𝐖1∕2 𝐆(𝐊+ )1∕2 𝚺     ̃ 𝐖 𝐆(𝐊+ )1∕2 .                                                                 (18)
+
+K. Suresh: Preprint submitted to Elsevier                                                                     Page 8 of 23
+                               Preconditioned Quantum Linear Solver for Periodic Conduction
+
+We denote the bracketed matrix by
+
+      𝐕 = 𝐖1∕2 𝐆 (𝐊+ )1∕2 ,                                                                                             (19)
+
+so that the preconditioned operator becomes
+             ̃ 𝐕.
+      𝐌 = 𝐕𝑇 𝚺                                                                                                          (20)
+
+    Reading Equation (19) from right to left, (𝐊+ )1∕2 maps the 𝑁 2 nodal values to 𝑁 2 nodal
+                                                                                        √ values, 𝐆 maps nodal
+values to the 8 gradient values of each element, and 𝐖 multiplies each gradient value by 𝑤. The matrix 𝐕 therefore
+                                                         1∕2
+
+has the size of 𝐆, 8𝑁 2 × 𝑁 2 . Its key property is that it preserves length.
+Proposition 1 (Unit-norm factorization). For every mesh size 𝑁 and every phase arrangement 𝜒,
+
+      𝐕𝑇 𝐕 = 𝚷,         ‖𝐕‖2 = 1,                                                                                       (21)
+
+where 𝚷 is the orthogonal projector onto the complement of the constant fields.
+Proof. From Equation (5), 𝐕𝑇 𝐕 = (𝐊+ )1∕2 𝐆𝑇 𝐖𝐆(𝐊+ )1∕2 = (𝐊+ )1∕2 𝐊(𝐊+ )1∕2 , which is the projector onto the range
+of 𝐊. Since 𝐊 is symmetric, this range is the orthogonal complement of its kernel, the constant fields. Finally, 𝐕𝑇 𝐕 = 𝚷
+means that the singular values of 𝐕 are the square roots of the eigenvalues of 𝚷, which are 0 and 1, so ‖𝐕‖2 = 1.
+    In words, 𝐕 preserves the Euclidean norm of every nodal vector orthogonal to the constant fields and maps the
+constant fields to zero; a matrix with this property is a partial isometry [31]. Only Equation (5) is used in the proof, so
+the proposition holds in every dimension 𝑑.
+    By Equation (20), 𝐌 is thus a product of three factors of norm 1. The two copies of 𝐕 depend on the mesh but not
+on the microstructure. The diagonal factor ̃𝚺 is the only factor that depends on 𝜒, and its entries are 1 and 1∕𝜌. The
+subnormalization of a product of block encodings is the product of their subnormalizations, so block encodings of 𝐕
+and ̃𝚺 with subnormalization 1 give a block encoding of 𝐌 with subnormalization 1. The encoding of 𝐕 is constructed
+in Sections 3.3 to 3.5, those of ̃𝚺 and 𝐌 in Section 3.6, and that of the inverse in Section 3.7. The gate-level circuit, its
+precision, and its cost are then given in Section 3.8.
+
+3.3. The Isometry in One Dimension
+    Since (𝐊+ )1∕2 is a dense matrix, 𝐕 is dense, and a circuit that loads its entries one by one would need a number of
+gates that grows with the number of entries. What makes 𝐕 cheap is not sparsity but periodicity: 𝐕 is circulant, so the
+Fourier transform diagonalizes it, and the entire matrix is carried by one number per wavenumber,
+                     (     )
+       𝐕 =  † diag𝑘 𝑉̂ (𝑘)  .                                                                                    (22)
+
+This subsection derives 𝑉̂ (𝑘) in one dimension, where it is a phase. Section 3.4 repeats the derivation on the Q4 mesh,
+where the diagonal becomes block diagonal.
+    Consider the periodic one-dimensional cell with 𝑁 linear elements of length ℎ = 1∕𝑁 and nodes 𝑗 = 0, … , 𝑁 − 1
+taken modulo 𝑁, with one quadrature point per element of weight 𝑤 = ℎ. The gradient matrix is then 𝑁 × 𝑁, with
+(𝐆𝒖)𝑗 = (𝑢𝑗+1 − 𝑢𝑗 )∕ℎ, so every row has the same two entries shifted by one column from the row above. This is
+where the periodicity enters: 𝐆 is circulant, and so is every factor of 𝐕. Applying 𝐆 to the plane wave 𝑢𝑗 = 𝑒i𝜃𝑗 , with
+𝜃 = 2𝜋𝑘∕𝑁, multiplies it by
+
+             𝑒i𝜃 − 1 2i i𝜙                        𝜃   𝜋𝑘
+      ̂
+      𝐺(𝑘) =        = 𝑒 sin 𝜙,              𝜙=      =    .                                                              (23)
+                ℎ    ℎ                            2   𝑁
+                                                                                                               √
+The same plane wave is an eigenvector of 𝐊, with eigenvalue 𝑆(𝑘)̂   = 𝑤 |𝐺(𝑘)|
+                                                                          ̂    2 = (4∕ℎ) sin2 𝜙, and of 𝐖1∕2 =   ℎ 𝐈.
+The three factors of 𝐕 are therefore diagonal in the same basis, and multiply wavenumber by wavenumber:
+              √
+      𝑉̂ (𝑘) = ℎ 𝐺(𝑘)
+
+SOURCE research/audits/sources/periodic_conduction/paper.txt, original lines 620-805:
+                                  (     )                   1∕2
+      𝐕 = ( † ⊗ 𝐼8 ) blockdiag𝒌 ̂ 𝐕(𝒌)  ,       𝐕(𝒌) = 𝐖𝑒 ̂
+                                                   ̂            𝐆(𝒌) ̂𝑆(𝒌)−1∕2 ,                                    (28)
+
+with 𝐕(𝟎)
+       ̂    = 𝟎, the two-dimensional counterpart of Equation (24). In one dimension, 𝑉̂ (𝑘) is a phase; here it is
+a vector (of length )8, and it has unit length for every 𝒌 ≠ 𝟎. To see this, note that Equation (28) gives 𝐕𝑇 𝐕 =
+             ̂
+ † diag𝒌 ‖𝐕(𝒌)‖   2  , since 𝐕 is real. By Proposition 1, this equals 𝚷, the same product with 1 on the diagonal except
+                   2
+at the constant field 𝒌√= 𝟎. Hence ‖ ̂𝐕(𝒌)‖2 = 1 for every 𝒌 ≠ 𝟎: the isometry is a unit vector at each wavenumber.
+    In explicit form, 𝑤 = ℎ∕2 cancels the factor 2∕ℎ of Equation (26), and 𝑆(𝒌)   ̂           ̂
+                                                                                        = 𝑤 ‖𝐆(𝒌)‖  2 by Equation (5). For
+                                                                                                    2
+𝒌 ≠ 𝟎 and each Gauss point 𝑔 = 1, … , 4, the 𝑥- and 𝑦-entries of ̂  𝐕(𝒌), in local states |2𝑔 − 2⟩ and |2𝑔 − 1⟩, are
+                                   sin 𝜙1 (cos 𝜙2 + i 𝜂𝑔 sin 𝜙2 )                                    sin 𝜙2 (cos 𝜙1 + i 𝜉𝑔 sin 𝜙1 )
+      𝑉̂2𝑔−2 (𝒌) = i 𝑒i(𝜙1 +𝜙2 )                                    ,   𝑉̂2𝑔−1 (𝒌) = i 𝑒i(𝜙1 +𝜙2 )                                    , (29)
+                                             ̂ 1∕2
+                                             𝑆(𝒌)                                                              ̂ 1∕2
+                                                                                                               𝑆(𝒌)
+K. Suresh: Preprint submitted to Elsevier                                                                                  Page 10 of 23
+                               Preconditioned Quantum Linear Solver for Periodic Conduction
+
+with
+               (                                                      )
+       ̂
+       𝑆(𝒌) = 4 sin2 𝜙1 cos2 𝜙2 + cos2 𝜙1 sin2 𝜙2 + 23 sin2 𝜙1 sin2 𝜙2 .                                                 (30)
+
+Summing the squared moduli of Equation (29) over the four Gauss points, with 𝜉𝑔2 = 𝜂𝑔2 = 1∕3, gives 1, as it must.
+    By Equation (28), the dense 8𝑁 2 × 𝑁 2 matrix 𝐕 is replaced by 𝑁 2 unit vectors of length 8, one per wavenumber,
+each given in closed form. The circuit does not prepare these vectors one at a time: a single wavenumber-controlled
+unitary prepares ̂𝐕(𝒌) for all 𝒌 in superposition, computing it from the bits of 𝒌 at a cost polylogarithmic in 𝑁
+(Section 3.8); a method from a table of the 𝑁 2 vectors needs a circuit whose size grows as 𝑁 2 . For a wavenumber
+along one axis, the vector reduces to the one-dimensional phase: at 𝒌 = (1, 0), the 𝑦-gradients vanish, 𝑆̂ = 4 sin2 𝜙1 ,
+and
+       ̂ 0) = 1 i 𝑒i𝜋∕𝑁 (1, 0, 1, 0, 1, 0, 1, 0)𝑇 ,
+       𝐕(1,   2
+
+the phase of Equation (24) shared equally by the 𝑥-gradients at the four Gauss points. For the tensor-product two-point
+Gauss rule in 𝑑 dimensions, the vector has length 𝑑 2𝑑 .
+
+3.5. Circuit for the Isometry
+   Equation (28) has the form of an FFT-based classical solver: a transform to wavenumbers, one small operation per
+wavenumber, and a transform back. We build the circuit 𝑉 of Figure 3 with the same three stages. In this subsection,
+we define 𝑉 and show that it block-encodes 𝐕 with subnormalization 1. The argument does not depend on how the
+middle stage is synthesized; its synthesis, precision, and cost are given in Section 3.8.
+
+Registers. The circuit must hold the input and the output of 𝐕. The input is a nodal vector 𝒖, with one value at each of
+the 𝑁 2 nodes. The output 𝐕𝒖 is a gradient field, with eight values at each of the 𝑁 2 elements: two gradient components
+at each of four Gauss points. Each value is therefore identified by a position, a node or an element, and by a local index.
+At an element, the local index selects one of the 8 values stored there; at a node, it is 0. The circuit uses one register for
+each. The position register has 𝑚 = log2 𝑁 2 qubits and holds the index 𝒋 of a node or an element. The local register
+holds the local index 𝓁. A nodal vector is stored in local state |0⟩, with its 𝑁 2 values in the position register, and a
+gradient field in local states |0⟩ to |7⟩, where |2𝑔 − 2⟩ holds the 𝑥-gradient and |2𝑔 − 1⟩ the 𝑦-gradient at Gauss point 𝑔.
+Between the two Fourier transforms, the position register holds a wavenumber 𝒌 instead of a position. There the local
+rotation of the second stage below maps local state |0⟩ to the eight entries of ̂   𝐕(𝒌) in Equation (29), stored in local
+states |0⟩ to |7⟩ with the same labels. At 𝒌 = 𝟎, ̂𝐕(𝟎) = 𝟎, but (𝟎) is unitary and must map |0⟩ to some state; mapping
+it into |0⟩ to |7⟩ would add a gradient field that 𝐕 does not have. The circuit therefore needs local states outside the
+gradient values. They are provided by a fourth qubit: the local register has four qubits and 16 states, the states |8⟩ to
+|15⟩ are not used by 𝐕, and they are used in Section 3.6 to carry the constant field through Σ . In one dimension, the
+local register is a single qubit: |0⟩ holds the value and |1⟩ the constant field.
+
+The three stages.
+1. Transform:  on the position register maps the nodal values to one amplitude per wavenumber 𝒌.
+2. Local rotation: for each wavenumber, a 16 × 16 unitary (𝒌) acts on the local register. For 𝒌 ≠ 𝟎, its first column
+                                                           ∑
+   is 𝐕(𝒌)
+      ̂     padded with eight zeros, that is, (𝒌)|0⟩ = 7𝓁=0 𝑉̂𝓁 (𝒌) |𝓁⟩ with the entries of Equation (29), and it maps
+   the states |0⟩ to |7⟩ and the states |8⟩ to |15⟩ each to themselves. Such a unitary exists because 𝐕(𝒌)
+                                                                                                      ̂    is a unit vector
+   (Section 3.4). For 𝒌 = 𝟎, where 𝐕(𝟎) = 𝟎, (𝟎) maps |0⟩ into the unused states |8⟩ to |15⟩. In Section 3.8, (𝒌) is
+                                       ̂
+   built with fixed-point arithmetic on the bits of 𝒌.
+3. Inverse transform:  † on the position register maps the wavenumbers back to elements.
+In one dimension, (𝑘) multiplies |0⟩ by the phase i 𝑒i𝜋𝑘∕𝑁 of Equation (24) for 𝑘 ≠ 0 and maps |0⟩ to |1⟩ for 𝑘 = 0.
+
+
+
+
+K. Suresh: Preprint submitted to Elsevier                                                                      Page 11 of 23
+                                 Preconditioned Quantum Linear Solver for Periodic Conduction
+
+                                                4
+                                    local |𝓁⟩
+                                                                ∑
+                                                                𝒌 |𝒌⟩⟨𝒌| ⊗ (𝒌)
+                                                𝑚
+                                 position |𝒋⟩                                               †
+
+Figure 3: The transform  maps mesh nodes to wavenumbers, the wavenumber-controlled unitary (𝒌) maps the input
+                    ̂
+local state |0⟩ to 𝐕(𝒌),  and  † maps back to mesh nodes. The output is read in local states |0⟩ to |7⟩. As in Qiskit, the
+least significant register, here the local register, is drawn at the top.
+
+
+Block encoding. The three stages compose to the unitary
+                          (∑                  )
+      𝑉 = ( † ⊗ 𝐼16 )          |𝒌⟩⟨𝒌| ⊗ (𝒌) ( ⊗ 𝐼16 ).                                                               (31)
+                            𝒌
+
+The transforms act on the position register only, and for every 𝒌 the components of (𝒌)|0⟩ in local states |0⟩ to |7⟩
+are the entries of ̂
+                  𝐕(𝒌), including 𝒌 = 𝟎, where (𝟎)|0⟩ lies in the states |8⟩ to |15⟩ and ̂
+                                                                                          𝐕(𝟎) = 𝟎. In words: if a nodal
+vector 𝒖 is placed in local state |0⟩ and 𝑉 is applied, the part of the output in local states |0⟩ to |7⟩ is the gradient
+field 𝐕𝒖. Written with the projectors onto these local states, Equation (28) gives
+
+         (        )  (       )                                               ∑
+                                                                             7
+      𝐕 = 𝐼 ⊗ 𝚷out 𝑉 𝐼 ⊗ 𝚷in ,                 𝚷in = |0⟩⟨0|,       𝚷out =         |𝓁⟩⟨𝓁|,                               (32)
+                                                                             𝓁=0
+
+for every mesh size 𝑁: 𝑉 block-encodes 𝐕 with subnormalization 1. The constant field leaves the circuit in the local
+states |8⟩ to |15⟩, outside the block, which is used in Section 3.6. One flag qubit converts the projectors to the ancilla
+form of Equation (11) [3], so the product rule of Section 2.5 applies to the products formed below. Only the first
+column of (𝒌) and the two invariant sets of local states are used in the argument. The gate-level circuit of Section 3.8
+computes that column with fixed-point arithmetic, to within an encoding error 𝛿 defined there.
+
+Relation to fast inversion. The circuit 𝑉 has the structure of the fast-inversion circuit of Tong et al. [30, Eq. (10)]:
+a unitary transform, an operation at each eigenvalue that computes a value by reversible arithmetic and uses it to control
+a rotation, and the inverse transform. The difference is the following. Tong et al. place an amplitude proportional to
+1∕𝐷𝑖𝑖 on a flag qubit, so their subnormalization is at least the norm of the encoded matrix; built the same way, (𝐊+ )1∕2
+would have a subnormalization that grows as 𝑁, which is the separately encoded preconditioner of Equation (17). Here
+𝑆(𝒌)−1∕2 is folded into the unit vector ̂
+ ̂                                      𝐕(𝒌), so (𝒌) is unitary and the subnormalization of 𝐕 is 1.
+
+3.6. Block Encoding of the Preconditioned Operator
+    With 𝑉 in hand, the remaining factor of Equation (20) is 𝚺,   ̃ and it is the only place where the microstructure
+enters. We encode it with the material reflection 𝑅𝜒 = 𝐼 − 2 diag(𝜒) of Section 2.3, applied to the element index and
+extended by the identity over the local register. The reflection −𝑅𝜒 is +1 at the quadrature points of the inclusion and
+−1 at those of the matrix, while ̃𝚺 is 1 in the inclusion and 1∕𝜌 in the matrix. Hence
+                                            (       )            (       )
+      ̃𝚺 = 𝛽0 𝐼 + 𝛽1 (−𝑅𝜒 ),         𝛽0 = 12 1 + 1∕𝜌 ,    𝛽1 = 12 1 − 1∕𝜌 ,                                              (33)
+
+since 𝛽0 +𝛽1 = 1 and 𝛽0 −𝛽1 = 1∕𝜌. This is a linear combination of two unitaries
+                                                                              √ with nonnegative
+                                                                                         √             coefficients that sum
+to 1. The standard circuit for such a combination [3] prepares one ancilla in 𝛽0 |0⟩ + 𝛽1 |1⟩, applies −𝑅𝜒 controlled
+on |1⟩, and undoes the preparation. The result is a block encoding Σ of ̃𝚺 with subnormalization 𝛽0 + 𝛽1 = 1.
+    We now combine the two encodings into 𝑀 = 𝑉† Σ 𝑉 , which uses two queries to 𝑉 and one controlled
+application of 𝑅𝜒 . To find the matrix it block-encodes, apply it to a nodal vector 𝒖 in local state |0⟩, and split 𝒖 into its
+constant part and the rest.
+ 1. The part orthogonal to the constant fields: 𝑉 maps it to the gradient field 𝐕𝒖 in the local states |0⟩ to |7⟩, Σ
+    multiplies each gradient value by the scaled conductivity of its element, and 𝑉† maps the result back to local state
+    |0⟩. The block of these three steps is 𝐕𝑇 𝚺
+                                              ̃ 𝐕 = 𝐌 (Equation (20)), with subnormalization 1 ⋅ 1 ⋅ 1 = 1.
+
+
+K. Suresh: Preprint submitted to Elsevier                                                                      Page 12 of 23
+                               Preconditioned Quantum Linear Solver for Periodic Conduction
+
+2. The constant part: 𝑉 routes it into the unused local states |8⟩ to |15⟩, Σ multiplies it element by element by
+    ̃ and  † returns the constant component of the product to local state |0⟩. That component is the constant field
+   𝚺,        𝑉
+   times 𝜎̄ = 𝑣𝑓 + (1 − 𝑣𝑓 )∕𝜌, the average of ̃𝚺 over the cell; for the square inclusion at 𝜌 = 10, 𝜎̄ = 0.325.
+Therefore, the matrix that 𝑀 block encodes is
+      ̃
+      𝐌 = 𝐌 + 𝜎̄ 𝚷0 ,                                                                                                    (34)
+with 𝚷0 the projector onto the constant fields.
+   Since 1∕𝜌 ≤ 𝜎̄ ≤ 1, every eigenvalue of ̃𝐌 lies in [1∕𝜌, 1], and the condition number seen by QSVT (Equation (15))
+is
+               ̃ −1 ‖2 ≤ 𝜌
+      𝜅 = 1 ⋅ ‖𝐌                                                                                                         (35)
+for every mesh size 𝑁 and every phase arrangement 𝜒.
+
+3.7. Block Encoding of the Inverse
+    QSVT applied to 𝑀 therefore needs a polynomial that approximates 1∕𝑥 only on 1∕𝜌 ≤ |𝑥| ≤ 1, and we use the
+odd polynomial 𝑞𝑡 of Section 2.4 at 𝜅 = 𝜌. Gribling et al. [26] bound the error of 𝑞𝑡 with a Chebyshev estimate, and
+the same estimate gives the residual |𝑥 𝑞𝑡 (𝑥) − 1| ≤ 2𝑒−(𝑑𝑡 +1)∕𝜌 on that interval, where 𝑑𝑡 is the degree, so a residual
+tolerance 𝜖𝑝 is met with
+      𝑑𝑡 ≤ 𝜌 ln(2∕𝜖𝑝 ) + 1                                                                                               (36)
+queries to 𝑀 [3]. The subnormalization 𝐶 = max−1≤𝑥≤1 |𝑞𝑡 (𝑥)| grows linearly in 𝑑𝑡 [26]. At 𝜌 = 10, 𝑑𝑡 = 77 and
+𝐶 = 13.2 for 𝜖𝑝 = 10−3 , and 𝑑𝑡 = 145 and 𝐶 = 17.6 for 𝜖𝑝 = 10−6 . Neither number depends on 𝑁.
+    There are two sources of approximation errors: 𝑞𝑡 matches 1∕𝑥 only to the tolerance 𝜖𝑝 , and 𝑉 differs from an
+exact one by the encoding error 𝛿 of Section 3.8. Each of the 𝑑𝑡 queries applies 𝑉 and 𝑉† once, so the circuit
+block-encodes a matrix within 2𝑑𝑡 𝐶𝛿. For a heat source 𝒇 orthogonal to the constant fields, the computed solution 𝒖𝑄
+differs from the exact 𝒖 = (𝐊𝜒 )+ 𝒇 by
+       ‖𝒖𝑄 − 𝒖‖𝐊𝜒
+                     ≤ 𝜖𝑝 + 2𝑑𝑡 𝐶𝛿.                                                                                      (37)
+          ‖𝒖‖𝐊𝜒
+3.8. Gate-Level Circuit, Precision, and Cost
+     The construction so far holds for any unitary (𝒌) whose first column is 𝐕(𝒌) ̂     (see Section 3.5). A circuit must
+compute that column from the bits of 𝒌, coherently for all wavenumbers, and this computation, not the Fourier
+transforms, sets the cost of the proposed method. In this subsection, we reduce 𝐕(𝒌)    ̂    to a real vector of length 4,
+state the circuit that prepares it, which is constructed in a companion paper [13], and then choose its precision and state
+its cost.
+
+SOURCE research/audits/sources/periodic_conduction/paper.txt, original lines 815-940:
+points, 𝑎 or 𝑏, and a part proportional to 𝜂𝑔 or 𝜉𝑔 . We collect these parts in four vectors of length 8, written in the local
+states |0⟩ to |7⟩:
+                                                                  √ 4                              √ 4
+          i∑                        i∑                              3∑                                3∑
+              4                        4
+    𝒕0 =        |2𝑔 − 2⟩,      𝒕1 =       |2𝑔 − 1⟩,       𝒕2 = −         𝜂𝑔 |2𝑔 − 2⟩,       𝒕3 = −         𝜉 |2𝑔 − 1⟩, (39)
+          2 𝑔=1                     2 𝑔=1                          2 𝑔=1                            2 𝑔=1 𝑔
+
+the mean 𝑥- and 𝑦-gradients and the two hourglass patterns. They are orthonormal, since 𝜉𝑔2 = 𝜂𝑔2 = 1∕3 and
+∑        ∑
+  𝑔 𝜉𝑔 =   𝑔 𝜂𝑔 = 0, and substituting Equation (38) gives
+
+                            𝒄(𝒌)            (        𝜁    𝜁 )
+       ̂
+      𝐕(𝒌) = 𝑒i(𝜙1 +𝜙2 ) 𝐓         ,    𝒄 = 𝑎, 𝑏, √ , √ ,       ‖𝒄(𝒌)‖2 = 12 𝑆(𝒌)
+                                                                             ̂ 1∕2 ,                   (40)
+                           ‖𝒄(𝒌)‖2                     3   3
+K. Suresh: Preprint submitted to Elsevier                                                                      Page 13 of 23
+                               Preconditioned Quantum Linear Solver for Periodic Conduction
+
+where 𝐓 is a fixed 16 × 16 unitary with 𝐓|𝓁⟩ = 𝒕𝓁 for 𝓁 = 0, … , 3, completed to a unitary on the states |0⟩ to |7⟩,
+and equal to the identity on |8⟩ to |15⟩. The phase is 2𝑛 phase gates on the bits of 𝒌, with 𝑛 = log2 𝑁, and 𝐓 is a fixed
+circuit on three qubits of the local register.
+
+The wavenumber-controlled preparation. What remains is a different real unit vector 𝒄(𝒌)∕‖𝒄(𝒌)‖2 for each of the
+𝑁 2 wavenumbers, a multiplexed state preparation. The companion paper [13] constructs it in fixed-point arithmetic,
+each real number held in a register as an integer 𝑍 and read as 𝑍∕2𝐹 , so that the number 𝐹 of fractional bits sets
+the resolution 2−𝐹 of every computed value, and compares it there with standard state preparation multiplexed over
+𝒌 [33] and with a table lookup in a quantum read-only memory [34, 35, 36]. Both alternatives need 𝑂(𝑁 2 ) classical
+operations and a circuit whose description grows as 𝑁 2 or 𝑁; the arithmetic is the only method whose cost depends
+on 𝑁 only through 𝐹 , and it is the one used here. Below 𝑁 = 4096 a table lookup needs fewer T gates [13].
+    We use the main result of the companion paper [13]: for 𝑁 = 2𝑛 ≥ 4 and 𝐹 ≥ 𝑛 fractional bits, there is a circuit
+that prepares 𝒄(𝒌)∕‖𝒄(𝒌)‖2 for all wavenumbers at once, with a number of Toffoli gates that grows as 𝐹 2 and 2𝐹 + 3
+single-qubit rotations, independent of 𝑁 except through 𝐹 , on a work register of 2𝐹 2 + 35𝐹 + 47 qubits that returns to
+|0⟩ at every wavenumber, and with an error 𝛿(𝒌) proportional to 𝑁 2−𝐹 . With the phase 𝑒i(𝜙1 +𝜙2 ) and the fixed unitary
+𝐓 of Equation (40), this circuit gives the gate-level (𝒌).
+                                                        ̃     At 𝒌 = 𝟎, one 𝑋 gate on the most significant local qubit,
+controlled on 𝒌 = 𝟎 at a cost of 2(2𝑛 − 1) Toffoli gates, sends |0⟩ into the unused states |8⟩ to |15⟩; for 𝒌 ≠ 𝟎, (𝒌)
+                                                                                                                     ̃
+keeps the states |0⟩ to |7⟩ and |8⟩ to |15⟩ apart, as Section 3.5 requires. Since 𝐓 is unitary, (𝒌)|0⟩ differs from 𝐕(𝒌)
+                                                                                                ̃                    ̂
+by the same 𝛿(𝒌). The two are unit vectors, so a rotation in their plane maps one onto the other and differs from the
+identity by 𝛿(𝒌); composing it with (𝒌)
+                                       ̃    gives an exact (𝒌) of Section 3.5. The gate-level 𝑉 therefore lies within
+𝛿 = max𝒌 𝛿(𝒌), in the spectral norm, of a circuit that block-encodes 𝐕 exactly. We call 𝛿 the encoding error of 𝑉 .
+
+Precision. The encoding error is linear in 𝑁 because the vector 𝒄(𝒌) is short near 𝒌 = 𝟎: ‖𝒄(𝒌)‖2 ≥ sin(𝜋∕𝑁) for
+𝒌 ≠ 𝟎, the arithmetic computes the entries of 𝒄(𝒌) to an absolute error of order 2−𝐹 , and the normalization divides that
+error by ‖𝒄(𝒌)‖2 [13]. The proven bound of [13] has a large constant, 2.7 × 103 at 𝐹 = 45, so we choose 𝐹 from the
+measured bound,
+
+      𝛿 ≤ 6𝑁 2−𝐹 ,                                                                                                   (41)
+
+an observation, not a theorem. By Equation (37), the error of the inverse stays within 2𝜖𝑝 if 2𝑑𝑡 𝐶𝛿 ≤ 𝜖𝑝 , and requiring
+6𝑁 2−𝐹 ≤ 𝜖𝑝 ∕(2𝑑𝑡 𝐶) gives
+         ⌈     12 𝑁 𝑑𝑡 𝐶 ⌉
+      𝐹 = log2            .                                                                                          (42)
+                  𝜖𝑝
+
+For the square at 𝑁 = 1024, 𝜌 = 10, and 𝜖𝑝 = 10−6 , this gives 𝐹 = 45: the mesh, the polynomial, and the tolerance
+contribute about 10, 11.3, and 19.9 bits, and the constant 12 another 3.6. At 𝜖𝑝 = 10−3 , it gives 𝐹 = 34.
+
+Cost. With 𝐹 fixed, we count the gates that are expensive on a fault-tolerant quantum computer: Toffoli gates, and
+rotations of a single qubit by an arbitrary angle, which we count as they appear in the circuit, before they are compiled
+into Clifford and T gates. The Fourier transforms use no Toffoli gates, so all of them are in the arithmetic of the
+companion paper, 96 percent in its four CORDIC runs, and their number grows as 𝐹 2 , that is, as (log 𝑁 + log(1∕𝛿))2 .
+For the square at 𝑁 = 1024 and 𝐹 = 45:
+ • One application of 𝑉 : 44,462 Toffoli gates on 5,696 qubits: the 20 qubits of the position register, the 4 of the
+    local register, and a work register of 5,672 qubits, which holds the intermediate values of the arithmetic and returns
+    to |0⟩.
+ • One query to 𝑀 : 88,926 Toffoli gates and 588 rotations on 5,699 qubits. A query applies 𝑉 twice and the
+   controlled material reflection once, and adds three single ancillas, for Σ , the flag of Section 3.5, and QSVT. Its
+   rotations are, for each 𝑉 , the 2𝐹 + 3 = 93 of the arithmetic, the 2𝑛 = 20 phase gates, and the 180 controlled
+   phase gates of the two Fourier transforms, which apply the one-dimensional quantum Fourier transform to each
+   coordinate register with 𝑛(𝑛 − 1)∕2 controlled phases each [23]; and the 2 rotations of Σ .
+                                                  (                                   )
+One application of the inverse therefore costs 𝑂 𝜌 log(1∕𝜖𝑝 ) (log 𝑁 + log(1∕𝛿))2 Toffoli gates, the 𝑑𝑡 queries of
+Equation (36) at the cost per query above; Section 5.6 gives the count at 𝑁 = 1024.
+
+K. Suresh: Preprint submitted to Elsevier                                                                  Page 14 of 23
+                                Preconditioned Quantum Linear Solver for Periodic Conduction
+
+4. Implementation
+    The constructions of this paper are implemented in QuantumPoissonHomogenization, an open-source repository
+available at https://github.com/UW-ERSL/QuantumPoissonHomogenization, which also holds the code of the
+companion paper [13]. It requires NumPy, SciPy, Matplotlib for the figures, and Qiskit [37] and pyqsp for the circuit
+of Listing 3. The repository has three layers.
+ • The package quantumpoissonhomogenization: fourier_symbol.py holds the closed-form eigenvalues of
+    𝐊, functions of 𝐊 by the FFT, and 𝐊 assembled element by element; isometry.py holds 𝐕(𝒌)   ̂    in closed form, 𝐕
+    assembled element by element, the unitary 𝐓 of Equation (40), and the gate-level circuit 𝑉 of Section 3.8, whose
+    arithmetic is in the subpackage arithmetic of the companion paper.
+ • The test cells and the inverse: cells.py holds the three cells of Section 5.1, their material oracles, and the
+   operators applied without dense matrices; inversion.py holds the inverse, the choice of 𝐹 , and the resource
+   counts.
+ • Scripts: in the folder papers/inversion, makeTables.py and makeFigures.py write every table and figure
+   of the paper, after asserting every number the text quotes about them.
+    The simplest use of the package is on the square inclusion of the preceding sections. In Listing 1, we build the
+square cell at 𝑁 = 256 and 𝜌 = 10, compute the extreme eigenvalues of 𝐌,      ̃ apply the inverse of Section 3.7 at
+𝜖𝑝 = 10 to the source of the cell problem for the macroscopic gradient (1, 0), and then compute the resources of the
+        −6
+
+inverse at 𝑁 = 1024. Each quantity is a single function call in the package.
+                    Listing 1: The inverse on the square at 𝑁 = 256, and its resources at 𝑁 = 1024.
+from q u a n t u m p o i s s o n h o m o g e n i z a t i o n import ( Cell , extreme_eigs , inverse_error ,
+                                                                      inverse_resources )
+
+cell = Cell ( " square " , N =256 , rho =10.0)                            # 65 ,536 unknowns
+lo , hi = extreme_eigs ( cell )                                           # extreme eigenvalues of Mtilde
+err , d = inverse_error ( cell , eps_p =1 e -6)                           # q_t ( Mtilde ) , matrix - free
+print ( f " kappa ( Mtilde )   = { hi / lo :.6 f } " )
+print ( f " degree d_t         = {d}")
+print ( f " energy error       = { err :.2 e } " )
+
+v = i n v e r s e _ r e s o u r c e s ( " square " , N =1024 , rho =10.0 , eps_p =1 e -6)
+print ( f " F                               = { v [ ’ F ’]} " )
+print ( f " Toffoli / query = { v [ ’ t o f f o l i _ p e r _ q u e r y ’]: ,} " )
+print ( f " Toffoli , inverse = { v [ ’ toffoli_total ’]:.2 e } " )
+print ( f " qubits                          = { v [ ’ qubits ’]: ,} " )
+
+----- output - - - - - - - - - - - - - -
+kappa ( Mtilde )     = 10.000000
+degree d_t           = 145
+energy error         = 5.03 e -07
+F                    = 45
+Toffoli / query = 88 ,926
+Toffoli , inverse = 1.29 e +07
+
+SOURCE research/audits/sources/periodic_conduction/paper.txt, original lines 1294-1317:
+6. Conclusions
+    Placing the closed-form inverse square root of the homogeneous operator inside the factors of the periodic two-
+phase operator gives a block encoding of the preconditioned operator with subnormalization 1 and condition number
+at most 𝜌 for every 𝑁. The mesh enters the cost only through the quantum Fourier transforms and the wavenumber-
+controlled stage, both polylogarithmic in 𝑁, and the condition number, which is the quantity that sets the number of
+queries, is a material constant. This is the property that classical FFT-preconditioned solvers rely on, and it does not
+survive a separately encoded preconditioner.
+    The construction is limited to what makes 𝐊 fast-invertible: a uniform periodic mesh, a homogeneous reference
+operator with closed-form eigenvalues, and isotropic phases, whose conductivities are scalar multiples of that of the
+reference; Dirichlet boundaries and general coefficients require the multilevel construction compared in Section 3.6.
+For isotropic phases of contrast 𝜌, the degree of the inverse grows linearly in 𝜌: at 𝜖𝑝 = 10−6 , Equation (36) gives
+𝑑𝑡 = 145 at 𝜌 = 10 and 𝑑𝑡 ≤ 1.5 × 105 at 𝜌 = 104 , although 𝑑𝑡 does not grow with 𝑁. The cost of each of these
+queries is that of the fixed-point arithmetic that prepares the vector at each wavenumber, and the precision it needs
+grows with 𝑁, with 𝑑𝑡 , and with the subnormalization 𝐶 (Equation (42)): at 𝑁 = 1024 and 𝜖𝑝 = 10−6 , 𝐹 = 45
+fractional bits and 1.3 × 107 Toffoli gates for one application of the inverse. Up to 𝑁 = 2048 in two dimensions, a
+table lookup of classically computed angles prepares the same vectors with fewer T gates; the arithmetic is the method
+whose cost grows with 𝑁 only through 𝐹 . The arithmetic needs too many qubits for a state-vector simulation, so the
+simulation of Section 5.5 builds the rotation at each wavenumber as a multiplexor, whose size grows as 𝑁 2 ; it confirms
+that the stages compose into the inverse, and the arithmetic is verified separately, one stage at a time. The circuit cost
+reported here excludes the synthesis of its rotations into Clifford and T gates and leaves the qubit count of the reversible
+arithmetic unoptimized. Finally, we provide the operator and its inverse as block encodings: the inverse prepares a state
+proportional to the solution, and extracting the field from it is not addressed. The effective conductivity is a quadratic
+form that does not require the field, and its readout is the subject of the companion paper. Even with that readout,
+classical solvers are vastly superior for problems of practical interest.

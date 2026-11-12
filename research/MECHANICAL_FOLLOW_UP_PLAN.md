@@ -1,4 +1,35 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
+## 2026-11-12 Rees arXiv Readiness and Research Attacks (Claude)
+
+- Fix the exponent-discharge note per its referee: 342 rather than 414 members; 2521 ∈ E₂(8) and E₂(9); label T2/T3 conditional.
+- fpylll lattice attacks on the QZS instances, K = 20..60 (-h3z-infinite-index.md §next) and on quadratic SIS with W ≥ 2^64 (-h3z-hardness.md §10).
+- Write hpgp_free23.py, named in -entangled-twist-impossibility.md and not yet written.
+- DL_11.g (GAP, p = 11) was left running by the impossibility agent; record its output if it finishes. No claim depends on it.
+- Regenerating numbers.tex for the 53 count is an owner decision; agents do not run make_numbers.py.
+
+## 2026-11-12 Native Conductivity Endpoint and Classical Heat-Kernel Attack
+
+Fixed L4 classical control is terminalPASS, no rerun. Parent owes script/read
+and mathematical review of the three API obligations. After closure save
+source/report/control hashes and usage; no quantum code, generic PDE runner
+or broad suite. Preserve all older Rees queues.
+
+## 2026-11-12 Scalar OPI Positive Filter Classically Matched
+
+Both exact controls and all paid requests are terminal; no rerun/retry. One
+scoped checkpoint remains: source/review/control hashes, saved provider usage,
+OpenAI runner syntax/budget guard and STATE/title alignment. Never promote
+finite controls or API acceptance labels. Parent owns scientific selection.
+Preserve all other Rees work/queues; no registry/site/full-suite sweep.
+
+## 2026-11-12 OPI Positive-Filter Research Resume
+
+New fixed q8 OPI exact control is PASS; no rerun needed. Parent still owes
+actual core/source/norm review and finite-clock checks. Preserve older Rees
+queue exactly. After reviews close, one scoped checkpoint: source hash,
+terminal API usage, exact control scope/false gates and STATE/title alignment.
+No backend, quantum code, registry/site sweep or old-control rerun.
+
 ## 2026-11-11 Rees SDE Queue Status & Repo Wiring Follow-Ups (after harsh pass)
 
 Status of items below ("2026-11-11 Rees SDE Open Items" and "2026-11-11 Rees SDE p = 5, k = 3"):

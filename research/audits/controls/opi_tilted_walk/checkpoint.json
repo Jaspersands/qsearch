@@ -1,0 +1,241 @@
+{
+  "captured_at_utc": "2026-11-12T06:34:04.778800+00:00",
+  "controls": [
+    {
+      "existing_script_hash_matches": true,
+      "existing_status": "PASS_FINITE_EXACT",
+      "finite_claim_gates": {
+        "asymptotic_claim": false,
+        "classical_hardness": false,
+        "finite_control_only": true,
+        "generic_OPI_no_go": false,
+        "provisional_note_promoted": false,
+        "quantum_execution": false,
+        "separation": false,
+        "source_parameter_admissibility_certified": false
+      },
+      "rerun": false,
+      "result": {
+        "bytes": 23909,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/opi_tilted_walk/result.json",
+        "sha256": "9ab5111c5e741af8d1db087cfc96e6713819be636b954d74ee15dbd8a37b9016"
+      },
+      "script": {
+        "bytes": 12154,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/opi_tilted_walk/control.py",
+        "sha256": "33e548a02fb3177bf47a915aca0c30eb5d439293b89be40641c63dcb21a3dc1d"
+      }
+    },
+    {
+      "existing_script_hash_matches": true,
+      "existing_status": "PASS_FINITE_EXACT",
+      "finite_claim_gates": {
+        "algorithm": false,
+        "asymptotic_claim": false,
+        "efficient_perfect_word_search": false,
+        "finite_control_only": true,
+        "proof_of_general_identity": false,
+        "provisional_note_promoted": false,
+        "quantum_execution": false,
+        "separation": false,
+        "speedup": false
+      },
+      "rerun": false,
+      "result": {
+        "bytes": 2198,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/opi_tilted_walk/second_moment.json",
+        "sha256": "d5b9981a61800ec99bdba2aaf6011eff1a456fa682747f6ccaa441fc9277e78f"
+      },
+      "script": {
+        "bytes": 5141,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/opi_tilted_walk/second_moment.py",
+        "sha256": "f29d1ac909022cfb8c17cfe0c926846726acf9c990b5b9903bc29de5daec74ce"
+      }
+    }
+  ],
+  "note": {
+    "bytes": 23052,
+    "path": "/Users/jaspersands/Developer/qsearch/research/SCALAR_OPI_TILTED_WALK_ADMISSION.md",
+    "sha256": "ec2494c73945472b76cb767b27564beb39ef5c21b58349815693c27b032f6908"
+  },
+  "note_scope_audit": {
+    "asserted_generic_OPI_no_go_count": 0,
+    "asserted_new_speedup_count": 0,
+    "basis": "Manual scoped reading of the final note plus explicit closure and exclusion sentences; no automated semantic theorem certification.",
+    "classical_hardness_claim": false,
+    "closed_only_for_stated_filter_family": true,
+    "finite_controls_are_not_general_proofs": true,
+    "four_completed_reviews": true,
+    "generic_OPI_remains_open": true,
+    "one_truncated_review_recorded_separately": true,
+    "quantum_execution_claim": false,
+    "separation_claim": false
+  },
+  "prior_runner_validation": {
+    "guard_reexecuted": false,
+    "limitation": "Syntax and one rejection path only; no live provider or full-run validation.",
+    "recorded_ast_syntax_status": "PASS",
+    "recorded_offline_budget_guard": {
+      "client_import_or_socket_events": 0,
+      "exit_code": 2,
+      "live_client_invoked": false,
+      "output_bundle_created": false,
+      "rejection": "Conservative preflight estimate exceeds request budget",
+      "result": "PASS"
+    },
+    "runner": {
+      "bytes": 5165,
+      "path": "/Users/jaspersands/Developer/qsearch/tools/openai_research_agent.py",
+      "sha256": "1ccc1c08b27ba88b5863ca540f957e4da9c75dea18d81bab6cf044792172662f"
+    },
+    "unchanged_since_prior_check": true
+  },
+  "reports": [
+    {
+      "counted_as_completed_review": true,
+      "provider": "Anthropic",
+      "request": {
+        "bytes": 5128,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-positive-filter-sampler/request.json",
+        "sha256": "51cf3f3f96072b41102dc63207191d850f18ebc8674bc6b996ccbec5f3d5f655"
+      },
+      "response": {
+        "bytes": 7429,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-positive-filter-sampler/response.md",
+        "sha256": "fd0069063bd95f99a66a2cb296a5478af33a3c210451574d418abccc71df1dda"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1404,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-positive-filter-sampler/result.json",
+        "sha256": "1c16863eabfa5afc38d32902aeaeb021913f88e0a328242087a8f64b72be905a"
+      },
+      "status": "completed",
+      "terminal": true
+    },
+    {
+      "counted_as_completed_review": true,
+      "provider": "Anthropic",
+      "request": {
+        "bytes": 9153,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-positive-norm/request.json",
+        "sha256": "d3d7d8efc345e8f54d48bdb4042715ce6968cf34185f397ea36bae8a4ef8a019"
+      },
+      "response": {
+        "bytes": 11385,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-positive-norm/response.md",
+        "sha256": "d742703fc4e806e9953dd27ed22a7e4a7674f0e021d4a9a84ac73d8517a3253b"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1371,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-positive-norm/result.json",
+        "sha256": "d68cd3a94d6cf9c4359a604831f42c5484bbea2433c465c16971bade3044ac7e"
+      },
+      "status": "completed",
+      "terminal": true
+    },
+    {
+      "counted_as_completed_review": false,
+      "provider": "Anthropic",
+      "request": {
+        "bytes": 22769,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-source/request.json",
+        "sha256": "fb38548f19e1e7bd936d482c6e9f79373b5cf55f2a612a4c7c9283ee65cafb71"
+      },
+      "response": {
+        "bytes": 7718,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-source/response.md",
+        "sha256": "467eb66590a7cbeceeee8e5ecf06931fc9d0565195ea61b195a988e861ff61a0"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1643,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-source/result.json",
+        "sha256": "372919aa6600e1458820a82375dcc9ab1db21d85745e54c1bf6b4ea28430609e"
+      },
+      "status": "truncated",
+      "terminal": true
+    },
+    {
+      "counted_as_completed_review": true,
+      "provider": "OpenAI",
+      "request": {
+        "bytes": 22561,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-drift-core/request.json",
+        "sha256": "56d1d25d05b9f83dfaf72fa0a3a3e54234042c2963106a89824449849f2242f8"
+      },
+      "response": {
+        "bytes": 10270,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-drift-core/response.md",
+        "sha256": "a39bebaaa4026968ffd26c6385c12c80ac6641546020c8f963772c627b8c6df2"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1564,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-drift-core/result.json",
+        "sha256": "ca571bbfb584406b1f12278ca30c238792b6966baaed9ada1ad8aa2757c137d5"
+      },
+      "status": "completed",
+      "terminal": true
+    },
+    {
+      "counted_as_completed_review": true,
+      "provider": "OpenAI",
+      "request": {
+        "bytes": 8365,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-maximum/request.json",
+        "sha256": "5adddd7ceac9e4a605ec710ffbff3e01ef403119ac03a209fdb021c26553ee70"
+      },
+      "response": {
+        "bytes": 15377,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-maximum/response.md",
+        "sha256": "1964cbbc5f8ee2420fdcd64a2721dae7f5d05734474d1b6f262f4d295ccb5c61"
+      },
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1390,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-maximum/result.json",
+        "sha256": "bd60b37b2a5c88c2a4d29563c76691013c3fc2fcf3e62a9f74b0da65aaeda496"
+      },
+      "status": "completed",
+      "terminal": true
+    }
+  ],
+  "scope": "OPI positive-filter admission checkpoint only. Existing artifacts inspected; no controls rerun, provider requests, Git actions or unrelated files changed.",
+  "source": [
+    {
+      "bytes": 423014,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/opi_tilted_walk/tilted_walk.pdf",
+      "sha256": "6811ae8eaa9727db490653abc2f16c58eb8fa4dda9a8605d4349a163605c620b"
+    },
+    {
+      "bytes": 231553,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/opi_tilted_walk/tilted_walk.txt",
+      "sha256": "591230042599c33da624116ea81b352b3f537f191ad70a480d0ea1ef5ea7e28c"
+    },
+    {
+      "bytes": 171,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/opi_tilted_walk/source.json",
+      "sha256": "3398dd5c73a09aa51d88ad055a91a94b0ebb0d9d9118eba3d77f6154df55e6fb"
+    }
+  ],
+  "status": "CLOSED_SCOPED_CHECKPOINT",
+  "title_alignment": {
+    "STATE": {
+      "bytes": 249022,
+      "path": "/Users/jaspersands/Developer/qsearch/research/STATE.md",
+      "sha256": "e3452f6dbf0d51434765f767b2924b16349a30d54baa3bcd88c9105c1aaa0d03"
+    },
+    "STATE_title": "2026-11-12 Scalar OPI Positive Filter Classically Matched",
+    "handoff_first_research_title": "2026-11-12 Scalar OPI Positive Filter Classically Matched",
+    "handoff_path": "/Users/jaspersands/Developer/qsearch/research/AGENT_HANDOFF.md",
+    "limitation": "Alignment records this instant; a later independent pass may legitimately change STATE and the top handoff title.",
+    "status": "PASS_AT_CAPTURE"
+  },
+  "usage_snapshot": {
+    "bytes": 8679,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/opi_tilted_walk/usage.json",
+    "sha256": "2b56782ae89f4f04d9e9f4bf681bfcdf06b445536a84b29b45c819ef1837e9a0"
+  }
+}

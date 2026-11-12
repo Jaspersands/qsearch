@@ -24,6 +24,16 @@ before quantum implementation. Claude reports are advisory: verify each
 material claim, record its disposition, and never promote a theorem from an
 agent's ACCEPT label or a passing finite control.
 
+# OpenAI API Research Agents
+
+The owner additionally authorized OpenAI API research agents on 2026-11-12,
+with USD142 expiring in9days, and renewed the instruction to use the separate
+AnthropicUSD136 allocation wisely and fully. Selected research context may
+be sent through `tools/openai_research_agent.py`; the same saved usage,
+independent verification and no unknown-cost retry rules apply. No extra
+per-call permission is needed in this research scope. Credentials are never
+research context. See `research/CLAUDE_RESEARCH_WORKFLOW.md` for both providers.
+
 # Research Pass Protocol (Codex research passes)
 
 `research/GOAL.md` is the binding owner policy. At the start of a pass, read

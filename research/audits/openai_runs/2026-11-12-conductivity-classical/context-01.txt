@@ -1,0 +1,116 @@
+# Native periodic conductivity: endpoint admission
+
+2026-11-12. PROVISIONAL, independent quantum/classical attacks pending.
+No novelty, separation, practical speedup or quantum execution claimed.
+
+## Selection and exact question
+
+Start STATE/TRAPS after the closed scalar-OPI filter pass. Saved corpus
+lookups precede primary-source reading: audits/selection/2026-11-12/.
+Tensor/HSP and Jones routes had no newly paid operation. The fresh ternary
+subset-sum paper is already covered by DCP_BINARY_ERROR_SOURCE_BRIDGE.md;
+no new joint processor was identified. The massive-classical-data oracle
+sketch is already scoped in WEIGHTED_MOMENT_CHARACTER_ADMISSION.md; it does
+not remove native source costs. The wavelet-PDE lookup found no close native
+endpoint; the baselines catalog has no named match, which is not an absence
+of classical methods.
+
+Actual arXiv2306.11802v3 shows a concrete normalization issue to avoid: its
+AppendixE2 infers lambda_min(AP)>=1/kappa(AP) from normAP<=1. That inference
+is invalid without a lower bound on normAP. We do not import its Lemma3.
+Actual arXiv2610.41690v1 instead absorbs the homogeneous inverse square root
+inside a gradient factor, obtaining norm1. Its sections3.5-3.8 pay coherent
+wavenumber arithmetic and distinguish large-grid arithmetic from finite
+table-multiplexor simulations. Its conclusion explicitly leaves effective
+conductivity readout to a companion paper. The present endpoint uses a
+nearest-neighbor resistor network, not the source's Q1 finite elements.
+
+Single question: can that normalized-gradient mechanism yield a completely
+paid poly(native description,1/epsilon) quantum estimate of effective
+conductivity on a succinct periodic two-dimensional material, and does an
+output-specific classical algorithm already match it? This is a natural
+macroscopic physical observable, not a supplied quantum state or toy oracle.
+
+## Input, output and proposed mechanism
+
+Input: L=2^n, the two-dimensional torus X=(Z/LZ)^2, N=L^2 nodes, two oriented
+edges (x,j) per node. A Boolean circuit of size B maps (x,j) to a phase bit;
+the corresponding edge conductivity is a_e in{1,rho}, with fixed rational
+1<rho<=rho0. Both processors receive the entire circuit, not just a black
+box. Rational epsilon>0 and failure tolerance delta>0 are explicit. Pay
+polynomial in B,n,1/epsilon,log(1/delta); do not claim logarithmic dependence
+on 1/epsilon. No IID, regularity, finite-correlation or planted promise.
+
+Let D map node potentials to edge differences phi(x+e_j)-phi(x), and let
+eta_j be the unit edge vector equal to1/sqrt(N) on direction-j edges and0
+elsewhere. Output an additive-epsilon estimate of
+ K_j=(1/N)min_phi sum_e a_e(1_(direction(e)=j)+(D phi)_e)^2.
+This is finite-cell effective conductivity; 1<=K_j<=rho. The zero-mean gauge
+is analysis, not a supplied solution. A complete field is not the output.
+
+Set S=diag(a/rho), K0=D^*D, V=D K0^(+,-1/2), and P0 the constant-node
+projector. V^*V=I-P0 and ||V||=1. Define
+ M=V^* S V+P0, q=V^* S eta_j.
+Then spectrum(M) is in[1/rho,1] and, by minimizing the energy,
+ K_j/rho=<eta_j,S eta_j>-<q,M^-1 q>.                 (ENERGY)
+This formula uses the UNNORMALIZED q; q may vanish. Preparing q/||q|| would
+introduce an unnecessary rare-source cost and is not the proposed algorithm.
+
+The Fourier symbol of V at nonzero k is the two-component unit vector
+ (exp(2pi i k_1/L)-1, exp(2pi i k_2/L)-1)/
+ sqrt(sum_j |exp(2pi i k_j/L)-1|^2).
+The zero mode is routed to an orthogonal workspace flag. QFT, fixed-point
+symbol arithmetic, controlled two-component rotation, and inverse QFT pay
+V with polynomial(n,log1/error) gates. The denominator is Omega(1/L) for
+nonzero k, so absolute arithmetic precision pays O(n) extra bits. The phase
+circuit and a controlled rotation give S with norm1. Use fresh ancillas for
+operator products and direct-sum treatment of P0. No free rescaling of a
+small-norm block is allowed.
+
+QSVT can encode M^-1/rho with paid constant-rho normalization. The scalar
+<eta_j, S V (M^-1/rho) V^* S eta_j> is a matrix element of a product of
+contractions. Its preparation starts from the explicit uniform eta_j, keeps
+all success flags, and estimates a matrix element directly; no q norm or
+postselection is needed. ENERGY multiplies this scalar by rho^2, and the
+first mean by rho. Allocate measurement and synthesis errors accordingly.
+The complete BIT/error/gate proof and constant-mode implementation are
+obligations under independent review, not inferred from this sketch.
+
+Expected upside, if the candidate survives: polynomial in n=logL and1/epsilon
+versus full-grid FFT/preconditioned classical solves using at leastN storage/
+work. That comparison ALONE is insufficient: sublinear scalar-output methods
+could match the same endpoint. No classical lower bound is asserted.
+
+## Strongest classical attacks and decisive falsifiers
+
+1. Constant media and layers are easy: arithmetic/harmonic means computed
+   by circuit sampling pay a polynomial classical estimate. They are controls,
+   not claimed advantageous instances.
+2. Full-grid sparse/FFT-preconditioned conjugate gradient has contrast-bounded
+   iteration count. Run an exact small-grid energy solve as the transcription
+   control before any quantum circuit work; it cannot establish scaling.
+3. Mourrat1609.06674 actual Theorem1.2 gives essentially epsilon^-2 log1/epsilon
+   work for an IID stochastic-homogenization endpoint. Its assumptions and
+   infinite-volume/ensemble target do NOT automatically cover an arbitrary
+   succinct periodic coefficient circuit. Preserve it as a strong baseline
+   where applicable, not a generic no-go.
+4. Most serious general attack: center a at (rho+1)/2, use the gradient
+   projection Pi=D K0^+ D^* and a convergent contrast Neumann series. The
+   operator-norm tail decays geometrically, so only O(log1/epsilon) terms
+   are needed at fixed contrast. Can their signed convolution expectations
+   be sampled in poly(n,1/epsilon), with kernel evaluation, variance and BIT
+   costs paid? An l1 norm O(logL) repeated O(log1/epsilon) times gives only
+   quasi-polynomial precision scaling, not a matching polynomial theorem.
+   Even that bound requires an actual efficient kernel sampler/evaluator.
+
+Falsifiers: material loading sizeOmega(N); norm amplification or rare source
+left uncharged; inaccurate low-frequency symbol; dependence on a missing
+field/normalization; classical poly(B,n,1/epsilon) estimator for ALL circuits;
+or prior literature already giving exactly the complete endpoint. A finite
+control, missing classical proof or failed attack does not show advantage.
+
+Next concrete experiment: exact L4 constant/layered/nonlayered resistor
+networks at rho2 in Sage; compare direct rational minimization with the
+projection/Schur-complement form of ENERGY and a bounded Neumann tail.
+Check zero-q case and layer orientation. Freeze one fixture set; no scaling
+fit, circuit implementation, PDE framework or benchmark sweep.

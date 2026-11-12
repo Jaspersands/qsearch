@@ -1,0 +1,204 @@
+{
+  "OPI_request_bundles": [
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-positive-filter-sampler",
+      "provider": "Anthropic",
+      "request": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-positive-filter-sampler/request.json",
+      "response": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-positive-filter-sampler/response.md",
+      "response_nonempty": true,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-positive-filter-sampler/result.json",
+      "result_sha256": "1c16863eabfa5afc38d32902aeaeb021913f88e0a328242087a8f64b72be905a",
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 1795,
+        "output_tokens": 13539
+      },
+      "usage_cost_estimate_usd": "0.27796"
+    },
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-positive-norm",
+      "provider": "Anthropic",
+      "request": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-positive-norm/request.json",
+      "response": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-positive-norm/response.md",
+      "response_nonempty": true,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-positive-norm/result.json",
+      "result_sha256": "d68cd3a94d6cf9c4359a604831f42c5484bbea2433c465c16971bade3044ac7e",
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 3667,
+        "output_tokens": 30633
+      },
+      "usage_cost_estimate_usd": "1.56832"
+    },
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-source",
+      "provider": "Anthropic",
+      "request": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-source/request.json",
+      "response": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-source/response.md",
+      "response_nonempty": true,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-opi-source/result.json",
+      "result_sha256": "372919aa6600e1458820a82375dcc9ab1db21d85745e54c1bf6b4ea28430609e",
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 7085,
+        "output_tokens": 32768
+      },
+      "usage_cost_estimate_usd": "0.6837"
+    },
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-drift-core",
+      "provider": "OpenAI",
+      "request": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-drift-core/request.json",
+      "response": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-drift-core/response.md",
+      "response_nonempty": true,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-drift-core/result.json",
+      "result_sha256": "ca571bbfb584406b1f12278ca30c238792b6966baaed9ada1ad8aa2757c137d5",
+      "status": "completed",
+      "stop_reason": null,
+      "usage": {
+        "input_tokens": 4457,
+        "input_tokens_details": {
+          "cache_write_tokens": 4454,
+          "cached_tokens": 0
+        },
+        "output_tokens": 34982,
+        "output_tokens_details": {
+          "reasoning_tokens": 31970
+        },
+        "total_tokens": 39439
+      },
+      "usage_cost_estimate_usd": "1.79367"
+    },
+    {
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-maximum",
+      "provider": "OpenAI",
+      "request": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-maximum/request.json",
+      "response": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-maximum/response.md",
+      "response_nonempty": true,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-opi-maximum/result.json",
+      "result_sha256": "bd60b37b2a5c88c2a4d29563c76691013c3fc2fcf3e62a9f74b0da65aaeda496",
+      "status": "completed",
+      "stop_reason": null,
+      "usage": {
+        "input_tokens": 2184,
+        "input_tokens_details": {
+          "cache_write_tokens": 2181,
+          "cached_tokens": 0
+        },
+        "output_tokens": 29749,
+        "output_tokens_details": {
+          "reasoning_tokens": 25161
+        },
+        "total_tokens": 31933
+      },
+      "usage_cost_estimate_usd": "1.50929"
+    }
+  ],
+  "cost_note": "Historical runner usage estimates only; not provider invoices, actual charges, account balances or remaining credit. ReadTimeout partial usage excluded and total cost UNKNOWN. No estimates from preflight allowances are added. Nonempty truncated text is not a completed report.",
+  "openai_runner_local_checks": {
+    "ast_parse_and_compile": "PASS",
+    "budget_rejection_precedes_openai_import": true,
+    "limitations": "Syntax and one rejection path only; no live provider or full-run validation.",
+    "one_offline_budget_guard": {
+      "client_import_or_socket_events": 0,
+      "exit_code": 2,
+      "live_client_invoked": false,
+      "output_bundle_created": false,
+      "rejection": "Conservative preflight estimate exceeds request budget",
+      "result": "PASS"
+    },
+    "path": "/Users/jaspersands/Developer/qsearch/tools/openai_research_agent.py",
+    "sha256": "1ccc1c08b27ba88b5863ca540f957e4da9c75dea18d81bab6cf044792172662f"
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 40,
+      "delta_from_previous_ledger": {
+        "completed": 2,
+        "includes_recovered_2026_11_07_positive_filter": true,
+        "records": 3,
+        "usage_estimate_usd": "2.52998"
+      },
+      "empty_response_count": 13,
+      "known_estimate_by_status_usd": {
+        "completed": "23.788210",
+        "empty_response": "0.789814",
+        "truncated": "38.313090"
+      },
+      "known_nonpartial_usage_cost_estimate_usd": "62.891114",
+      "known_nonpartial_usage_records": 82,
+      "not_started_count": 2,
+      "partial_timeout_usage_UNKNOWN": [
+        {
+          "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair",
+          "failure_type": "ReadTimeout",
+          "partial_runner_estimate_usd_excluded": "0.0276",
+          "provider_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support",
+          "failure_type": "ReadTimeout",
+          "partial_runner_estimate_usd_excluded": "0.00625",
+          "provider_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "reconciled_previous_ledger": {
+        "completed": 38,
+        "nonpartial_records": 79,
+        "usage_estimate_usd": "60.361134"
+      },
+      "result_files": 86,
+      "status_counts": {
+        "completed": 40,
+        "dry_run": 1,
+        "empty_response": 13,
+        "failed": 3,
+        "truncated": 29
+      },
+      "terminal_process_result_count": 85,
+      "truncated_and_empty": 24,
+      "truncated_and_nonempty": 5
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 2,
+      "empty_response_count": 0,
+      "known_estimate_by_status_usd": {
+        "completed": "3.30296"
+      },
+      "known_nonpartial_usage_cost_estimate_usd": "3.30296",
+      "known_nonpartial_usage_records": 2,
+      "not_started_count": 0,
+      "partial_timeout_usage_UNKNOWN": [],
+      "result_files": 2,
+      "status_counts": {
+        "completed": 2
+      },
+      "terminal_process_result_count": 2,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0
+    }
+  },
+  "scope": "Only research/audits/{claude_runs,openai_runs}/**/result.json; independent provider totals; no API requests made",
+  "snapshot_at_utc": "2026-11-12T06:32:36.097206+00:00"
+}

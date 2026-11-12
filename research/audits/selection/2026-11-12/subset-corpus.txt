@@ -1,0 +1,98 @@
+Been tried? binary-error LWE subset sum Kothari
+
+Killed before
+  1. negative   NEG-EDCP-AMPLIFIED-ERRORS-INDEPENDENT  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE]
+     research/registry/negative_results.json:67968
+     Claim: Gaussian mixing produces independent amplified LWE error rows.
+     Why not: Amplified errors share the original error vector e via u_i = W_i * e. For independent W_1, W_2, Cov((W_1*e)^2, (W_2*e)^2) = Var(e^2) * E(W_1^2) * E(W_2^2) > 0.
+  2. negative   NEG-DCP-SUBSET-SUM-STANDARD-EMBEDDING-UNIQUE-SHORTEST-WITNESS  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-SHORT-RELATION-THEOREM]
+     research/registry/negative_results.json:67727
+     Claim: The planted binary marker vector is uniquely shortest, or isolated among shortest vectors, in the standard density-one modular subset-sum embedding.
+     Why not: A weight-one-quarter signed relation family has positive exponential expectation and vanishing relative variance, producing exponentially many marker-zero vectors no longer than the witness.
+  3. negative   NEG-DCP-SUBSET-SUM-MARKER-FILTER-AS-DECODER  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM]
+     research/registry/negative_results.json:67562
+     Claim: Selecting marker-one lattice vectors supplies a polynomial subset-sum witness decoder.
+     Why not: Marker-one normalization is easy without a norm bound, while finding one at witness radius is exactly equivalent to the original binary subset-sum search.
+  4. negative   NEG-DCP-QW-INTERNAL-HISTORY-BLOCKER-MISAPPLIED  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-QUANTUM-WALK-SOURCE-AUDIT]
+     research/registry/negative_results.json:67048
+     Claim: The repaired 0.2182 subset-sum walk retains path-dependent internal update garbage.
+     Why not: The primary source explicitly makes the update history-independent and the update error data-independent.
+  5. negative   NEG-DCP-COMPUTE-SUBSET-SUM-QFT-NO-INTERFERENCE  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-MEASUREMENT-AUDIT]
+     research/registry/negative_results.json:65531
+     Claim: Computing the public-label subset sum and Fourier transforming its ancilla reveals the hidden reflection.
+     Why not: The orthogonal input register retains which-subset information. Summing path probabilities gives the exactly uniform QFT outcome for every hidden reflection.
+
+Dequantization checks
+  1. dequant    DEQ-DCP-SUBSET-SUM-STANDARD-EMBEDDING-SHORT-RELATIONS  [critical]
+     research/registry/dequantization_checks.json:722
+     Claim: The standard density-one modular subset-sum embedding isolates the planted binary marker vector among shortest vectors.
+     Why not: Reject standard shortest-vector uniqueness. Either prove that carry-sliced constraints eliminate the competitor family, or give a marker-aware polynomial extractor with inverse-polynomial source coverage.
+  2. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-TWO-ADIC-SEARCH-DCP-SUBSET-SUM-TWO-ADIC-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13999
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-TWO-ADIC-SEARCH-DCP-SUBSET-SUM-TWO-ADIC: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13790
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM-DCP-SUBSET-SUM-MARKER-COSET: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  4. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13680
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-BASELINE-DCP-SUBSET-SUM-AFFINE-CVP-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13559
+     Claim: RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-BASELINE-DCP-SUBSET-SUM-AFFINE-CVP: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Binary-Error Decoder Over Growing Two-Power Moduli  [review-pending]
+     research/BINARY_ERROR_HENSEL_DECODER.md:1
+     An actual classical decoder is implemented; no independent theorem review, novelty, native subset-sum finder, general LWE attack, accepted candidate or quantum speedup is claimed.
+  2. note       Binary-Error Source Bridge: Positive Reduction And Missing Quantum Step › Literature Update  [review-pending]
+     research/DCP_BINARY_ERROR_SOURCE_BRIDGE.md:10
+     [Kothari et al., arXiv:2609.40321v1](https://arxiv.org/html/2609.40321v1), submitted September30,2026, proves a fixed-prime binary-error decoding tradeoff (Theorem1.7) and a quantum ternary subset-sum tradeoff (Theorem1.3).
+  3. note       Binary-Error Decoder Over Growing Two-Power Moduli › Falsifiers And Scope  [review-pending]
+     research/BINARY_ERROR_HENSEL_DECODER.md:105
+     - A native fixed-secret/fixed-error rank law violating the support bound, a missed binary addition carry or a nonunique full-rank lift falsifies this proposed theorem.
+  4. handoff    Latest Theory: Binary-Error Component And Quantum Source Obstructions  [journal]
+     research/AGENT_HANDOFF.md:35552
+     This is an Arora-Ge-style classical baseline, NOT a native Boolean subset-sum finder or general LWE break.
+  5. note       Ternary Quotient Decoder › Source and Research Boundary  [review-pending]
+     research/TERNARY_QUOTIENT_DECODER.md:58
+     A classical binary-error decoder does not itself solve Boolean subset sum.
+
+Code and experiments
+  1. theorem    Certified mod-four linearization and Hensel lifting for binary-error LWE.  [code]
+     theorems/binary_error_hensel_decoder.py:1
+     Certified mod-four linearization and Hensel lifting for binary-error LWE.
+  2. result     EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM marker-filter-reduced-to-original-subset-sum-search  [marker-filter-reduced-to-original-subset-sum-search]
+     research/registry/experiment_results.json:24206
+     Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem.
+  3. result     EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM marker-filter-reduced-to-original-subset-sum-search  [marker-filter-reduced-to-original-subset-sum-search]
+     research/registry/experiment_results.json:24234
+     Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem.
+  4. theorem    Quantized tensor-train search for dense subset-sum contractions.  [code]
+     theorems/dcp_subset_sum_qtt_contraction_search.py:1
+     dcp subset sum qtt contraction search.
+  5. theorem    Exact Babai-cell geometry audit for marker-aware subset-sum witnesses.  [code]
+     theorems/dcp_subset_sum_affine_bdd_geometry.py:1
+     dcp subset sum affine bdd geometry.
+
+Literature
+  1. literature Hamiltonian simulation with nearly optimal dependence on all parameters  [audit]
+     research/literature_audits/ternary_gaussian_drive_sources.json
+     Childs Robin Kothari arXiv:1501.01715v3 https://qipconference.org/2015/talks/78-Berry.pdf page1 sparse entry/index oracle model and reverse index condition page2 Theorem1 Sparse simulation charges row sparsity, largest entry, evolution time, precision and oracle access; in-place index access requir…
+  2. literature Classical Hardness of Learning with Errors  [audit]
+     research/literature_audits/native_source_refresh_sources.json
+     LIT-BLPR-2013-LWE-HARDNESS Standard leftover hashing / noise flooding ingredients; our odd prime-power sign-sum chi-square identity and common original error-energy bound across nested odd-rounded quotients are local derivations for the canonical quotient tree.
+  3. literature Rerandomising LWE (Hollow LWE author discussion)  [audit]
+     research/literature_audits/native_source_refresh_sources.json
+     LIT-ALBRECHT-2025-HOLLOW-LWE https://eprint.iacr.org/2025/340 Different rerandomization setting; this source does not supply the fixed-parent sign-mixing, flooding and secret-masking theorem used in the local proposal.
+  4. literature ARXIV-2609.40321-v1  [audit]
+     research/literature_audits/binary_error_frontier_sources.json
+     research/reductions/ternary_decoder_filter.json ARXIV-2609.40321-v1 research/classical_baselines/ternary_quotient_decoder.json Classical binary-error decoding inside quantum filtering.
+  5. literature The ePrint:2026/1591 Quantum Algorithm Does Not Solve DCP  [seed · dcp-label-digest, dihedral-coset, no-go, dephasing-hybrid]
+     research/literature_records.json
+     The ePrint:2026/1591 Quantum Algorithm Does Not Solve DCP A scoped information-loss theorem after low-subset-sum measurement; prevents treating a lossy label summary or an older proof-gap repair as a DCP decoder.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

@@ -1,0 +1,22 @@
+LoadPackage("autpgrp");;
+# DL over F_11, dim 8, class 3, levels [1, 1, 1, 1, 2, 2, 3, 3]
+F := FreeGroup(8);; g := GeneratorsOfGroup(F);;
+coll := SingleCollector(F, ListWithIdenticalEntries(8, 11));;
+SetConjugate(coll, 2, 1, g[2]^1*g[5]^10*g[8]^5);
+SetConjugate(coll, 3, 1, g[3]^1*g[6]^10);
+SetConjugate(coll, 4, 1, g[4]^1*g[7]^10);
+SetConjugate(coll, 5, 1, g[5]^1*g[8]^1);
+SetConjugate(coll, 3, 2, g[3]^1*g[8]^10);
+SetConjugate(coll, 4, 2, g[4]^1*g[6]^10*g[7]^5*g[8]^5);
+SetConjugate(coll, 6, 2, g[6]^1*g[7]^1);
+SetConjugate(coll, 4, 3, g[4]^1*g[5]^1*g[7]^6);
+SetConjugate(coll, 5, 3, g[5]^1*g[7]^1);
+SetConjugate(coll, 6, 4, g[6]^1*g[8]^1);
+G := GroupByRws(coll);;
+LEVEL := [1, 1, 1, 1, 2, 2, 3, 3];; CLS := 3;; P := 11;; NAME := "DL";;
+pc := FamilyPcgs(G);; if not IsConfluent(G) then Print("NOTCONFLUENT\n"); fi;
+A := AutomorphismGroup(G);;
+PrintTo("/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-rees-entangled-twist-impossibility/gap/DL_11.gout", "SIZE ", Size(A), "\n");
+for a in GeneratorsOfGroup(A) do AppendTo("/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-rees-entangled-twist-impossibility/gap/DL_11.gout", "GEN ", List(pc, x -> ExponentsOfPcElement(pc, Image(a, x))), "\n"); od;
+AppendTo("/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-12-rees-entangled-twist-impossibility/gap/DL_11.gout", "END\n");
+QUIT;

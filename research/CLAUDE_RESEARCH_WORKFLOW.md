@@ -17,14 +17,30 @@ this runner. Record subsequent usage estimates separately; do not claim an
 exact remaining balance by subtracting estimates. No new infrastructure or
 automation is needed to spend this research budget.
 
-Usage checkpoint, 7 November2026:79 saved nonpartial usage estimates total
-USD60.361134;38 completed reports. Two additional terminal ReadTimeouts have
-only partial countersUSD0.006250 andUSD0.027600 and UNKNOWN billing; do not
-include either as a final charge or retry it. The81 cost fields sum to
-USD60.394984, but that includes partial counters and is not a complete spend
-estimate. These bundles include runs before the owner's USD189.47 update.
-Nothing here is an invoice or remaining balance. Continue distinct useful
-obligations before expiry; no unknown-cost retry.
+Owner update, 12 November2026: OpenAIUSD142 expires in9days (approximately
+21November); AnthropicUSD136 also dedicated to this research. Explicitly use
+both wisely and use the allocations, including concentrated work in one day
+when useful. These are owner-reported balance anchors, not API measurements.
+OpenAI requests use tools/openai_research_agent.py (Responses API, gpt-6-astra,
+max reasoning for core mathematics, no tools/retries, saved context/usage).
+Model access and official price10USD/input-million,50USD/output-million were
+checked Nov12. The same explicit-context, advisory-review and unknown-billing
+rules apply. Credentials are read only by clients, never attached to prompts.
+A local PDF control-character validation failure made NO API call; sanitized
+excerpts were then submitted. The recovered Nov7 sampler report completed at
+estimatedUSD0.277960; include it at the next ledger milestone.
+
+Usage checkpoint, 12November2026, after the closed OPI pass: Anthropic82
+saved nonpartial estimates totalUSD62.891114;40 completed/nonempty reports.
+Two older terminal ReadTimeout totals remain UNKNOWN and excluded; partial
+countersUSD0.006250/0.027600 are not final charges. OpenAI2 completed/nonempty
+reports totalUSD3.302960. Saved provider-separated audit:
+audits/controls/opi_tilted_walk/usage.json. These historical totals are neither
+invoices nor remaining balances and must not be subtracted from owner anchors.
+OPI added/recovered AnthropicUSD2.529980 and OpenAIUSD3.302960. Four complete
+reports and one truncated source report were parent-read; source mistakes and
+finite-clock overstatement were rejected, substantive fixes recorded. No retry.
+The minimal OpenAI runner passed syntax and one offline overbudget guard.
 
 ## Scientific placement
 

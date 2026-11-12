@@ -1,0 +1,969 @@
+{
+  "actual_repository_Prange": {
+    "error": "q must be prime, got 8",
+    "explanation": "Repository API is prime-field arithmetic modulo q; native field is GF(2^3).",
+    "status": "API_MISMATCH"
+  },
+  "arithmetic": "Sage GF(8) and QQ; no floating identities",
+  "claim_gates": {
+    "asymptotic_claim": false,
+    "classical_hardness": false,
+    "finite_control_only": true,
+    "generic_OPI_no_go": false,
+    "provisional_note_promoted": false,
+    "quantum_execution": false,
+    "separation": false,
+    "source_parameter_admissibility_certified": false
+  },
+  "control_sha256": "33e548a02fb3177bf47a915aca0c30eb5d439293b89be40641c63dcb21a3dc1d",
+  "filter": {
+    "TV_from_uniform": "4472222560320/447142101271001",
+    "acceptance": "447142101271001/481890304000000",
+    "all_64_likelihood_bounds_pass": true,
+    "likelihood_lower_bound": "47045881/64000000",
+    "likelihood_max": "467627996085264/447142101271001",
+    "likelihood_min": "427344069979204/447142101271001",
+    "likelihood_upper_bound": "64000000/47045881",
+    "mean_score": "12632871192503911/3577136810168008",
+    "rational_TV_envelope": "16954119/47045881",
+    "score_law": {
+      "0": "0",
+      "1": "1709379132696301/28617094481344064",
+      "2": "2393040514837201/14308547240672032",
+      "3": "3987003467855925/14308547240672032",
+      "4": "1804216819977985/7154273620336016",
+      "5": "4592622198894553/28617094481344064",
+      "6": "1169068952227509/14308547240672032",
+      "7": "0"
+    },
+    "survival_max": "772311/784000",
+    "survival_min": "1476593/1568000",
+    "t0": "19/20"
+  },
+  "fixture": {
+    "codeword_count": 64,
+    "evaluation_point_labels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "field_labels": "polynomial-basis integer bit encoding",
+    "field_modulus": "x^3 + x + 1",
+    "halfset_generation": "random.Random(seed).sample(range(q),q//2), independently per row",
+    "halfsets": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        1,
+        2,
+        6
+      ],
+      [
+        1,
+        4,
+        5,
+        6
+      ],
+      [
+        1,
+        3,
+        4,
+        5
+      ],
+      [
+        0,
+        4,
+        5,
+        7
+      ]
+    ],
+    "k": 2,
+    "m": 7,
+    "q": 8,
+    "seed": 20261107
+  },
+  "full_exact_laws": [
+    {
+      "Born": "459262001299201/28617094481344064",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        0,
+        0
+      ],
+      "paired_survival": "459262001299201/481890304000000",
+      "shared_degree": "114857004928801/7160423032924864"
+    },
+    {
+      "Born": "443000497570929/28617094481344064",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        0,
+        1
+      ],
+      "paired_survival": "443000497570929/481890304000000",
+      "shared_degree": "110859410431249/7160423032924864"
+    },
+    {
+      "Born": "27687538991025/1788568405084004",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        0,
+        2
+      ],
+      "paired_survival": "1107501559641/1204725760000",
+      "shared_degree": "6928715043625/447526439557804"
+    },
+    {
+      "Born": "7175974797601/447142101271001",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        0,
+        3
+      ],
+      "paired_survival": "7175974797601/7529536000000",
+      "shared_degree": "1794642168901/111881609889451"
+    },
+    {
+      "Born": "108774699699121/7154273620336016",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        0,
+        4
+      ],
+      "paired_survival": "108774699699121/120472576000000",
+      "shared_degree": "27232277247001/1790105758231216"
+    },
+    {
+      "Born": "112763734426729/7154273620336016",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        0,
+        5
+      ],
+      "paired_survival": "112763734426729/120472576000000",
+      "shared_degree": "28208814467569/1790105758231216"
+    },
+    {
+      "Born": "443000750141889/28617094481344064",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        0,
+        6
+      ],
+      "paired_survival": "443000750141889/481890304000000",
+      "shared_degree": "110859470964769/7160423032924864"
+    },
+    {
+      "Born": "443000497570929/28617094481344064",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        0,
+        7
+      ],
+      "paired_survival": "443000497570929/481890304000000",
+      "shared_degree": "110859410431249/7160423032924864"
+    },
+    {
+      "Born": "467627606840601/28617094481344064",
+      "G": "13/14",
+      "H": 6,
+      "Prange": "5/112",
+      "coefficient_labels_low_first": [
+        1,
+        0
+      ],
+      "paired_survival": "467627606840601/481890304000000",
+      "shared_degree": "116926475904361/7160423032924864"
+    },
+    {
+      "Born": "435098423334169/28617094481344064",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        1,
+        1
+      ],
+      "paired_survival": "8879559659881/9834496000000",
+      "shared_degree": "108929019691849/7160423032924864"
+    },
+    {
+      "Born": "110750092821369/7154273620336016",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        1,
+        2
+      ],
+      "paired_survival": "110750092821369/120472576000000",
+      "shared_degree": "27714845041129/1790105758231216"
+    },
+    {
+      "Born": "110749966535961/7154273620336016",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        1,
+        3
+      ],
+      "paired_survival": "110749966535961/120472576000000",
+      "shared_degree": "27714814774441/1790105758231216"
+    },
+    {
+      "Born": "6798414820129/447142101271001",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        1,
+        4
+      ],
+      "paired_survival": "6798414820129/7529536000000",
+      "shared_degree": "1702016397769/111881609889451"
+    },
+    {
+      "Born": "7047729419536/447142101271001",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        1,
+        5
+      ],
+      "paired_survival": "440483088721/470596000000",
+      "shared_degree": "1763049942466/111881609889451"
+    },
+    {
+      "Born": "451054300565521/28617094481344064",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        1,
+        6
+      ],
+      "paired_survival": "451054300565521/481890304000000",
+      "shared_degree": "112835103989281/7160423032924864"
+    },
+    {
+      "Born": "451054045709089/28617094481344064",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        1,
+        7
+      ],
+      "paired_survival": "451054045709089/481890304000000",
+      "shared_degree": "112835042437009/7160423032924864"
+    },
+    {
+      "Born": "106836017494801/7154273620336016",
+      "G": "4/7",
+      "H": 1,
+      "Prange": "0",
+      "coefficient_labels_low_first": [
+        2,
+        0
+      ],
+      "paired_survival": "2180326887649/2458624000000",
+      "shared_degree": "26760650188321/1790105758231216"
+    },
+    {
+      "Born": "116906804399025/7154273620336016",
+      "G": "13/14",
+      "H": 6,
+      "Prange": "5/112",
+      "coefficient_labels_low_first": [
+        2,
+        1
+      ],
+      "paired_survival": "4676272175961/4818903040000",
+      "shared_degree": "29231595111625/1790105758231216"
+    },
+    {
+      "Born": "467627347344249/28617094481344064",
+      "G": "13/14",
+      "H": 6,
+      "Prange": "5/112",
+      "coefficient_labels_low_first": [
+        2,
+        2
+      ],
+      "paired_survival": "467627347344249/481890304000000",
+      "shared_degree": "116926412265769/7160423032924864"
+    },
+    {
+      "Born": "459260972640625/28617094481344064",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        2,
+        3
+      ],
+      "paired_survival": "29392702249/30840979456",
+      "shared_degree": "114856754580625/7160423032924864"
+    },
+    {
+      "Born": "26058778512777/1683358498902592",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        2,
+        4
+      ],
+      "paired_survival": "442999234717209/481890304000000",
+      "shared_degree": "110859107764729/7160423032924864"
+    },
+    {
+      "Born": "451053535996441/28617094481344064",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        2,
+        5
+      ],
+      "paired_survival": "187860698041/200704000000",
+      "shared_degree": "112834919332681/7160423032924864"
+    },
+    {
+      "Born": "106836265562569/7154273620336016",
+      "G": "4/7",
+      "H": 1,
+      "Prange": "0",
+      "coefficient_labels_low_first": [
+        2,
+        6
+      ],
+      "paired_survival": "106836265562569/120472576000000",
+      "shared_degree": "26760708731929/1790105758231216"
+    },
+    {
+      "Born": "108774324237049/7154273620336016",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        2,
+        7
+      ],
+      "paired_survival": "108774324237049/120472576000000",
+      "shared_degree": "27232187951089/1790105758231216"
+    },
+    {
+      "Born": "6798399175876/447142101271001",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        3,
+        0
+      ],
+      "paired_survival": "34685710081/38416000000",
+      "shared_degree": "1702012677106/111881609889451"
+    },
+    {
+      "Born": "7175974797601/447142101271001",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        3,
+        1
+      ],
+      "paired_survival": "7175974797601/7529536000000",
+      "shared_degree": "1794642168901/111881609889451"
+    },
+    {
+      "Born": "451054045709089/28617094481344064",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        3,
+        2
+      ],
+      "paired_survival": "451054045709089/481890304000000",
+      "shared_degree": "112835042437009/7160423032924864"
+    },
+    {
+      "Born": "427345434352225/28617094481344064",
+      "G": "4/7",
+      "H": 1,
+      "Prange": "0",
+      "coefficient_labels_low_first": [
+        3,
+        3
+      ],
+      "paired_survival": "17093817374089/19275612160000",
+      "shared_degree": "107042922743425/7160423032924864"
+    },
+    {
+      "Born": "443000245000041/28617094481344064",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        3,
+        4
+      ],
+      "paired_survival": "443000245000041/481890304000000",
+      "shared_degree": "110859349897801/7160423032924864"
+    },
+    {
+      "Born": "451054555422025/28617094481344064",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        3,
+        5
+      ],
+      "paired_survival": "18042182216881/19275612160000",
+      "shared_degree": "112835165541625/7160423032924864"
+    },
+    {
+      "Born": "28190885821081/1788568405084004",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        3,
+        6
+      ],
+      "paired_survival": "28190885821081/30118144000000",
+      "shared_degree": "7052192075821/447526439557804"
+    },
+    {
+      "Born": "7175974797601/447142101271001",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        3,
+        7
+      ],
+      "paired_survival": "7175974797601/7529536000000",
+      "shared_degree": "1794642168901/111881609889451"
+    },
+    {
+      "Born": "459262001299201/28617094481344064",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        4,
+        0
+      ],
+      "paired_survival": "459262001299201/481890304000000",
+      "shared_degree": "114857004928801/7160423032924864"
+    },
+    {
+      "Born": "443000497570929/28617094481344064",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        4,
+        1
+      ],
+      "paired_survival": "443000497570929/481890304000000",
+      "shared_degree": "110859410431249/7160423032924864"
+    },
+    {
+      "Born": "112763606998441/7154273620336016",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        4,
+        2
+      ],
+      "paired_survival": "2301298102009/2458624000000",
+      "shared_degree": "28208783691361/1790105758231216"
+    },
+    {
+      "Born": "108774574545025/7154273620336016",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        4,
+        3
+      ],
+      "paired_survival": "4350982981801/4818903040000",
+      "shared_degree": "27232247481625/1790105758231216"
+    },
+    {
+      "Born": "28703931336025/1788568405084004",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        4,
+        4
+      ],
+      "paired_survival": "1148157253441/1204725760000",
+      "shared_degree": "7178576499025/447526439557804"
+    },
+    {
+      "Born": "6921892640601/447142101271001",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        4,
+        5
+      ],
+      "paired_survival": "6921892640601/7529536000000",
+      "shared_degree": "1732180652581/111881609889451"
+    },
+    {
+      "Born": "443000750141889/28617094481344064",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        4,
+        6
+      ],
+      "paired_survival": "443000750141889/481890304000000",
+      "shared_degree": "110859470964769/7160423032924864"
+    },
+    {
+      "Born": "443000497570929/28617094481344064",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        4,
+        7
+      ],
+      "paired_survival": "443000497570929/481890304000000",
+      "shared_degree": "110859410431249/7160423032924864"
+    },
+    {
+      "Born": "26532545949425/1683358498902592",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        5,
+        0
+      ],
+      "paired_survival": "18042131245609/19275612160000",
+      "shared_degree": "112834857780625/7160423032924864"
+    },
+    {
+      "Born": "435098423334169/28617094481344064",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        5,
+        1
+      ],
+      "paired_survival": "8879559659881/9834496000000",
+      "shared_degree": "108929019691849/7160423032924864"
+    },
+    {
+      "Born": "28190885821081/1788568405084004",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        5,
+        2
+      ],
+      "paired_survival": "28190885821081/30118144000000",
+      "shared_degree": "7052192075821/447526439557804"
+    },
+    {
+      "Born": "29226749755329/1788568405084004",
+      "G": "13/14",
+      "H": 6,
+      "Prange": "5/112",
+      "coefficient_labels_low_first": [
+        5,
+        3
+      ],
+      "paired_survival": "596464280721/614656000000",
+      "shared_degree": "7307910710149/447526439557804"
+    },
+    {
+      "Born": "110750092821369/7154273620336016",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        5,
+        4
+      ],
+      "paired_survival": "110750092821369/120472576000000",
+      "shared_degree": "27714845041129/1790105758231216"
+    },
+    {
+      "Born": "110750219106849/7154273620336016",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        5,
+        5
+      ],
+      "paired_survival": "2260208553201/2458624000000",
+      "shared_degree": "27714875307889/1790105758231216"
+    },
+    {
+      "Born": "451054300565521/28617094481344064",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        5,
+        6
+      ],
+      "paired_survival": "451054300565521/481890304000000",
+      "shared_degree": "112835103989281/7160423032924864"
+    },
+    {
+      "Born": "435098423334169/28617094481344064",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        5,
+        7
+      ],
+      "paired_survival": "8879559659881/9834496000000",
+      "shared_degree": "108929019691849/7160423032924864"
+    },
+    {
+      "Born": "7047713491009/447142101271001",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        6,
+        0
+      ],
+      "paired_survival": "7047713491009/7529536000000",
+      "shared_degree": "1763046095449/111881609889451"
+    },
+    {
+      "Born": "27687538991025/1788568405084004",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        6,
+        1
+      ],
+      "paired_survival": "1107501559641/1204725760000",
+      "shared_degree": "6928715043625/447526439557804"
+    },
+    {
+      "Born": "435098923950625/28617094481344064",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        6,
+        2
+      ],
+      "paired_survival": "696158278321/771024486400",
+      "shared_degree": "108929138753425/7160423032924864"
+    },
+    {
+      "Born": "443000245000041/28617094481344064",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        6,
+        3
+      ],
+      "paired_survival": "443000245000041/481890304000000",
+      "shared_degree": "110859349897801/7160423032924864"
+    },
+    {
+      "Born": "459263029958929/28617094481344064",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        6,
+        4
+      ],
+      "paired_survival": "9372714897121/9834496000000",
+      "shared_degree": "114857255278129/7160423032924864"
+    },
+    {
+      "Born": "451055065135249/28617094481344064",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        6,
+        5
+      ],
+      "paired_survival": "451055065135249/481890304000000",
+      "shared_degree": "112835288646529/7160423032924864"
+    },
+    {
+      "Born": "7047729419536/447142101271001",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        6,
+        6
+      ],
+      "paired_survival": "440483088721/470596000000",
+      "shared_degree": "1763049942466/111881609889451"
+    },
+    {
+      "Born": "27687538991025/1788568405084004",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        6,
+        7
+      ],
+      "paired_survival": "1107501559641/1204725760000",
+      "shared_degree": "6928715043625/447526439557804"
+    },
+    {
+      "Born": "106836141528649/7154273620336016",
+      "G": "4/7",
+      "H": 1,
+      "Prange": "0",
+      "coefficient_labels_low_first": [
+        7,
+        0
+      ],
+      "paired_survival": "106836141528649/120472576000000",
+      "shared_degree": "26760679460089/1790105758231216"
+    },
+    {
+      "Born": "112763352142081/7154273620336016",
+      "G": "11/14",
+      "H": 4,
+      "Prange": "1/56",
+      "coefficient_labels_low_first": [
+        7,
+        1
+      ],
+      "paired_survival": "112763352142081/120472576000000",
+      "shared_degree": "28208722139161/1790105758231216"
+    },
+    {
+      "Born": "435097922718001/28617094481344064",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        7,
+        2
+      ],
+      "paired_survival": "435097922718001/481890304000000",
+      "shared_degree": "108928900630561/7160423032924864"
+    },
+    {
+      "Born": "26058778512777/1683358498902592",
+      "G": "5/7",
+      "H": 3,
+      "Prange": "1/112",
+      "coefficient_labels_low_first": [
+        7,
+        3
+      ],
+      "paired_survival": "442999234717209/481890304000000",
+      "shared_degree": "110859107764729/7160423032924864"
+    },
+    {
+      "Born": "459262001299201/28617094481344064",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        7,
+        4
+      ],
+      "paired_survival": "459262001299201/481890304000000",
+      "shared_degree": "114857004928801/7160423032924864"
+    },
+    {
+      "Born": "435098423334169/28617094481344064",
+      "G": "9/14",
+      "H": 2,
+      "Prange": "1/336",
+      "coefficient_labels_low_first": [
+        7,
+        5
+      ],
+      "paired_survival": "8879559659881/9834496000000",
+      "shared_degree": "108929019691849/7160423032924864"
+    },
+    {
+      "Born": "114815532470401/7154273620336016",
+      "G": "6/7",
+      "H": 5,
+      "Prange": "5/168",
+      "coefficient_labels_low_first": [
+        7,
+        6
+      ],
+      "paired_survival": "2343174132049/2458624000000",
+      "shared_degree": "28714259055601/1790105758231216"
+    },
+    {
+      "Born": "116906934147201/7154273620336016",
+      "G": "13/14",
+      "H": 6,
+      "Prange": "5/112",
+      "coefficient_labels_low_first": [
+        7,
+        7
+      ],
+      "paired_survival": "116906934147201/120472576000000",
+      "shared_degree": "29231626930921/1790105758231216"
+    }
+  ],
+  "identities": {
+    "P0_H_affine_drift_all_64": true,
+    "P0_diagonal": "1/8",
+    "alpha": "1/7",
+    "lazy_G_affine_drift_all_64": true,
+    "lazy_diagonal": "17/24",
+    "mu": "3/4",
+    "paired_killed_paths_equal_Born_all_64": true,
+    "r": "6/7",
+    "stochastic_P0_and_lazy": true,
+    "survival_equals_matrix_polynomial_all_64": true,
+    "symmetric_P0_and_lazy": true
+  },
+  "native_GF8_Prange_completion": {
+    "exact_random_choices": 336,
+    "mean_score": "253/56",
+    "restarts": 1,
+    "score_law": {
+      "0": "0",
+      "1": "0",
+      "2": "11/336",
+      "3": "9/56",
+      "4": "2/7",
+      "5": "25/84",
+      "6": "25/112",
+      "7": "0"
+    },
+    "witness": {
+      "all_original_rows_verified": true,
+      "coefficient_labels_low_first": [
+        3,
+        1
+      ],
+      "evaluation_labels": [
+        2,
+        1,
+        0,
+        7,
+        6,
+        5,
+        4
+      ],
+      "row_indices": [
+        4,
+        5
+      ],
+      "score": 5,
+      "target_labels": [
+        6,
+        5
+      ]
+    }
+  },
+  "parameters": {
+    "G": "1/2+H/(2m)",
+    "M": 3,
+    "b": "1/9",
+    "degree_weights": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "nu": "10/9",
+    "s": "1/3"
+  },
+  "shared_degree_variant": {
+    "TV_from_Born": "309142688441453726903019375/1600863300465648833222467534432",
+    "acceptance": "111881609889451/120472576000000",
+    "differing_codeword_count": 64,
+    "equals_Born": false,
+    "first_difference": {
+      "Born": "459262001299201/28617094481344064",
+      "index": 0,
+      "shared": "114857004928801/7160423032924864"
+    },
+    "fixture_not_retuned": true
+  },
+  "status": "PASS_FINITE_EXACT",
+  "uniform": {
+    "max_score": 6,
+    "mean_score": "7/2",
+    "score_law": {
+      "0": "0",
+      "1": "1/16",
+      "2": "11/64",
+      "3": "9/32",
+      "4": "1/4",
+      "5": "5/32",
+      "6": "5/64",
+      "7": "0"
+    }
+  }
+}

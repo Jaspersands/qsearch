@@ -1,0 +1,43 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 6952,
+      "path": "research/audits/api_inputs/2026-11-12-opi/norm-context.md",
+      "sha256": "1a782f4b26153820569702bfc0b4398db0468cf196bf421d5be50e9186b4d787",
+      "snapshot": "context/000.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 3667,
+  "effort": "high",
+  "finished_at": "2026-11-12T06:20:27.819225+00:00",
+  "input_token_allowance": 3923,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.67763,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-opi/norm-prompt.md",
+    "sha256": "7b0328d82de19754e998f3a22a5f4ae79fc97cc3cbe1821014951150bb85754e",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261112T061349.153460Z-0a7ba9b4",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 3667,
+    "output_tokens": 30633
+  },
+  "usage_cost_estimate_usd": 1.56832
+}

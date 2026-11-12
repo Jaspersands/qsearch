@@ -1,0 +1,99 @@
+Been tried? wavelet preconditioner differential equations
+
+Killed before
+  1. negative   NEG-CODE-SELF-DUAL-WREATH-FINITE-PHYSICAL-BLOCKS-NOT-PRECONDITIONER  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS]
+     research/registry/negative_results.json:60605
+     Claim: Well-conditioned finite equal-pair physical frame blocks supply an all-n PGM preconditioner.
+     Why not: The probe covers selected equal-pair sectors only, reaches the information threshold only for S_3, and omits unequal-pair tuples and hidden-label multiplicities.
+  2. negative   NEG-CODE-SELF-DUAL-WREATH-SCALAR-SUBSET-ORBIT-PRECONDITIONER  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA]
+     research/registry/negative_results.json:60781
+     Claim: Grouping the 2^k subset terms by Hamming weight produces a commutative k+1-dimensional carrier algebra.
+     Why not: The exact symmetrized orbit sums U_2 and U_3 have a nonzero commutator at k=4, and the truncated word algebra grows beyond k+1 dimensions.
+  3. negative   NEG-CODE-SELF-DUAL-WREATH-GENERIC-POLAR-BLOCK-ENCODING  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT]
+     research/registry/negative_results.json:60635
+     Claim: A compact block encoding of the k-copy average frame immediately gives a polynomial-time PGM.
+     Why not: At k=ceil(log2(n!)), the exact frame moments place broad spectral mass at eigenvalue scale Theta(1/n!), requiring Theta(1/sqrt(n!)) polar resolution. No structured preconditioner or frame inverse is registered.
+  4. negative   NEG-DCP-LOW-BIT-CONDITIONING-AS-HIGH-BIT-CONCENTRATION-SHORTCUT  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT]
+     research/registry/negative_results.json:66366
+     Claim: Polynomial low-bit conditioning automatically concentrates the remaining quotient onto a polynomial explicit candidate set.
+     Why not: Exact finite quotient distributions retain broad support/high entropy and no implicit high-bit decoder or geometry theorem is supplied.
+  5. negative   NEG-DCP-PGM-GRAM-BLOCK-ENCODING-NORMALIZATION  [retained · DHS-GOWERS-SIEVE, EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING]
+     research/registry/negative_results.json:66755
+     Claim: A polynomial projected block encoding of the DCP PGM Gram operator immediately gives a polynomial PGM circuit.
+     Why not: The direct circuit encodes G/N. Legal density-one fibers have equality amplitude sqrt(c_s/2^m), so generic rescaling or coherent fiber erasure costs sqrt(2^m/c_s), exponential on almost all legal inputs.
+
+Dequantization checks
+  1. dequant    DEQ-SELF-DUAL-WREATH-FINITE-PHYSICAL-BLOCKS-NOT-ALL-N  [critical]
+     research/registry/dequantization_checks.json:1591
+     Claim: Finite well-conditioned equal-pair frame blocks prove an all-n blockwise PGM preconditioner.
+     Why not: Cover unequal and mixed physical-irrep tuples, derive all-n spectral recurrences, and prove worst-sector support conditioning with coherent implementation.
+  2. dequant    DEQ-SELF-DUAL-WREATH-COMPACT-BLOCK-ENCODING-NOT-PGM  [critical]
+     research/registry/dequantization_checks.json:1580
+     Claim: A compact average-frame LCU block encoding supplies an efficient mixed-state PGM.
+     Why not: Construct a representation-specific preconditioner or direct carrier polar transform with a polynomial complexity proof. Generic LCU/QSVT normalization is factorial.
+  3. dequant    DEQ-DCP-LOW-BIT-PRECONDITIONER-PRESERVES-RESIDUAL-DENSITY  [critical]
+     research/registry/dequantization_checks.json:348
+     Claim: O(log n) low-bit conditioning creates a lower-density high-quotient search whose exact or near-residual candidate counts explain a polynomial partial subset-sum solver.
+     Why not: Reject count-only and fixed residual-window mechanisms. Reopen the preconditioner only with a proved higher-order correlation, changed LLL basis geometry, or implicit decoder that has inverse-polynomial legal coverage; pairwise independence is not a general subset-sum lower bound.
+  4. dequant    DEQ-DCP-PGM-GRAM-BLOCK-ENCODING-NORMALIZATION  [critical]
+     research/registry/dequantization_checks.json:480
+     Claim: A polynomial projected block encoding of the DCP phase-state Gram operator supplies a polynomial PGM circuit.
+     Why not: Retire the unqualified Gram-block-encoding task. Any survivor must specify a source-structured preconditioner, collision walk, or different full-rank measurement and charge normalization, condition number, precision, advice, and every state preparation/reflection. Do not generalize this direct-route
+  5. dequant    DEQ-COSET-DIRECT-PGM-FRAME-LCU-NORMALIZATION-BARRIER  [critical]
+     research/registry/dequantization_checks.json:1019
+     Claim: The exact compact average-frame identity directly implements the growing-width PGM in polynomial resources.
+     Why not: Prove the natural-source character-ratio envelope, then construct a representation-specific frame preconditioner, normalization-free block encoding, or direct covariant measurement that avoids generic spectral amplification.
+
+Notes and handoff
+  1. note       Good-dyadic local images and growing-genus two-Selmer dimension › 2. The concrete dyadic operation  [unlabelled]
+     research/GOOD_DYADIC_GROWING_SELMER.md:108
+     The integral differential basis is checked directly: on the infinity chart u=1/x,v=y/x^(g+1), the equation is v^2+u H(u)v=u F1(u), F1(0)=1.
+  2. note       Independent Hermite Module Certificate › 5. Differential Solver Review  [unlabelled]
+     research/HERMITE_MODULE_CERTIFICATE.md:146
+     The production solver parametrizes a superset of solutions using its nonzero descending pivots, and then imposes the residual equations and pins.
+  3. note       Independent Hermite Module Certificate › Scientific Question  [unlabelled]
+     research/HERMITE_MODULE_CERTIFICATE.md:7
+     This pass constructs the same module by a different route, certifies its codimension, compares bounded solution spaces against independent dense equations, and checks the differential solver via direct polynomial columns.
+  4. note       Growing tuples of units: differential and specialization algorithm › 4. Cheapest tests and scope falsifiers  [unlabelled]
+     research/AFFINE_UNIT_RELATIONS_DIFFERENTIAL_SPECIALIZATION.md:188
+     Differential-only e=(1,0,0,-1) incorrectly treats constant2 as1; specialization-only e=(0,0,0,1) incorrectly treats x as1.
+  5. note       Pinned Differential Decoder For Streaming Hermite OPI › Attempts To Falsify It  [review-pending]
+     research/HERMITE_PINNED_DECODER.md:307
+     Search prior work on list decoding with side information, random coordinate restrictions, small-characteristic differential equations, and streaming DQI before making a novelty claim.
+
+Code and experiments
+  1. theorem    Universal right-fiber cocycle coefficients for an abelian Lie ideal.  [code]
+     theorems/induced_cocycle_formula.py:1
+     Verify the complete formal differential equation, degree by degree.
+  2. theorem    Pinned Hasse-differential decoding; no native quantum execution or novelty claim.  [code]
+     theorems/hermite_pinned_decoder.py:1
+     Pinned Hasse-differential decoding; no native quantum execution or novelty claim.
+  3. experiment Rigid code-equivalence wreath PGM polar audit  [planned]
+     research/registry/experiments.json:10426
+     Rigid code-equivalence wreath PGM polar audit The mixed-state PGM admits an exact polar-isometry reduction and compact average-frame LCU, but generic inversion should encounter a factorial normalization barrier that only a structured representation-specific preconditioner can remove.
+  4. theorem    Bounded access controls for the tagged Mersenne reciprocal family.  [code]
+     theorems/mersenne_reciprocal_access.py:1
+     Differential ranks and individual quadratic Gauss blocks use polynomial
+field arithmetic.
+  5. result     EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT operator-frame-polar-reduced-structured-preconditioner-open  [operator-frame-polar-reduced-structured-preconditioner-open]
+     research/registry/experiment_results.json:9659
+     The maximum charged polar resolution is 2^147.499, while structured preconditioners, frame inverses, POVM circuits, and decoders remain zero.
+
+Literature
+  1. literature Algorithm for Solving Massively Underdefined Systems of Multivariate Quadratic Equations over Finite Fields  [audit]
+     research/literature_audits/dcp_conditional_carry_sources.json
+     PREPRINT_SOURCE_CHECKED Author-claimed characteristic-two polynomial regime has at least m(m+1)/2 variables for m equations; do not transfer it to higher-degree carry graphs.
+  2. literature Solving systems of diagonal polynomial equations over finite fields  [audit]
+     research/literature_audits/ternary_incidence_sources.json
+     Solving systems of diagonal polynomial equations over finite fields Fixed-field incidence decoding is a known-easy baseline.
+  3. literature Sample-Preserving Search-to-Decision Reduction for Noisy Linear Equations over Large Moduli  [audit]
+     research/literature_audits/native_source_refresh_sources.json
+     Definitions2.2/2.5/2.7, Theorem3.1, Section3.7, Corollary4.1 and Section4.1 Sample-Preserving Search-to-Decision Reduction for Noisy Linear Equations over Large Moduli LIT-BTV-2026-SAMPLE-PRESERVING https://arxiv.org/html/2610.12913v1
+  4. literature Solving systems of diagonal polynomial equations over finite fields  [audit]
+     research/literature_audits/native_prefix_carry_sources.json
+     Definition1 Theorem3 Proposition10 Theorem5 Corollary6 Solving systems of diagonal polynomial equations over finite fields Supply a structure-preserving transformation with dimension, existence, normalization and source access accounted for.
+  5. literature Sample-Preserving Search-to-Decision Reduction for Noisy Linear Equations over Large Moduli  [audit]
+     research/literature_audits/native_recursive_quotient_sources.json
+     derive rounded-continuous-Gaussian tolerance for the general-noise theorem at every used root; do not substitute the discrete-Gaussian corollary LIT-BTV-2026-SAMPLE-PRESERVING c is explicitly nonzero in Z_q, not just a nonzero integer bounded multiple lists with explicit coefficient ambiguity and r…
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.
