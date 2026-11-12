@@ -1318,7 +1318,10 @@ or separation is claimed.
   II §6 smooth-order case for a standard oracle only (II pose it with a subgroup-state oracle);
   zero-sum question untouched; not exact; not new for c <= 2. Referee CORRECT WITH FIXES, all
   applied (-nilpotent-corollary-referee.md). Claim gates unchanged.
-  Next: specialist priority check (p-group isomorphism; UT_n(Z) survey; cor:nilpotent).
+  (viii) ePrint 2026/2678 survey read (-eprint-2026-2678-check.md): no class >= 3 or UT_n(Z)
+  finite-index result (it also misses II 2023); its open problem 5 (HSP in H_3(Z)) is answered
+  only for finite index, by known results combined (rem:utz-scope(b)).
+  Next: specialist priority check (p-group isomorphism; cor:nilpotent) and human check of II Thm 1.
 - **Rees, rest of 11-09 (AI only, pending human review).** (i) Non-unique encodings: HSP for
   arbitrary H still works (normal H was IMS Thm 8); acquiring the chart needs Omega(sqrt p)
   identity tests (2026-11-09-rees-nonunique-encoding-blackbox.md). (ii) Local paper patch,
