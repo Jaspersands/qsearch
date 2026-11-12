@@ -1,0 +1,355 @@
+# Native dyadic local Kummer image: written algorithm
+
+2026-11-13. REVIEWED WRITTEN classical polynomial-bit algorithm at the fixed
+dyadic prime. The parent checked the component proofs and the full 231-line
+current-clock review, audits/reviews/2026-11-13-native-dyadic-whole-clock.md.
+The final composition pays initialization, actual point/root identities,
+finite labels, original-E relations, additive precision, node count and
+adaptive failure probability. This is not an implementation, novelty,
+hardness, quantum execution or speedup claim. Odd primes and the global
+composition are documented separately in LOCAL_KUMMER_ALL_PRIMES.md and
+GENERAL_NATIVE_SELMER_COMPOSITION.md.
+
+## Native contract and comparison
+
+Input: monic squarefree f in Z[x], degree n=2g+1 withg>=1, coefficient bit lengthB,
+and binary failure parametereta. Degree1 has trivialJacobian and is returned
+immediately. Prime isFIXED2; arbitrarybadreduction.
+Output: a basis of the COMPLETE image of J(Q2)/2J(Q2) in explicit computed
+coordinates for L*/L*², L=Q2[x]/f. Supply the local-field/coordinate setup
+needed to interpret the output, not exact infinite p-adic coefficients.
+Target bounded timepoly(g,B,log1/eta), with correct output or explicitABORT
+whose probability is<=eta. No supplied model, local generators, field closure,
+precision/conditioning advice or target image. Outputdimensiong+t, with
+ t=dim J(Q2)[2]=number of irreducible local factors of f minus1.
+
+The strongest applicable classical baseline is Stoll's exact-field halving,
+ordinary local-field arithmetic and KM divisor operations. THIS proposed
+local routine is classical. It would remove the dyadic blocker from the
+retained quantum global two-Selmer dimension proposal, but other primes and
+the global interfaces are separate. Expected benefit is a uniform native BIT
+bound for a useful local descent primitive, not an established new separation.
+Corpus and actual Stoll/KM sources preceded the pass. Primary OM2012 Section5
+and Theorem5.18 were read, including log(residue-size) and p-small operation
+costs; retained in audits/sources/dyadic_reset/om2012.*. The retained actual
+local-integral-basis source gives the OM/Okutsu basis construction. No abstract
+or good-reduction theorem is used as a bad-prime precision statement.
+
+## Paid ingredients and fixed subgroup
+
+Let D=v2disc f=O(g(B+logg)). Retain the actual seed exponent n_s=2,
+ t_i=2^n_s i, P(t)=(t^-2,t^(-n)*sqrt(F(t²)))-infinity,
+ F(z)=z^n f(1/z), root congruent1mod8. Their closed Z2 spanL has determinant
+ D0=n_s g²+sum_i v2i+sum_(i<j)v2(j²-i²).
+Set E=2L once for the ENTIRE run. On the maximalpro2 groupG, A=G/E is finite,
+ A[2]=(L/E) directsumG[2], and log2|A|=kappa+g+t is polynomial. The explicit
+bound onkappa is in LOCAL_HALVING_SATURATION. No A enumeration is performed.
+
+Let R=D0+1 and H=n_s g(g-1)+sum_(i<j)v2(j²-i²).
+The fully native volume constants are
+ Nc=4D+12, M=2ceil(log2g)+4, Delta_star=g(1+ceil(log2g)),
+ A_count=3g+gM+2gNc, a_free=3D+10,
+ A_tail=A_count+a_free+Delta_star+3+2ceil(log2g), A_good=A_tail+1. The actual sampler
+ sigma(z)=sum_i[P(t_i+2^R z_i)-P(t_i)]
+parametrizes a known subgroupU subsetE, with standardlog lattice2^R W Z2g,
+ vdetW=H. All sampled points have finite Hensel/series certificates. The
+field extensions in the volume proofs are NEVER enumerated by this sampler.
+
+Four new separately checked ingredients:
+1. coordinate-haar-tail review: actual reduced coordinate/collision tubes,
+including dependent conjugates, with explicit global exponentA_tail.
+2. finite-grid-stability review: A_good=A_tail+1 and
+ s=A_good+gR+H+2g+1+k,
+ A_local=4ns+4,
+ K=g(A_local+1)+s*g(g-1)+gns+ceil(g(1+ceil log2g)/2),
+ Q=2K+1, m_grid=max(0,Q-R).
+Uniform exact z in{0,...,2^m_grid-1}^g makes h+2sigma(z) and EVERY rational
+half satisfy degreeg, distinct finite x, v(x)>=-2s, |v(y)|<=ns and
+v(x_i-x_j)<=2s, with failure<=2^-k, uniformly over EVERYactualh in2G.
+The single-point version needs no divisibility promise. Actual K2/log domain,
+nonlinear coefficients, branch tails and finite-grid coupling are paid.
+3. ideal-saturation-bound review Section6: given signed graph blocks and a
+numerical cap S_out=(6g-3)s for their true output, a finite unit-test algorithm
+materializes the actual reduced pair at polynomial precision on the goodevent.
+4. geometric-smith-bridge review: a same-class scalar pencil and explicit
+resultant identity bound all generic Stoll matrices, including augmented
+monic normalization, with polynomial finite-grid success for ALL halves.
+
+## Canonical group operations, with exact actual-point certificates
+
+Maintain each represented point as a degree<=g graph pair[a,b], finite digits,
+and a shared arithmetic/root-selection DAG naming an ACTUAL point. Recorded
+pivots/root balls define exact algebraic objects; approximate equalities are
+never taken as proof that a point exists. Initial seeds and branch torsion
+have such native certificates. Bound all stored coefficient poles by a fixed
+S_store=max(n*(2+ceil(log2g))+2,(6g-3)s). This pays initial seeds, every
+actual sigma graph block and every accepted canonical/half output. The
+perturbed t_i have the same valuation as t_i becauseR>2+v2(i).
+
+For a binary addition/negation/composition, convert negative graph blocks by
+b->-b, append2sigma(z), and interpret the signed sum as an effective divisor
+D_in of totaldegree m<=6g with class[D_in-m infinity]. The added shift is in
+ORIGINAL E, so the computed coset is unchanged. This includes computations
+of zero cosets: their representatives may be small nonzero actual points.
+Every output can be randomized this way because only the quotientA is used.
+The formal perturbation ensuresm>=g. If everneeded one may pad with a known
+principal pairP+iotaP; no secret target is introduced.
+
+Set L_scale=max(S_input,S_out), X=2^(2L_scale)x,Y=2^(nL_scale)y.
+All reduced inputblocks and the unknown good canonical output become integral
+on the monic odddegree model f_scale. Its discriminant exponent is
+ D_scale=D+2L_scale*n*(n-1).
+For input I_i=(a_i,Y+b_i), the explicit fractional inverse gives
+ (2disc f_scale)R subset I_i I_i^-1 subset R.
+Thus saturation after each knownrank product stage costs Smith exponent
+<=D_scale+1 (the independent D_scale+2 cap is also safe), without any
+support-separation assumption. Work in R/(A_in), A_in=prod a_i, dimension2m.
+Use normalized saturated bases with identitypivotrows and knownranks.
+
+At N=m+g, compute the two restriction kernels at N andN+1. On the goodevent
+the m quotient monomials of weight<N are an integralbasis. Unit rank and
+unit leading coefficients give sectionsF=p+qY andG=r+sY with top1. Otherwise
+ABORT this attempt, without asserting an exact rank drop. Their exact identities
+are
+ Delta=p*s-q*r=epsilon A_in, epsilon=(-1)^N,
+ a_out=(p²-f_scale q²)/(epsilon A_in),
+ b_out=rem_aout[(p*r-f_scale q*s)/(epsilon A_in)].
+All divisions are MONIC polynomial divisions. No qinverse is used; q0,
+coincident/repeated input supports and input/output overlap are included.
+The ideal/divisor identities prove the actual outputclass. Scale back, paying
+at mostn L_scale digits. Check the stored polecap; reject if it fails.
+This is a bounded algorithm, not a search over unknown charts or divisors.
+
+## ONE-HALF attempt in the original quotient
+
+Given the actual representedh with zero Kummerlabel, choose the finite sigma
+grid above, and materialize h_z=h+2sigma(z) as a reduced[a0,b0]. Charge every
+input-DAG refinement. The genericgood event gives degreeg and the numerical
+coefficient/discriminant/branch caps for h_z AND all its halves. Require visible
+nonzero Disc(a0) and Res(a0,f) within caps2g(g-1)s and2gns respectively,
+plus the fixed coefficient cap; otherwise ABORT. These finite tests ensure
+that the later pencil-content bounds use actual certified inputconditions.
+
+Put e=deg a0<=g, c=(f-b0²)/a0 and draw one finite scalaru inZ2. Use
+ A_u=c-2u b0-u²a0, B_u=-b0-u a0.
+A_u is monic degree n-e<=2g+1 and[A_u,B_u]=[a0,b0]. The checked pencil proof
+pays a polynomial-bit grid for simultaneous source squarefreeness, coprimality
+withf, and all mixed resultantsRes(W_half,A_u), without knowing any half.
+Key identities are
+ content_u Res(W,A_u)<=g+vRes(W,f)/2,
+ [u^(4g)]Disc(A_u)=(-1)^(N'(N'-1)/2)*N'^N'*Disc(a0), N'=n-2e odd.
+Integral scaling includes the W poles. Exponential root-ball tails, not
+Markov's weakerbound, pay the union over<=4^g halves. Visible branch and
+discriminant tests certify those inputconditions; invisible mixed bounds
+enter only the success proof. A later B determinant is the actual acceptance
+certificate. The set of halves is fixed BEFOREu is chosen.
+
+Compute ONE square root s_root²=(-1)^deg(A_u)*A_u modf by the native local
+backend below. No exponential sign enumeration. Use the original Stoll
+congruences and degreebounds, append the w_g coordinate row, and solve with
+w_g=1 only if its determinant is visible below the explicit capK_B from the
+checked matrix review. That cap follows from exact resultant/Bezout identities,
+not a generic rank hypothesis. It pays ALL testedM_k and monic normalization.
+On the all-halves goodevent every possible root choice meets the cap.
+
+The exact solution has w monicdegreeg. Before extraction, REQUIRE a visible
+nonzero Res(w,u_stoll) below its fixed cap; otherwise ABORT. The explicit cap
+from the checked Bezout identity is
+ K_inv=2g+K_aw+2K_wr+g(5g+12)S.
+Clear the known coefficient denominators before this visibility test and pay
+that scaling in its precision. Only then compute Q=[w,-v/u_stoll modw].
+The polynomial certificate involving the UNKNOWN half R is an ANALYTIC
+conditioning proof, not an extraction algorithm or acceptance certificate.
+A nonzero B determinant alone does not imply this inverse exists: the exact
+native genus2 finite-grid u=1 counterexample in dyadic_extraction_guard has
+Det(B)=1 but gcd(U,W)=x and Res(U,W)=0. The new test rejects it. This fixes
+soundness off the good event; the paid mixed resultant still proves success.
+The scalar-pencil signs epsilon=(-1)^deg(A_u), B_u=-b0-u*a0 are exact DAG
+identities. In particular do not reuse the original degree-e Kummer sign.
+Bound/refine all coefficients and require the fixed stored polecap. Before
+labeling a new half, also require visible Res(w,f) within2gns; its nonzeroness
+and componentvaluation bounds then pay the finite label backend. Actual algebraic/root/DAG identities
+then prove
+ 2Q=h+2sigma(z), hence2Q-h in ORIGINAL E.
+This is the exact quotient half needed by saturation. The projection ideal
+shortcut from the earlier report is unnecessary; its raw-label discontinuity
+is not being ignored.
+
+## Native local-field labels and square roots (proved interface)
+
+Full384line independent proof has been parent-read and checked:
+audits/reviews/2026-11-13-native-local-squareclass-backend.md. The primary
+source chain was also checked in full: OM2012 Prop3.8/Cor3.10, actual Montes
+INPUT/OUTPUT, Theorems3.14/5.18; local integral-basis Proposition1, Theorems2/3.
+Faithful factor identifiers and condition12 are computed OUTPUT guarantees.
+Okutsu frame numerators are evaluated in the ACTUAL selected factor of the
+original exact f, never in an approximate field subsequently identified by
+an unsupported map. Refinement keeps that identifier. No missing OM advice,
+Round2 criterion from memory, splitting-field compositum or discriminant
+integer factorization is imported. Total factor degree is n. Integral-order
+index and CRT denominators are bounded byD/2. The explicit source costs pay
+arbitrary precision and finitefield arithmetic in log(residue-size).
+
+In each degree-d factorE, use the computed integral multiplication tableO.
+The kernel of z->z^(2^ceil(log2d)) onO/2O is its nilradical; quotient gives
+the actual residuefieldk and its fixedF2basis liftsbeta_j. Recover the FULL
+latticem as lifts of the kernel PLUS2O. From aZ2basisv_i ofm, compute products
+mod2m to obtainm²/2m. Choose the firstv_i nonzero inm/m²: it is a deterministic
+uniformizerpi. This works also unramified, where the kernel alone iszero.
+These choices are frozen. Let d=e*f_res andN=2e+1.
+
+Generatorsg_(i,j)=1+pi^i beta_j,1<=i<N, giveM=2d coordinates. Greedy residue
+digit collection yields binary words. Each generator square collects to a
+wordc_j at later levels. The relation matrixR with COLUMNS2e_j-c_j is
+triangular withdet2^M. Its quotient surjects ontoU1/U_N of the SAME order,
+so it is the exact presentation. Hensel givesU_N subsetU1², and therefore
+ U1/U1²=F2^M/image(Rmod2).
+Add valuationparity. No enumeration of units, residue elements or root signs.
+
+For a inE*, r=v_pi(a), u=a/pi^r, take gamma=sqrt(ubar) by inverseFrobenius
+and its fixed integral liftbeta. Thenv=u/beta² inU1; collectc=c(v).
+Its label is(rmod2, cmodimageR). For a square, solveR lambda=cmod2 with
+binarylambda, setx=(c-Rlambda)/2 ands0=pi^(r/2)*beta*prod_j g_j^x_j.
+The residuala/s0² lies inU_N. Its UNIQUE root h in1+pi^(e+1)O gives actual
+s=s0h. This avoids Teichmuller lifting. Retain the certified rootball
+ s in s0(1+pi^(e+1)O)
+and refine by Newton within it; never redo arbitrary sign selection.
+Finite certification requires v_pi(a-a_tilde)>2e+r and
+v_pi(s_tilde²-a_tilde)>2e+r, withv_pi(s_tilde)=r/2. The two roots are separated
+byexactlye+r/2, so these strict inequalities select one consistent root.
+
+If coefficientpoles<=S and visible v2Res(f,A)<=K, then everycomponent
+normalizedvaluation lies in[-S,K+nS]. A safe integralvaluationcap is
+ V=n(K+nS+S+1).
+Initialbranchclasses use the KNOWN factor subseta and complementf1=f/a:
+representative(-1)^deg(a)(a-f1) is integral, everywhere nonzero, with norm
+valuation2v2Res(a,f1)<=D. This invokes no approximategcd. Genericlabels require
+the visible nonzero branchresultant test. Seedvalues use their explicit
+near-infinity polebounds. All labelcolumns use the same fixed fieldframe.
+
+A conservative additive precisionguard is
+ C_local=20(n+1)^2(D+V+1).
+For P outputdigits requestP+C_local inputandfielddata digits. Multiplication
+by pi^-i uses its integraladjugate andv2Normpi=f_res; throughunitfiltration
+loss<=3d perdivision and at mostpolynomially many such steps. Unitinverse
+hasintegralentries; the selectednear1 inverse squaremap loses EXACTLYone
+binarydigit. Fixed powers/normalization and CRT/indexlosses fit theguard.
+Thus repeatedrefinement does not multiplyprecision. OM preprocessing is
+LasVegas expectedpoly; independent2T-step attempts havefailure<=1/2, so
+O(log1/eta) cappedrestarts pay a boundedABORTclock. This is generic capped
+verified arithmetic, not a retry of failed paid API requests.
+
+## Saturation, total precision and stopping (final assembly under audit)
+
+Initialize B0=A[2] with q=g+t independent generators: the g formal seeds
+mod ORIGINAL E=2L and t rational branch classes. Keep ALL generators
+immutably, with a triangular integer relation matrix initially2I_q. Let its
+mod2 row span beW_s and let Lambda_s be the matrix of current labels. Select
+ v in ker(Lambda_s) OUTSIDE W_s,
+not merely a nonzero coefficient vector. Then v is nonzero in B/2B. Assemble
+its0/1 sum by at mosts-1 binary canonical additions and invoke ONE-HALF.
+Append the new relation row(-v,2). It is exact modulo ORIGINAL E, because
+ 2Q-sum_j v_j P_j=e_assembly+2sigma(z_half) in E.
+The triangular determinant doubles, and the actual subgroup doubles, so the
+presentation remains EXACT. No p-adic equality/E-membership oracle, SNF
+point recombination or large-exponent group operation is needed.
+At labelrankq, B+2A=A; sinceA/B is a finite2group this forcesB=A. Thus the
+returned labelbasis is COMPLETE. Exactlykappa enlargements occur mathematically,
+but the clock uses the COMPUTABLE upperbound
+ K_index=D0+2g(4D+12)+g(2ceil(log2g)+4)+3g.
+Total binary additions plus halfcalls are at most
+ kappa*q+kappa(kappa-1)/2 <= K_index(q+K_index).
+Including initialization, shifted half inputs and scalar draws, a safe cap is
+ T0=4(K_index+3g+10)^4.
+Each groupoperation has m<=6g and polynomially many field/matrix operations.
+Choose fresh-sampling failure<=eta/(10T0) and allocate backend failures
+similarly. Uniformity conditional on past incomingh pays the adaptive union
+bound. Fixedcap failure returnsABORT, never a partial complete-image claim.
+Full260line finite-group-stopping review has been parent-read and checked.
+
+The operationwise arithmetic ledgers are now independently proved and
+parent-read/checked in FULL:
+- canonical-materializer-precision.md (287lines),
+- stoll-half-precision-ledger.md (262lines),
+- native-local-squareclass-backend.md (384lines).
+All dated2026-11-13 in audits/reviews/. They prove fixed ADDITIVE inputguards,
+not merely coefficientcaps. The resulting final assembly is as follows.
+
+Set k=ceil(log2(100*T0/eta)) before any randomdraw, and use it in s and the
+sigma grid. Set
+ t_scalar=k+2g+ceil(log2(16n))+2,
+ K_af0=K_lab=2gns, K_disc0=2g(g-1)s, K_wr=gns,
+ K_af=K_af0+2n*t_scalar,
+ K_disc=K_disc0+4g*t_scalar,
+ K_aw=g+ceil(K_lab/2)+2g*t_scalar.
+Draw scalaru uniformly modulo2^(t_scalar+1). These are RAW valuationcaps.
+Indeed the leading u^(2n) coefficient ofRes(f,A_u) is(-1)^n Res(f,a0);
+the discriminant top coefficient has valuationvDisc(a0), becauseN' isodd;
+and each mixed resultant has degree<=2g and content<=g+K_lab/2. Clearing
+coefficientdenominators shifts content and value equally. The union degree
+of all<=4^g mixedpolynomials plus branch/disc is<=2n4^g. Thus the scalar
+failure is<=2^-k/32 on the geometricgood event, without enumerating halves.
+These explicit caps were independently checked after the first reportpacket.
+
+With L=S_store, D_scale=D+2L n(n-1), H_mat=D_scale+2, the materializer guard is
+ C_mat=nL+72g²H_mat+2.
+Minimum-entry DVR pivoting finds one minimal maximalminor in polynomialtime;
+its selected rational chart normalizes to an integral identitypivotbasis,
+losing at most its determinantvaluation. Stage losses ADD. Fixed lower-weight
+monomials give unit RR solves; monic extraction loses no scaled digits.
+
+Use the EXACT numeric C_half from Section1 of the half precision ledger,
+with S0=S_store and the above caps. In particular S_A=(n+3)S0,
+S_hat=S_A+D+1 pays the pencil and every root's native coefficient poles;
+source tests, root C_root, normalized solve2K_B, guarded extraction2K_X,
+and output label tests all appear in C_half. Check W's storedpolecap BEFORE
+extraction; then the exact odd-degree norm identity bounds U,V even on
+accepted samples outside the success event. No invisible half coordinates
+are used in arithmetic acceptance.
+
+Set V_init=n(D+n*S0+S0+1) and
+ C_init=20(n+1)^2(D+V_init+1)+n*S0+D+10.
+This pays initial knownbranch/seed labels. Choose
+ C_max=C_mat+C_half+1,
+ P_cert=2+C_mat+C_half+C_init+K_B+K_X+K_src,
+ P_star=P_cert+T0*C_max.
+All are computable polynomials in native inputbits andlog1/eta. Initialpoint,
+fixedfield and freshsigma SOURCE leaves are computed toP_star plus their
+fixed setupguards. Sigma sourcecoordinates have fixed t-valuation
+<=2+ceil(log2g), so their rational divisions and near1 Hensel roots have
+additive guard bounded by10(n+1)(2+ceil(log2g))+10; parameterintegers have
+polynomial bitlength. They are native leaves, not expanded ancestorfunctions.
+
+For every subsequent GROUP node setdepthj=1+max(parentdepths) and compute it
+ONCE to precisionP_star-j*C_max. A binary sum usesC_mat; a half uses one
+canonical shift thenC_half, at mostC_max. Parents provide at least the
+required precision, everygroupdepth is<=T0, and everyaccepted output retains
+at leastP_cert digits. The field/source data are available at the same
+sufficient precision. This removes any need for adaptive re-evaluation of old
+point nodes. Keep the shared DAG to certify exact actualpoints, frozenroots,
+pivots and ORIGINAL-E relations; no symbolic expansion or approximation-as-point.
+
+The number of nodes, dimensions, coefficientpolebounds, finite precision and
+sourceparameterbitlength are polynomial. Each node uses polynomial BIT
+arithmetic at these fixed precisions. On failure of any visible certificate
+returnABORT; off-event failures do not produce wrong identities. On the joint
+geometric/pencil/preprocessing success event everytest passes and the exact
+finite quotient proves complete-image stopping. There are<=T0 freshgeometry/
+pencil stages, each uniformconditionalonpast, so their total failure is at
+most2T0*2^-k; allocate fieldpreprocessing<=eta/10. This is<eta. The assembled
+claim has now passed the independent current whole-clock audit and the
+parent's full proof check; admission does not rest on component verdicts alone.
+
+## Falsifiers and admission boundary
+
+A decisive counterexample would invalidate the graphideal saturation/weighted
+basis, actual formal-domain/grid coupling, Stoll resultant factorization, unit
+presentation/square-root procedure, or additiveDAG/finite-presentation clock
+on these native inputs. Hidden modeldata, uncharged factoring/residue costs,
+exponential signs/support/grid enumeration, unsupported exactzero decisions,
+or inability to name actualpoints also block admission. Finite examples only
+check transcription. The written fixed-dyadic algorithm is admitted at the
+exact contract above. LOCAL_KUMMER_ALL_PRIMES.md records the separately
+checked odd-prime extension. GENERAL_NATIVE_SELMER_COMPOSITION.md records
+the resulting global quantum composition under GRH. Implementation,
+practicality, novelty and separation remain unclaimed.

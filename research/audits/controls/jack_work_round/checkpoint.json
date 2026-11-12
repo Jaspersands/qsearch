@@ -1,0 +1,276 @@
+{
+  "captured_at_utc": "2026-11-12T19:25:51.067865+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "partial_estimate_equals_total_bill": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_control_artifacts": [
+    {
+      "bytes": 3192,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/jack_work_energy_collision/control.sage",
+      "sha256": "a04cdea23b4bf4f186fa166b73a72d64e19d3b115e86143036644e863ecb63e0"
+    },
+    {
+      "bytes": 7086,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/jack_work_energy_collision/result.json",
+      "sha256": "9aa7aa52b9124dbcd088f88a79319c2a7d881f1465bfca15b0e9627cf8e667c0"
+    }
+  ],
+  "control_note": "Existing two-shape exact energy-collision control hashed only, no run or sweep.",
+  "dispatch": {
+    "bytes": 2827,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-jack-work/dispatch.json",
+    "sha256": "25c3efb1ad696cbb5bd8ea2ddb70a4a20129e2be83879c772b7688c752c16068"
+  },
+  "dispatch_mutation_scope": "Only final job status/billing/usage/session/parent-read metadata changed; raw results, topic source note and prior ledgers unchanged.",
+  "exclusions": [
+    {
+      "reason": "Separate newer pass; not read, hashed or counted here.",
+      "scope": "All log-precision requests/packets, new Taylor sources and associated evolving reviews"
+    },
+    {
+      "reason": "Not hashed or edited. Only the explicitly authorized exact parent work-note byte snapshot is retained.",
+      "scope": "Evolving STATE/HANDOFF/workflow/topic originals"
+    },
+    {
+      "reason": "Preserved unchanged with all observed partial counters excluded from known usage totals.",
+      "scope": "Four inherited UNKNOWN bills"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 2827,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-jack-work/dispatch.json",
+      "sha256": "25c3efb1ad696cbb5bd8ea2ddb70a4a20129e2be83879c772b7688c752c16068"
+    },
+    {
+      "bytes": 1049,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-jack-work/jack-coarse-work-law.md",
+      "sha256": "a6798963b7a837b5020e6e524fa79754385eebc56a605b056eee21abf0b0dcbd"
+    },
+    {
+      "bytes": 1043,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-jack-work/jack-schur-positive-work.md",
+      "sha256": "0a21d4409da421580e88d07a6e50ef6ed3420a11b0cc13e10bf884b24d31dbca"
+    },
+    {
+      "bytes": 4167,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-jack-work/native-contract.md",
+      "sha256": "516d8f81329aa719d5d1df0a7a4442499ab00ed2bf2a4be34f3e1e0db13ef80e"
+    },
+    {
+      "bytes": 16625,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-jack-work/work-primary.txt",
+      "sha256": "e2a817beac3d5fb6772fd20f50d2bd09c7cb3da26dc6332bbf5d4e83839230f6"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 18091,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/jack_classical_round/checkpoint.json",
+    "sha256": "6d5896b9dc7ecfb74e95291e00bc8e82d7e8dd2e749c09db6c387bfc7aedc49b"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 18263,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/jack_classical_round/usage.json",
+    "sha256": "04d3319df560cbdbff5fffcac02ac2ea19597434b937a79b126528728aae51a9"
+  },
+  "not_frozen": "All log-precision jobs/new Taylor sources and evolving STATE/HANDOFF/topic originals. Exact authorized work-note snapshot is a labelled immutable copy, not a live original hash.",
+  "parent_work_note_snapshot": {
+    "bytes": 7821,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/jack_work_round/parent_work_note_snapshot.md",
+    "sha256": "81f64710685b98827d41412f93db7fd7f5a14c3fc50f4c226e548c8a7e431d10"
+  },
+  "parent_work_note_snapshot_provenance": {
+    "captured_at_utc": "2026-11-12T19:25:51.067865+00:00",
+    "purpose": "Retain the current parent independent z-mixture proof at this milestone; not a new review or inference from a passing finite control.",
+    "snapshot_kind": "EXACT_PARENT_WORK_NOTE_BYTE_SNAPSHOT",
+    "source_bytes": 7821,
+    "source_edited": false,
+    "source_path": "/Users/jaspersands/Developer/qsearch/research/JACK_BENJAMIN_ONO_WORK.md",
+    "source_sha256": "81f64710685b98827d41412f93db7fd7f5a14c3fc50f4c226e548c8a7e431d10"
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 240639,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/borodin_olshanski_z.pdf",
+      "sha256": "7f8af6e59a190c3bd025fa67d20cf9334607183cfe06a6588fdc2beacc971a6d"
+    },
+    {
+      "bytes": 67357,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/borodin_olshanski_z.txt",
+      "sha256": "5db3182b9c120b83a7a661fd040f0ee91677270d56c21eb91b14811324562bff"
+    },
+    {
+      "bytes": 1706857,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/tierz_work.pdf",
+      "sha256": "d7d374af2ada6e99b22a730857987c2576ceac1d331d880257193c482f371b11"
+    },
+    {
+      "bytes": 110430,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/tierz_work.txt",
+      "sha256": "b21d9acee1b3d812c3c43bf572f0daa1c60eb30a0e71f68788f3d43fd8fef037"
+    },
+    {
+      "bytes": 348506,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/jiang_metropolis.pdf",
+      "sha256": "ac4ae58320c29d6ada7b199f29f9105d6f769bd69c870ccd53edff7526acde5c"
+    },
+    {
+      "bytes": 117698,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/jiang_metropolis.txt",
+      "sha256": "50ee6dbf181eb3df872c79ed263e81ab35fcb509be127cc47c580109a81bf892"
+    },
+    {
+      "bytes": 615637,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/diaconis_ram.pdf",
+      "sha256": "848b00bc849e672fb6784b8e25c1cd2f635a71fd1a8512c44ae6358a6f51f21c"
+    },
+    {
+      "bytes": 155911,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/diaconis_ram.txt",
+      "sha256": "366becd0fed064dd1ebc577595ea4d97331caecfc4aaab660022d0bb9a0484a0"
+    },
+    {
+      "bytes": 734785,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_transform/mickler_moll.pdf",
+      "sha256": "c622e3039eb10e9745bf5dfd4130f854d330a55f2d1d992de65091f103c236b1"
+    },
+    {
+      "bytes": 86114,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_transform/mickler_moll.txt",
+      "sha256": "bbb6225c5025ccc833ffa2601474997c6b1e80c08ef7223bb2bc2de2da02269a"
+    }
+  ],
+  "prior_hash_policy": "Frozen Jack-classical usage/checkpoint remain byte-identical; no older artifact repinning or recursive history scan.",
+  "review_artifacts": [
+    {
+      "bytes": 9967,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-jack-external-value-selection.md",
+      "physical_LF_count": 192,
+      "sha256": "0891b9ce5645ffb44086eafa4bfb7a14b56ea30a5f9ae976d14dc80f67311607"
+    }
+  ],
+  "scope": "Exactly two terminal Jack-work requests; mechanical usage/stable source/control/note snapshot only, no scientific conclusions.",
+  "status": "TERMINAL_JACK_WORK_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1049,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coarse-work-law/context-00.txt",
+      "sha256": "a6798963b7a837b5020e6e524fa79754385eebc56a605b056eee21abf0b0dcbd"
+    },
+    {
+      "bytes": 4167,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coarse-work-law/context-01.txt",
+      "sha256": "516d8f81329aa719d5d1df0a7a4442499ab00ed2bf2a4be34f3e1e0db13ef80e"
+    },
+    {
+      "bytes": 16625,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coarse-work-law/context-02.txt",
+      "sha256": "e2a817beac3d5fb6772fd20f50d2bd09c7cb3da26dc6332bbf5d4e83839230f6"
+    },
+    {
+      "bytes": 800969,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coarse-work-law/provider-response.json",
+      "sha256": "9083619bc4c63a915223f2946873c3cc33997e1373dfebef4e9def34c6b691dc"
+    },
+    {
+      "bytes": 24279,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coarse-work-law/request.json",
+      "sha256": "c932d023cd6e426fb69dd594731c0242607111f1ca7e7193fd07fe59198e47c6"
+    },
+    {
+      "bytes": 8139,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coarse-work-law/response.md",
+      "sha256": "40138e2af22cc79b4a4c3d773aeb820afc908da324ed54171cd238e12ac325e6"
+    },
+    {
+      "bytes": 1585,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coarse-work-law/result.json",
+      "sha256": "472615f9a9203ffda6d6cee7495da4e2143d14b894d3afa69bd404d67a6b9ee8"
+    },
+    {
+      "bytes": 4167,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-schur-positive-work/context/000.txt",
+      "sha256": "516d8f81329aa719d5d1df0a7a4442499ab00ed2bf2a4be34f3e1e0db13ef80e"
+    },
+    {
+      "bytes": 16625,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-schur-positive-work/context/001.txt",
+      "sha256": "e2a817beac3d5fb6772fd20f50d2bd09c7cb3da26dc6332bbf5d4e83839230f6"
+    },
+    {
+      "bytes": 1043,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-schur-positive-work/prompt.txt",
+      "sha256": "0a21d4409da421580e88d07a6e50ef6ed3420a11b0cc13e10bf884b24d31dbca"
+    },
+    {
+      "bytes": 24718,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-schur-positive-work/request.json",
+      "sha256": "6be7d8301393a10ee9038f9fb03b3f4863b75ee964c11f124c4bc2a7683798a7"
+    },
+    {
+      "bytes": 3060,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-schur-positive-work/response.md",
+      "sha256": "9ccd89232672c59d2b57010155acddf0eb56911e497b6a1550f77148e11b9976"
+    },
+    {
+      "bytes": 1669,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-schur-positive-work/result.json",
+      "sha256": "16f59d7081d50d6ab1fda40e55175f83e429c9f5adbb16029af4cb1bd2d6791f"
+    }
+  ],
+  "two_terminal_results_and_responses": [
+    {
+      "obligation": "jack-coarse-work-law",
+      "response": {
+        "bytes": 8139,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coarse-work-law/response.md",
+        "sha256": "40138e2af22cc79b4a4c3d773aeb820afc908da324ed54171cd238e12ac325e6"
+      },
+      "response_characters": 8131,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1585,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coarse-work-law/result.json",
+        "sha256": "472615f9a9203ffda6d6cee7495da4e2143d14b894d3afa69bd404d67a6b9ee8"
+      },
+      "session_id": 75995,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "jack-schur-positive-work",
+      "response": {
+        "bytes": 3060,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-schur-positive-work/response.md",
+        "sha256": "9ccd89232672c59d2b57010155acddf0eb56911e497b6a1550f77148e11b9976"
+      },
+      "response_characters": 2876,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1669,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-schur-positive-work/result.json",
+        "sha256": "16f59d7081d50d6ab1fda40e55175f83e429c9f5adbb16029af4cb1bd2d6791f"
+      },
+      "session_id": 86515,
+      "status": "truncated",
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "unique_hashed_artifact_count": 35,
+  "usage_snapshot": {
+    "bytes": 15022,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/jack_work_round/usage.json",
+    "sha256": "33c15d552e840ab122a494d824e601271f94c4f2abdad49278487bfa10cc3e87"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-13",
+  "local_ceiling_usd": 4,
+  "note": "Two distinct newly source-backed lemmas; not repeats, ceilings notcharges.",
+  "jobs": [
+    {
+      "id": "wave-sparse-deflation",
+      "provider": "claude",
+      "role": "constructive",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-wave-source-lemmas/wave-sparse-deflation.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-wave-source-lemmas/contract.md",
+        "research/audits/api_inputs/2026-11-13-wave-source-lemmas/sparse-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-wave-sparse-deflation",
+      "status": "completed",
+      "session_id": 91843,
+      "session_reaped": true,
+      "parent_read": "full",
+      "note": "Exact quotient proof accepted with parent source correction5^6 versus56; safe gap2^27B. General approximate deflation remainsopen."
+    },
+    {
+      "id": "wave-uniform-green-envelope",
+      "provider": "claude",
+      "role": "classical",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-wave-source-lemmas/wave-uniform-green-envelope.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-wave-source-lemmas/contract.md",
+        "research/audits/api_inputs/2026-11-13-wave-source-lemmas/green-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope",
+      "status": "truncated",
+      "session_id": 51592,
+      "session_reaped": true,
+      "parent_read": "EMPTY truncation; no findings",
+      "note": "No retry. Not a completed review."
+    }
+  ]
+}

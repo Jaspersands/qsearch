@@ -65,9 +65,24 @@ def test_artifact_matches_printed_table(artifact):
     assert (wc["2^31-1"], wc["2^61-1"], wc["2^127-1"]) == ("944.9", "555.4", "61.5")
 
 
+# Since 2026-11-13 main.tex prints the combined column at the Schedule-1 depth L_d of eq:Bd
+# (Lemma lem:rounds); PRINTED above (the theorems/rees_fcs_budget.py artifact) is the full
+# depth, now quoted in the caption. The zero-sum-depth column is recomputed by
+# research/audits/reviews/2026-11-13-rees-full-tables/recompute_fcs.py.
+ZERO_SUM_DEPTH = ROOT / "research" / "audits" / "reviews" / "2026-11-13-rees-full-tables" / "recompute_fcs.json"
+
+
 @pytest.mark.skipif(not MAIN.exists(), reason="paper source not present")
 def test_printed_table_is_the_live_main_tex_table():
-    assert _table_from_main() == PRINTED
+    zs = json.loads(ZERO_SUM_DEPTH.read_text(encoding="utf-8"))
+    assert zs["published_reproduced"]
+    expected = {}
+    for r in zs["rows"]:
+        assert tuple(r["published"][c] for c in fb.COLUMNS) == PRINTED[r["label"]]
+        expected[r["label"]] = tuple(r["zero_sum"][c] for c in fb.COLUMNS)
+        # only the combined column depends on the depth
+        assert expected[r["label"]][1:] == PRINTED[r["label"]][1:]
+    assert _table_from_main() == expected
 
 
 def test_artifact_is_current():

@@ -1,0 +1,340 @@
+Actual primary excerpt; textSHA256 ea089e5ae5e438834c8f2def8a0e4e4c624bdb58f1a5d7cc52aed256bc908ae8
+Source file research/audits/sources/new_native_wave/martin2006.txt
+URL https://inside.mines.edu/~pamartin/ref-paps/R094_WMw.pdf
+
+
+PhysicalLF160-456
+                                  Z p Z p
+                            1
+      ðAgÞðm; nÞ ¼                             rðn; g; kÞGðn; gÞeiðmnþngÞ dn dg;
+                          ð2pÞ2      p     p
+ 622                                          P.A. Martin / Wave Motion 43 (2006) 619–629
+
+where r is defined by Eq. (5). This equation and Eq. (11) imply that rG ¼ 1, whence
+                  Z p Z p iðmnþngÞ
+              1           e
+     gmn ¼      2
+                                   dndg:                                                                        ð12Þ
+            ð2pÞ  p  p rðn; g; kÞ
+As r (n, g; k) is even in n and in g, we obtain
+                  Z pZ p
+              1           cos mn cos ng
+      gmn ¼ 2                           dn dg;
+              p 0 0         rðn; g; kÞ
+which shows that gmn is even in m and in n; hence, we can assume that m P 0 and n P 0. Also, interchanging m
+and n, and n and g, shows that gmn = gnm.
+   The formula Eq. (12) is well known. See, for example, [11, Eq. (5.31)].
+   The Green’s function for a discrete waveguide, with gmn = 0 at m = ±M for all n and a finite positive integer
+M, has been used by Glaser [13]. Such a gmn can be called an exact Green’s function, as it satisfies some addi-
+tional boundary conditions. For the calculation of some static exact Green’s functions, see [27].
+
+4. The far-field behaviour of gmn
+
+   In order to build a scattering theory, we need to knowpthe      far-field behaviour of the Green’s function. Thus,
+                                                             ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+we require the behaviour of gmn as R ! 1 where R ¼ m2 þ n2 .
+   Now, formulas such as Eq. (12) have been studied extensively: changes in the difference relation Eq. (2) lead
+to different symbols. The far-field properties of the corresponding Green’s function depend crucially on
+the zeros of r within the square of integration, B1. If r 5 0 in B1, then gmn decays exponentially with
+R [9, p. 404, 10, p. 82]; this is our situation when k2 > 8.
+   More generally, r will vanish at places within B1, implying that the integrand in Eq. (12) has singularities.
+For certain equations, including the discrete form of Laplace’s equation (put k = 0 in Eq. (2)), r has a non-
+integrable singularity at the origin, and so the formula Eq. (12) must be modified [28, 21].
+   Returning to our specific gmn, suppose that k2 < 8. Then r in Eq. (12) vanishes along certain curves in B1.
+We have to specify how to handle the corresponding singularities. Physically, we seek a solution for gmn that is
+outgoing at infinity.
+
+4.1. The method of Koster
+
+  One standard approach begins by giving the wavenumber a small positive imaginary part: replace k2 by
+      k 2 þ id; with 0 < d   1;                                                                                 ð13Þ
+and let d ! 0 at the end of the calculation. Then, use an integral representation for (r + id) , where r (n, g; k2)
+                                                                                                 1
+
+is real. Koster [15] used the formula
+                   Z 1
+         1
+             ¼  i      eiðrþidÞf df                                                                           ð14Þ
+      r þ id        0
+
+in Eq. (12), giving
+                              Z p Z p Z 1
+                1
+      gmn ¼           2
+                        lim                  e df eiRðn cos aþg sin aÞþifr dfdndg;                              ð15Þ
+              ið2pÞ    d!0þ     p    p   0
+
+
+where m = R cos a and n = R sin a; we can assume that 0 6 a 6 12p. Then, Koster ‘follows the method of
+stationary phases and assumes that the principal contribution to the integral comes from that region where
+the variation of the exponent is small’ [15, p. 1440]. However, it is not immediately clear how to justify
+this assumption, because the large parameter R is not a factor in the exponent. Instead, we simply replace
+Eq. (14) by
+                   Z 1
+        1
+             ¼  iR     eiRðrþidÞf df;
+      r þ id        0
+                                              P.A. Martin / Wave Motion 43 (2006) 619–629                        623
+
+when substituted in Eq. (12), we obtain
+                      Z p Z p Z 1
+              R
+    gmn ¼       2
+                  lim              e ef eiRUðn;g;fÞ df dn dg;                                                 ð16Þ
+           ið2pÞ e!0þ  p  p 0
+where
+      Uðn; g; fÞ ¼ n cos a þ g sin a þ frðn; g; k 2 Þ
+is real and we have put
+      d ¼ e=R with 0 < e   1:
+The integral in Eq. (16) is amenable to the three-dimensional method of stationary phase. Thus, from [2, Eq.
+(8.4.44)], we obtain
+                       3=2
+                R    2p     expfiRUðx0 Þ þ 14ipsigAg
+      gmn         2
+                                  pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+             ið2pÞ R                j det Aj
+as R ! 1, where x0 = (n0, g0, f0) is a relevant point of stationary phase, the 3 · 3 matrix A has entries
+               o2 U
+      Aij ¼           evaluated at x0 ;
+              oni onj
+with n1 = n, n2 = g and n3 = f, and sigA is the signature of A (equal to the number of positive eigenvalues of A
+minus the number of negative eigenvalues).
+   To find x0, we put oU/oni = 0 for i = 1, 2, 3, giving three equations,
+      rðn0 ; g0 ; k 2 Þ ¼ 0;   cos a   2f0 sin n0 ¼ 0;        sin a   2f0 sin g0 ¼ 0:                         ð17Þ
+The first of these shows that the pair (n0, g0) corresponds to a propagating lattice wave; see Eq. (4). Hence,
+RU(x0) = mn0 + ng0. The other two equations in Eq. (17) determine the (artificial) parameter, f0, and the
+direction of propagation: the direction of observation (given by a) coincides with the direction of the group
+velocity. Thus,
+                                    1=2
+      2f0 ¼ ðsin2 n0 þ sin2 g0 Þ          and sin a sin n0 ¼ cos a sin g0 :                                   ð18Þ
+Relevant points x0 have f0 > 0, so that Eq. (17)2,3 give sin n0 P 0 and sing0 P 0. (Recall that 0 6 a 6 12 p.) Giv-
+en a solution x0 with 0 6 n0 < p and 0 6 g0 < p, we see that Eq. (17)2,3 are also satisfied if we replace n0 by
+p   n0, or g0 by p   g0, or both; however, these replacements do not satisfy Eq. (17)1. Consequently, there
+is only one relevant point of stationary phase, x0. For A, we obtain
+              0                             1
+                f0 cos n0 0          sin n0
+      A ¼  2@ 0           f0 cos g0 sin g0 A;
+              B                             C
+
+                    sin n0      sin g0        0
+whence detA = 8f0(cosn0 + cosg0) (1   cosn0 cosg0). We notice that detA = 0 when k2 = 4, so that the station-
+ary-phase calculation must be modified for this special case.
+   The eigenvalues of A, ki with i = 1, 2, 3, are given by solving the cubic, det(A   kI) = 0. They are all real.
+The product k1 k2 k3 = detA. Elementary considerations show that sigA =  1 when 0 < k2 < 4 and sigA = 1
+when 4 < k2 < 8.
+   For more explicit results, suppose that 0 < k2 < 4 so that we can use Eq. (10),
+      2 sin 12n0 ¼ k cos h0     and      2 sin 12g0 ¼ k sin h0 :
+Then, h0 is determined from Eq. (18)2:
+
+                                                        2ð1   tan2 aÞ
+              qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                           p                          ﬃ
+     tan h0 ¼  k þ k2 þ tan2 a with k ¼                               :                                       ð19Þ
+                                                           4   k2
+We find that detA > 0,
+ 624                                                       P.A. Martin / Wave Motion 43 (2006) 619–629
+
+
+       det A ¼ kð4   k 2 Þð2   k 2 sin2 h0 cos2 h0 Þf4   k 2 ðcos4 h0 þ sin4 h0 Þg 1=2 :
+Finally, we obtain
+
+              eiðmn0 þng0 Þ eip=4 f4   k 2 ðcos4 h0 þ sin4 h0 Þg1=4
+       gmn     pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ as R ! 1:            ð20Þ
+                  2pkR         ð4   k 2 Þð2   k 2 sin2 h cos2 h Þ             0       0
+
+
+Apart from a constant multiplicative factor, the formula Eq. (20) agrees with one on p. 84 of Economou’s
+book [11], where a paper by Callaway [5] is cited. In fact, Callaway’s paper contains the analogous result
+for a three-dimensional cubic lattice. See also [26] and [20, pp. 376–381].         pﬃﬃ
+   The approximation Eq. (20) simplifies on the diagonal, where m = n. Then, R ¼ n 2, h0 = p/4, n0 = g0,
+cosn0 = (4   k2)/4 and
+
+       cos2n0 ¼ 1   k 2 þ k 4 =8;
+
+so that Eq. (20) reduces to
+
+                           e2inn0 eip=4
+       gnn     qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ     as n ! 1:                                                         ð21Þ
+                                        1=4
+                pknð4   k 2 Þð8   k 2 Þ
+
+
+4.2. The method of Lifshitz
+
+   For an alternative method, return to Eq. (12), the double integral over the square B1. Let B 0 denote the
+smaller square, with corners at (n, g) = (±p, 0) and (0, ±p), and put B00 = B1 n B 0 . Suppose that 0 < k2 < 4
+so that all zeros of r are in B 0 and not in B00 . Then,
+       gmn ¼ g0mn þ g00mn ;
+
+where
+
+                   1             eiðmnþngÞ                     1                           eiðmnþngÞ
+                           Z                                                          Z
+       g0mn ¼          2
+                                            dndg and g00mn ¼      2
+                                                                                                     dn dg:
+                ð2pÞ         B0 rðn;  g; kÞ                  ð2pÞ                     B00 rðn; g; kÞ
+
+
+As r 5 0 in B00 , it follows that g00mn = O (R 1) as R ! 1. (This is the two-dimensional method of stationary
+phase when there are no points of stationary phase; see [2, Eq. (8.4.2)].) For g0mn , we make a change of
+variables, motivated by Eq. (10):
+
+       2 sin 12n ¼ r cos h          and         2 sin 12g ¼ r sin h:
+With these variables, r = k2   r2. Taking account of the Jacobian, we obtain
+                Z 2
+              1     F ðr; RÞr
+       g0mn ¼                 dr
+             p2 0 k 2   r 2
+                    Z 1Z 2
+              R                                  2  2
+            ¼ 2 lim            e ef F ðr; RÞeiRðk  r Þf r dr df;                                              ð22Þ
+             ip e!0 0       0
+
+with
+                       Z p
+                                            eiRWðr;hÞ dh
+       F ðr; RÞ ¼          qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                           ð23Þ
+                         p  ð4   r2 cos2 hÞð4   r2 sin2 hÞ
+
+and W(r,h) = ncosa + gsina. Note that F is real.
+  The idea of changing the variables was used by Lifshitz [16]; see also [17, p. 721, 18, p. 233] and [1].
+  To estimate F(r; R) for large R, we use the ordinary one-dimensional method of stationary phase. We have
+                                                           P.A. Martin / Wave Motion 43 (2006) 619–629            625
+
+         oW   2r cos h sin a              2r sin h cos a
+            ¼ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ   pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ :                                          ð24Þ
+         oh              2
+               4   r sin h        2        4   r2 cos2 h
+
+This vanishes at h0(r) and h0(r) p, with 0 6 h0 ðrÞ < 12p. Thus, there are two points of stationary phase
+within the range of integration. Also,
+                      (                                       )
+     o2 W       2          cos h cos a        sin h sin a
+          ¼ 2rðr   4Þ                     þ                       Whh ðr; hÞ:                        ð25Þ
+      oh2               ð4   r2 cos2 hÞ3=2 ð4   r2 sin2 hÞ3=2
+
+Let P0 ðrÞ ¼ Whh ðr; h0 ðrÞÞ. Then,
+         P0 ðrÞ < 0 and Whh ðr; h0 ðrÞ   pÞ ¼  P0 ðrÞ > 0:
+
+Hence, from [2, Eq. (6.1.5)],
+                  pﬃﬃﬃﬃﬃ
+                      2p                    eiRW0 ðrÞ ip=4 þ e iRW0 ðrÞþip=4
+    F ðr; RÞ   pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                  RP0 ðrÞ ð4   r2 cos2 h ðrÞÞð4   r2 sin2 h ðrÞÞ
+                                                              0                                  0
+
+
+as R ! 1, for 0 < r < 2, where W0(r) = W(r,h0(r)). Then, Eq. (22) gives
+           pﬃﬃﬃﬃﬃﬃﬃﬃ     Z 1Z 2
+             2pR
+      0
+                                f ðrÞe ef eiRUþ ðr;fÞ e ip=4 þ eiRU  ðr;fÞ eip=4 r dr df;
+                                                                                 
+     gmn       2
+                     lim                                                                                       ð26Þ
+            ip e!0 0         0
+
+where
+                                                                  1=2
+         f ðrÞ ¼  P0 ðrÞ 4   r2 cos2 h0 ðrÞ 4   r2 sin2 h0 ðrÞ
+                                             
+                                                                                                               ð27Þ
+and
+         U  ðr; fÞ ¼ ðk 2   r2 Þf   Wðr; h0 ðrÞÞ:
+We now estimate the remaining double integral in Eq. (26) using the two-dimensional method of stationary
+phase. We have
+         oU 
+             ¼ k 2   r2 ¼ 0;
+          of
+so that relevant points of stationary phase have r = k. Then
+         oU           oW       oW     dh0
+             ¼  2rf                       ¼ 0:                                                                 ð28Þ
+          or          or h¼h0 oh h¼h0 dr
+The last term vanishes because of the definition of h0(r). Also
+         oW    2 sin h sin a               2 cos h cos a
+            ¼ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ þ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ ;
+         or     4   r2 sin h      2         4   r2 cos2 h
+which is positive at h = h0(r). Thus, to obtain a positive f, we must take the ‘+’ in Eq. (28): the term in Eq. (26)
+involving U  gives a negligible contribution compared to the U+ term. Notice that
+         RUþ ðk; fÞ ¼ RWðk; h0 Þ ¼ mn0 þ ng0 ;
+where n0, g0 and h0   h0(k) are the same as in Section 4.1.
+  Thus, from [2, Eq. (8.4.44)], we obtain
+            pﬃﬃﬃﬃﬃﬃﬃﬃ
+      0       2pR 2p f ðkÞk
+     gmn              pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ expfiRUþ ðk; fÞ   ipð1   sigAÞ=4g
+             ip2 R     j det Aj
+as R ! 1, where the 2 · 2 matrix A has entries
+ 626                                                     P.A. Martin / Wave Motion 43 (2006) 619–629
+
+
+               o2 U þ
+      Aij ¼            evaluated at r ¼ k;
+               oni onj
+with n1 = r and n2 = f. We find
+             A11  2k
+                         
+      A¼
+              2k 0
+
+so that detA =  4k2 and sigA = 0. (The eigenvalues of A are real and their product equals detA; fortunately,
+we do not need to calculate A11.) Hence
+             pﬃﬃ
+              2
+      gmn   pﬃﬃﬃﬃﬃﬃ eiðmn0 þng0 Þ e ip=4 f ðkÞ as R ! 1:                                               ð29Þ
+            i pR
+Now, from Eq. (24), we have
+                qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ   qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+    cos h0 sin a 4   k 2 cos2 h0 ¼ sin h0 cos a 4   k 2 sin2 h0
+
+which gives
+                      pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+      cos a                4   k 2 cos2 h0
+             ¼ qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ :
+      cos h0
+                4   k 2 ðcos4 h0 þ sin4 h0 Þ
+
+Then, using P0 ðkÞ ¼ Whh ðk; h0 Þ, Eqs. (25) and (27), some calculation gives
+                f4   k 2 ðcos4 h0 þ sin4 h0 Þg1=4
+      f ðkÞ ¼ pﬃﬃ qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ :
+             2 k ð4   k 2 Þð2   k 2 sin2 h0 cos2 h0 Þ
+
+It follows that Eqs. (29) and (20) agree precisely.
+
+
+PhysicalLF573-607
+      gmn        log k as k ! 0:                                                                              ð32Þ
+              2p
+
+6. Discussion
+
+    We have investigated properties of the lattice Green’s function, gmn, for the simplest square lattice. The far-
+field behaviour is given by
+                                                             pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+      gmn   ðkRÞ 1=2 eiRðn0 cos aþg0 sin aÞ Fða; k 2 Þ as R ¼ m2 þ n2 ! 1;                                    ð33Þ
+where m = R cos a and n = R sin a, so that a gives the observation direction; the quantities n0, g0 and F are
+known in terms of a and k2. A corresponding Green’s function for the Helmholtz equation, Eq. (1), is
+                    ð1Þ
+      Gðx; yÞ ¼ H 0 ðKRÞ;                                                                                     ð34Þ
+                          pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+with K = x/c = k/h and R ¼ x2 þ y 2 ; its far-field behaviour is given by
+                           1=2
+      Gðx; yÞ   ðKRÞ             eiKR G0 as R ! 1;                                                            ð35Þ
+where x ¼ R cos a, y ¼ R sin a and G0 is a known constant.
+   There are evident similarities and differences between Eqs. (33) and (35). For example, we see the same
+inverse square-root decay, but the lattice Green’s function is anisotropic: the behaviour of G does not depend
+on the direction a.
+   From Eq. (34), we have G ’ logðKRÞ as KR ! 0, so that G has a logarithmic singularity with respect to K
+and with respect to R. On the other hand, gmn is also logarithmically singular as k ! 0 (see Section 5) but g00 is
+finite (for k 5 0).
+   The methods described in Sections 4.1 and 4.2 generalize to more complicated lattices. In such generaliza-
+tions, the associated curve (or curves or surfaces) in B1 (see Section 2) may also become more complicated, and
+then it may become more difficult to identify the desired ‘outgoing’ solution; this issue was discussed in some
+detail by Maradudin [19, Appendix D].
+   In Section 4.3, we obtained an expression for gnn as a Legendre function. Using the formula
+Qm ðx   i0Þ ¼ Qm ðxÞ   12piPm ðxÞ, we obtain
+                   nþ1
+            ð 1Þ
+      gnn ¼        fpPn 1=2 ðcos uÞ þ 2i Qn 1=2 ðcos uÞg                                                  ð36Þ
+               4p
+for 0 < k2 < 4, where cos u = 1   (4   k2)2/8. This gives the real and imaginary parts of gnn explicitly. For

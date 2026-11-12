@@ -1,0 +1,209 @@
+{
+  "date": "2026-11-13",
+  "selection": "Native dyadic ONE-HALF via high-degree nonspecial/projective divisors",
+  "local_ceiling_usd": 48,
+  "jobs": [
+    {
+      "provider": "openai",
+      "obligation": "nonspecial-rr-compiler",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "max_tokens": 128000,
+      "budget": 8,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/nonspecial-rr-compiler.md",
+      "contexts": [
+        "research/LOCAL_HALVING_SATURATION.md",
+        "research/LOCAL_SATURATION_FINITE_PRECISION.md",
+        "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-high-degree/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler",
+      "session_id": 95161,
+      "status": "completed",
+      "usage_cost_estimate_usd": "1.90826",
+      "disposition": "Full report parent-read; individual deductions under verification, full HALF remains open",
+      "response_bytes": 18949
+    },
+    {
+      "provider": "openai",
+      "obligation": "projective-half-certificate",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "max_tokens": 128000,
+      "budget": 8,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/projective-half-certificate.md",
+      "contexts": [
+        "research/LOCAL_HALVING_SATURATION.md",
+        "research/LOCAL_SATURATION_FINITE_PRECISION.md",
+        "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-high-degree/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate",
+      "session_id": 63301,
+      "status": "completed",
+      "usage_cost_estimate_usd": "2.67815",
+      "disposition": "Full report parent-read; ideal-class correctness and native discontinuity independently checked; no finite HALF",
+      "response_bytes": 12702
+    },
+    {
+      "provider": "openai",
+      "obligation": "uniform-translation-reset",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "max_tokens": 128000,
+      "budget": 8,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/uniform-translation-reset.md",
+      "contexts": [
+        "research/LOCAL_HALVING_SATURATION.md",
+        "research/LOCAL_SATURATION_FINITE_PRECISION.md",
+        "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-high-degree/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset",
+      "session_id": 3165,
+      "status": "completed",
+      "usage_cost_estimate_usd": "1.96277",
+      "disposition": "Full report parent-read; individual deductions under verification, full HALF remains open",
+      "response_bytes": 15563
+    },
+    {
+      "provider": "claude",
+      "obligation": "source-high-degree-gates",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "max_tokens": 32768,
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/source-high-degree-gates.md",
+      "contexts": [
+        "research/LOCAL_HALVING_SATURATION.md",
+        "research/LOCAL_SATURATION_FINITE_PRECISION.md",
+        "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-high-degree/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates",
+      "session_id": 66497,
+      "status": "truncated",
+      "response_bytes": 0,
+      "usage_cost_estimate_usd": 0.754616,
+      "disposition": "EMPTY: no mathematical findings; no retry"
+    },
+    {
+      "provider": "claude",
+      "obligation": "native-content-attack",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 32768,
+      "budget": 3,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/native-content-attack.md",
+      "contexts": [
+        "research/LOCAL_HALVING_SATURATION.md",
+        "research/LOCAL_SATURATION_FINITE_PRECISION.md",
+        "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-high-degree/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dyadic-native-content-attack",
+      "session_id": 70716,
+      "status": "truncated",
+      "response_bytes": 0,
+      "usage_cost_estimate_usd": 1.8865,
+      "disposition": "EMPTY: no mathematical findings; no retry"
+    },
+    {
+      "provider": "claude",
+      "obligation": "whole-loop-invariant",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 32768,
+      "budget": 3,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/whole-loop-invariant.md",
+      "contexts": [
+        "research/LOCAL_HALVING_SATURATION.md",
+        "research/LOCAL_SATURATION_FINITE_PRECISION.md",
+        "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-high-degree/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant",
+      "session_id": 68290,
+      "status": "truncated",
+      "response_bytes": 0,
+      "usage_cost_estimate_usd": 1.8867,
+      "disposition": "EMPTY: no mathematical findings; no retry"
+    },
+    {
+      "provider": "claude",
+      "obligation": "abel-finite-grid-stability",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 4,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/abel-grid-proposal.md",
+      "contexts": [
+        "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-high-degree/precision-primary-excerpts.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability",
+      "status": "empty_response",
+      "new_obligation": "New parent collision-tube and explicit inverse-Abel radius proof, not repetition of truncated compiler tasks",
+      "session_id": 32713,
+      "usage_cost_estimate_usd": 0.13384,
+      "response_bytes": 0
+    },
+    {
+      "provider": "claude",
+      "obligation": "mixed-pencil-resultant",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/mixed-pencil-proposal.md",
+      "contexts": [
+        "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant",
+      "status": "completed",
+      "new_obligation": "Concrete new discriminant leading coefficient and mixed-resultant content proof",
+      "session_id": 58448,
+      "usage_cost_estimate_usd": 0.583884,
+      "response_bytes": 13053
+    },
+    {
+      "provider": "openai",
+      "obligation": "native-ideal-content",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "max_tokens": 128000,
+      "budget": 8,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/native-ideal-content.md",
+      "contexts": [
+        "research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/response.md",
+        "research/LOCAL_KUMMER_HIGH_DEGREE_COMPILER.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content",
+      "status": "completed",
+      "new_obligation": "Quantitative ideal-product defect from explicit Jacobian ideal annihilator",
+      "session_id": 3739,
+      "local_note": "First invocation rejected unsupported CLI flags before any API call; corrected invocation dispatched",
+      "usage_cost_estimate_usd": "2.24978",
+      "response_bytes": 17734
+    },
+    {
+      "provider": "claude",
+      "obligation": "reduced-rr-cokernel",
+      "model": "claude-opus-5-5",
+      "effort": "max",
+      "max_tokens": 64000,
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/reduced-rr-cokernel.md",
+      "contexts": [
+        "research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/response.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel",
+      "status": "truncated",
+      "new_obligation": "Specific low-degree RR Smith cap from output Abel geometry and native ideal defect",
+      "session_id": 98936,
+      "usage_cost_estimate_usd": 1.322548,
+      "response_bytes": 0
+    }
+  ],
+  "note": "Six distinct source/construction/falsifier obligations. Selected mathematical contexts only. No unknown-bill retries. Ceilings not charges/provider caps."
+}

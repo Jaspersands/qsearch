@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4167,
+      "path": "research/audits/api_inputs/2026-11-13-jack-work/native-contract.md",
+      "sha256": "516d8f81329aa719d5d1df0a7a4442499ab00ed2bf2a4be34f3e1e0db13ef80e",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 16625,
+      "path": "research/audits/api_inputs/2026-11-13-jack-work/work-primary.txt",
+      "sha256": "e2a817beac3d5fb6772fd20f50d2bd09c7cb3da26dc6332bbf5d4e83839230f6",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 8399,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T19:07:08.074575+00:00",
+  "input_token_allowance": 8655,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.31462,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-jack-work/jack-schur-positive-work.md",
+    "sha256": "0a21d4409da421580e88d07a6e50ef6ed3420a11b0cc13e10bf884b24d31dbca",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261112T185645.422060Z-79545e70",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 8399,
+    "output_tokens": 64000
+  },
+  "usage_cost_estimate_usd": 1.313596
+}

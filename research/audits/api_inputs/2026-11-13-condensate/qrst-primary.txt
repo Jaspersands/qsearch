@@ -1,0 +1,769 @@
+SOURCE research/audits/sources/macdonald_dynamics/aigner_frieden_qrst_2020.txt
+URL https://arxiv.org/pdf/2009.03526v2
+SHA256 7a8ea8e26c9029bba6d1c288b337826ef24f7635dc6e4e8fe9fc8a522941870b
+
+Physical LF 120-165
+(Corollary 4.16), which we believe are new.
+
+1.1    Methods
+The squarefree part of the Cauchy identity for Macdonald functions says that
+
+                                (1 − t)n      XX
+                                         n! =    ψP (q, t)ϕQ (q, t),                                    (1.3)
+                                (1 − q)n
+                                                λ⊢n P,Q
+
+where ψP and ϕQ are rational functions in q and t coming from the monomial expansion
+of Macdonald polynomials, and in the inner sum, P and Q range over standard Young
+tableaux of shape λ. Although both sides of (1.3) are sums over sets of size n!, there is
+no bijection between these sets that proves the identity. Our motivation for introducing
+qRSt was to prove (1.3) “as bijectively as possible.” Specifically, qRSt assigns to each
+permutation σ ∈ Sn a probability distribution2 P(σ → P, Q) on pairs P, Q of standard
+Young tableaux of shape λ ⊢ n, such that for each P and Q,
+
+                          (1 − t)n X
+                                     P(σ → P, Q) = ψP (q, t)ϕQ (q, t).                                  (1.4)
+                          (1 − q)n
+                                     σ∈Sn
+
+It is clear that (1.3) follows from the existence of probability distributions satisfying
+(1.4). We say that these probability distributions give a probabilistic bijection between
+the weighted sets of permutations and pairs of standard Young tableaux, where the weight
+functions come from (1.3). Figure 2 shows the probabilistic bijection qRSt and the explicit
+form of (1.3) in the case n = 2; note that the weights on the left- and right-hand sides
+are different, so it is not possible to prove (1.3) by an ordinary bijection.
+    The probabilities P(σ → P, Q) are built recursively out of probabilistic rules for
+inserting a new number into a tableau T , and for re-inserting a number in T that is
+displaced, or “bumped,” by the insertion of a smaller number. Borrowing the approach
+used in [19, 2], we define our probabilistic rules using the framework of Fomin’s growth
+diagrams [8, 6]. This allows us to reduce our problem to finding a family of probabilistic
+bijections that prove the commutation relation
+                                                               1−t
+                                     Uq,t Dq,t − Dq,t Uq,t =       I,                                   (1.5)
+                                                               1−q
+
+where Uq,t and Dq,t are (q, t)-weighted versions of the up and down operators on Young’s
+lattice, and I is the identity.
+   2                                                                                 P
+     The expressions P(σ → P, Q) are rational functions in q, t which satisfy           P,Q P(σ → P, Q) = 1,
+rather than honest probabilities. We find it convenient to refer to them as probabilities anyway, with the
+justification that whenever q, t ∈ [0, 1) or q, t ∈ (1, ∞), these rational functions take on values in [0, 1].
+
+Physical LF 798-864
+of variables. Then
+                             Y (txi yj ; q)∞             X
+                                                   =          Pλ (x; q, t)Qλ (y; q, t),                        (3.1)
+                                    (xi yj ; q)∞
+                            i,j≥1                        λ
+
+where (α; q)∞ = (1 − α)(1 − αq)(1 − αq 2 ) · · · is the infinite q-Pochhammer symbol.
+    With a good deal of effort, Macdonald was able to derive explicit formulas for the
+monomial expansions of Pλ and Qλ as weighted sums over semistandard Young tableaux.
+To describe these expansions, we need some notation. For a partition λ and a cell c ∈ λ,
+define
+                                        1 − q aλ (c) tℓλ (c)+1
+                               bλ (c) =                        .
+                                        1 − q aλ (c)+1 tℓλ (c)
+It is useful to view the numerator and denominator of bλ (c) as two different (q, t)-analogues
+of the hook-length hλ (c), which both specialize to the q-analogue 1 − q hλ (c) when q = t.
+For µ ⊆ λ, define
+                            Y           bµ (c)                                  Y                 Y bλ (c)
+        ψλ/µ (q, t) =                          ,               ϕλ/µ (q, t) =           bλ (c)              ,
+                                        bλ (c)                                                      bµ (c)
+                        c∈Rλ/µ − Cλ/µ                                          c∈λ/µ            c∈Cλ/µ
+
+where Rλ/µ is the set of all cells of µ which are in a row that intersects the skew shape
+λ/µ, and Cλ/µ is the set of all cells of                                            5
+                                       µ which are in a column that intersects λ/µ. Note
+that if c ∈ λ − λ/µ ∪ Rλ/µ ∪ Cλ/µ , then bλ (c) = bµ (c), so the rational functions ψλ/µ
+and ϕλ/µ are related by
+                                             bλ (q, t)
+                               ϕλ/µ (q, t) =           ψ (q, t),                      (3.2)
+                                             bµ (q, t) λ/µ
+                 Q
+where bκ (q, t) = c∈κ bκ (c).
+Example 3.2. For λ = (7, 5, 5, 2, 1) and µ = (7, 5, 4, 2, 1) as in Figure 4, we have
+                                      b0,0 b2,1 b3,2                                b0,1 b2,2
+                     ψλ/µ (q, t) =                   ,              ϕλ/µ (q, t) =             ,
+                                      b2,0 b3,1 b4,2                                  b2,1
+                            1−q t     i j+1
+where bi,j is shorthand for 1−q i+1 tj .
+
+   5
+     In [16], Macdonald defines Rλ/µ and Cλ/µ to include the cells in λ/µ, which allows him to express ϕλ/µ
+in a more compact form. We have found our modified definition of Rλ/µ and Cλ/µ to be more convenient
+for the purposes of this paper, even though it requires us to express ϕλ/µ less compactly.
+
+
+                                                         16
+   For a semistandard Young tableau T , define rational functions ψT (q, t), ϕT (q, t) by
+                     Y                                      Y
+         ψT (q, t) =   ψT (i) /T (i−1) (q, t),  ϕT (q, t) =   ϕT (i) /T (i−1) (q, t)
+                      i≥1                                                 i≥1
+
+where, as in previous sections, T (i) is the shape of the subtableau of T consisting of entries
+less than or equal to i.
+Theorem 3.3 ([16, Ch. VI (7.13, 7.13′ )]). The Macdonald polynomials Pλ (x; q, t) and
+Qλ (x; q, t) have the following monomial expansions over semistandard Young tableaux of
+shape λ:
+                        X                                        X
+      Pλ (x; q, t) =           ψT (q, t)xT ,     Qλ (x; q, t) =        ϕT (q, t)xT .
+                   T ∈SSYT(λ)                                               T ∈SSYT(λ)
+
+   It follows from Theorem 3.3 and (3.2) that the functions Pλ and Qλ are related by
+
+                                  Qλ (x; q, t) = bλ (q, t)Pλ (x; q, t).                  (3.3)
+
+   In this paper, we take the somewhat unusual perspective of viewing Theorem 3.3 as
+the definition of the Macdonald polynomials Pλ and Qλ . The theory of Schur functions
+can be developed in elegant combinatorial fashion by taking the monomial expansion
+Physical LF 1101-1176
+                                           h                                      h
+
+
+    (1 − tv )(1 − q h )                                                                 (1 − q h−1 tv+1 )(1 − q h )
+                             v                                    v
+ (1 − qtv−1 )(1 − q h−1 t)                                                               (1 − q h tv )(1 − q h−1 t)
+                                           h                                      h
+
+    Since we cannot prove (4.3) with a bijection, we believe the next best thing is to prove
+it via a probabilistic bijection (Definition 4.1). That is, for each µ ∈ D ∗ (λ) and ν ∈ U (λ),
+we will define “probabilities” Pλ (µ → ν) and P λ (µ ← ν) such that
+                           X
+                                Pλ (µ → ν) = 1         for µ ∈ D ∗ (λ),                  (4.4)
+                          ν∈U (λ)
+                             X
+                                      P λ (µ ← ν) = 1                  for ν ∈ U (λ),                 (4.5)
+                          µ∈D ∗ (λ)
+
+and
+                             ωλ (µ)Pλ (µ → ν) = P λ (µ ← ν)ωλ (ν).                                    (4.6)
+Remark 4.6. We write “probabilities” because these expressions will actually be rational
+functions in q and t, rather than numbers in [0, 1]. However, we will see in Remark 4.18(1)
+that when q, t ∈ [0, 1) or q, t ∈ (1, ∞), these expressions lie in [0, 1], and are thus actual
+probabilities. For this reason, we will consider the rational functions themselves to be
+probabilities, even though this is, strictly speaking, an abuse of terminology.
+    The main ingredient in defining the probabilities Pλ and P λ is the following pair of
+rational expressions. For integers i, j, set [i, j] = [i, j]q,t = 1 − q i tj .
+Definition 4.7. For partitions λ ⋖ ν, define
+                                  Y [aλ (c), ℓλ (c) + 1] Y [aλ (c) + 1, ℓλ (c)]
+                 αν/λ (q, t) =                                                  ,
+                                    [aν (c), ℓν (c) + 1]   [aν (c) + 1, ℓν (c)]
+                                 c∈Rν/λ                           c∈Cν/λ
+                                  Y [aλ (c) + 1, ℓλ (c)] Y [aλ (c), ℓλ (c) + 1]
+                 αν/λ (q, t) =                                                  .
+                                    [aν (c) + 1, ℓν (c)]   [aν (c), ℓν (c) + 1]
+                                 c∈Rν/λ                           c∈Cν/λ
+
+
+                                                       21
+   It is clear that
+                                                    αν/λ (q, t)
+                                        ω λ (ν) =               .                                     (4.7)
+                                                    αν/λ (q, t)
+To get an intuitive feel for these expressions,
+                                     Q          it is helpful to set q = t and take the limit
+q → 1. For a partition κ, let Hκ = c∈κ hκ (c) be the product of the hook-lengths of κ.
+
+Lemma 4.8. Suppose λ ⋖ ν. Then
+                                                                             Hλ
+                             lim αν/λ (q, q) = lim αν/λ (q, q) =                .
+                             q→1                   q→1                       Hν
+Proof. We have
+                                                                        Y           hλ (c)
+                      lim αν/λ (q, q) = lim αν/λ (q, q) =                                  .
+                      q→1                q→1                                        hν (c)
+                                                                  c∈Rν/λ ∪ Cν/λ
+
+
+This product is equal to Hν /Hλ because hν (c∗ ) = 1 for the single cell c∗ ∈ ν/λ, and
+hλ (c) = hν (c) for each c ∈ λ which is not in the same row or column as c∗ .
+
+   In light of Lemma 4.8, we view αν/λ (q, t) and αν/λ (q, t) as (q, t)-analogues of the ratio
+Hλ /Hν . For later use, we record a conjugation symmetry of these (q, t)-analogues.
+
+Lemma 4.9. We have
+
+                  αν/λ (t, q) = αν ′ /λ′ (q, t),          αν/λ (t, q) = αν ′ /λ′ (q, t).
+
+Proof. These identities follow from the observation that
+                  Y [aλ (c), ℓλ (c) + 1]t,q     Y                 [aλ′ (c′ ) + 1, ℓλ′ (c′ )]q,t
+                                            =                                                     .
+                    [aν (c), ℓν (c) + 1]t,q   ′
+                                                                  [aν ′ (c′ ) + 1, ℓν ′ (c′ )]q,t
+                c∈Rν/λ                              c ∈Cν ′ /λ′
+
+
+Physical LF 1180-1275
+In §4.4 and §4.5, we give two alternative formulations of the probabilities that are better
+suited for certain purposes, such as explicit calculations.
+
+4.3.1    The case µ = λ
+
+                                     PPλ (µ → ν), P λ (µ ← ν) in the case µ = λ. Set
+We start by defining the probabilities
+n(ν/λ) = n(ν) − n(λ), where n(κ) = c∈κ ℓκ (c).
+
+Definition 4.10. For ν ∈ U (λ), define
+
+           Pλ (λ → ν) = tn(ν/λ) αν/λ (q, t),              P λ (λ ← ν) = tn(ν/λ) αν/λ (q, t).
+
+   It follows from (4.7) that these expressions satisfy the compatibility condition (4.6),
+and the following result shows that the expressions Pλ (λ → ν) are “probabilities.”
+
+Theorem 4.11. We have                X
+                                             tn(ν/λ) αν/λ (q, t) = 1.
+                                   ν∈U (λ)
+
+
+                                                    22
+    We will give two proofs of this identity: an algebraic proof via Lagrange interpolation
+in §4.5, and a probabilistic proof via a (q, t)-generalization of the Greene–Nijenhuis–Wilf
+hook walk in §6.2.
+
+Remark 4.12. In the limit q = t → 1, Theorem 4.11 becomes (by Lemma 4.8) the
+identity
+                                 X Hλ
+                                        = 1.                           (4.8)
+                                     Hν
+                                              ν∈U (λ)
+
+Let fλ be the number of standard Young tableaux of shape λ. Using the hook-length
+formula fλ = |λ|!/Hλ , we may rewrite (4.8) as
+                                 X
+                                       fν = (n + 1)fλ ,
+                                         ν∈U (λ)
+
+where n = |λ|. This is a classical identity known as the upper recursion for the numbers
+fλ , and it has many different proofs. For example, it was proved by Greene, Nijenhuis,
+and Wilf in [13] using a “random hook walk” (see Theorem 6.2 below). It can also be
+proved by comparing
+             P        the coefficients of a squarefree monomial on either side of the Pieri
+rule h1 sλ = ν∈U (λ) sν .
+
+4.3.2   The case µ ∈ D(λ)
+For µ ∈ D(λ), set
+                                           1                                        1
+                       βλ/µ (q, t) =               ,         β λ/µ (q, t) =                 .
+                                       αλ/µ (q, t)                              αλ/µ (q, t)
+                                                                            P
+Also set n′ (λ/µ) = n′ (λ) − n′ (µ), where n′ (κ) = n(κ′ ) =                    c∈κ aκ (c).
+
+Definition 4.13. For µ ∈ D(λ) and ν ∈ U (λ), define
+
+                                                                αν/λ (q, t)βλ/µ (q, t)
+                        Pλ (µ → ν) = tn(ν/λ)−n(λ/µ)−1                                  ,
+                                                                   γν/λ/µ (q, t)
+                                                                αν/λ (q, t)β λ/µ (q, t)
+                        P λ (µ ← ν) = tn(ν/λ)−n(λ/µ)−1                                  ,
+                                                                   γν/λ/µ (q, t)
+
+where
+                           ′       ′                                    ′           ′
+                   (1 − q n (λ/µ)−n (ν/λ) tn(ν/λ)−n(λ/µ) )(1 − q n (λ/µ)−n (ν/λ)+1 tn(ν/λ)−n(λ/µ)−1 )
+ γν/λ/µ (q, t) =                                                                                      .
+                                                    (1 − q)(1 − t)
+
+    It is immediate from (4.7) that these expressions satisfy the compatibility condition
+(4.6). Much less obvious is the fact that they are “probabilities.”
+
+Theorem 4.14. For µ ∈ D(λ), we have
+                              X
+                                  Pλ (µ → ν) = 1,
+                                         ν∈U (λ)
+
+and for ν ∈ U (λ), we have                X
+                                                    P λ (µ ← ν) = 1.
+                                        µ∈D ∗ (λ)
+
+
+                                                        23
+    We prove this result using Lagrange interpolation in §4.5. Equation (4.7) and The-
+orems 4.11 and 4.14 show that Pλ and P λ satisfy (4.4), (4.5), and (4.6), so they give a
+probabilistic bijection between the weighted sets (D ∗ (λ), ωλ ) and (U (λ), ω λ ).
+    As in the case µ = λ, it is instructive to consider what happens to these probabilities
+in the limit q = t → 1. Suppose µ ∈ D(λ) and ν ∈ U (λ). Let c1 be the cell in the
+intersection of the row containing the single cell ν/λ and the column containing the single
+cell λ/µ, and let c2 be the cell in the intersection of the column containing ν/λ and the
+row containing λ/µ. It is clear that exactly one of c1 and c2 is in λ; call this cell cµ,ν .
+(Note that if the cells ν/λ and λ/µ are in the same row or column, then λ/µ = {cµ,ν }.)
+Lemma 4.15. If µ ∈ D(λ) and ν ∈ U (λ), then
+                                  lim γν/λ/µ (q, q) = (hλ (cµ,ν ))2 .                           (4.9)
+                                  q→1
+
+Physical LF 1341-1506
+Similarly, the cells containing a red circle (resp., a red ×) contribute a factor 1 − q i tj to
+the numerator (resp., denominator) of β2 and β 2 . The cell containing one circle of each
+color is cµ,ν ; the terms coming from this cell are cancelled by the terms in the numerator
+    ′ . (The terms in the denominator of γ ′ cancel with the terms coming from the two
+of γr,s                                          r,s
+red ×’s adjacent to the shaded red box.)
+
+
+4.4    Explicit formulas for the probabilities
+In this section, we give more explicit formulas for the probabilities Pλ (µ → ν) and P λ (µ ←
+ν) in terms of a set of parameters associated to the partition λ. These formulas provide
+further insight into the probabilities, and they lead to an even more compact formulation
+that is essential for the proofs of Theorems 4.11 and 4.14.
+    Suppose λ is a partition with d distinct part sizes u1 > · · · > ud > 0. Define positive
+integers h1 , . . . , hd and v1 , . . . , vd by taking vi to be the multiplicity of the part ui in λ,
+and setting hi = ui − ui+1 (with ud+1 = 0). The hi (resp., vi ) give the lengths of the
+horizontal (resp., vertical) segments of the boundary of the Young diagram of λ, starting
+from the southeast, as illustrated in Figure 5. We call the vectors h = (h1 , . . . , hd ) and
+v = (v1 , . . . , vd ) the parameters of λ. Set
+
+                          hi,j = hi + · · · + hj ,         vi,j = vi + · · · + vj
+
+for i ≤ j, and hi,j = vi,j = 0 for i > j.
+    The set U (λ) consists of d + 1 elements, which we denote by λ(+0) , . . . , λ(+d) , where
+λ (+s) is obtained from λ by adding a box in row v1,s + 1. The set D ∗ (λ) also consists of
+d + 1 elements, which we denote by λ(−0) , . . . , λ(−d) , where λ(−0) = λ, and for r ≥ 1, λ(−r)
+is obtained from λ by removing a box from row v1,r . This is illustrated in Figure 5.
+    For r, s ∈ {0, . . . , d}, set
+
+             pr,s (q, t) = Pλ (λ(−r) → λ(+s) ),           pr,s (q, t) = P λ (λ(−r) ← λ(+s) ).
+
+
+                                                     25
+For s ∈ {0, . . . , d} and r ∈ {1, . . . , d}, define αs (q, t), αs (q, t), βr (q, t), β r (q, t), γr,s (q, t) by
+
+αs (q, t) = αλ(+s) /λ (q, t),      βr (q, t) = βλ/λ(−r) (q, t),       γr,s (q, t) = γλ(+s) /λ/λ(−r) (q, t),    etc.
+
+Often the partition λ will be clear from context; if not, we will write pr,s [λ](q, t), αs [λ](q, t),
+etc. We will frequently omit the dependence of these expressions on q and t when we are
+not specializing either variable.
+Proposition 4.17. Suppose λ has d distinct part sizes and parameters (h1 , . . . , hd ) and
+(v1 , . . . , vd ). Recall that [i, j] = 1 − q i tj , and set [i, j]+ = [i + 1, j − 1], [i, j]− = [i − 1, j + 1].
+We have
+                                       s
+                                      Y [hi,s , vi+1,s ] Y  d
+                                                                 [hs+1,i−1 , vs+1,i ]
+                               αs =                                                   ,
+                                           [hi,s , vi,s ]          [hs+1,i , vs+1,i ]
+                                     i=1                 i=s+1
+                                   s
+                                   Y                   d
+                                     [hi,s , vi+1,s ]− Y [hs+1,i−1 , vs+1,i ]+
+                            αs =                                               ,
+                                      [hi,s , vi,s ]−     [hs+1,i , vs+1,i ]+
+                                   i=1                   i=s+1
+                     r−1
+                     Y                                               d
+                                                                     Y
+                          [hi,r−1 , vi,r ]+    [0, vr ]+ [hr , 0]−      [hr,i , vr+1,i ]−
+              βr =                           ×                     ×                       ,
+                         [hi,r−1 , vi+1,r ]+    [0, 1]+ [1, 0]−        [hr,i−1 , vr+1,i ]−
+                     i=1                                                   i=r+1
+                           r−1
+                           Y                                         Yd
+                             [hi,r−1 , vi,r ]   [0, vr ] [hr , 0]           [hr,i , vr+1,i ]
+                  βr =                        ×                   ×                           ,
+                           [hi,r−1 , vi+1,r ]    [0, 1] [1, 0]             [hr,i−1 , vr+1,i ]
+                       i=1                                          i=r+1
+                              
+                                  ′
+                              γr,s                                     if 0 < r ≤ s
+                      γr,s =
+                              γ ′ · q −1−2hs+1,r−1 · t1−2vs+1,r if r > s,
+                                  r,s
+
+where                     
+                          
+                           [hr,s , vr+1,s ][hr,s , vr+1,s ]−
+                          
+                                                                                  if 0 < r ≤ s
+                    ′                 [0, 1][1, 0]
+                   γr,s =
+                          
+                          
+                           [hs+1,r−1 , vs+1,r ][hs+1,r−1 , vs+1,r ]+
+                                                                                  if r > s.
+                                             [0, 1][1, 0]
+Thus, the probabilities can be written as
+                                                                          v
+                  
+                   tv1,s αs   if r = 0                                    
+                                                                           t 1,s αs           if r = 0
+                                                                          
+    pr,s (q, t) =                                          pr,s (q, t) =                                      (4.11)
+                        αs βr                                                 α β
+                  
+                  τr,s ′      if r > 0,                                   τr,s s′ r
+                                                                                              if r > 0,
+                          γr,s                                                   γr,s
+
+where                                (
+                                         tvr+1,s                          if 0 < r ≤ s
+                            τr,s =
+                                         q 1+2hs+1,r−1 · t−1+vs+1,r       if r > s.
+    Before giving the proof, we make several observations and give an example.
+Remark 4.18.
+   1. Since the parameters hi and vi are strictly positive, one can easily verify that each
+      of the factors 1 − q i tj appearing in (4.11) satisfies i, j ≥ 0 and i + j > 0, and
+      that the exponents of q and t in τr,s are nonnegative. This makes it clear that
+      Pλ (µ → ν) and P λ (µ ← ν) are nonnegative whenever q, t ∈ [0, 1) or q, t ∈ (1, ∞) (in
+                                                                                           ′ each
+      the latter case, we also use the fact that the expressions for αs , αs , βr , β r , γr,s
+
+                                                        26
+      contain the same number of factors in their numerator and denominator). Since the
+      expressions Pλ (µ → ν) and P λ (µ ← ν) sum to 1, they are honest probabilities in
+      such specializations.
+   2. Each of the factors 1 − q i tj appearing in the formulas (4.11) is associated with a
+      particular cell of Rν/λ , Cν/λ , Rλ/µ , or Cλ/µ , where ν = λ(+s) and µ = λ(−r) . These
+      cells are marked in Figure 5. The proof of Proposition 4.17 consists in verifying
+      that all the other terms in the products defining αν/λ , βλ/µ , etc. cancel out.
+Example 4.19. If λ has one distinct part size, then λ = (hv11 ) is a rectangle. Writing
+h = h1 , v = v1 , we have
+                    1 − tv                    1 − qh                      (1 − qtv−1 )(1 − q h−1 t)
+           α0 =               ,     α1 =                ,         β1 =                              ,
+                   1 − q h tv                1 − q h tv                       (1 − q)(1 − t)
+and the probabilities pr,s are:
+
+                                    1 − tv                                     1 − qh
+                          p0,0 =                                  p0,1 = tv
+                                   1 − q h tv                                 1 − q h tv
+
+                                           1 − q h−1 t                      1 − qtv−1
+                          p1,0 = qtv−1                            p1,1 =               .
+                                            1 − q h tv                      1 − q h tv
+Similarly, the probabilities pr,s are:
+
+                                1 − qtv−1                                      1 − q h−1 t
+                     p0,0 =                                      p0,1 = tv
+                              1 − q h+1 tv−1                                 1 − q h−1 tv+1
+
+                                       1 − qh                                 1 − tv
+                     p1,0 = qtv−1                                p1,1 =                   .
+                                    1 − q h+1 tv−1                         1 − q h−1 tv+1
+Proof of Proposition 4.17. Let ν = λ(+s) . By definition,
+                                   Y [aλ (c), ℓλ (c) + 1] Y [aλ (c) + 1, ℓλ (c)]
+                αs = αν/λ =                                                      .                      (4.12)
+                                     [aν (c), ℓν (c) + 1]   [aν (c) + 1, ℓν (c)]
+                                  c∈Rν/λ                           c∈Cν/λ
+
+Write (x, y) = (hs+1,d + 1, v1,s + 1) for the coordinates of the cell ν/λ. For i = 1, . . . , s,
+the contribution to the second product in (4.12) from the cells (x, v1,i−1 + 1), . . . , (x, v1,i )
+is
+             [hi,s , vi,s − 1] [hi,s , vi,s − 2]       [hi,s , vi,s − vi ]    [hi,s , vi+1,s ]
+                                                 ···                        =                  .
+               [hi,s , vi,s ] [hi,s , vi,s − 1]      [hi,s , vi,s − vi + 1]    [hi,s , vi,s ]
+For i = s + 1, . . . , d, the contribution to the first product from the cells (hi+1,d +
+1, y), . . . , (hi,d , y) is
+    [hs+1,i − 1, vs+1,i ] [hs+1,i − 2, vs+1,i ]       [hs+1,i − hi , vs+1,i ]    [hs+1,i−1 , vs+1,i ]
+                                                ···                            =                      .
+      [hs+1,i , vs+1,i ] [hs+1,i − 1, vs+1,i ]      [hs+1,i − hi + 1, vs+1,i ]    [hs+1,i , vs+1,i ]
+
+This proves the formula for αs . The formulas for αs , βr , and β r are proved in the same
+way, using µ = λ(−r) instead of ν = λ(+s) for the latter two; we omit the details. The
+formula for γr,s comes from the observation that
+
+Physical LF 1528-1699
+nice properties: it takes nonnegative values when q, t ∈ [0, 1) or q, t ∈ (1, ∞) (Remark
+4.18(1)), and it reduces to the row insertion bijection Fλrow when q = t = 0. In addition,
+Pλ , P λ reduces to Fλcol when q = t → ∞ (this is shown in §5.1). It seems possible that
+Pλ , P λ is the unique rational probabilistic bijection (i.e., with “probabilities” in R(q, t))
+with these properties. Perhaps it is even the unique rational probabilistic bijection which
+takes nonnegative values for q, t ∈ [0, 1), and reduces to Fλrow when q = t = 0.
+
+4.5    Proofs of Theorems 4.11 and 4.14
+For the proofs of Theorem 4.11 and Theorem 4.14, we first rewrite the probabilities pr,s
+and pr,s in a more compact form.
+
+Proposition 4.21. Let λ be a partition with parameters (h1 , . . . , hd ) and (v1 , . . . , vd ).
+Set xi = h1,i and yi = v1,i for 0 ≤ i ≤ d (in particular, x0 = y0 = 0). We have
+
+              d
+              Q                                                            d
+                                                                           Q
+                  (q xs tys − q xi−1 tyi )                                     (q xs −1 tys +1 − q xi−1 tyi )
+      p0,s = i=1d                            ,                p0,s = i=1d                                       ,   (4.13)
+               Q                                                       Q
+                    (q xs tys − q xi tyi )                                      (q xs −1 tys +1 − q xi tyi )
+               i=0                                                          i=0
+               i6=s                                                         i6=s
+
+and for r > 0,
+                           d                            d
+                           Y q xr−1+1 tyr −1 − q xi tyi Y                     q xs tys − q xi−1 tyi
+                 pr,s =                                                                                   ,         (4.14)
+                                    q x s t ys − q x i t yi               q xr−1 +1 tyr −1 − q xi−1 tyi
+                           i=0                                     i=1
+                           i6=s                                    i6=r
+                           d                           d
+                           Y   q xr−1 tyr − q xi tyi Y q xs −1 tys +1 − q xi−1 tyi
+                 pr,s =                                                            .                                (4.15)
+                             q xs −1 tys +1 − q xi tyi   q xr−1 tyr − q xi−1 tyi
+                           i=0                                 i=1
+                           i6=s                                i6=r
+
+Proof. The formulas follow directly from the explicit expressions for the probabilities
+pr,s , pr,s in Proposition 4.17. We explain this for p0,s in more detail; the other formulas are
+obtained analogously. Using the definition of xi , yi and the identity [i, j] = −q i tj [−i, −j],
+
+
+
+
+                                                              28
+we obtain
+           s
+           Y                          d
+          ys  [xs − xi−1 , ys − yi ] Y [xi−1 − xs , yi − ys ]
+  p0,s = t
+             [xs − xi−1 , ys − yi−1 ]   [xi − xs , yi − ys ]
+               i=1                               i=s+1
+                     s
+                     Y                                                   d
+                                                                         Y
+                              q xs −xi−1 tys −yi [xi−1 − xs , yi − ys ]    [xi−1 − xs , yi − ys ]
+          = t ys
+                           q xs −xi−1 tys −yi−1 [xi−1 − xs , yi−1 − ys ]    [xi − xs , yi − ys ]
+                     i=1                                                              i=s+1
+                                               d
+                                               Q                                              d
+                                                                                              Q
+                                                      (1 − q xi−1 −xs tyi −ys )                      (q xs tys − q xi−1 tyi )
+                                           = i=1d                                        = i=1d                                   .
+                                               Q                                             Q
+                                                       (1 − q xi −xs tyi −ys )                           (q xs tys − q xi tyi )
+                                                i=0                                               i=0
+                                                i6=s                                              i6=s
+
+    The main idea of our proof is to use Lagrange interpolation. Consider a function
+f : k → k, where k is a field. Given pairwise distinct elements a0 , . . . , ad ∈ k, define the
+interpolation polynomial of f at the positions a0 , . . . , ad by
+                                                         d
+                                                         X                 d
+                                                                           Y x − ai
+                                    Ifa0 ,...,ad (x) =           f (as )                      .
+                                                                                  as − ai
+                                                         s=0               i=0
+                                                                           i6=s
+
+Lemma 4.22. If f is a polynomial of degree at most d, then Ifa0 ,...,ad (x) = f (x).
+
+Proof. Both f and Ifa0 ,...,ad are polynomials of degree at most d which agree at the d + 1
+positions a0 , . . . , ad , so they are equal.
+
+Proof of Theorem 4.11. Writing ai = q xi tyi and bi = q xi−1 tyi , we have
+                                                           d
+                                                           Q
+                                                                 (as − bi )
+                                               p0,s = i=1                         .                                                   (4.16)
+                                                      Qd
+                                                                 (as − ai )
+                                                          i=0
+                                                          i6=s
+
+                                                                                                                             Pd
+(Note that since hi , vi > 0, the xi and yi , and thus the ai , are distinct.) The sum                                            s=0 p0,s
+is the leading coefficient of the interpolation polynomial
+                                                      d Y
+                                                      X d            d
+                                                                     Y x − ai
+                                 Ifa0 ,...,ad (x) =       (as − bi )
+                                                                       as − ai
+                                                      s=0 i=1                     i=0
+                                                                                  i6=s
+
+              Qd
+for f (x) =     i=1 (x − bi ), and hence by Lemma 4.22 equal to 1.
+
+Proof of Theorem 4.14. Fix r > 0. Set ai = q xi tyi for 0 ≤ i ≤ d and bi = q xi−1 tyi for
+1 ≤ i ≤ d, with the exception br = q xr−1 +1 tyr −1 . This allows us to rewrite pr,s as
+                                                 d         d
+                                                 Y br − ai Y as − bi
+                                        pr,s =                                           .                                            (4.17)
+                                                        as − ai             br − bi
+                                                 i=0                 i=1
+                                                 i6=s                i6=r
+
+
+
+
+                                                            29
+                                                           d
+                                                           Q
+Interpolation of the polynomial f (x) =                           (x − bi ) at the positions a0 , . . . , ad gives the
+                                                           i=1
+                                                           i6=r
+identity
+                                  d
+                                  Y             d Y
+                                                X d            d
+                                                               Y x − ai
+                                    (x − bi ) =     (as − bi )           .
+                                                                 as − ai
+                                  i=1                 s=0 i=1                     i=0
+                                  i6=r                    i6=r                    i6=s
+                                                                                               Pd
+Dividing both sides by f (x) and setting x = br , we obtain 1 =                                    s=0 pr,s . (The positivity
+of hi and vi implies that br 6= bi for i 6= r.)
+
+    Now fix s ≥ 0. Set ai = q xi tyi for 0 ≤ i ≤ d, with the exception as = q xs −1 tys +1 , and
+set bi = q xi−1 tyi for 1 ≤ i ≤ d. This allows us to rewrite pr,s as
+
+                          d
+                          Q
+                                (as − bi )                      d
+                                                                Y          d
+                                                                  br − a i Y a s − bi
+                  p0,s = i=1                 ,      pr,s =                                           for r > 0.           (4.18)
+                         Qd                                             as − ai          br − bi
+                                (as − ai )                      i=0               i=1
+                                                                i6=s              i6=r
+                         i=0
+                         i6=s
+
+
+Consider the interpolation polynomial Ifb1 ,...,bd for the degree d − 1 polynomial
+
+                                                 d
+                                                 Y             d
+                                                               Y
+                                         f (x) =   (x − ai ) −   (x − bi ).
+                                                    i=0                    i=1
+                                                    i6=s
+
+Lemma 4.22 gives
+                                                                                                   
+           d                    d                   d
+                                                    X          d                     d
+                                                                                     Y                   d
+           Y                    Y                             Y                                      Y x − bi
+Physical LF 1702-1836
+                                                                                                         br − bi
+           i=0                  i=1                            i=0                   i=1                i=1
+           i6=s                                                i6=s                                     i6=r
+
+                                 Qd                                                                            d
+                                                                                                               Q
+Setting x = as , adding               i=1 (as − bi ) to both sides, and then dividing by                           (as − ai ), we
+                                                                                                               i=0
+                                                                                                               i6=s
+obtain
+                                                                            d
+                                                                            Q
+                            d Y
+                            X d                     d
+                                                    Y                 (as − bi ) X d
+                                         br − a i        as − bi  i=1
+                       1=                                        + d            =     pr,s .
+                                         as − ai         b − bi    Q
+                            r=1 i=0                 i=1 r            (as − ai )   r=0
+                                i6=s                i6=r
+                                                                           i=0
+                                                                           i6=s
+
+Remark 4.23. Remarkably, the expressions for pr,s and pr,s in (4.16), (4.17), and (4.18)
+coincide with the expressions obtained by setting ai = xi + yi and bi = xi−1 + yi in the
+expressions limq→1 pr,s (q, q) and limq→1 pr,s (q, q). Thus, proving Theorems 4.11 and 4.14
+for arbitrary q, t is equivalent to proving them in the limit q = t → 1.
+
+4.6      qRSt: Definition and examples
+In §4.2-4.5, we proved the commutation relation for the (q, t)-up and down operators by
+introducing a family of probabilistic bijections Pλ , P λ between the weighted sets D ∗ (λ)
+
+
+                                                                 30
+and U (λ). In this section, we introduce the probabilistic insertion algorithm qRSt by
+interpreting the Pλ as (probabilistic) local growth rules.
+    We freely use the definitions and notation from §2.3. Let Λ be a growth, and suppose
+ ∈ Λ is a square in the n × n grid whose vertices are labeled by Λ. The square  has
+one of the following three types of configurations of vertices:6
+
+           Type I                           Type II                       Type III
+           µ      µ                    ρ∩λ          ρ                      µ     λ
+
+           µ       µ                        λ      ρ∪λ                     λ      ν
+
+                                        with λ 6= ρ              with µ ∈ D ∗ (λ), ν ∈ U (λ)
+
+Set                                   Y                           Y
+                           P(Λ) =           P(),        P(Λ) =         P(),
+                                      ∈Λ                         ∈Λ
+
+where
+         (                                                          (
+             Pλ (µ → ν)    if  is of type III                          P λ (µ ← ν)   if  is of type III
+P() =                                                     P() =
+             1             otherwise,                                   1             otherwise.
+
+Definition 4.24. Suppose σ ∈ Sn and P, Q ∈ SYT(λ) for some λ ⊢ n. Define
+                           X                               X
+           P(σ → P, Q) =         P(Λ),     P(σ ← P, Q) =         P(Λ).
+                                Λ:σ→P,Q                                    Λ:σ→P,Q
+
+
+Theorem 4.25. The expressions P(σ → P, Q) and P(σ ← P, Q) define!a probabilistic
+                                                 G
+bijection between the weighted sets (Sn , ω) and   SYT(λ) × SYT(λ), ω , where
+                                                           λ⊢n
+
+                           (1 − t)n
+                 ω(σ) =                      and         ω(P, Q) = ψP (q, t)ϕQ (q, t).
+                           (1 − q)n
+
+Moreover, P(σ → P, Q) and P(σ ← P, Q) take values in [0, 1] when q, t ∈ [0, 1) or
+q, t ∈ (1, ∞).
+
+Proof. For a fixed permutation σ, one can obtain all the growths associated with σ by
+starting with the empty partition along the north and west boundaries, and recursively
+filling in the rest of the diagram. When the northwest, southwest, and northeast vertices
+(µ, λ, ρ, respectively) of a square have been filled in, there is either a unique choice for the
+southeast vertex ν (for type I and II squares), or ν is chosen according to the probability
+distribution Pλ (µ → ν) (for type III squares). Thus, the fact that the expressions P(σ →
+P, Q) sum to 1 for fixed σ follows from the fact that the “local probabilities” Pλ (µ → ν)
+sum to 1 for fixed µ and λ. Also, since the “local probabilities” take values in [0, 1] for
+q, t ∈ [0, 1) or q, t ∈ (1, ∞) by Remark 4.18(1), the same is true of P(σ → P, Q).
+     Similarly, by starting with a fixed pair P, Q along the east and south boundaries and
+recursively filling in the rest of the growth according to the “local backward probabilities”
+  6
+    Here we ignore the entry of the permutation matrix in the middle of the square, which allows us to
+merge the third and fourth configurations that appeared in §2.3 into a single type.
+
+
+                                                    31
+P λ (µ ← ν), one sees that the expressions P(σ ← P, Q) sum to 1 for fixed P, Q, and take
+values in [0, 1] for the appropriate values of q, t.
+     Finally, the compatibility relation ω(σ)P(σ → P, Q) = P(σ ← P, Q)ω(P, Q) follows
+from Lemma 4.26 below.
+
+Lemma 4.26. If Λ is a growth from σ to P, Q, then
+                           (1 − t)n
+                                    P(Λ) = P(Λ)ψP (q, t)ϕQ (q, t).
+                           (1 − q)n
+Proof. Let L be a lattice path in Λ from the northeast corner (0, n) to the southwest
+corner (n, 0) consisting of unit steps to the south or west. Let ω(L) be the product of the
+                                                   µ
+weights of the edges in L, where a vertical edge | has weight ψλ/µ (q, t), and a horizontal
+                                                        λ
+edge µ − ρ has weight ϕρ/µ (q, t) (by definition, ψλ/λ = ϕλ/λ = 1). Observe that the lattice
+path consisting of n south steps followed by n west steps has weight ψP (q, t)ϕQ (q, t).
+    Let nw(L) be the set of squares of Λ between L and the path consisting of n west steps
+followed by n south steps, and let nw(L) ∩ σ be the subset of squares in nw(L) containing
+a 1 of the permutation matrix Aσ . Define a partial order on the set of lattice paths by
+L ≤ L′ if nw(L) ⊆ nw(L′ ). We will prove by induction with respect to this partial order
+that
+                   (1 − t)| nw(L)∩σ| Y                       Y
+                                              P()  = ω(L)         P().              (4.19)
+                   (1 − q)| nw(L)∩σ|
+                                         ∈nw(L)                      ∈nw(L)
+
+   The base case is the path consisting of n west steps followed by n south steps, for
+which both sides of (4.19) are equal to 1. For the induction step, it suffices to consider the
+case where nw(L′ ) is obtained from nw(L) by adding a single square, as depicted below.
+                                    ϕρ/µ
+                                µ          ρ                 µ          ρ
+                         ψλ/µ        a                            a         ψν/ρ
+                                λ          ν                 λ          ν
+                                                                 ϕν/λ
+
+The path L contains the red edges connecting λ and ρ with µ, and the path L′ contains
+the blue edges connecting λ and ρ with ν; otherwise the paths are the same. We assume
+that (4.19) holds for L, and show that it holds for L′ in each of the following four cases.
+
+Case 1: a = 0, µ = λ = ρ = ν
+  In this case, replacing L with L′ has no effect on (4.19).
+
+Case 2: a = 0, λ 6= ρ

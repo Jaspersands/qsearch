@@ -1,0 +1,1403 @@
+ACTUAL PRIMARY SOURCE https://arxiv.org/pdf/2211.01586v2
+Original text SHA256 bbb6225c5025ccc833ffa2601474997c6b1e80c08ef7223bb2bc2de2da02269a
+Full text; author statements, not quantum claims.
+                                           Symmetry, Integrability and Geometry: Methods and Applications              SIGMA 19 (2023), 063, 22 pages
+
+
+                                           Spectral Theory of the Nazarov–Sklyanin
+                                           Lax Operator
+                                           Ryan MICKLER a and Alexander MOLL b
+
+                                           a) Singulariti Research, Melbourne, Victoria, Australia
+
+                                               E-mail: ry.mickler@gmail.com
+                                           b) Department of Mathematics and Statistics, Reed College, Portland, Oregon, USA
+
+                                               E-mail: amoll@reed.edu
+
+
+
+
+arXiv:2211.01586v2 [math.CO] 10 Sep 2023
+                                               URL: https://alexander-moll.com
+                                           Received March 19, 2023, in final form August 27, 2023; Published online September 10, 2023
+                                           https://doi.org/10.3842/SIGMA.2023.063
+
+                                                  Abstract. In their study of Jack polynomials, Nazarov–Sklyanin introduced a remark-
+                                                  able new graded linear operator L : F [w] → F [w] where F is the ring of symmetric
+                                                  functionsLand w is a variable. In this paper, we (1) establish a cyclic decomposition
+                                                  F [w] ∼=     λ Z(jλ , L) into finite-dimensional L-cyclic subspaces in which Jack polynomi-
+                                                  als jλ may be taken as cyclic vectors and (2) prove that the restriction of L to each Z(jλ , L)
+                                                  has simple spectrum given by the anisotropic contents [s] of the addable corners s of the
+                                                  Young diagram of λ. Our proofs of (1) and (2) rely on the commutativity and spectral
+                                                  theorem for the integrable hierarchy associated to L, both established by Nazarov–Sklyanin.
+                                                  Finally, we conjecture that the L-eigenfunctions ψλs ∈ F [w] with eigenvalue [s] and constant
+                                                  term ψλs |w=0 = jλ are polynomials in the rescaled power sum basis Vµ wl of F [w] with integer
+                                                  coefficients.
+                                                  Key words: Jack symmetric functions; Lax operators; anisotropic Young diagrams
+
+                                                  2020 Mathematics Subject Classification: 05E05; 33D52; 37K10; 47B35
+
+
+
+
+                                           1     Introduction and statement of results
+                                           Nazarov–Sklyanin introduced in [32] a graded linear operator L to the study of Jack polynomi-
+                                           als [14, 23, 44]. In Section 1.1, we recall the definition of L : F [w] → F [w] in the polynomial
+                                           ring F [w] where F is the ring of symmetric functions with its usual grading and deg w = 1.
+                                           They proved that if one considers the projection π0 : F [w] → F defined by setting w = 0, then
+                                           the operators Tℓ = π0 Lℓ pairwise commute in F for all ℓ and are simultaneously diagonalized
+                                           on Jack polynomials jλ with explicit eigenvalues. Moreover, as the second author observed
+                                           in [27, 29], Nazarov–Sklyanin actually prove in [32] that the eigenvalues of Tℓ at jλ are precisely
+                                           the ℓth moments of the transition measure τλ of the anisotropic Young diagram of λ studied
+                                           in [2, 5, 12, 16, 18, 20, 39].
+                                               In this paper, we determine the spectrum of L in F [w] and identify a distinguished polynomial
+                                           basis ψλs of eigenfunctions of L satisfying π0 ψλs = jλ . We state our result in Theorem 1.4 below.
+                                           In subsequent work [24], the first author uses the spectral theorem established in the present
+                                           paper to derive a new explicit system of constraints on Jack Littlewood–Richardson coefficients
+                                           in terms of a simple new multiplication operation on partitions. Using the results of [24],
+                                           Alexandersson–Mickler [1] prove new cases of the strong Stanley conjecture [44]. We hope that
+                                           the polynomials ψλs introduced in this paper may inspire further applications and are also of
+                                           independent interest.
+2                                                                           R. Mickler and A. Moll
+
+1.1    The Nazarov–Sklyanin Lax operator
+Consider the graded polynomial ring
+
+      F = C[V1 , V2 , . . .]                                                                    (1.1)
+
+in which deg Vk = k. For any ℏ ∈ C, let V−k be the differential operator in F defined by
+                   ∂
+      V−k = ℏk        .                                                                         (1.2)
+                  ∂Vk
+   Since [V−k , Vk ] = ℏk, (1.1) is the Fock space representation of the Heisenberg algebra at
+level ℏ. We will identify F with the ring of symmetric functions in Section 1.2. Introduce a new
+variable w with deg w = 1 and consider the graded polynomial and Laurent polynomial rings
+
+     F [w] = C[w, V1 , V2 , V3 , . . .],                                                        (1.3)
+     F w, w−1 = C w, w−1 , V1 , V2 , V3 , . . . .
+                                            
+
+Define the projection π : F w, w−1 → F [w] to be the linear extension of
+                                        
+
+            (
+               wl if l ≥ 0,
+     πwl =                                                                                      (1.4)
+               0    if l < 0.
+
+    We now present the Lax operator from [32] using the conventions from [30, 36].
+                                                ∂
+Definition 1.1. For any ε, ℏ ∈ C and ∂w = ∂w      , the Nazarov–Sklyanin Lax operator L [32] is
+the graded linear operator L : F [w] → F [w] in the graded polynomial ring F [w] in (1.3) defined
+by
+                      ∞
+                      X               ∞
+                                      X
+      L = εw∂w +                k
+                            V−k w +         Vk πw−k                                             (1.5)
+                      k=1             k=1
+
+for V−k in (1.2), π in (1.4). Below, we may write L = Lε,ℏ to emphasize that V−k depends on ℏ.
+   Due to the presence of π in (1.5), L is well defined with codomain F [w]. Moreover, L preserves
+total degree in F [w] since w∂w preserves degree, multiplication by wk and Vk raise degree by k,
+and V−k and πw−k lower degree by k. The Lax operator Lε,ℏ is a two-parameter perturbation of
+a nilpotent
+           linear  operator L0,0 by linear differential operators which act as derivations in F [w].
+             l    ∞
+   Since w l=0 is a basis of C[w] indexed by N = {0, 1, 2, . . .}, L in (1.5) acts as an N × N
+matrix in F [w] = F ⊗ C[w] with coefficients in End(F ): using the definition of V−k in (1.2), this
+matrix is
+              0ε    V1    V2    V3 V4 · · ·
+                                              
+                                           . 
+           V−1 1ε        V1    V2 V3 . . 
+           
+                                           . 
+                                              
+           V−2 V−1 2ε          V 1 V2 . . 
+           
+      L=                                  .  .                                              (1.6)
+           V−3 V−2 V−1 3ε V1 . . 
+           
+                                          .. 
+           V
+            −4 V−3 V−2 V−1 4ε               .
+               ..   ..    ..    ..    .. ..
+                .      .     .     .    .    .
+
+   One can see from (1.6) that L0,0 is strictly upper triangular if ε = ℏ = 0, hence nilpotent
+in F [w] as we already mentioned. If one sets ε = 0 but keeps ℏ ̸= 0, the diagonal terms
+in (1.6) vanish and the entries of L0,ℏ are constant along diagonals. In this special case, one may
+regard L0,ℏ as a block Toeplitz operator with infinite blocks from End(F ).
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                                 3
+
+1.2   Jack symmetric functions
+Recall that a partition λ of n is a sequence of non-negative integers λi which are weakly decreasing
+0 ≤ · · · ≤ λ3 ≤ λ2 ≤ λ1 and satisfy · · · + λ3 + λ2 + λ1 = n. For any ε1 , ε2 ∈ C, let jλ ∈ F be the
+Jack polynomial in the ring F in (1.1) as defined in [22, 30, 36, 37, 40]. For example, the Jack
+polynomials in degrees 1 ≤ |λ| ≤ 3 are
+
+      j1 = V1 ,
+      j2 = V12 + ε1 V2 ,
+      j1,1 = V12 + ε2 V2 ,
+      j3 = V13 + 3ε1 V1 V2 + 2ε21 V3 ,
+      j1,2 = V13 + (ε1 + ε2 )V1 V2 + (ε1 ε2 )V3 ,
+      j1,1,1 = V13 + 3ε2 V1 V2 + 2ε22 V3 .
+
+For ε2 ̸= 0, these polynomials are equivalent to Jλ (p1 , p2 , . . . ; α), the integral form Jack sym-
+metric function in [14, 23, 44] where pk are the power sum symmetric functions and α is the
+Jack parameter. Precisely, for ε2 ̸= 0, if one sets pk = Vk /(−ε2 ) and α = ε1 /(−ε2 ), then
+                                                   !
+                         V 1    V 2           ε 1
+     jλ = (−ε2 )|λ| Jλ       ,       ,...;          .                                             (1.7)
+                       (−ε2 ) (−ε2 )        (−ε2 )
+
+At ε1 = α and ε2 = −1, jλ = Jλ .
+
+1.3   Addable and removable corners of Young diagrams
+Any partition λ determines a set
+           ∞
+           [
+              (c − 1, r − 1) ∈ N2 : c ∈ {1, 2, . . . , λr }
+             
+      λ=                                                                                         (1.8)
+           r=1
+
+called the Young diagram of λ. We use λ to refer to either the sequence of parts λi or to (1.8).
+Definition 1.2. For λ in (1.8), define the addable and removable corner sets by
+
+     Aλ = s ∈ N2 : s ̸∈ λ and λ ∪ {s} is also a Young diagram ,
+          
+                                                                                                 (1.9)
+     Rλ = s ∈ N2 : s ∈ λ and λ \ {s} is also a Young diagram .
+           
+                                                                                                (1.10)
+
+It is also convenient to define the outer corner set R+
+                                                      λ = Rλ + (1, 1) as shifts of removable
+corners.
+
+
+1.4   The anisotropic content function
+We now define the following function [ · ] : Z2 → C.
+Definition 1.3. For ε1 , ε2 ∈ C, the anisotropic content [s] of s = (N1 , N2 ) ∈ Z2 is defined by
+
+      [s] = ε1 N1 + ε2 N2 .                                                                     (1.11)
+
+   For example, the anisotropic contents of the addable corner set Aλ of partition λ= (1 ≤ 2 ≤ 6)
+in Figure 1 are 3ε2 , ε1 + 2ε2 , 2ε1 + ε2 , and 6ε1 . If ε1 = α, ε2 = −1, these are −3, α − 2, 2α − 1,
+and 6α, the traditional anisotropic contents of the corresponding α-anisotropic Young diagram
+from [16]. For simplicity, we may refer to [s] as the content of s.
+4                                                                                   R. Mickler and A. Moll
+
+
+
+
+Figure 1. The Young diagram of the partition λ = (1 ≤ 2 ≤ 6) of |λ| = 9 with addable corner set Aλ =
+{(0, 3), (1, 2), (2, 1), (6, 0)} (depicted above in circles), removable corner set Rλ = {(0, 2), (1, 1), (5, 0)}
+(depicted above in diamonds), and outer corner set R+        λ = {(1, 3), (2, 2), (6, 1)}. Note that Rλ ⊂ λ but
+R+λ ∩  λ  =  ∅.
+
+
+1.5      Spectral theorem for the Nazarov–Sklyanin Lax operator
+Nazarov–Sklyanin proved in [32] that the ingredients in Sections 1.2–1.4 emerge naturally in
+the spectral theory of the hierarchy Tℓ : F → F defined by Tℓ = π0 (Lε,ℏ )ℓ provided one chooses
+ε1 , ε2 ∈ C so that
+
+        ε = ε 1 + ε2 ,                                                                                   (1.12)
+        ℏ = −ε1 ε2 .                                                                                     (1.13)
+
+    We will show that one can also discover partitions and Jack polynomials in the spectrum of L
+itself.
+Theorem 1.4 (main result). Let L be the Nazarov–Sklyanin Lax operator in (1.5). Assume
+that ε ∈ R and ℏ > 0. Choose non-zero ε1 , ε2 ∈ C parametrizing ε, ℏ by the formulas (1.12)
+and (1.13).
+    (1) The degree n component F [w]n of the graded ring F [w] in (1.3) has a cyclic decomposition
+                       M
+             F [w]n =      Z(jλ , L)                                                        (1.14)
+                         |λ|=n
+
+        as a direct sum of finite-dimensional L-cyclic subspaces Z(jλ , L) indexed by partitions λ
+        of size n and generated by Jack polynomials jλ ∈ F defined in (1.7).
+    (2) The restrictions of L to the subspaces Zλ = Z(jλ , L) in (1.14) all have simple spectrum
+                         
+             spec L Z = [s] : s ∈ Aλ                                                         (1.15)
+                         λ
+
+
+        given by the anisotropic contents (1.11) of the addable corner set Aλ defined above in (1.9).
+        In particular, each cyclic subspace Zλ in (1.14) has dimension dim Zλ = |Aλ |.
+    (3) As a distinguished vector space basis ψλs for the cyclic spaces Z(jλ , L) in (1.14), one can
+        choose the unique polynomials ψλs ∈ F [w] in the variables w, V1 , V2 , . . . indexed by addable
+        corners s ∈ Aλ which are both eigenfunctions of L with eigenvalues [s] as in (1.15), namely
+
+              Lψλs = [s]ψλs ,
+
+        and which project to the Jack polynomial jλ for all s ∈ Aλ upon setting w = 0, namely
+
+              π0 ψλs = jλ ,                                                                              (1.16)
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                                 5
+
+      where π0 : F [w] → F is evaluation at w = 0. In this normalization,
+                       X
+               jλ =           τλs ψλs ,                                                         (1.17)
+                       s∈Aλ
+
+
+      where τλs > 0 are weights of the anisotropic transition measure [16] defined explicitly by
+                          Q
+                                   [s − r]
+                        r∈R+
+               τλs =      Qλ
+                                                                                                (1.18)
+                                   [s − t]
+                       t∈Aλ \{s}
+
+
+      for Rλ the removable corner set (1.10) and R+
+                                                  λ = Rλ + (1, 1) the set of outer corners.
+
+   Before we proceed, let us illustrate our Theorem 1.4 in degree 1. For λ = (1), j1 = V1 and
+Z1 = Z(j1 , L) is two-dimensional with basis {V1 , w}. In this basis, L acts by the matrix
+                
+             0 1
+      L|Z1 =       .                                                                            (1.19)
+             ℏ ε
+
+If ε ∈ R and ℏ > 0, (1.19) has distinct real eigenvalues ε1 and ε2 determined up to permutation
+by the equations ε = ε1 +ε2 and ℏ = −ε1 ε2 characterizing the trace and determinant of (1.19). In
+this way, the parametrization (1.12) and (1.13) above is visible already in degree 1. Using (1.11),
+these simple eigenvalues ε1 = [(1, 0)], ε2 = [(0, 1)] are the contents of the two addable corners
+A1 = {(0, 1), (1, 0)} of the unique partition λ = (1) of size 1. Moreover, as L|Z1 -eigenfunctions
+we can choose
+       (1,0)                               (0,1)
+      ψ1       = V1 + ε1 w,               ψ1       = V1 + ε 2 w
+
+so that at w = 0 one recovers ψ1s w=0 = j1 = V1 the Jack polynomial for both s ∈ A1 .
+
+1.6   Organization of the paper
+In Section 2, we recall two results of Nazarov–Sklyanin [32]. In Appendix A, we collect standard
+results for cyclic spaces of self-adjoint operators in a self-contained appendix. In Section 3, we
+prove Theorem 1.4 using results from Section 2 and Appendix A. In Section 4, we present the
+polynomial eigenfunctions ψλs of L explicitly in degrees |λ| ≤ 3, state an integrality conjecture
+for ψλs , and prove a principal specialization formula for ψλs which implies a special case of our
+integrality conjecture. In Section 5, we discuss our proof and comment on related results in the
+literature.
+
+
+2     Review of two results of Nazarov–Sklyanin
+In this section, we recall two results for the hierarchy Tℓ = π0 Lℓ due to Nazarov–Sklyanin [32].
+
+2.1   Definition of the Nazarov–Sklyanin hierarchy
+Recall F [w] = C[w, V1 , V2 , . . .] in (1.3) and the Lax operator L in (1.5). Let π0 be the projection
+to F = C[V1 , V2 , . . .] defined by setting w = 0.
+
+Definition 2.1. The Nazarov–Sklyanin hierarchy is the set of operators Tℓ = π0 Lℓ : F → F .
+6                                                                                                  R. Mickler and A. Moll
+
+   Here Tℓ is the top-left entry of the ℓth power of L in (1.6). Recall V−k = ℏk ∂V∂ k in (1.2).
+For ℓ = 3,
+               ∞
+               X                                     ∞
+                                                     X                                 ∞
+                                                                                       X
+      T3 =               V−k1 −k2 Vk1 Vk2 +                    V−k1 V−k2 Vk1 +k2 + ε         kVk V−k                (2.1)
+             k1 ,k2 =1                             k1 ,k2 =1                           k=1
+
+
+is the Hamiltonian of the quantum Benjamin–Ono equation on the torus discussed in [32, Sec-
+tion 1]. When ε = 0, (2.1) is the well-known cut and join operator discussed, e.g., in [6,
+Section 1.2].
+
+
+2.2   Commutativity and spectral theorem for the hierarchy
+Theorem 2.2 (Nazarov–Sklyanin [32]). Choose ε1 , ε2 ∈ C which parametrize ε ∈ R and ℏ > 0
+by the formulas (1.12) and (1.13). For u ∈ C \ R, consider the bounded transfer operators
+
+      T (u) = π0 (u − L)−1 : F → F,                                                                                 (2.2)
+
+which encode all unbounded operators in the hierarchy Tℓ = π0 Lℓ as coefficients of u−ℓ−1 .
+
+(1∨ ) The transfer operators (2.2) commute in F for distinct values of u and are simultaneously
+      diagonalized on Jack polynomials jλ in (1.7) with eigenvalues Tλ (u) ∈ C as in
+
+             T (u) jλ = Tλ (u) jλ .                                                                                 (2.3)
+
+(2∨ ) The eigenvalues Tλ (u) ∈ C in (2.3) are determined by the anisotropic contents (1.11) of
+      the elements of the Young diagram λ in (1.8) and their shifts by the product formula
+
+                                   Y (u − [s + (0, 0)])(u − [s + (1, 1)])
+             Tλ (u) = u−1 ·                                                            .
+                                         (u − [s + (1, 0)])(u − [s + (0, 1)])
+                                   s∈λ
+
+
+      Equivalently, if Aλ and Rλ are the addable and removable corner sets in (1.9) and (1.10),
+                             Q
+                                   (u − [r])
+                           r∈R+
+                              λ
+             Tλ (u) = Q                        ,                                                                    (2.4)
+                                   (u − [s])
+                            s∈Aλ
+
+
+      where R+
+             λ = Rλ + (1, 1) is the set of outer corners.
+
+   Our presentation of the results of Nazarov–Sklyanin [32] above differs from what appears
+in [32]. For a proof that Theorem 2.2 is equivalent to the original formulation in Nazarov–
+Sklyanin [32], see [27, Section 8.2] and the discussion in [29, Section 4.3.3]. We label their two
+results (1∨ ) and (2∨ ) since we will now derive (1) and (2) in our Theorem 1.4 by proving that
+(1∨ ) ∧ (2∨ ) ⇒ (1) ∧ (2).
+
+
+3     Proof of main result
+In this section we prove our Theorem 1.4. Throughout, we assume that jλ in (1.7) and L in (1.5)
+have parameters ε ∈ R and ℏ > 0 satisfying ε = ε1 + ε2 as in (1.12) and ℏ = −ε1 ε2 as in (1.13).
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                                7
+
+3.1    Jack–Lax cyclic spaces are finite-dimensional
+We now recall the definition of certain cyclic spaces first considered in [26, Section 5.2.4].
+Definition 3.1. The Jack–Lax cyclic space Zλ is the L-cyclic space generated by jλ
+      Zλ = Z(jλ , L),                                                                            (3.1)
+i.e., the subspace of F [w] spanned by jλ , Ljλ , L2 jλ , L3 jλ , . . . .
+                                           
+
+   A priori, we do not know dim Zλ for Zλ in (3.1). To apply results from Appendix A, we need
+dim Zλ < ∞. The fact that Jack–Lax cyclic spaces Zλ are finite-dimensional follows from the
+next result.
+Lemma 3.2. The graded components F [w]n of F [w] have dimension
+                     n
+                     X
+      dim F [w]n =          p(l),                                                                (3.2)
+                      l=0
+where p(l) is the number of partitions of l.
+Proof . Write µ = 1d1 2d2 · · · to denote a partition µ of size |µ| = ∞
+                                                                      P
+                                                                         k=1 kdk with dk parts
+                                    d1 d2
+of size k. For such µ, let Vµ = V1 V2 · · · . The ring F in (1.1) has graded components Fn
+with dim Fn = p(n) since {Vµ: |µ| = n} is a basis of Fn . Similarly, F [w] in (1.3) has graded
+components F [w]n with basis Vµ wl : |µ| + l = n so (3.2) holds.                              ■
+   For |λ| = n, Jacks are homogeneous jλ ∈ Fn hence jλ ∈ F [w]n . Since L preserves de-
+gree, L preserves F [w]n , so Zλ = Z(jλ , L) ⊂ F [w]n and (3.2) implies dim Zλ < ∞.
+
+3.2    Projections of Jack–Lax cyclic spaces
+Next, we show that Jack polynomials diagonalizing the Nazarov–Sklyanin hierarchy in (1∨ ) of
+Theorem 2.2 implies a remarkable property of Zλ .
+Lemma 3.3. For any partition λ, the projection of the Jack–Lax cyclic subspace in (3.1) to
+F ⊂ F [w] is one-dimensional and spanned by the Jack polynomial jλ :
+      π0 Z(jλ , L) = Cjλ .                                                                       (3.3)
+Proof . For any η ∈ Z(jλ , L), there is a polynomial P so η = P (L)jλ . As a consequence, π0 η is
+a finite linear combination of π0 Lℓ jλ indexed by ℓ ≥ 0. Expanding the resolvent (u − L)−1 =
+P  ∞    −ℓ−1 Lℓ , part (1∨ ) of Theorem 2.2 implies all π Lℓ j ∈ Cj .
+   ℓ=0 u                                                 0    λ    λ                           ■
+   We emphasize that this short proof does not require the explicit formula (2.4) for the eigen-
+values of the Nazarov–Sklyanin hierarchy in (2∨ ) of their Theorem 2.2, only commutativity
+in (1∨ ).
+
+3.3    The Lax operator in Zλ is self-adjoint for the extended Hall inner product
+Let ⟨·, ·⟩ℏ be the inner product on F [w] in which Vµ wl for µ = 1d1 2d2 · · · are orthogonal with
+                                                                              
+
+                    ∞
+              2
+                    Y
+        Vµ wl ℏ =       (ℏk)dk dk !
+                    k=1
+By our discussion in Section 1.2, the restriction of ⟨·, ·⟩ℏ to F is the α-Hall inner product
+from [23, 44].
+Lemma 3.4. If ε ∈ R, ℏ > 0, the restriction of L in (1.5) to any F [w]n or Zλ is self-adjoint.
+                                                                        †
+Proof . Follows from the definition of L in (1.5), the fact that V±k       = V∓k in (1.2) are mutual
+adjoints for ⟨·, ·⟩ℏ , and that the differential operator w∂w is self-adjoint for ⟨·, ·⟩ℏ .       ■
+8                                                                           R. Mickler and A. Moll
+
+3.4   Orthogonality of Jack–Lax cyclic spaces
+We now use the projection formula in (3.3) and the orthogonality of Jack polynomials for the
+Hall inner product on F [14, 23, 44] to prove that the Jack–Lax cyclic spaces themselves are
+orthogonal for the extended Hall inner product.
+
+Lemma 3.5. If λ, γ are distinct partitions of n, Zλ and Zγ are orthogonal in (F [w]n , ⟨·, ·⟩ℏ ).
+
+Proof . If η ∈ Zλ = Z(jλ , L), since jλ is cyclic, there is a polynomial P so that η = P (L)jλ .
+Similarly, if φ ∈ Zγ = Z(jγ , L), there is a polynomial Q so that φ = Q(L)jγ . Then
+
+      ⟨φ, η⟩ℏ = ⟨Q(L)jγ , P (L)jλ ⟩ℏ = ⟨jγ , Q(L)P (L)jλ ⟩ℏ = 0
+
+since L† = L is self-adjoint in F [w]n , π0 Q(L)P (L)jλ ∈ Cjλ by (3.3), and ⟨jγ , jλ ⟩ℏ = 0.         ■
+
+3.5   Spectrum of the Lax operator in Jack–Lax cyclic spaces
+We now show that spectrum of the hierarchy Tℓ = π0 Lℓ found by Nazarov–Sklyanin in (2∨ ) of
+their Theorem 2.2 determines that of L in Zλ . Precisely, the eigenvalues of L|Zλ are simple and
+given by the anisotropic contents [s] of addable boxes s ∈ Aλ .
+
+Proof of part (2) of Theorem 1.4. Since dim Zλ < ∞ by Lemma 3.2, we may apply the
+general linear algebra results in the appendix Section A.2 to the case W = Zλ , J = jλ , and
+L = L|Zλ . From this perspective, formula (2.4) in (2∨ ) of Nazarov–Sklyanin’s Theorem 2.2 gives
+an exact formula for the Titchmarsh–Weyl function T (u) in (A.5), so (A.9) implies (1.15). ■
+
+3.6   Cyclic decomposition of F [w]n into Jack–Lax cyclic spaces Zλ
+Proof of part (1) of Theorem 1.4. In any partition λ, the number of addable and removable
+corners always differ exactly by 1: (1.9) and (1.10) satisfy
+
+      |Aλ | = |Rλ | + 1.
+
+By induction in n ≥ 0, it is straightforward to prove the combinatorial identities
+      n
+      X              X                  X
+            p(l) =           |Aλ | =             |Rν |,                                           (3.4)
+      l=0            |λ|=n             |ν|=n+1
+
+
+where p(l) is the number of partitions of l. Indeed, (λ, s) 7→ (λ ∪ {s}, s) defines a bijection
+       [                [
+              Aλ →              Rν .
+      |λ|=n           |ν|=n+1
+
+                                P
+By (3.2) and (3.4), dim F [w]n = |λ|=n |Aλ |. By formula (1.15) of part (2) of Theorem 1.4 proved
+             L|Zλ has simple spectrum indexed by Aλ , dim Zλ = |Aλ |. By the
+above, since L                                                                  Porthogonality in
+Lemma 3.5, |λ|=n Zλ ⊆ F [w]n . However, since we’ve shown dim F [w]n = |λ|=n dim Zλ , we
+must have equality
+                 M
+      F [w]n =           Zλ ,
+                 |λ|=n
+
+
+which proves (1.14).                                                                                 ■
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                                  9
+
+3.7    Normalization of eigenfunctions of L
+At last, we can complete the proof of Theorem 1.4.
+
+Proof of part (3) of Theorem 1.4. By Lemma 3.4, we may apply the general linear algebra
+results in the appendices Appendices A.4 and A.5 to the case W = Zλ , J = jλ , L = L|Zλ , and
+⟨·, ·⟩ = ⟨·, ·⟩ℏ . Throughout Appendix A, dim W = m+1 and we index the L-eigenvector basis ψ (i)
+by a superscript i ∈ {0, 1, . . . , m}. By the formula (1.15) of part (2) of Theorem 1.4 proven above,
+dim Zλ = |Aλ |, so we may instead index the L-eigenvector basis ψλs of Zλ by superscripts s ∈ Aλ .
+In this way, our desired normalization condition (1.16) on ψλs (w, V1 , V2 , . . .) follows immediately
+from (A.15). Likewise, the identities (1.17) and (1.18) follow directly from (A.35) and (A.23)
+using the aforementioned identification of (2.4) and (1.15). This completes the proof of Theo-
+rem 1.4.                                                                                             ■
+
+Remark 3.6. While we prove (1∨ ) ∧ (2∨ ) ⇒ (1) ∧ (2), it is not hard to use the same general
+framework from Appendix A to prove the converse (1) ∧ (2) ⇒ (1∨ ) ∧ (2∨ ), so our Theorem 1.4 is
+in fact equivalent to results from [32]. That being said, neither the eigenvalues nor eigenfunctions
+of L are discussed explicitly in [32]. We give brief comments on the methods of proof in [32] in
+Section 5.
+
+
+4     On the eigenfunctions of the Nazarov–Sklyanin Lax operator
+In this section, we consider the ψλs ∈ F [w] of L normalized by the condition π0 ψλs = jλ in part (3)
+of our Theorem 1.4. In Section 4.1, we present ψλs explicitly in degrees |λ| ≤ 3 . In Section 4.2,
+we discuss symmetries of ψλs under ε1 ↔ ε2 . In Section 4.3, we state an integrality conjecture
+for ψλs . In Section 4.4, we verify a special case of this conjecture by using Stanley’s principal
+specialization formula [44] for ψλs |w=0 = jλ to derive a similar formula for ψλs |w=1 .
+
+4.1    Examples of eigenfunctions of L
+Let jλ be the Jack polynomial in (1.7). Recall
+
+      j∅ = 1,
+      j1 = V1 ,
+      j2 = V12 + ε1 V2 ,                                                                          (4.1)
+      j1,1 = V12 + ε2 V2 ,                                                                        (4.2)
+      j3 = V13 + 3ε1 V1 V2 + 2ε21 V3 ,
+      j1,2 = V13 + (ε1 + ε2 )V1 V2 + (ε1 ε2 )V3 ,                                                 (4.3)
+      j1,1,1 = V13 + 3ε2 V1 V2 + 2ε22 V3 .
+
+   The eigenfunctions ψλs of L are polynomials in C[w, V1 , V2 , . . .], normalized by π0 ψλs = jλ , and
+in degrees |λ| ≤ 3 are
+       (0,0)
+      ψ∅       = j∅ ,
+       (0,1)
+      ψ1       = j1 + ε2 w,
+       (1,0)
+      ψ1       = j1 + ε1 w,
+       (0,1)
+      ψ2       = j2 + ε2 V1 w + ε1 ε2 w2 ,
+       (2,0)
+      ψ2       = j2 + 2ε1 V1 w + 2ε21 w2 ,
+10                                                                                R. Mickler and A. Moll
+       (0,2)
+      ψ1,1 = j1,1 + 2ε2 V1 w + 2ε22 w2 ,
+       (1,0)
+      ψ1,1 = j1,1 + ε1 V1 w + ε1 ε2 w2 ,
+       (0,1)
+      ψ3       = j3 + ε2 V12 w + ε1 ε2 V2 w + 2ε1 ε2 V1 w2 + 2ε21 ε2 w3 ,
+       (3,0)
+      ψ3       = j3 + 3ε1 V12 w + 3ε21 V2 w + 6ε21 V1 w2 + 6ε31 w3 ,
+       (0,2)
+      ψ1,2 = j1,2 + 2ε2 V12 w + ε1 ε2 V2 w + ε2 (ε1 + 2ε2 )V1 w2 + 2ε1 ε22 w3 ,
+       (1,1)
+      ψ1,2 = j1,2 + (ε1 + ε2 )V12 w + ε21 − ε1 ε2 + ε22 V2 w + 3ε1 ε2 V1 w2 + ε1 ε2 (ε1 + ε2 )w3 ,
+                                                       
+
+       (2,0)
+      ψ1,2 = j1,2 + 2ε1 V12 w + ε1 ε2 V2 w + ε1 (ε2 + 2ε1 )V1 w2 + 2ε21 ε2 w3 ,                      (4.4)
+       (0,3)
+      ψ1,1,1 = j1,1,1 + 3ε2 V12 w + 3ε22 V2 w + 6ε22 V1 w2 + 6ε32 w3 ,
+       (1,0)
+      ψ1,1,1 = j1,1,1 + ε1 V12 w + ε1 ε2 V2 w + 2ε1 ε2 V1 w2 + 2ε1 ε22 w3 .
+    Readers more familiar with the α conventions in [14, 23, 44] may set ε1 = α and ε2 = −1 so
+that jλ = Jλ in (1.7) and Vk = pk . For example, if Jλ , mλ , and pµ are the Jack, monomial, and
+power sum symmetric functions in [23, 44], J1,1 = 2m1,1 = p21 − p2 and J2 = (1 + α)m2 + 2m1,1 =
+p21 + αp2 gives (4.1) and (4.2) by (1.7). At ε1 = α, ε2 = −1, (4.3) is J1,2 = p31 + (α − 1)p1 p2 − αp3
+                  (2,0)
+and so (4.4) is ψ1,2 = p31 + (α − 1)p1 p2 − αp3 + 2αp21 w − αp2 w + α(−1 + 2α)p1 w2 − 2α2 w3 .
+
+4.2   Symmetries of eigenfunctions of L
+As is evident in the examples above, Jack polynomials jλ are invariant under simultaneous
+permutation ε1 ↔ ε2 and transposition λ ↔ λ′ . This symmetry is easier to see in the modern
+conventions [22, 40] in Nekrasov variables ε1 , ε2 [36, 37]. Since the Lax operator L itself depends
+only on ε = ε1 + ε2 and ℏ = −ε1 ε2 which are both invariant under ε1 ↔ ε2 , its eigenfunctions ψλs
+are invariant under simultaneous permutation ε1 ↔ ε2 , transposition λ ↔ λ′ , and reflection
+s ↔ s′ , i.e., (N1 , N2 ) ↔ (N2 , N1 ) in N2 .
+
+4.3   Integrality conjecture for eigenfunctions of L
+Although Jack polynomials Jλ are referred to as the “integral form” Jack polynomials in [23, 44],
+the fact that their coefficients in the power sum basis pµ are polynomials in α with integer
+coefficients was not proven until [19]. To state this result for jλ as in (1.7), let χλ,µ (ε1 , ε2 )
+denote the coefficient of Vµ = V1d1 V2d2 · · · in
+                                         X
+       jλ (V1 , V2 , . . . ; ε1 , ε2 ) =   χλ,µ (ε1 , ε2 )Vµ .                              (4.5)
+                                    µ
+
+These χλ,µ (ε1 , ε2 ) are known as unnormalized Jack characters [5, 20] since they are deformations
+of symmetric group characters which appear in the case ε = ε1 + ε2 = 0 of Schur polynomials.
+Theorem 4.1 (Lapointe–Vinet [19]). For any λ, µ, in (4.5) one has χλ,µ (ε1 , ε2 ) ∈ Z[ε1 , ε2 ].
+   Consider the generalized Kostka coefficients κγλ (α) defined by the expansion Jλ = γ κγλ (α)m
+                                                                                      P
+                                                                                                eγ
+of the Jack polynomial Jλ in the basis m        e γ of augmented monomial symmetric functions [23].
+Lapointe–Vinet [19] proved κγλ (α) ∈ Z[α] which implies Theorem 4.1 since m    e λ are polynomials
+in pµ with integer coefficients [23]. For the same reason, Theorem 4.1 is also a consequence of
+the proof of the Macdonald–Stanley conjecture κγλ (α) ∈ Z≥0 [α] by Knop–Sahi [17].
+   We conjecture that an analog of Theorem 4.1 holds for the eigenfunctions ψλs of the operator L.
+Let χs,l                                             l
+      λ,µ (ε1 , ε2 ) denote the coefficient of Vµ w in
+                                            X X s,l
+      ψλs (w, V1 , V2 , . . . ; ε1 , ε2 ) =    χλ,µ (ε1 , ε2 )Vµ wl .                         (4.6)
+                                        l   µ
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                                   11
+
+Conjecture 4.2. For any λ, s, µ, and l in (4.6) one has χs,l
+                                                         λ,µ (ε1 , ε2 ) ∈ Z[ε1 , ε2 ].
+
+   This integrality conjecture manifestly holds for the low degree examples of ψλs presented
+                                                      (2,0)
+in Section 4.1. For example, in the expansion of ψ1,2 in (4.4), the coefficient of V1 w2 is
+ (2,0),2
+χ(1,2),(1) = ε1 (ε2 + 2ε1 ). Note that the operator L itself in (1.5) and (1.6) has coefficients
+in Z[ε1 , ε2 ]. In addition, by part (2) of our Theorem 1.4, L has eigenvalues in Z≥0 [ε1 , ε2 ] since
+spec(L) = [s] : s ∈ N2 .
+   We can verify Conjecture 4.2 for the lowest and highest possible powers l of w:
+   1. If l = 0 so Vµ wl = Vµ , the normalization condition π0 ψλs = jλ implies χs,0
+                                                                                λ,µ is the Jack
+      character χλ,µ in (4.5), so χs,0
+                                   λ,µ ∈ Z[ε1 , ε2 ] holds as a consequence of Theorem 4.1.
+
+   2. If l = |λ| so Vµ wl = w|λ| , Proposition 4.3 below implies the content product formula
+              s,|λ|
+                        Y
+            χλ,0 =           [t],                                                            (4.7)
+                         t∈(λ∪s)×
+
+                                                                                s,|λ|
+      where (λ ∪ s)× = λ ∪ s \ {(0, 0)}. Since [t] are defined by (1.11), χλ,0 ∈ Z≥0 [ε1 , ε2 ].
+    In the next section, we will derive this formula (4.7) for the top degree coefficient of the
+eigenfunctions of L. To illustrate this result, consider the partition λ = (1, 2) of size 3 and its
+addable corner (2, 0) ∈ A1,2 . While the elements of the Young diagram λ = {(0, 0), (0, 1), (1, 0)}
+have contents 0, ε2 , ε1 , if we consider the addable corner s = (2, 0), then the product in (4.7)
+is over (λ ∪ s)× = {(0, 1), (1, 0), (2, 0)} have contents ε2 , ε1 , 2ε1 whose product 2ε21 ε2 is the top
+                                                      (2,0)
+degree coefficient of w3 in the formula (4.4) for ψ1,2 .
+
+4.4    Principal specializations of eigenfunctions of L
+We now derive the closed formula (4.7) for the top coefficient of w|λ| in the expansion of ψλs as
+a product of the contents in (λ ∪ s)× . To do so, we derive two principal specialization formulas
+for ψλs .
+Proposition 4.3 (principal specializations). For λ with |λ| = n, let ψλs (w, V1 , V2 , . . . , Vn ) be the
+polynomial eigenfunction of L with eigenvalue [s] normalized by π0 ψλs = jλ . Fix z ∈ C. Then
+                                Y
+     ψλs (0, z, z, . . . , z) =  (z + [t]),                                                          (4.8)
+                                   t∈λ
+                                     Y
+      ψλs (1, z, z, . . . , z) =              (z + [t])                                             (4.9)
+                                   t∈(λ∪s)×
+
+are two content product formulae for principal specializations at w = 0 and w = 1, respectively.
+Proof . Since π0 ψλs = jλ , the w = 0 principal specialization formula (4.8) is an immediate
+consequence of the well-known principal specialization result for Jλ due to Stanley [44]. To
+prove (4.9), let L ≡ Lε,ℏ be the Lax operator in (1.5), with the choices (1.12) and (1.13). The
+eigenvalue equation is
+
+      Lε,ℏ ψλs = [s]ψλs .                                                                          (4.10)
+
+Taking π0 of both sides of (4.10), one can use π0 ψλs = jλ on the right side, then observe that we
+can replace π0 Lε,ℏ by π0 L0,0 on the left side. Indeed, by inspecting the terms in (1.5) with ℏ
+and ε, one has π0 Lε,ℏ η = π0 L0,0 η for any η ∈ F [w]. As a consequence,
+
+      π0 L0,0 ψλs = [s]jλ .                                                                        (4.11)
+12                                                                                              R. Mickler and A. Moll
+                    P∞              −k , if we expand our eigenfunction as
+Since π0 L0,0 =       k=1 Vk π0 w
+              n
+              X
+      ψλs =     (πl ψλs )wl                                                                                     (4.12)
+              l=0
+
+with each πl ψλs ∈ F = C[V1 , V2 , . . .] homogeneous of degree n − l, (4.11) reads
+      V1 π1 ψλs + V2 π2 ψλs + · · · + Vn πn ψλs = [s]jλ (V1 , V2 , . . . , Vn ).                                (4.13)
+On the other hand, the difference ψλs (1) − ψλs (0) between ψλs at w = 1 and w = 0 is
+      π1 ψλs + π2 ψλs + · · · + πn ψλs = ψλs (1, V1 , V2 , . . . , Vn ) − jλ (V1 , V2 , . . . , Vn ).           (4.14)
+Equation (4.13) is an equality of polynomials in Vk which are homogeneous of degree n, whereas
+equation (4.14) is an equality of polynomials in Vk which are not homogeneous. If we evalu-
+ate Vk = z for all 1 ≤ k ≤ n in both (4.13) and (4.14) and assume z ̸= 0, the left sides of each
+differ by an overall factor of z, so we can conclude that
+                                         
+                                      [s]
+       ψλs (1, z, z, . . . , z) = 1 +       · jλ (z, z, . . . , z).                       (4.15)
+                                       z
+Substituting Stanley’s result (4.8) into (4.15) yields (4.9).                                                       ■
+
+   Using the notation πl ψλs for the coefficient of wl in ψλs as in (4.12), setting z = 0 in (4.9)
+yields the content product formula for the non-vanishing top degree coefficient πn ψλs presented
+in (4.7).
+
+
+5     Comments and comparison with previous results
+In this section, we discuss the larger context of our Theorem 1.4. In Section 5.1, we comment on
+the classical Lax operator L of Nakamura [31] and Bock–Kruskal [3] which served as the main
+inspiration for the construction of the Lax operator L by Nazarov–Sklyanin [32]. In Section 5.2,
+we compare the appearance of Jack polynomials at w = 0 in π0 ψλs = jλ of our Theorem 1.4
+to a recent result of Gérard–Kappeler [9] for π0 Φl of the classical L eigenfunctions Φl . In
+Section 5.3, we comment on developments since [32]. Finally, in Section 5.4 we compare the
+eigenvalue equation Lψλs = [s]ψλs in our Theorem 1.4 indexed by pairs (λ, λ∪s) of partitions which
+differ by s to two other instances of this equation in the literature: (i) in type A representation
+theory [25, 38] at ε = 0 and (ii) in the equivariant cohomology of nested Hilbert schemes of
+points in C2 [22, 30, 37, 40].
+
+5.1   Comments on the Nakamura–Bock–Kruskal classical Lax operator
+In [32, Sections 1 and 2], Nazarov–Sklyanin discuss how they thought to introduce their Lax
+operator L in (1.5) and (1.6) to the study of Jack polynomials jλ . They did so as a natural
+consequence of two observations. On the one hand, Jack polynomials have been long known to be
+eigenfunctions of the Hamiltonian (2.1) of the quantum Benjamin–Ono equation on the torus –
+see [32, Section 2] and [27] and references therein. On the other hand, the classical Benjamin–
+Ono equation admits a Lax pair due to Nakamura [31] and Bock–Kruskal [3]. When the spatial
+geometry is a torus, the Lax operator L from [3, 31] takes the form in (5.1)P   below. Assume
+u ∈ L (T, R) is a real-valued distribution with Fourier modes uk ∈ C satisfying ∞
+      2                                                                                    2
+                                                                                  k=1 |uk | < ∞,
+                                                           ∂
+u−k = uk , and u0 = 0. Then with π as in (1.4) and ∂w = ∂w ,
+                        ∞
+                        X               ∞
+                                        X
+      L = ε0 w∂w +                 k
+                              uk w +          uk πw−k                                                            (5.1)
+                        k=1             k=1
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                               13
+
+is the Nakamura–Bock–Kruskal Lax operator for the classical Benjamin–Ono equation on the
+torus with dispersion coefficient ε0 ∈ R [3, 31]. This L is partially-defined on C[w] and essentially
+self-adjoint with respect to the inner product ⟨·, ·⟩ on C[w] in which wl are an orthonormal basis.
+Just like (1.5), only the first terms involve the projection π in (1.4). However, unlike (1.5), the
+second infinite sum over uk wk applied to a polynomial in C[w] will not yield a polynomial if
+infinitely-many uk = u−k ̸= 0. As in Section 1.1, we can write L as a N × N matrix
+
+         0ε0 u1 u2 u3 u4 · · ·
+                                      
+                                  .. 
+         u1 1ε0 u1 u2 u3            .
+        
+                                  .. 
+                                      
+         u2 u1 2ε0 u1 u2
+                                    .
+      L=                         ..    .                                                      (5.2)
+         u3 u2 u1 3ε0 u1
+                                    .
+                                 .. 
+        u
+         4   u 3  u 2  u 1  4ε 0    .
+           .. ..   ..   ..   ..   ..
+            .    .    .    .    .    .
+
+With these two observations in mind, Nazarov–Sklyanin [32] realized that canonical quantization
+via (1.2)
+
+      (uk , u−k ) −→ (Vk , V−k )                                                                (5.3)
+
+performed directly in the matrix elements of L in (5.2) yields a well-defined L : F [w] → F [w]
+in (1.6) whose powers are well defined without normal ordering. Equivalently, Nazarov–Sklyanin
+realized that the classical field u(x) can be directly replaced in L by the affine gl
+                                                                                   b 1 -current at
+level ℏ to get L. For a discussion of (5.3) from the point of view of geometric quantization,
+see [27].
+
+
+5.2   Comparison to Gérard–Kappeler’s action-angle coordinates
+This paper was inspired by recent spectral analysis [7, 8, 9, 10, 11, 28] of the Nakamura–Bock–
+Kruskal Lax operator L in (5.2). At ε0 = 0, (5.2) is a Toeplitz operator whose spectrum has
+been studied for over a century [4, 43]. At ε0 ̸= 0, the spectrum of L is simple [9, 28]. In [27, 28],
+the second author proved that Gérard–Kappeler [9] independently found the classical limit of
+the quantum hierarchy of Nazarov–Sklaynin [32]. We can now make a second comparison to [9].
+On the one hand, a main result of [9] is that the constant terms of the classical L eigenfunctions
+determine the action-angle coordinates of the classical Benjamin–Ono equation on the torus. On
+the other hand, in (3) of our Theorem 1.4, we proved that the constant terms of the quantum L
+eigenfunctions are Jack polynomials. We hope that the many structural results in Gérard–
+Kappeler [9] admit explicit quantizations which can shed further light on the objects in this
+paper.
+
+
+5.3   Comments on developments since the work of Nazarov–Sklyanin
+The study of Tℓ = π0 Lℓ and intricate proof of (1∨ ) and (2∨ ) in Theorem 2.2 by Nazarov–
+Sklyanin [32] draws on their prior work [33] on the N → ∞ limits of the Sekiguchi–Debiard
+             (1)   (2)
+operators AN , AN , . . . for Jack polynomials [23]. In [34, 35], Nazarov–Sklyanin generalized
+their results to the case of Macdonald polynomials. In [35], they mention that their Theorem 2.2
+was independently discovered in a different form by Sergeev–Veselov [41, 42]. The relationship
+between the eigenfunctions ψλs considered in this paper, the framework in [41, 42], and the
+quantum Baker–Achiever function in [32] deserves further study.
+14                                                                            R. Mickler and A. Moll
+
+5.4    Comparison to spectral theorems in representation theory and geometry
+Our Theorem 1.4 is not the only appearance of contents of addable corners as eigenvalues of
+operators. In the case ε1 = −ε2 = ε so that ε = 0, ℏ = ε2 , and α = 1, our eigenvalue equation
+degenerates to
+
+      L0,ℏ ψλs = [s]ψλs ,
+
+where L0,ℏ is a block Toeplitz operator, ψλs are polynomials which recover Schur polynomials
+at w = 0, and the anisotropic content is ε times the usual content. In this case, the content
+of a single addable corner is well known to describe the spectral theory at the heart of the
+representation theory of glN and the symmetric group S(n), see, e.g., discussions in Molev–
+Nazarov–Olshanski [25] and Okounkov–Vershik [38].
+   For generic ε = ε1 + ε2 , it is also well known that contents of addable corners arise in the
+equivariant cohomology of nested Hilbert schemes of points in the affine plane [22, 30, 37, 40].
+Let X [n] be the Hilbert scheme of n points in C2 , i.e., all ideals I ⊂ C[x1 , x2 ] so C[x1 , x2 ]/I is
+a vector space of dimension n. Then
+
+      X [n,n+1] = I, Ie ∈ X [n] × X [n+1] : I ⊂ Ie
+                      
+
+
+is the nested Hilbert scheme of points in C2 . The tautological line bundle L → X [n,n+1] has
+fibers
+
+      L|(I,I)
+           e = I/I.
+               e                                                                                  (5.4)
+
+The action of the torus T = C× × C× on C2 induces an action on both X [n] and X [n,n+1] . The
+T-fixed points Iλ ∈ X [n] are monomial ideals indexed by partitions λ with |λ| = n. The T-fixed
+points ηλs ∈ X [n,n+1] are
+
+      ηλs = (Iλ , Iλ∪s )
+
+indexed by pairs (λ, s) with |λ| = n and s an addable corner in Aλ . For this reason, the
+classes [Iλ ] and [ηλs ] must be a basis in the T-equivariant cohomology rings of X [n] and X [n,n+1] ,
+respectively. Moreover, if s = (N1 , N2 ) ∈ N2 , the torus action with characters ε1 , ε2 on the
+monomial xN     1 N2
+               1 x2 ∈ C[x1 , x2 ] is determined by the content [s] = ε1 N1 + ε2 N2 in (1.11). As
+a consequence, the operator c1 (L)∪− of cup product with the first Chern class of L in (5.4) must
+act diagonally in the basis [ηλs ] and satisfy the same eigenvalue equation as the Nazarov–Sklyanin
+Lax operator in our Theorem 1.4. This observation suggests an extension of the isomorphism
+identifying Jack polynomials jλ with [Iλ ] [22, 30, 40] and T3 = π0 L3 in (2.1) with the operator
+in Lehn [21] to an identification of ψλs ∈ F [w] introduced in this paper and [ηλs ].
+
+
+A     Cyclic spaces of self-adjoint operators
+In this appendix, we recall several standard results for cyclic spaces of self-adjoint operators
+following the treatment of Jacobi operators by Kerov [15, Section 6]. To streamline our proof in
+Section 3, we present these results without choosing an orthogonal basis in which our self-adjoint
+operators are tridiagonal.
+
+A.1    Cyclic spaces W , W
+                         f associated to an operator L with cyclic vector J
+Let W be a C-vector space with dimC W = m + 1 < ∞. Let L : W → W be a linear operator
+(not necessarily self-adjoint) and J ∈ W a non-zero vector. Recall that W is a L-cyclic space
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                               15
+
+generated by J if the set of m + 1 vectors J, LJ, L2 J, . . . , Lm J is a basis for W . In this case,
+                                           
+
+we say that J is a cyclic vector for the operator L and write W = Z(J, L). In Proposition A.1
+                                                                              
+below, we recall a recipe which produces new cyclic spaces W     f = Z J, eLe from a given cyclic
+space W = Z(J, L). Let CJ denote the span of J. Choose any complementary subspace W         f⊂W
+of codimension 1 so that
+
+      W = CJ + W
+               f.                                                                               (A.1)
+
+Let ΠJ and Πe be the canonical projections onto CJ and Wf , respectively, with ker ΠJ = W
+                                                                                        f and
+ker Π = CJ. For these canonical projections, one has IdW = ΠJ + Π. Let a ∈ C and J ∈ W
+    e                                                             e                   e  f be
+uniquely determined by the expansion of the vector LJ with respect to (A.1) as in
+
+      LJ = aJ + J,
+                e                                                                               (A.2)
+
+so that aJ = ΠJ LJ and Je = ΠLJ.
+                            e    Let L  f → W
+                                     e: W   f be the linear operator with domain W
+                                                                                 f
+defined by
+
+      L
+      e = ΠL|
+          e f,
+             W
+                                                                                                (A.3)
+
+                   e : W → W to W
+the restriction of ΠL           f.
+
+Proposition A.1. Consider W   f , J,
+                                   e Le in (A.1)–(A.3). If W = Z(J, L) is L-cyclic with cyclic
+                                                                                             
+vector J, then the codimension 1 subspace W
+                                          f is L-cyclic
+                                               e        with cyclic vector J,      f = Z J,
+                                                                           e i.e., W     eL e .
+
+Proof . For any ηe ∈ W
+                     f , we need to find a polynomial Pe so that
+              
+    ηe = Pe L
+            e J.e
+
+Choose η ∈ W such that e
+                       Πη = ηe. Since W = Z(J, L), there is a polynomial P so that
+
+      η = P (L)J.                                                                               (A.4)
+
+Apply Πe to both sides of (A.4). One can then use the identity IdW = ΠJ + Π,       e (A.2), and (A.3)
+                 ℓ                                                    2
+to prove that ΠL J for ℓ = 0, 1, 2, . . . are in the span of J, LJ, L J, . . . by induction on ℓ, thus
+               e                                             e  e e e   e
+defining Pe from P .                                                                                ■
+
+A.2    Two rational functions T , Te defined by L and J
+                                                                                  
+For u ∈ C with both u − L and u − L    e invertible, namely u ̸∈ spec(L) ∪ spec(L)
+                                                                                e , let T (u)
+and Te(u) be the unique scalars for which
+           1
+      ΠJ      J = T (u)J,                                                                       (A.5)
+         u−L
+             1 e e
+      ΠJ L      J = T (u)J.                                                                     (A.6)
+           u−Le
+
+   Formulas
+           (A.5) and (A.6) define two meromorphic functions T , Te of u ∈ C away from spec(L),
+spec L , respectively.
+     e
+
+Proposition A.2. Assume for simplicity that a = 0 in (A.2) so that LJ = J.     e For all u ∈ C at
+which T (u) ̸= 0 and Te(u) is well defined, the two functions T and Te in (A.5) and (A.6) satisfy
+        1
+            + Te(u) = u.                                                                        (A.7)
+      T (u)
+In particular, the left-hand side of (A.7) is analytic in u ∈ C.
+16                                                                             R. Mickler and A. Moll
+
+Proof . The following argument is standard both in the theory of Jacobi matrices and in the
+study of lattice paths, see, e.g., [15, Lemma 6.3.2]. However, this result is usually presented
+in the context of a choice of a tridiagonal matrix representation of L and assuming that L is
+self-adjoint, neither of which is necessary for the argument below. Since a = 0, u−2 ΠJ LJ = 0.
+Expanding the resolvent using a geometric series, (A.5) becomes
+                          ∞
+                          X
+       T (u)J = u−1 J +         u−ℓ−1 ΠJ Lℓ J.                                                      (A.8)
+                          ℓ=2
+
+For terms in (A.8) with ℓ ≥ 2, use (A.1) to insert ℓ − 1 copies of IdW = ΠJ + Π         e between
+the ℓ copies of L which appear in the expansion         ℓ
+                                                    of L . This produces 2  ℓ−1 terms of the form
+                                              
+ΠJ Π1 LΠ2 LΠ3 · · · LΠℓ−1 LJ with each Πi ∈ ΠJ , Π e . Group these terms by the minimum value
+of i so that Πi = ΠJ . Since a = 0, we can assume i ≥ 2. After relabeling indices, one checks (A.8)
+becomes T (u) = u−1 + u−1 Te(u)T (u) with Te(u) as defined in (A.6).                             ■
+
+     The first function T in (A.5) is the ratio of the characteristic polynomials of L
+                                                                                     e and L.
+
+Proposition A.3. The complex function T (u) defined for u ̸∈ spec(L) by (A.5) is
+                         
+              det u − Le
+      T (u) =                                                                                       (A.9)
+              det(u − L)
+                                                              
+a rational function with poles at spec(L) and zeroes at spec L
+                                                             e .
+
+Proof . Apply Cramer’s rule for ΠJ of solutions Φ(u) of the linear system (u − L)Φ = J.                 ■
+
+  As a consequence of (A.7) and (A.9), the second function Te is also a rational function.
+                                                                             
+Corollary A.4. If a = 0 in (A.2), the function Te(u) defined for u ̸∈ spec L
+                                                                           e by (A.6) is
+
+                   det(u − L)
+       Te(u) = u −           
+                   det u − L
+                           e
+                                        
+a rational function with poles at spec L
+                                       e .
+
+A.3      The case of self-adjoint L with cyclic vector J
+Introduce a Hermitian inner product ⟨·, ·⟩ on the finite-dimensional complex vector space W .
+Adopt the convention ⟨η, αξ⟩ = α⟨η, ξ⟩ that the inner product is C-linear in the right-most entry.
+We now revisit the results in Appendices A.1 and A.2 for L, L      e and T , Te under the assumption
+that L is a self-adjoint operator in the space (W, ⟨·, ·⟩).
+     Given a non-zero vector J ∈ W , let W    f = (CJ)⊥ be the orthogonal complement of CJ.
+Let ΠJ and Π        ⊥
+              e = Π be the orthogonal projections so that (A.1) is an orthogonal decomposition
+                    J
+W = CJ ⊕ W = CJ ⊕ (CJ)⊥ . By restriction, ⟨·, ·⟩ defines an inner product on W
+             f                                                                         f = (CJ)⊥ . If L
+is self-adjoint in (W, ⟨·, ·⟩), L
+                                e = ΠL
+                                    e Π                               f , ⟨·, ·⟩) since Π
+                                       e in (A.3) is self-adjoint in (W                 e is self-adjoint.
+Under these assumptions, we can give alternative formulas for the rational functions T and Te:
+⟨·, ·⟩
+
+                J, (u − L)−1 J
+       T (u) =                                                                                    (A.10)
+                      ⟨J, J⟩
+                    2             e −1 Je
+                          e (u − L)
+                Je        J,
+       Te(u) =         ·                  ,                                                       (A.11)
+               ∥J∥2           J,
+                               e Je
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                                       17
+
+                                  ⟨J,ξ⟩                                                              e2
+using (A.5) and (A.6), and ΠJ ξ = ⟨J,J⟩ J. Here (A.11) is Te(u) = AT ∨ (u) where A = ∥∥J∥
+                                                                                       J∥
+                                                                                         2 > 0
+
+and
+                           L)−1 Je
+                    e (u − e
+                    J,
+      T ∨ (u) =                    .                                                                  (A.12)
+                        J,
+                         e Je
+
+                                                                            e2
+   As we discussed in [28], we write (A.11) without simplifying ∥eJ∥e = 1 to clarify that T ∨ (u)
+                                                                          ⟨J,J⟩
+in (A.12), not Te(u) in (A.11), is the Stieltjes transform of a cotransition measure in Kerov [15, 16].
+Note that T and Te are often called the Titchmarsh–Weyl functions of L and L             e – see [15,
+Section 6].
+
+A.4     Spectral theorem for self-adjoint operators L, L
+                                                       e with cyclic vectors J , Je
+Assume that L and L                                       f = (CJ)⊥ with cyclic vectors J and Je
+                    e are self-adjoint in (W, ⟨·, ·⟩) and W
+as in Appendix A.3.
+Theorem A.5 (spectral theorem for cyclic spaces of self-adjoint operators). Let L, L   e be the self-
+adjoint operators in W , W
+                         f of dimensions m + 1, m with cyclic vectors J, Je as in Appendix A.3.
+Then L, L have real eigenvalues σ (i) , σ
+         e                              e(i) which are simple and strictly interlacing
+
+      σ (m) < σ
+              e(m) < σ (m−1) < · · · < σ
+                                       e(2) < σ (1) < σ
+                                                      e(1) < σ (0) .
+                                                          m          m
+Since the spectrum is simple, there exist bases ψ (i) i=0 , ψe(i) i=1 of the cyclic spaces W , W
+                                                             
+                                                                                               f,
+which are L, Le eigenvectors
+
+      Lψ (i) = σ (i) ψ (i) ,                                                                          (A.13)
+                e(i) ψe(i)
+      e ψe(i) = σ
+      L                                                                                               (A.14)
+
+defined uniquely up to complex rescaling of each eigenvector. In fact, the normalizations of each
+eigenvector can be fixed by the canonical constraints
+
+      ΠJ ψ (i) = J,                                                                                   (A.15)
+      ΠJ Lψe(i) = J.                                                                                  (A.16)
+
+Proof . By the Cauchy interlacing theorem – e.g., [13, p. 242] or [15, Section 6] – it remains to
+prove (A.15) and (A.16). For any basis of L eigenvectors ψ (i) , since ΠJ projects onto CJ,
+
+      ΠJ ψ (i) = γ (i) J                                                                              (A.17)
+
+for some γ (i) ∈ C for all i ∈ {0, 1, . . . , m}. We first argue that γ (i) = 0 is not possible in (A.17),
+i.e., ΠJ ψ (i) ̸= 0. Pairing (A.17) with J, using the inner product and the fact that the orthogonal
+projection ΠJ is self-adjoint, one arrives at the identity
+
+      ⟨J, ψ (i) ⟩ = γ (i) ∥J∥2 .                                                                      (A.18)
+
+As a consequence, if we expand J in the ψ s basis, formula (A.18) determines the coefficients
+           m
+                             !
+          X          ∥J∥  2
+     J=       γ (i)           ψ (i) .                                                    (A.19)
+                     ψ (i) 2
+          i=0
+
+Since J is cyclic for L in W , its coefficients in the ψ (i) basis are non-zero for all i ∈ {0, 1, . . . , m},
+thus (A.19) guarantees γ (i) ̸= 0 for all i ∈ {0, 1, . . . , m}. Since the eigenvalues σ (i) of L in W
+18                                                                          R. Mickler and A. Moll
+
+are distinct, the ψ (i) are uniquely determined up to overall factors in C× , so we can choose
+these factors uniquely so γ (i) = 1 in (A.17), proving (A.15). By Proposition A.1, L
+                                                                                   e is cyclic in
+f = (CJ)⊥ . Since L
+W                     e=L   e † , the same argument above repeated in W
+                                                                      f instead of W , this time
+choosing γ (i)       2
+          e = ∥J∥ /∥ e      2              (i)
+                         J∥ instead of γ = 1, guarantees that if we consider Je ∈ W f in (A.2),
+                           (i)
+there is a unique basis ψ of L-eigenvectors of W with
+                         e         e              f
+
+                 ∥J∥ e   2
+      ΠJeψe(i) =     2 J.                                                                    (A.20)
+                  Je
+
+Pairing both sides of (A.20) with Je and using the fact that the orthogonal projection ΠJe to CJe
+is self-adjoint, (A.20) implies
+
+       e ψe(i) = ∥J∥2 .
+       J,                                                                                    (A.21)
+
+At the same time, since Je = ΠLJ
+                             e   holds by (A.2), L† = L, Π  e † , and Π
+                                                         e =Π         e ψe(i) = ψe(i) , we also
+have
+
+                                  Πψe(i) = J, Lψe(i) .
+                 ΠLJ, ψe(i) = J, L e
+       e ψe(i) = e
+       J,                                                                                    (A.22)
+
+                                                            e(i)
+Equating (A.21) and (A.22) implies ⟨J,Lψ ⟩
+                                     ⟨J,J⟩ = 1 which is equivalent to (A.16).                     ■
+
+
+A.5    Residues of T , Te and eigenvectors of self-adjoint L, L
+                                                              e
+
+Let T and Te be the rational functions associated to generic linear operators L with cyclic vector J
+in Appendix A.2. Under the assumption that L and L        e are self-adjoint as in Appendix A.3,
+consider the residues
+
+      τ (i) = Resu=σ(i) T (u),                                                               (A.23)
+      τe(i) = Res   (i) T (u)
+                   u=e
+                     σ
+                        e                                                                    (A.24)
+
+of T and Te at the simple eigenvalues σ (i) ∈ spec(L) and σe(i) ∈ spec L
+                                                                         
+                                                                       e from Appendix A.4. We
+                                                                                     2      2
+first recall how these residues appear in the calculation of the squared norms ψ (i) , ψe(i) of
+the eigenvectors of L and e L.
+
+Proposition A.6. Let ψ (i) , ψe(i) be the sets of eigenvectors of the self-adjoint operators L, L
+                                                                                                e
+                                                                                           (i)
+normalized with respect to the cyclic vector J by the conditions (A.15) and (A.16). Let τ , τe (i)
+
+be the residues in (A.23) and (A.24) of the rational functions T (u), Te(u) in (A.10) and (A.11).
+Then
+
+      τ (i) ∥ψ (i) ∥2 = ∥J∥2 ,                                                               (A.25)
+      τe(i) ∥ψe(i) ∥2 = ∥J∥2 .                                                               (A.26)
+
+In particular, the residues τ (i) and τe(i) in (A.23) and (A.24) are all positive.
+                                                                                           ⟨η,ξ⟩
+Proof . For non-zero η ∈ W , let Πη be the orthogonal projection onto Cη defined by Πη ξ = ⟨η,η⟩ η.
+                             (i)  (i)
+Since the orthogonal bases ψ , ψ of W , W determine resolutions of identities IdW , IdW    f , we
+                                 e          f
+have
+           m                  m
+           X                  X ψ (i) , J         (i)
+      J=          Πψ(i) J =                 2 ψ         ,                                    (A.27)
+            i=0               i=0   ψ (i)
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                             19
+             m                      m
+             X                      X ψe(i) , Je e(i)
+      Je =         Πψe(i) Je =                 2 ψ .                                         (A.28)
+             i=1                    i=1ψe(i)
+
+   Substituting (A.27) and (A.28) into the inner product formulas (A.10) and (A.11) for T , Te,
+one may use the eigenvalue equations (A.13) and (A.14) and the orthogonality of eigenfunctions
+to get
+                             m                                         2
+               1 X    1                                 J, ψ (i)
+      T (u) =    2
+                             ·                                     2       ,                 (A.29)
+              ∥J∥  u − σ (i)
+                           i=0                           ψ (i)
+                    1      Xm
+                                  1                     e ψe(i) 2
+                                                        J,
+      Te(u) =                           ·                      2 .                           (A.30)
+                   ∥J∥2         u−σe(i)                  ψe(i)
+                            i=0
+
+Taking residues of (A.29) and (A.30) at eigenvalues σ (i) , σ
+                                                            e(i) gives
+                                                2
+                 1               J, ψ (i)
+      τ (i) =        ·                      2       ,                                        (A.31)
+                ∥J∥2              ψ (i)
+                                 e ψe(i)        2
+       (i)      1                J,
+      τe     =      ·                    2          .                                        (A.32)
+               ∥J∥2                ψe(i)
+
+Finally, since the normalization conditions (A.15) and (A.16) and L = L† imply
+
+       J, ψ (i) = ∥J∥2 ,                                                                     (A.33)
+       e ψe(i) = ∥J∥2 ,
+       J,                                                                                    (A.34)
+
+substituting (A.33) and (A.34) into (A.31) and (A.32) completes the proof.                        ■
+
+   In fact, these residues relate the eigenvectors and cyclic vectors themselves, not just their
+norms.
+
+Proposition A.7. In the self-adjoint case, the residues τ (i) and τe(i) of T and Te arise as
+coefficients in the expression of the cyclic vectors J and Je as linear combinations of eigenvectors
+of L and L e
+             m
+             X
+      J=           τ (i) ψ (i) ,                                                             (A.35)
+             i=0
+             Xm
+      Je =         τe(i) ψe(i)                                                               (A.36)
+             i=1
+
+assuming that ψ (i) and ψe(i) are normalized by the conditions (A.15) and (A.16).
+                                                                               (i)
+Proof . Formulas (A.25) and (A.33) imply τ (i) = ⟨ψ⟨ψ(i) ,ψ,J⟩
+                                                            (i) ⟩ . Hence (A.35), since
+
+
+
+                       ψ (i) , ξ
+      Πψ(i) ξ =                     ψ (i) .
+                      ψ (i) , ψ (i)
+
+Similarly, combining formulas (A.26) and (A.34) implies (A.36).                                   ■
+
+   We conclude with a ‘converse’ of Proposition A.7: the eigenvectors of L and L e themselves
+can be determined directly from the cyclic vectors J and J and the resolvents of L and L.
+                                                         e                             e
+20                                                                                R. Mickler and A. Moll
+
+Proposition A.8. Let ψ (i) and ψe(i) be eigenvectors of self-adjoint operators L and Le normal-
+ized with respect to the cyclic vector J by the conditions (A.15) and (A.16) with corresponding
+eigenvalues σ (i) and σ
+                      e(i) . Then, assuming a = 0 in (A.2) so that LJ = J,
+                                                                         e the eigenvectors of L
+and L satisfy
+     e
+                 1
+      ψe(i) =          J,                                                                             (A.37)
+              L−σ e(i)
+                      1
+      ψ (i) = J +           J.
+                            e                                                                         (A.38)
+                   (i)
+                  σ −L    e
+Proof . We first prove (A.37). To begin, we observe that
+            1
+      ΠJ        J =0                                                                                  (A.39)
+           L−σe
+since (A.5) implies that the left-hand side of (A.39) is −T (eσ t )J, but we know that T (e
+                                                                                           σt) = 0
+        (i)
+      e ∈ spec L is necessarily a zero of the rational function T by Proposition A.3. As
+since σ              e
+a consequence of (A.39), Π  e 1 (i) J = 1 (i) J which implies the eigenvalue relation
+                             L−e
+                               σ        L−e
+                                          σ
+            1                 1                                1                1
+                                               e(i) + σ
+                                                      e(i)               e(i)
+                                                           
+      L
+      e            J = ΠL
+                       e Πe             e L−σ
+                                     J =Π                             J =σ            J.
+        L−σ  e (i)          L−σe (i)                         L−σe (i)         L−σe(i)
+                                                         1                           1
+Finally, since formula (A.39) also implies that ΠJ L L−e σ (i)
+                                                               J = ΠJ J + σe(i) ΠJ L−e
+                                                                                     σ (i)
+                                                                                           J = J, we have
+                 1                                              (i)
+shown that L−eσ(i) J is an e  L-eigenvector with eigenvalue σ  e satisfying (A.16). Since these prop-
+erties uniquely characterize ψe(i) , we have proven (A.37). Next, we prove (A.38) assuming a = 0
+so that LJ = Je in (A.2). To begin, the resolvent of L          e is well defined at u = σ (i) since in
+                                                      
+Theorem A.5 we have seen that spec(L) ∩ spec L      e = ∅. As a consequence, Je ∈ W        f implies that
+    1
+       e J ∈ W , hence the vector on the right-hand side of (A.38) satisfies
+         e f
+σ (i) −L
+                              !
+                       1
+        ΠJ J +              Je = J
+                  σ (i) − L
+                          e
+
+the normalization condition (A.15). To verify that this vector is indeed an L-eigenvector with
+eigenvalue σ (i) , multiply by L then calculate its projections onto CJ and W           f = (CJ)⊥ . In the CJ
+projection,we can simplify using our assumption a = 0 in (A.2), the definition (A.6) of Te(u),
+and Te σ (i) = σ (i) at the special value u = σ (i) due to Corollary A.4:
+                                  !
+                          1                              1
+                                                              Je = aJ + T σ (i) J = σ s J.
+                                                                                    
+      ΠJ L J +                  Je = ΠJ LJ + ΠJ L                                                       (A.40)
+                    σ (i) − Le                      σ (i) − L
+                                                            e
+
+       f = (CJ)⊥ projection, using 1 Je ∈ W                                      e = − σ (i) − L
+                                                                                               e + σ (i) ,
+                                                                                                
+In the W                                    (i)
+                                                        f , ΠL
+                                                            e Π  e = L,
+                                                                      e and L
+                                           σ −L  e
+                                 !
+                        1                         1                               1
+      ΠL
+      e     J+                Je = ΠLJ
+                                    e    +Le            Je = Je − Je + σ (i)            Je
+                   σ (i) − Le                σ (i) − L
+                                                     e                       σ (i) − Le
+                                              1
+                                 = σ (i)               J.
+                                                       e                                              (A.41)
+                                           σ (i) − L
+                                                   e
+                                                                                  1
+Since (A.40) and (A.41) are σ (i) times the same projections of J +                  e J, (A.38) follows.
+                                                                                       e                    ■
+                                                                              σ (i) −L
+
+
+Acknowledgements
+The authors would like to thank the referees for many helpful comments and suggestions. We
+would also like to express our sincere thanks to the staff at Darwin’s Ltd. coffee and sandwich
+shop on Cambridge Street in Cambridge, MA for supporting our collaboration during the years
+2014–2019.
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                                          21
+
+References
+ [1] Alexandersson P., Mickler R., New cases of the strong Stanley conjecture, in preparation.
+ [2] Biane P., Representations of symmetric groups and free probability, Adv. Math. 138 (1998), 126–181.
+ [3] Bock T.L., Kruskal M.D., A two-parameter Miura transformation of the Benjamin–Ono equation, Phys.
+     Lett. A 74 (1979), 173–176.
+ [4] Böttcher A., Silbermann B., Introduction to large truncated Toeplitz matrices, Universitext, Springer, New
+     York, 1999.
+ [5] Dolȩga M., Féray V., On Kerov polynomials for Jack characters, Discrete Math. Theor. Computer Sci. Proc.
+     AS (2013), 539–550, arXiv:1201.1806.
+ [6] Dubrovin B., Symplectic field theory of a disk, quantum integrable systems, and Schur polynomials, Ann.
+     Henri Poincaré 17 (2016), 1595–1613, arXiv:1407.5824.
+ [7] Gassot L., Zero-dispersion limit for the Benjamin–Ono equation on the torus with bell shaped initial data,
+     Comm. Math. Phys. 401 (2023), 2793–2843, arXiv:2111.06800.
+ [8] Gérard P., A nonlinear Fourier transform for the Benjamin–Ono equation on the torus and applications,
+     Sémin. Laurent Schwartz, EDP Appl. 2019–2020 (2019–2020), 8, 19 pages.
+ [9] Gérard P., Kappeler T., On the integrability of the Benjamin–Ono equation on the torus, Comm. Pure Appl.
+     Math. 74 (2021), 1685–1747, arXiv:1905.01849.
+[10] Gérard P., Kappeler T., Topalov P., On the spectrum of the Lax operator of the Benjamin–Ono equation
+     on the torus, J. Funct. Anal. 279 (2020), 108762, 75 pages, arXiv:2006.11864.
+[11] Gérard P., Kappeler T., Topalov P., On the Benjamin–Ono equation on T and its periodic and quasiperiodic
+     solutions, J. Spectr. Theory 12 (2022), 169–193, arXiv:2103.09291.
+[12] Hora A., Obata N., Quantum probability and spectral analysis of graphs, Theoret. and Math. Phys., Springer,
+     Berlin, 2007.
+[13] Horn R.A., Johnson C.R., Matrix analysis, 2nd ed., Cambridge University Press, Cambridge, 2013.
+[14] Jack H., A class of symmetric polynomials with a parameter, Proc. Roy. Soc. Edinburgh Sect. A 69 (1970),
+     1–18.
+[15] Kerov S., Interlacing measures, in Kirillov’s Seminar on Representation Theory, Amer. Math. Soc. Transl.
+     Ser., Vol. 181, American Mathematical Society, Providence, RI, 1998, 35–83.
+[16] Kerov S., Anisotropic Young diagrams and symmetric Jack functions, Funct. Anal. Appl. 34 (2000), 41–51,
+     arXiv:math.CO/9712267.
+[17] Knop F., Sahi S., A recursion and a combinatorial formula for Jack polynomials, Invent. Math. 128 (1997),
+     9–22, arXiv:q-alg/9610016.
+[18] Kvinge H., Licata A.M., Mitchell S., Khovanov’s Heisenberg category, moments in free probability, and
+     shifted symmetric functions, Algebr. Comb. 2 (2019), 49–74, arXiv:1610.04571.
+[19] Lapointe L., Vinet L., A Rodrigues formula for the Jack polynomials and the Macdonald–Stanley conjecture,
+     Int. Math. Res. Not. 1995 (1995), 419–424, arXiv:q-alg/9509002.
+[20] Lassalle M., Jack polynomials and free cumulants, Adv. Math. 222 (2009), 2227–2269, arXiv:0802.0448.
+[21] Lehn M., Chern classes of tautological sheaves on Hilbert schemes of points on surfaces, Invent. Math. 136
+     (1999), 157–207, arXiv:math.AG/9803091.
+[22] Li W.-P., Qin Z., Wang W., The cohomology rings of Hilbert schemes via Jack polynomials, in Algebraic
+     Structures and Moduli Spaces, CRM Proc. Lecture Notes, Vol. 38, American Mathematical Society, Provi-
+     dence, RI, 2004, 249–258, arXiv:math.AG/0411255.
+[23] Macdonald I.G., Symmetric functions and Hall polynomials, 2nd ed., Oxford Mathematical Monographs, The
+     Clarendon Press, Oxford University Press, New York, 1995.
+[24] Mickler R., Jack     Littlewood–Richardson     coefficients   and   the   Nazarov–Sklyanin   Lax   operator,
+     arXiv:2306.11115.
+[25] Molev A., Nazarov M., Ol’shanskii G., Yangians and classical Lie algebras, Russian Math. Surveys 51
+     (1996), 205–282, arXiv:hep-th/9409025.
+[26] Moll A., Random partitions and the quantum Benjamin–Ono hierarchy, arXiv:1508.03063.
+[27] Moll A., Exact Bohr–Sommerfeld conditions for the quantum periodic Benjamin–Ono equation, SIGMA 15
+     (2019), 098, 27 pages, arXiv:1906.07926.
+22                                                                                  R. Mickler and A. Moll
+
+[28] Moll A., Finite gap conditions and small dispersion asymptotics for the classical periodic Benjamin–Ono
+     equation, Quart. Appl. Math. 78 (2020), 671–702, arXiv:1901.04089.
+[29] Moll A., Gaussian asymptotics of Jack measures on partitions from weighted enumeration of ribbon paths,
+     Int. Math. Res. Not. 2023 (2023), 1801–1881, arXiv:2010.13258.
+[30] Nakajima H., Lectures on Hilbert schemes of points on surfaces, Univ. Lecture Ser., Vol. 18, American
+     Mathematical Society, Providence, RI, 1999.
+[31] Nakamura A., Bäcklund transform and conservation laws of the Benjamin–Ono equation, J. Phys. Soc.
+     Japan 47 (1979), 1335–1340.
+[32] Nazarov M., Sklyanin E., Integrable hierarchy of the quantum Benjamin–Ono equation, SIGMA 9 (2013),
+     078, 14 pages, arXiv:1309.6464.
+[33] Nazarov M., Sklyanin E., Sekiguchi–Debiard operators at infinity, Comm. Math. Phys. 324 (2013), 831–849,
+     arXiv:1212.2781.
+[34] Nazarov M., Sklyanin E., Macdonald operators at infinity, J. Algebraic Combin. 40 (2014), 23–44,
+     arXiv:1212.2960.
+[35] Nazarov M., Sklyanin E., Cherednik operators and Ruijsenaars–Schneider model at infinity, Int. Math. Res.
+     Not. 2019 (2019), 2266–2294, arXiv:1703.02794.
+[36] Nekrasov N.A., Okounkov A., Seiberg–Witten theory and random partitions, in The Unity of Mathematics,
+     Progr. Math., Vol. 244, Birkhäuser, Boston, MA, 2006, 525–596, arXiv:hep-th/0306238.
+[37] Okounkov A., On the crossroads of enumerative geometry and geometric representation theory, in Proceed-
+     ings of the International Congress of Mathematicians – Rio de Janeiro 2018. Vol. I. Plenary lectures, World
+     Scientific Publishing, Hackensack, NJ, 2018, 839–867, arXiv:1801.09818.
+[38] Okounkov A., Vershik A., A new approach to representation theory of symmetric groups, Selecta
+     Math. (N.S.) 2 (1996), 581–605.
+[39] Olshanski G., Anisotropic Young diagrams and infinite-dimensional diffusion processes with the Jack pa-
+     rameter, Int. Math. Res. Not. 2010 (2010), 1102–1166, arXiv:0902.3395.
+[40] Qin Z., Hilbert schemes of points and infinite dimensional Lie algebras, Math. Surveys Monogr., Vol. 228,
+     American Mathematical Society, Providence, RI, 2018.
+[41] Sergeev A.N., Veselov A.P., Dunkl operators at infinity and Calogero–Moser systems, Int. Math. Res. Not.
+     2015 (2015), 10959–10986, arXiv:1311.0853.
+[42] Sergeev A.N., Veselov A.P., Jack–Laurent symmetric functions, Proc. Lond. Math. Soc. 111 (2015), 63–92,
+     arXiv:1310.2462.
+[43] Simon B., Szegő’s theorem and its descendants. Spectral theory for L2 perturbations of orthogonal polyno-
+     mials, M. B. Porter Lectures, Princeton University Press, Princeton, NJ, 2011.
+[44] Stanley R.P., Some combinatorial properties of Jack symmetric functions, Adv. Math. 77 (1989), 76–115.

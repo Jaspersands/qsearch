@@ -1,0 +1,636 @@
+{
+  "captured_at_utc": "2026-11-12T15:11:31.630112+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "control_note": "Existing counterexample script/result hashed only, not executed or refreshed.",
+  "dispatch": {
+    "bytes": 8179,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/dispatch.json",
+    "sha256": "15586eb96c1fa024048f71153ccf79e936f2227956a25ab07d3344d4f925d4be"
+  },
+  "dispatch_mutation_scope": "Only existing job.status fields updated to authoritative terminal statuses. Billing/scientific disposition fields unchanged; current billing metadata is authoritative in usage.json.",
+  "exclusions": [
+    {
+      "reason": "Still being written; not read or hashed.",
+      "scope": "Global-composition and odd-prime independent reviews"
+    },
+    {
+      "reason": "Not hashed or edited. Root explicitly confirmed the candidate is stable for this snapshot.",
+      "scope": "STATE/HANDOFF/workflow and any other changing shared notes"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills remain UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 2241,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/classical-global-bypass.md",
+      "sha256": "05452037e3d3f8d7734877007908b7f9a2678f9fc64d123f4aab8ec27512ce1a"
+    },
+    {
+      "bytes": 8133,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/descent-primary.md",
+      "sha256": "007e71e608eca18fb6a2b7f458234457cca61179704a4f3e716e3f79da4d9495"
+    },
+    {
+      "bytes": 8179,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/dispatch.json",
+      "sha256": "15586eb96c1fa024048f71153ccf79e936f2227956a25ab07d3344d4f925d4be"
+    },
+    {
+      "bytes": 2627,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/fixed-clock-final.md",
+      "sha256": "9f2aa9cab483aba7c816dae4917f4564e171ccfc5b230390dacee727fc057568"
+    },
+    {
+      "bytes": 3401,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/global-composition.md",
+      "sha256": "881684aa1788e6def773d8fcbf06b073a887ed1d23a5317cd735dc274f1d9a83"
+    },
+    {
+      "bytes": 21640,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/global-primary.md",
+      "sha256": "05abcda9dba13f9a49dc39a702690d28b22f6d249958684ec0dc80037c2e24f6"
+    },
+    {
+      "bytes": 17464,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/local-field-primary.md",
+      "sha256": "a08f5d5d011d4dd851e95082882463dd859b674d5fc30d2731834c5743e6bee7"
+    },
+    {
+      "bytes": 3631,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/odd-prime-extension.md",
+      "sha256": "7318c280bc203dd862ec24a1e447c2ac46f842878c423e47fcf09844480a0e71"
+    },
+    {
+      "bytes": 1814,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/stoll-root-interface.md",
+      "sha256": "98f2a4858dd516362474d8bf4712fc0013617d97be24eb56cd886953e794b807"
+    },
+    {
+      "bytes": 2177,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/unit-backend.md",
+      "sha256": "11eef6bc36547abff8cb256144c78df0254e84cb0a8c5391cd74df47e41487e4"
+    },
+    {
+      "bytes": 2355,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-composition/whole-dag.md",
+      "sha256": "ec9d030a16ab5200e446b5d233118335c0ea6e7963c76b0cd7a2047b3804be0a"
+    }
+  ],
+  "extraction_control_artifacts": [
+    {
+      "bytes": 1718,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/dyadic_extraction_guard/counterexample.py",
+      "sha256": "31bfde14009eedaf0bc8554aa7f633a0b625ac04764957fd43a4bfaaf0c25a09"
+    },
+    {
+      "bytes": 643,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/dyadic_extraction_guard/counterexample.json",
+      "sha256": "1059c31fb01f93f168c466936f42528ca1a27c458793e6b04e2b9bef8413100a"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 33375,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/dyadic_compiler_round/checkpoint.json",
+    "sha256": "7acc33606176e2fc459540e6202c41cc3b307cd52dfda9daff4299d4f4bbcc77"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 23988,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/dyadic_compiler_round/usage.json",
+    "sha256": "d9c3d742a8dcd74d5790b397d4b5f6c2a322c859fc6e2ebefc16f01bd3561618"
+  },
+  "not_frozen": "Active global/odd independent reviews, shared STATE/HANDOFF/workflow and changing notes. Root-confirmed stable candidate and listed component proofs frozen as timestamped snapshots. No mathematical claims inferred from hashes or report labels.",
+  "prior_hash_policy": "Frozen prior usage/checkpoint unmodified. Their new hashes preserve earlier artifact chain without historical-artifact rescan.",
+  "review_artifacts": [
+    {
+      "bytes": 12172,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-kummer-coordinate-haar-tail.md",
+      "sha256": "082d73288c992e0dc09dc4dfe5904832f16acc5cd0f6e8e34bf9049a9f767474"
+    },
+    {
+      "bytes": 12491,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-kummer-finite-grid-stability.md",
+      "sha256": "866a8230361ac3fc761f855f05b91dd71db3077271bb710d63be7bc2325ca0eb"
+    },
+    {
+      "bytes": 22291,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-dyadic-ideal-saturation-bound.md",
+      "sha256": "6156cf6f07ac19618725d220062c234ef4fcf2720ca044d4d994a17647567123"
+    },
+    {
+      "bytes": 13987,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-stoll-geometric-smith-bridge.md",
+      "sha256": "71fbf758d603e175dc03c9cf11b47c202bf26a712ae192973411bab4218378c3"
+    },
+    {
+      "bytes": 19365,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-native-local-squareclass-backend.md",
+      "sha256": "f6f9380d869a1f9f3a57f266be3c36034747d23327033ea144332002dc5e98b4"
+    },
+    {
+      "bytes": 12152,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-dyadic-finite-group-stopping.md",
+      "sha256": "9083d9dca1ee80a5cd2283b5da6a5c23ef398353ce3468be3a13cb2def026bdd"
+    },
+    {
+      "bytes": 13380,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-canonical-materializer-precision.md",
+      "sha256": "a0f85c930d7a33776b180f7befc3a09c7fa9ebdfc343f9a210fecb789ffe96ee"
+    },
+    {
+      "bytes": 11865,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-stoll-half-precision-ledger.md",
+      "sha256": "37b3a0dbd7372d06a830d2b4ac51fddf553f06148c397e8f5db9120ebc71f37e"
+    },
+    {
+      "bytes": 3877,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-classical-global-bypass-disposition.md",
+      "sha256": "4358364711ecab238ded23c34591a033e7df853562cfc3354df62ec8741570da"
+    }
+  ],
+  "scope": "Bookkeeping and stable artifact snapshot only, no scientific closure certification.",
+  "seven_terminal_results_and_responses": [
+    {
+      "obligation": "whole-dag",
+      "response": {
+        "bytes": 27069,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/response.md",
+        "sha256": "dd54faee03427a7079c9982c41657ea80cdbfc31afc334b2d5a573e7eccff7ae"
+      },
+      "response_characters": 27051,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2270,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/result.json",
+        "sha256": "492f896c2395a29df496a04a89815359fd31149a405a7f95830326062a686e8f"
+      },
+      "session_id": 17959,
+      "status": "completed"
+    },
+    {
+      "obligation": "unit-backend",
+      "response": {
+        "bytes": 9829,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/response.md",
+        "sha256": "3c3aa0611d80728fc418e1dd304f509daa34b8683f1de94a3c2533484a8b6474"
+      },
+      "response_characters": 9364,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1628,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/result.json",
+        "sha256": "c25c128c341ff2986bec8c5a5dcb3c184db26a9228125223cbd7506a59f43930"
+      },
+      "session_id": 97499,
+      "status": "completed"
+    },
+    {
+      "obligation": "stoll-root-interface",
+      "response": {
+        "bytes": 8558,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/response.md",
+        "sha256": "6c7620d998b8738ece161214cace829b0d3b58a23947abffefc3517a29d2f576"
+      },
+      "response_characters": 8328,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1871,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/result.json",
+        "sha256": "2d3841119b91db88b63cde0318d1a07c64273c8973d6d0ba273f9d592583e167"
+      },
+      "session_id": 30873,
+      "status": "completed"
+    },
+    {
+      "obligation": "odd-prime-extension",
+      "response": {
+        "bytes": 28856,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/response.md",
+        "sha256": "6650689e99cb814de030787f7f2203e140e6ab110c5759d997f58423b7513258"
+      },
+      "response_characters": 28839,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2456,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/result.json",
+        "sha256": "dbb8a111ab8cc3152e293bf924f7c22f15585ba5384f4fad7aaeb9a7466c63e4"
+      },
+      "session_id": 12288,
+      "status": "completed"
+    },
+    {
+      "obligation": "global-composition",
+      "response": {
+        "bytes": 30404,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/response.md",
+        "sha256": "5b9decea7095b5b4470e956554b4a80d099789f15b781a8406ee6882ea2d4f36"
+      },
+      "response_characters": 30360,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1923,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/result.json",
+        "sha256": "28cfd096682a677bdc8d928c59ba57075e5e0f215cb4c4b39c3dffd95dbe8a5e"
+      },
+      "session_id": 62281,
+      "status": "completed"
+    },
+    {
+      "obligation": "classical-global-bypass",
+      "response": {
+        "bytes": 14724,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/response.md",
+        "sha256": "e0c56591b62a49d8d7b439801613cfba6e01ab74f26cecee4c55766314a48641"
+      },
+      "response_characters": 14306,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2125,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/result.json",
+        "sha256": "149449cd21e239e623725181ed08e00259b02edff1e7cc7e5381f6ecf7705be8"
+      },
+      "session_id": 61043,
+      "status": "completed"
+    },
+    {
+      "obligation": "fixed-clock-final",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 3100,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/result.json",
+        "sha256": "57a9bebf0204af977da1ce8938916cf01b5a4715c945391f52c1e0987ec683d0"
+      },
+      "session_id": 12439,
+      "status": "empty_response"
+    }
+  ],
+  "stable_candidate_artifacts": [
+    {
+      "bytes": 20948,
+      "path": "/Users/jaspersands/Developer/qsearch/research/LOCAL_KUMMER_NATIVE_END_TO_END.md",
+      "sha256": "8a4162f5e0e946e1fde68ab1bce0cf10d777470e7809ffd93edbd2bfaa7081e3"
+    }
+  ],
+  "status": "TERMINAL_DYADIC_COMPOSITION_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 2355,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/context-00.txt",
+      "sha256": "ec9d030a16ab5200e446b5d233118335c0ea6e7963c76b0cd7a2047b3804be0a"
+    },
+    {
+      "bytes": 15839,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/context-01.txt",
+      "sha256": "4176ba3a0eb57c5a2a087b0fb7ad6bf6fc6ac470b1447052a3710554699c0c72"
+    },
+    {
+      "bytes": 15922,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/context-02.txt",
+      "sha256": "85598e08eba11022f074738099cbeb9c0d89d7a532472c296a60093a64fd322d"
+    },
+    {
+      "bytes": 22291,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/context-03.txt",
+      "sha256": "6156cf6f07ac19618725d220062c234ef4fcf2720ca044d4d994a17647567123"
+    },
+    {
+      "bytes": 13987,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/context-04.txt",
+      "sha256": "71fbf758d603e175dc03c9cf11b47c202bf26a712ae192973411bab4218378c3"
+    },
+    {
+      "bytes": 12491,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/context-05.txt",
+      "sha256": "866a8230361ac3fc761f855f05b91dd71db3077271bb710d63be7bc2325ca0eb"
+    },
+    {
+      "bytes": 17464,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/context-06.txt",
+      "sha256": "a08f5d5d011d4dd851e95082882463dd859b674d5fc30d2731834c5743e6bee7"
+    },
+    {
+      "bytes": 1274894,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/provider-response.json",
+      "sha256": "0948a7a8f9e52e75b8f1755477bd0d1ea104d8b6d5a67a0d4b4d74da9232624d"
+    },
+    {
+      "bytes": 104547,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/request.json",
+      "sha256": "6242e77988341d49a70c766b3de61ca2dc31315df3e1bdbad5adad9983784b53"
+    },
+    {
+      "bytes": 27069,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/response.md",
+      "sha256": "dd54faee03427a7079c9982c41657ea80cdbfc31afc334b2d5a573e7eccff7ae"
+    },
+    {
+      "bytes": 2270,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/result.json",
+      "sha256": "492f896c2395a29df496a04a89815359fd31149a405a7f95830326062a686e8f"
+    },
+    {
+      "bytes": 15839,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/context/000.txt",
+      "sha256": "4176ba3a0eb57c5a2a087b0fb7ad6bf6fc6ac470b1447052a3710554699c0c72"
+    },
+    {
+      "bytes": 17464,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/context/001.txt",
+      "sha256": "a08f5d5d011d4dd851e95082882463dd859b674d5fc30d2731834c5743e6bee7"
+    },
+    {
+      "bytes": 2177,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/prompt.txt",
+      "sha256": "11eef6bc36547abff8cb256144c78df0254e84cb0a8c5391cd74df47e41487e4"
+    },
+    {
+      "bytes": 38310,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/request.json",
+      "sha256": "c9eed966563dd4a07cd161d8b069b08139ce4f944709b12afb719611778003c4"
+    },
+    {
+      "bytes": 9829,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/response.md",
+      "sha256": "3c3aa0611d80728fc418e1dd304f509daa34b8683f1de94a3c2533484a8b6474"
+    },
+    {
+      "bytes": 1628,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/result.json",
+      "sha256": "c25c128c341ff2986bec8c5a5dcb3c184db26a9228125223cbd7506a59f43930"
+    },
+    {
+      "bytes": 15839,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/context/000.txt",
+      "sha256": "4176ba3a0eb57c5a2a087b0fb7ad6bf6fc6ac470b1447052a3710554699c0c72"
+    },
+    {
+      "bytes": 13987,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/context/001.txt",
+      "sha256": "71fbf758d603e175dc03c9cf11b47c202bf26a712ae192973411bab4218378c3"
+    },
+    {
+      "bytes": 23519,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/context/002.txt",
+      "sha256": "eea134899272eb6c33bb4588b7aa47601331df1e89c3f6ddba948c9f3cd38eb4"
+    },
+    {
+      "bytes": 1814,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/prompt.txt",
+      "sha256": "98f2a4858dd516362474d8bf4712fc0013617d97be24eb56cd886953e794b807"
+    },
+    {
+      "bytes": 58692,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/request.json",
+      "sha256": "7464f0dcecd9ef281ab2c2866380015095f601373df2103a3df844dc0acdb0d2"
+    },
+    {
+      "bytes": 8558,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/response.md",
+      "sha256": "6c7620d998b8738ece161214cace829b0d3b58a23947abffefc3517a29d2f576"
+    },
+    {
+      "bytes": 1871,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/result.json",
+      "sha256": "2d3841119b91db88b63cde0318d1a07c64273c8973d6d0ba273f9d592583e167"
+    },
+    {
+      "bytes": 3631,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/context-00.txt",
+      "sha256": "7318c280bc203dd862ec24a1e447c2ac46f842878c423e47fcf09844480a0e71"
+    },
+    {
+      "bytes": 15839,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/context-01.txt",
+      "sha256": "4176ba3a0eb57c5a2a087b0fb7ad6bf6fc6ac470b1447052a3710554699c0c72"
+    },
+    {
+      "bytes": 15922,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/context-02.txt",
+      "sha256": "85598e08eba11022f074738099cbeb9c0d89d7a532472c296a60093a64fd322d"
+    },
+    {
+      "bytes": 12172,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/context-03.txt",
+      "sha256": "082d73288c992e0dc09dc4dfe5904832f16acc5cd0f6e8e34bf9049a9f767474"
+    },
+    {
+      "bytes": 12491,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/context-04.txt",
+      "sha256": "866a8230361ac3fc761f855f05b91dd71db3077271bb710d63be7bc2325ca0eb"
+    },
+    {
+      "bytes": 22291,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/context-05.txt",
+      "sha256": "6156cf6f07ac19618725d220062c234ef4fcf2720ca044d4d994a17647567123"
+    },
+    {
+      "bytes": 13987,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/context-06.txt",
+      "sha256": "71fbf758d603e175dc03c9cf11b47c202bf26a712ae192973411bab4218378c3"
+    },
+    {
+      "bytes": 17464,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/context-07.txt",
+      "sha256": "a08f5d5d011d4dd851e95082882463dd859b674d5fc30d2731834c5743e6bee7"
+    },
+    {
+      "bytes": 731726,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/provider-response.json",
+      "sha256": "e4a040d28e3c9c7b6e38d1f200d06ae2406f9263361f71b8e9ca26670c18f40a"
+    },
+    {
+      "bytes": 118376,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/request.json",
+      "sha256": "c0c0e44cbe95ebc0d2b6bf5968ddba172002e1dd0fe8d12cd8dc1f97fd3fe674"
+    },
+    {
+      "bytes": 28856,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/response.md",
+      "sha256": "6650689e99cb814de030787f7f2203e140e6ab110c5759d997f58423b7513258"
+    },
+    {
+      "bytes": 2456,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/result.json",
+      "sha256": "dbb8a111ab8cc3152e293bf924f7c22f15585ba5384f4fad7aaeb9a7466c63e4"
+    },
+    {
+      "bytes": 3401,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/context-00.txt",
+      "sha256": "881684aa1788e6def773d8fcbf06b073a887ed1d23a5317cd735dc274f1d9a83"
+    },
+    {
+      "bytes": 21640,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/context-01.txt",
+      "sha256": "05abcda9dba13f9a49dc39a702690d28b22f6d249958684ec0dc80037c2e24f6"
+    },
+    {
+      "bytes": 8133,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/context-02.txt",
+      "sha256": "007e71e608eca18fb6a2b7f458234457cca61179704a4f3e716e3f79da4d9495"
+    },
+    {
+      "bytes": 17105,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/context-03.txt",
+      "sha256": "0b8470dfd16bcfaf56c70f4a44bdf497edf0cc70d8a3528209fe47a62626caec"
+    },
+    {
+      "bytes": 15839,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/context-04.txt",
+      "sha256": "4176ba3a0eb57c5a2a087b0fb7ad6bf6fc6ac470b1447052a3710554699c0c72"
+    },
+    {
+      "bytes": 589469,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/provider-response.json",
+      "sha256": "0474dfd9cdd97e0a79372a6552be87ce63c40d3ee0113510ad3af67139fb6fc8"
+    },
+    {
+      "bytes": 69805,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/request.json",
+      "sha256": "c800278c4bc2288426676760b8532caf19b33d54f5b38cbf6049aaa889f44a17"
+    },
+    {
+      "bytes": 30404,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/response.md",
+      "sha256": "5b9decea7095b5b4470e956554b4a80d099789f15b781a8406ee6882ea2d4f36"
+    },
+    {
+      "bytes": 1923,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/result.json",
+      "sha256": "28cfd096682a677bdc8d928c59ba57075e5e0f215cb4c4b39c3dffd95dbe8a5e"
+    },
+    {
+      "bytes": 3401,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/context/000.txt",
+      "sha256": "881684aa1788e6def773d8fcbf06b073a887ed1d23a5317cd735dc274f1d9a83"
+    },
+    {
+      "bytes": 21640,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/context/001.txt",
+      "sha256": "05abcda9dba13f9a49dc39a702690d28b22f6d249958684ec0dc80037c2e24f6"
+    },
+    {
+      "bytes": 8133,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/context/002.txt",
+      "sha256": "007e71e608eca18fb6a2b7f458234457cca61179704a4f3e716e3f79da4d9495"
+    },
+    {
+      "bytes": 17105,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/context/003.txt",
+      "sha256": "0b8470dfd16bcfaf56c70f4a44bdf497edf0cc70d8a3528209fe47a62626caec"
+    },
+    {
+      "bytes": 2241,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/prompt.txt",
+      "sha256": "05452037e3d3f8d7734877007908b7f9a2678f9fc64d123f4aab8ec27512ce1a"
+    },
+    {
+      "bytes": 56673,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/request.json",
+      "sha256": "37e84d555aca0c8a1edd18428dc217a875edd54c65598aa13c2e8a7e12ef77e8"
+    },
+    {
+      "bytes": 14724,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/response.md",
+      "sha256": "e0c56591b62a49d8d7b439801613cfba6e01ab74f26cecee4c55766314a48641"
+    },
+    {
+      "bytes": 2125,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/result.json",
+      "sha256": "149449cd21e239e623725181ed08e00259b02edff1e7cc7e5381f6ecf7705be8"
+    },
+    {
+      "bytes": 20948,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/context/000.txt",
+      "sha256": "8a4162f5e0e946e1fde68ab1bce0cf10d777470e7809ffd93edbd2bfaa7081e3"
+    },
+    {
+      "bytes": 13380,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/context/001.txt",
+      "sha256": "a0f85c930d7a33776b180f7befc3a09c7fa9ebdfc343f9a210fecb789ffe96ee"
+    },
+    {
+      "bytes": 11865,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/context/002.txt",
+      "sha256": "37b3a0dbd7372d06a830d2b4ac51fddf553f06148c397e8f5db9120ebc71f37e"
+    },
+    {
+      "bytes": 19365,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/context/003.txt",
+      "sha256": "f6f9380d869a1f9f3a57f266be3c36034747d23327033ea144332002dc5e98b4"
+    },
+    {
+      "bytes": 12152,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/context/004.txt",
+      "sha256": "9083d9dca1ee80a5cd2283b5da6a5c23ef398353ce3468be3a13cb2def026bdd"
+    },
+    {
+      "bytes": 12491,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/context/005.txt",
+      "sha256": "866a8230361ac3fc761f855f05b91dd71db3077271bb710d63be7bc2325ca0eb"
+    },
+    {
+      "bytes": 13987,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/context/006.txt",
+      "sha256": "71fbf758d603e175dc03c9cf11b47c202bf26a712ae192973411bab4218378c3"
+    },
+    {
+      "bytes": 643,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/context/007.txt",
+      "sha256": "1059c31fb01f93f168c466936f42528ca1a27c458793e6b04e2b9bef8413100a"
+    },
+    {
+      "bytes": 2627,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/prompt.txt",
+      "sha256": "9f2aa9cab483aba7c816dae4917f4564e171ccfc5b230390dacee727fc057568"
+    },
+    {
+      "bytes": 112611,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/request.json",
+      "sha256": "270a0ccab2362ef2f5ae4b13ea7cf67dcc9dc5a4cdaec4511a869eac9fc7ce78"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3100,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/result.json",
+      "sha256": "57a9bebf0204af977da1ce8938916cf01b5a4715c945391f52c1e0987ec683d0"
+    }
+  ],
+  "unique_hashed_artifact_count": 91,
+  "usage_snapshot": {
+    "bytes": 20169,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/dyadic_composition_round/usage.json",
+    "sha256": "a8c9ed20751ca5037df5ecf5faa8f5b7a7fd77c0cc8149eb5afa57a5240f2be3"
+  }
+}

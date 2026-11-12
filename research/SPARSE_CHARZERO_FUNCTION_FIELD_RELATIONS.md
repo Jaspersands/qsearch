@@ -1,5 +1,10 @@
 # Sparse characteristic-zero function-field relations
 
+Update13November: EVERY fixed extensiondegree delta now has a REVIEWED
+WRITTEN classical polynomial sparse-BIT FULL Rel algorithm, uniformly in
+growing variables/atoms/binaryexponents; see SPARSE_CYCLOTOMIC_FIXED_DEGREE.md.
+No integerfactoring needed. General growingdelta remains OPEN.
+
 2026-11-06. WRITTEN bounded-error quantum polynomial-bit composition, with
 independent core/source/resource and actual-text reviews complete. Full
 classical sparse-bit counterparts for degrees1 and2 are also reviewed.

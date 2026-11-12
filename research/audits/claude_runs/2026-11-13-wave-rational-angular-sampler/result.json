@@ -1,0 +1,41 @@
+{
+  "billing_status": "unknown",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4173,
+      "path": "research/audits/api_inputs/2026-11-13-wave-cluster-completion/contract.md",
+      "sha256": "b6e0ea270d1088c144bb9d736f75e135bc4b991bcea4715262fcff3616abdca1",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 9206,
+      "path": "research/audits/api_inputs/2026-11-13-wave-cluster-completion/markov-primary.txt",
+      "sha256": "0e4995bc2101004c16454d15243185512f85776244ec6db3ffdeda7fe1c4bd5a",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 6415,
+  "effort": "high",
+  "input_token_allowance": 6671,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.306684,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-wave-cluster-completion/wave-rational-angular-sampler.md",
+    "sha256": "b648371211a40aaa1733548380e290b059faba44dfb09ce1d160edb70eada4cb",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "classical",
+  "run_id": "20261112T220446.590608Z-07178829",
+  "status": "in_flight",
+  "usage": {}
+}

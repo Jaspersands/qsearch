@@ -1,4 +1,1598 @@
+## 2026-11-13 Single-Source Wave Classical Match Under Audit
+
+All six wavebatch jobs terminal, five substantive reports FULLparent-read;
+one OAIEMPTY RemoteProtocolError UNKNOWNbill, no retry (FIFTHunknown).
+Single-source all-mode quantum compiler and new classical residue/contour/
+stationary-phase finiteclock sampler are under independent audit. No theorem
+promoted from reportlabels. Exact five-source actual spatialTV bound independently
+closed,282LF parentread: >=1-[64+4(C+1)]/L against any C/L ring.
+Exact sparse quotient sources classically match once polynomialH recovered: 
+TV(P_u,P_h)<=sqrt(128s/L), otherwise full-grid work polynomial1/epsilon.
+Generic normal-form division has exponential-output counterexample, but it
+does not refute exact-divisible gap decomposition. Two new source-backed
+Claude lemmas stilllive,4USDceilings notcharges; see NATIVE_SPARSE_WAVE_SAMPLING.md.
+General sparse multisource conditioning and full endpoint OPEN; all advantage,
+hardness and novelty gates false. Next hard question: does actual uniform
+Green evaluator close m=1, and can quantitative selective deflation handle
+multisource cancellation? Next command: read terminal sourcelemma response
+and stable independent review, then reconcile once. Expected artifact is
+verified proof/disposition and terminal usage checkpoint, not quantumcode.
+Mechanical items: matching top entry in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-13 Rees Headline 38 Promoted, Full Tables, Two-Copy Holevo, κ = 9 SAT
+
+Claude Code session, AI only, pending human review. Papers are local and gitignored; nothing posted.
+
+- **Claim proved (AI-proved, AI-refereed twice):** in the time-polynomial tuple-oracle model of
+  thm:main, the class-9 exponent of m is at most E_H(9) = 38 for every prime p > 9, attained
+  exactly at p ≡ 1 (mod 2520). Schedule 1H, core §5.1: Lemmas stage, finish and two-term (Weil for
+  diagonal equations for p ≥ 4κ⁴, exact tables below), Theorem halving (Las Vegas per merge,
+  output checked). E_H rests on everything E_1 = 53 rests on (lem:rounds, not confirmed by
+  Ivanyos), plus §5.1 and an exact computation to 26244 with a residue-mod-5040 tail. At the
+  confirmed depth it gives 95 (Outlook). Write-up: audits/reviews/2026-11-13-rees-headline-38-applied.md;
+  referee CORRECT WITH FIXES F1–F9, applied: audits/reviews/2026-11-13-rees-headline-38-referee.md.
+  Core 55 pp., 0 undefined references, 0 overfull boxes; METADATA abstract 1,919 characters.
+- **Full version:** tab:fcs-budget combined column at depth L_d (e.g. 2^31−1: 944.9 → 359.6);
+  tab:full-grade-budget and tab:random-column-budget unchanged (no Schedule 1 used); preprocessing
+  runtime and prop:mixed-schedule ε/6 charge added; rem:halving-core points to the core. 228 pp.
+  The block-steered (iii) split still does not charge the preprocessing (open, mechanical).
+  audits/reviews/2026-11-13-rees-full-tables.md; tests/test_rees_fcs_budget.py now reads recompute_fcs.json.
+- **free23 exit (ii):** χ_2 = 0 iff the two labels are linearly independent (PROVED for all p > 3,
+  Lemma J); dependent labels, so any k ≥ 3 copies, give χ_k > 0 (PROVED). The single/two-copy
+  refutation cannot be extended information-theoretically. Exit (ii) UNKNOWN.
+  audits/reviews/2026-11-13-rees-free23-two-copy.md.
+- **κ = 9:** (37, 9) with K = {0,m}: all m timed out (m and 9−m equivalent, proved): NOT computed.
+  (19, 9, {0,1}) SAT, verified by two independent checkers; class-9 at 19: 24 → 21, conditional on
+  IS Lemma 12 at ℓ = 3. R7 = 25 unchanged and CONDITIONAL. audits/reviews/2026-11-13-rees-k9-sat.md.
+- **Claim gates that stay false:** every gate in research/reductions/*.json; no "deterministic"
+  for 38; no Ivanyos confirmation of 53 or 38; no hardness for exit (ii) or ZS.
+- **Next hard question:** can a human confirm lem:rounds and §5.1? Separately, is there a
+  poly-time measurement extracting the F_p-weighted label relations (exit (ii))?
+- **Next command:** `sat3_sub.py` at (37, 9) with F1(0,0) = 1 for m = 1..4, each `timeout 1500`
+  (research/audits/reviews/2026-11-13-rees-k9-sat/); acceptance: SAT verified by verify_model.py
+  lowers R7 at 37, or UNSAT certified with research/audits/reviews/2026-11-09-lrat-checker-fix/lrat-check.
+- Mechanical items: top of MECHANICAL_FOLLOW_UP_PLAN.md, "2026-11-13 Rees Headline 38".
+
+## 2026-11-13 Full Single-Source Wave Construction Under Audit
+
+Claude lattice-shell report full-read/reaped: NEW actual all-mode quantum
+single-source proposal, regular chart/window envelope with unique modepaths,
+constant norm success. Independent finite-bit/cleanup/capped-clock audit runs;
+not yet CLOSED. Main sparse-source endpoint remainsOPEN. Positive fixed-
+separation Gram falsifier independently proved,193LF parentchecked, explicit
+polynomial input and2^-n quotient; five-source actual spatial-ring falsifier
+also retained. See NATIVE_SPARSE_WAVE_SAMPLING.md.
+OpenAI classical-superposition failedEMPTY RemoteProtocolError, billingUNKNOWN,
+no retry: FIFTHunknown bill, no finding. TwoOAI jobs remain running. New
+Martin2006 source actualproof read: infinite-lattice asymptotics only, no
+uniform torus/damping sampler inferred. Next command: inspect fullresolvent/
+singleGreen reports; finish single-source audit. Mechanical queue: terminal
+milestone only, preserve FIVEunknown entries and do not invent failed charges.
+
+## 2026-11-13 Sparse Wave Source Cancellation Falsifiers
+
+Hard deductions in NATIVE_SPARSE_WAVE_SAMPLING.md: FIVE sources f=(I-K)delta
+have exact u=delta-iG/L, Z=1-Z0/L², Z0=Theta(L). Standard Green-state LCU
+successTheta(1/L); every fixed-width resonant-band state has actual spatial
+TV>=1-(C+19)/L from native output. Nativefamily itself classicallyeasy.
+Also positiveweights plus ANYfixed separation admits polynomial-description
+Bragg/taper arrays with normalizedGramO(1/L); no source-count/frame repair.
+Both terminalClaude reports full-read/reaped and materialproofs parent-checked;
+independent scoped notes finishing. Minor finiteL4 shell claim rejected.
+No general classical lower bound, solver impossibility, novelty or speedup.
+Four new construction/classical jobs remain active. Next hard question:
+source-aware FULL resolvent/classical spatial sampler, including off-shell
+components and normalization. Next command: read terminal reports; require
+uniform native clock or identify exact missing operation. No neighboring
+barrier-only batch. Mechanical queue: preserve bundles; terminal milestone only.
+
+## 2026-11-13 Pump Window Closed and Sparse Wave Batch Active
+
+CLOSED WRITTEN restricted classical FULL occupation baseline: native static
+condensate at tau=uD differs from Poisson mode2(mean54pi²u²), legal overflow
+mapped to condensate, by <=min(1,2^40exp84(1+|u|)^7/sqrtD). Parent full-read
+339LF independent CT/column/Duhamel/finite-bit proof. Approximation error
+must meet requested accuracy; arbitrary-time/precision sampler OPEN.
+Full projector report checked; exact D3 phase/vector13assertion control
+confirms scoped negative probabilities, including conditional fixed-primary
+and squared-amplitude repairs. No general variance lower bound/hardness.
+See MACDONALD_CONDENSATE_CLASSICAL.md for exact assumptions and boundaries.
+Terminal increment3.012588USD,cumulative249.179788/193priced,FOURUNKNOWN
+excluded; estimates notinvoices/balances. No Claude EMPTY retry.
+Next SINGLE scientific question: full sparse-wave spatial Born sampler with
+source normalization, true lattice shells and same-output classical baseline
+paid. Six DISTINCT API jobs active,33USD ceilings notcharges; exact sessions
+and packets in sparse-wave dispatch. Next command: inspect terminal reports;
+verify source cancellation first, then choose surviving constructive route.
+Mechanical queue: freeze stable old checkpoint, then no ledger work until
+new six-job milestone. No quantum code, novelty or speedup claim.
+
+## 2026-11-13 Sparse Wave Six-Task Constructive Pivot
+
+Selected independent native endpoint: full spatial Born sampling for sparse
+point forcing of A=I-K+i/2^n on the2D2^n torus. Exact input/access,
+quantum target, classical baselines and falsifiers in NATIVE_SPARSE_WAVE_SAMPLING.md.
+Actual primary2609.10282 equations checked after corpus; no imported
+normalization/annulus oracle. Six distinct paid obligations run across both
+providers,33USD ceilings not charges; contexts/sessions in sparse-wave dispatch.
+Core parent attack: f=(I-K)delta has five sources and exact u=delta-iG/L;
+constant source count does not by itself pay coherent LCU normalization.
+Next hard question: cancellation-aware FULL resolvent/same-output classical
+sampler. Next command: read terminal report/result pairs, verify each material
+claim, no empty retry. Static pump independent339LF proof stable awaiting
+parent full read; arbitrary-time sampler still OPEN. Mechanical queue points
+to only later terminal usage/hash reconciliation. No speedup/novelty claim.
+
+## 2026-11-13 Finite-Time Pump Proof and Projector Falsifier Audit
+
+Hard derivation recorded in MACDONALD_CONDENSATE_CLASSICAL.md: proposed
+uniform graded-contour column estimate and Duhamel Poisson full-output
+approximation TV<=C(1+|u|)^7/sqrt(D) at tau=uD. UNDER independent audit,
+not yet a theorem or arbitrary-time sampler. Exact initial coefficients
+checked by helper; global contour/boundary proof remains under review.
+OpenAI all-j projector completed/full parent-read/reaped; common stream
+valid but D3 negative-vector/conditional-negative falsifiers await exact
+Sage phase check. Claude Gaussian request truncated EMPTY/reaped, no retry.
+No general hardness, speedup or novelty gates. Next hard action: finish
+independent finite-time audit and compare independent high-upside directions.
+Next command: exact Sage D3 rational eigenphase control; expected frozen
+small JSON with 28394 and21087/2, negative projected vector. Mechanical
+queue below records terminal two-job reconciliation after proof stabilizes.
+
+## 2026-11-13 Static Condensate Projector and Pump Tests
+
+Native-driven three-job round terminal/full parent-read/reaped; OAI612LF
+supplies matching explicit uniform proof with correct H/T sign convention.
+Existing249LF reviewed encoding remains closed; no tighter pulse exponent,
+new Schur access or static hardness imported. Frozen35hash milestone:
+246.167200USD/191priced cumulative,FOURunknown excluded; estimates not
+invoices/balances. No more universal-control infrastructure work selected.
+
+Selected SINGLE static question: can the NEW paired-qRSt representation
+classically sample full mode1 counts (and eventually full occupation), not
+just normalized moments? Corpus/prior primary checks rerun; naive raw
+index estimator already has exact4^D second moment. One OAI coupled-all-j
+projector construction and one distinct Claude finite-clock Gaussian/pump
+attack run (11USD ceilings notcharges), api_inputs/2026-11-13-condensate-
+projector/dispatch.json. Quantum endpoint already written; no new code.
+Gaussian hypothesis at tau=uD is mode2 Poisson(mean54*pi²*u²), with explicit
+finite-D error still UNPAID. Parent derived exact initial column via an
+associated-Laguerre finite sum; independent initial-generator check running.
+See MACDONALD_CONDENSATE_CLASSICAL.md. Passing moments or asymptotics never
+establish the whole-time sampler. If no end-to-end finite-clock candidate
+survives this last constructive round, park the line and compare independent
+high-value directions; do not ask another nearby-parameter question.
+
+Next command: inspect exact first-column proof and terminal paid outputs;
+accept only full native law/conditioning with BIT/TV or a precisely scoped
+finite-time sampler. Generalbinarytime/fulloutput,novelty,hardness,speedup
+remain false/open. Mechanical queue: matching top entry.
+
+## 2026-11-13 Native Two-Control Encoding Written Closure
+
+CLOSED WRITTEN: every n-qubit G-gate circuit compiles uniformly in
+poly(n,G,1/epsilon) BIT to explicit occupation input, numericalD=O(n^5),
+and polynomially many signed rational-time pulses of ONLY native global
+cut-and-join S and dispersion N=sum k²n_k. Total duration polynomial;
+decoded occupation output TV<=epsilon. Parent checked249LF independent
+all-n prime/code/filter/pulse proof and supplied final hybrid/decode ledger.
+See NATIVE_DRIVEN_CUT_JOIN.md. Prime/Sidon modes pay alias removal; Fourier
+weights are implemented by actual unmerged pulses; exact pi-cycle CZ
+returns its ancilla. No Schur fast-forwarding or extra control is assumed.
+SingleD8 exact1004assertion control is only a local normalization falsifier.
+
+For unaryD/polynomial-duration inputs, ordinary sparse simulation provides
+quantum polynomial time. A polynomial classical full sampler at fixed small
+TV error would imply BPP=BQP; this is CONDITIONAL, not a lower bound,
+novelty/speedup/Shor-level algorithm claim. Known addressed chi² encoding
+is not claimed new. No hardness transfers to static Macdonald/BO problems.
+Two Claude reports completed/read/reaped with scoped corrections; OAIwhole
+compiler still running. Finish adjudication and freeze only at terminal.
+
+Independent selection already prefers the existing growing-boson static
+question over irrational-parameter compiler work; no concrete new general
+Selmer bypass was found. Next scientific test should exploit the NEW
+paired-qRSt moment representation constructively, not extend universal-
+control infrastructure. Next command: read terminal OAI and compare a
+coupled-path count sampler against the exact alternating-moment falsifier;
+accept only an end-to-end native BIT/TV algorithm. Mechanical queue below.
+Frozen condensate27hash milestone242.770252USD/188priced cumulative,
+FOURunknown excluded; estimates not invoices or balances.
+
+## 2026-11-13 Condensate Normalized Moments Classically Matched
+
+CLOSED WRITTEN classical normalized mode1 factorial-moment estimators:
+EVERY numericalD,EVERY0<=j<=D,globalq=t³,t=D/(D+1),binaryrationaltime2pi*a/c,
+initialD bosons in mode1. Parent fully checked323LF independent source and
+paired-extension proof. qRSt conditional P,Q are independent psi-tableaux;
+independent uniform-rank insertion gives the averaged pair law without
+kappa advice. Bounded phase differences estimate <(N1)_j>/(D)_j to additive
+epsilon in poly(D,L,epsilon^-1,log1/delta). Spectral/return and normalized
+monotone correlators also classical. Unnormalized all-k cost repaired.
+See MACDONALD_CONDENSATE_CLASSICAL.md. Full N1/full occupation TV sampling
+OPEN; 4^D second moment only refutes specified raw single-index estimator.
+No hardness/novelty/speedup/implementation claim. Both paidreports complete,
+fullread/reaped; separate3.320364USD estimated milestone freeze underway.
+
+New native-driven frequency/entangler Claude reports complete/read, OAI
+whole compiler and independent prime/code proof running. Exact-cycle CZ
+confirmed; correct unmerged pulses used (paid optional merge has wrongsign).
+Primecutoff and sum-mode guards remain essential; scoped exact leakage
+counterexamples recorded. No static-model hardness transfer or unreviewed
+binary-time Schur interface. Next command: read uniform compiler/audit;
+accept only polynomial mode construction, pulse/precision clock and decoded
+TV proof. Mechanical queue: matching top entry, no new quantum code/sweep.
+
+## 2026-11-13 Native Driven Exact Cycle Repair
+
+Hard deduction: cross three-wave C=a_p^dag*a_q^dag*a_(p+q) has a dark
+00/01/10 code sector and an exact two-level11/empty-pump sector. Thus
+exp[-i*pi*(C+Cdag)] is CZ and returns the ancillary sum mode to vacuum;
+commutator/BCH construction is unnecessary. Local qubits use the same
+one-pump/two-signal encoding. This addressed encoding/CZ mechanism is
+already in Niu/Chuang/Shapiro1704.03431 Eq2–4/Theorem1, actual proof read;
+no novelty claim. See NATIVE_DRIVEN_CUT_JOIN.md.
+
+Remaining named blocker: compile addressed quadratures from ONLY native
+global S,N with polynomial pulse list, bit precision and operator error,
+using semiprime frequency filtering and polynomial Sidon prime modes.
+Three distinct paid reports plus independent code/prime audit running.
+Actual Rosser--Schoenfeld1962 Cor3 Eq3.8 read for polynomial prime supply.
+No universality/hardness/speedup theorem promoted yet. Full reduction needs
+only polynomial total duration, so ordinary sparse S simulation suffices.
+Do NOT import immutable packet's unnecessary unreviewed 'known Schur
+transform' as a general binary-time fast-forwarding theorem. No new quantum
+subsystem or code. No hardness transferred to static condensate/singlequench.
+Next command: read independent code/pulse proof and terminal paid reports;
+accept only all-n uniform compiler with final decoded TV guarantee.
+Mechanical queue: matching top entry; keep condensate and driven ledgers
+separate and FOUR historical UNKNOWN bills excluded.
+
+## 2026-11-13 Condensate Pair Growth and Native Driven Candidate
+
+Both condensate paid reports terminal/full parent-read (252/492LF), no full
+occupation sampler. Positive uniform-permutation qRSt gives exact spectral
+law D!*r1^D*kappa_lambda^2/h_lambda with polynomial rational BIT/TV clock;
+actual Theorem4.25/Lemma4.26 and Proposition4.17 checked. New parent-checked
+paired-tableau proposal: conditional on shape, P,Q are independent with
+the same normalized psi weights. Extend each by uniform-rank qRSt insertion
+(actual Def4.28) to sample paired upward paths without coefficient ratios.
+This gives bounded additive estimators of EVERY normalized mode1 factorial
+moment; independent full source/extension review still pending. Full output
+and even mode1 TV sampling OPEN. Raw alternating-binomial single-index
+estimator has second moment>=4^D; only that estimator is falsified. Claude's
+unnormalized growing-k correlator cost is repaired to normalized correlators.
+See MACDONALD_CONDENSATE_CLASSICAL.md.
+
+Independent174line direction comparison parent-read: irrational Jack
+single-boson spectral growth is classical for all alpha>0, with exact
+Q(sqrt2) polynomial BIT/TV at alpha=sqrt2. Kernel c(s)^2*tau/(alpha*n),
+start singleton, endpoint alpha*D*prod_nonorigin(c^2)/H. Primary Olshanski
+0902.3395v3 Eq5.3/Prop5.1 checked (z=0 limit/direct singleton start).
+No full evolved occupation sampler follows. Do not fund compiler work just
+to evade rational fat-hook support. General Selmer has high external value
+but no new concrete arithmetic operation; no broad paid bypass repetition.
+
+NEW concrete constructive candidate NATIVE_DRIVEN_CUT_JOIN.md: global S
+cut-and-join and N=sum k²n_k pulses only, explicit fixed-momentum input and
+full occupation output. Frequency -2ij plus semiprime mode coding may give
+uniform encoded qubits/CZ in polynomial pulses. Three NEW distinct paid
+proof obligations run (whole encoding, actual frequency compiler, entangler
+and classical attack),13USD ceilings NOT charges; api_inputs/2026-11-13-
+native-driven/dispatch.json. No universality/hardness/novelty/speedup claim;
+prime/cutoff/code-leakage/pulse-clock obligations unpaid. No quantum code.
+Next: read independent paired-growth audit and attack the native control
+compiler. Acceptance requires all-n bounded BIT/norm/output error, not Lie
+controllability or finite examples. Mechanical queue: matching top entry.
+Frozen55hash dynamics ledger:239.449888USD/186priced cumulative, FOURunknown
+excluded; condensate usage remains separate until next terminal milestone.
+
+## 2026-11-13 Fixed-Boson Native Dynamics Classically Matched
+
+CLOSED WRITTEN SAME-output classical comparator: EVERY fixed input boson
+count k, arbitrary numericalD/binary rational time2pi*a/c, globalt=D/(D+1),
+q=t³, full native NS occupation law sampled withinTV2^-b in
+(D+1)^O(k)poly(D,L,b) BIT time. Parent checked272line independent proof.
+Multivariate super-Macdonald support lambda_(3k+1)<=k; finite positive
+Pieri/Newton matrices; coherent unnormalized derivative sampling; exact
+phase modulo1 and rational norms all paid. Also all bounded-Durfee
+Macdonald eigenstate occupation laws are classically polynomial. See
+MACDONALD_FEW_PHONON_CLASSICAL.md. Generic amplitudes require explicit
+charged representation. OneD3 Sage fixture171 assertions is only a local
+normalization falsifier, not all-D evidence.
+
+General growing-k sampler OPEN; full quantum endpoint already WRITTEN
+poly(D,L,b). No novelty/hardness/speedup claim. Of four dynamics requests,
+Doob completed/read; colour TRUNCATED/EMPTY0bytes, no retry; twoOpenAI
+still running. Two NEW qRSt condensate requests running with exact source
+and input mu1^D,11USD ceilings notcharges: MACDONALD_CONDENSATE_CLASSICAL.md.
+They test native classical spectral/return and full coherent output.
+Next command: read terminal reports and verify strongest constructive
+claim; acceptance is native uniform BIT/TV with normalizers and interference
+paid. Mechanical queue: matching top MECHANICAL_FOLLOW_UP_PLAN entry.
+
+## 2026-11-13 Native Real-Time Endpoint and Exact Doob Comparator
+
+CLOSED WRITTEN native NS real-time evolution: parent fully checked251line
+independent proof, exact common rational eigenvalue denominator/modulo1,
+same-bank U inverse and clean phase gates, poly(D,bit(time),b). Exhaustive
+classical comparator is exp(O(sqrtD))*poly(D,bit(time),b), ALSO logarithmic
+in integer time. See MACDONALD_REALTIME_DYNAMICS.md. No implementation,
+novelty, hardness or useful/Shor-level advantage.
+
+First dynamics paid report terminal/read190lines: exact Doob chain is
+Diaconis--Ram under reciprocal parameters, actual Eqs1.3--1.4 checked.
+Delete/resample update and ratio-free real-time formula verified; retain
+poly(D,b), not unproved tight BIT exponent. One Poisson estimator has
+exponential variance; no general no-go. Fixed-k SAME-output classical
+sampler remains under independent review. Three other paid jobs active.
+
+Next hard question is general growing-phonon classical sampling. New prior
+source qRSt2009.03526v2 Theorem4.25/proof and positive finite local factors
+checked; test whether its classical spectral sampling pays condensate
+return amplitudes/full output. No request yet on that new obligation.
+Next command: read completed reports and stable fixed-k review; expected
+proved native sampler or exact missing contraction, not a tiny-D sweep.
+Mechanical queue: matching top MECHANICAL_FOLLOW_UP_PLAN entry.
+
+## 2026-11-13 Few-Boson Macdonald Classical Candidate
+
+Parent derived constructive SAME-output classical candidate: fixed k initial
+bosons, arbitrary numericalD/binary rational time, globalt=D/(D+1),q=t³,
+full occupation TV2^-b sampling in (D+1)^O(k)poly(D,L,b). Independent review
+PENDING; do not promote yet. Multivariate super-Macdonald cancellation proves
+individual p_mu coefficient support lambda_(3k+1)<=k (not a univariate zero).
+Finite horizontal-Pieri/Newton lowering matrices on the resulting down-set
+pay coherent derivative-norm sampling, signs, phases and bit bounds.
+See MACDONALD_FEW_PHONON_CLASSICAL.md. Actual AHL2021 Eq31-39/Lemma2 proof
+read; primitive finite source identities separately checked.
+
+Four distinct paid classical dynamics jobs run,22USD ceilings not charges.
+Previous three-job Macdonald ledger frozen37hash: cumulative232.782710USD/
+182priced, FOURunknown excluded; estimates not invoices/balances.
+General growing-k classical simulation remains OPEN; no quantum advantage,
+novelty or hardness inference. Next command: independent proof attack on
+new note; expected closed scoped BIT sampler or exact broken step. Mechanical
+queue: matching top MECHANICAL_FOLLOW_UP_PLAN entry.
+
+## 2026-11-13 Macdonald Classical Baselines and Native Dynamics
+
+CLOSED scoped classical baselines: parent checked all272line independent
+proof. Near-row/column deficit s occupation sampling costs D^O(s)poly(D,b)
+BIT with finite CDF clock; elementary Jack-row TV floor holds EVERY D>=200.
+Both row laws themselves classically easy. See MACDONALD_CLASSICAL_BASELINES.md.
+All451lines of final native API report checked; its algebra/conditioning
+interfaces are separately paid, no stronger claim imported. Three Macdonald
+jobs terminal/parent-read; mechanical usage freeze pending, expected4.465248USD.
+
+Selected next question: polynomial classical sampling of native NS real-time
+occupation output on arbitrary explicit Fock input, numericalD, global
+t=D/(D+1),q=t³, binary rational time2pi*a/c. Written full transform gives
+poly(D,bit(time),b) quantum construction by exact rational phases; known
+diagonalization fast-forward mechanism, not novelty. Classical exhaustive
+p(D) baseline ALREADY logarithmic in time. Few-boson, Markov and finite-colour
+attacks come first. See MACDONALD_REALTIME_DYNAMICS.md and four paid packets.
+No implementation, general classical hardness or useful/Shor-level advantage.
+Next command: dispatch the four prepared independent requests; expected
+terminal reports and a native classical sampler or precisely scoped unpaid
+contraction. Acceptance requires full BIT/TV/normalization and source access.
+Mechanical items: matching top entry in MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-13 Native Macdonald Transform Closed
+
+Reviewed WRITTEN complete algorithm: EVERY numericalD, global t=D/(D+1),
+q=t³ fixed across all stages, full clean shape-to-Macdonald transform in
+poly(D,log1/epsilon) BIT/gates/workspace, uniform on arbitrary valid input
+superpositions/reference. Full408line independent proof parent-checked.
+All creation/normalization, specialized source poles, exact nilpotent
+native blocks, private-marker rectangular polar, coherent noninteger
+content readout, native L simulation, actual inverse/workspace and finite
+precision are paid. See MACDONALD_NATIVE_TRANSFORM.md. Huge fixed block
+constants are admitted only theoretically. No implementation, novelty,
+hardness, useful/Shor-level advantage or physical-position extension.
+
+Claude branching162lines/classical215lines fully read; no unrestricted
+classical sampler. Positive-Gram construction removes the branching
+report's unchecked integrality-citation dependency. Actual primary
+Borodin--Corwin Sections2.1.3-2.1.6 read; rendered Pieri formula confirms
+j+1 indices. Parent near-row D^O(s) cycle-tilt sampler and exact elementary
+Jack-row TV floor have complete derivations in MACDONALD_CLASSICAL_
+BASELINES.md, independent review pending. No Poisson--Dirichlet assumption,
+new D30 sweep or claim from failed moment closure. Rows/columns remain
+classical polynomial. OpenAI native report still running/advisory; inspect
+when terminal and freeze the three-job ledger then. Four old unknown bills
+remain excluded; last frozen total228.317462USD/179priced is an estimate.
+
+Next hard question chosen by external value must assess this complete
+primitive's useful classical output against independent candidates, not
+extend q,t regimes by inertia. First finish pending native report and
+classical proof; next command reads their stable artifacts. Acceptance:
+verify complete primitive/readout costs and actual target laws; never infer
+hardness from unmatched cases. Mechanical queue has this title.
+
+## 2026-11-13 Macdonald Specialization and Overlap Bounds
+
+DECISIVE new native simplification: C lowers marker>=1, so C^(D+1)=0
+EXACTLY on every stage. Qcal=sum_0^D C^k/k! has a finite LCU with
+constant total normalization<=exp32 and polynomial-bit rational weights.
+This removes the Taylor-Q approximation/polar-stability blocker at exact
+real arithmetic; all finite gate rounding is still charged at the end.
+Details in MACDONALD_NATIVE_TRANSFORM.md. Private marker banks for R powers
+and distinct rectangular input/output projectors remain mandatory.
+
+Established algebra for EVERY globalD>=1, t=D/(D+1),q=t^3 held fixed,
+all stages n<=D: generic actual2610.12326 unhatted cyclic projectors and
+Prop4.8 specialize without poles; global content coincidences/zero-varpi
+do not break the basis or positive creation scalar A Psi=q^(-j-1/2)J.
+AA† eigenvalue chi=(1-t)(q^-1-1)sum_box[box] in[3n/(4N²),300n/N²].
+Hook-ratio monotonicity gives tau_Mac>=exp(-3)tau_Jack3>=1/(144d) for
+d>0, tau_empty1. Parent derivation in MACDONALD_NATIVE_TRANSFORM.md;
+independent helper confirmed specialization, full proof still in progress.
+No native circuit/whole-transform claim is promoted from these facts.
+
+New exact resource route: noninteger content label k of t^k recovered by
+coherent repeated coarse-QPE/majority/uncomputation with clean error
+2sqrt(pwrong), hence polylogprecision. Times O(D), not old bounded-time
+promise, must be paid. Mode-deletion leftover for stage n is
+[D-(n-ell)]/D, correcting informal frozen brief wording. Constant C block
+normalization still<=32. Strongest classical controls row/column DP;
+unrestricted sampler remains OPEN. All advantage/novelty gates false.
+
+Critical remaining falsifier: Taylor approximation supplies a LOGICAL
+block error, not global-dilation norm. Polar construction must use actual
+Btilde and normalized failure block, then prove logical polar stability;
+L=Bdag D B is Hermitian and admits Duhamel comparison. Three paid jobs
+plus independent composition review active. Next command: read stable
+proofs/reports; expected artifact full paid transform or explicit blocker.
+Mechanical queue has this title. Jack compiler ledger now frozen27hashes:
+round3.362656USD; cumulative228.317462USD/179priced (Anth140.818422,
+OAI87.499040), FOUR unknown bills excluded, estimates not balances/invoices.
+
+## 2026-11-13 Native Macdonald Transform Candidate Selected
+
+
+Jack compiler's final polar report is now terminal/reaped and all832lines
+parent-read. Its clean2delta OAA proof is valid. Do not import its stronger
+global-native-workspace Eq2 interface: our full-logical CLEAN bound and
+same-bank hybrid suffice. Optional SK route/exactexponents not reliedon.
+Both compiler jobs terminal; ledger helper freezes them separately.
+
+Selected constructive question: does the new actual2610.12326 full Lax
+creation theorem yield a complete native q-deformed transform for global
+D,t=D/(D+1),q=t^3 held FIXED across stages? Explicit shape/occupation input,
+no coefficient/state/oracle advice; target clean poly(D,b) transform and
+same-output Born sampling. See MACDONALD_NATIVE_TRANSFORM.md. Compared
+with parked global Selmer classical comparison and conductivity-window
+barriers, this source supplies a direct plausible end-to-end mechanism.
+Corpus been-tried/baselines preceded literature; actual Sections2-4 through
+Cor4.9 read, not just abstract. Three distinct paid native/branching/classical
+obligations active, ceilings13USD NOTcharges, packets/session IDs in
+api_inputs/2026-11-13-macdonald/dispatch.json. Independent composition review
+also active. No quantum code or finite sweep.
+
+Parent proposed constant-normalization Cdag block: native weighted mode
+deletion, bounded coefficient rotation, marker shift and uniform k projection
+as a BLOCK, never free postselection. Qcal=expC, L=Qcaldag D Qcal; avoids
+exp(polyD) normalization. Source predicts A Psi=q^(-j-1/2)J_successor and
+AA† eigenvalue chi=(1-t)(q^-1-1)sum_boxes[box]. Need all specialized
+identities, conditioned polar isometry V, content readout and positive
+common paths. Generic q,t source has coincident-content/zero-varpi hazards
+at q=t^3; un-hatted cyclic projectors must repair these. All remain OPEN.
+Strong classical controls: row/column weighted-cycle DP; Diaconis--Ram
+stationary inverse-Hall law is row, qRSK source is t0/random-word law.
+No unrestricted sampler known here, never infer hardness or advantage.
+
+Next command: inspect each terminal report only after stable completion;
+expected artifact complete finite-BIT transform or exact native blocker.
+Acceptance requires all signal work/actual inverses, globalD parameters,
+noncircular errors and source specializations paid. Preserve Jack/BO
+log-precision written theorem; final paid polar report remains advisory
+and pending review. Mechanical queue uses this title.
+
+## 2026-11-13 Log-Precision Jack and BO Algorithms Closed
+
+Reviewed WRITTEN result: for EVERY numericalD and integer accuracyb>=1,
+fixed-alpha3 clean shape-to-Jack transform has poly(D,b) BIT/gates and
+restricted operator error<=2^-b on arbitrary superpositions/reference,
+including all workspace. SAME native BO quench work sampler has
+poly(D,log1/eta) BIT/gates/TVeta. Full300line independent composition proof
+parent-read/checked: binomial polar LCU, known-normalization OAA, native
+retained-signal Taylor, full-sector inner interfaces, same-bank actual
+inverses, finite palette and noncircular precision all paid. Native S
+weights/matchings also paid; see JACK_LOG_PRECISION_COMPILER.md.
+
+Claude native compiler340lines fully read; direct dyadic selector is a
+verified alternative, exact gate exponent NOT adopted. Arbitrary real-time
+input is not free; specified QPE times are efficient pi multiples. OpenAI
+polar report still active and must be checked when terminal, but is not
+an unpaid step in this independently checked proof. No quantum code,
+novelty, classical hardness/useful/Shor-level advantage or physical-position
+extension. Classical row/column work laws and bounded-Durfee occupation
+laws remain polynomial; unrestricted laws OPEN. Four old unknown bills
+remain excluded. Work-round ledger frozen224.954806USD/177priced estimates,
+not invoices/balances; compiler costs excluded until terminal.
+
+Next scientific selection: assess new primary2610.12326's Macdonald Lax
+creation theorem for a complete q-deformed transform, against classical
+Macdonald samplers and the parked global-Selmer/conductivity alternatives.
+Corpus been-tried/baselines done; actual source spectral/creation proofs
+read. Do not assume generic-q,t identities specialize without checking
+poles/coincident contents. Next command: read terminal compiler report
+and prepare distinct native-access, branching and classical candidate
+obligations; expected artifact is a complete paid transform or exact native
+blocker, no parameter sweep. Mechanical queue has this exact title.
+
+## 2026-11-13 Constructive Log-Precision Jack Compiler Selected
+
+
+Terminal work-law checkpoint: both reports fully parent-read; coarse-law
+report supplies exact extreme-bin formulas but no full classical sampler.
+Actual principal-specialization theorem checked. Eigen-equation occupation
+pushforward fails at D2 third moment; 33/411 have different extreme bins
+despite same entire initial energy curve. Hook-spectrum even/odd binomials
+refute only generic inverse-poly moment-to-TV reconstruction. Details and
+scope in JACK_BENJAMIN_ONO_WORK.md. Frozen35hash jack_work_round totals:
+round3.721176USD; cumulative224.954806USD/177priced, FOUR unknown bills
+excluded. Estimates not invoices/balances; active compiler jobs excluded.
+
+Next question chosen for constructive algorithm value: can the complete
+Jack transform and BO work sampler have poly(D,log1/epsilon) BIT/gate cost,
+instead of the currently admitted poly(D,1/epsilon)? Repeated classical
+contraction attacks yielded scoped barriers, so do not extend those by
+inertia. This replaces two explicit resource bottlenecks in an existing
+end-to-end candidate; no new access model, subsystem or implementation.
+
+Parent proposal in JACK_LOG_PRECISION_COMPILER.md: for W=two reflections,
+H=(2+W+Wdagger)/4 has promised spectrum>=1/[64(D+1)²]. Truncate the
+binomial inverse-square-root series q_K with K=O(D²log(D/delta));
+P_K=(1+W)q_K(H)/2 equals principal-half-phase times t in[1-delta,1].
+R=1-H is exact four-term LCU(I,I,-W,-Wdagger)/4. Fresh signal registers
+implement powers without exponential word enumeration. Known rational
+s=sum b_k<=K+1, dilution d=s sin[pi/(4m+2)],m=4(K+1), and m oblivious
+iterations should give CLEAN error O(delta), positive phases and O(K²)
+W calls, with no unknown overlap supplied. UNREVIEWED upgrade, not admitted.
+
+Second replacement reuses explicit native Taylor LCU/half-block construction
+from the earlier native-measurement report. Actual BCCKS1412.4687v1 robust
+OAA Eqs13-16 read; source discards ancillas, whereas full transform must
+KEEP all signals and use squared internal tolerance for clean-isometry
+error. All nested workspace, controlled phases and inverse-on-range
+composition require finite-BIT review. No QSVT phase compiler oracle.
+
+Two distinct paid jobs active (localceilings11USD NOTcharges): binomial
+polar proof and native finite-gate/Taylor compiler. Exact contexts/sessions
+in api_inputs/2026-11-13-jack-logprecision/dispatch.json. Internal independent
+review handles whole composition. Polylogprecision gate stays FALSE until
+parent checks all obligations. Existing poly(D,1/epsilon) result unaffected.
+
+Prior classical four-job round FROZEN51hashes: 3completed,1empty, total
+5.767108USD estimated; cumulative221.233630USD/175priced, FOUR unknown
+bills excluded. Work-law Schur report truncated NONEMPTY, no retry; coarse
+work-law request still running. Its classical answer must still be read.
+No novelty, useful/Shor-level speedup, hardness or implementation claim.
+
+Next command: read stable independent compiler proof and terminal reports,
+then verify uniform error and explicit resource recurrence. Expected artifact:
+a full poly(D,log1/epsilon) theorem or exact falsifier/blocker. No passing
+control can promote it. Mechanical continuation is at top of its plan.
+
+## 2026-11-13 Native Benjamin-Ono Quench Work Candidate
+
+Selected external target after comparing direct Jack Fourier/character
+sampling and physical-position Calogero-Sutherland: sudden DISPERSION-
+QUENCH work in the SAME canonical chiral-boson Fock space, fixed momentumD.
+Explicit lambda input, fixed H_i=S+2/sqrt3*N2, H_f=S, no state/advice.
+Existing Jack3 circuit prepares the specified H_i eigenstate with
+E_i=2(C3(lambda)+D)/sqrt3; sparse simulation/QPE of S gives integer
+e=2C1(nu), hence work e-E_i, within TVeta in poly(D,1/eta) BIT/gates.
+Full193line independent selection/proof parent-read and checked, actual
+MM Eq2.1/5.1 source; see JACK_BENJAMIN_ONO_WORK.md and
+audits/reviews/2026-11-13-jack-external-value-selection.md. WRITTEN only.
+No new alpha transform, physical-position loading, or long-time subsystem.
+
+Critical exact classical controls: initial row(D) is z=z'=1/sqrt3 Schur
+z-measure; column is transposed z=z'=sqrt3 with final energy SIGN FLIP.
+Positive content growth and Q(sqrt3) comparisons give polynomial BIT/TV
+samplers, checked against actual Borodin--Olshanski Eq1.1/Prop1.1.
+General occupation Born sampler does NOT compute mixed Jack/Schur work
+law. Only O(D²) energy bins: no inference from full-shape difficulty.
+Current Tierz2509.09640v2 actual TPM/Toeplitz formulas read; required
+initial-state determinant is unpaid for unrestricted Jack3 input. Gaussian
+asymptotics alone are insufficient; non-Gaussianity alone proves nothing.
+
+Additional creation-contraction report fully parent-checked: generic-u
+B_m=(1/3)T_u p_m T_u^-1 is exact, but doubled contraction retains
+shape-diagonal T_u² and native singular inverse cannot be supplied. Scalar/
+degree-only closures and direct absolute-history replacement refuted; no
+full sampler. Full dispositions in JACK_POSITIVE_CREATION_CLASSICAL_ATTACK.
+Actual Jiang/Diaconis--Ram Markov laws checked: stationary Ewens/Macdonald
+partition sampling is not arbitrary fixed-eigenfunction Born/work sampling.
+
+New decisive work-law controls parent-checked: lambda33 and411 have the
+SAME entire dispersion energy E(g), but <S²>=2232/49 versus5988/49;
+(A,B)-only output closure fails. ExactSage receipt under
+controls/jack_work_energy_collision. Separately lambda21 has energy0
+prob27/35, while every admissible z,z'-measure and every positive mixture
+has <=2/3; independent degree3 Schur/inequality proof in work note, giving
+TV>=11/105. This scoped result was independently derived after the Claude
+work report truncated mid-proof. Broader assertions from that partial report
+are NOT adopted. No general sampling barrier follows.
+
+Two DISTINCT paid work-law tasks run: coarse-energy recurrence/evaluator
+and positive Schur/z-mixture or determinant/Selberg sampler. The latter is
+now truncated/NONEMPTY3060bytes, parent-read, no retry. Exact packets
+and sessions in api_inputs/2026-11-13-jack-work/dispatch.json, localceilings
+11USD NOTcharges. Earlier four classical attacks remain tracked separately;
+Lax closure report complete/checked, paired-map request truncated EMPTY at
+estimated1.340204USD and NOTretried. Creation/prefix reports now complete and fully parent-checked; four-job
+classical round terminal and its ledger being frozen.
+All novelty, useful/Shor-level advantage, hardness and implementation gates
+remain false. No new quantum code or easy-family extension.
+
+Next command: read terminal paid reports/result metadata. Expected artifact:
+a COMPLETE polynomial classical sampler on unrestricted lambda, or precise
+remaining contraction/recurrence obligation with verified falsifier. Accept
+only paid normalization, precision and TV bounds for the COARSE work law.
+Record every report disposition; freeze usage only at terminal milestones.
+Mechanical queue at top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-13 Positive Jack Creation Shortcut Refuted
+
+One exact native control, lambda=(2,1), alpha3: signed row creation gives
+J21=p1^3+2p1p2-3p3; absolute histories give3p1^3+12p1p2+9p3. Their Hall
+Born laws have TV648/2065. Exact Sage differentiation and independent
+integral-Jack comparison; full note/control parent-read and symbolic
+normalization checked. See JACK_POSITIVE_CREATION_CLASSICAL_ATTACK.md.
+This refutes ONLY direct absolute-history replacement, not classical
+sampling. Example is repairable by rejection with success35/59. One-row
+A_D1=binom(2D-1,D)J_D proves scalar sign cancellation alone is NOT a Born
+sampling lower bound. No larger control or sweep follows.
+
+Full clean quantum Jack transform remains reviewed WRITTEN poly(D,1/epsilon),
+with no implementation, novelty, useful/Shor-level speedup or hardness claim.
+Strongest proved classical comparator stays poly(D)*M(lambda)^2 BIT; all
+bounded-Durfee shapes polynomial. General polynomial sampler OPEN. Actual
+Ben Dali--Dolega operators/Cor5.3/Thm8.2 first equality checked; formal
+positivity is in negative row variables. No assumed positive native law.
+
+First paid Lax-closure report terminal and fully checked: derivative norms
+are occupation factorial moments, not corner moments. A single norm on
+(a,1) is bounded/nonconstant rational in a, ruling out a FIXED degree-
+independent polynomial in finitely many hierarchy generators only. D-
+dependent/rational polynomial-size methods remain OPEN. Exact formula and
+report corrections are in the topic note; no further nearby closure barrier.
+
+Four distinct paid attacks run: exact row-creation norm contraction, Lax
+commuting-charge moment closure, positive paired-map sampling, and BGL
+prefix-amplitude simulation of the actual clean circuit. BGL2112.08499v2
+Algorithm2 and ground-state proof checked, not inferred from abstract:
+ALL prefix amplitudes or ground-gap+sensitivity+amplitude access are owed.
+Exact contexts/sessions in api_inputs/2026-11-13-jack-classical/dispatch.json;
+22USD local ceilings NOTcharges. No retries. Prior72hash Jack ledger frozen.
+
+Next command: read each terminal response.md together with result.json;
+verify any full sampler or concrete counterexample, including bit/normalizer
+costs. Expected artifact: report dispositions and one complete matched
+algorithm or scoped unresolved obligation. Acceptance: all-degree proof on
+unrestricted shapes, not a passing control/ACCEPT label. Mechanical queue
+at top of MECHANICAL_FOLLOW_UP_PLAN.md; Codex retains scientific judgment.
+
+## 2026-11-13 Clean Jack Basis Transform Written and Reviewed
+
+For EVERY numerical D and0<epsilon<1 at FIXEDalpha3, uniform finite-gate
+circuit maps sum a_lambda|lambda>|0> to sum a_lambda|Jhat_lambda>|0>
+within epsilon in restricted isometry/operator norm. Full BIT/gate cost
+poly(D,1/epsilon), exponent independent of partition count. Output is the
+Hall-normalized integral-Jack POWER-SUM occupation state; no arbitrary
+input-superposition loading is free. Full300line independent proof parent-
+read: audits/reviews/2026-11-13-jack-branching-independent.md. See
+JACK_COHERENT_BRANCHING_TRANSFORM.md for exact theorem and all six report
+dispositions. Algorithm is WRITTEN, not implemented.
+
+Classical-label and native Fock branching give the SAME positive content-
+path amplitudes. Apply the explicit inverse Fock circuit to erase paths.
+Native positive polar map is the principal square root of two reflections;
+circular QPE tail, branch-cut gap, all controlled phases, canonical matching
+uncomputation and inverse-on-range error are PAID. No Jack oracle, hidden
+label/reflection, recursive preparation inverse, postselection or p(D) error
+factor. Polylog-epsilon and exact gate exponents remain UNCLAIMED.
+
+Strongest checked comparator: exact expected or bounded-TV classical sampler
+poly(D)*M(lambda)^2, M the down-set size; all bounded-Durfee families are
+classically polynomial. General polynomial sampler OPEN, not hard. Content-
+only label identification and measured-history coherent erasure are exactly
+falsified. No novelty, Shor-level advantage, implementation, practical gate
+count, physical-position or negative-alpha/FQH extension is claimed.
+
+Six distinct paid jobs ALL completed/nonempty, ALL fully parent-read; local
+ceilings33USD NOTcharges. Frozen72hash controls/jack_lax_round/ records
+round9.856810USD, cumulative215.466522USD/171priced records; prior
+frozen48hash torus ledger unchanged and FOUR
+historical UNKNOWN bills remain excluded. No retry. Next scientific question:
+does the actual positive map/creation formula supply a full classical Born
+sampler or polynomial derivative-norm contraction for unrestricted shapes?
+Corpus before primary-source check done; actual Ben Dali--Dolega2305.07966v1
+Theorems1.4--1.7 read. Formal positivity is in NEGATIVE row-length variables,
+so it is not already a positive native sampling law. No inferred speedup.
+
+Next command: inspect the source's explicit creation operators and formulate
+a single native classical sampler/falsifier, with sign, normalization and
+conditional-count costs all charged. Expected artifact is a complete matched
+sampler or a scoped failure of that concrete construction, not a hardness
+claim. Mechanical continuation at top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-13 Jack Overlaps and Classical Shape Baseline Verified
+
+Fixed-alpha3 ALL-size corner probabilities satisfy tau>=3/(16d), q>=1/(d+1)
+(with deterministic degree0). Full209line independent proof parent-read;
+ideal two-projector clock O(D^2 log(D/eta)) pays BOTH failure outcomes.
+Complementary probabilities are bounded by the other corner masses, so the
+paid report's generic near-one tail pitfall does not break this family.
+See audits/reviews/2026-11-13-jack-overlap-independent.md. No finite-precision
+or coherent-history inference from this ideal clock.
+
+Classical SAME Born-output sampler is unconditional: exact expected BIT
+poly(D)*M^2 or bounded-clock TV-epsilon poly(D,log1/epsilon)*M^2, M the
+partition down-set size. Full195line independent proof parent-read, explicit
+LCM denominator/hook-norm bounds. Every bounded-Durfee family is classically
+polynomial; general M=exp(O(sqrtD)) leaves general sampling OPEN, not hard.
+Reject unnecessary scans and the paid report's overstrong claim that a
+quasipolynomial comparator forbids any advantage. See jack-classical-downset-
+independent.md. Paid OpenAI intertwiner report fully checked: a distinct
+commuting-lift/resolvent proof closes the same identity without Pieri input.
+
+Next hard question is the concrete FULL transform in
+JACK_COHERENT_BRANCHING_TRANSFORM.md: classical-label and Fock branching
+circuits must produce the SAME positive path state, allowing all records
+to erase by an explicit circuit inverse. Uniform native polar rotation,
+phase/workspace control and complete BIT/gate cost remain OPEN. Parent
+proposed a principal square-root of the two-reflection product, compiled
+by coherent phase estimation with polynomial(D,1/epsilon) clock, avoiding
+unknown-label angle advice. Six DISTINCT paid obligations total ceilings
+33USD NOTcharges; three terminal parent-read, three active in jack-lax
+manifest. Prior frozen ledger unchanged; FOUR UNKNOWN bills still excluded.
+
+Next command: read native/decoder/branching reports and independent complete
+branching proof. Expected artifact: checked uniform operator-norm circuit
+with every ancilla erased, or explicit falsifier. Acceptance requires no
+p(D) precision loss, no hidden Jack reflection and matching relative phases.
+No quantum implementation, speedup, novelty or physical-position claim.
+Mechanical continuation is at top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-13 Jack Raising Identity Verified at All Degrees
+
+For EVERY real alpha>0, partition lambda of D>=0 and addable corner s,
+A_D psi_(lambda,s)=J_(lambda+s), with pi0 psi=J_lambda and weighted Hall
+norms. Exact211line independent norm-saturation proof fully parent-read:
+audits/reviews/2026-11-13-jack-lax-intertwiner-independent.md. Compressed
+spectral support + corner-intersection + up-Pieri norm sum remove ALL
+global-content degeneracies. No generic-parameter limit or finite scan.
+Actual follow-up Shift Thm is related but has paired down-residue/vector
+sign inconsistencies; positive inverse is (L|Z_mu-theta)^(-1), not whole-L
+inverse. See JACK_LAX_PREPARATION_CANDIDATE.md. No novelty claim.
+
+This closes ONLY the algebraic label/normalization gate. A maps different
+orthogonal parents to one child and is not a unitary erasure. Both overlaps,
+native finite-precision preparation, coherent label erasure, and matched
+classical Born sampling remain OPEN. Five DISTINCT paid obligations now run,
+threeOpenAI/max/twoClaude/high, local ceilings31USD NOTcharges; manifest at
+api_inputs/2026-11-13-jack-lax/dispatch.json. Prior frozen torus ledger and
+FOUR UNKNOWN bills unchanged; no retry or quantum implementation.
+
+Next hard question: do native two-projector operations give a clean full
+Jack transform, uniformly on superpositions, without recursive state inverses?
+Next command: read terminal overlap/native/decoder/sampler reports and
+independent overlap proof. Expected artifact is explicit polynomial finite
+clock plus operator-norm error accounting, or a decisive obstruction.
+Acceptance cannot be basis-state success alone or finite controls. Mechanical
+items at top of MECHANICAL_FOLLOW_UP_PLAN.md; all unrelated rows preserved.
+
+## 2026-11-13 Finite Constant Valuations Closed; Jack Growth Selected
+
+Supplied-prime compiler is REVIEWED WRITTEN polynomial BIT, correct-or-ABORT
+on a CORRECT Alg basis: every accepted regular p-adic point gives ALL
+constant-field embedding valuations with uniform multiplicities, by formal
+Cp[[X]] germs. Independent378line proof fully parent-read. Explicit two-digit
+order-enlargement loss, integral socle progress, nilradical-aware idempotents
+and Kraw=2Ccap+2B+24 pay the clock. Full Gauss rows off Alg are only bounded-
+error; the stronger intended restriction needs no joint-characteristic union.
+See SPARSE_VERTICAL_VALUATION_COMPILER.md. Complete prime discovery remains
+UNPAID. Arch-only relation is falsified by((3+4i)/5,i,T); input-content-only
+support by the native nonzero-Alg prime7 family. All growing-degree fullRel
+and ordinary classical no-factoring gates remain false.
+
+Cyclic content and native Taylor reports are terminal and fully parent-read;
+neither supplies the general success/multiplicity bound. Taylor local-length
+identity and conditional truncated-determinant clock accepted; no hardness
+inferred. See SPARSE_CYCLIC_CONTENT_PROJECTION.md. Park nearby support
+subcases rather than continuing by inertia. Independent alternative selection
+in audits/reviews/2026-11-13-independent-next-direction.md: actual Oct2026
+impurity papers classically match the fixed-impurity global-energy/compact-
+state target; no paid impurity job. Their full bit implementation was not
+independently audited. Selected new question is native fixed-alpha3 Jack
+coefficient-state preparation by two Lax-projector growth steps, motivated
+by an explicit possible full polynomial algorithm.
+
+JACK_LAX_PREPARATION_CANDIDATE.md specifies input/output, mechanism, costs,
+classical comparator and falsifiers. ONE degree3 lambda21 Sage control gives
+A psi=J_(lambda+s) at all3corners and AA†=12I, not an all-degree theorem.
+All-degree intertwining, both overlap bounds, finite-precision rewinding and
+matched classical Born sampling remain OPEN. Four distinct paid jobs now
+run, local ceilings22USD NOTcharges: api_inputs/2026-11-13-jack-lax/dispatch.json.
+Next hard question: does the algebraic degree-raising map preserve the
+partition label despite global content degeneracy? Next command: read each
+terminal jack-lax response and the independent label proof; expected artifact
+is a checked identity/counterexample and one complete conditional resource
+proof. Acceptance: all-degree argument or exact falsifier, never finite-pass
+promotion; no quantum implementation until these gates and classical attacks.
+
+Torus terminal ledger controls/torus_completion_round/ has48validatedhashes.
+Round Anth1.099108/OpenAI1.752800,total2.851908USD; cumulative Anth132.868662/
+OpenAI72.741050,total205.609712USD,165pricedrecords. FOUR UNKNOWN bills
+excluded, including empty unit-lattice ReadTimeout; partial0.070644 excluded,
+no retry. Estimates NOT invoices or measured balances; no anchor subtraction.
+Jack jobs excluded. Mechanical items are at the top of MECHANICAL_FOLLOW_UP_PLAN.
+
+## 2026-11-13 Certified Sparse Torus Archimedean Compiler
+
+SPARSE_TORUS_ARCHIMEDEAN_ROWS.md closes a REVIEWED WRITTEN randomized
+polynomial sparse-BIT ARCH-ONLY compiler, all growing native parameters.
+Completed paid report and full308line independent proof parent-read, including
+explicit constants. Actual MSW1301.4870v2 Cor1 applied to an explicit dyadic
+polynomial pays fixed-clock approximate factorization; rational Rouche/value
+tests certify ALL branches. Iterated Jensen+grid coupling gives GOOD>=15/16;
+every accepted row correct, ABORT<=eta by repetition. No exact cyclotomic
+field, root-count advice or expanding until success. Joint germ embeddings
+cover each constant embedding with multiplicitydelta/[C:Q]. Corrected
+absolute-log norm versus positive-part Weil-height terminology. Native
+sparse evaluation/denominator/separation/original-atom precision all paid.
+
+Falsifiers retained:((3+4i)/5,i,T) has zero arch rows but finite/torsion/
+nonconstant obstructions; undersized dyadic grids alias T^(2^M)-1. Thus
+FULL growingdegree Rel remains OPEN. Complete finite support is the key
+unpaid operation; SPARSE_VERTICAL_VALUATION_COMPILER records exact support
+lemma and prime7/nonzero-Alg falsifier. Known-prime normalization clock is
+under separate review. New paid jobs continue for cyclic content cover,
+native Taylor multiplicity and conditional unit-log/phase extraction.
+Next command: inspect final result.json/response.md in torus-completion
+packet bundles and stable audits/reviews/2026-11-13-sparse-known-prime-clock.md.
+Acceptance: complete native coverage and polynomial BIT clock, not supplied
+primes or finite examples. Next-direction review compares unrelated full
+mechanisms if these routes stall. No solver/sweep/quantum implementation.
+Mechanical queue in matching entry. Usage remains frozen next_mechanisms_round
+82hashes, estimates202.757804USD cumulative, THREE unknowns excluded; newthree
+jobs excluded. No speedup or classical no-factoring match claim.
+
+Update within this pass: SPARSE_CYCLIC_CONTENT_PROJECTION.md admits only the
+nonzero-projection certificate and its polynomial clock at supplied small q.
+Full report parent-read; no general hit bound or native counterfamily.
+Repaired false sparse-denominator-clearing claim by native formal circuits;
+radical-family result is already covered, so no suggested subcase sweeps.
+The separate unit-log request ended EMPTY ReadTimeout with UNKNOWN bill;
+partial counters are not final charges, no retry. It adds a fourth current
+unknown beyond the frozen ledger's three. Only Taylor paid task remains
+running in torus-completion; known-prime and independent selection reviews
+continue internally.
+
+## 2026-11-13 Sparse Finite Support Gate Is Explicit
+
+Full16,212byte OpenAI vertical report parent-read; disposition in
+SPARSE_VERTICAL_VALUATION_COMPILER.md. Proved support sufficiency:
+primes divide cont(D)*product cont(det A_i); a polynomial-bit NONZERO
+integer multiple of each content suffices, but finding these is UNPAID.
+Modular residues are not such multiples. Exact native irreducible
+f=P(Y^d-T^M), P=Z³+3Z+3, atoms A(Y^d-T^M-1),A with A=T^M(T²M-1),
+has Alg=Z(1,-1) and requires prime7, invisible in input contents.
+Family is easy, not hard. Native irreducible pencil g+Xh reduces arbitrary
+sparse resultant support to this operation; its Alg may be zero, so no
+fullRel hardness reduction. Correct torsion lattice permits CLASSICAL
+small finite-group enumeration (size<=2delta²) after good p>2delta²
+specialization, retaining the nonsaturated identity lattice.
+
+Known-prime joint rows use a joint characteristic polynomial and tropical
+upper-orthant counts for alignment; multiplier-ring normalization/precision
+is still under independent review. No supplied primes or unit lattice may
+be promoted to native access. Full growingdegree Rel remains OPEN; this
+route would be classical WITH INTEGER FACTORING even if support closed.
+Three new distinct paid jobs continue: cyclic content cover, native Taylor
+multiplicity, conditional unit-log lattice/phase. Next command: inspect final
+result.json/response.md for bundles in api_inputs/2026-11-13-torus-completion/
+dispatch.json; expected artifact a verified native cover or explicit bounded
+Taylor operation, acceptance polynomial in ALL native BITparameters and
+complete lattice, not partial-row success. Arch-clock review also pending
+final parent read. No more fixeddegree or Gaudin locality work.
+
+Six-job next-mechanisms milestone frozen82hashes: allsix completed/nonempty,
+round estimate9.531872USD (Anth3.318312/OpenAI6.213560); cumulative known
+202.757804USD (Anth131.769554/OpenAI70.988250),163records,THREE unknownbills
+excluded. Estimates not bills/balances. Newthree excluded. Matching mechanical
+entry names the queue; all prior ledgers preserved. No speedup claim.
+
+## 2026-11-13 Bulk Gaudin Obstruction and Native Resultant Boundary
+
+Two complete independent algebra reviews and their paid reports were parent-read.
+GAUDIN_JOINT_GENERATOR_LOCALITY.md now proves EVERY N>=4, 2<=M<=N-2,
+distinct real sites forces a quartet double transfer -(3/4)Delta/Pi*g²+O(g³).
+Local commutators remove external spectators; joint simplicity extends across
+subset-sum coincidences. No exact3site or diagonally dressed single-exchange
+JOINT generator on any [0,G]. No general preparation/approximation/growing-
+support lower bound; no N6 sweep. SPARSE_NATIVE_RESULTANT_LIFT.md embeds
+arbitrary sparse resultant LC in native irreducible degree3d norm-LC at
+infinity, with three original nonconstant atoms and intrinsic rank2Alg/rank1Rel.
+All sparse/height clocks checked. The family itself has EASY fullRel and
+T-adic LC; no hardness or general LC impossibility follows.
+
+Priority remains FULL growing-degree sparse classical relation counterpart,
+via torus arch logs plus complete finite valuations. The analytic report is
+positive but its root-finding/explicit precision import is being checked
+against actual Mehlhorn-Sagraloff-Wang1301.4870v2; finite prime support remains
+UNPAID and the OpenAI report is running. Arch-only falsifier (3+4i)/5 remains.
+Next command: inspect terminal metadata/response under audits/openai_runs/
+2026-11-13-sparse-vertical and review audits/reviews/2026-11-13-sparse-torus-
+arch-clock.md when stable. Acceptance requires native complete support and
+polynomial BIT clocks, not supplied primes or exponent-size evaluations.
+Mechanical items in matching MECHANICAL_FOLLOW_UP_PLAN entry. No speedup.
+
+## 2026-11-13 Fixed-Degree Sparse Relations Classically Matched
+
+- CLOSED REVIEWED WRITTEN classical bounded-error polynomial SPARSE-BIT FULL Rel for EVERY FIXEDdelta native Q(T)[Y]/monic irreducible f and nonzero original sparse rational-function atoms, growing s/k/binaryexponents. No factoring/constantfield/embedding advice. SPARSE_CYCLOTOMIC_FIXED_DEGREE.md; full250line independent proof and139line paid report parent-read. Polynomial exponent dependsdelta; growingdelta remainsOPEN.
+- Mechanism: retained generalAlg, prime-collision sparse-factor lemma, fixeddegree Sylvester supportbound K=(2delta-1)!m^[delta(2delta-1)], exact partial-component cyclotomic specialization, injective algebraic-constant map, actual LS fullrelations on ORIGINAL atoms, integer lattice intersection. Numerical q polynomial only when deltaFIXED; confidence by repetition, not inflatingq with1/eta. Whole result bounded-error through Alg, not LasVegas.
+- Rejected paid norm-resultant equivalence: f=Y²-T^q,u=Y-1 accepts Y=-1 at everyqtoruspoint although norm vanishes. Normnonzero remains a sufficient success event. No generic determinant hardness/derandomization impossibility claim.
+- Next scientific question remains FULL growingdelta counterpart. Returned OpenAI structuredresultant report has a native irreducible lift with intrinsic rank2Alg/rank1Rel; parent-read and independent algebra check underway. It supplies no algorithm/no lowerbound. Gaudin report extends its scoped doubletransfer obstruction to all bulkN, under narrow independent review; no further locality sweep or generator-truncation guess queued.
+- Two new paid torus/vertical tasks remain running in sixjob manifest audits/api_inputs/2026-11-13-next-mechanisms/dispatch.json; four reports now completed/reaped, totalceilings33USD notcharges. No retry. Next command: read terminal torus/vertical responses fully, verifying Jensen/finiteprecision and COMPLETE prime-support costs before any fullrelation claim. Expected artifact is one paid native operation or explicit falsifier. Gemini queue under this title; no fixeddegree subsystem expansion.
+
+## 2026-11-13 Native Three-Site Joint Transport Falsified
+
+- REFUTED universal exact at-most3site Hermitian Gaudin JOINT AGP. NativeN4,M2,eps(0,1,3,7),g1/3 has a unique antisymmetric solution with nonzero Hamming4 corner355248848800449/125250068977266446; all3site operators have zero there. Exact rank12/13 versus15/15 control, independently rebuilt from full Pauli matrices. Real/imaginary splitting and sector compression pay arbitrary phase gauges and number-nonconserving terms. Full150line review parent-read.
+- Full paid locality report checked; independently verified symbolic coefficient -(3/4)*(e_w-e_v)/product cross-site differences *g²+O(g⁴), all distinct4site tuples near0, including pair-sum degeneracy. Full157line review parent-read. At least two complementary entries have nonzero coefficient; report's EACH-entry assertion narrowed when Delta0. No uniform radius, arbitrary-g, growingN, chosen-branch, approximate or general preparation obstruction. Main note GAUDIN_JOINT_GENERATOR_LOCALITY.md. No N6/locality sweep queued.
+- Next scientific priority remains FULL growing-degree sparse relation comparator. Returned cyclotomic report gives a promising fixeddegree classical proof under independent review; its norm-resultant exact criterion is FALSE for partial-component acceptance (f=Y²-T^q,u=Y-1). Generalgrowingdegree stillOPEN. Two NEW distinct paid obligations attack parent randomtorus/vertical-valuation operation, not LC/cyclotomic repeats; sixjobs total33USD ceilings, notcharges. api_inputs/2026-11-13-next-mechanisms/dispatch.json under audits/ retains exact locators. No empty retry.
+- Next command: read terminal sparse-structured/gaudin-generator reports in FULL and the completed fixeddegree review when stable. Expected artifact: a paid complete native operation or exact scoped falsifier. Acceptance forbids hidden prime support, expanded giant coefficients, arch-only relations or promotion from finite success. Gemini queue under this exact title. Quartic factoring composition remains closed in preceding entry.
+
+## 2026-11-13 Native Quartic Squareclasses Reduce to Factoring
+
+- CLOSED REVIEWED WRITTEN classical polynomial-BIT complete L(S,2) for native quartic L with a quadratic subfield F and Cl(O_F,S)/2=0; S all primes above explicit rational support containing2/ramification. The one-prime Galoisquartic family has this class condition proved/natively recognized. No supplied radicals/localframes/units/conics. Polynomially many INTEGER FACTORING calls on polynomial-bit intermediates are charged. Correct complete output or ABORT<=eta. No ordinary classical polynomial factoring, implementation, practicality, novelty, hardness or separation.
+- QUARTIC_RELATIVE_NORM_CLASSICAL.md now gives the complete native radical -> local Hilbert normkernel -> relative conic -> enlarged quadratic support correction -> exact sequence composition. Full independent reviews parent-read: support254, native271, strict2Sylow264, L1/L2 250, rational4/6 assembly280 lines. Kutas236line paid interface and actual source proofs parent-checked. Simon's printed complexity assertion alone was insufficient; HNF/majorant/integral splitting repairs pay the clock. Fixed dimension<=9 and huge constants essential.
+- Thus native odddegree Selmer problems with rational/quadratic/one-prime Galoisquartic branch fields reduce to factoring with the retained all-prime local compiler, no quantum units or GRH. Strongest falsifier: native229 common ideal content despite element-gcd1,28exactchecks; enlarged-support method escapes it. Literal dyadic cyclotomic family separately has pureclassical explicitbasis. General growing-degree endpoint remains underGRH quantum, general unconditional/classical questions OPEN.
+- Six-job round terminal, fourcomplete/twoempty; frozen82hash ledger audits/controls/classical_two_family_round/. Round estimates Anth4.353172/OAI4.269100,total8.622272USD. Cumulative128.451242/64.774690,total193.225932USD/157pricedrecords; THREE historical UNKNOWN bills excluded. Estimates not invoices/balances. No retry.
+- Independent next selection: NEXT_CONSTRUCTIVE_MECHANISMS.md. Four NEW paid jobs running, twoOpenAI/max/twoClaude/high, ceilings22USD notcharges. Priority FULL sparse relation classical counterpart through structured resultants or cyclotomic specialization; independent Gaudin explicit generator candidate has cheap N4 three-site exact rank12/13 falsifier, fullgenerator rank15. Gauge/scope review pending; no general impossibility.
+- Next command: inspect terminal statuses in audits/api_inputs/2026-11-13-next-mechanisms/dispatch.json and read completed reports in full, then verify their strongest constructive claim. Expected artifact: a complete paid operation or native mechanism-specific counterexample, not another conditional wrapper. Gemini mechanical items under this exact title; no larger-degree quartic extension, rayclass subsystem, broader finite sweep or quantum code queued.
+
+## 2026-11-13 Fixed-Dimension Unimodular Clock Repaired
+
+- CLOSED reviewed WRITTEN fixed-dimension (n<=9) HNF minimization and indefinite-unimodular isotropic-basis BIT clocks; full250line independent proof parent-read in audits/reviews/2026-11-13-simon-minimization-majorant-clock.md. Direct lattice sums/preimages avoid an unproved modular basis lift; Lemma6 occurs once PER PRIME. Definite-majorant LLL plus the standard unimodular isotropy theorem gives a finite dimension-only search bound and integral saturated splitting. No growing-dimension polynomial clock or practical constant claim.
+- This combines with the separately reviewed264line strict quadratic2Sylow backend, but whole Simon4/6 -> Kutas -> nativequartic composition is still pending final assembly and native-interface review. Extra integer factoring on polynomial-bit intermediates is charged.
+- Strongest exact counterexample: native229 relative-conic numerator has odd outside-S ideal content despite element-gcd1; all28 control assertions pass. Enlarged quadratic squareclass support corrects it. Formal duality/rayclass rank restatement supplies no algorithm or hardness.
+- Next hard question: check actual Simon genus/signature/intersection composition and native Galois recognition; then independently reselect by external value. Next command: read completed audits/reviews/2026-11-13-simon-fixed-form-composition.md when delivered; expected artifact is a scoped proof or explicit gap, acceptance requires all4/6 signatures and bit-height backmaps, never an agent ACCEPT label. Gemini mechanical queue below this title.
+
+## 2026-11-13 Quadratic Two-Class Clock Repaired
+
+Established REVIEWED WRITTEN strict quadratic2Sylow represented-generator
+polynomial BIT clock with integerfactor oracle, BOTH signs and nonfundamental
+D. Full264line independentproof parent-read; no Lagarias clock/Pell/unit
+oracle needed. Exact det−1 ternary completion -> Cremona-Rusin isotropic
+point -> gcd/HNF integral SL3 isometry -> sourcehalving. Immediate weak
+binary reduction gives h+(D)<=6|D| and <=2log2(6|D|) totalhalvings.
+Conductorprimes/strictsigns retained, oddD projection has oddkernel.
+Note: audits/reviews/2026-11-13-bosma-stevenhagen-conic-clock-repair.md.
+
+Full428line paid relative-norm report now read; exact229 counterexample
+falsifies element-gcd primitive lifting in the actual one-prime cyclic
+quartic family. Enlarged-support parity correction already pays the
+QUADRATIC-base case; higher-base degree still needs a native algorithm.
+Simonfixed4/6 HNF/majorant repair and nativequartic interfaces remain
+under independent review. No wholequartic endpoint admitted yet.
+Literalcyclotomic pureclassical endpoint remains closed. No generic
+classical/quantum speedup, novelty, practicality or implementation claim.
+Next command: read final clock/interface reviews and directdimension
+report; expectedartifact is complete factoring-only quartic composition
+or precise conditional boundary. Mechanicalfollowup at top of plan.
+
+## 2026-11-13 Literal Cyclotomic Selmer Classical Match
+
+Established REVIEWED WRITTEN pure CLASSICAL polynomial BIT composition for
+f=X(X^(2^k)+1),k>=1, exact Sel2 dimension, dense native degree, correct
+output or ABORT<=eta. Full203line independentproof parent-read; explicit
+basis and norm/local assembly in GENERAL_NATIVE_SELMER_COMPOSITION.md.
+Only2 is bad, realconditionautomatic. No factoring/quantum/fullunits or
+classgroup needed. Literal family only; arbitraryextraS/otherconductors
+outside scope. No implementation/novelty/advantage claim.
+
+Quartic support correction REVIEWED WRITTEN at conditional interface:
+Cl(O_F,S)/2=0 plus explicit relativeconic outputs and extra factoring
+suffice; enlargedquadratic squareclassbasis replaces principalization.
+Full254line proof parent-read. Native radical formulas pass two exactSage
+controls. Wholequartic clock remains CONDITIONAL: actual Kutas proof and
+236line API review checked; Simonfixed4/6 majorant/HNF and Bosmaclock
+repairs under independent review. Original performance paragraph is not
+a proof. See QUARTIC_RELATIVE_NORM_CLASSICAL.md.
+
+Six paid requests: emptyrefusal and emptytruncation not retried; two
+completed source reports parent-read; relative-norm OpenAI now complete,
+directdimension awaiting. Next command: read final reports and independent
+clock proofs. Expectedartifact: complete native factoring-only quartic
+constructor or precise surviving obligation. General growingdegreeGRH
+source remains OPEN. Mechanical items at top of matching plan.
+
+## 2026-11-13 Narrow Signatures and Constructive Quartic Attack
+
+Established algebraic strengthening: totally real Galois2 fields/Q with
+at most one finite ramified prime have ODD NARROW class group, and units
+mod squares map isomorphically to all real signatures. Full99line
+independentproof parent-read; allrealplaces modulus is canonical, finite
+inertia argument allows infinite ramification. No units/localization
+computed by this proof. GENERAL_NATIVE_SELMER_COMPOSITION.md records it.
+
+Parent constructive quartic attack: given an explicit relative conic
+lift, its outside-S parity is pulled back from a base-field ideal. An
+ENLARGED complete quadratic squareclass basis plus parity linear algebra
+corrects it without principalizing that ideal, since base Cl_S/2=0.
+Extra norms/denominators are factored and charged. Independent algebra
+review active; exact native clocks pending. See
+QUARTIC_RELATIVE_NORM_CLASSICAL.md. Kutas actual Theorem20 supplies a
+published factoring-oracle relative-conic claim; parent read its proof.
+Newly obtained Simon2006 primary source has an incomplete complexity
+paragraph despite Kutas Fact1; a distinct fixed-dimension clock audit is
+running. Do not promote from an abstract, citation chain or certificate.
+
+Six distinct paid tasks now launched, ceilings29USD NOT charges, in
+api_inputs/2026-11-13-classical-two-family/dispatch.json. Literalcyclotomic
+Fable ended empty REFUSAL, no retry; parent separately derived an explicit
+circular/signature basis and requested independent internal proof review.
+Other tasks: relative norm, native quartic, direct dimension, Kutas
+interface, Simonfixedclock. Next command: read completed response bodies
+and exact sources, check support correction and resulting complete basis.
+Expected artifact: native classical constructor with all clocks paid, or
+precise conditional boundary. No speedup/novelty/hardness/implementation
+claim; generalgrowingdegreeGRH source still OPEN. Mechanical items below.
+
+## 2026-11-13 Quadratic Conic Baseline and Unconditional Selmer Families
+
+Established: native complete quadratic K(S,2) has a reviewed WRITTEN
+classical polynomial-bit algorithm after the native discriminant factoring.
+Exact rational norm sequence plus primitive conic NUMERATORS pays all
+virtual classes; no units/class group/Pell or denominator factoring.
+Conic source requires corrected certificate-lattice sign and a separate
+Gaussian branch at a=b=1; the 271-line proof and 240-line squareclass proof
+were fully parent-read. See QUADRATIC_NATIVE_SQUARECLASSES.md.
+
+Combined with the all-prime local compiler and retained cubic source,
+branch degrees<=3 give an unconditional written quantum Selmer-dimension
+algorithm. Also admitted: Galois 2-power branch fields over Q with at most
+one finite ramified prime have odd ordinary class number, hence T=S.
+Complete compact S-units still paid; all extra native S-primes included.
+The 185-line independent review is parent-read. General growing-degree
+GRH removal remains OPEN. Exact x(x²-17*89) refutes general bad-prime-only
+class coverage; it does not prove a wrong final Selmer dimension.
+
+False gates: speedup/novelty/hardness/practicality/implementation/rank or
+point-solving. Quadratic branch fields now have a classical match after
+factoring. The explicit cyclotomic example needs its circular-unit attack.
+Next question: does a classical norm/circular/reciprocity route match the
+new unconditional family? Four distinct paid obligations are being prepared;
+no failed-call retry. Next command: read their saved responses after terminal
+status, check material claims against exact proofs and source scope, and
+record dispositions. Expected artifact: one constructive classical algorithm
+or one precise surviving unpaid obligation, never hardness from failure.
+Gemini mechanical items are at the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-13 Native All-Prime Images and General GRH Selmer Algorithm
+
+REVIEWED WRITTEN algorithms, full parent proof checks complete. Every monic
+squarefree integerf of degree2g+1 and binary primep: classical polynomial
+BIT algorithm returns COMPLETE local Kummerimage basis or ABORT<=eta in
+poly(g,B,logp,log1/eta). Native inputs, arbitrarybadreduction, actual-point
+DAGs, fixed quotientE, all conditioning/root/field costs paid. Full231line
+current dyadic wholeclock and510line repaired oddprimeproof parentread.
+Oddprime proof pays actualp² chart localization, N'v_pN', rootcoordinateD,
+boundeduniformrejection and A_2 stopping; rejects API Lambda^80 assertion.
+LOCAL_KUMMER_ALL_PRIMES.md links exact operation ledgers andsource chain.
+
+Composing with fully checked798line globalreport/310line review yields
+quantum poly(g,B,log1/eta) exact Sel2 DIMENSION UNDER GRH for EVERY native
+odddegree f. Complete compactT-units, quantumfactoring, per-factor torsion,
+nativecommonframes, realimage and finiteprimecoverage are paid. Global
+completeness is bounded-error, NOT abort-only. See
+GENERAL_NATIVE_SELMER_COMPOSITION.md. No exactrank/points, implementation,
+practicality, novelty, hardness, separation or quantumexecution claim.
+
+Strongest falsifier found: augmentedStolldet1 with Res(U,W)=0; separate
+visibleextractionguard repaired, exactnativegenus2 controlretained. Strongest
+classicalcomparison: sameclassical Stoll/localarithmetic; globalclass/unit
+methods and fullysplitfactoring-oracle baseline. NEW quadraticnormconic
+baseline may removeunits/classgroups entirely; its exactalgebra is proved,
+actualconicBITsource finalcheck active. No classicalnecessity inferred.
+
+Next hard question: finish source-paid quadratic baseline and decide whether
+general two-primary classgeneration can remove GRH at growingdegree.
+Two OAI tasks active; Claudequadratic sourcecomplete, compositionfailed with
+partialtext and UNKNOWN bill, no retry. Exactjobdata in
+api_inputs/2026-11-13-selmer-two-primary/dispatch.json; reconcileonce terminal.
+Next command: read conicbackend review against original Cremona-Rusin pp3–4,
+15–17; then fullydisposition completedOAI outputs. Expectedartifact: exact
+factorization-only quadratic/Selmer comparator or statedsourcegap. Acceptance
+requires originalfactor-only polynomialBIT conicsearch and allprimecomposition.
+Mechanicalitems at matchingtop of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-13 Quadratic Virtual Squareclasses by Primitive Norm Conics
+
+PROVED and independently parentchecked: for K=Q(sqrt d), d squarefree!=1,
+S all primes above SQ containing2discK, exact sequence
+0 -> Q(SQ,2)/<d> -> K(S,2) -> [N(K*) intersect Q(SQ,2)] ->0.
+Normkernel has an elementary squareidentity proof. For a signed squarefree
+norm representative a supportedSQ, ANY primitive integer solution of
+X²-dY²=aZ² gives beta=X+Ysqrt d in K(S,2) directly: outsideSQ inert
+valuationszero, at splitprimes at most one component is nonzero and its
+valuation is even. No denominator factoring, units, Pell generator or
+classgroup oracle. Rationalnorm image is a Hilbert-symbol binary kernel.
+This constructs the SAME complete virtual-squareclass space, not just units.
+
+Full240line independent proof parentread: audits/reviews/2026-11-13-
+quadratic-norm-squareclasses.md. Exact d34 control (3,1,5) has norm-25 and
+(beta)=P5² although integral negativePell has no solution; JSON/script saved.
+Only this single falsifier, no sweep. If ramifiedprimes are omitted, d35/SQ2
+with rationalclass5 falsifies the stated kernel. Both support assumptions matter.
+
+Algorithmic clock remains CONDITIONAL here on conicbackendsource admission.
+Parent read actual Cremona-Rusin Sections2.1/2.2 andAlgorithmIII and visually
+checked original pp16–17: fixed3-dimensional weightedLLL plus13vectors,
+only originalcoeff factorizations. Independent source/bitclock audit running.
+If admitted, quadratic branchsquareclasses have a classical polynomial
+algorithm GIVEN nativebadprime factorization; Shor supplies that factoring.
+No quantum S-units or GRH are needed on that subfamily. No extension to
+cubic/general fields, classicalhardness, novelty or new speedup is claimed.
+
+The distinct Bosma-Stevenhagen source report completed and was fullyread;
+strict2Sylow representedgenerators appear sound, but its polynomial ternary
+reduction citation is not newlychecked. Rankcertification does NOT by itself
+pay discoverytime. The new conic route may bypass that source obligation.
+The Fable restrictedcomposition run FAILED ReadError with67line partialtext;
+fullpartialread, bill UNKNOWN,0.485230 partialestimate is notfinal. No retry
+or endpointpromotion. Two OpenAI tasks remain active. Fourjob ledger later.
+
+Next command: read completed conicbackend audit against original pages, then
+record exact classicalfactoring-oracle theorem and compose with localimages.
+Expectedartifact: complete source-paid quadratic baseline, or explicit missing
+backend hypothesis. Acceptance: polynomial originalfactor-only arithmetic,
+primitive nonzero output, exactlocals/commonframes and boundedconfidence.
+Mechanical items at matching top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-13 General Selmer Composition and Two-Primary Generator Reduction
+
+PROVED global composition CONDITIONAL on the uniform all-prime local-image
+interface and published GRH factor-base theorem: native monic squarefree
+integer f, degree2g+1, arbitrary bad reduction, exact Sel2 dimension in
+bounded-error quantum poly(g,B,log1/eta). Full798line report and independent
+310line proof checked. Native maximalorders, complete compact T-units,
+per-factor torsion, atom localization/common frames, real image and all
+badplaces are paid. Quantum units give bounded error, not abort-only.
+GENERAL_NATIVE_SELMER_COMPOSITION.md records the construction and the new
+parent-derived polynomial norm-polynomial torsion-root interface.
+
+NEW exact sufficient lemma: T containing S need only make Cl(K)/<T> odd.
+The half outside-T ideal of alpha in K(S,2) has order<=2 in that quotient,
+so vanishes and gives a T-unit representative modulo squares. Full class
+generation is unnecessary. Explicit strict2Sylow generators project onto
+ordinary2Sylow; polynomial-bit ideal norms can be factored to prime support.
+This motivates a NEW quadratic-source check, not admission from an abstract.
+Bosma-Stevenhagen1996 actual Section3 and3.4 consulted; positiveD relations,
+halving cost and represented outputs under source review.
+
+Strongest comparator: same classical descent/class-unit arithmetic; fully
+split branchfields have a polynomial remainder given factoring/localimages.
+Quadratic genus/2class methods are now an explicit factoring-oracle attack.
+Reject prior Fable's claimed equivalences, nonvacuousfamily assumption and
+reversed partialrelation bound (saved disposition). No speedup, necessity,
+novelty, general unconditional endpoint, rank or point-solving claim.
+Dyadic finalclock and oddprime extension still under composition checks.
+
+Seven-job milestone terminal: six completed, one empty REFUSAL, no retry.
+Round estimates Anth5.150502/OpenAI9.150060,total14.300562USD; cumulative
+Anth123.517598/OpenAI56.029820,total179.547418 across148records. Two old
+UNKNOWN bills excluded. Frozen91hashes: controls/dyadic_composition_round.
+Estimates are not invoices/balances;40USD ceilings were not spending.
+Four DISTINCT new two-primary tasks run,25USD localceilings: quadratic
+source, classicalsquareclasses, restricted unconditional composition,
+general2quotient source; exact briefs/sessions in api_inputs/2026-11-13-
+selmer-two-primary/dispatch.json. No retries or extra infrastructure.
+
+Next hard question: does the native local assembly close, and can the
+smaller two-primary global requirement remove GRH without a classical match?
+Next command: inspect terminal new bundles' result.json and full completed
+response.md, compare original Bosma-Stevenhagen Sections3/6 page images,
+then record per-claim dispositions. Expectedartifact: represented-generator
+interface proof or exact missing operation; acceptance requires polynomial
+BIT sizes, real/imaginary cases, full source/probability accounting. Mechanical
+items are at the matching top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
 # Research Agent Handoff
+
+## 2026-11-13 Explicit Fixed Precision Clock for Native Dyadic Image
+
+PROVED operationwise additive precision: canonicalmaterializer
+C_mat=nL+72g²(D+2L n(n-1)+2)+2, and explicitC_half in its262line ledger.
+Parent fully read/checked materializer287lines and half262lines. Productpivot
+selection uses polynomial min-entry elimination, no maximalminor enumeration;
+normalization losses add. Pencil growth, field/root guards, BOTH determinant
+solves and visible outputlabels are charged. Native polecaps remainfixed.
+
+NEW assembled schedule: computableT0, C_max=C_mat+C_half+1,
+P_star=P_cert+T0*C_max; a groupnode ofdepthj is computedONCE at
+P_star-j*C_max. Native/freshsigma sourceleaves have paid precision. This
+eliminates adaptive reevaluation; shared DAG certifies actualpoints/frozenroots
+and ORIGINAL-E relations. Explicit scalar tailcaps now use the source leading
+coefficientRes(f,a0), with union degree<=2n4^g. Full candidate is
+LOCAL_KUMMER_NATIVE_END_TO_END.md. Whole dyadic admission remains underfinal
+independentaudit; no implementation, practicalbound, novelty or speedupclaim.
+
+Seven distinct paid tasks,40USD localceilings NOT spending. FirstthreeClaude
+completed and dispositioned. Oddprime/generalglobal OAI reports now completed
+but parent FULL reads and independent audits are stillpending; their verdicts
+are not admitted. Originalwhole-dag and NEW corrected fixed-clock-final are
+pending. Exact contexts/statuses: api_inputs/2026-11-13-dyadic-composition/.
+The finalrequest uses the newexplicitclock/guards; no empty/refusedretry.
+
+Nextcommand: read FULL odd-prime and global reports and their independent
+reviews, then reconcile originalwhole-dag/final-clock findings against the
+latestcandidate. Acceptance requires native allinput/access/precision/probability
+payment, with everyclaimed global conclusion keeping the all-prime premise
+until it is established. Mechanical: seven-job terminalusage/hash milestone;
+no solverimplementation, sweeps, broadtests or Git actions requested.
+
+## 2026-11-13 Native Dyadic Squareclass Backend Proved
+
+PROVED native finite squareclass coordinates and consistent ONE square root
+from monic squarefree integerf, including arbitrary wild local factors. Full
+384line independent proof and actual OM/Okutsu source chain parent-read/checked.
+Finite faithful factor identifiers are computed; actual integralbasis is
+never transferred from an approximant field. Nilradical/reduction and full
+maximal-ideal lattice give deterministicuniformizers. Unitfiltration gives an
+exact triangularpresentation; F2solve plus selected Henselball extracts roots.
+Fixed additiveguard20(n+1)^2(D+V+1) pays field/unit/root precision. No residue/
+sign enumeration, hidden maximalorder, exactgcd or integerfactorizationadvice.
+
+The paid report's short-source packet objections are resolved by the actual
+full source algorithm/theorems; its valid rootball/visiblevaluation cautions
+are explicit. Canonical branchlabels only use known factor subsets. Generic
+labels and halfextraction require visible resultantcaps. Candidate updated in
+LOCAL_KUMMER_NATIVE_END_TO_END.md, with root/refinement identity constraints.
+Finite stopping and native inverse-counterexample remain as recorded below.
+Whole dyadic/local/global admission STILL OPEN pending additive whole-DAG audit;
+no speedup, novelty, implementation, rank or point claim.
+
+The classical dimension-only attack is now terminal and fully dispositioned in
+reviews/2026-11-13-classical-global-bypass-disposition.md. Retain only its
+norm-row redundancy and conditional linear reduction; reject its overclaimed
+equivalences, implicit-family existence and reversed partial-relation bound.
+No classical polynomial general match or lowerbound was established. Parent
+odd-prime subgroup/characteristic-change calculations are recorded in the
+composition packet's odd-prime-parent-bridge.md, pending independent extension
+review; originalE and p-uniform finite-grid/root/pencil costs remainmandatory.
+
+Nextcommand: inspect terminal whole-dag/odd-prime/global-composition/classical-
+global-bypass bundles listed in the six-job dispatch. Expectedartifact is the
+checked whole-clock theorem or first exact counterexample; localinterface
+proofs do not imply its composition. At clean six-job terminalmilestone perform
+usage/hash checkpoint as the matching mechanical queue says. No broadtests.
+
+## 2026-11-13 Dyadic Triangular Saturation and Guarded Extraction
+
+PROVED exact finite quotient initialization, index2 adjoining and complete-image
+stopping, with immutable triangular relations and computable polynomial clock.
+Full260line independent review parent-read/checked; no equality/E-membership
+oracle or large-exponent point operations. The zero-label vector must be
+nonzero MODULO relation rows. Actual DAG relations hold in ORIGINAL E=2L.
+
+REFUTED determinant-only simpleinverse extraction by an exact nativegenus2
+finite-grid u=1 example: augmented determinant1 but Res(U,W)=0. Corrected
+candidate requires a visible nonzero extraction resultant under its proved cap.
+Sage artifact and exact formulas: LOCAL_KUMMER_HIGH_DEGREE_COMPILER and
+controls/dyadic_extraction_guard. This refutes neither general Stoll halving
+nor the repaired route. The paid reviewer identified the gap; parent supplied
+and checked the actual counterexample. No inference from passing finitecases.
+
+Full dyadic admission still OPEN pending the final native backend/additive
+precision composition. Six DISTINCT paid tasks dispatched,35USD local ceilings
+NOT spending: threeOpenAI, threeClaude. TwoClaude completed and parentfullyread;
+others pending. Exact packets/statuses: api_inputs/2026-11-13-dyadic-composition/.
+The added tasks pay oddprime extension, conditional general GRH globalSelmer
+composition and a classical dimension-only bypass attack. Their conditional
+premises must not be promoted. No speedup, novelty, rank/points or execution.
+
+Nextcommand: read stable native-unit/root proof and the threeOpenAI/oneClaude
+results; expectedartifact is a checked operationwise additive precision theorem
+or first concrete remaining blocker. Acceptance requires exact root selectors,
+all visible pivot/branch/inverse guards and a native boundedclock. Mechanical
+items are the matching top entry; no new solver/sweep or broadtests requested.
+
+## 2026-11-13 Canonical Materializer and Dyadic Composition Candidate
+
+PROVED bounded-precision canonical materialization on the paid good-output
+event; full503line independent proof parent-read/checked plus secondnegative
+audit. Saturated graph products have perstageSmithloss<=D+2 (paidOpenAI gives
+sharperD+1). Weighted scaling makes reduced input and goodoutputintegral.
+Two RRsections F,G of consecutive poles m+g,m+g+1 have unit tops and
+Det(F,G)=epsilon A; actual reduced a,b follow by MONIC divisions, no qinverse
+or support-separation assumption. Good output used only in proof/scalingcap,
+never supplied coordinates. Finite unit tests are sound; failure meansABORT.
+Details: LOCAL_KUMMER_HIGH_DEGREE_COMPILER and ideal-saturation-bound review.
+
+Combined with the separately checked finite sigma-grid and pencil/Stoll
+bounds, this now gives a plausible END-TO-END dyadic local-image candidate.
+Full admission stays OPEN pending native local-field/squareclass/root setup,
+whole-DAG additive precision and finite presentation/stopping composition.
+No globalSelmer, novelty, hardness, speedup or quantum execution claim.
+
+All ten paid tasks terminal:5completed,4emptytruncated,1emptyrefusal; no retries.
+Round15.367048USD estimated; cumulative165.246856/141records. Twohistorical
+UNKNOWN bills excluded;93stablehashes frozen in dyadic_compiler_round. These
+are not invoices/balances. LastlowRR64K empty had no mathematical findings.
+
+Nextcommand: prepare LOCAL_KUMMER_NATIVE_END_TO_END.md with explicit local
+unit-filtration/root algorithm and additive operation/DAG clock, then focused
+whole-composition API attack. Primary OM2012 Theorem5.18 and actual local
+integral-basis text are checked with finite-residue factor costs included.
+Acceptance: every native input/access/precision/label cost paid, not just
+fieldops or good-event existence. Mechanical: terminalcheckpointdone; preserve
+all theorem scopes, no broad tests or new quantum implementation.
+
+## 2026-11-13 Finite Sigma Grid and Generic Half Charts Proved
+
+PROVED for every actual native h in2J(Q2): one exact polynomial-bit sigma grid
+sample makes h+2sigma AND ALL rational halves satisfy explicit degreeg,
+branch, pole and pair-separation caps with failure<=2^-k, uniformly in h.
+Full299line review parent-read/checked; constants and actual K2/log domain are
+in LOCAL_KUMMER_HIGH_DEGREE_COMPILER and finite-grid-stability review. The
+scaled etale chart/Weil restriction/Neron mapping are proof-only, no model
+or field list is input. Hensel and every Taylor/integration loss paid; Haar-to-
+grid coupling is exact. This supplies the previously missing probability gate
+for the already checked pencil/Stoll Smith bounds.
+
+Still OPEN: construct the actual reduced pair from the signed input with a
+polynomial BIT clock. Product-ideal singularity defects and highdegreeRR are
+being audited; lowdegree RR at m+g has its own cokernel gate. Primitive norm
+bounds its top coefficient but does NOT automatically bound matrixSmith.
+No complete local/global algorithm, novelty, quantum execution or speedup.
+
+Next command: inspect stable native ideal-content/lowdegreeRR proofs and two
+paid response bundles in dyadic-high-degree/dispatch. Expected artifact is
+explicit canonical materialization schedule plus actual-point certificate,
+or a native counterfamily. Only then compose the whole saturation clock.
+Mechanical queue: terminal10-job usage/hash checkpoint; no new fixture/sweep.
+
+## 2026-11-13 Generic Stoll Conditioning Paid by One Pencil
+
+PROVED conditional bridge, full345line independent proof parent-read/checked:
+on the explicitly bounded full-degree input/half chart, determinant factorization
+and a norm/Bezout certificate give polynomial Smith caps for B_g and ALL M_k.
+The extra mixed resultant is paid by the SAME-CLASS pencil A_u=c-2ub-u²a0:
+content Res(W,A_u)<=g+vRes(W,f)/2; Disc(A_u)'s degree4g top coefficient is
+unit*Disc(a0). Exponential univariate root-ball tails control every rational
+half with polynomial bits and no enumeration. Completed focused Claude report
+also checked. Details: LOCAL_KUMMER_HIGH_DEGREE_COMPILER and geometric-smith-
+bridge review. No unaccounted theta minor remains in THIS matrix bridge.
+
+All three OpenAI reports fully read/dispositioned. Exact highdegree RR and
+primitive evaluation-block lemmas accepted under their stated inputs. Ideal-
+class half from any bounded vector is algebraically correct, but valid native
+ideal coefficients can have a discontinuous half label; raw-chart gateFALSE.
+Three32K Claude jobs empty; finite-grid Fable refused/empty, no result/retry.
+Two NEW paid tasks now target native product-ideal saturation and low-degree
+RR cokernel. No quantum code or broad checks. General HALF/local-image gates
+stay FALSE until actual finite-grid materialization and whole-loop clock paid.
+
+Next: verify stable ideal-product and finite-grid proofs; inspect completed
+native-ideal-content/reduced-rr-cokernel responses in dyadic dispatch. Expected
+artifact: same compiler note, with exact input/output precision and reset.
+Acceptance is a composed polynomial actual-point algorithm or native falsifier,
+not genericity, Haar existence, finite success or advisoryACCEPT. Mechanical
+queue: terminal10-job usage only after all complete; no changing-file hashes.
+
+## 2026-11-13 Dyadic Coordinate Haar Reset Proved
+
+PROVED coordinate-only theorem for every native monic squarefree integer f,
+deg2g+1: mu{actual reduced coefficient pole loss>(6g-3)s}<=2^(A_tail-s),
+with explicit polynomial A_tail. Full283line review parent-read/checked:
+audits/reviews/2026-11-13-kummer-coordinate-haar-tail.md. Trace-product cover
+is proof-only; dependent conjugates handled by embedding determinant/linear
+tubes, infinity unit and Haar normalization paid. Thus EVERY h+U admits a
+polynomial coordinate HAAR reset independent of h-height; addg for h+2U.
+No finite-grid success or constructive reduced-pair algorithm follows yet.
+
+Three OpenAI reports completed/full parent-read: exact collision-safe high-
+degree RR compiler; primitive RR evaluation-block low-jet bound; ideal-class
+half from any bounded Stoll vector. Material claims undergoing individual
+verification. Raw nonminimal w is not a divisor, and raw ideal coefficients
+can change half label discontinuously; neither is a finite-chart certificate.
+Three Claude32K jobs truncatedEMPTY, no findings/retry (estimated4.527816USD).
+Two NEW64K jobs attack concrete parent finite-grid Abel stability and mixed-
+resultant pencil identities. Exact sessions in dyadic-high-degree/dispatch.
+
+Next hard question: materialize an actual reduced pair at uniformly paid
+precision. A separate matrix proof identifies the mixed input/half resultant;
+parent pencil A_u=c-2ub-u²a may control it via content <=g+vRes(W,f)/2 and
+Disc(A_u)'s top ucoefficient +/-odd^odd Disc(a). These remain under audit.
+Next command: read stable matrix/pencil/grid reports, verify all algebra and
+compose only paid interfaces. Expected artifact LOCAL_KUMMER_HIGH_DEGREE_COMPILER
+with individual dispositions. Full HALF/local-image/global-Selmer gates stay
+FALSE; no finite-success inference, generic hardness, speedup or novelty.
+Mechanical queue: matching Nov13 dyadic checkpoint, terminal ledger only.
+
+## 2026-11-13 Native Dyadic Half Compiler and Uniform Reset
+
+Selected native problem: complete J(Q2)/2J(Q2) image for monic squarefree
+f in Z[x], deg2g+1, growingg, arbitrarybadreduction, BITpoly(g,B,log1/error).
+The proved saturation bound and explicit actual-point U subset E=2L permit
+h->h+2sigma(z); stable ONE-HALF remains OPEN. Actual Stoll Prop5.1 permits
+monic squarefree a of degree<=2g+1; direct nonspecial RR/projective divisors
+may bypass unstable canonical reduction. Uniform reset/additive loss over ALL
+kappa steps is the first hard question, not merely a bound polynomial in
+previous coordinates. Six distinct paid constructions/attacks active; see
+LOCAL_KUMMER_HIGH_DEGREE_COMPILER and dyadic-high-degree/dispatch.json.
+Corpus then actual Stoll/KM sources checked. Classical baseline is Stoll
+exact-field halving; its p-adic warning supplies no BIT bound. No hidden
+model/generators, exponential signs/field/grid enumeration, or new quantum code.
+
+Completed conductivity pass: full scalar-output nearby-scale falsifier proved
+with window inclusion-exclusion and uniform-in-r bound; same O(n)-size material
+has positive limiting error c z^4/[2(2-z²)] for w=o(n). Parent checked all four
+nonempty reports; independent sampler review also fully read. Scoped shared-
+translation, antithetic-factor, separable-Haar attacks accepted; generic no-go,
+hardness, separation and full joint-poly classical-match gates stay FALSE.
+All five paid jobs terminal; one empty truncation has no findings/retry.
+Full dispositions and proof in CONDUCTIVITY_MULTISCALE_API_DISPOSITIONS and
+CONDUCTIVITY_SEPARATED_SCALE_ATTACK. Terminal ledger46hashes, USD7.399194
+round; cumulative149.879808 estimatedUSD/131records, twoUNKNOWN bills excluded.
+
+Next command: inspect terminal response/usage bundles in the dyadic dispatch
+and independently derive/attack the native uniform reset. Expected artifact:
+LOCAL_KUMMER_HIGH_DEGREE_COMPILER with individually verified dispositions.
+Acceptance: complete polynomial precision schedule on actual permitted inputs,
+or an explicit native counterfamily; no promotion from finite success/labels.
+Mechanical items are the matching Nov13 entry; no broad tests or Git actions.
+
+## 2026-11-12 Conductivity Scale Shortcuts Refuted
+
+CLOSED scoped all-family proofs, both complete reviews parent-read:
+(1) CONDUCTIVITY_SEPARATED_SCALE_ATTACK: native three-bit stripe selector gives
+T2->1/4 while the exact nearby-band triple sum T2^(w)->0 for EVERY w=o(n).
+Positive middle-band grouping and total outer error O(n/sqrtL) pay all signs;
+no generic correlated-estimator lower bound. One L8 exact algebra control
+passed (T2=3137/13872, outer error²3/68<=1/16), not asymptotic evidence.
+(2) conductivity-uniform-decay review: one-bit macrolayers have C_L(t)>=
+8z²/(3L²)exp[-48(rho+1)t/L²] and Green-Kubo tail>=z²/6 times that exponential.
+Hence alpha>1 uniform decay needs prefactor Omega(L^(2alpha-2)); sharp
+uniform exponent1 is proved. Ordinary cutoff needs Theta_rho(L²log1/eps),
+not a polynomial microscopic clock. Exact resolvent/coarsening and general
+multilevel methods remain viable; layers themselves are classically easy.
+
+Paid variational report completed/fully read; scoped local-window and
+conditional primal-dual Fourier-Galerkin bracket accepted with corrections.
+REJECT generic hierarchy-impossibility, factor2 in conductivity Green-Kubo,
+unproved n^r lower bound, and p<q exact-diagonal claim (needs2p<q). Detailed
+dispositions: CONDUCTIVITY_MULTISCALE_API_DISPOSITIONS. Other Claude task
+truncatedEMPTY, no findings/retry. OpenAI correlated-tree/wavelet stillactive.
+Actual BCR1991 Section5 is O(N) full-vector work, not poly(logN) scalar
+sampling; primary source retained. No new quantum code or broad checks.
+
+New parent FULL-output extension is recorded in the final section of
+CONDUCTIVITY_SEPARATED_SCALE_ATTACK, UNDER focused paid audit: MvA=u,
+Mu=(vA-e)/2 gives exact limiting moments t_(2k)=2^(-k-1), odd0,
+Kstar=c*2(1-z²)/(2-z²). Near-window higher moments vanish at fixedr,w
+and for R,w=O(logn), so the actual finite-series shortcut misses gap
+c z^4/[2(2-z²)]. Charge all inner tuple counts; no presumed PSD of the
+full restricted sum. New distinct Claude full-energy-excursion task active,
+not a retry of the empty single-moment request. Now five jobs, ceilings24USD
+notcharges, three active. Do not promote the full-output extension yet.
+
+Next command: inspect terminal constructive OpenAI reports; verify any full
+all-scale estimator before extension. Expected artifact exact poly(n,r)C^r
+work/variance proof or precise remaining operation. A further nearby barrier
+alone does not justify continuing this line. Mechanical: hash the two stable
+proofs and one control at the four-job terminal usage milestone; no rescan.
+
+
+## 2026-11-12 Conductivity Distant-Scale Counterfamily
+
+Parent derivation in CONDUCTIVITY_SEPARATED_SCALE_ATTACK.md, under independent
+review: L=2^n,n>=2,h=1[x<L/2], Sigma=h(-1)^x+(1-h)(-1)^y on both directions.
+For eta=e1/L, T2=||Pi Sigma Pi Sigma eta||² ->1/4, whereas truncating the
+exact positive heat-band expansion to triples with maxscale-minscale<=w
+has |T2^(w)|<=O(n2^w/L+n/sqrtL+n²/L)+exp(-Omega(n)) ->0 for w=o(n).
+Native circuit uses the MSB selector and two parity bits. Actual total sum
+controlled via positive middle-band contractions and outer-band norm errors;
+large individual cross terms alone are not evidence. Constants and scope are
+being independently checked; one exact L8 transcription control is running.
+
+This falsifies ONLY the nearby-scale shortcut if the proof is accepted.
+Full correlated classical estimator, wavelet and variational methods remain
+open; no hardness, separation or quantum advantage. Four API obligations
+still active, no retries. A separate primary-source review derives a layered
+counterfamily to a free uniform Green-Kubo decay assumption, not to general
+Monte Carlo. Next command: read stable separated-scales/uniform-decay reviews
+and terminal API reports. Expected artifact: reviewed scoped falsifier or
+constructive all-scale estimator. Mechanical: retain one control and reconcile
+paid jobs at terminal milestone, no broader sweep/quantum implementation.
+
+
+## 2026-11-12 Conductivity Correlated-Scale Selection
+
+Selected ONE externally useful question after the surface classical match:
+can an ALL-circuit fixed-contrast classical scalar conductivity estimator
+match poly(B,n,1/epsilon) when epsilon is inverse-polynomial in n=log L?
+Independent comparison favored this actual paid quantum endpoint over native
+character phase synthesis and RLWE decoding, whose key operations remain
+missing. Corpus conductivity_multiscale been-tried/baselines precede actual
+Mourrat primary recheck: general Green-Kubo identities hold, but Theorem1.2
+uses IID and rate3.5/fourthmoment4.1 are not automatic for arbitrary circuits.
+
+Hypothesis: couple dyadic heat increments/martingale cancellations before
+multiplication to estimate Neumann T_r at work/secondmoment poly(n,r)C^r,
+C independent of n. Since r=O(log1/epsilon), this would give a full classical
+polynomial match. Strongest existing attack is the proved independent signed
+heat estimator n^O(log1/epsilon); exact constant/layer cases already solved.
+Falsifiers include missing mixed-scale terms, conditional material oracle,
+dense FFT costs, high-variance weights or importing IID decay. Failure of one
+coupling is NOT a lower bound or hardness. No new quantum implementation.
+
+Four DISTINCT paid tasks now running: OpenAI/max correlated tree and wavelet
+compression; Claude/high variational/resolvent construction and quantitative
+nearby-scale truncation falsifier. Exact contexts and session locators:
+audits/api_inputs/2026-11-12-conductivity-multiscale/dispatch.json. Combined
+local ceilings21USD, not charges/provider caps. Internal source-rate review
+separately checks the missing uniform decay hypothesis on explicit media.
+
+Completed surface precision round: full544line OpenAI report parent-checked;
+explicit root-height bound H=(D+1)Support+g*C_F and integer precision rule
+accepted. K applies to actual UNARY/BINARY signature; general statedarityk
+uses K_k=N^k(Halpha+kHlambda)+klogN+N(Halpha+log2)+1. The nonbranch-v fix
+from partial Claude is already applied. No new unpaid height constant.
+Frozen28hashes: controls/precision_effectivity_round; round2.450316USD,
+cumulativeAnth108.005914/OpenAI34.474700USD,total142.480614,126records.
+Two historical UNKNOWN bills excluded; estimates not invoices/balances.
+
+Next command: read stable uniform-decay review and terminal new reports;
+verify a claimed coupling or exact native counterfamily before extension.
+Expected artifact: one rigorous variance/cost improvement or precise scoped
+falsifier. Record dispositions, do not promote agreement or finite controls.
+Mechanical queue: reconcile the four new jobs only at terminal milestone.
+
+
+## 2026-11-12 Rees SDE q=17 K=4 Streamed LRAT & Full Repo Wiring Repair
+
+- **Proved/Certified (exact, finite, AI-only):**
+  - `q = 17, S = {0,...,+-4} (K = 4), k = 2, d = 2, L = F_17^* x F_17`: FIFO-streamed `cadical --lrat=true --binary=false` + fixed `lrat-check` (`sha256 13f28c96...`) verified `12/12` nonzero orbits (`cases17_K4_lrat.out`, `441,558` vars / `8,736,943` clauses, `max_proof=547,460,770`, `wall=1172.1s`) and `1/1` zero e1 datum (`cases17_K4_zero_equi.out`, `115.8s`, `proof=157,814,027`) in `equi` mode; via Corollary Q' + `coverage_e1.py` (`13824/13824`), no realization with weak nondegeneracy exists for the free problem on `L` (`audits/reviews/2026-11-11-rees-sde-interval-s.md`).
+  - `p = 13` `37/37` LRAT verification (`cases13_cases.out`) wired into `tests/test_rees_sde_2026_11_11_checks.py` and `audits/reviews/2026-11-11-rees-sde-bounded-p.md`.
+- **Assumptions, quantifiers & gates that stay false:** `q = 17` uses `equi` + Corollary Q' (standalone `freeR` and SAT-free checks were not run); `q >= 19` (`K >= 5`) and missing-pattern label sets remain unclosed; this is a property of label sets, NOT an algorithmic lower bound. Recomputing `docs/papers/rees-hsp/make_numbers.py` remains owner-only; `n=10` multi-hour `coset_typical_{invariant,modular_yjm}_n10` dependency-hash mismatches and the 4 `stale` referee entries (`JACOBI_*`, `NATIVE_RLWE_QUATERNION_KERNEL_AUDIT`, `OUTER_CODED_CHIRP_PROBE`) were left un-forged.
+- **Repo wiring repaired:** `theorems/rees_fcs_budget.py` (`tab:fcs-budget` 9/9 pass), `labelsat.py` (`gamma`/`brute`), `theorems/self_dual_wreath_tetrahedral_chi_square_tail_no_go.py` (`likelihood.shape`), `theorems/self_dual_wreath_{interleaved_target_margin_stability,reversible_automaton_fiber_collapse}.py` (`build_*_report`), `theorems/coset_recoupling_capability_ledger.py` (`0.046385`), `theorems/dcp_arbitrary_measurement_witness_reduction.py` artifacts key, `core/experiment_runner.py` un-nested explicit marker/wreath dispatch + 94 missing imports + character-frontier bonus (`+120`), `core/scaling_runner.py` + 136 modules `if write_registry:` blocks, 3 Node crosscheck provenance chains + `cyclic_centre_state_hsp_receiver.json`, 288/300 dangling `research/EXP-*.json` links, and 3 recomputable `coset_typical` certificates.
+- **Next hard question & queue:** see `research/MECHANICAL_FOLLOW_UP_PLAN.md` (`## 2026-11-12 Rees SDE & Repo Wiring Follow-Up`) and `tests/KNOWN_FAILURES.txt`.
+
+## 2026-11-12 Native Quintic Classical Comparator Closed
+
+SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md is now a reviewed WRITTEN native
+bounded-error classical algorithm: EVERY smooth quintic/P3/Fp from binary
+coefficients, exact degree53 P2 with probability>=1-eta, computable absolute
+C(1+B+log(1/eta))^c BIT clock, otherwise FAIL. Parent read the complete final
+356line review and checked composition against the proved source interfaces.
+No first unpaid input remains. This matches the quantum polynomial upper
+bound at fixed degree; astronomically large exponents, no implementation,
+practicality, novelty, human/formal verification, hardness or separation.
+Source compact-Hom=parabolic remains REFUTED: actual OPEN13516 determinant
+loses exact boundary to96, then Leray/blowup to53. Keep direct-reduction
+T(T-p), ramified-constant-twist and false RR-intersection counterexamples.
+
+Particular numerical precision ledger remains under focused review; prior
+computable polynomial bounds suffice. Claude analytic audit truncated with
+useful partial text; valid nonbranch-v restriction repaired, v0 already pays
+it. No complete-audit claim or retry. OpenAI arithmetic precision still active.
+
+Next command: read completed arithmetic report and independent native
+portfolio selection; then corpus lookup and actual literature for selected
+new mechanism. Expected artifact: one native hypothesis with resources,
+strongest classical baseline and cheapest falsifier. Acceptance requires
+end-to-end plausibility; do not remain on surface by inertia. Mechanical
+queue: terminal precision usage/hash milestone only, no quantum code or broad
+checks. Preserve unrelated Rees work.
+
 
 
 ## 2026-11-12 Explicit Reconstruction Precision Bounds

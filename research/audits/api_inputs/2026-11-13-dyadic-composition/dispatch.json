@@ -1,0 +1,170 @@
+{
+  "date": "2026-11-13",
+  "selection": "Native local-image and general GRH global two-Selmer interfaces, seven distinct proof obligations",
+  "local_ceiling_usd": 40,
+  "jobs": [
+    {
+      "provider": "openai",
+      "obligation": "whole-dag",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-composition/whole-dag.md",
+      "contexts": [
+        "research/LOCAL_KUMMER_NATIVE_END_TO_END.md",
+        "research/LOCAL_HALVING_SATURATION.md",
+        "research/audits/reviews/2026-11-13-dyadic-ideal-saturation-bound.md",
+        "research/audits/reviews/2026-11-13-stoll-geometric-smith-bridge.md",
+        "research/audits/reviews/2026-11-13-kummer-finite-grid-stability.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/local-field-primary.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-dyadic-whole-dag",
+      "session_id": 17959,
+      "status": "completed",
+      "effort": "max",
+      "max_tokens": 128000,
+      "model": "gpt-6-astra",
+      "billing_status": "usage_reported",
+      "response_bytes": 27069,
+      "usage_cost_estimate_usd": "4.260530",
+      "verification_status": "pending_parent_verification"
+    },
+    {
+      "provider": "claude",
+      "obligation": "unit-backend",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-composition/unit-backend.md",
+      "contexts": [
+        "research/LOCAL_KUMMER_NATIVE_END_TO_END.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/local-field-primary.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dyadic-unit-backend",
+      "session_id": 97499,
+      "status": "completed",
+      "effort": "high",
+      "max_tokens": 64000,
+      "model": "claude-opus-5-5",
+      "response_bytes": 9829,
+      "usage_cost_estimate_usd": "0.677152",
+      "billing_status": "usage_reported",
+      "disposition": "Fully parent read; finite unit/root core checked, omitted OM source chain resolved by actual primary text and independent384line proof. No Round2 memory theorem used."
+    },
+    {
+      "provider": "claude",
+      "obligation": "stoll-root-interface",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-composition/stoll-root-interface.md",
+      "contexts": [
+        "research/LOCAL_KUMMER_NATIVE_END_TO_END.md",
+        "research/audits/reviews/2026-11-13-stoll-geometric-smith-bridge.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-high-degree/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface",
+      "session_id": 30873,
+      "status": "completed",
+      "effort": "high",
+      "max_tokens": 64000,
+      "model": "claude-opus-5-5",
+      "response_bytes": 8558,
+      "usage_cost_estimate_usd": "0.832740",
+      "billing_status": "usage_reported",
+      "disposition": "Fully parent read; missing visible extraction resultant guard verified with native genus2 exact finite-grid counterexample and repaired. No full-clock admission from this interface."
+    },
+    {
+      "provider": "openai",
+      "obligation": "odd-prime-extension",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "max_tokens": 128000,
+      "budget": 9,
+      "session_id": 12288,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-composition/odd-prime-extension.md",
+      "contexts": [
+        "research/LOCAL_KUMMER_NATIVE_END_TO_END.md",
+        "research/LOCAL_HALVING_SATURATION.md",
+        "research/audits/reviews/2026-11-13-kummer-coordinate-haar-tail.md",
+        "research/audits/reviews/2026-11-13-kummer-finite-grid-stability.md",
+        "research/audits/reviews/2026-11-13-dyadic-ideal-saturation-bound.md",
+        "research/audits/reviews/2026-11-13-stoll-geometric-smith-bridge.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/local-field-primary.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-odd-prime-extension",
+      "status": "completed",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": "2.783960",
+      "response_bytes": 28856,
+      "verification_status": "pending_parent_verification",
+      "disposition": "Completed report; parent full reads/proof checks pending. Not accepted or promoted from API status."
+    },
+    {
+      "provider": "openai",
+      "obligation": "global-composition",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "max_tokens": 128000,
+      "budget": 9,
+      "session_id": 62281,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-composition/global-composition.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/global-primary.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/descent-primary.md",
+        "research/GOOD_DYADIC_GROWING_SELMER.md",
+        "research/LOCAL_KUMMER_NATIVE_END_TO_END.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-global-composition",
+      "status": "completed",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": "2.105570",
+      "response_bytes": 30404,
+      "verification_status": "pending_parent_verification",
+      "disposition": "Completed report; parent full reads/proof checks pending. Not accepted or promoted from API status."
+    },
+    {
+      "provider": "claude",
+      "obligation": "classical-global-bypass",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 4,
+      "session_id": 61043,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-composition/classical-global-bypass.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/global-composition.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/global-primary.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/descent-primary.md",
+        "research/GOOD_DYADIC_GROWING_SELMER.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-classical-global-bypass",
+      "status": "completed",
+      "billing_status": "usage_reported",
+      "usage_cost_estimate_usd": "2.384220",
+      "response_bytes": 14724,
+      "disposition": "Fully parent read; norm-row redundancy retained. Claimed ray-class/Selmer/class-group computational equivalences, implicit family, and reversed partial-relation bound rejected. No classical general match or hardness established.",
+      "disposition_source": "research/audits/reviews/2026-11-13-classical-global-bypass-disposition.md"
+    },
+    {
+      "provider": "claude",
+      "obligation": "fixed-clock-final",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 5,
+      "session_id": 12439,
+      "prompt": "research/audits/api_inputs/2026-11-13-dyadic-composition/fixed-clock-final.md",
+      "contexts": [
+        "research/LOCAL_KUMMER_NATIVE_END_TO_END.md",
+        "research/audits/reviews/2026-11-13-canonical-materializer-precision.md",
+        "research/audits/reviews/2026-11-13-stoll-half-precision-ledger.md",
+        "research/audits/reviews/2026-11-13-native-local-squareclass-backend.md",
+        "research/audits/reviews/2026-11-13-dyadic-finite-group-stopping.md",
+        "research/audits/reviews/2026-11-13-kummer-finite-grid-stability.md",
+        "research/audits/reviews/2026-11-13-stoll-geometric-smith-bridge.md",
+        "research/audits/controls/dyadic_extraction_guard/counterexample.json"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final",
+      "status": "empty_response",
+      "billing_status": "unknown",
+      "new_obligation": "Newly explicit C_mat/C_half/compute-once clock and repaired native extraction counterexample; distinct corrected final assembly audit, not a retry.",
+      "verification_status": "pending_parent_verification"
+    }
+  ],
+  "ceiling_note": "Sum of local preflight ceilings (13 + 9 + 9 + 4 + 5 USD), not actual usage spending, provider billing caps or balances. The corrected final assembly is a distinct new obligation; no unknown-cost retry."
+}

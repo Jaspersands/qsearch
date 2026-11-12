@@ -1,0 +1,97 @@
+ACTUAL PRIMARY https://arxiv.org/pdf/1806.01838v1
+Text SHA256 0066039200864e3bea9bcec847eda7565add44a76621e0b86158b5c7c2fbfda0
+Physical lines1600-1693; full phase compilation assumptions must remain explicit.
+
+3.4   Singular vector transformation and singular value amplification
+In this subsection we derive some corollaries of singular value transformation. We call the first
+corollary projected singular vector transformation, because it implements a unitary that transforms
+the right singular vectors to the left singular vectors above some singular value threshold. Then we
+show how to quickly derive advanced amplitude amplification results using this general technique.
+Finally, we develop a corollary called singular value amplification, which shows how to uniformly
+amplify the singular values of a matrix represented as a projected unitary.
+    First we define singular value threshold projectors which are slight modifications of the singular
+value projectors of Definition 1.
+
+Definition 24 (Singular value threshold projectors). Let A = e    ΠU Π = W ΣV † be a singular value
+decomposition of a projected unitary. For S ⊆ R we define ΠS := ΠV ΣS V † Π, and similarly
+Π
+e S := ΠWe ΣS W † Π.    e For δ ∈ R we define Π≥δ := Π[δ,∞) , also we define Π>δ , Π≤δ , Π<δ , Π=δ and
+Π
+e >δ , Π
+       e ≤δ , Π
+              e <δ , Π
+                     e =δ analogously.
+
+   Then we invoke a result of Low and Chuang [LC17a, Corollary 6] about constructive polynomial
+approximations of the sign function – the error of the optimal approximation, studied by Eremenko
+and Yuditskii [EY07], achieves similar scaling but is non-constructive.
+
+Lemma 25 (Polynomial approximations of the sign function). For all δ > 0 ,      ε ∈ (0, 1/2) there
+                                                                         log(1/ε)
+exists an efficiently computable odd polynomial P ∈ R[x] of degree n = O     δ     , such that
+
+   • for all x ∈ [−2, 2] : |P (x)| ≤ 1, and
+
+   • for all x ∈ [−2, 2] \ (−δ, δ) : |P (x) − sign(x)| ≤ ε.
+
+    Now we are ready to prove our result about singular value transformation. Our singular vector
+transformation implements a unitary which maps a right singular vector having singular value at
+least δ to the corresponding left singular vector.
+
+
+
+                                                   26
+Theorem 26 (Singular vector transformation). Let U, Π, Π
+                                                       e be as in Theorem 17 and let δ > 0.
+                                                                                           
+             ΠU Π = W ΣV is a singular value decomposition. Then there is an m = O log(1/ε)
+Suppose that e          †
+                                                                                       δ
+
+and a Φ ∈ Rm such that e            Π≥δ (W V † )Π≥δ
+                       Π≥δ UΦ Π≥δ − e                              ≤ ε. Moreover, UΦ can be implemented
+using a single ancilla qubit with m uses of U and U † , m uses of CΠ NOT and m uses of CΠ
+                                                                                        e NOT
+gates and m single qubit gates.
+                                                                                          2)
+                                                                                              
+Proof. By Lemma 25 we can construct an odd polynomial P< ∈ R[x] of degree m = O log(1/ε  δ
+that approximates the sign function with ε2 /2 precision on the domain [−1, 1] \ (−δ, δ). By Corol-
+lary 10 we know that there exists a polynomial P of the same degree as P< such that <[P ] = P< ,
+moreover P satisfies the conditions of Corollary 8. Use singular
+                                                                 value transformation Theorem 17
+                       m
+to construct a Φ ∈ R such that e      ΠUΦ Π = P  (SV )  ΠU Π up to precision ε and observe that
+                                                        e
+                  
+  e ≥δ P (SV ) ΠU
+  Π                       e ≥δ (W V † )Π≥δ ≤ ε. Conclude the gate complexity using Lemma 19.
+                e Π Π≥δ − Π
+
+As an easy corollary we recover and improve upon fixed-point amplitude amplification results [Hø00,
+Gro05, AC12, YLC14] by combining the advantages of prior art. On one hand, the query complexity
+of O( 1δ poly(1/ε)) by [AC12] is optimal with respect to target state overlap δ, but converges slowly
+with respect to error ε. On the other hand, the query complexity of O( 1δ log (1/ε)) by [YLC14] is
+optimal and exhibits exponentially fast convergence with respect to the error, but it introduces an
+unknown phase on the amplified state. Our presented approach has the same optimal asymptotic
+scaling and also ensures that this phase error is -close to 0.
+
+Theorem 27 (Fixed-point amplitude amplification). Let U be a unitary and Π be an orthogonal
+projector such that a|ψG i = ΠU |ψ0 i, and a > δ > 0. There is a unitary          circuit
+                                                                                           Ũ such that
+                                                                             log(1/ε)
+ |ψG i − Ũ |ψ0 i ≤ ε, which uses a single ancilla qubit and consists of O       δ      U, U † , CΠ NOT,
+C|ψ0 ihψ0 | NOT and eiφσz gates.
+
+           e := Π and Π0 := |ψ0 ihψ0 | and observe that
+Proof. Set Π
+                                              e Π0 = a|ψG ihψ0 |.
+                                              ΠU
+
+Now use Theorem 26 in order to get an algorithm Ũ that satisfies
+
+                                     |ψG ihψG |Ũ |ψ0 ihψ0 | − |ψG ihψ0 | ≤ ε.
+
+
+
+       Another easy to derive corollary of our machinery is robust oblivious amplitude amplification.13

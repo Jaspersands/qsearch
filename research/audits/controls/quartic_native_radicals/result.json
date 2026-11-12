@@ -1,0 +1,90 @@
+{
+  "cas": "/opt/anaconda3/envs/qsearch-cas/bin/sage",
+  "cases": [
+    {
+      "Ds": "5",
+      "assertions": {
+        "expected_resolvent_root": true,
+        "monic_irreducible_degree_four": true,
+        "quadratic_generator_degree_two": true,
+        "relative_discriminant_nonzero": true,
+        "relative_radical_identity": true,
+        "s_discriminant_identity": true,
+        "s_quadratic_equation": true,
+        "t_quadratic_equation": true,
+        "theta_quadratic_equation": true,
+        "unique_rational_resolvent_root": true
+      },
+      "branch": "Ds_nonzero",
+      "case": "Phi5",
+      "coefficients": {
+        "a": "1",
+        "b": "1",
+        "c": "1",
+        "d": "1"
+      },
+      "denominator_checks": {
+        "s_denominator_nonzero": true,
+        "t_denominator_nonzero": true
+      },
+      "drel": "theta^3 + theta^2 - 2",
+      "expected_field_discriminant": 125,
+      "field_discriminant": 125,
+      "field_discriminant_matches_expected": true,
+      "h": "x^4 + x^3 + x^2 + x + 1",
+      "quadratic_generator": "s",
+      "quadratic_generator_degree": 2,
+      "quadratic_generator_minpoly": "x^2 + x - 1",
+      "rational_roots": [
+        "2"
+      ],
+      "resolvent": "T^3 - T^2 - 3*T + 2",
+      "s": "-theta^3 - theta^2 - 1",
+      "t": "1",
+      "u": "2"
+    },
+    {
+      "Ds": "0",
+      "assertions": {
+        "expected_resolvent_root": true,
+        "monic_irreducible_degree_four": true,
+        "quadratic_generator_degree_two": true,
+        "relative_discriminant_nonzero": true,
+        "relative_radical_identity": true,
+        "s_equals_minus_a_over_two": true,
+        "s_quadratic_equation": true,
+        "t_discriminant_identity": true,
+        "t_quadratic_equation": true,
+        "theta_quadratic_equation": true,
+        "unique_rational_resolvent_root": true
+      },
+      "branch": "Ds_zero",
+      "case": "cyclic_quartic_17",
+      "coefficients": {
+        "a": "0",
+        "b": "-34",
+        "c": "0",
+        "d": "17"
+      },
+      "denominator_checks": {},
+      "drel": "4*theta^2",
+      "expected_field_discriminant": 4913,
+      "field_discriminant": 4913,
+      "field_discriminant_matches_expected": true,
+      "h": "x^4 - 34*x^2 + 17",
+      "quadratic_generator": "t",
+      "quadratic_generator_degree": 2,
+      "quadratic_generator_minpoly": "x^2 + 34*x + 17",
+      "rational_roots": [
+        "-34"
+      ],
+      "resolvent": "T^3 + 34*T^2 - 68*T - 2312",
+      "s": "0",
+      "t": "-theta^2",
+      "u": "-34"
+    }
+  ],
+  "discriminant_mismatches": [],
+  "scope": "Two fixed native quartics; exact identities and both Ds branches only. No classgroup/unit call, sweep, or asymptotic theorem.",
+  "status": "PASS"
+}

@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-13-jack-logprecision/jack-binomial-polar.md",
+      "sha256": "05084028b08c4fff72c3a3eb71755f843c2bb1b47dc4b6508985c3291eb61cfc"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-jack-logprecision/native-proposal.md",
+      "sha256": "0612480eb5e10ece3c99bd3d2b26989b22501fbd8b730b46528e4bca8e56ebcc"
+    },
+    {
+      "path": "research/audits/reviews/2026-11-13-jack-branching-independent.md",
+      "sha256": "862465b29ec75b33993802e6c98db7f86338d71875522c7cab4e93fd0d209cb9"
+    }
+  ],
+  "finished_at": "2026-11-12T19:35:10.751942+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "9",
+  "max_tokens": 128000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "6.64718",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_0d65a87c67259c42016af610b6620887d081d19179e23ab736",
+  "started_at": "2026-11-12T19:17:08.625129+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 5561,
+    "input_tokens_details": {
+      "cache_write_tokens": 5558,
+      "cached_tokens": 0
+    },
+    "output_tokens": 40021,
+    "output_tokens_details": {
+      "reasoning_tokens": 31875
+    },
+    "total_tokens": 45582
+  },
+  "usage_cost_estimate_usd": "2.05666"
+}

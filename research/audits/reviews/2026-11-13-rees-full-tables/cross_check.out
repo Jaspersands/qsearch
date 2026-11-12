@@ -1,0 +1,26 @@
+      11 worst-case log2 Q = 118.7 (expected 118.7) agree=True
+           grade 2: S1(k=2,t=3,L=2)
+           grade 4: S1(k=2,t=3,L=2)
+           grade 5: S1(k=5,t=2,L=1)
+           grade 6: S1(k=2,t=3,L=2)
+           grade 8: S1(k=2,t=3,L=2)
+    1031 worst-case log2 Q = 83.9 (expected 83.9) agree=True
+           grade 5: S1(k=5,t=2,L=1)
+    5281 worst-case log2 Q = 271.5 (expected 271.5) agree=True
+           grade 3: S1(k=3,t=2,L=1)
+           grade 4: S1(k=4,t=2,L=1)
+           grade 5: S1(k=5,t=2,L=1)
+           grade 6: S1(k=6,t=2,L=1)
+           grade 8: S1(k=8,t=2,L=1)
+           grade 9: S1(k=3,t=2,L=1)
+  2^31-1 worst-case log2 Q = 359.6 (expected 359.6) agree=True
+           grade 6: S1(k=6,t=3,L=2)
+           grade 7: S1(k=7,t=2,L=1)
+           grade 9: S1(k=9,t=2,L=1)
+  2^61-1 worst-case log2 Q = 186.1 (expected 186.1) agree=True
+           grade 9: S1(k=9,t=2,L=1)
+ 2^127-1 worst-case log2 Q = 61.5 (expected 61.5) agree=True
+E_1 contributions at p = 2521 (d: kappa, t, L, kappa*L): {2: (2, 2, 1, 2), 3: (3, 2, 1, 3), 4: (4, 2, 1, 4), 5: (5, 2, 1, 5), 6: (6, 2, 1, 6), 7: (7, 2, 1, 7), 8: (8, 3, 2, 16), 9: (9, 2, 1, 9)} -> 1 + sum = 53
+all agree: True
+ratio check 2^31-1: combined log2 Q = 355.0 (S1 grades [6, 7, 9], BS grades [2, 3])
+ratio check 2^61-1: combined log2 Q = 164.1 (S1 grades [9], BS grades [2, 3, 4, 5, 6, 7, 8])

@@ -1,0 +1,2075 @@
+                                         An efficient quantum algorithm for computing S-units and its
+                                                                 applications
+                                                                  Jean-François Biasse1 and Fang Song2
+                                                                        1
+                                                                            University of South Florida
+
+
+
+
+arXiv:2510.02280v2 [cs.CR] 24 Nov 2025
+                                                                            2
+                                                                             Portland State University
+
+
+
+                                                                                    Abstract
+                                                  In this paper, we provide details on the proofs of the quantum polynomial
+                                              time algorithm of Biasse and Song (SODA 16) for computing the S-unit group of
+                                              a number field. This algorithm directly implies polynomial time methods to cal-
+                                              culate class groups, S-class groups, relative class group and the unit group, ray
+                                              class groups, solve the principal ideal problem, solve certain norm equations, and
+                                              decompose ideal classes in the ideal class group. Additionally, combined with
+                                              a result of Cramer, Ducas, Peikert and Regev (Eurocrypt 2016), the resolution
+                                              of the principal ideal problem allows one to find short generators of a principal
+                                              ideal. Likewise, methods due to Cramer, Ducas and Wesolowski (Eurocrypt
+                                              2017) use the resolution of the principal ideal problem and the decomposition of
+                                              ideal classes to find so-called “mildly short vectors” in ideal lattices of cyclotomic
+                                              fields.
+
+
+                                         1    Introduction
+                                         Let K be a number field of degree n and O be an order in K with discriminant ∆. The
+                                         set of elements α ∈ K such that ∃(ei )i≤|S| ∈ Z|S| , (α) = pe1 · · · pe|S| is a multiplicative
+                                         group called the S-unit group of K. This notion generalizes the units of O which are S-
+                                         units for S = ∅, and computing the S-unit group is an important task in computational
+                                         number theory. Most notably it applies to the computation of the ideal class group of O,
+                                         the resolution of the principal ideal problem in O, and the resolution of norm equations of
+                                         the form NL/K (x) = θ where θ ∈ K, as shown by Simon [31] and Fieker [17, 19].
+                                             The ideal class group Cl(O) is the finite abelian group consisting of the invertible frac-
+                                         tional ideals of O up to principal factors and has order |∆|O(1) . Computing the ideal class
+                                         group is an essential task in number theory that occurs in particular in the resolution of
+                                         unproven heuristics such as the Cohen-Lenstra heuristics [12] on class groups of quadratic
+                                         number field, Littlewood’s bounds [27] on L(1, χ), or Bach’s bound [2] on the maximum
+                                         norm of the generators required to generate the class group. Besides being a fundamental
+                                         problem, computing the ideal class group is also strongly connected to number theoretic
+                                         problems occurring in cryptography. For example, it is at the heart of the only known
+
+                                                                                        1
+unconditional classical subexponential algorithm for integer factorization [26]. Finding re-
+lations between elements in Cl(O) also occurs in curve-based cryptography. Indeed, both
+classical [6, 24] and quantum [10] subexponential methods for computing isogenies between
+elliptic curves depend on it.
+    Given an ideal a ⊆ O, deciding whether or not a is principal, and if so, finding α ∈ O
+such that a = (α) is called the Principal Ideal Problem. It has direct applications to the
+computation of relative class groups and unit groups, and computing the S-class group of a
+number field. It is is also relevant to lattice-based cryptography, which has received a consid-
+erable attention since it allows quantum-safe cryptosystems and homomorphic encryption
+schemes. For efficiency reasons, there have been many proposals of schemes using lattices
+arising from ideals in the ring of integers of a number field, and in particular principal
+ideals generated by a small element (for example, see the homomorphic encryption scheme
+of Smart and Vercauteren [32] and the multilinear maps of Garg, Gentry and Halevi [20]).
+It was subsequently proved that solving the principal ideal problem in polynomial time
+directly induces a polynomial time attack on schemes relying on the hardness of finding the
+short generator of a principal ideal [13].
+
+Previous work Computing the ideal class group and the unit group is a problem that
+has been extensively studied in both the classical and quantum setting. Despite these
+efforts, there are no known polynomial time algorithms for these tasks. On the other hand,
+there are quantum polynomial time algorithms for several hard computational problems
+in number theory based on quantum algorithms for the Hidden Subgroup Problem (HSP).
+Shor showed that integer factorization and the discrete logarithm problem could be solved
+in polynomial time [30], and Hallgren described a polynomial time algorithm for solving the
+Pell’s equation [23]. Similar methods were used to compute the class group and the unit
+group in polynomial time in classes of number fields of fixed degree [22, 29]. The approach
+of [22] relies on the resolution of the HSP in a bounded and discretized approximation of
+Rm , which does not seem to apply when the degree of the fields grows to infinity. In a
+recent breakthrough, Eisenträger, Hallgren, Kitaev and Song [15] described a polynomial
+time algorithm for computing the unit group in classes of number fields of arbitrary degree.
+One of the main tools they developed is a continuous HSP definition on Rm and an efficient
+quantum algorithm solving it. In essence, their new HSP definition enforces stringent
+continuity properties on the function that hides the subgroup. This makes the function
+more amenable to quantum Fourier sampling.
+
+Our contribution In this paper, we present a quantum algorithm to compute the S unit
+group of a number field of arbitrary degree in polynomial time. It readily applies to the
+computation of the ideal class group and to the resolution of the principal ideal problem,
+and well as to other related tasks in computational number theory. We follow a different
+framework than the previous work in constant-degree number fields due to Hallgren [22].
+We show that both the ideal class group computation and PIP reduce to a more general
+problem of computing the S-unit group for suitable set of prime ideals S. For example,
+for the ideal class group computation S is chosen to be a succinct generating set of Cl(O).
+Then we give an efficient quantum algorithm for computing the S-unit group by extending
+the work by Eisenträger, Hallgren, Kitaev and Song [15]. We show an efficient quantum
+
+                                               2
+reduction from the S-unit group problem to HSP on Rm as defined in [15], which then can
+be solved efficiently by the quantum HSP algorithm in [15]. We also show how to get exact
+compact representations of the desired field elements with respect to a given integral basis
+for O, while [15] only returns fixed point rational approximations of the units. Compact
+representations are usually easier for further algebraic processing. Our main results are
+summarized in the next theorem.
+
+Theorem 1 (S-unit group computation). There is a quantum algorithm for computing
+the S-unit group of a number field K in compact representation which runs in polynomial
+time in the parameters n = deg(K), log(|∆|), |S| and maxp∈S {log(N (p))}, where ∆ is the
+discriminant of the ring of integers of K.
+
+Corollary 1. There are quantum polynomial time algorithms for the resolution of the fol-
+lowing tasks in computational number theory:
+
+   • Ideal class group computation (under GRH),
+
+   • S-class group computation (under GRH),
+
+   • Relative class group and unit group computation (under GRH),
+
+   • Ideal class decomposition in the ideal class group (under GRH),
+
+   • Principal Ideal Problem,
+
+   • Ray class group computation (under GRH),
+
+   • Norm equation resolution,
+
+where GRH denotes the Generalized Rieman Hypothesis.
+
+    As an important corollary, combining recent works in lattice cryptanalysis [9, 13], our
+results induce a quantum polynomial-time attack on an entire family of cryptosystems
+relying on the hardness of finding a short generator of a principal ideal.
+
+Response to a recent preprint from de Boer and Felderhoff [14] In a preprint
+published on Oct. 3rd 2025 and updated on Oct. 22nd 2025, K. de Boer and J. Felderhoff
+presented a similar quantum algorithm as our 2016 work [5], which combined with [15]
+allows one to compute the S-unit group of a number field in quantum polynomial time.
+The work of de Boer and Felderhoff [14] uses the same strategy as our previous work [5]
+with some technical differences. They claimed that the detailed analysis of the degrees of the
+polynomial dependencies in the work of Biasse-Song [5] (which itself relies on Eisentraeger
+et al. [15, 16]) was “not currently possible”. They additionally suggested that the S-unit
+algorithm of [5] did not run in polynomial time [14, p. 5]. Finally, de Boer and Felderhoff
+claimed that the key differences between their algorithm offered an advantage compared to
+the stategy of [5]. Below, we comment on these statements.
+    First and foremost, we would like to confirm that the 2016 paper of Biasse and Song to
+compute S-unit groups [5] does indeed run in polynomial time. There is an unfortunate typo
+in the published version of [5, Th. 5.1] which was copied to an earlier version of Theorem 2
+
+                                              3
+of this document. It showed a dependency that appeared to be polynomial in the bound of
+some input coefficients instead of being polynomial in their bit size. The former obviously
+does not qualify as a polynomial dependency in the size of the input. We apologize for
+this confusion. Note that the rest of [5], as well as the previous version of this document
+remained consistent with a dependency in the bit size (the paragraph above Theorem 2
+actually made a claim of polynomial behavior in the bit size of the input even in older
+versions of this document). It is achieved through an ideal exponentiation strategy devised
+by Eisentraeger et al. [15], and used by Biasse-Song [5]. In this document, it is explained
+in details in Section 4.1. While we are sorry that such a confusing typo got included in
+the published version of our 2016 work [5], we would like to point out that we had multiple
+email exchanges with de Boer and Felderhoff during the month preceding the release of their
+preprint. They never mentioned their concerns regarding the run time of our algorithm,
+and chose to publish claims of the exponential complexity without seeking our input.
+    Second, we would like to state that prior work that established the quantum polynomial
+time of the unit and S-unit quantum algorithm were published at STOC 2014 [15] and SODA
+2016 [5] respectively. Due to the strict page limits of these venues, the choice was made
+to not specify the exact degrees of the polynomial dependencies in the input parameters of
+these algorithms. However, this does not mean that it “not currently possible”, or that it is
+even technically challenging. It is a tedious but straightforward process that can be achieved
+with known methods. We added such analysis in this updated draft. It mostly relies on
+techniques to control the precision of LLL reductions on fixed points approximations of
+vectors originally described in 1987 by buchmann and Pohst [8], and later adapted by
+Eisentrager et al. [15].
+    Finally, we comment on the advantage offered by the modified S-unit oracle of de Boer
+and Federhoff. Their main proposal is to precompute some of these powers in ideal mul-
+tiplication and exponentiation. However, the savings obtained are moderate, and actually
+turn into a loss if we focus on cases of interest to the cryptography community (for example
+when |S| = 1, which is a case that allows the resolution of the Principal Ideal Problem).
+Indeed, while fewer LLL reductions are required in the oracle described in [14], the size
+of the entries involved is significantly larger. Indeed, our quantum oracle always performs
+multiplications between ideals of norm 1 (following a method already presented in Eisen-
+traeger et al. [15]). On the other hand, in [14], the norm of the ideals is non trivial and
+grows over the course of the algorithm. In the end, the dependency in the degree n in the
+bit size β of the vectors given to the LLL solver is in n7 for [14] whereas it is only n5 for
+our method. Then, the gate count of the LLL resolution has a dependency in β 3.5 , which
+induces a penalty of n7 . Since on the other hand our method requires more LLL resolutions
+over larger matrices, the final dependency in n of the gate count of the oracle described
+by de Boer and Federhoff is in n31.5 , while ours is in n35.5 . However, this slight advantage
+vanishes once we account for the additional restriction in the work of de Boer and Federhoff
+that consists in assuming that the set of primes S generates the ideal class group of the
+field. If S is too small, they suggest enlarging it so that it contains all primes of norm
+up to 12 log2 |∆| where ∆ is the discriminant of the field (under the Generalized Rieman
+Hypothesis, such a set of primes generate the ideal class group [2]). The apparent issue
+of this workaround is that in the important case of the resolution of the Principal Ideal
+Problem (which can be reduced in polynomial time to the search of S-units where |S| = 1),
+
+
+                                              4
+this induces a penalty of |S|17.5 ∈ O (log |∆|)35 in the complexity of the gate cost. In
+                                                  
+
+cyclotomic fields, where log |∆| ∈ Θ(n log(x)), this means that the degree of the highest
+term in the degree becomes n49 , which is significantly larger than the n35.5 dependency of
+the gate count of our quantum oracle.
+
+
+2     Technical background
+In this section we review some useful background in number theory and introduce some
+definitions and notations. The notions of ideal class group and S-unit group are standard,
+and can be found in many books. We suggest Neukirch’s book [28] for the fundamental
+aspects of this theory and Cohen’s book [11] for the algorithmic aspects. We invite the
+reader who is already familiar to these topics to pay attention to the non-standard notion
+of E-ideal that we introduce in the following.
+
+2.1   Number Theory
+Number fields A number field K is a finite extension of Q. Its ring of integers OK has
+the structure of a Z-lattice of degree n = [K : Q], and the orders O ⊆ OK are the sublattices
+of OK which have degree n and which are equipped with a ring structure. Throughout this
+paper, we assume that O is an order in a number field K, and we denote by ω1 , . . . , ωn a
+Z-basis, that is O = Zω1 ⊕ . . . ⊕ Zωn . A number field has n1 real embeddings and n2 pairs
+of complex embeddings which we denote (σj : K → R)j≤n1 , ((σj , σj ) : K → C)j≤n2 with
+n1 + n2 = n = deg(K). These embeddings    P define two essential maps,
+                                                                     Q namely the norm and
+trace maps which are given by T (x) := σ σ(x) ∈ Q and N (x) := σ σ(x) ∈ Q. The trace
+map is additive while the norm map is multiplicative. Note that T (O) ⊆ Z and N (O) ⊆ Z.
+We measure the size of the ring O by log |∆| where ∆ := (det(σj (ωk )))2 is its discriminant,
+and it equals the volume of the fundamental domain of O. Equivalently, the discriminant
+can be defined from the trace map by ∆ := det(T (ωi ωj ))i,j≤n .
+
+The ideal class group The fractional ideals of O generalize the notion of ring ideals
+of O. They are the subsets of K of the form a = d1 I where d ∈ Z+ and I ⊆ O is an
+(integral) ideal of O. A fractional ideal a is invertible if a−1 := {x ∈ K | xa ⊆ O} is also a
+fractional ideal. The invertible fractional ideals have a multiplicative group structure, and
+the principal fractional ideals are one of its subgroups. The ideal class group is defined by
+
+                                       Cl(O) := I/P,
+
+where I is the multiplicative group of fractional invertible ideals of O and P is the subgroup
+of elements of I that are principal. This means that we identify a and b in Cl(O) if there is
+α ∈ K such that a = (α)b. Ideals are sublattices of O of rank n, and we define their norm by
+N (I) := |O/I|. This notion naturally extends to fractional ideals using the multiplicative
+rule N (a/b) := N (a)/N (b). This notion of norm extends the norm on K in the sense that
+if a = (α), then N (a) = N (α).
+
+
+
+
+                                              5
+The S-unit group The S-units are a generalization of the units O∗ , which are the
+invertible elements of O. The unit group can alternatively be defined as the α ∈ O with
+|N (α)| = 1, or the α ∈ O such that (α) = O. The unit group O∗ satisfies O∗ ≃ µ ×
+⟨ε1 ⟩ × . . . × ⟨εr ⟩, where r := n1 + n2 − 1, µ is the set of roots of unity and the εi are
+torsion-free units. Let S = {pi } be a finite set of prime ideals of O, the S-units are the
+                                                                          v (α)     v   (α)
+elements α ∈ K such that there is (vi (α))i≤|S| ∈ Z|S| with (α) = p11 · · · p|S|      |S|
+                                                                                           . Note
+that the S-units are elements of K. They form a multiplicative group U (S) satisfying
+U (S) ≃ µ × ⟨ε1 ⟩ × . . . × ⟨εr+|S| ⟩, where r := n1 + n2 − 1, µ is the set of roots of unity and
+the εi are torsion-free S-units.
+
+E-ideals The number field K can be naturally embedded into E := Rn1 × Cn2 by setting
+z ∈ O 7→ (σ1 (z), . . . , σn1 +n2 (z)). As in [15], we denote by O the image of O via this
+embedding. The set O inherits from the lattice structure of O, i.e. it can be identified as
+a lattice in Rn , as well as from the multiplication between elements (which is performed
+component-wise). The image of the fractional ideals of K in E are lattices Λ ⊆ E with
+the property that xΛ ⊆ Λ for all x ∈ O. We define the E-ideals as all the lattices in E
+satisfying this property. When there is no ambiguity, we identify a fractional ideal of O and
+the corresponding E-ideal.
+Definition 1 (E-ideals). Let E := Rn1 × Cn2 and O the image of O via the embedding
+K → E. An E-ideal is a lattice Λ ⊆ E such that ∀x ∈ O, xΛ ⊆ Λ.
+
+2.2    HSP resolution
+Continuous HSP We review the definition of continuous HSP proposed by Eisenträger
+et al. [15], for which they have shown an efficient quantum algorithm.
+Definition 2 (Continuous HSP over Rm ). The unknown subgroup L ⊆ Rm is a full-rank
+lattice satisfying some promise: the norm of the shortest vector is at least λ and the unit
+cell volume is at most d. The oracle has parameters (a, r, ε). Let f : Rm → S be a function,
+where S is the set of unit vectors in some Hilbert space. We assume that f hides L in the
+following way.
+  1.   f is periodic on L, i.e. f (x) = f (x + v) for all x ∈ Rm and v ∈ L;
+
+  2.   f is Lipschitz with constant a, i.e.   |f (x)⟩ − |f (y)⟩ ≤ a∥x − y∥ for all x, y ∈ Rm ;
+
+  3. If the distance between the cosets (x mod L) and (y mod L) is greater or equal to r,
+     i.e. if minv∈L ∥x − y − v∥ ≥ r, then ⟨f (x)|f (y)⟩ ≤ ε.
+Under these conditions, the problem is to compute a basis of L by a quantum algorithm that
+can make oracle calls |x⟩ 7→ |x⟩ ⊗ |f (x)⟩.
+   Actually, the definition also applies more generally to other topological groups G =
+Rk /Λ × D with a proper metric on G [15, Sect.6.1]. Here G is decomposed to a continuous
+part, which is the quotient of Rk over some lattice Λ, and a discrete part that is finitely
+generated. It is nonetheless sufficient to consider HSP on Rm , because the more general case
+can be reduced to HSP on Rm [15], and hence can be solved efficiently. In the following,
+
+                                               6
+we define a control group G on which a first version of our HSP oracle will be defined. We
+prove HSP properties on G, and then extend it to Rm .
+   Suppose σ1 , . . . , σn1 are the real embeddings of K, and that σn1 +1 , . . . , σn1 +n2 are the
+(non-pairwise conjugate) complex embeddings of K. Assume also that S = {p1 , . . . , ps }
+                                                                                 Q e v (x)
+where N (pi ) = pei 1 . An element x ∈ US satisfies ni=1
+                                                    Q 1 +2n2
+                                                             σi (x) = N (x) = i pi i i . This
+means that we know that
+                               n1
+                               X                         n2
+                                                         X                         X
+            log |σ1 (x)| = −         log |σi (x)| − 2             log |σi (x)| +         ei vi (x) log pi .
+                               i=2                      i=n1 +1                    i≤s
+
+Therefore, x ∈ US corresponding to (x1 , . . . , xn ) = (σ1 (x), . . . , σn (x)) ∈ Rn1 × Cn2 is
+uniquely identified by the element xG ∈ G := Rn1 +n2 −1 × Zn2 1 × (R/Z)n2 × Zs where
+
+   • xG
+      i = log(|xi+1 |) for 1 ≤ i < n1 + n2 ,
+
+   • xG                                    δi
+      i = δi ∈ Z2 where xi−n1 −n2 +1 = (−1) |xi−n1 −n2 +1 | for n1 + n2 ≤ i < 2n1 + n2 .
+
+   • xG
+      i = θi ∈ R/Z where xi−2n1 −n2 +1 = e
+                                          2iπθi |x
+                                                  i−2n1 −n2 +1 | for 2n1 + n2 ≤ i < 2n1 + 2n2 .
+
+   • xG
+      i = vpi−2n1 +2n2 (x) for 2n1 + 2n2 ≤ i < 2n1 + 2n2 + s.
+                                                                                                              G
+Conversely, we have a map ϕ : G → Rn1 × Cn2 such that ϕ(xG ) = x by choosing |xi | = exi+1
+for 1 ≤ i < n1 + n2 , and
+                                       Qs        ei xG
+                                                     i+2n1 +2n2
+                                              p
+                              |x1 | = Qn1 i=1 iQn1 +n2              .                  (1)
+                                                                  2
+                                       i=2 |xi |     i=n1 +1 |xi |
+
+Then we do
+                 xG
+   • xi ← (−1) i+x1 +x2 −1 |xi | for 1 ≤ i ≤ n1 and
+             2iπxG
+   • xi ← e      i+2x +x −1
+                      1   2   |xi | for n1 < i ≤ n1 + n2 .
+
+Definition 3 (Control group G). Let K be a number field of signature (n1 , n2 ), and S a
+set of primes above (pi )i≤s . We define the following groups:
+
+   • G = Rn1 +n2 −1 × Zn2 1 × (R/Z)n2 × Zs the control group.
+
+   • L = USG ⊆ G the image of the S-unit group of K, which is a lattice.
+
+The map ϕ is readily extended beyond elements of G that correspond to an S-unit. In this
+case, ϕ(u, v) ∈ Rn1 × Cn2 for u ∈ Rn1 +n2 −1 × Zn2
+                                                Q ×e(R/Z)
+                                                  1      n2 and v ∈ Zs does not necessarily
+                                                     v
+correspond to an element x ∈ K with N (x) = i pi i i . On the other hand, in general, there
+is no canonical way to map an element of Rn1 × Cn2 that is not an S-unit to an element of
+G.
+    The control group can be seen as the projection of G̃ = Rk × Zl where
+
+   • k = n1 + 2n2 − 1.
+
+   • l = n1 + s.
+
+
+                                                        7
+We denote by γ : G̃ → G the projection map, and by L̃ ⊆ G̃ the pre-image of L by γ. It is
+a lattice in G̃. We also construct an oracle g = fq ◦ fc : G/L → H where
+
+    • fc (t, v) = et O p∈S p−vi , which is a lattice in E := Rn1 × Cn2 .
+                      Q
+
+    • fq (LE ) = |LE ⟩ := γ v∈LE gs (v)|strν,n (v)⟩ which is a quantum state (see Section 4.4
+                            P
+      for a definition of the straddle encoding |strν,n (v)⟩ instroduced in [15].
+
+    To prove the HSP properties of f : G → H, we need a notion of distance between ideals
+of E = Rn1 × Cn2 . An ideal in E is a lattice that is stable by multiplication by elements
+in O (the embedding of O in E). We deal with elements in E by embedding them in
+Rn = Rn1 +2n2 (via z ∈ C 7→ Re(z), Im(z)). Each E-ideal L can be defined by a matrix
+ML ∈ Rn×n whose rows are a Z-basis of L. Note that E-ideals L, L′ can be multiplied, but
+MLL′ is in general not equal to ML ML′ .
+
+Notation. The Euclidean norm is used in different spaces. When there is a potential
+ambiguity, we use a subscript to specify the space. More specifically, suppose there is a
+group H and s, t such that α : H ,→ Rs ×      qC
+                                                t , then for x ∈ H, we denote by ∥x∥ = ∥α(x)∥,
+                                                                                    H
+                                                           2              2
+                                               P                P
+i.e. if x = (x1 , . . . , xs+t ), then ∥x∥H =     i≤s |xi | + 2  i>s |xi | .
+
+Definition 4 (Matrix distance between E-ideals). Let L, L′ be two E-ideals. We define the
+matrix distance between L and L′ by
+
+                 dist(L, L′ ) =      inf      {∥A∥2 : ML = ML′ eA , A ∈ Gln (R)}
+                                  A,ML ,ML′
+
+
+   As in [16], given an element x ∈ E, we define the matrix diag(x) ∈ Rn×n which is not
+exactly a diagonal matrix.
+                                                 
+              x1
+                  ..                             
+                     .                           
+                                                                                
+                       xn1                                         Re(z) −Im(z)
+ diag(x) :=                                       where Ξ(z) := Im(z) Re(z) .
+                                                 
+                           Ξ(xn1 +1 )            
+                                      . .        
+                                          .      
+                                                    Ξ(xn2 )
+
+Given x ∈ E, the above matrix has the important property that M(x)·L = ML · diag(x)
+where L is an E-ideal, and (x) denotes the E-ideal x · O (a principal ideal generated by x).
+This is a case where ideal multiplication corresponds to a product of matrices (although
+diag(x) is not M(x) ).
+
+Lemma 1. Matrices of the form diag(x) have the following properties:
+
+  1. ∀x1 , x2 ∈ E, diag(x1 ) + diag(x2 ) = diag(x1 + x2 ).
+
+  2. ∀x1 , x2 ∈ E, diag(x1 ) · diag(x2 ) = diag(x1 · x2 ).
+
+  3. ∀x ∈ E, ediag(x) = diag(ex ) where ex = (ex1 , . . . , exn1 +n2 ).
+
+
+                                                    8
+    4. ∀x ∈ E, if ∥ diag(x) − I∥ < 1, then log(diag(x)) = diag(log(x)) where log(x) =
+       (log(x1 ), . . . , log(xn1 +n2 )).
+
+Proof. For 1) and 2), it suffices to check that ∀z, z ′ ∈ C, Ξ(z) + Ξ(z ′ ) = Ξ(z + z ′ ), and
+                                                  Ak
+Ξ(z) · Ξ(z ′ ) = Ξ(zz ′ ). Then, since eA = ∞
+                                            P
+                                              k=0 k! , we have
+
+                                   ∞                    ∞
+                                                              !
+                                   X diag(x)k           X  xk
+                       e diag(x)
+                                 =            = diag            = diag(ex ).
+                                         k!                k!
+                                  k=0                               k=0
+
+                                                                                 P∞                      k
+                                                                                             k+1 (B−I)
+Likewise, to prove 4), we simply use the convergence of                              k=1 (−1)      k         to log(B)
+whenever ∥B − I∥ < 1.
+
+
+3       High level overview
+Our algorithms for the Class Group Problem (CGP) and the Principal Ideal Problem (PIP)
+consist of reductions to the continuous hidden subgroup problem in two steps, and invoking
+the quantum HSP algorithm [15] at the end.
+
+                                CGP ≤C SCGP -units ≤Q HSP(RO(n) ),
+                                PIP ≤Q SPIP -units ≤Q HSP(RO(n) ) .
+
+Specifically, we first reduce them to S-unit problems with proper choices of S, which are
+almost entirely classical except that we apply a quantum algorithm for factoring ideals in
+the case of PIP1 . We describe these reductions to S-units problems in Sect. ??. Next we
+show a quantum reduction from S-units problem for any S to HSP(Rm ), with m = O(|S|, n).
+This is the main technical contribution of this work and it generalizes the reduction from
+(ordinary) unit-group problem to HSP by Eisenträger et al. [15]. The details will appear in
+Section 8, and we give an overview below.
+     Given S = {p1 , . . . , pk }, we want to establish a function that hides the S-unit group
+according to Definition 2. To warm up, we review the reduction for the ordinary unit group
+(i.e., S = ∅) [15].
+
+Review: reduction for unit-group [15] Observe that the unit group can be identified
+as a subgroup of G := Rn1 +n2 × Z2n1 × (R/Z)n2 , and the mapping
+
+                           φ:    (u1 , . . . , un1 +n2 , µ1 , . . . , µn1 , θ1 , . . . , θn2 )
+                              7→(. . . , (−1)µi eui , . . . , . . . , e2πiθi eui , . . .) .
+
+translates between the so-called log coordinates and the conjugate vector representation.
+To see this, note that under canonical embeddings, any z ∈ O has the conjugate vector
+representation (. . . , σi (z), . . .) ∈ Rn1 × Cn2 . If in addition z is invertible, then σi (z) ̸= 0.
+    1
+    These reductions are straightforward. But classical algorithms typically compute the S-unit group by
+solving CGP and solving instances of PIP first. Our quantum algorithm tackles these problems in the reverse
+order.
+
+
+
+                                                          9
+Therefore, we can write σi (z) = (−1)µi eui with µi ∈ Z2 and ui ∈ R if σi is real, or
+σi (z) = e2πiθi eui with θi ∈ R/Z and ui ∈ R if σi is complex.
+     Now one defines f in [15] as composition of two mappings:
+
+                                 g                  fq
+                         f : G −→ {E-ideals} −→ {quantum states} .
+
+Given x ∈ G, g(x) := φ(x)O ⊆ E produces an E-ideal which is a transformed lattice of
+O. This is motivated by the fact that αO = O for any unit α ∈ O∗ . Actually, one can
+verify easily that g(x) = g(y) iff. φ(x − y) ∈ O∗ . Namely g is periodic on O∗ . For lacking
+of a canonical basis to represent real-valued lattices uniquely, which is needed to apply
+the quantum HSP algorithm, a quantum mapping fq follows. It encodes a lattice L into
+a quantum state |L⟩ that is roughly composed of quantum superposition over all lattice
+points, and hence provides a canonical representation for lattices. We will give more details
+of the quantum encoding in Sect. 4.
+     Very informally, one can show that small shift on an input to g causes small variance
+on the output lattice, but two inputs that are far apart modulo any unit will be mapped to
+lattices that have small overlap. Moreover, fq preserves the “closeness” of lattices. Namely,
+quantum encodings of two lattices will have substantial inner product if and only if the
+lattices are very well lined up. To formalize these statements and thus proving the HSP
+properties, nonetheless, turn out to be highly non-trivial. It involves for example defining
+proper distance measures on various input and output spaces, and analyzing the continuity
+properties of f with respect to these metrics. This has been a great amount of efforts in [15]
+with further details in [16]
+     Other than these analytic properties, to make an efficient reduction, one needs to im-
+plement f = fq ◦ g efficiently. In fact, fq can be implemented efficiently on a quantum
+computer by standard techniques. Computing g, on the other hand, is much more tricky.
+For instance eui will involve doubly-exponential numbers if we manipulate them naively.
+Instead one splits the computation into small pieces, in the spirit of repeated squaring, and
+carefully controls the precision. There is one key observation that guarantees that the size
+of
+Qnany
+    1
+            Qn2 2un +jstep does not blow up. That is N (z) = ±1 for any unit z and hence
+          intermediate
+         ui
+   i=1 e      j=1 e
+                       1     = 1. This indicates one redundant coordinate, and we can hence
+restrict f on R    n1 +n 2 −1 × Zn2 1 × (R/Z)n2 instead. This characterization is also essential to
+show a suitable bound on the volume of the unit cell of O∗ .
+
+Reducing S-units to HSP It is now easier to describe our generalized reduction for
+S-units. Let S = {p1 , . . . , pk }. By definition, if α ∈ O is an S-unit, we have
+                                        −vp1 (α)         −vpk (α)
+                                α · O · p1         · · · pk         = O,
+
+where vp (α) is the coefficient of p in the power of (α)O (the valuation of α at p). Therefore
+the group of S-units US corresponds to the subgroup of G = Rn1 +n2 −1 × Zn2 1 × (R/Z)n2 ×Zs
+                                    −v
+such that ϕ(y, v) · O · p−v
+                         1
+                           1
+                             · · · p|S| |S| = O. This motivates us to define the function fc : G →
+{E-ideals} by:
+                                                                                 −v
+                      fc : (y, v1 , . . . , v|S| ) 7−→ ϕ(y, v) · O · p−v
+                                                                      1
+                                                                        1
+                                                                          · · · p|S| |S| .
+
+
+                                                   10
+   We can show that ĝ is periodic on US . We then apply the same quantum encoding fq
+on the output of ĝ. Namely, our oracle function behaves like:
+                                  fc                    fq
+                         f : G −→ {E-ideals} −→ {quantum states} .
+
+     While the classical mappings g and fc bear some similar motivation and we reuse fq ,
+to prove HSP properties of our function f is not straightforward. We need to define new
+metrics tailored to the specific group structure that the S-units belong and the E-ideals
+(lattices in Rn ) that our fc may possibly generate. Then we show quantitatively that under
+these metrics, small variance in inputs induces slightly perturbed lattices, whereas large
+variance of inputs modulo any S-units will induce with high fraction of mismatch. Finally
+we relate the new metrics to the analysis of [15] and conclude the HSP properties. We
+further extend the function f to obtain an HSP instance on Rm and work out the necessary
+bounds (λ, d) as required, which allows us to invoke the quantum HSP algorithm to recover
+US .
+
+                                                                                                   −vi
+                                                                                          Q
+4     Defining the oracle function (y, v) 7→ |φ(y)O                                           p∈S p    ⟩
+Our algorithm relies on a classical oracle that takes an element in G and maps it to
+                                                                               −v
+                         fc (y, v1 , · · · .v|S| ) = ϕ(y, v) · Op−v
+                                                                 1
+                                                                   1
+                                                                     · · · p|S| |S| .
+
+Then the corresponding lattice is encoded by an approximation of the superposition of all
+its points denoted by fq . As G = Rn1 +n2 −1 × Zn2 1 × (R/Z)n2 × Z|S| , we need to work with
+approximations of real numbers. To perform the necessary arithmetic operations between
+E-ideals presented in Section 4.2, we use the results of Buchmann and Pohst [8] and of
+Buchmann and Kessler [7] which rely on fixed point approximations. More specifically,
+they use the rounding of the 2-adic expansion of real numbers. The approximation of a ∈ R
+of precision q ∈ Z>0 is ba ∈ Z such that 2baq − a ≤ 2q+1
+                                                      1
+                                                         . However, it seems that this notion
+of approximation is not stable when we multiply two approximate numbers together. We
+made a slight adjustment to their claims to incorporate the case of approximations such
+that 2baq0 − a ≤ 21q for some q0 ≥ q. Then in Section 4.3 we show that the classical oracle
+runs in polynomial time with respect to the size of the input.
+
+4.1    Splitting up the computation
+Let (y, v1 , · · · , v| S|) ∈ Rn1 +n2 −1 × Zn2 1 × (R/Z)n2 × Z|S| . The naive computation of
+                                                                                 −v
+                         fc (y, v1 , · · · , v|S| ) = ϕ(y, v) · O · p−v
+                                                                     1
+                                                                       1
+                                                                         · · · p|S| |S|
+
+involves computing (eui )i≤n1 +n2 , where y = (u1 , · · · , nn1 +n2 , θ) and u1 is computed by the
+rule given by (1) with a phase θ ∈ Zn2 1 × (R/Z)n2 . Any rational approximation of eui has at
+least ⌈log2 (eui )⌉ ∈ O(ui ) bits where log2 denotes the base 2 logarithm. As this is exponential
+in the bit size of the entry, we need to proceed differently to evaluate fc . The authors of [15]
+described a way to split up the computation ensuring that we only manipulate values of
+
+                                                      11
+polynomial size.Q We adapt           this method to our specific classical oracle that differs by a term
+of the form pi ∈S p−v     i
+                            i
+                               from     the one described in [15].
+    Our input can be split between (u1 , · · · , un1 +n2 , v1 , · · · , v|S| ) ∈ Rn1 +n2 ×Z|S| and a phase
+θ ∈ Zn2 1 × (R/Z)n2 . As mentioned in [15], the phase can be dealt with separately and is
+not computationally problematic. To make our presentation simpler, we show how to split
+up the computation in the absence of phase. To avoid the expensive computations with
+the eui , we use E-ideal arithmetic which we analyze in Section 4.2. Our main concern
+when splitting up the p       computation is that we want to reduce it to operations between E-
+ideals of determinant |∆|. This gives us upper and lower bounds on the vectors in play,
+which in turns bounds the computational complexity of arithmetic operations as we see in
+Section 4.3.
+    Let (u1 , · · · , un1 +n2 , v1 , · · · , v|S| ) ∈ Rn1 +n2 × Z|S| be an input vector where u1 satisfies
+the condition given by (1). We can separate the evaluation of the oracle in two steps by
+rewriting it as
+                                                                                                              
+                                                                         1 X
+      u1 , · · · , un1 +n2 −1 , u′n1 +n2 , 0, · · · , 0 + 0, · · · , 0,
+                                                       
+                                                                             ej vj log(pj ), v1 , · · · , v|S|  .
+                                                                         2
+                                                                       j
+
+
+where u′n1 +n2 = − 21 j≤n1 uj − n1 <j<n1 +n2 uj . The first term is evaluated the same way
+                            P                P
+as [15]. More specifically, we separate real numbers between integer and fractional part. We
+                                 n1 +n2 and (s )                  n1 +n2 by u = r + s for j < n + n ,
+define (rj )j≤nP    1 +n2 ∈ Z                  j j≤n1 +n2 ∈ [0, 1)             j    j    j       1       2
+                                                       ′
+rn1 +n2 := − j<r1 +r2 rj and sn1 +n2 := un1 +n2 − rn1 +n2 . As si < 1, we calculate esi to a
+                                                                    k
+given precision q by using the formula ex = k≤M xk! + O(xM +1 ). The number of terms
+                                                          P
+in the sum has to satisfy M ∈ O(q). This way, we can compute ϕ(s1 , · · · , sn1 +n2 ) =
+(es1 , · · · .esn1 +n2 ) and the corresponding E-ideal A−1 := (es1 , · · · .esn1 +n2 ) · O by multiplica-
+                                                  (j)                                                (k)
+tion with each generator of O. Let (ak ) ∈ {−1, 0, 1} be such that rj = k≤⌈log2 (rj )⌉ aj 2k
+                                                                                        P
+                                                                          (n +n )                (j)
+is the binary decomposition of rj for j < n1 + n2 and ak 1 2 := − j<n1 +n2 ak and
+                                                                                        P
+                                                                          P (n +n )              (n +n )
+log2 (r) := maxj ⌈log2 (rj )⌉. Note that we have u′n1 +n2 = k ak 1 2 2k , but the ak 1 2
+are not its binary decomposition. They take values in [−n1 − n2 , n1 + n2 ]. The E-ideal
+generated by the integer part of the ui satisfies
+                                                      Y  (k) k              (k)
+                                                                            an +n 2k
+                                                                                     
+                        r1          rn1 +n2                    a1 2
+                      (e , · · · , e        )·O =            e       ,··· ,e 1 2       ·O
+                                                k≤log2 (r)
+                                                                                         2k
+                                                           (k)             (k)
+                                                                                        
+                                                                            an +n
+                                                   Y       a1
+                                            =                e   , · · · , e         · O        .             (2)
+                                                                              1  2
+                                                                                         
+                                                                                        
+                                                                                        
+                                                k≤log2 (r) |              {z           }
+                                                                           Ak
+
+                                                                                P   (k)
+The norm p   of the E-ideals Ak for k ≤ log2 (r) is N (Ak ) = e j aj N (O) = 1. Therefore
+det(Ak ) = |∆|.
+    Likewise, the bit size of ee1 vi log(pi ) is at least proportional to vi , and therefore exponential
+in the bit size of vi which is part of the input. Therefore, we need to split up the computation
+
+
+                                                       12
+of the E-ideal
+                                                      
+                 1 X                                                        1 P
+                                                                                                     Y −vj
+  0, · · · , 0,     ej vj log(pj ), v1 , · · · , v|S|  7−→ 1, · · · , 1, e 2 j ej vj log(pj ) · O ·  pj .
+                 2
+                   j                                                                                             j
+
+          (k)                                    (k)
+Let (bj ) such that vj = k≤⌈log2 (vj ) bj 2k and log2 (v) := maxj log2 (vj ). Then we have
+                                      P
+the decomposition
+                 1 P
+                                          Y −vj     Y                                      v j
+  1, · · · , 1, e 2 j ej vj log(pj ) · O ·  pj =          1, · · · , 1, eej log(pj ) · O · p−1
+                                                                                            j
+                                       j            j≤|S|
+                                                    Y           Y                                                       b(k)
+                                                                                                                             j 2
+                                                                                                                                 k
+
+                                                =                                         ej log(pj )
+                                                                            1, · · · , 1, e                  · O · p−1
+                                                                                                                    j                .
+                                                    j≤|S| k≤log2 (v)
+                                                                                                         2                    k
+                                                                                                 b(k)
+                                                                                                     j
+
+                                                    Y     Y                       ej
+                                                                                                    
+                                                                                                −1 
+                                                =                 |(1, · · · , 1, p{z ) · O · pj } 
+                                                                                                        
+                                                           
+                                                                                                        
+                                                  k≤log (v) j≤|S|
+                                                            2
+                                                                                              Bj,k
+
+                                                                                                                             (3)
+                                                                                                                     (k)
+                                                                                     j
+                                                                                                     Q           b
+The calculation is decomposed the following way: first compute Bk :=                    which
+                                                                             j≤|S| Bj,k p
+involves log2 (v)·|S| multiplications between the E-ideals Bj,k which have determinant |∆|,
+                                k
+and then return k≤log2 (v) Bk2 which requires at most log2 (v)2 multiplications between the
+                   Q
+                                            p
+E-ideals Bk which also have determinant |∆|.
+
+Algorithm 1 Classical oracle evaluation (without phase)
+Input: (u2 , · · · , un1 +n2 , v1 , · · · , v|S| ).
+                                                                  Q −v
+Output: The E-ideal corresponding to ϕ(u1 , · · · , u′n1 +n2 ) · O j pj j .
+ 1: Compute u1 according to (1)
+                                                    P xi
+ 2: Compute A−1 using the formula ex ≃                i! .
+ 3: Compute the Aj using (2).
+ 4: Compute the Bj,k using (3).
+                                            Q
+ 5: For each k ≤ log2 (v), Bk ← j Bj,k .
+                               j             k
+ 6: return A−1 · j A2j · k Bk2 .
+                      Q            Q
+
+
+
+Proposition 1. Algorithm 1 is correct
+                               p      and involves a polynomial number of multiplications
+between E-ideals of determinant |∆|.
+
+4.2    E-ideal arithmetic
+The arithmetic between E-ideals is directly inspired from the arithmetic between ideals in
+a number field. To evaluate our classical oracle, we need an efficient implementation of the
+E-ideal multiplication. Let A = ⊕j≤n Zaj and B = ⊕k≤n Zbk be E-ideals generated by the
+
+                                                      13
+aj , bk ∈ E. Then the E-ideal A · B is the lattice generated by the n2 elements (aj · bk )j,k≤n .
+The multiplication of two E-ideals can be described by the two following steps:
+
+  1. Calculate all the cross terms aj · bk for j, k ≤ n.
+                                 P
+  2. Compute a basis (cj )j≤n of j,k Zaj · bk .
+
+The main challenge of E-ideal multiplication is that we need to deal with rational approxi-
+mations of lattices. We need to estimate how much precision is needed to ensure accuracy,
+and how much precision is lost after each operation. We employ the same strategy as in [15],
+which uses fixed point rational approximations such that 2baq0 − a ≤ 21q where the precision
+q deteriorates throughout the computation.
+
+Multiplication of approximate elements E-ideals can be seen as lattices in Rm where
+m = n1 + 4n2 by mapping elements in E of the form (u1 , · · · , un1 ,n2 ) to
+
+             (u1 , · · · , nn1 , ℜ(un1 +1 ), ℑ(un1 +1 ), ℜ(un1 +1 ), −ℑ(un1 +1 ), · · · , )Rm .   (4)
+
+We approximate each coordinate a ∈ R of such vector by b          a/2q0 with b
+                                                                             a ∈ Z and q0 ∈ Z>0
+            a           1
+satisfying 2q0 − a ≤ 2q for some q ≤ q0 +1. Then the multiplication of q-bit approximations
+            b
+
+of a, b ∈ R with log2 (|a|), log2 (|b|) ≤ c satisfies
+                                                             !
+                                                                   2c    2c
+                                          b
+               abb               a           b        bb                         1
+                   −                 −                   −       ≤
+               b                 b
+               2q
+                     ab   =       q
+                                        a    q
+                                                +      q
+                                                           b   a     q
+                                                                       +  q
+                                                                            =  q−c−1
+                                                                                     .
+              2 0               20          20       20            2     2    2
+
+This gives us a rational number approximating ab, but the denominator increases, which
+reduces the efficiency
+                     j of the computation
+                                m         of a basis of the E-ideal generated by the n2
+               b := 2q0 ba2qb
+products. Let ab
+                              b
+                                   , then
+                            2 0
+
+
+  ab
+  b         ab
+            b     abb    abb           1        1        1         1         1
+     −    ≤    −             −    ≤                 ≤
+                  b      b
+   q
+       ab    q    2q
+                      +  2q
+                               ab    q  +1
+                                           +  q−c−1    q−c−1
+                                                             +   q−c−1
+                                                                       =   q−c−2
+                                                                                 .
+  20        20   2 0    2 0         20       2        2        2         2
+
+This gives us the approximation of the multiplication of two real numbers. Although we
+approximate vectors in E by vectors in Rm , the pointwise multiplication of the m − n1 last
+coordinates correspond to multiplications between complex numbers. The addition involved
+in the complex number multiplication (a + ib)(c + id) = (ac − bd) + i(ad + bc) induces the
+loss of an extra bit of precision. If a, b ∈ R are approximated by a
+                                                                   b, bb with precision q, then
+                            [
+a[        a + bb) satisfies a+b
+  + b := (b                                     1
+                            2q0 − (a + b) ≤ 2q−1 . We summarize pointwise multiplication of
+approximations of elements in Algorithm
+
+Lemma 2. Algorithm 2 returns a vector ab    b ∈ Zm whose entries approximates those of
+ab ∈ E with precision q − c − 3 in time Õ(m(q0 + c)). Additionally, this vector satisfies
+                                                      √
+                                          ab
+                                           b            m
+                                              − ab ≤
+                                          2q0        2q−c−3
+
+
+                                                    14
+Algorithm 2 Multiplication between approximations of elements in E
+                                    a                        b
+         b, bb ∈ Zm such that 2qj0 − aj ≤ 21q and 2qj0 − bj ≤ 21q where (aj ), (bj ) are the
+                                                             b
+Input: a
+                                    b
+
+    entries of a, b ∈ E and c ≥ log2 (∥a∥), log2 (∥a∥).
+                                        m                   m                ′
+Output: An approximation    j ab ∈ bZmof the vector ab ∈ R with precision q := q − c − 3.
+                                b
+ 1: For j ≤ n1 do ab  b j := 2q0 ba2q
+                                   j bj
+                                          .
+                                        2   0
+
+ 2: while n1 < j ≤ m do
+             j  b m             j               m
+                  aj bj                 aj+1b bj+1
+ 3:    w := 2q0 22q        , x :=  2q0 b              .
+                  b
+                                            2q0
+                                  j  2 b m
+                      0
+            j  b m
+                 a b                    a    bj
+ 4:    y := 2q0 j22qj+1      z := 2q0 j+1          .
+                 b                      b
+                       0                  22q0
+ 5:    abj := w − x, ab
+       b               b j+1 := y + z, j ← j + 2.
+ 6: end while
+ 7: return     (ab
+                b j ).
+
+
+Computing a basis from a generating set Let Λ be an E-ideal for which we want to
+find a basis of short vectors in polynomial time. As the Euclidean norm is preserved by the
+mapping of Λ in Rm , this problem boils down to computing a short basis of an ideal in Rm .
+Since the original description of the LLL reduction algorithm [25], the problem of finding a
+short basis (up to an approximation factor) of a lattice in polynomial time is well understood.
+The difficulty in this context is that we are dealing with rational approximations of real
+numbers. Let a = (a1 , · · · , am ) ∈ Rm and q0 +1 ≥ q ≥ 0, we say that b                        am ) ∈ Z m
+                                                                                    a1 , · · · , b
+                                                                               a = (b
+                                                           a
+is an approximation of a with precision q if ∀j ≤ m, 2qj0 − aj ≤ 21q . Given an approximate
+                                                           b
+
+generating set for the lattice Λ ∈ Rm , we want to compute a basis of short vectors that
+approximates a basis of short vectors for Λ ∈ Rm . We rely on a result from Buchmann and
+Kessler [7] and its modification by Eisenträger, Halgren, Kitaev and Song [15].
+     Let b             ak ∈ Zm be rational approximations of a1 , · · · , ak ∈ Rm of precision q (and
+          a1 , · · · , b
+denominator q0 ≥ q − 1). Let r ≤ k be the rank of the lattice generated by (aj )j≤k . The
+approach described in [7] consists of applying the LLL reduction algorithm to the rank k
+lattice generated by the independent vectors ãj := (ej , b  aj ), j ≤ k where ej is the j-th unit
+vector of Zk . The LLL algorithm outputs vectors b̃j = (mj , bbj ), j ≤ k such that if the
+input precision q is large enough, m1 , · · · , mk−r are independent relations for a1 , · · · , ak
+      P (j) (l)                                     P (l)
+(i.e.
+P         l m l    a j   = 0) and the vectors b j =  j mk−r+j al , j ≤ r are a basis for the lattice
+   j Za j .
+     The following proposition states our modification of the result of [7] incorporating the
+cases where q0 ≥ q.
+
+Proposition 2 (Theorem C.5 of [16]). Let a1 . . . , ak ∈ Rm be a generating set for a lattice
+L of rank r. Let ab1 , . . . , abk ∈ Zm be rational approximations of the ai with precision q and
+                                                       √     q
+denominator q0 (i.e. ∀i ≤ k, ∥abi /2q0 − ai ∥ ≤ m/22 ). Assume µ is a lower bound on
+λ1 (L), and that                       k+1           r
+                                  2q ≥ k2 2 max ∥ai ∥ / µ det(L)2 .
+                                                                    
+
+Then Algorithm 3 returns approximations cb1 , . . . , cbr ∈ Zr of a basis c1 , . . . , cr of L that
+
+
+
+                                                    15
+Algorithm 3 Computation of a basis from an approximate generating set
+Input: Approximate vectors (b   aj )j≤k ∈ Zm of (aj )j≤k ∈ Rm of precision q and denominator
+    q0 .
+Output: Approximate vectors (bbj )j≤r ∈ Zm of a basis of j Zaj .
+                                                             P
+ 1: for j ≤ k do ãj ← (ej , b
+                             aj ).
+ 2: Apply LLL to the ãj and get b̃′ j := (m′j , bb′ j ).
+ 3: Apply LLL to the bb′ j for k − r + 1 ≤ j ≤ k. and get bbj−k+r for k − r + 1 ≤ j ≤ k.
+ 4: return bl for l ≤ r.
+            b
+
+
+satisfies                                          √       k−1
+                               ∀i ≤ r, ∥ci ∥ ≤       mk + 2 2 2 λi (L).
+                                                                             √
+                                                     ci /2q0 − ci ∥ ≤ rkγ1 γ3 m/2q where
+Additionally, the precision of the output satisfies ∥b
+                k+1 max ∥a ∥
+   • γ1 ≤ k 2 2 2      i  i
+                      det(L)
+                                r
+            4k(k2k/2 maxi ∥ai ∥)
+   • γ3 ≤         det(L)2
+                                 .
+
+The cost of this procedure is
+                                                          √
+                                                                                 
+                                                                   k−1
+CostLLL (k, k, log2 (max ∥ai ∥)+q0 )+CostLLL r, k, log2 k( km + 2)2 2 max ∥ai ∥ + q0 ,
+                       i                                                                   i
+
+where CostLLL (r, d, b) denotes the cost of running the LLL algorithm on r linearly indepen-
+dent vectors of Zd with entries of bit size bounded by b.
+
+Proof. The bounds on the size of the entries and on the precision of the output are exactly
+the statement made in [16, Th. C.5]. To derive the bound on the cost of the procedure,
+one needs to use information in the proof of [16, Th. C.5] regarding the size of the entries
+of the vectors given as input to the second call to LLL. Indeed, it is proved that the vectors
+                            √           k−1
+have length bounded by k( km + 2)2 2 maxi ∥ai ∥.
+
+4.3    Complexity of the classical computation
+To estimate the asymptotic complexity of the classical oracle, we need to combine the results
+of Section 4.1 and Section 4.2. Let (y, v1 , · · · , v| S|) ∈ Rn1 +n2 −1 × Zn2 1 × (R/Z)n2 × Z|S| . We
+want to compute a poly-size basis of
+                                                                                −v
+                           fc (y, v1 , · · · , v|S| ) = ϕ(y) · O · p−v
+                                                                    1
+                                                                      1
+                                                                        · · · p|S| |S| ,
+
+in polynomial time in maxj {log(|yj |)}, |S|, maxj {log(pj )}, maxj {log |vj |}, m, and log |∆|.
+
+Theorem 2. Let K be a number field of degree n and discriminant ∆. Let S be a set of
+prime ideals of K. The gate complexity of the classical oracle is in
+
+                   O log2 (v)(|S| + log2 (v)) + log2 (r)2 Cgates (n2 , β ,
+                                                                       
+
+
+                                                       16
+and the qubit requirement is in
+
+                           O max(|S|, log2 (v), log2 (r))Cqubits (n2 , β
+                                                                           
+
+
+where v = maxi |vi |, r = maxi |yi |,
+
+                    β ∈ Õ n(n2 + log |∆|) · max(log |S| + log(v), log(r)) ,
+                                                                          
+
+
+is a bound on the bit size of the integer vectors given to the LLL algorithm, and the costs
+Cgates (k, b), Cqubits (k, b) denote the gate cost (resp. memory cost) of the LLL algorithm on
+input an k-rank lattice in Zk with entries of bit size bounded by b. As usual Õ denotes the
+complexity where the logarithmic factors are omitted.
+
+Proof.
+p       Given how we split up the computation, we only multiply E-ideals of determinant
+  |∆|. This means that once the original precision q0 is chosen, the cost of each ideal
+multiplication is bounded. Let Cgates be a bound on the number of quantum gates required
+for the multiplication of two ideals, and Cqubits be a bound on the amount of memory
+required to multiply two ideals. On input (u, v) ∈ Rn1 +n2 ×Z|S| the evaluation of fc consists
+                                      k                     k
+in the calculation of k≤log2 (r) A2k and k≤log2 (v) Bk2 where log2 (r) ≤ maxj (log2 (|ui |)),
+                          Q                  Q
+log2 (v) ≤ maxj (vi ), and the Ak , Bk are defined in Section 4.1.
+                                                            k
+    We first analyze the cost of computing k≤log2 (v) Bk2 . For each k ≤ log2 (v), we compute
+                                             Q
+                   (k)
+        Q         bj
+Bk := j≤|S| Bj,k       . To minimize the length of the multiplication chain, we use a multipli-
+cation tree of depth log2 (|S|). This costs O(|S|Cgates ) gates and uses O(|S|Cqubits ) qubits.
+                          k
+Then we compute Bk2 by performing k squarings with O(kCgates ) gates and O(kCqubits )
+qubits. This procedure is repeated for all k ≤ log2 (v) using a total of O(log2 (v)(|S| +
+log2 (v))Cgates ) gates and O(max(|S|, log2 (v))Cqubits ) qubits. Finally, we compute the prod-
+                     k
+uct k≤log2 (v) Bk2 via a product tree of depth log2 log2 (v) using O(log2 (v)Cgates ) gates and
+    Q
+                                                          k
+O(log2 (v)Cqubits ) qubits. In summary, k≤log2 (v) Bk2 is computed using O(log2 (v)(|S| +
+                                            Q
+log2 (v))Cgates ) gates and O(max(|S|, log2 (v))Cqubits ) qubits. The longest multiplication
+chain leading to this value is of length log2 (|S|) + log2 (v) + log2 log2 (v).
+                                                               k
+    Next, we analyze the cost of computing k≤log2 (r) A2k . We follow the same strategy
+                                                 Q
+                                           k
+as above. First we compute all the A2k for k ≤ log2 (r) using O(log2 (r)2 Cgates ) gates and
+                                                        k
+O(log2 (r)Cqubits ) qubits. The product k≤log2 (r) A2k is then computed with a product
+                                           Q
+tree of depth log2 log2 (r) using an extra O(log2 (r)Cgates ) gates. The total number of gates
+required is in O(log2 (r)2 Cgates ), and the number of required qubits in O(log2 (r)Cqubits ).
+The longest multiplication chain in of length log2 (r) + log2 log2 (r).
+    In summary, the gate cost, memory cost and longest multiplication chains of the com-
+putation satisfy:
+
+    • Gate cost in O log2 (v)(|S| + log2 (v)) + log2 (r)2 Cgates .
+                                                                 
+
+   • Memory cost in O (max(|S|, log2 (v), log2 (r))Cqubits ).
+
+   • Longest multiplication chain: max(log2 |S|+log2 (v)+log2 log2 (v), log2 (r)+log2 log2 (r)).
+
+
+
+                                                17
+To determine the cost of each multiplication, we need to evaluate the size of the entries of
+the matrices that are given as input to the LLL algorithm. This depends on the precision
+we require. ForProposition 2 to apply, we need that the final precision q satisfy 2q ≥
+    k+1          r
+  k2 2 max ∥ai ∥ / µ det(L)2 where µ is a lower bound on λ1 (L). We have that det(L) =
+                                
+p                     √
+   |∆| and λ1 (L) ≥ n. Moreover,     we can always
+                                                 k−1assume that √matrixgiven     as input is
+                                       √                                        k−1 p
+reduced, which means that ∥ai ∥ ≤        nk + 2 2 2 λi (L) ≤         nk + 2 2 2      n|∆|. At
+each ideal multiplication, the number qloss of bits of precision we lose satisfies
+                               √        k−1 p        
+                                                   n|∆| + log2 n3.5 γ1 γ3 ,
+                                                                          
+                  qloss ≤ log2     nk + 2 2 2
+
+where γ1 , γ3 are defined in Proposition 2. If we define ℓmult := max(log2 |S| + log2 (v) +
+log2 log2 (v), log2 (r) + log2 log2 (r)) to bethe length of the longest multiplication chain, and
+                                                 √ √            k
+                                                                  p 
+the target final precision qfinal := n log2 k n( nk + 2)2 |∆| , then the initial precision
+is q0 := qfinal +ℓmult qloss . To simplify the asymptotic estimate of the cost of the multiplication
+of ideals, we notice that the bound α on the bit size of the vectors of the basis of L given
+as input to the first LLL solver, and the bound α′ on the bit size of the basis vectors given
+to the second LLL solver both satisfy:
+
+                                       α, α′ ∈ Õ n2 + log2 |∆| .
+                                                               
+
+
+This means that the cost of each multiplication is dominated by the cost of LLL on input
+                       2                                       2
+a rank and dimension n lattice with vectors of bit size in Õ n + log2 |∆| + q0 . We then
+notice that
+                q0 ∈ Õ n(n2 + log |∆|) + max(log |S| + log(v), log(r)) ,
+                                                                       
+
+which asymptotically dominates the bit size of the integer vectors given as input to the LLL
+algorithm.
+
+
+                                                         −vi
+       The quantum encoding of et O
+                                                Q
+4.4                                                 p∈S p
+                                                        2   2
+                                              −π∥x∥ /s , x ∈ Rn . For any set S ⊂ Rn , denote
+Let gs (·) be
+            Pthe Gaussian function gs (x) := e
+gs (S) :=     x∈S gs (x). Given a lattice L, the quantum encoding maps L to the lattice
+Gaussian state via
+                                        fq
+              {Lattices over E}       −−−−→ S (unit vectors in a Hilbert space)
+                                                       P                        ,
+                         L            −−−−→   |L⟩ := γ v∈L gs (v)|strν,n (v)⟩
+
+where γ is a factor that normalized the state. Here |strν,n (v)⟩ is the straddle encoding of
+a real-valued vector v ∈ Rn , as defined in [15]. Intuitively, we discretize the space Rn by
+a grid νZn , and we encode the information about v by a superposition over all grid nodes
+surrounding v. Specifically, for the one-dimensional case, the straddle encoding of a real
+number is
+                                                π            π
+                     x ∈ R 7→ |strν (x)⟩ := cos( t)|k⟩ + sin( t)|k + 1⟩ ,
+                                                2            2
+
+
+                                                18
+where k := ⌊x/ν⌋ denotes the nearest grid point no bigger than x and t := x/ν − k
+denotes the (scaled)
+               Nn      offset. Repeat this for each coordinate of v = (v1 , . . . , vn ) we get
+|strν,n (v)⟩ := i=1 |strν (vi )⟩. We recall some properties about straddle encoding from [15].
+This will be useful to prove the HSP properties of our function.
+
+Fact 1. Let v, w ∈ Rn . The following hold
+                                     π √
+   • ∥|strν,n (v)⟩ − |strν,n (w)⟩∥ ≤ 2ν  n · ∥v − w∥.
+                      √
+   • If ∥v − w∥ ≥ 2 nν, then ⟨strν,n (v)|strν,n (w)⟩ = 0.
+                                                                   √
+In our lattice Gaussian states, we will always make sure λ1 (L) > 2 nν so that
+
+                           ⟨strν,n (v)|strν,n (u)⟩ = 0 whenever v ̸= u .
+                                                                     −1/2
+In this case we can compute the normalization factor γ = g √s (L)           . As shown in [15],
+                                                                  2
+one can efficiently compute fq if the lattice satisfies certain conditions and a good basis is
+given (e.g., L is LLL-reduced). Namely there is an efficient quantum circuit creating lattice
+Gaussian states. We state this result with gate and qubit count estimation below and will
+invoke it as a black-box.
+
+Fact 2. Let L be an LLL-reducedPbasis. Assume that λ1 (L) ≥ λ0 , det(L) ≤ d0 and s ≥
+nn/2+1 23n λ−n+1
+             0   d0 . Let |L⟩ = γ v∈L gs (v)|strν,n (v)⟩. There is a quantum circuit that
+takes L as input and produces a state |ψ⟩ such that ∥|ψ⟩ − |L⟩∥ ≤ 2−n . The quantum circuit
+                                                              √
+has gate count O(n3 + n log(1/ν)) and qubit count O(n log( n∥L−1 ∥s)) = O(n2 (log n +
+log(1/λ0 )).
+
+                                                                       −vi
+                                                              Q
+5    Pseudoinjectivity of (y, v) 7→ |ϕ(y)O                        p∈S p    ⟩
+Theorem 3. Let         the function G = Rn1 +n2 −1 × Zn2 1 × (R/Z)n2 × Zs → H defined by
+                Q f be −v
+(y, v) 7→ |ϕ(y)O p∈S p i ⟩. There is r, ε > 0 such that
+
+                   dG/L (x, y) := min ∥x − y − v∥ ≥ r ⇒ ⟨f (x)|f (y)⟩ ≤ ε
+                                  v∈USG
+
+     Our proof relies on some statements on lattices available in [16]. As in [16, Sec. E.2], we
+first introduce a central notion called the approximate intersecting sublattice of two lattices
+L and L′ in Rm .
+
+Definition 5 (δ-approximate intersecting sublattice). Let L and L′ be two lattices of dimen-
+sion n in Rm . Let Y := {(x, x′ ) : x ∈ LR , x′ ∈ L′R , ∥x − x′ ∥ ≤ δ} and X := Y |1 (X ′ := Y |2 )
+be the corresponding set of points x (resp. x′ ). Define Λ := ⟨X⟩ (Λ′ := ⟨X ′ ⟩ resp.) be the
+sublattice generated by points in X (X ′ resp.). We call Λ (Λ′ ) the δ-approximate intersecting
+sublattice of L (resp. L′ ) between L and L′ .
+                                                                            √
+Here LR = L ∩ BR are the lattice points inside a sphere of radius R = ns, where s is the
+Gaussian width in the lattice Gaussian state. This definition indeed captures the overlap
+(up to δ-approximation) between two lattices. Intuitively, Λ and Λ′ can be paired up that
+
+                                                19
+are “close”, and all the other pairs of points will be “far” apart. This overlap is the main
+contribution to the inner product between the quantum encoding of two lattices, and we
+show that if it generates a proper sublattice, we can bound the scalar product. This is
+formalized below as shown in [15]. We sketch a proof for completeness.
+Fact 3 (Lemma E.6 of [16]). Let L, L′ , Λ and Λ′ be as in Definition 5. Suppose that: λ1 ≥ λ,
+λ′1 ≥ λ. Then there is a one-one correspondence h : Λ → Λ′ such that
+                                               √
+    • ∀x ∈ Λ, ∥x − h(x)∥ ≤ β∥x∥ with β := n( nR/λ)n · Rδ ;
+
+    • For any x ∈ LR and any x′ ∈ L′R , if x′ ̸= h(x) (in particular if x ∈
+                                                                          / Λ or x′ ∈
+                                                                                    / Λ′ ,
+      ∥x − x′ ∥ > δ.
+Proof. (Sketch) Pick xi ∈ X : i = 1, . . . , n that are linearly independent and let x′i be
+the corresponding points in X ′ . Let h : xi 7→ x′i and this extends to a linear map from
+Λ̄ to Λ̄′ . The second property
+                           P holds immediately by definition. To show the first one, let
+x ∈ Λ and write it as x = i αi xi , αi ∈ R. Using Cramer’s rule, Hadamard inequality and
+                                                    √
+Minkowski’s second theorem, one can get |αi | ≤ ( nR/λ)n ∥x∥   R . Therefore ∥x − h(x)∥ =
+                                                     √
+∥ i αi (xi − h(xi ))∥ ≤ i |αi |δ ≤ β∥x∥ with β = n( nR/λ) · Rδ .
+                                                             n
+  P                     P
+
+
+                                                          √
+If we pick the straddle encoding fine enough such that 2 nν < δ, it follows that the
+inner product between their quantum encodings will be solely contributed by Λ and Λ′ . In
+particular:
+Fact 4 (Lemma E.7 of [16]). Let L and L′ be two E-ideals with max{det(L), det(L′ )} ≤ d
+and min λ1 (L), λ1 (L′ ) ≥ λ. Let Λ and Λ′ be the δ-intersecting sublattices of L and L′
+respectively, as defined in Definition 5. If Λ ⊊ L (which implies Λ′ ⊊ L′ ), then ⟨L|L′ ⟩ ≤ 3/4
+whenever s ≥ 4πnn/2+3 d/λn−1 .
+The two previous claims give us a sufficient condition for ⟨L|L′ ⟩ ≤ 3/4. To prove the
+(r, ε)-condition, we need to relate the properties of Λ to our notion of distance between
+the preimages in G. We first prove a sufficient condition on dist(L, L′ ) in Lemma 3, which
+ensures that the approximate intersecting sublattices Λ and Λ′ be proper.
+Lemma 3. If dist(L, L′ ) ≥ r = 2√n|∆|
+                                    1                1
+                                         and β < 20nn+2 |∆|
+                                                            , then the δ-intersecting sublattices
+        ′             ′
+Λ and Λ of L and L respectively, as defined in Definition 5, become proper sublattices.
+Namely Λ ⊊ L and Λ′ ⊊ L′ .
+   On the other hand, if Λ = L and Λ′ = L′ , then there is W satisfying ML′ = ML W for
+any bases ML′ , ML of L′ , L that is of the form W = ediag(a) for some a with ∥a∥ ≤ 4√n|∆|  1
+                                                                                                .
+
+Proof. Suppose for contradiction that Λ = L and Λ′ = L′ . Let Mh be the matrix induced by
+h (wrt to some choice of basis for L and L′ ). First we claim that ∥Mh −I∥√            ∞ ≤β
+                                                                                              (1) := nn+1 β.
+
+To show this, we pick a short basis (v1 , . . . , vn ) for L such that ∥vk ∥ ≤ kλP         k (L) for k ≤ n,
+which always exists. Then any w ∈ Rn with ∥w∥ = 1 can be written as w = i αi vi , αi ∈ R.
+By Cramer’s rule we have
+                                                                  √
+                det(v1 , . . . , vi−1 , w, vi+1 , . . . , vn )   ( n)n Πj̸=i λj (L)       √
+        |αi | =                                                ≤    √               ≤ nn / iλi (L) .
+                           det(v1 , . . . , vn )                      i det(L)
+
+                                                    20
+The first inequality uses Hadamard’s inequality and the second inequality invokes Minkowski’s
+second theorem Πj λj (L) ≤ nn/2 det(L). Then
+
+                    X                           X                                     nn
+∥w(Mh − I)∥ =             αi (h(vi ) − vi ) ≤       |αi | · ∥h(vi ) − vi ∥ ≤ n · √           · β∥vi ∥ ≤ nn+1 β .
+                      i                         i
+                                                                                     iλi (L)
+
+This implies that ∥Mh − I∥∞ ≤ β (1) .
+                                                                        √
+   Next, by choosing W := Mh , we have ∥W − I∥2 ≤ β (2) := nβ (1) = nn+3/2 β, and
+ML′ = ML W where ML′ (resp. ML ) are matrices for the choice of basis of L′ (resp. L)
+that corresponds to Mh (i.e. ML′ = ML Mh ).
+                            √         −1
+   Then, since β (2) < (20 n|∆|) , W is necessarily diagonal (see Claim 1), and hence
+ML′ = ML ediag(ai ) with ∥ediag(ai ) − I∥2 ≤ β (2) . This implies that2
+                                                                 1
+                               ∥a∥E = ∥ diag(ai )∥2 ≤ 5β (2) < √
+                                                              4 n|∆|
+
+when β < 2nn+21
+                  |∆|
+                      , and hence since ∥ diag(ai )∥2 ≥ dist(L, L′ ), it contradicts the hypothesis
+that dist(L, L′ ) ≥ r.
+
+
+       The following claim is taken from an unpublished version of [16].
+
+Claim 1 (Sections E.2 and E.3 of [16]). Let L (resp. L′ ) be E-ideals of norm 1 admitting
+a basis represented by the matrix ML (resp. ML′ ) satisfying ML′ = ML W for some matrix
+                     √      −1
+W . If ∥W − I∥ < (2 n|∆|) , then W = diag(z) for some z ∈ E.
+
+Proof. For completeness, we reproduce the proof of this statement as it is presented in [16].
+The matrix W is of the form diag(z) if and only if it commutes with all matrices of the form
+diag(z). To check that, it suffices to show that ML (W diag(ωj ) − diag(ωj )W ) = 0 where
+(ωk )k≤n is an integral basis of O. Indeed both the ωk and the rows b1 , · · · , bn of ML are
+linearly independent. We can assume that ∥ωj ∥E ≤ λn (O) and ∥bj ∥E ≤ λn (L). Moreover,
+we know that
+                       √
+             λ1 (L′ ) ≥ nN (L′ )1/n , λn (O) ≤ n|∆|, λn (L) ≤ n|∆|N (L)1/n
+                                              p                 p
+
+
+. Therefore, since N (L), N (L′ ) = 1, we get
+                                                                                    √
+  ∀k, ∥bk (W diag(ωj ) − diag(ωj )W )∥ ≤ 2∥bk ∥2 ∥W − I∥2 ∥ωj ∥E <                      nN (L′ )1/n ≤ λ1 (L′ ).
+
+Since ML′ = ML W , each bk (W diag(ωj ) − diag(ωj )W ) is a vector of L′ , therefore they have
+to be 0.
+
+Proof of Theorem 3. We need to show that there are r, ε > 0 such that
+
+                                 dG/L (x, y) ≥ r ⇒ |⟨f (x)|f (y)⟩| < ε,
+   2                                                           P∞       ∥Ak ∥2              P∞   1
+   Let A = diag ai . Observe that ∥A∥2 ≤ 1 and in this case       k=2     k!
+                                                                                 ≤ ∥A∥2 ·    k=2 k! = (e − 2)∥A∥2 .
+                                 ∥Ak ∥2
+Hence ∥eA − I∥2 ≥ ∥A∥2 − ∞
+                          P
+                             k=2   k!
+                                        ≥ 0.2∥A∥2 .
+
+
+                                                      21
+where dG/L is the regular Euclidean distance in G/L, i.e. dG/L (x, y) = minu∈L ∥x − y − u∥.
+Let L = fc (x) be the lattice corresponding to x and L′ = fc (y) be the one corresponding to
+y. With the notations of Definition 5, whenever Λ ⊊ L (and Λ′ ⊊ L′ ), we necessarily have
+|⟨f (x)|f (y)⟩| ≤ 3/4. Hence, by contraposition, we assume that |⟨f (x)|f (y)⟩| > 3/4 (which
+implies Λ = L and Λ′ = L′ ), and we prove that this implies that dG/L (x, y) must be less
+than a certain bound r.
+     First, Lemma 3 implies that there is diag(ai )i≤n (in the sense of the diagonal matrices
+                                                                                   1
+discussed in Lemma 1) such that ML′ = ML W for W = ediag(ai ) where ∥a∥ ≤ 4√n|∆|       . This
+means that the matrix distance dist(L, L′ ) is necessarily less than 4√n|∆|
+                                                                        1
+                                                                            .
+                                               ′
+    Next, we want to prove that if dist(L, L ) = ∥A∥ for some A ∈ GLn (R) with ML′ =
+ML eA , then A is necessarily of the form diag(a′i ). We know that ∥A∥ ≤ ∥ diag(ai )∥ ≤ 4√n|∆|
+                                                                                          1
+                                                                                               .
+Moreover, for all A close to the zero matrix, the expansion of the matrix exponential tells
+us that
+                              X Ak             X ∥A∥k
+                ∥eA − I∥ = ∥           ∥ ≤ ∥A∥            ≤ (e − 1)∥A∥ < 2∥A∥.
+                                   k!                 k!
+                                   k≥1              k≥0
+
+Hence ∥eA − I∥ <   √1     and we can apply Claim 1 to argue that eA is diagonal. Therefore,
+                  2 n|∆|
+Since all eA with ML′ = ML eA and dist(L, L′ ) = ∥A∥ must be diagonal, we have that the
+matrix distance satisfies dist(L, L′ ) = ∥a∥ for some a with ML′ = ML ediag(a) (where diag of
+matrices in Rn×n is still understood as in Lemma 1).
+    In terms of E-lattices, this means that L′ = ϕ(aG ) · L where aG is an element of G
+corresponding to a. To construct such an element, we first notice that det(ediag(a) ) = 1,
+which means that the element xa ∈ Rn1 × Cn2 , corresponding to ediag(a) satisfies |xa1 | =
+Qn1        Q1n2        . We can therefore follow the construction of elements of G from S-
+  i=2|xa |
+        i       |xa |2
+            i=n1 +1   i
+units by treating xa ∈ Rn1 × Cn2 as if it were in US with all valuations according to primes
+in S being 0. (i.e. all coordinates of aG according to Zs are set to 0). Since Mϕ(aG ) = ediag(a)
+is close to the identity matrix, we notice that this construction also directly implies that the
+real entries of ϕ(aG ) = xa are close to 1, i.e. they are positive, and therefore all entries of
+aG according to Zn2 1 are zero. Moreover, each diagonal block Ξi corresponding to a complex
+coordinate of ϕ(aG ) = xa is close to the identity block:
+                                    Re(xai ) −Im(xai )
+                                                               
+                                                             1 0
+                            Ξi =                         ∼          .
+                                    Im(xai ) Re(xai )        0 1
+                                            1
+More specifically, since ∥ediag(a) − I∥ < 2√n|∆| , we know that
+   • |Im(xai )| ≤ 2√n|∆|
+                    1
+
+
+   • |Re(xai ) − 1| ≤ 2√n|∆|
+                        1
+                             .
+Hence, if θi ∈ R/Z satisfies xa = |xa |e2iπθi , we have
+                                π               π |Im(xai )|                   π
+                      |θi | ≤     | sin(θi )| =        a     ≤ π|Im(xai )| ≤ √
+                                2               2 |Re(xi )|                 2 n|∆|
+           π
+Let r = 2|∆|  . We have ∥aG ∥ ≤ r. Hence dG/L (x, y) ≤ r. This proves by contraposition that
+if dG/L (x, y) ≥ r, then |⟨f (x)|f (y)⟩| < ε = 3/4.
+
+
+                                                    22
+                                                                               −vi
+                                                                      Q
+6    Lipschitz property of (y, v) 7→ |ϕ(y)O                               p∈S p    ⟩
+Proposition 3 (Lipschitz property of f ). There is a > 0 such that
+                                ||f (x)⟩ − |f (y)⟩| < a · dG/L (x, y)
+Proof. Let z ∈ G such that z = x − y − u where u ∈ L is such that dG/L (x, y) = ∥x − y − u∥.
+If one of the components of z according to Zn2 1 , or Zs is non-zero, then dG/L (x, y) ≥ 1,
+and then by the triangle inequality |⟨f (x)|f (y)⟩| ≤ 2 ≤ 2dG/L (x, y). Now we assume that
+all components of z according to Zn2 1 and Zs are zero. In particular, this means that
+L = (ez )L′ where L = fc (x), L′ = fc (y), and z ∈ E correspond to 
+                                                                    the canonical mapping of
+                                                                      n
+the components of z according to Rn1 +n2 −1 × (Z2 )n1 × R/ n12 Z 2 . Therefore, we have
+ML = ML′ · ediag(z) , and thus:
+                       dG/L (x, y) = ∥z∥ ≥ ∥ϕ(z)∥ = ∥ diag(ϕ(z))∥2
+                                    ≥ inf{∥A∥2 : ML = ML′ · eA }
+                                    ≥ a0 ||f (x)⟩ − |f (y)⟩| by [16, Th. D.4]
+Then we obtain the desired result with a = max{2, 1/a0 }.
+   We have demonstrated the HSP property of f . We will now use this to derive the HSP
+property of f˜ which is a function from G̃ to H obtained from f .
+
+
+7    An HSP oracle on Rm
+In the previous sections we described an oracle f : G → H which satisfies the HSP properties
+of Definition 2 (in particular: pseudoinjectivity and Lipschitz property). We now show how
+to construct an oracle over Rm that hides the S-unit groups and that inherits the HSP
+properties of f . The control group G can be seen as the projection of G̃ = Rk × Zl where
+    • k = n1 + 2n2 − 1.
+    • l = n1 + s.
+We denote by γ : G̃ → G the projection map, and by L̃ ⊆ G̃ the pre-image of L by γ.
+Definition 6 (Oracle on G̃). We define f˜ : G̃ → H by
+                                          f˜(x̃) = f ◦ γ(x̃).
+    We have the following diagram:
+
+                                      γ
+       Rm            G̃ = Rk × Zl         G = Rn1 +n2 −1 × Zn2 1 × (R/Z)n2 × Zs
+                           α̃                                    α                     f =fq ◦fc
+                f˜
+                                            π
+        H               G̃/L̃                                   G/L                                H
+
+   We proceed by first showing that f˜ satisfies the HSP properties, and then we use tech-
+niques from [15, Th. 6.1] and [16, Sec. F] to derive an oracle on Rm that satisfies the HSP
+properties and that hides the S-unit group.
+
+                                                  23
+7.1    HSP properties of the oracle on G̃
+In this section, we show that f˜ is an a,r, ε-oracle on G̃. Following the framework of [15, 16],
+we use the following distance on G̃/L̃.
+
+Definition 7 (Distance on G̃/L̃). Let x̃, ỹ ∈ G̃. We define dG̃ (x, y) = ∥x − y∥ if x − y does
+not have any non-zero components on Zl , and dG̃ (x, y) = ∞ otherwise. Then
+
+                                         dG̃/L̃ = inf dG̃ (x, y + u).
+                                                   ũ∈L̃
+
+Proposition 4 (Lipschitz property of f˜). Assume f is an a, r, ε-oracle. Then
+
+                           ∀x̃, ỹ ∈ G̃, ∥|f˜(x̃)⟩ − |f˜(ỹ)⟩∥ ≤ a · dG̃/L̃ (x̃, ỹ).
+
+Proof. Suppose dG̃/L̃ = ∞, then the inequality holds trivially. Otherise, Let ũ ∈ L̃ such
+that dG̃/L̃ (x̃, ỹ) = ∥x̃ − ỹ − ũ∥. In particular, all coordinates of z̃ := x̃ − ỹ − ũ with respect
+to Zl are 0. Let u = γ(ũ), x = γ(x̃), and y = γ(ỹ). We have
+
+                  ∥x̃ − ỹ − ũ∥ ≥ ∥x − y − u∥ ≥ min ∥x − y − u∥ = dG/L (x, y).
+                                                           u∈L
+
+Hence a · dG̃/L̃ (x̃, ỹ) ≥ a · dG/L (x, y) ≥ ∥|f˜(x̃)⟩ − |f˜(ỹ)⟩∥
+
+Proposition 5 (Pseudoinjectivity of f˜). Assume f is an a, r, ε-oracle for r ≪ 1. Then
+
+                                 dG̃/L̃ (x̃, ỹ) ≥ r ⇒ ⟨f˜(x̃)|f˜(ỹ)⟩ < ε
+
+Proof. Let x = γ(x̃), y = γ(ỹ), and u ∈ L such that dG/L (x, y) = ∥x − y − u∥. If z =
+x − y − u has no component on Zn2 1 or Zs , then dG̃/L̃ (x̃, ỹ) = dG/L (x, y) and therefore, if
+dG̃/L̃ (x̃, ỹ) ≥ r, then
+                           |⟨f˜(x̃)|f˜(ỹ)⟩| = |⟨f (x)|f (y)⟩| ≤ ε.
+    On the other hand, if for such a u, we have components on Zn2 1 or Zs , then either
+dG̃/L̃ (x̃, ỹ) = dG̃ (x̃, ỹ + ũ) = ∞, where ũ ∈ L̃ is the corresponding preimage, or dG̃/L̃ (x̃, ỹ) ≥
+1. So we only know that dG̃/L̃ (x̃, ỹ) ≥ dG/L (x, y) in this case. However, we also have
+that dG/L (x, y) ≥ 1 because of the integer components. Since r ≪ 1 we necessarily have
+dG/L (x, y) ≥ r, and therefore |⟨f˜(x̃)|f˜(ỹ)⟩| = |⟨f (x)|f (y)⟩| ≤ ε.
+
+7.2    An HSP oracle on Rm
+Assume we have an ã, r̃, ε̃-oracle f˜ that hides US on G̃ = Rk × Zl . Following [15, Th. 6.1]
+and [16, Sec. F] we derive an oracle g : Rm → H for m = k + l defined by
+                                                         
+                                 X        O l
+      |g(x, y1 , . . . , yl )⟩ =             |ψ(yj , zj ⟩ ⊗ |f˜(x, s(y1 , z1 ), . . . , s(yl , zl )⟩,
+                              z1 ,...,zl ∈{0,1}   j=1
+
+
+where s(y, z) = ⌊y/λ⌋ + z, and |ψ(y, z)⟩ = cos( πt
+                                                2 )|strν (t)⟩ with t = y/λ − s(y, z).
+
+
+                                                        24
+Theorem 4 (Theorem 6.1 of [15]). If f˜ is an ã, r̃, ε̃-oracle, then g is an a′ , r′ , ε′ -oracle with
+the following identities:
+                                            π              2
+                            a′2 = ã2 + l          (1 + ν)
+                                            2νλ
+                            r′2 = r̃2 + l(2νλ)2
+                                      ε′ = ε̃.
+
+7.3    Concrete parameters for the R-grid
+Finally, we need to bound the first minima and the fundamental volume of the lattice of
+S-units. In the following, we show that these values have polynomial size with respect to
+the input. To bound the first minima of US ⊆ G and the volume of G/US (which are
+preserved by the embedding of US into G̃), we rely on an analogue of Dirichlet unit theorem
+that applies to S-units. The classical results are known for the case where the lattice of
+S-units is embedded in Rr+|S| (where r is the rank of the unit group of O) via the logarithm
+embedding
+                                                                                       
+              Log(α) := log(|α|1 ), · · · , log(|α|r ), log(|α|p1 ), · · · , log(|α|p|S| ,
+
+                                         −ej vpj (α)
+where |α|j := |σj (α)| and |α|pj := pj                 . In this case, we know from [21, Lem. 2] that
+∥ Log(α)∥∞ ≥ log(n)
+               6n4
+                    where ∥v∥∞ denote the usual infinity norm on the vector v, and
+                                                 p    e         n−1 |S|+r− n2
+                    r+|S|
+           Vol R            / Log(US ) ≤ 300 log(P ) |∆|    log(|∆|)                ,
+                                                          2
+where P = maxj N (pj ) (see [21, Sec. 2]).
+
+Proposition 6. The first minima of US ⊆ G satisfies λ1 (US ) ≥ log(n)     6n4
+                                                                               where the norm on
+elements of G is defined by
+                                                  sX       X
+                     ∥(z, v1 , · · · , v|S| )∥ :=    zj2 +   |vj |ej log(pj ).
+                                                        j        j
+
+Moreover, the volume of the lattice of S-units satisfies
+
+                            2n1
+                                   
+                                                p     e           n−1 |S|+r− n2
+           Vol(G/US ) ≤              300 log(P ) |∆|       log(|∆|)                ,
+                         log(2)|S|                       2
+
+where P = maxj N (pj ).
+Proof. Let ((zj ), (vk )) ∈ G corresponding to an S-unit α. We immediately see that
+
+                                     ∥((zj ), (vk ))∥ ≥ ∥ Log(α)∥∞ ,
+
+which proves the lower bound on λ1 (US ).
+    To compute an upper bound on the volume of G/US , we follow the same approach as [16].
+First, we consider the exact sequence 0 → Zn1 × (R/Z)n2 → G → Rm1 +n2 −1 × Zs → 0. Let
+
+                                                       25
+µ(K) be the group of torsion units, and LS ⊆ Rn1 +n2 −1 ×Zs be the rank-n1 +n2 +s−1-lattice
+that is the projection of US . Then we have the exact sequence
+
+               0 → (Zn1 × (R/Z)n2 )/µ(K) → G/US → (Rn1 +n2 −1 × Zs )/LS .
+
+Hence Vol(G/US ) = Vol ((Zn1 × (R/Z)n2 )/µ(K)) Vol (Rn1 +n2 −1 × Zs )/LS
+                                                                               
+
+   The volume of (Rn1 +n2 −1 × Zs )/LS is equal to the absolute value of determinant of the
+matrix of a basis of LS . Let (αj )j≤r+|S| be a minimal generating set for US /µ(K). Its matrix
+M with respect to the embedding in Rr × Z |S| is related to the matrix M ′ := (Log(αj )) by
+the relation M = D · M ′ where
+                                                                          
+                           1 (0)
+                              ..                                          
+                                 .                                        
+                                                                          
+                              (0)   1                                     
+                  D=                                                      .
+                        
+                                       1/e1 log(p1 )           (0)        
+                                                                           
+                                                     ..                   
+                                                        .                 
+                                                 (0)                 1/e|S| log(p|S| )
+We therefore have
+                                                    Y                      1
+              Vol (Rn1 +n2 −1 × Zs )/LS = det(M ) =                               det(M ′ )
+                                       
+                                                                      ej log(pj )
+                                                                 j
+                                                    Y         1
+                                                =                    Vol(Rr+|S| / Log(US )).
+                                                         ej log(pj )
+                                                    j
+
+                                                      2 1             n
+Additionally, we have Vol ((Zn1 × (R/Z)n2 )/µ(K)) = |µ(K)| , therefore, by using the upper
+bound on Vol(Rr+|S| / Log(US )), we get
+
+                            2n1
+                                           
+                                                       p    e         n−1 |S|+r− n2
+            Vol(G/US ) ≤                    300 log(P ) |∆|    log(|∆|)                .
+                         log(2)|S|                           2
+
+
+
+    We are left to invoke the efficient HSP algorithm on Rm . We recall its performance
+below.
+
+Theorem 5 (Theorem 6.2 [16]). Let f be an HSP instance with parameters ((a, r, ε), λ, d)
+such that r ≤ 36 1
+                   λ and ε ≤ 1/2. Let 0 < η ≤ λ1 (L∗ ) and 0 < µ < 1 be a precision
+parameter and error parameter respectively. There is a quantum algorithm that makes K =
+O (log d + log(1/µ) + m log a) oracle calls to f and generates K vectors ũ(1) , . . . ũ(s) ∈ Rm
+having the following properties except with error probability at most µ:
+
+  1.   ∥ũ(i) ∥ ≤ 3a
+                  π for i = 1, . . . , K;
+
+  2.   For each i, ∥ũ(i) − u(i) ∥ ≤ η for some u(i) ∈ L∗ ;
+
+  3.   u(1) , . . . , u(K) generate L∗ .
+
+                                                        26
+                                            2 
+The quantum circuit uses O Km log aK               quantum gates on O m log aK
+                                                                               
+                                  ηµ                                        ηµ qubits.
+
+    The above allows us to derive precise polynomial dependencies in the input parame-
+ters. For this, one needs to specify the cost of running the LLL algorithm in superposition.
+Generic transformations exist to turn a classical algorthm into a reversible quantum com-
+putation [3]. To facilitate a comparison with the recent prepring of de Boer and Felderhoff,
+we specialize our result to the case of the quantum LLL algorithm of [33, Eq 7,8].
+Corollary 2. Let K be an number field of degree n, and discriminant ∆. Let S be a set of
+prime ideals of K. The gate cost of each call to the oracle to compute the S-unit group is
+in
+                   Õ (n + |S|)5.5 (n + log |∆|)5.5 n17.5 (n2 + log |∆|)3.5 .
+                                                                           
+
+Meanwhile, the qubit requirement of the oracle is in
+                     Õ (n + |S|)2.5 (n + log |∆|)2.5 n9.5 (n2 + log |∆|)3.5 .
+                                                                            
+
+Proof. To use Theorem 2, we need a bound on the bit size of the entries of the vectors given
+as input to the oracle. It is given by the qubit requirements of the quantum oracle, i.e. it
+is in                                                            
+                                                      1        1
+                        Õ m(log(a) + log(K) + log( ) + log( ) .
+                                                      η        µ
+With a precision of 2−O(d) |∆|−O(1) , we obtain (using the notation of Theorem 2)
+                          log(v), log(r) ∈ Õ ((n + |S|)(n + log |∆|)) .
+This means that the bound β on the bit size of the entries of the vectors given as input to
+the LLL algorithm satisfies
+                     β ∈ Õ n(n2 + log |∆|)(n + log |∆|)(n + |S|) .
+                                                                  
+
+Using again Cgates (k, β) and Cqubits (k, β) to denote the gate cost (resp. the qubit cost) of
+running LLL in superposition, we have therefore a “classical oracle” gate cost in
+                           Õ (n + |S|)2 (n + log |∆|)2 Cgate (n2 , β)
+                                                                       
+
+Likewise, the qubit cost of the classical oracle is in
+                            Õ (n + |S|)(n + log |∆|)Cqubit (n2 , β)
+                                                                       
+
+If, similarly to [14], we use the methods of [33, Eq 7,8], then we can assume that Cgates (k, β) =
+O(k 7 β 3.5 ) and Cqubits (k, β) = O(k 4 β 1.5 ). The gate cost of our classical oracle is then in
+                                                                                     3.5 
+           Õ (n + |S|)2 (n + log |∆|)2 n14 n(n2 + log |∆|)(n + log |∆|)(n + |S|)            .
+
+Meanwhile, the qubit cost of the oracle is then in
+                                                                        1.5 
+        Õ (n + |S|)(n + log |∆|)n8 n(n2 + log |∆|)(n + log |∆|)(n + |S|)       .
+
+The cost of the calculation of the quantum encoding of the output of the “classical oracle”
+is that of a matrix multiplication, which is negligible compared to the computation of the
+basis of the ideal itself.
+
+                                                   27
+8     Applications to other number theory problems
+8.1    Recover an exact representation of the S-units
+The solution of HSP is given to us as approximations of generators of the hidden subgroup.
+For many applications, an exact (and polynomially bounded) representation is preferable.
+Therefore, we process the solutions to the S-units problem classically to produce a compact
+representation of the generators of the S-unit group.
+
+Definition 8 (Compact representation). Let l > 0 be a constant, a compact representation
+of α ∈ O with respect to the integral basis (ωj )j≤n of O is a set of exact representations of
+                                                                    k
+polynomial size algebraic numbers γj satisfying α = γ0 γ1l · · · γkl , where k is polynomial in
+the size of the input.
+
+    Biasse and Fieker [4, Sec. 5] described an efficient method based on [18, Alg. 7.53] to
+classically compute a compact representation of an algebraic number in polynomial time.
+These methods rely on the knowledge of an exact representation of the algebraic number
+we wish to represent (which is not the case here). A modification of [18, Alg. 7.53] using
+the approximation of the vector corresponding to an algebraic number yields a compact
+representation of that number.
+    Our algorithm for the compact representation of an S-unit takes as input l > 0 and a
+rational approximation (to an arbitrary polynomial precision q) of a vector of the form
+
+                       (log(|α|1 , · · · , log(|α|n1 +n2 ), θ, vp1 (α), · · · , vp|S| (α)),
+
+                                          Q vp (α)
+where α is an S-unit. We can assume that j pj j       ⊆ O. If not, we replace each log(|α|j )
+by                                                  
+                            X
+                                |vpk (α)|ek log(pk ) + log(|α|j )
+                                vpk (α)<0
+
+                                                                                  |vp (α)|ek
+(where N (pk ) = pekk ), thus calculating a compact representation of α vp (α)<0 pk k
+                                                                        Q
+                                                                                             .
+                                                                            k
+From that, we can easily derive a compact representation of α. Then, we choose k0 minimal
+          log(|α|                                  Q ⌊vp (α)/lk ⌋
+such that lk0 j ≤ log(|∆|), initiate an ideal I to j pj j         , and we compute rational
+                                    k
+approximations vj of (|α|j )1/l . Then at each step, I is replaced by I l and we compute
+an LLL-reduced element δk of the ideal C ⊆ O such that I −1 = d1k C for the scaled T2
+                            v2              pQ
+norm T2,(vj )j (δ) := |δ|2i vj2 where v := n
+                     P
+                                                 vj . The ideal I is then replaced by βk I where
+      δk
+βk := dk , and vj ← vj · |βk |j . At every step k from k0 to 0, we know that
+
+    • βk has polynomial size,
+         k             1
+    • βkl 0 · · · βk (α) lk0 −k has polynomial size,
+
+    • I ⊆ O and has polynomial size (i.e. log(I) is polynomial),
+
+    • j vj ≥ N (I) ≥ 1.
+      Q
+
+
+
+                                                       28
+At the end of this process, we have polynomial size algebraic numbers (βj )j≤k0 such that
+              Q k
+β−1 := α k βkl has polynomial size. Finding β−1 is the main difference between our
+approach and that of [4, Sec. 5] and [18, Sec. 7] since we have no exact representation for
+α. We find the minimal d > 0 such that β := dβ−1 ∈ O and from approximates of the
+log(|βk |j ), log(|α|)j , and the phase vector of each of the corresponding algebraic numbers,
+we find a rational approximation βb ∈ Rm under the rule (4) with a polynomial number
+of bits of precision. Likewise, we can get approximations ω      cj ∈ Rm of the integral basis
+                                                                          P bj
+vectors ωj , and solve the linear system (over the rationals) βb :=          j cj ω
+                                                                                  cj . The nearest
+                P            P
+lattice point j aj ω   cj in j Zc  ωj can be retrieved
+                                                    P if the precision is larger than n by using
+Babai’s algorithm [1]. Then we know that β = j aj ωj , and
+                                                          l                  lk0
+                                            β−1       1                    1
+                                         α=                     ···                    .
+                                             β0       β1                  βk0
+
+
+Algorithm 4 Compact representation
+Input:
+    Q Rational       approximations of log(|α|j ), phase vector of α and vj ≥ 0 such that (α) =
+         vj
+       p
+      j j   , l > 0, and approximations ω   cj of an LLL-reduced integral basis of O.
+                                                                   Q k
+Output: Exact representation of γ0 , · · · , γk0 such that α = k γkl .
+         Q ⌊vpj (α)/lk ⌋
+ 1: I ← j pj                .
+ 2: Let kj minimal such that l1k log |βj |i ≤ log ∆, vj ← exp(l−k log |α|j )
+ 3: for 0 ≤ k ≤ k0 do
+ 4:   B ← I l , (wj )j ← (vjl )j .
+                    wj and dk ∈ Z>0 such that B −1 = d1k C for C ⊆ O.
+              pQ
+ 5:   w← n
+                                                                                        w2
+      Let δ be a 1st LLL-basis element of C with respect to T2,(wj /w)j (δ) := |δ|2i wj2 .
+                                                                                  P
+ 6:
+ 7:   βk ← dδk , I ← Bβk , (vj )j≤r+1 ← (wj · |βk |j )j≤r+1 .
+ 8: end for
+                     Q k
+ 9: Let β−1 = α · k βkl
+                                      m
+10: Find an approximation β
+                               P∈ R of dβ−1 where d ∈ Z>0 isb minimal       such that dβ−1 ∈ O.
+                                b
+                                                                       P
+11: Find (aj )j≤n such that         a ω
+                                   j j j
+                                      c  is the closest vector to β in  j  ω
+                                                                          Zc j.
+              1P
+12: β−1 ← d       j aj ωj .
+              β−1 1               1
+13: return     β0 , β1 , · · · , βk0 .
+
+
+
+Proposition 7. Algorithm 4 is correct and returns a compact representation of the input
+α in polynomial time.
+
+Proof. The invariant properties on the size of the elements are deduced in the same way as
+in the proof of [4, Prop. 5.1]. The only important different is the way we compute an exact
+representation of βP −1 . Barbai’s algorithm allows us to find in polynomial time a lattice
+element β̃ in L := j Zc
+               b                          b β̃) ≤ 2n d(β,
+                          ωj such that d(β,            b L).
+                                                          b If the precision is larger than n,
+then the coefficients of β̃ on the basis ω
+                                         bj are those of β = dβ−1 on the integral basis ωj of
+O.
+
+                                                           29
+8.2    Computation of class groups
+Let B = {p1 , · · · , pN } be a set of invertible prime ideals of an order O whose classes generate
+Cl(O). We have a surjective morphism
+                                            φ               π
+                               ZN        −−−−→      I   −−−−→ Cl(O)
+                                                  Q ei                  ,
+                          (e1 , . . . , eN ) −−−−→ i pi −−−−→ i [pi ]ei
+                                                              Q
+
+
+and the class group Cl(O) is isomorphic to ZN / ker(π ◦ φ). Therefore, computing the class
+group boils down to computing ker(π ◦ φ), which is the lattice of (e1 , ..., eN ) ∈ ZN such
+that pe11 , . . . , peNN = (α) for some α ∈ K. These α are S-units for S = B, and the exponent
+vectors of a generating set of US give us a generating set for ker(π ◦ φ) from which we derive
+Cl(O)
+    The best unconditional bounds on |S| are exponential in log(|∆|). As the complexity of
+the computation of the |S|-unit group is polynomial in |S|, we cannot achieve a polynomial
+complexity unconditionally that way. However, under the Generalized Riemann Hypothesis
+(GRH), the classes of all prime ideals of O of norm up to 48 log(|∆|)2 generate Cl(O). The
+size of S := {p ⊆ O prime | N (p) ≤ 48 log(|∆|)2 } is polynomial in log(|∆|), and calculating
+the corresponding S-unit group is therefore polynomial in n and log(|∆|).
+
+Algorithm 5 Ideal class group of O
+Input: O
+Output: d1 , · · · , dn such that O ≃ Z/d1 Z ⊕ · · · ⊕ Z/dn Z.
+ 1: S ← {p ⊆ prime | N (p) ≤ 48 log(|∆|)2 }.
+ 2: Compute the S-unit group US .
+ 3: Let (αj , vj,1 , · · · , vj,|S| )j≤r+|S| be the generating set for US computed.
+ 4: diag(d1 , · · · , dn ) ← Smith Normal Form of M = (vj,k ).
+ 5: return d1 , · · · , dn .
+
+
+
+Proposition 8. Under the Generalized Riemann Hypothesis, Algorithm 5 is correct and
+runs in polynomial time.
+
+    Our work also has direct applications in computational number theory. Indeed, the S-
+unit group is a central object that can be used in a lot of algorithms. It usually is computed
+together with the so-called S-class group, which is the quotient of the group of ideals in
+the ring of S-integers by the subgroup of principal ideals. The S-class group can easily be
+derived from the ideal class group and an oracle for the PIP by quotienting the class group
+by extra relations. A description of this method can be found in Simon’s PhD thesis [31,
+Chap. 1].
+    Another direct consequence of our work is that it directly implies a polynomial time
+algorithm for computing the relative class group and the relative unit group of an arbitrary
+extension of number fields. Algorithms for these tasks are already known [?][Ch. 7], but
+their run time is exponential in the degree of the fields. As for the S-class group, they also
+consist of using a complete set of relations for the ideal class group and of enriching it with
+new relations that are obtained by solving instances of the PIP.
+
+                                                 30
+8.3   Resolution of the principal ideal problem
+Let a ⊆ O be an ideal of O. We want our algorithm to run in polynomial time in the size
+of the input, that is log |∆|, n, and log(N (a)) (which quantifies the size of a). The ideal a
+is principal if and only if a = (α) for α an S-unit where S is the set of prime divisors of
+a. We calculate a generating set for the S-units, which gives us a generating set for all the
+possible principal ideals only divisible by elements of S. The resolution of a linear system
+tells us if a belongs to this set, and if so, what is its generator.
+
+Algorithm 6 Principal ideal problem
+Input: O and an ideal a ⊆ O.
+Output: Decide if a is principal and if so a compact representation of a generator α.
+ 1: Factor a, let S = {p1 , · · · , pk } be the divisors of a.
+ 2: Compute the S-unit group US = µ × ⟨ε1 ⟩ × · · · × ⟨εr+|S| ⟩.
+                                          Q mi,j
+ 3: Let M = (mi,j ) such that εi = j pj .
+                                    Q ai
+ 4: Solve XM = a where a = i pi .
+                                              Q xi
+ 5: return compact representation of            i εi or “not principal” if the system has no solu-
+    tion.
+
+
+8.4   Ideal class decomposition in Cl(O)
+Under the GRH, the set of prime ideals
+            S := {p ⊆ O prime | N (p) ≤ 48 log(|∆|)2 } ∪ {p ⊆ O prime | p | a}
+generate the ideal class group. Ideal class decomposition consists of finding exponents
+x1 , . . . , xs and α ∈ K such that
+                                    a = (α)px1 1 . . . pxs s .
+We want our algorithm to run in polynomial time in the size of the input, that is log |∆|,
+n, and log(N (a)) (which quantifies the size of a). Our strategy is the following:
+                                                     Q
+   1. Decompose a as a product of prime ideals a = q.
+
+             Q qj ∈
+   2. For each       / B, j ≤ k in the decomposition of a, find βk ∈ K such that q =
+      (βk ) · pj ∈S pxj,k .
+
+   3. Deduce v ∈ ZN such that a = k (βk ) · pj ∈B pvj .
+                                    Q       Q
+
+    deciding if an input ideal a ⊆ O is principal, and if so, compute an element α ∈ O such
+that a = (α). The first step consist of finding the prime ideal decomposition of a. Then we
+define S by
+            S := {p ⊆ O prime | N (p) ≤ 48 log(|∆|)2 } ∪ {p ⊆ O prime | p | a},
+and compute the S-unit group. Then we deduce the solution to the principal ideal prob-
+lem by performing a linear algebra step on the matrix of the valuations, as described in
+Section ??.
+Proposition 9. Under the Generalized Riemann Hypothesis, Algorithm 7 is correct and
+runs in polynomial time.
+
+                                               31
+Algorithm 7 Ideal class decomposition
+Input: O and an ideal a ⊆ O.
+Output: Decide if a is principal and if so a compact representation of a generator α.
+ 1: Factor a.
+ 2: S ← {p ⊆ prime | N (p) ≤ 48 log(|∆|)2 }.
+ 3: S ← S ∪ {p ⊆ O prime | p | a}.
+ 4: v ← vector of valuations of a according to S.
+ 5: Compute the S-unit group US .
+ 6: Let (αj , vj,1 , · · · , vj,|S| )j≤r+|S| be the generating set for US computed.
+ 7: Compute a compact representation of the αj .
+                                                            
+                                                     H|0
+ 8: Find U ∈ GLr+|S| (Z) and H such that U           B|I   is the HNF of (vj,k ) and I = Im .
+           Q      Uj,k
+ 9: βj →       k αk    in compact representation for j ≤ r + |S|.
+10: v → v1 + Bv2 where v = (v1 , v2 ).
+               Q
+11: return         k (βk ), v
+
+
+
+8.5   Ray class groups
+Our algorithms also directly imply a quantum algorithm for computing the ray class group
+of an arbitrary number field. The computation of the ray class group is an essential task
+in computational class field theory, and both classical and quantum algorithms have been
+described to solve this task. A classical method due to Cohen can be found in [?][3.2] and
+has an exponential run time with respect to the degree (but runs in subexponential time for
+classes of fixed degree number fields). A quantum algorithm was described by Eisenträger
+and Hallgren [?] with a polynomial run time in classes of fixed degree number fields. As for
+the afortmentioned tasks, computing the ray class group essentially relies on subroutines
+for computing the ideal class group and solving the PIP, for which we provide polynomial
+time algorithms in arbitrary number fields. It also relies on algorithms for factoring ideals
+(which can be easily derived from Shor’s factoring algorithm), and efficient methods for
+solving the discrete logarithm problem (which is also a well known consequence of Shor’s
+work [30]).
+
+8.6   Norm equations
+Finally, our work allows us to describe polynomial time algorithms for solving relative
+norm equations of the form NL/K (x) = θ where L/K is an arbitrary Galois extension.
+Norm equations are an important example of Diophantine equations which are a major
+topic in number theory. The resolution of the Pell equation (for√which there is a quantum
+algorithm [23]) can be seen as a special case where L = Q( ∆), K = Q and θ = 1
+(when we restrict our attention to integer solutions). Solving norm equations in general
+is an important task in computational number theory. A classical method was described
+by Simon [31] (based on the work of Fieker [17] for Galois extensions) that solves general
+extensions in exponential time in the degree of the fields. For the Galois case, it simply
+uses the knowledge of the S-unit group and the relative class group, which we can provide
+in polynomial time for number fields of arbitrary degree. However, the general method
+
+
+                                                32
+uses the Galois closure, whose degree can be exponential in the degree of the field, thus
+restricting the direct application of our work to arbitrary Galois extensions.
+
+
+References
+ [1] L. Babai. On lovász’ lattice reduction and the nearest lattice point problem. In
+     K. Mehlhorn, editor, STACS 85, volume 182 of Lecture Notes in Computer Science,
+     pages 13–20. Springer Berlin Heidelberg, 1985.
+
+ [2] E. Bach. Explicit bounds for primality testing and related problems. Mathematics of
+     Computation, 55(191):355–380, 1990.
+
+ [3] C. H. Bennett. Time/space trade-offs for reversible computation. SIAM Journal on
+     Computing, 18(4):766–776, 1989.
+
+ [4] J.-F. Biasse and C. Fieker. Subexponential class group and unit group computation in
+     large degree number fields. LMS Journal of Computation and Mathematics, 17:385–
+     403, 1 2014.
+
+ [5] Jean-François Biasse and Fang Song. Efficient quantum algorithms for computing class
+     groups and solving the principal ideal problem in arbitrary degree number fields. In
+     Robert Krauthgamer, editor, Proceedings of the Twenty-Seventh Annual ACM-SIAM
+     Symposium on Discrete Algorithms, SODA 2016, Arlington, VA, USA, January 10-12,
+     2016, pages 893–902. SIAM, 2016.
+
+ [6] R. Bröker, D. Xavier Charles, and K. Lauter. Evaluating large degree isogenies and
+     applications to pairing based cryptography. In S. Galbraith and K. Paterson, editors,
+     Pairing-Based Cryptography - Pairing 2008, Second International Conference, Egham,
+     UK, September 1-3, 2008. Proceedings, Lecture Notes in Computer Science, pages 100–
+     112. Springer, 2008.
+
+ [7] J. Buchmann and V. Kessler. Computing a reduced lattice basis from a generating
+     system, 1993. Preprint.
+
+ [8] J. Buchmann and M. Pohst. Computing a lattice basis from a system of generating
+     vectors. In Eurocal’87, volume 378 of LNCS, pages 54–63. Springer-Verlag, June 1987.
+
+ [9] P. Campbel, M. Groves, and D. Shepherd.         SOLILOQUY, a cautionary
+     tale. http://docbox.etsi.org/Workshop/2014/201410_CRYPTO/S07_Systems_and_
+     Attacks/S07_Groves_Annex.pdf, 2014.
+
+[10] A. Childs, D. Jao, and V. Soukharev. Constructing elliptic curve isogenies in quantum
+     subexponential time. Journal of Mathematical Cryptology, 8(1):1 – 29, 2013.
+
+[11] H. Cohen. A course in computational algebraic number theory, volume 138 of Graduate
+     Texts in Mathematics. Springer-Verlag, 1991.
+
+[12] H. Cohen and H.W. Lenstra. Heuristics on class groups of number fields. Number
+     Theory, Lecture notes in Math., 1068:33–62, 1983.
+
+                                           33
+[13] R. Cramer, L. Ducas, C. Peikert, and O. Regev. Recovering short generators of prin-
+     cipal ideals in cyclotomic rings. In M. Fischlin and J.-S. Coron, editors, Advances
+     in Cryptology - EUROCRYPT 2016 - 35th Annual International Conference on the
+     Theory and Applications of Cryptographic Techniques, Vienna, Austria, May 8-12,
+     2016, Proceedings, Part II, volume 9666 of Lecture Notes in Computer Science, pages
+     559–585. Springer, 2016.
+
+[14] Koen de Boer and Joël Felderhoff. Quantumly computing s-unit groups in quantified
+     polynomial time and space. IACR Cryptol. ePrint Arch., page 1825, 2025.
+
+[15] K. Eisenträger, S. Hallgren, A. Kitaev, and F. Song. A quantum algorithm for com-
+     puting the unit group of an arbitrary degree number field. In Proceedings of the 46th
+     Annual ACM Symposium on Theory of Computing, STOC ’14, pages 293–302, New
+     York, NY, USA, 2014. ACM.
+
+[16] K. Eisenträger, S. Hallgren, A. Kitaev, and F. Song. A quantum algorithm for comput-
+     ing the unit group of an arbitrary degree number field (long version), 2014. available
+     at https://www.cse.psu.edu/~sjh26/units-stoc-submission.pdf.
+
+[17] C. Fieker. Relative Normgleichungen. PhD thesis, Technische Universität Berlin, 1997.
+
+[18] C. Fieker.    Algorithmic Number Theory.           Lecture notes available at
+     http://www.mathematik.uni-kl.de/agag/mitglieder/professoren/prof-dr-claus-fieker,
+     2014.
+
+[19] C. Fieker, A. Jurk, and M. Pohst. On solving relative norm equations in algebraic
+     number fields. Mathematics of Computation, 66(217):399–410, 1997.
+
+[20] S. Garg, C. Gentry, and S. Halevi. Candidate multilinear maps from ideal lattices.
+     In T. Johansson and P. Nguyen, editors, Advances in Cryptology - EUROCRYPT
+     2013, 32nd Annual International Conference on the Theory and Applications of Cryp-
+     tographic Techniques, Athens, Greece, May 26-30, 2013. Proceedings, pages 1–17, 2013.
+
+[21] L. Hadju. A quantitative version of dirichlet’s s-unit theorem in algebraic number
+     fields. Publicationes Mathematicae Debrecen, 42(3-4):239–246, 1993.
+
+[22] S. Hallgren. Fast quantum algorithms for computing the unit group and class group
+     of a number field. In Proceedings of the 37th Annual ACM Symposium on Theory of
+     Computing, pages 468–474, 2005.
+
+[23] S. Hallgren. Polynomial-time quantum algorithms for Pell’s equation and the principal
+     ideal problem. Journal of the ACM, 54(1):1–19, 2007.
+
+[24] D. Jao and V. Soukharev. A subexponential algorithm for evaluating large degree iso-
+     genies. In G. Hanrot, F. Morain, and E. Thomé, editors, Algorithmic Number Theory,
+     volume 6197 of Lecture Notes in Computer Science, pages 219–233. Springer Berlin
+     Heidelberg, 2010.
+
+[25] A. Lenstra, H. Lenstra, and L. Lovász. Factoring polynomials with rational coefficients.
+     Mathematische Annalen, 261:515–534, 1982.
+
+                                             34
+[26] H. Lenstra and C. Pomerance. A rigorous time bound for integer factoring. Journal of
+     the American Mathematical Society, 5(3):483–516, 1992.
+                                                          √
+[27] J.E. Littlewood. On the class number of the corpus p( −k). Proc. London Math.Soc,
+     27:358–372, 1928.
+
+[28] J. Neukirch. Algebraic number theory. Comprehensive Studies in Mathematics.
+     Springer-Verlag, 1999. ISBN 3-540-65399-6.
+
+[29] A. Schmidt and U. Vollmer. Polynomial time quantum algorithm for the computation
+     of the unit group of a number field. In Proceedings of the 37th Annual ACM Symposium
+     on Theory of Computing, pages 475–480, 2005.
+
+[30] P. Shor. Polynomial-time algorithms for prime factorization and discrete logarithms
+     on a quantum computer. SIAM Journal on Computing, 26(5):1484–1509, 1997.
+
+[31] D. Simons. Solving norm equations in relative number fields using s-units. Mathematics
+     of Computation, 71(239):1287–1305, 2002.
+
+[32] N. Smart and F. Vercauteren. Fully homomorphic encryption with relatively small key
+     and ciphertext sizes. In P. Nguyen and D. Pointcheval, editors, Public Key Cryptogra-
+     phy - PKC 2010, volume 6056 of Lecture Notes in Computer Science, pages 420–443.
+     Springer Berlin Heidelberg, 2010.
+
+[33] Marcel Tiepelt and Alan Szepieniec. Quantum LLL with an application to mersenne
+     number cryptosystems. In Peter Schwabe and Nicolas Thériault, editors, Progress in
+     Cryptology - LATINCRYPT 2019 - 6th International Conference on Cryptology and
+     Information Security in Latin America, Santiago de Chile, Chile, October 2-4, 2019,
+     Proceedings, volume 11774 of Lecture Notes in Computer Science, pages 3–23. Springer,
+     2019.
+
+
+
+
+                                            35
+

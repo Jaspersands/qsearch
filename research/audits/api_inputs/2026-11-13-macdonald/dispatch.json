@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-13",
+  "selection": "Complete native mesoscopic Macdonald transform versus constructive classical sampler",
+  "local_ceiling_usd": 13,
+  "note": "Three distinct obligations. Ceilings are not charges or balances; no retries.",
+  "jobs": [
+    {
+      "id": "macdonald-native-access",
+      "provider": "openai",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-macdonald/macdonald-native-access.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-macdonald/native-contract.md",
+        "research/audits/api_inputs/2026-11-13-macdonald/mickler-primary.txt",
+        "research/audits/reviews/2026-11-13-jack-logprecision-independent.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-macdonald-native-access",
+      "status": "completed",
+      "session_id": 73444,
+      "billing_status": "usage_reported",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.377580",
+      "response_bytes": 19600,
+      "parent_fully_read": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T20:08:47.272822+00:00",
+        "finished_at": "2026-11-12T20:02:29.475034+00:00",
+        "usage": {
+          "input_tokens": 20658,
+          "input_tokens_details": {
+            "cache_write_tokens": 20655,
+            "cached_tokens": 0
+          },
+          "output_tokens": 43420,
+          "output_tokens_details": {
+            "reasoning_tokens": 37771
+          },
+          "total_tokens": 64078
+        },
+        "usage_is_partial": false,
+        "response_LF_count": 451,
+        "response_splitline_count": 452,
+        "session_reaping_status": "Not independently checked; original session locator retained. Saved result status is terminal."
+      }
+    },
+    {
+      "id": "macdonald-branching",
+      "provider": "claude",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-macdonald/macdonald-branching.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-macdonald/native-contract.md",
+        "research/audits/api_inputs/2026-11-13-macdonald/mickler-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-macdonald-branching",
+      "status": "completed",
+      "session_id": 80307,
+      "billing_status": "usage_reported",
+      "stop_reason": "end_turn",
+      "usage_cost_estimate_usd": "0.899440",
+      "response_bytes": 11204,
+      "parent_fully_read": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T20:08:47.272822+00:00",
+        "finished_at": "2026-11-12T19:45:15.874136+00:00",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 24455,
+          "output_tokens": 40081
+        },
+        "usage_is_partial": false,
+        "response_LF_count": 161,
+        "response_splitline_count": 162,
+        "session_reaping_status": "Not independently checked; original session locator retained. Saved result status is terminal."
+      }
+    },
+    {
+      "id": "macdonald-classical",
+      "provider": "claude",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-macdonald/macdonald-classical.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-macdonald/native-contract.md",
+        "research/audits/api_inputs/2026-11-13-macdonald/classical-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-macdonald-classical",
+      "status": "completed",
+      "session_id": 69941,
+      "billing_status": "usage_reported",
+      "stop_reason": "end_turn",
+      "usage_cost_estimate_usd": "1.188228",
+      "response_bytes": 13261,
+      "parent_fully_read": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T20:08:47.272822+00:00",
+        "finished_at": "2026-11-12T19:48:14.463652+00:00",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 9142,
+          "output_tokens": 57583
+        },
+        "usage_is_partial": false,
+        "response_LF_count": 214,
+        "response_splitline_count": 215,
+        "session_reaping_status": "Not independently checked; original session locator retained. Saved result status is terminal."
+      }
+    }
+  ]
+}

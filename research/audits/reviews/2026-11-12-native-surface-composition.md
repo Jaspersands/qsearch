@@ -155,7 +155,7 @@ also avoids concatenating ell-1 independent socles, which would be fatal.
 The auxiliary normalization and fixed-pole data produce one integer M of
 polynomial bit length before P is selected. Choose P above all known degree,
 Wronskian, bad-basevalue, cyclic-coordinate and separator counts and outside
-M*ell*|Gamma| and p. There are at most log_2|M*ell*|Gamma|| excluded prime
+M*ell*|Gamma| and p. There are at most log_2(|M|*ell*|Gamma|) excluded prime
 divisors. Effective prime-counting bounds therefore put a good prime in a
 polynomial numerical interval. Primality and gcd tests suffice; no varying
 integer factorization is assumed.
@@ -334,7 +334,7 @@ no unknown expected-time tail is silently made into a worst-case bound.
 Successful pairing and RR certificates are never relaxed after a timeout.
 
 The outer number of CRT primes is polynomial, ell_max=O(B), numerical
-auxiliary P and all field degrees are polynomial in ell,B, and precision
+auxiliary P and all CONSTRUCTED field degrees are polynomial in ell,B, and precision
 is polynomial too. The resulting bounded-error BIT bound follows.
 
 ## Final scope

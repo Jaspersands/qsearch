@@ -1,0 +1,55 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2955,
+      "path": "research/audits/api_inputs/2026-11-13-next-mechanisms/contract.md",
+      "sha256": "e6303262931c59cb535cb70c4c2a0ae791788aeee82e73cfd4e172ac34e18090",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 15612,
+      "path": "research/GAUDIN_JOINT_CHARGE_TRAVERSAL.md",
+      "sha256": "17efec774df9b3de2cc6d1fc54212fc96b316dab92d5db377729096b733b2a9d",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 10859,
+      "path": "research/GAUDIN_TWO_CLUSTER_GAP.md",
+      "sha256": "6507e5e57b1f97db5ab0a0938b2740acb9dd198dcda54910c154bc988cabb3dd",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 12927,
+  "effort": "high",
+  "finished_at": "2026-11-12T16:47:19.808092+00:00",
+  "input_token_allowance": 13186,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.332744,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-next-mechanisms/gaudin-locality.md",
+    "sha256": "f94451d9dd55c3ddc9c91e40a1c215b36d87f568bfaafeac54bd7dbec63de17d",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T163753.105875Z-ca46aa53",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 12927,
+    "output_tokens": 61778
+  },
+  "usage_cost_estimate_usd": 1.287268
+}

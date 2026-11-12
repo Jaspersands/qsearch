@@ -1,0 +1,209 @@
+Actual primary excerpt; textSHA256 e146ff98093d005ce468bcc919ccbe3a9242a75f433f709c244e88f82a244350
+Source file research/audits/sources/new_native_wave/sparse_bivariate_arxiv.txt
+URL https://arxiv.org/pdf/math/0602145
+
+
+PhysicalLF615-709
+                     [K : Q]
+                               v∈MK
+                                  ∞
+                                                                                    v/
+                                                                                     ∈MK
+                                                                                       ∞
+
+
+
+                 = h1 (f ) − δ(f ).
+                                                                                                                     
+ 12                    MARTÍN AVENDAÑO, TERESA KRICK, AND MARTÍN SOMBRA
+
+
+Proof of Theorem 2.2. The “ ⇐ ” is trivial, so we show the other implication.
+Suppose that p | f but p ∤ q . From the fact that p is irreducible we have that the set of common
+                                                                                                  ×
+roots of p and q is finite. Also, since degy (p) ≥ 1 and p 6= y , the set {(ω, ν) ∈ G∞ × Q :
+p(ω, ν) = 0} is infinite. Given ε > 0 , it follows from the definition of λ(p) that the set {(ω, ν) ∈
+G∞ × Q : p(ω, ν) = 0, h(ν) ≤ λ(p) − ε} is finite. Therefore there exist an infinite number of
+                 ×
+(ω, ν) ∈ G∞ × Q such that p(ω, ν) = 0 and h(ν) > λ(p) − ε , and there still exist some ω ∈ G∞
+           ×
+and ν ∈ Q such that
+                          p(ω, ν) = 0,      q(ω, ν) 6= 0   and h(ν) > λ(p) − ε.
+Applying Lemma 2.3
+                          (u − k) (λ(p) − ε) ≤ (u − k) h(ν) ≤ h1 (f ) − δ(f ).
+Since this holds for all ε > 0 , we infer
+                                 (u − k) λ(p) ≤ h1 (f ) − δ(f ) < h1 (f )
+because δ(f ) does not depend on (ω, ν) and so does not depend on ε either. This contradicts
+the hypothesis: (u − k) λ(p) ≥ h1 (f ) . Therefore p | q and p | − y u · q = r as wanted. ✷
+
+Of course this result is only useful whenever λ(p) > 0 . What happens is that this parameter is
+bounded from below by the essential minimum, and so all existing estimations for the essential
+minimum will give us a corresponding gap theorem.
+Lemma 2.4. Let p be an irreducible polynomial in K[x, y] such that degy (p) ≥ 1 . Then
+                                            λ(p) ≥ µess (Z(p)).
+Proof. Observe that h(ν) = h(ω, ν) ; we can then rephrase the definition of λ(p) as
+                      
+           λ(p) = inf η ≥ 0 : {ξ ∈ Z(p) ∩ (G∞ × Q) : h(ξ) ≤ η} is an infinite set .
+Compare with the definition of the essential minimum:
+                                 
+              µess (Z(p)) = inf η ≥ 0 : {ξ ∈ Z(p) : h(ξ) ≤ η} is an infinite set ,
+so that λ(p) is the infimum over a subset of the set used to define µess (Z(p)) and the inequality
+is clear.                                                                                        
+Equality in Lemma 2.4 above does not necessarily hold: consider p := xα − ξy β , then for any
+(ω, ν) ∈ G∞ × Q we have that p(ω, ν) = 0 ⇐⇒ ν β = ω α /ξ and so
+                                            h(ν β )   h(ω α /ξ)   h(ξ)
+                                  h(ν) =            =           =      .
+                                              β          β         β
+Hence
+                       λ(p(x, y)) = h(ξ)/β while λ(p(y, x)) = h(ξ)/α,
+in particular λ depends on the order of the variables, while of course the essential minimum does
+not, so there cannot coincide in general. One can prove that µess (p) = h(ξ)/ max{α, β} [PS04,
+Prop. 5.4].
+
+From Corollary 1.2 we deduce:
+Corollary 2.5. Let f, r, q ∈ K[x, y] beQsuch that f = r + y u · qQ
+                                                                 . Let also be given an irreducible
+p ∈ K[x, y] that is not of the form p = i (xα − ωi y β ) nor p = i (xα y β − ωi ) for some α, β ≥ 0
+not both zero and ωi ∈ G∞ ∪ {0} , and set d := deg(p) . Suppose that
+                       u − degy (r) ≥ 56 · [K : Q] · d · log3 (16[K : Q]d) · h1 (f ),
+then p divides f if and only if it divides r and q .
+                            FACTORING BIVARIATE SPARSE (LACUNARY) POLYNOMIALS                               13
+
+
+Similarly we obtain the following gap theorem from the lower bound (5):
+Corollary 2.6. Let f, r, q ∈ Q[x, y] be such that f = r + y u · q . Let also be given an irreducible
+p ∈ Q[x, y] which is not a binomial, and set d := deg(p) . Suppose that
+                                   u − degy (r) ≥ 270 · d · log5 (d + 2) · h1 (f ),
+then p divides f if and only if it divides r and q .
+
+               3. Computing the low degree factors of sparse polynomials
+The goal of this section is to present the rational and absolute factorization algorithms for sparse
+bivariate polynomials. Our conventions about encoding are the usual ones, the same as in for
+instance [Len99b]. The number of bits needed to write down an integer a ∈ Z is ⌊log2 (a)⌋ + 1 for
+the digits and 1 more for the sign. For a rational a = m/n ∈ Q in reduced expression, we define
+its bit length as
+                        ℓ(a) = ℓ(m) + ℓ(n) − 2 = ⌊log2 |m|⌋ + ⌊log2 (n)⌋ + 2;
+the somewhat artificial “ −2 ” is there just
+                                          Pto make this coincide with the previous notation for an
+integer a . The sparse encoding of f = ti=1 ai xαi y βi ∈ Q[x, y] is the list (ai , αi , βi )1≤i≤t of its
+(non-zero) coefficients and corresponding exponents, and so its bit length is
+                                   X 
+                                   t                                            
+(7)                       ℓ(f ) :=     ℓ(ai ) + ⌊log2 (αi )⌋ + ⌊log2 (βi )⌋ + 2 ;
+                                       i=1
+observe that ℓ(f ) is an upper bound for t , log2 (deg f ) and h(f ) , and in fact is polynomially
+equivalent to these quantities: ℓ(f ) = (t · log2 (deg f ) · h(f ))O(1) .
+For encoding polynomials over number fields we have to say how number fields and algebraic
+numbers are handled: a number field K of degree δ = [K : Q] is described by an irreducible
+                        Pδ−1
+monic polynomial g = j=0 gj z j ∈ Z[z] such that K = Q(θ) for one of its roots, and this g is
+given in dense representation by the (ordered) list of all its coefficients gj including the zero ones.
+The length of this description is
+
+PhysicalLF846-951
+                          O(1)
+in d · (ℓ(K) + ℓK (f ))        bit operations. Since there are at most d2 pairs α, β , the total bit
+                                                              O(1)
+cost of the algorithm remains of order d · (ℓ(K) + ℓK (f ))        .                                
+3.2. Rational factorization. The search of all the low degree factors of a sparse f ∈ K[x, y] is
+done by decomposing it as a sum of short pieces, as in the previous papers [CKS99, Len99b, KK05].
+For given ∆x , ∆y ≥ 0 , these pieces have to be separated by a distance (“gap”) of at least ∆x in
+the x -direction or ∆y in the y -direction. This is done here by decomposing f first with respect
+to the y -exponents, then with respect to the x -exponents.
+            Pt
+Let f = i=1 ai xαi y βi and suppose that the monomials are already ordered so that β1 ≤ β2 ≤
+· · · ≤ βt . Then we determine
+                                        ℓ0 := 0 < ℓ1 < · · · < ℓs < ℓs+1 = t
+subject to the conditions
+      βi+1 − βi < ∆y for ℓj + 1 ≤ i ≤ ℓj+1 , 0 ≤ j ≤ s,                   and      βℓj +1 − βℓj ≥ ∆y for 1 ≤ j ≤ s,
+namely we split the y -exponents β1 , . . . , βt into subsets so that consecutive exponents in the same
+subset are at distance < ∆y and between different subsets there is a gap of length ≥ ∆y . Set
+           ℓj+1
+           X
+ rj :=             ai xαi y βi −βℓj +1 for 0 ≤ j ≤ s       so that        f = y βℓ0 +1 r0 + y βℓ1 +1 r1 + · · · + y βℓs +1 rs .
+         i=ℓj +1
+
+Next we do the same procedure over each rj with respect to ∆x : first we reorder the monomials
+applying a permutation τ so that
+                                                ℓj+1
+                                                X
+                                        rj =             aτ (i) xατ (i) y βτ (i) −βℓj +1
+                                               i=ℓj +1
+
+and ατ (ℓj +1) ≤ ατ (ℓj +2) ≤ · · · ≤ ατ (ℓj+1 ) . Then for each 0 ≤ j ≤ s we sub-split this set of
+ℓj+1 − ℓj exponents into subsets such that the consecutive x -exponents in the same subset are
+at distance < ∆x , and between different subsets there is a gap of length ≥ ∆x . Using this, we
+decompose rj into pieces
+                                     rj = xζ0,j r0,j + · · · + xζtj ,j rtj ,j
+for some exponents {ζi,j : 0 ≤ j ≤ s, 0 ≤ i ≤ tj } ⊂ {α1 , . . . , αt } that we do not explicit to avoid
+useless proliferation of indexes.
+Each ri,j is (up to a monomial) some part of rj , which in time is (up to a monomial) some part
+of f . We arrive in this way to a list of k ≤ t non-zero polynomials f1 , . . . , fk (after rewriting the
+ri,j ’s into fi ’s) such that
+(9)                                f = xγ1 y δ1 f1 + xγ2 y δ2 f2 + · · · + xγk y δk fk ;
+and by construction for 1 ≤ i ≤ k ,
+                      ℓK (fi ) ≤ ℓK (f ),   degx (fi ) < (t − 1) ∆x ,           degy (fi ) < (t − 1) ∆y
+and for i 6= j we have that
+                      either    γj − γi − degx (fi ) ≥ ∆x            or      γi − γj − degx (fj ) ≥ ∆x
+                          or    δj − δi − degy (fi ) ≥ ∆y           or      δi − δj − degx (fj ) ≥ ∆y .
+                       FACTORING BIVARIATE SPARSE (LACUNARY) POLYNOMIALS                                  17
+
+
+We have decomposed f in ≤ t pieces of controlled degree and separated by a gap of length ≥ ∆x
+in the x -direction or ≥ ∆y in the y -direction.
+
+The computation of the irreducible factors of f of degree ≤ d is then clear. First we compute a
+constant c such that h1 (f ) ≤ c in time (ℓ(K) + ℓK (f ))O(1) , as in [Len99b, Prop.3.6]. We set
+                        ∆x := ∆y := ∆ = 56 · [K : Q] · d · log3 (16[K : Q]d) · c.
+Applying Corollary 2.5 we infer that for f = xγ1 y δ1 f1 + xγ2 y δ2 f2 + · · · + xγk y δk fk as in (9), then
+for p ∈ K[x, y] that is not a cyclotomic polynomial, we have
+                                       p | f ⇐⇒ p | fi     for all i.
+The procedure consists on computing first the cyclotomic factors together with their multiplicity,
+by using the algorithm in Subsection 3.1. For the other factors, we compute them as the common
+factors of the fi ’s, by using any polynomial-time algorithm for factoring dense bivariate poly-
+nomials over a number field, for instance [Len87, Thm 3.26]. Therefore we obtain the following
+result:
+Theorem 3.4. There is a deterministic algorithm that, given f ∈ K[x, y] and d ≥ 1 , computes
+all irreducible factors of f in K[x, y] of degree ≤ d , together with their multiplicities, in
+                      O(1)
+ d · (ℓ(K) + ℓK (f ))      bit operations.
+Proof. We have already established that the previous algorithm gives all these factors and their
+multiplicities. We estimate its running time. We show that the degree of fi for all i , 1 ≤ i ≤ k ,
+in the decomposition (9) is polynomial in the input size. This is a consequence of our estimate for
+the gap length:
+                                                                                                O(1)
+ℓ(fi ) ≤ ℓ(f ) and degx (fi ), degy (fi ) < (t−1) ∆ = O(t·([K : Q]·d)1+ε ·c) = d·(ℓ(K)+ℓK (f ))      .
+Then we apply to each fi a polynomial-time algorithm for factoring dense bivariate polynomials
+                                                            O(1)
+over K , which would do the task in d · (ℓ(K) + ℓK (f ))         bit operations. Since the number of
+fi ’s is at most t ≤ ℓ , the total complexity remains of the same order.                           
+If for an input polynomial f ∈ K[x, y] we are interested in its factors in an extension L , we can
+compute them by just including f into L[x, y] and then applying the above algorithm over L ;
+                                                  O(1)
+its cost would be of d · (ℓ(K) + ℓK (f ) + ℓK (L)      bit operations.
+We note that here, for the factors which are products of binomials but not cyclotomic, we have
+the choice of computing them either by reduction to the univariate sparse case of Theorem 3.3 or
+by reduction to the dense bivariate case.
+3.3. Absolute factorization. Given a polynomial f ∈ K[x, y] , we can apply Corollary 2.6 to
+extend the previous algorithm to the computation of all irreducible factors of f over Q , of degree
+bounded by d , except the binomial ones. We assume that the input f is encoded in K[x, y] and
+as before we compute a constant c such that h1 (f ) ≤ c in time (ℓ(K) + ℓK (f ))O(1) , then we set
+                               ∆x := ∆y := ∆ = 270 · d · log5 (d + 2) · c.
+Corollary 2.6 implies that for the associated decomposition f = xγ1 y δ1 f1 +xγ2 y δ2 f2 +· · ·+xγk y δk fk
+as in (9), any irreducible p ∈ Q[x, y] that is not of the form
+                              p(x, y) = xα − ξy β or p(x, y) = xα y β − ξ,
+satisfies
+                                    p | f ⇐⇒ p | fi for all i.
+Now we need to determine the common factors of the fi ’s over Q[x, y] and their multiplicity. In
+order to do this, we first factor completely each of the fi over K[x, y] by applying any dense
+ 18                    MARTÍN AVENDAÑO, TERESA KRICK, AND MARTÍN SOMBRA
+
+
+polynomial-time bivariate factorization algorithm over K . An irreducible factor p ∈ Q[x, y] of f
+will necessarily divide a common irreducible factor q ∈ K[x, y] of all the fi ’s. Thus it is enough
+to keep all common irreducible factors q ∈ K[x, y] of all the fi ’s and their multiplicities, and then
+to factor them in Q[x, y] by applying any polynomial-time algorithm for factoring dense bivariate
+polynomials over Q , for instance [Kal95, Theorem 11]. We only keep those factors in the output
+which are of degree ≤ d and which are not binomials. We proceed in this way in order to avoid
+comparing irreducible factors in Q[x, y] of different fi ’s, that can, although equal, be described
+in different field extensions.

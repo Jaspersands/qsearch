@@ -1,0 +1,623 @@
+{
+  "captured_at_utc": "2026-11-12T22:03:54.999273+00:00",
+  "ceiling_note": "Local request ceilings are not actual usage estimates, invoices, provider billing caps or balances.",
+  "checkpoint_status": "PREPARED_USAGE_ONLY_AWAITING_PARENT_STABLE_PROOF_PATHS",
+  "cost_note": "Known stored runner estimates only, not invoices, actual bills or balances. Four inherited UNKNOWN bills plus one new RemoteProtocolError UNKNOWN bill are excluded. No retries, balance subtraction or interpreting absent usage as zero.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 123,
+    "excluded_observed_partial_runner_estimates_usd": "0.589724",
+    "known_terminal_nonpartial_usage_estimate_usd": "258.179542",
+    "known_terminal_nonpartial_usage_records": 200,
+    "unknown_generation_failure_bills_excluded": 1,
+    "unknown_partial_failure_bills_excluded": 4,
+    "unknown_protocol_failure_bills_excluded": 1,
+    "unknown_timeout_bills_excluded": 3,
+    "unknown_total_bills_excluded": 5
+  },
+  "current_round_unknown_total_bill_count": 1,
+  "dispatch_manifests": [
+    "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/dispatch.json",
+    "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-source-lemmas/dispatch.json"
+  ],
+  "exclusions": [
+    {
+      "reason": "Four exact inherited exclusions preserved plus new empty RemoteProtocolError with no reported usage; all observed partial estimates remain excluded.",
+      "scope": "Five UNKNOWN total bills"
+    },
+    {
+      "reason": "Held pending explicit parent stable-proof instruction. No such files hashed or edited.",
+      "scope": "Artifact hash freeze, two independent proofs, evolving topic/STATE/HANDOFF and newer work"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 22338,
+    "note": "Prior frozen ledger read as immutable baseline; prior artifact hashes/ledgers not repinned or rescanned.",
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/condensate_projector_round/usage.json"
+  },
+  "local_request_ceiling_total_usd": "37.000000",
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 75,
+      "empty_response_count": 17,
+      "frozen_prior_estimate_usd": "149.085718",
+      "frozen_prior_known_terminal_records": 146,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_eight_explicit_jobs": 157,
+      "known_estimate_by_status_usd": {
+        "completed": "63.646728",
+        "empty_response": "3.767794",
+        "truncated": "86.121420"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "153.535942",
+      "known_terminal_nonpartial_usage_records": 151,
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_generation_failure_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.485230",
+          "failure_stage": "generation",
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "obligation": "quadratic-composition",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 48498,
+            "output_tokens": 5
+          },
+          "provider": "Anthropic",
+          "response_bytes": 7862,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.070644",
+          "failure_stage": "generation",
+          "failure_type": "ReadTimeout",
+          "no_retry": true,
+          "obligation": "unit-lattice-phase",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 17621,
+            "output_tokens": 8
+          },
+          "provider": "Anthropic",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ],
+      "sparse_wave_round": {
+        "completed_nonempty_reports": 4,
+        "empty_refusal_reports": 0,
+        "failed_empty_reports": 0,
+        "jobs": 5,
+        "known_nonpartial_usage_records": 5,
+        "status_counts": {
+          "completed": 4,
+          "truncated": 1
+        },
+        "terminal_jobs": 5,
+        "truncated_empty_reports": 1,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 0,
+        "usage_estimate_usd": "4.450224"
+      },
+      "status_counts_through_sparse_wave": {
+        "completed": 75,
+        "dry_run": 1,
+        "empty_response": 17,
+        "failed": 5,
+        "truncated": 59
+      },
+      "terminal_results": 156,
+      "truncated_and_empty": 45,
+      "truncated_and_nonempty": 14,
+      "unknown_partial_failure_bill_count": 4,
+      "unknown_total_bill_count": 4
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 48,
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "100.094070",
+      "frozen_prior_known_terminal_records": 47,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_eight_explicit_jobs": 50,
+      "known_estimate_by_status_usd": {
+        "completed": "102.140090",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "104.643600",
+      "known_terminal_nonpartial_usage_records": 49,
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [
+        {
+          "billing_status": "unknown",
+          "failure_type": "RemoteProtocolError",
+          "no_retry": true,
+          "note": "No final usage or cost reported; excluded, never interpreted as zero.",
+          "obligation": "wave-classical-superposition",
+          "partial_usage_observed": null,
+          "provider": "OpenAI",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": false,
+          "usage_reported": false
+        }
+      ],
+      "partial_generation_failure_totals_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "sparse_wave_round": {
+        "completed_nonempty_reports": 2,
+        "empty_refusal_reports": 0,
+        "failed_empty_reports": 1,
+        "jobs": 3,
+        "known_nonpartial_usage_records": 2,
+        "status_counts": {
+          "completed": 2,
+          "failed": 1
+        },
+        "terminal_jobs": 3,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 1,
+        "usage_estimate_usd": "4.549530"
+      },
+      "status_counts_through_sparse_wave": {
+        "completed": 48,
+        "failed": 1,
+        "incomplete": 1
+      },
+      "terminal_results": 50,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0,
+      "unknown_partial_failure_bill_count": 0,
+      "unknown_total_bill_count": 1
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "report_note": "Parent fully read six substantive nonempty completed reports; one empty protocol failure and one empty max_tokens truncation provide no findings. All eight sessions reaped per manifest/parent. Scientific dispositions remain advisory and are not promoted by this bookkeeping.",
+  "scope": "Frozen condensate-projector baseline plus ONLY six sparse-wave and two wave-source-lemmas terminal requests; no historical rescan. No artifact hash checkpoint frozen in this preparation.",
+  "sparse_wave_round": {
+    "by_provider_usd": {
+      "Anthropic": "4.450224",
+      "OpenAI": "4.549530"
+    },
+    "completed_nonempty_reports": 6,
+    "empty_refusal_reports": 0,
+    "failed_empty_reports": 1,
+    "jobs": 8,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "wave-full-resolvent",
+        "parent_fully_read_nonempty_report": true,
+        "parent_read_disposition": "full",
+        "provider": "OpenAI",
+        "report_authority": "Advisory saved API artifact; parent reading/disposition is recorded separately. This usage ledger makes no scientific conclusion.",
+        "response": {
+          "bytes": 19204,
+          "exists": true,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/response.md"
+        },
+        "response_LF_count": 470,
+        "response_characters": 19180,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1580,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/result.json"
+        },
+        "session_id": 80230,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 9012,
+          "input_tokens_details": {
+            "cache_write_tokens": 9009,
+            "cached_tokens": 0
+          },
+          "output_tokens": 41470,
+          "output_tokens_details": {
+            "reasoning_tokens": 35740
+          },
+          "total_tokens": 50482
+        },
+        "usage_cost_estimate_usd": "2.163620",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "unknown",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition",
+        "completed_review": false,
+        "failure_type": "RemoteProtocolError",
+        "known_nonpartial_estimate": false,
+        "no_retry": true,
+        "obligation": "wave-classical-superposition",
+        "parent_fully_read_nonempty_report": false,
+        "parent_read_disposition": "empty failure metadata checked",
+        "provider": "OpenAI",
+        "report_authority": "Advisory saved API artifact; parent reading/disposition is recorded separately. This usage ledger makes no scientific conclusion.",
+        "report_classification": "EMPTY_PROTOCOL_FAILURE_UNKNOWN_BILL",
+        "response": {
+          "bytes": 0,
+          "exists": true,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/response.md"
+        },
+        "response_LF_count": 0,
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1269,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/result.json"
+        },
+        "session_id": 45476,
+        "session_reaped_per_parent": true,
+        "status": "failed",
+        "stop_reason": null,
+        "terminal": true,
+        "total_cost_usd": "UNKNOWN",
+        "usage": null,
+        "usage_cost_estimate_usd": null,
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "wave-single-green",
+        "parent_fully_read_nonempty_report": true,
+        "parent_read_disposition": "full",
+        "provider": "OpenAI",
+        "report_authority": "Advisory saved API artifact; parent reading/disposition is recorded separately. This usage ledger makes no scientific conclusion.",
+        "response": {
+          "bytes": 18142,
+          "exists": true,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/response.md"
+        },
+        "response_LF_count": 624,
+        "response_characters": 18136,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1578,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/result.json"
+        },
+        "session_id": 58359,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 8986,
+          "input_tokens_details": {
+            "cache_write_tokens": 8983,
+            "cached_tokens": 0
+          },
+          "output_tokens": 45921,
+          "output_tokens_details": {
+            "reasoning_tokens": 39792
+          },
+          "total_tokens": 54907
+        },
+        "usage_cost_estimate_usd": "2.385910",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "wave-cancellation-falsifier",
+        "parent_fully_read_nonempty_report": true,
+        "parent_read_disposition": "full",
+        "provider": "Anthropic",
+        "report_authority": "Advisory saved API artifact; parent reading/disposition is recorded separately. This usage ledger makes no scientific conclusion.",
+        "response": {
+          "bytes": 11955,
+          "exists": true,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/response.md"
+        },
+        "response_LF_count": 205,
+        "response_characters": 11105,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1635,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/result.json"
+        },
+        "session_id": 1138,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 14390,
+          "output_tokens": 28716
+        },
+        "usage_cost_estimate_usd": "0.631880",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "wave-lattice-shell",
+        "parent_fully_read_nonempty_report": true,
+        "parent_read_disposition": "full",
+        "provider": "Anthropic",
+        "report_authority": "Advisory saved API artifact; parent reading/disposition is recorded separately. This usage ledger makes no scientific conclusion.",
+        "response": {
+          "bytes": 10853,
+          "exists": true,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/response.md"
+        },
+        "response_LF_count": 152,
+        "response_characters": 10287,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1627,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/result.json"
+        },
+        "session_id": 93922,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 14397,
+          "output_tokens": 38581
+        },
+        "usage_cost_estimate_usd": "0.829208",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "wave-positive-source-frame",
+        "parent_fully_read_nonempty_report": true,
+        "parent_read_disposition": "full",
+        "provider": "Anthropic",
+        "report_authority": "Advisory saved API artifact; parent reading/disposition is recorded separately. This usage ledger makes no scientific conclusion.",
+        "response": {
+          "bytes": 9753,
+          "exists": true,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/response.md"
+        },
+        "response_LF_count": 171,
+        "response_characters": 9148,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1633,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/result.json"
+        },
+        "session_id": 20516,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 14376,
+          "output_tokens": 26031
+        },
+        "usage_cost_estimate_usd": "0.578124",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "wave-sparse-deflation",
+        "parent_fully_read_nonempty_report": true,
+        "parent_read_disposition": "full",
+        "provider": "Anthropic",
+        "report_authority": "Advisory saved API artifact; parent reading/disposition is recorded separately. This usage ledger makes no scientific conclusion.",
+        "response": {
+          "bytes": 15042,
+          "exists": true,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/response.md"
+        },
+        "response_LF_count": 268,
+        "response_characters": 14235,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1656,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/result.json"
+        },
+        "session_id": 91843,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 8983,
+          "output_tokens": 52291
+        },
+        "usage_cost_estimate_usd": "1.081752",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "known_nonpartial_estimate": true,
+        "obligation": "wave-uniform-green-envelope",
+        "parent_fully_read_nonempty_report": false,
+        "parent_read_disposition": "EMPTY truncation; no findings",
+        "provider": "Anthropic",
+        "report_authority": "Advisory saved API artifact; parent reading/disposition is recorded separately. This usage ledger makes no scientific conclusion.",
+        "report_classification": "EMPTY_MAX_TOKENS_TRUNCATION; final reported nonpartial usage counted, no findings or retry",
+        "response": {
+          "bytes": 0,
+          "exists": true,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/response.md"
+        },
+        "response_LF_count": 0,
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1693,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/result.json"
+        },
+        "session_id": 51592,
+        "session_reaped_per_parent": true,
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 12315,
+          "output_tokens": 64000
+        },
+        "usage_cost_estimate_usd": "1.329260",
+        "usage_is_partial": false
+      }
+    ],
+    "known_nonpartial_usage_records": 7,
+    "status_counts": {
+      "completed": 6,
+      "failed": 1,
+      "truncated": 1
+    },
+    "terminal_jobs": 8,
+    "truncated_empty_reports": 1,
+    "truncated_nonempty_reports": 0,
+    "unknown_total_bill_records": 1,
+    "usage_estimate_usd": "8.999754"
+  },
+  "unknown_billing_exclusions": [
+    {
+      "excluded_partial_runner_estimate_usd": "0.0276",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 6875,
+        "output_tokens": 5
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.00625",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 585,
+        "output_tokens": 8
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.485230",
+      "failure_stage": "generation",
+      "failure_type": "ReadError",
+      "no_retry": true,
+      "obligation": "quadratic-composition",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 48498,
+        "output_tokens": 5
+      },
+      "provider": "Anthropic",
+      "response_bytes": 7862,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.070644",
+      "failure_stage": "generation",
+      "failure_type": "ReadTimeout",
+      "no_retry": true,
+      "obligation": "unit-lattice-phase",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 17621,
+        "output_tokens": 8
+      },
+      "provider": "Anthropic",
+      "response_bytes": 0,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    },
+    {
+      "billing_status": "unknown",
+      "failure_type": "RemoteProtocolError",
+      "no_retry": true,
+      "note": "No final usage or cost reported; excluded, never interpreted as zero.",
+      "obligation": "wave-classical-superposition",
+      "partial_usage_observed": null,
+      "provider": "OpenAI",
+      "response_bytes": 0,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": false,
+      "usage_reported": false
+    }
+  ]
+}

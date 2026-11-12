@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-13",
+  "question": "Full spatial sparse-source damped lattice Helmholtz Born sampling",
+  "local_ceiling_usd": 33,
+  "note": "Six distinct obligations, not repeats. Ceilings not charges; source assumptions unverified until independently checked.",
+  "jobs": [
+    {
+      "id": "wave-full-resolvent",
+      "provider": "openai",
+      "role": "constructive",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-sparse-wave/wave-full-resolvent.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-sparse-wave/contract.md",
+        "research/audits/api_inputs/2026-11-13-sparse-wave/primary.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-wave-full-resolvent",
+      "status": "completed",
+      "session_id": 80230,
+      "parent_read": "full",
+      "session_reaped": true,
+      "note": "Terminal report read in chunks. Session was reaped by preceding call; later poll confirmed no process. Advisory claims checked or under explicit independent audit."
+    },
+    {
+      "id": "wave-classical-superposition",
+      "provider": "openai",
+      "role": "classical",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-sparse-wave/wave-classical-superposition.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-sparse-wave/contract.md",
+        "research/audits/api_inputs/2026-11-13-sparse-wave/primary.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-wave-classical-superposition",
+      "status": "failed",
+      "session_id": 45476,
+      "failure_type": "RemoteProtocolError",
+      "billing_status": "unknown",
+      "parent_read": "empty failure metadata checked",
+      "session_reaped": true,
+      "note": "No retry. Fifth UNKNOWN bill; do not count as zero."
+    },
+    {
+      "id": "wave-single-green",
+      "provider": "openai",
+      "role": "classical",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-sparse-wave/wave-single-green.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-sparse-wave/contract.md",
+        "research/audits/api_inputs/2026-11-13-sparse-wave/primary.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-wave-single-green",
+      "status": "completed",
+      "session_id": 58359,
+      "parent_read": "full",
+      "session_reaped": true,
+      "note": "Terminal report read in chunks. Session was reaped by preceding call; later poll confirmed no process. Advisory claims checked or under explicit independent audit."
+    },
+    {
+      "id": "wave-cancellation-falsifier",
+      "provider": "claude",
+      "role": "adversarial",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-sparse-wave/wave-cancellation-falsifier.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-sparse-wave/contract.md",
+        "research/audits/api_inputs/2026-11-13-sparse-wave/primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier",
+      "status": "completed",
+      "session_id": 1138,
+      "parent_read": "full",
+      "session_reaped": true
+    },
+    {
+      "id": "wave-lattice-shell",
+      "provider": "claude",
+      "role": "constructive",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-sparse-wave/wave-lattice-shell.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-sparse-wave/contract.md",
+        "research/audits/api_inputs/2026-11-13-sparse-wave/primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-wave-lattice-shell",
+      "status": "completed",
+      "session_id": 93922,
+      "parent_read": "full",
+      "session_reaped": true,
+      "note": "Single-source full quantum construction under independent finite-bit review; no general source claim."
+    },
+    {
+      "id": "wave-positive-source-frame",
+      "provider": "claude",
+      "role": "classical",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-sparse-wave/wave-positive-source-frame.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-sparse-wave/contract.md",
+        "research/audits/api_inputs/2026-11-13-sparse-wave/primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-wave-positive-source-frame",
+      "status": "completed",
+      "session_id": 20516,
+      "parent_read": "full",
+      "session_reaped": true
+    }
+  ]
+}

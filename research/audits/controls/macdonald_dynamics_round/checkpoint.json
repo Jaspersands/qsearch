@@ -1,0 +1,409 @@
+{
+  "captured_at_utc": "2026-11-12T20:35:57.419666+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "finite_control_proves_all_degree_theorem": false,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "partial_estimate_equals_total_bill": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_control_artifacts": [
+    {
+      "bytes": 6822,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/macdonald_newton_degree3/control.sage",
+      "sha256": "2c91f9287775e6f32c9463c59aa93c53e7c363f8ed13d3cafcf7046e5cd140cc"
+    },
+    {
+      "bytes": 22623,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/macdonald_newton_degree3/result.json",
+      "sha256": "2d51ce04e13ab87e96f75fedcd93a8e98bb9b99357c9c5dd6f3e4fe05646d54e"
+    }
+  ],
+  "control_note": "Existing fixedD3 seven-diagram normalization/interference control, including initial Sage API blocker and bounded repair receipt, hashed only; no new CAS run.",
+  "dispatch": {
+    "bytes": 5567,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/dispatch.json",
+    "sha256": "2a1434bd40e2803d463961250bbf4c7b7f5444773c8a24a4e1d207447c5258f3"
+  },
+  "dispatch_mutation_scope": "Only final four-job status/billing/usage/read/reaped metadata updated; raw results, prior ledgers and scientific notes untouched.",
+  "exclusions": [
+    {
+      "reason": "Newer running work excluded entirely; no condensate usage, report, packet or QRSt source hash included.",
+      "scope": "Two separate condensate requests and their dispatch/bundles/new sources"
+    },
+    {
+      "reason": "No current shared scientific note inspected for claims or hashed/edited; immutable earlier context snapshots retained.",
+      "scope": "Evolving research/topic notes, STATE/HANDOFF/workflow"
+    },
+    {
+      "reason": "Preserved unchanged with all observed partial counters excluded from known usage totals.",
+      "scope": "Four inherited UNKNOWN bills"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/contract.md",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 5567,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/dispatch.json",
+      "sha256": "2a1434bd40e2803d463961250bbf4c7b7f5444773c8a24a4e1d207447c5258f3"
+    },
+    {
+      "bytes": 1454,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-colour-free.md",
+      "sha256": "0e49c1cbce565db874ceb4126a7e86537d5ac0bed805e891064b56a5f0fe68b7"
+    },
+    {
+      "bytes": 1493,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-direct-sampler.md",
+      "sha256": "7ab36897cd49a6aaaa9e6bc440af49297e53093d8dc8cd8d1c2d1ec7d26991e3"
+    },
+    {
+      "bytes": 1469,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-doob-kernel.md",
+      "sha256": "aace7249c5285a92674ad2e71aca45ebb56aeac787314acf00bae8292fd77f1f"
+    },
+    {
+      "bytes": 1545,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-few-phonon.md",
+      "sha256": "4f5f7301f03f62295cf7d85dcdd96c529cdaf6ec341fd4a7cfe0a6efbcaf2d01"
+    },
+    {
+      "bytes": 31329,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/primary.txt",
+      "sha256": "3b9da916229263fc3d97891b641f5ac04b904e9a700004e40cbd2f86dd67d937"
+    }
+  ],
+  "four_terminal_results_and_responses": [
+    {
+      "obligation": "dynamics-direct-sampler",
+      "response": {
+        "bytes": 16450,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/response.md",
+        "sha256": "5e6df52a129cfcf8cb4ff277ba60558f427ca3f9e73459f36ae6f3f6efd7c0ef"
+      },
+      "response_LF_count": 526,
+      "response_characters": 16448,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1762,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/result.json",
+        "sha256": "b6b8cea46a4670b3c61b8d9836ee52261b3a540abf7847d686232b3b18e01cfb"
+      },
+      "session_id": 64233,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "dynamics-few-phonon",
+      "response": {
+        "bytes": 19431,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/response.md",
+        "sha256": "157fbafd3d4a3c1564ed5a2982ecc6bf28a97f8de9b353b56dda50fe9a7f360e"
+      },
+      "response_LF_count": 573,
+      "response_characters": 19419,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1923,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/result.json",
+        "sha256": "2e0dea61a8f258b040554945d91990fc0adc0536a7bd4fc6ca5267a18dcb2aa6"
+      },
+      "session_id": 96933,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "dynamics-doob-kernel",
+      "response": {
+        "bytes": 13979,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-doob-kernel/response.md",
+        "sha256": "ba0370b2dc20b11e2f58ddc3f02e2395040a1acec38e559a0b5b1d9bcc6580fe"
+      },
+      "response_LF_count": 190,
+      "response_characters": 13060,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1861,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-doob-kernel/result.json",
+        "sha256": "560899880bf1299d31ff7b01002a62b7265e79a973a3bcd6464205ce2997fbce"
+      },
+      "session_id": 15957,
+      "status": "completed",
+      "stop_reason": "end_turn"
+    },
+    {
+      "obligation": "dynamics-colour-free",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-colour-free/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_LF_count": 0,
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 1894,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-colour-free/result.json",
+        "sha256": "6bb19cb201f1c8cad487373ce168bbac00d4f2e863478e8b46ebe4dcb33e9fa7"
+      },
+      "session_id": 70806,
+      "status": "truncated",
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 13756,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/macdonald_round/checkpoint.json",
+    "sha256": "63efcf8f9f378f6803636d6542e9cc5aa9ffbcc5bbc8b23df2278e5497538602"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 16507,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/macdonald_round/usage.json",
+    "sha256": "71339e24d48b059de0c41d5963b2760076295ab87a5eb684cc0a56c023b74ec5"
+  },
+  "not_frozen": "Two running condensate requests and their new QRSt sources; evolving STATE/HANDOFF/topic notes. Only exact explicitly scoped original source files included.",
+  "primary_source_artifacts": [
+    {
+      "bytes": 152369,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_transform/nazarov_sklyanin_2015.pdf",
+      "sha256": "7100f48d62365be15dcd5c947f8f4a345ef8063f08dbb2c6d7907bf772d78b51"
+    },
+    {
+      "bytes": 45606,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_transform/nazarov_sklyanin_2015.txt",
+      "sha256": "d45856bd4a03393bcc19c8f3a5441bdbcf268d02cdc55a740a45f3627ec09167"
+    },
+    {
+      "bytes": 1619102,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_transform/borodin_corwin_2014.pdf",
+      "sha256": "e178bef7cb77ae68cc2bd6bc804c8d163b9d9c8c0e7abe1f6b1f77b8bd3ff7b3"
+    },
+    {
+      "bytes": 601074,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_transform/borodin_corwin_2014.txt",
+      "sha256": "545e7766942d4f80e25d191c2788ac396d29f07b55edd2025a0c9bf281485b45"
+    },
+    {
+      "bytes": 390763,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_transform/mickler_2026.pdf",
+      "sha256": "9d37ddc648a0ae4a0c2878724b62101482ac527f5be8bbb39131efcbef8e5c45"
+    },
+    {
+      "bytes": 124867,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_transform/mickler_2026.txt",
+      "sha256": "d42664c6f10c70160e46efe21e3f0f608e7cf8ef0beda145c13cc689502cc435"
+    },
+    {
+      "bytes": 1364286,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_dynamics/gu_somma_fastforward.pdf",
+      "sha256": "6253f01219dca1db642493677d2301deb8d92890c8989c71f233ff90751c571e"
+    },
+    {
+      "bytes": 232901,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_dynamics/gu_somma_fastforward.txt",
+      "sha256": "8a680c9a5a94ca45683fda148edf04697b846b39a5c23a05cce5c95c1b60a89e"
+    },
+    {
+      "bytes": 570782,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_dynamics/atai_hallnas_langmann_2021.pdf",
+      "sha256": "666ea82d28284561404411ebc374c99df37ca3c2a03e465faa998d03e843ea45"
+    },
+    {
+      "bytes": 122788,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_dynamics/atai_hallnas_langmann_2021.txt",
+      "sha256": "283384a9cddd4b7bb415ebee1a6a1d12810542ce1504a4ff5403aed872034762"
+    }
+  ],
+  "prior_hash_policy": "Frozen Macdonald-round usage/checkpoint and four UNKNOWN bills remain unchanged; no recursive historical scan or old artifact repinning.",
+  "review_artifacts": [
+    {
+      "bytes": 12898,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-macdonald-realtime-independent.md",
+      "physical_LF_count": 251,
+      "sha256": "3be39e9d31040b64620c0209f5f7310f8cd677c280ad1a014967d68a400812b7"
+    },
+    {
+      "bytes": 13762,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-macdonald-few-phonon-independent.md",
+      "physical_LF_count": 271,
+      "sha256": "af48c61a92a9975079b0b3c4ba79aa58265fbff05f9e2e14168f6a3ee5467915"
+    }
+  ],
+  "scope": "Exactly four terminal dynamics requests; immutable packets/bundles and scoped stable proof/source/control snapshots only. Mechanical bookkeeping, no science.",
+  "status": "TERMINAL_MACDONALD_DYNAMICS_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1493,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/context-00.txt",
+      "sha256": "7ab36897cd49a6aaaa9e6bc440af49297e53093d8dc8cd8d1c2d1ec7d26991e3"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/context-01.txt",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 31329,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/context-02.txt",
+      "sha256": "3b9da916229263fc3d97891b641f5ac04b904e9a700004e40cbd2f86dd67d937"
+    },
+    {
+      "bytes": 8076,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/context-03.txt",
+      "sha256": "94638365055c31f4a2d56dbecbb0e77763a948061a167e2830b223fc0cf2bfd1"
+    },
+    {
+      "bytes": 701365,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/provider-response.json",
+      "sha256": "e47bfb66ac458b199fd46f79c3e3f8a6abbf46c9596829e8e67d0d7e1d3513a3"
+    },
+    {
+      "bytes": 49379,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/request.json",
+      "sha256": "1cd12488a6c00a720828fac7bf9e9709d30e354c00be97b630f2eeafcef214d8"
+    },
+    {
+      "bytes": 16450,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/response.md",
+      "sha256": "5e6df52a129cfcf8cb4ff277ba60558f427ca3f9e73459f36ae6f3f6efd7c0ef"
+    },
+    {
+      "bytes": 1762,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-direct-sampler/result.json",
+      "sha256": "b6b8cea46a4670b3c61b8d9836ee52261b3a540abf7847d686232b3b18e01cfb"
+    },
+    {
+      "bytes": 1545,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/context-00.txt",
+      "sha256": "4f5f7301f03f62295cf7d85dcdd96c529cdaf6ec341fd4a7cfe0a6efbcaf2d01"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/context-01.txt",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 31329,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/context-02.txt",
+      "sha256": "3b9da916229263fc3d97891b641f5ac04b904e9a700004e40cbd2f86dd67d937"
+    },
+    {
+      "bytes": 12618,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/context-03.txt",
+      "sha256": "ca57b2732a32d87e219cac9e4a3b4aec7187ba5b0f18cf1eddd7e4bd9cf835b4"
+    },
+    {
+      "bytes": 8076,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/context-04.txt",
+      "sha256": "94638365055c31f4a2d56dbecbb0e77763a948061a167e2830b223fc0cf2bfd1"
+    },
+    {
+      "bytes": 554248,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/provider-response.json",
+      "sha256": "27aab13c0176561d2dc0de988ce8606184763befc8c4fd43db1313934a1dc430"
+    },
+    {
+      "bytes": 62383,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/request.json",
+      "sha256": "7748f83670c976289bba6ef771192025e311e2c0b064d2ce1edfc2d1c159730a"
+    },
+    {
+      "bytes": 19431,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/response.md",
+      "sha256": "157fbafd3d4a3c1564ed5a2982ecc6bf28a97f8de9b353b56dda50fe9a7f360e"
+    },
+    {
+      "bytes": 1923,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dynamics-few-phonon/result.json",
+      "sha256": "2e0dea61a8f258b040554945d91990fc0adc0536a7bd4fc6ca5267a18dcb2aa6"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-doob-kernel/context/000.txt",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 31329,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-doob-kernel/context/001.txt",
+      "sha256": "3b9da916229263fc3d97891b641f5ac04b904e9a700004e40cbd2f86dd67d937"
+    },
+    {
+      "bytes": 8076,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-doob-kernel/context/002.txt",
+      "sha256": "94638365055c31f4a2d56dbecbb0e77763a948061a167e2830b223fc0cf2bfd1"
+    },
+    {
+      "bytes": 1469,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-doob-kernel/prompt.txt",
+      "sha256": "aace7249c5285a92674ad2e71aca45ebb56aeac787314acf00bae8292fd77f1f"
+    },
+    {
+      "bytes": 49953,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-doob-kernel/request.json",
+      "sha256": "0bd2566cb9ad6f7df3a22d5a0136a640a0546cb80061067e929f0a62fcd4862d"
+    },
+    {
+      "bytes": 13979,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-doob-kernel/response.md",
+      "sha256": "ba0370b2dc20b11e2f58ddc3f02e2395040a1acec38e559a0b5b1d9bcc6580fe"
+    },
+    {
+      "bytes": 1861,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-doob-kernel/result.json",
+      "sha256": "560899880bf1299d31ff7b01002a62b7265e79a973a3bcd6464205ce2997fbce"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-colour-free/context/000.txt",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 31329,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-colour-free/context/001.txt",
+      "sha256": "3b9da916229263fc3d97891b641f5ac04b904e9a700004e40cbd2f86dd67d937"
+    },
+    {
+      "bytes": 8076,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-colour-free/context/002.txt",
+      "sha256": "94638365055c31f4a2d56dbecbb0e77763a948061a167e2830b223fc0cf2bfd1"
+    },
+    {
+      "bytes": 1454,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-colour-free/prompt.txt",
+      "sha256": "0e49c1cbce565db874ceb4126a7e86537d5ac0bed805e891064b56a5f0fe68b7"
+    },
+    {
+      "bytes": 49938,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-colour-free/request.json",
+      "sha256": "ee7fe75f10cbfe67951bea54588f93a7c9bb3fab0841667ecebaad1e15bc9f2f"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-colour-free/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1894,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dynamics-colour-free/result.json",
+      "sha256": "6bb19cb201f1c8cad487373ce168bbac00d4f2e863478e8b46ebe4dcb33e9fa7"
+    }
+  ],
+  "unique_hashed_artifact_count": 55,
+  "usage_snapshot": {
+    "bytes": 18569,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/macdonald_dynamics_round/usage.json",
+    "sha256": "e569437597569b7bf56ede855f32c81e1fb3a0511e641be503485718eb84f970"
+  }
+}

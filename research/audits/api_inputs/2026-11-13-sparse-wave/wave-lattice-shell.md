@@ -1,0 +1,5 @@
+# wave-lattice-shell
+
+Pay ONE missing quantum primitive: coherent finite-bit preparation of the exact lattice Lorentzian Fourier state for m=1, proportional1/[1-lambda(k)+i/L] for all k in (Z/LZ)^2, at normerror epsilon and poly(n,1/epsilon) gates, without a supplied shell list/count. Use regular level-curve parameterization and dyadic off-shell shells; audit monotone inverse trig, lattice rounding, multiplicity, boundary cells, source-zero normalization and amplitude loading. The source continuum ring arctan formula is NOT a discrete finite-n proof; need actual finite bounds. Full coherent state is fine here, no arbitrarysource extension. If global constant is unknown, derive a charged constructive algorithm with explicit n dependence or pinpoint the exact unsolved count/sampling operation. No broad solver infrastructure.
+
+Read the attached native contract first. Keep theorem, conditional statement, exact counterexample and speculation separate. Do not claim novelty/advantage. Return concrete equations and proof, with the decisive result early; no tools or external actions. Do not rely on an unprovided source as verified.

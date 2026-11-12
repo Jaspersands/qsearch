@@ -1,0 +1,262 @@
+{
+  "captured_at_utc": "2026-11-12T21:32:48.097870+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "finite_control_proves_general_sampler_impossibility": false,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "partial_estimate_equals_total_bill": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_control_artifacts": [
+    {
+      "bytes": 2535,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/condensate_projector_round/control.sage",
+      "sha256": "9303ec66dd8d279317c4bb73b0f94628f261dd78d68a7f5c5bc1b3b27a37edd6"
+    },
+    {
+      "bytes": 1521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/condensate_projector_round/result.json",
+      "sha256": "4f8f5fd867fab02010d751a8674c4eaeaa8d525a8d4c0df27c9a9bf7d9f76156"
+    }
+  ],
+  "control_note": "Existing single D3 rational phase/projection script/result frozen; no test or CAS rerun.",
+  "dispatch": {
+    "bytes": 1708,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate-projector/dispatch.json",
+    "sha256": "9ea26fbdbcff80302e689d36ee72158428e8998a092d5de4d0691c1b7b4aabd1"
+  },
+  "dispatch_mutation_scope": "Only job.status fields were updated during preparation; no further manifest, scientific note or raw result change.",
+  "exclusions": [
+    {
+      "reason": "Not read or hashed in this finalization. Only explicitly stable final proof/topic artifacts added.",
+      "scope": "Mutable STATE/HANDOFF/workflow and all new-wave/newer requests/sources/reviews"
+    },
+    {
+      "reason": "Preserved unchanged from frozen native-driven baseline; all observed partial counters excluded from known usage totals.",
+      "scope": "Four inherited UNKNOWN bills"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 1196,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate-projector/condensate-coupled-projector.md",
+      "sha256": "ecb828cab0dbaf5d1f24eed96b3af4154e314a66f84da5b68a0172f80b69a7a2"
+    },
+    {
+      "bytes": 1492,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate-projector/condensate-gaussian-clock.md",
+      "sha256": "a2f4d655fe293672939696672bfcc84434dd5872205cdf378e1335a4ee24ac39"
+    },
+    {
+      "bytes": 2321,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate-projector/contract.md",
+      "sha256": "c2e76f754cde999ed1bede186a4e241910e572d9179bfe7088e7f666b1e98ff6"
+    },
+    {
+      "bytes": 1708,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate-projector/dispatch.json",
+      "sha256": "9ea26fbdbcff80302e689d36ee72158428e8998a092d5de4d0691c1b7b4aabd1"
+    },
+    {
+      "bytes": 25193,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate-projector/qrst-extension.txt",
+      "sha256": "8724b499ca73448f763a08e52baa11066f8ff74e335ba114e290a5fa92fd08e0"
+    },
+    {
+      "bytes": 16625,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-jack-work/work-primary.txt",
+      "sha256": "e2a817beac3d5fb6772fd20f50d2bd09c7cb3da26dc6332bbf5d4e83839230f6"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/contract.md",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 31329,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/primary.txt",
+      "sha256": "3b9da916229263fc3d97891b641f5ac04b904e9a700004e40cbd2f86dd67d937"
+    }
+  ],
+  "final_independent_proof_artifact": {
+    "bytes": 13328,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-condensate-pump-coefficients-independent.md",
+    "physical_LF_count": 338,
+    "sha256": "6fbcc1d18d5f62cdc2da39b20d809de37eb609dfad8918293534602313e35387"
+  },
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 13278,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/native_driven_round/checkpoint.json",
+    "sha256": "262e2b1084a1f43558e3b8cc6bfd4818e37abc9a70284e707ee24be5cea404c7"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 16128,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/native_driven_round/usage.json",
+    "sha256": "fb3484062f35710236ab31ddb032dcee5f02a3b6fd8924a0b7fef24137f46ee1"
+  },
+  "not_frozen": "Mutable STATE/HANDOFF/workflow and every new-wave/newer file. Topic note is included only because parent explicitly confirmed this exact path stable.",
+  "prior_hash_policy": "Prior native-driven usage/checkpoint, four UNKNOWN bills and historical artifact chain remain unchanged; no history scan or repinning.",
+  "scope": "Exactly two terminal projector/Gaussian requests, one fixed D3 rational control and the explicitly parent-confirmed stable proof/topic artifacts. Bookkeeping only, no scientific conclusions.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-12T21:32:48.097870+00:00",
+    "parent_confirmed_stable_and_fully_read": true,
+    "proof_actual_physical_LF_count": 338,
+    "proof_parent_descriptor_LF_count": 339,
+    "proof_path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-condensate-pump-coefficients-independent.md",
+    "topic_path": "/Users/jaspersands/Developer/qsearch/research/MACDONALD_CONDENSATE_CLASSICAL.md"
+  },
+  "stable_review_context_artifacts": [
+    {
+      "bytes": 16087,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-condensate-spectral-independent.md",
+      "sha256": "a165638d295f828bd6ad2f2166b7d7f44e0c062429f5875b2953d9325506eb22"
+    }
+  ],
+  "stable_topic_artifact": {
+    "bytes": 12660,
+    "path": "/Users/jaspersands/Developer/qsearch/research/MACDONALD_CONDENSATE_CLASSICAL.md",
+    "sha256": "87eb2ca1c495aedc138aba0289e9a88b659406713fa157df4ed1d38cb2ff7ae7"
+  },
+  "status": "TERMINAL_CONDENSATE_PROJECTOR_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1196,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/context-00.txt",
+      "sha256": "ecb828cab0dbaf5d1f24eed96b3af4154e314a66f84da5b68a0172f80b69a7a2"
+    },
+    {
+      "bytes": 2321,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/context-01.txt",
+      "sha256": "c2e76f754cde999ed1bede186a4e241910e572d9179bfe7088e7f666b1e98ff6"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/context-02.txt",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 16087,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/context-03.txt",
+      "sha256": "a165638d295f828bd6ad2f2166b7d7f44e0c062429f5875b2953d9325506eb22"
+    },
+    {
+      "bytes": 25193,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/context-04.txt",
+      "sha256": "8724b499ca73448f763a08e52baa11066f8ff74e335ba114e290a5fa92fd08e0"
+    },
+    {
+      "bytes": 486023,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/provider-response.json",
+      "sha256": "345cee32271d06f8963f9ad85d22ebe3cb882c3cdc77be8204be70c2d17cdfee"
+    },
+    {
+      "bytes": 53690,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/request.json",
+      "sha256": "1328b5b6310387e7c4768d68772ef1f2aa9ffab77b4135e9312960a25d547af5"
+    },
+    {
+      "bytes": 11683,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/response.md",
+      "sha256": "128d4e88de045aa8dfc6ac55935bbc7f0570e7bb77bdcaa358f0dbd9759c827e"
+    },
+    {
+      "bytes": 1990,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/result.json",
+      "sha256": "523e7b8c439d03ec6d485fbb9595a1b70a0d8331265589d50d5633d387cb772f"
+    },
+    {
+      "bytes": 2321,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/context/000.txt",
+      "sha256": "c2e76f754cde999ed1bede186a4e241910e572d9179bfe7088e7f666b1e98ff6"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/context/001.txt",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 31329,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/context/002.txt",
+      "sha256": "3b9da916229263fc3d97891b641f5ac04b904e9a700004e40cbd2f86dd67d937"
+    },
+    {
+      "bytes": 16625,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/context/003.txt",
+      "sha256": "e2a817beac3d5fb6772fd20f50d2bd09c7cb3da26dc6332bbf5d4e83839230f6"
+    },
+    {
+      "bytes": 1492,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/prompt.txt",
+      "sha256": "a2f4d655fe293672939696672bfcc84434dd5872205cdf378e1335a4ee24ac39"
+    },
+    {
+      "bytes": 62428,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/request.json",
+      "sha256": "f0954bb19ab3dab5ba17f81666c08a15e0eee4ee4ee79727610494626dfce2cd"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2167,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/result.json",
+      "sha256": "a80ff308440298178cc7688d8ca877fa39be4a60b80f6c2d600d143afe91cc09"
+    }
+  ],
+  "two_terminal_results_and_responses": [
+    {
+      "obligation": "condensate-coupled-projector",
+      "response": {
+        "bytes": 11683,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/response.md",
+        "sha256": "128d4e88de045aa8dfc6ac55935bbc7f0570e7bb77bdcaa358f0dbd9759c827e"
+      },
+      "response_LF_count": 331,
+      "response_characters": 11677,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1990,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coupled-projector/result.json",
+        "sha256": "523e7b8c439d03ec6d485fbb9595a1b70a0d8331265589d50d5633d387cb772f"
+      },
+      "session_id": 15614,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "condensate-gaussian-clock",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_LF_count": 0,
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2167,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-gaussian-clock/result.json",
+        "sha256": "a80ff308440298178cc7688d8ca877fa39be4a60b80f6c2d600d143afe91cc09"
+      },
+      "session_id": 70179,
+      "status": "truncated",
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "unique_hashed_artifact_count": 33,
+  "usage_snapshot": {
+    "bytes": 22338,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/condensate_projector_round/usage.json",
+    "sha256": "9b06bbeb3f47386c91a509ac3b9a7ec5bea1d9fb4c3605af292aa7257cbbaf2c"
+  }
+}

@@ -1,0 +1,123 @@
+
+The exponent $E_1(c)$ is that of Schedule~1 alone. The procedure uses Schedule~1H of Section~\ref{sec:halving}, whose exponent $E_H(c) \le E_1(c)$ is that of Lemma~\ref{lem:halved-exponent}.
+
+\subsection{Schedule~1H: Halving the Degree}
+\label{sec:halving}
+
+At an even degree $\kappa$, Schedule~1 pays degree $\kappa\lceil\log_2 t_{p,\kappa}\rceil$ in the number of equations. Schedule~1H may instead call a solver for the exponent $\kappa/2$: a relation with coefficients that are $(\kappa/2)$-th powers splits into two parts with $\kappa$-th-power weights, and so yields one vector with two disjoint representations (Lemma~\ref{lem:stage}); a relation among such vectors closes the computation (Lemma~\ref{lem:finish}). Throughout this subsection $p$ is an odd prime, $\kappa \ge 1$ divides $p-1$, $h = (p-1)/\kappa$, and $P = \{x^\kappa : x \in \Fp^\times\}$ is the subgroup of $\Fp^\times$ of index $\kappa$, so that $x \in \Fp^\times$ lies in $P$ exactly when $x^h = 1$.
+
+\paragraph{Solutions and solvers.} For columns $\lambda_1,\dots,\lambda_M \in \Fp^a$, a \emph{$\kappa$-solution} is a pair of vectors $w \in (P \cup \{0\})^M$, $w \ne 0$, and $r \in \Fp^M$ with $r_b^\kappa = w_b$ for every $b$ and $\sum_b w_b\lambda_b = 0$. Applied to $x = r$, Lemma~\ref{lem:bezout} turns it into a nonzero solution of~\eqref{eq:sde-target}, with the same support, at every degree $d$ with $\gcd(d,p-1) = \kappa$. A \emph{$\kappa$-solver of arity $N(a)$} is an algorithm that, for every $a \ge 0$ and all columns $\lambda_1,\dots,\lambda_{N(a)} \in \Fp^a$, returns a $\kappa$-solution; further columns get weight $0$. Gaussian elimination is a $1$-solver of arity $a+1$, with $r = w$. For $\kappa \ge 2$, given a zero sum of $\kappa$-th powers of length $t_{p,\kappa}$, Lemma~\ref{lem:rounds} is a $\kappa$-solver of arity $G(\kappa,a)^{\lceil\log_2 t_{p,\kappa}\rceil}$, since its scalars $s_i$ are the roots $r_i$ of its weights $s_i^\kappa$.
+
+\paragraph{Representations and objects.} A \emph{representation} $R$ of $v \in \Fp^a$ is a nonempty set $S$ of column indices with weights $w_b \in P$ and roots $r_b$, $r_b^\kappa = w_b$ $(b \in S)$, such that $\sum_{b\in S}w_b\lambda_b = v$. For $x \in P$ with a known root $\rho$, $xR$ is the representation of $xv$ on $S$ with weights $xw_b$ and roots $\rho r_b$. For a tuple $c = (c_1,\dots,c_r)$ of elements of $\Fp^\times$, an \emph{object of type $c$} is a vector $v \in \Fp^a$ with pairwise disjoint representations $R_1,\dots,R_r$ of $c_1v,\dots,c_rv$; its \emph{support} is the union of their index sets. Each column $\lambda_b$ is an object of type $(1)$, with $R_1 = \{b\}$ and $w_b = r_b = 1$. Put
+\[
+  T(c) = \Bigl\{\sum_{k=1}^r y_kc_k : y \in (P\cup\{0\})^r,\ y \ne 0\Bigr\}.
+\]
+This set is stable under multiplication by $P$, so $T(c) \setminus \{0\}$ is a union of cosets of $P$, and it does not change when some $c_k$ is multiplied by an element of $P$, since $y_k$ absorbs the factor.
+
+Let $\kappa$ be even and $D = \kappa/2$. The group $P_D$ of nonzero $D$-th powers contains $P$ with index $2$. For $x \in P_D$, $x^h = \pm 1$, and $x \in P$ exactly when $x^h = 1$. So $P_D = P \cup qP$ for every $q$ with $q^h = -1$; for example $q = \theta^D$ for a quadratic nonresidue $\theta$, and $q = -1$ when $h$ is odd. Fix such a $q$ and put $\varepsilon = -q^{-1}$.
+
+\begin{lemma}[Stage]
+\label{lem:stage}
+Let $\kappa$ be even, let $\mathcal N$ be a $D$-solver of arity $N$, and let $o_1,\dots,o_N$ be objects of a common type $c = (c_1,\dots,c_r)$, with vectors $v_1,\dots,v_N$ and pairwise disjoint supports. One call of $\mathcal N$ on $v_1,\dots,v_N$, the $\kappa$-th roots of at most $N$ elements of $P$ and $O(rM')$ further field operations, where $M'$ is the size of the union of the supports, return either a $\kappa$-solution supported in that union or an object of type $(c,\varepsilon c) = (c_1,\dots,c_r,\varepsilon c_1,\dots,\varepsilon c_r)$ whose support lies in that union.
+\end{lemma}
+
+\begin{proof}
+The call returns $w' \in (P_D\cup\{0\})^N$, not all zero, with $\sum_\nu w'_\nu v_\nu = 0$. Put $x_\nu = w'_\nu$, $I = \{\nu : x_\nu \in P\}$ and $J = \{\nu : x_\nu \in qP\}$; the test is $x_\nu^h = 1$ or $x_\nu^h = -1$, and $I \cup J \ne \emptyset$. For $\nu \in J$ put $x'_\nu = x_\nu/q \in P$, and compute a $\kappa$-th root of $x_\nu$ $(\nu \in I)$ and of $x'_\nu$ $(\nu \in J)$.
+If $J = \emptyset$, the representations $x_\nu R_1(o_\nu)$, $\nu \in I$, have pairwise disjoint index sets, and their union carries weights in $P$ and represents $\sum_{\nu\in I}x_\nu c_1v_\nu = c_1\sum_\nu x_\nu v_\nu = 0$; as $I \ne \emptyset$ it is nonempty, so it is a $\kappa$-solution. If $I = \emptyset$, the same holds with $x'_\nu$, because $\sum_{\nu\in J}x'_\nu v_\nu = q^{-1}\sum_\nu x_\nu v_\nu = 0$.
+Otherwise put $u = \sum_{\nu\in I}x_\nu v_\nu$. Then $\sum_{\nu\in J}x'_\nu v_\nu = -q^{-1}u = \varepsilon u$. For $k = 1,\dots,r$, the union of the $x_\nu R_k(o_\nu)$, $\nu \in I$, represents $\sum_{\nu\in I}x_\nu c_kv_\nu = c_ku$, and the union of the $x'_\nu R_k(o_\nu)$, $\nu \in J$, represents $c_k\varepsilon u$. These $2r$ representations are nonempty, because $I$, $J$ and every $R_k(o_\nu)$ are, and pairwise disjoint, because the supports of distinct objects are disjoint and the representations of one object are. With them, $u$ is an object of type $(c,\varepsilon c)$.
+\end{proof}
+
+\begin{lemma}[Finish]
+\label{lem:finish}
+Let $o_1,\dots,o_N$ be objects of a common type $c = (c_1,\dots,c_r)$, with vectors $v_\nu$ and pairwise disjoint supports.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em]
+  \item \textup{(F0)} If $0 \in T(c)$ and $N \ge 1$, any $y \in (P\cup\{0\})^r$, $y \ne 0$, with $\sum_ky_kc_k = 0$, given with roots of its entries, turns $o_1$ into a $\kappa$-solution.
+  \item \textup{(F1)} If $T(c) \supseteq \Fp^\times$ and $N = a+1$, let $\eta \in \Fp^{a+1}$ be nonzero with $\sum_\nu\eta_\nu v_\nu = 0$ (Gaussian elimination), and for each $\nu$ with $\eta_\nu \ne 0$ let $y^{(\nu)} \in (P\cup\{0\})^r$, $y^{(\nu)} \ne 0$, satisfy $\sum_ky^{(\nu)}_kc_k = \eta_\nu$, with roots of its entries. Then the representations $y^{(\nu)}_kR_k(o_\nu)$ with $y^{(\nu)}_k \ne 0$ form a $\kappa$-solution supported in the union of the supports.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(ii) The representations are pairwise disjoint, since the supports of distinct objects and the representations of one object are. Their union carries weights in $P$ and represents $\sum_\nu\sum_ky^{(\nu)}_kc_kv_\nu = \sum_\nu\eta_\nu v_\nu = 0$. It is nonempty: some $\eta_\nu \ne 0$, then some $y^{(\nu)}_k \ne 0$, and $R_k(o_\nu) \ne \emptyset$. (i) is the same argument for the single object $o_1$, whose combined representation has value $(\sum_ky_kc_k)v_1 = 0$.
+\end{proof}
+
+Define types by $c^{(0)} = (1)$ and $c^{(j)} = (c^{(j-1)},\varepsilon c^{(j-1)})$, of length $2^j$, and put $T_j = T(c^{(j)})$. Splitting $y$ into its two halves gives
+\[
+  T_0 = P, \qquad T_j = T_{j-1} \cup \varepsilon T_{j-1} \cup \{\alpha+\varepsilon\beta : \alpha,\beta \in T_{j-1}\} .
+\]
+Changing $q$ within $qP$ multiplies $\varepsilon$ by an element of $P$ and each entry $\varepsilon^i$ of $c^{(j)}$ by an element of $P$, so $T_j$ depends only on $(p,\kappa)$. The sets increase with $j$, and once $T_j = T_{j+1}$ they stay constant; as each $T_j\setminus\{0\}$ is a union of at most $\kappa$ cosets of $P$, this happens for some $j \le \kappa+1$. Since membership of one representative per coset decides a whole coset, the recursion computes $T_1,\dots,T_j$, together with one vector $y$ for each coset they contain (and for $0$ if $0 \in T_j$), in $O(j\kappa p + p\log p)$ field operations; with a table of $\kappa$-th roots of the elements of $P$, a vector $y$ with roots for any element of $T_j$ is then one table lookup and $2^j$ multiplications away.
+
+\begin{lemma}[Two terms]
+\label{lem:two-term}
+Let $\kappa \ge 2$ divide $p-1$, let $\varepsilon, \eta \in \Fp^\times$, and let $p \ge 4\kappa^4$. Then at least $p/(2\kappa)$ elements $u \in \Fp^\times$ satisfy $\eta - u^\kappa \in \varepsilon P$. In particular $\eta \in P + \varepsilon P$, so $T_1 = \Fp^\times$ for every even $\kappa$ with $p \ge 4\kappa^4$, and a uniform $u \in \Fp^\times$ satisfies $\eta - u^\kappa \in \varepsilon P$ with probability at least $1/(2\kappa)$.
+\end{lemma}
+
+\begin{proof}
+Let $N$ be the number of $(u,v) \in \Fp^2$ with $u^\kappa + \varepsilon v^\kappa = \eta$. By Weil's bound for diagonal equations with nonzero right side~\cite[Chapter~6]{LidlNiederreiter1997}, as in Lemma~\ref{lem:zero-sum-length}(iii), $|N - p| \le (\kappa-1)^2\sqrt p$. Since $\sqrt p \ge 2\kappa^2$, $(\kappa-1)^2\sqrt p = \kappa^2\sqrt p - (2\kappa-1)\sqrt p \le p/2 - (2\kappa-1)\sqrt p$. At most $2\kappa$ of the pairs have $uv = 0$, so at least $p/2 + (2\kappa-1)\sqrt p - 2\kappa \ge p/2$ have $uv \ne 0$. For each of them $\eta - u^\kappa = \varepsilon v^\kappa \in \varepsilon P$, and each $u$ occurs with at most $\kappa$ values of $v$. So at least $p/(2\kappa)$ values of $u \in \Fp^\times$ qualify, a fraction at least $p/(2\kappa(p-1)) > 1/(2\kappa)$ of $\Fp^\times$. Each such $u$ writes $\eta = u^\kappa + \varepsilon v^\kappa \in P + \varepsilon P \subseteq T_1$.
+\end{proof}
+
+\begin{definition}[Schedule~1H]
+\label{def:schedule1h}
+For a prime $p$ and a divisor $\kappa$ of $p-1$ define, by induction on $\kappa$, a $\kappa$-solver $\mathcal H_\kappa$ and its arity $A_\kappa(a)$. Let $\mathcal H_1$ be Gaussian elimination, $A_1(a) = a+1$, with \emph{degree} $e^H_1 = 1$. For $\kappa \ge 2$ the \emph{candidates} are:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2em]
+  \item \textup{(S1)} Lemma~\ref{lem:rounds} with a zero sum of length $t_{p,\kappa}$: arity $G(\kappa,a)^L$ and degree $\kappa L$, where $L = \lceil\log_2 t_{p,\kappa}\rceil$;
+  \item \textup{(H)} if $\kappa$ is even, with $D = \kappa/2$: the plans $(s,F)$ with $s \ge 1$ and $F \in \{\mathrm{F0},\mathrm{F1}\}$ that are \emph{admissible}, namely, if $p < 4\kappa^4$, those with $0 \in T_s$ (for $F = \mathrm{F0}$) or $T_s \supseteq \Fp^\times$ (for $F = \mathrm{F1}$), and, if $p \ge 4\kappa^4$, only $(1,\mathrm{F1})$. The plan has arity $A_D(a)^s n_F(a)$, with $n_{\mathrm{F0}} = 1$ and $n_{\mathrm{F1}}(a) = a+1$, and degree $se^H_D$, plus $1$ if $F = \mathrm{F1}$.
+\end{enumerate}
+The degree $e^H_\kappa$ is the least degree of a candidate. On columns in $\Fp^a$, $\mathcal H_\kappa$ runs a candidate of least arity $A_\kappa(a)$ at that $a$ (ties are broken in favour of~(a), then of smaller $s$, then of $\mathrm{F0}$). The plan $(s,F)$ splits the first $A_\kappa(a)$ columns into $n_F(a)$ blocks of $A_D(a)^s$ columns. At level $j = 1,\dots,s$ it splits the objects of type $c^{(j-1)}$ of each block (at $j = 1$, the columns) into groups of $A_D(a)$ and applies Lemma~\ref{lem:stage} to each group with $\mathcal N = \mathcal H_D$; if a call returns a $\kappa$-solution, $\mathcal H_\kappa$ outputs it, with weight $0$ elsewhere, and stops. After level $s$ it applies Lemma~\ref{lem:finish} to the $n_F(a)$ objects of type $c^{(s)}$. If $p < 4\kappa^4$, the vectors $y$ and all $\kappa$-th roots come from the tables above. If $p \ge 4\kappa^4$, then $s = 1$, $F = \mathrm{F1}$ and $c^{(1)} = (1,\varepsilon)$; for each $\eta_\nu \ne 0$ it draws uniform $u \in \Fp^\times$ until $z = (\eta_\nu - u^\kappa)/\varepsilon$ is $0$ or satisfies $z^h = 1$, takes $y^{(\nu)} = (u^\kappa, z)$, and computes $\kappa$-th roots by Las Vegas root finding for $X^\kappa - x$~\cite{Rabin1980}.
+The \emph{preprocessing} of $\mathcal H_\kappa$ depends only on $(p,\kappa)$: for each degree $\kappa'$ of the chain $\kappa_0 = \kappa$, $\kappa_{i+1} = \kappa_i/2$ (continued while $\kappa_i$ is even), a zero sum of $\kappa'$-th powers of length $t_{p,\kappa'}$ if $\kappa' \ge 2$ (Lemma~\ref{lem:zero-sum-length}(iv)) and, if $\kappa'$ is even, an element $q$ for $\kappa'$ (by uniform trials of $\theta$, each succeeding with probability $1/2$, or $q = -1$ if $(p-1)/\kappa'$ is odd) and, if $p < 4\kappa'^4$, the sets $T_j$ with their vectors and the table of $\kappa'$-th roots. At a grade $d$ of Theorem~\ref{thm:main}, \emph{Schedule~1H} is $\mathcal H_{\kappa_d}$ followed by Lemma~\ref{lem:bezout}, with arity $A_d(a) \coloneqq A_{\kappa_d}(a)$.
+\end{definition}
+
+The degrees $e^H_\kappa$ and the arities $A_\kappa(a)$ are minima over the same candidates, computed with $e^H_D$ and with $A_D(a)$ respectively, so the candidate run at a given $a$ need not be one of least degree; Theorem~\ref{thm:halving}(iii) compares the two.
+
+\begin{theorem}[Schedule~1H]
+\label{thm:halving}
+Let $p$ be an odd prime and $\kappa$ a divisor of $p-1$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em]
+  \item $A_\kappa(a)$ is computed from $(p,\kappa,a)$ in time polynomial in $a$ and $\log p$, for fixed $\kappa$, and $A_\kappa(a) \le G(\kappa,a)^{\lceil\log_2 t_{p,\kappa}\rceil}$ if $\kappa \ge 2$.
+  \item Given its preprocessing, $\mathcal H_\kappa$ is a $\kappa$-solver of arity $A_\kappa(a)$: on all columns $\lambda_1,\dots,\lambda_{A_\kappa(a)} \in \Fp^a$ it returns a $\kappa$-solution, which it checks before output. It is Las Vegas, and its expected running time is at most an explicit polynomial in $A_\kappa(a)$ and $\log p$ that depends only on $\kappa$; it is deterministic if every plan it runs, at every level of the recursion, is at a degree $\kappa'$ with $p < 4\kappa'^4$.
+  \item $A_\kappa(a) \le K_\kappa(a+1)^{e^H_\kappa}$ for all $a \ge 0$, where $K_1 = 1$ and $K_\kappa$ is the least constant of a candidate of degree $e^H_\kappa$, the constant of~(a) being $\kappa^{\kappa(\kappa-1)L/2}$ and that of a plan $(s,F)$ being $K_D^s$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) The recursion runs over the chain $\kappa/2^i$. Since the sets $T_j$ increase with $j$, a plan admissible for some $s$ is admissible for every larger $s$, and some admissible plan has $s \le \kappa+1$ if any has. Arities are nondecreasing in $s$, and $A_D(a) \ge a+1$ (every candidate has arity at least $a+1$), so for $a \ge 1$ only $s \le \log_2 G(\kappa,a)^L = O_\kappa(\log(a+1))$ can beat candidate~(a), while for $a = 0$ the tie rule selects the least admissible $s \le \kappa+1$. The arities of these finitely many candidates are explicit integers once $t_{p,\kappa'}$ (Lemma~\ref{lem:zero-sum-length}(iv), time $\poly(\log p)$) and, for $p < 4\kappa'^4$, the sets $T_j$ ($O(\kappa'^2p + p\log p)$ operations with $p < 4\kappa'^4$) are known. Candidate~(a) gives the inequality.
+(ii) By induction on $\kappa$. For $\kappa = 1$ and for candidate~(a) this is Gaussian elimination and Lemma~\ref{lem:rounds}, deterministic given the zero sum. Let $\mathcal H_\kappa$ run a plan $(s,F)$. By induction, $\mathcal H_D$ is a $D$-solver of arity $A_D(a)$, and $D \mid p-1$. By induction on $j$, the objects at level $j$ have pairwise disjoint supports, each inside its own group of $A_D(a)^j$ columns, and all have type $c^{(j)}$: this holds for the columns at $j = 0$, and Lemma~\ref{lem:stage} preserves it. A $\kappa$-solution returned at some level, extended by zeros, is a $\kappa$-solution on all the columns. Otherwise there remain $n_F(a)$ objects of type $c^{(s)}$ with disjoint supports. If $F = \mathrm{F0}$, then $0 \in T_s$ by admissibility; if $F = \mathrm{F1}$, then $T_s \supseteq \Fp^\times$, by admissibility when $p < 4\kappa^4$ and by Lemma~\ref{lem:two-term} when $p \ge 4\kappa^4$, since then $s = 1$. Lemma~\ref{lem:finish} then gives a $\kappa$-solution. The random steps are the roots, found by Las Vegas root finding in expected time polynomial in $\kappa$ and $\log p$~\cite{Rabin1980}, and the draws of $u$, each succeeding with probability at least $1/(2\kappa)$ by Lemma~\ref{lem:two-term}; each is checked when it succeeds. The plan makes at most $sA_\kappa(a)$ calls of $\mathcal H_D$ and $sA_\kappa(a)$ root computations, at most $a+1$ representations, one Gaussian elimination and $O(2^sA_\kappa(a))$ further operations, with $s \le \max(\kappa+1,\log_2G(\kappa,a)^L)$ by~(i); by induction its expected time is bounded as claimed. The final check that $r_b^\kappa = w_b$ and $\sum_bw_b\lambda_b = 0$ costs $O(aA_\kappa(a))$ operations, so no wrong output is ever returned. When every plan run is at a degree $\kappa'$ with $p < 4\kappa'^4$, all roots and vectors come from tables, and the run is deterministic.
+(iii) By induction on $\kappa$. For candidate~(a), $G(\kappa,a)^L = \kappa^{\kappa(\kappa-1)L/2}(a+1)^{\kappa L}$. For a plan $(s,F)$, its arity is at most $(K_D(a+1)^{e^H_D})^s(a+1)^{[F = \mathrm{F1}]} = K_D^s(a+1)^{se^H_D + [F = \mathrm{F1}]}$. Since $A_\kappa(a)$ is at most the arity of every candidate, it is at most that of a candidate of degree $e^H_\kappa$ and least constant.
+\end{proof}
+
+\begin{corollary}[Halving]
+\label{cor:hcd}
+Let $\kappa$ be even and $D = \kappa/2$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em]
+  \item If $h$ is odd, then, with $q = -1$, so that $\varepsilon = 1$, the plan $(\lceil\log_2 t_{p,\kappa}\rceil,\mathrm{F0})$ is a $\kappa$-solver of arity $A_D(a)^{\lceil\log_2 t_{p,\kappa}\rceil}$ for every such $p$, given $\mathcal H_D$ and a zero sum of length $t_{p,\kappa}$, with roots computed as in Definition~\ref{def:schedule1h}; so $e^H_\kappa \le \lceil\log_2 t_{p,\kappa}\rceil\,e^H_D$ when $p < 4\kappa^4$.
+  \item If $p \ge 4\kappa^4$, then $e^H_\kappa \le e^H_D + 1$ and $A_\kappa(a) \le (a+1)A_D(a)$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(i) With $\varepsilon = 1$, $c^{(j)}$ is the tuple of $2^j$ ones, so $T_j$ is the set of sums of at most $2^j$ elements of $P$, and $0 \in T_j$ exactly when $t_{p,\kappa} \le 2^j$. For $j = \lceil\log_2 t_{p,\kappa}\rceil$ and a zero sum $z_1^\kappa+\cdots+z_t^\kappa = 0$, the vector $y = (z_1^\kappa,\dots,z_t^\kappa,0,\dots,0)$ with roots $z_k$ serves in Lemma~\ref{lem:finish}(i), and the run of the plan is that of the proof of Theorem~\ref{thm:halving}(ii) with this $y$; it needs no table. When $p < 4\kappa^4$ the plan is admissible and is a candidate. (ii) The plan $(1,\mathrm{F1})$ is admissible.
+\end{proof}
+
+\begin{remark}[The case $\kappa = 2$]
+\label{rem:kappa-two}
+For every odd prime $p$, $A_2(a) = (a+1)^2$ and $e^H_2 = 2$: one halving stage over Gaussian elimination. Indeed $T_1 = \Fp^\times$ for $\kappa = 2$ and every odd $p$. If $-1$ is a square, $\varepsilon$ is a nonsquare and $T_1 \supseteq P \cup \varepsilon P = \Fp^\times$. Otherwise $\varepsilon$ is a square, and a nonsquare $\eta$ is $x^2 + y^2$ for some $x,y$ (the sets $\{x^2\}$ and $\{\eta - y^2\}$ both have $(p+1)/2$ elements, so they meet), with $xy \ne 0$ since $\eta$ is not a square; so $\eta \in P + P = P + \varepsilon P$. The plan $(1,\mathrm{F1})$ has arity $(a+1)^2$; candidate~(a) has arity at least $G(2,a) = 2(a+1)^2$; $(1,\mathrm{F0})$ is not admissible, because $y_1 + \varepsilon y_2 = 0$ with $y_1,y_2 \in P$ would put $-\varepsilon = q^{-1}$ in $P$; and plans with $s \ge 2$ have arity at least $(a+1)^2$, so the tie rule selects $(1,\mathrm{F1})$. More generally, for every even $\kappa$ the plan $(1,\mathrm{F0})$ is never admissible, by the same argument, so every candidate at $\kappa \ge 2$ has degree at least $2$ and arity at least $(a+1)^2$ (by induction, using $A_D(a) \ge a+1$): Schedule~1H never reaches $O(a)$ columns at a degree $\kappa \ge 2$.
+\end{remark}
+
+\begin{lemma}[The halved exponent; part~(ii) partly an exact computation]
+\label{lem:halved-exponent}
+For a prime $p > c$ and $2 \le d \le c$, put $e^H_{p,d} = e^H_{\kappa_d}$ (at $p$), and put $E_H(c) = 1 + \max_{p>c}\sum_{d=2}^c e^H_{p,d}$. Then $A_d(a) \le B_d(a)$, $e^H_{p,d} \le e_{p,d}$ and $E_H(c) \le E_1(c)$. Moreover:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em]
+  \item $\lceil c/2\rceil^2 + 2\lfloor c/2\rfloor \le E_H(c)$ for every $c \ge 2$.
+  \item $E_H(c) = 3, 6, 10, 14, 20, 25, 29, 38$ for $c = 2,\dots,9$. $E_H(9) = 38$ is attained exactly at the primes $p \equiv 1 \pmod{2520}$.
+  \item There is a constant $C^H_c$, depending only on $c$, such that $\prod_{d=2}^cA_d(a_d) \le C^H_c\prod_{d=2}^c(a_d+1)^{e^H_{p,d}}$ for every prime $p > c$ and all $a_2,\dots,a_c \ge 0$. For $c \le 9$ one can take $C^H_c = C_c$, the constant of Theorem~\ref{thm:main}(4).
+\end{enumerate}
+Part~(ii) and the second sentence of~(iii) combine the argument below with an exact computation for the primes below $4\cdot 9^4 = 26244$.
+\end{lemma}
+
+\begin{proof}
+Candidate~(a) is available at every $\kappa \ge 2$, and $\mathcal H_1$ is linear algebra, so $A_d \le B_d$, $e^H_{p,d} \le e_{p,d}$ and $E_H(c) \le E_1(c)$.
+(i) By Dirichlet's theorem there is a prime $p \ge 4c^4$ with $p \equiv 1 \pmod{2\operatorname{lcm}(1,\dots,c)}$. Then $\kappa_d = d$ and $(p-1)/d$ is even, so $t_{p,d} = 2$ by Lemma~\ref{lem:zero-sum-length}(ii). For odd $d \ge 3$ the only candidate is~(a), of degree $d$; for even $d$ every candidate has degree at least $2$ (Remark~\ref{rem:kappa-two}). So the sum is at least $\sum_{3 \le d \le c,\ d\text{ odd}}d + 2\lfloor c/2\rfloor = \lceil c/2\rceil^2 - 1 + 2\lfloor c/2\rfloor$.
+(ii) Let $p \ge 26244$. Then $p \ge 4\kappa^4$ for every $\kappa \le 9$. For odd $\kappa \ge 3$ dividing $p-1$, $h$ is even, so $t_{p,\kappa} = 2$ and $e^H_\kappa = \kappa$. For even $\kappa$ the candidates are~(a), of degree at least $\kappa$, and the plan $(1,\mathrm{F1})$, of degree $e^H_{\kappa/2}+1$. Hence $e^H_2 = \min(2\lceil\log_2 t_{p,2}\rceil, 2) = 2$, $e^H_4 = 3$, $e^H_6 = e^H_3 + 1 = 4$ and $e^H_8 = e^H_4 + 1 = 4$, whatever $p$ is. So $e^H_\kappa = \hat e(\kappa)$ with $(\hat e(1),\dots,\hat e(9)) = (1,2,3,3,5,4,7,4,9)$, and for $\kappa \mid d \le 9$ one checks $\hat e(\kappa) \le \hat e(d)$, with equality only for $\kappa = d$. Therefore $\sum_{d=2}^9 e^H_{p,d} \le \sum_{d=2}^9\hat e(d) = 37$, with equality exactly when $\kappa_d = d$ for every $d \le 9$, that is, when $2520 \mid p-1$. An exact computation of $t_{p,\kappa}$, of the sets $T_j$ and of the degrees and arities of Definition~\ref{def:schedule1h}, by class sumsets in $\Fp$, for every prime $p < 26244$ and every $\kappa \le 9$ dividing $p-1$, gives the maximum $38$ over $9 < p < 26244$, attained exactly at $p = 2521, 7561, 12601, 15121, 20161$, which are the primes $\equiv 1 \pmod{2520}$ in that range, and the values listed for $c \le 8$; above $26244$ the same argument bounds $1+\sum_{d=2}^ce^H_{p,d}$, for $c \le 8$, by $1+\sum_{d=2}^c\hat e(d) = 3, 6, 9, 14, 18, 25, 29$, no more than the listed values.
+(iii) Let $c_d = d^{\,d(d-1)\lceil\log_2(d+1)\rceil/2}$, so that $C_c = \prod_{d=2}^cc_d$. By Theorem~\ref{thm:halving}(iii) it suffices to bound $K_{\kappa_d}$. If $p \ge 4c^4$, then $p \ge 4\kappa^4$ for every $\kappa \le c$, and $K_\kappa \le c_\kappa$ by induction: the constant of candidate~(a) is at most $c_\kappa$ because $L \le \lceil\log_2(\kappa+1)\rceil$ (Lemma~\ref{lem:zero-sum-length}(i)), and that of the plan $(1,\mathrm{F1})$ is $K_{\kappa/2} \le c_{\kappa/2} \le c_\kappa$; also $c_\kappa \le c_d$ for $\kappa \le d$. The finitely many primes $c < p < 4c^4$ give finitely many constants, so $C^H_c = \max(C_c, \max_{c<p<4c^4}\prod_dK_{\kappa_d})$ works. For $c \le 9$ the exact computation gives $K_\kappa \le c_\kappa$ for every prime $p < 26244$ and every $\kappa \le 9$ dividing $p-1$, so $C^H_c = C_c$.
+\end{proof}
+
+At the primes $p \equiv 1 \pmod{2520}$ the grade exponents at $c = 9$ are $e^H_{p,d} = 2,3,3,5,4,7,4,9$ for $d = 2,\dots,9$, against $e_{p,d} = 2,3,4,5,6,7,8\text{ or }16,9$ for Schedule~1 alone. The remaining large grades are the odd ones, where no halving applies. In the exact range the degree-optimal plans use at most $3$ stages, and finish $\mathrm{F0}$ occurs (for instance $\kappa = 6$ at $p = 7$ uses three stages and $\mathrm{F0}$, and $\kappa = 8$ at $p = 41$ two stages and $\mathrm{F1}$, against degree $24$ for Schedule~1 there).

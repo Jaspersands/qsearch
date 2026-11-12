@@ -1,0 +1,61 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4663,
+      "path": "research/JACK_COHERENT_BRANCHING_TRANSFORM.md",
+      "sha256": "194f3315636b01616498f7061b75e73fa085537c60b924adf1f8d85eae6bd6d9",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 9395,
+      "path": "research/audits/reviews/2026-11-13-jack-lax-intertwiner-independent.md",
+      "sha256": "d91818e75bba7ce4e881395da56bb4340cf41feab7d2ff70925f66d6dd97c7b8",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 5949,
+      "path": "research/audits/api_inputs/2026-11-13-jack-lax/qsvt-primary.txt",
+      "sha256": "997c8a8f8bb106060290ec04e6fd95f7bbaf37f4b73fef2c8e51b8711f0539be",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 86240,
+      "path": "research/audits/api_inputs/2026-11-13-jack-lax/lax-primary.txt",
+      "sha256": "363ab961eafc7626c786cbba3154a22535618e9805954e0072bf9cd0f2014a50",
+      "snapshot": "context/003.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 41318,
+  "effort": "high",
+  "finished_at": "2026-11-12T18:23:12.432482+00:00",
+  "input_token_allowance": 42145,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.44858,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-jack-lax/jack-branching-transform.md",
+    "sha256": "283ecf8b7b45ab0cf36239f409ed248c1d43ac79cabcd7a8eeb5815df9b27e7f",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T181632.591743Z-707ec917",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 41318,
+    "output_tokens": 40216
+  },
+  "usage_cost_estimate_usd": 0.969592
+}

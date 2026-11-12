@@ -1,0 +1,94 @@
+{
+  "X": "29*t + 198",
+  "Y": "18",
+  "Z": "-35*t - 228",
+  "assertions": {
+    "content_ideal_equals_q": true,
+    "d_congruent_one_mod_q": true,
+    "d_is_q_unit": true,
+    "field_discriminant_229": true,
+    "norm_d_229": true,
+    "norm_epsilon_minus_one": true,
+    "norm_form_square_identity": true,
+    "norm_rho_minus_27": true,
+    "positive_unit_bound": true,
+    "q_and_qprime_distinct": true,
+    "q_prime_norm_three": true,
+    "q_residue_characteristic_odd": true,
+    "qprime_prime_norm_three": true,
+    "quadratic_equation": true,
+    "quarter_identity": true,
+    "rational_sqrt_bound": true,
+    "rational_three_factorization": true,
+    "rho_ideal_equals_q_cubed": true,
+    "valuation_X_at_q_one": true,
+    "valuation_X_at_qprime_zero": true,
+    "valuation_Y_at_q_two": true,
+    "valuation_Z_at_q_one": true
+  },
+  "beta": "18*delta + 29*t + 198",
+  "cas": "/opt/anaconda3/envs/qsearch-cas/bin/sage",
+  "d": "-15*t - 107",
+  "epsilon": "t + 7",
+  "field": "Q(t), t^2-t-57=0",
+  "field_discriminant": 229,
+  "nonprincipality_certificate": {
+    "conclusion": "q is nonprincipal; therefore the content ideal q has no element generator",
+    "proof": "If q=(alpha), then |Norm(alpha)|=3. Multiplying by an integral power of the unit epsilon makes each real conjugate have absolute value at most sqrt(3*epsilon): choose |alpha_1| in [sqrt(3/epsilon),sqrt(3*epsilon)]. Writing alpha=a+b*t with integral a,b gives |b|=|alpha_1-alpha_2|/sqrt(229)<=2*sqrt(3*epsilon)/sqrt(229)<1. Thus b=0 and |Norm(alpha)|=a^2 cannot equal3. Therefore q is not principal. No fundamental-unit or class-group computation is used.",
+    "rational_bound": "15<sqrt(229)<16, hence 12*epsilon=90+6*sqrt(229)<186<229",
+    "ring_of_integers": "O_F=Z[t], since the defining polynomial discriminant equals the field discriminant229",
+    "unit": "epsilon=(15+sqrt(229))/2, Norm(epsilon)=-1"
+  },
+  "norms": {
+    "d": 229,
+    "epsilon": -1,
+    "rho": -27
+  },
+  "q_generators": [
+    "3",
+    "t"
+  ],
+  "qprime_generators": [
+    "3",
+    "t - 1"
+  ],
+  "relative_assertions": {
+    "beta_equals_X_plus_Y_delta": true,
+    "beta_over_rho_square": true,
+    "beta_valuation_one_at_both_q_primes": true,
+    "delta_square_d": true,
+    "q_splits_into_two_distinct_unramified_primes": true,
+    "relative_norm_by_explicit_conjugation_Z_squared": true
+  },
+  "relative_primes_above_q": [
+    {
+      "beta_valuation": 1,
+      "prime_generators": [
+        "3",
+        "(-1/2*t + 7/2)*delta - t + 1/2"
+      ],
+      "ramification_exponent_in_q_extension": 1
+    },
+    {
+      "beta_valuation": 1,
+      "prime_generators": [
+        "3",
+        "(1/2*t - 5)*delta + 1/2*t + 1/2"
+      ],
+      "ramification_exponent_in_q_extension": 1
+    }
+  ],
+  "residue_square_roots_of_d_mod_q": [
+    1,
+    2
+  ],
+  "rho": "-t + 6",
+  "scope": "One fixed exact content counterexample to an element-gcd primitive-lift step; not a falsifier of a corrected ideal-saturation algorithm and not an asymptotic control.",
+  "status": "PASS",
+  "valuations": {
+    "X_at_q": 1,
+    "X_at_qprime": 0,
+    "Y_at_q": 2,
+    "Z_at_q": 1
+  }
+}

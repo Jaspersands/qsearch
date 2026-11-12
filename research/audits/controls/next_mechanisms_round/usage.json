@@ -1,0 +1,590 @@
+{
+  "captured_at_utc": "2026-11-12T17:30:46.708691+00:00",
+  "ceiling_note": "Local preflight ceilings, not actual usage spending, provider billing caps or balances.",
+  "cost_note": "Stored runner estimates only, not invoices, actual bills, balances or spending caps. No owner balance subtraction. Three historical UNKNOWN bills and partial estimates remain excluded; no new unknown bill or retry.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 91,
+    "excluded_observed_partial_runner_estimates_usd": "0.519080",
+    "historical_unknown_generation_failure_bills_excluded": 1,
+    "historical_unknown_timeout_bills_excluded": 2,
+    "known_terminal_nonpartial_usage_estimate_usd": "202.757804",
+    "known_terminal_nonpartial_usage_records": 163,
+    "unknown_partial_failure_bills_excluded": 3
+  },
+  "current_round_unknown_estimate_count": 0,
+  "dispatch_observed_status_changes": [
+    {
+      "after": "completed",
+      "before": "running",
+      "obligation": "sparse-structured",
+      "session_id": 25268
+    },
+    {
+      "after": "completed",
+      "before": "running",
+      "obligation": "gaudin-generator",
+      "session_id": 72335
+    },
+    {
+      "after": "completed",
+      "before": "running",
+      "obligation": "sparse-vertical",
+      "session_id": 62828
+    },
+    {
+      "after": "completed",
+      "before": "running",
+      "obligation": "sparse-torus-clock",
+      "session_id": 69808
+    }
+  ],
+  "dispatch_terminal_session_accounting": [
+    {
+      "billing_status": "usage_reported",
+      "obligation": "sparse-structured",
+      "response_bytes": 11091,
+      "session_id": 25268,
+      "status": "completed",
+      "stop_reason": null,
+      "usage_is_partial": false
+    },
+    {
+      "billing_status": "usage_reported",
+      "obligation": "sparse-cyclotomic",
+      "response_bytes": 10890,
+      "session_id": 41012,
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "usage_is_partial": false
+    },
+    {
+      "billing_status": "usage_reported",
+      "obligation": "gaudin-generator",
+      "response_bytes": 9880,
+      "session_id": 72335,
+      "status": "completed",
+      "stop_reason": null,
+      "usage_is_partial": false
+    },
+    {
+      "billing_status": "usage_reported",
+      "obligation": "gaudin-locality",
+      "response_bytes": 7826,
+      "session_id": 22196,
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "usage_is_partial": false
+    },
+    {
+      "billing_status": "usage_reported",
+      "obligation": "sparse-vertical",
+      "response_bytes": 16212,
+      "session_id": 62828,
+      "status": "completed",
+      "stop_reason": null,
+      "usage_is_partial": false
+    },
+    {
+      "billing_status": "usage_reported",
+      "obligation": "sparse-torus-clock",
+      "response_bytes": 11882,
+      "session_id": 69808,
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "usage_is_partial": false
+    }
+  ],
+  "exclusions": [
+    {
+      "jobs_excluded": 3,
+      "reason": "New/evolving work excluded entirely; no metadata, usage, requests or reports inspected or counted.",
+      "scope": "Three new torus-completion jobs and research/audits/api_inputs/2026-11-13-torus-completion/dispatch.json"
+    },
+    {
+      "reason": "Not hashed or edited; immutable earlier context snapshots within these six terminal API bundles are frozen.",
+      "scope": "Evolving STATE/HANDOFF/topic notes/workflow and the independent arch review still being written"
+    },
+    {
+      "reason": "Two ReadTimeout and one generation ReadError totals remain UNKNOWN; observed partial estimates excluded from all known totals.",
+      "scope": "Three historical UNKNOWN partial-failure total bills",
+      "unknown_bill_records": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.485230",
+          "failure_stage": "generation",
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "obligation": "quadratic-composition",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 48498,
+            "output_tokens": 5
+          },
+          "provider": "Anthropic",
+          "response_bytes": 7862,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ]
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 24220,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/classical_two_family_round/usage.json",
+    "sha256": "e9882e99ca6aa1addb410e0809eb330d5ceef03f86371fbaf374044c185fa98f"
+  },
+  "local_request_ceiling_total_usd": "33.000000",
+  "next_mechanisms_round": {
+    "by_provider_usd": {
+      "Anthropic": "3.318312",
+      "OpenAI": "6.213560"
+    },
+    "completed_nonempty_reports": 6,
+    "empty_refusal_reports": 0,
+    "jobs": 6,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-sparse-structured",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "sparse-structured",
+        "provider": "OpenAI",
+        "report_authority": "Advisory saved API artifact only; completed status does not certify conclusions. Parent fully read all six reports.",
+        "response": {
+          "bytes": 11091,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-sparse-structured/response.md",
+          "sha256": "bc5e8f2827de8df76ec6b22ee6df27c09866c2b191dabc898f9894b0a557c9de"
+        },
+        "response_characters": 11075,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1921,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-sparse-structured/result.json",
+          "sha256": "3f37cddb6ef7727bec6c7de8ea67c857e8157eb58e8cb15b1bf645f515efd7ef"
+        },
+        "session_id": 25268,
+        "session_reaping_note": "Terminal sessions reaped per parent; no session polling in this milestone.",
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 13209,
+          "input_tokens_details": {
+            "cache_write_tokens": 13206,
+            "cached_tokens": 0
+          },
+          "output_tokens": 34461,
+          "output_tokens_details": {
+            "reasoning_tokens": 31197
+          },
+          "total_tokens": 47670
+        },
+        "usage_cost_estimate_usd": "1.855140",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-sparse-cyclotomic",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "sparse-cyclotomic",
+        "provider": "Anthropic",
+        "report_authority": "Advisory saved API artifact only; completed status does not certify conclusions. Parent fully read all six reports.",
+        "response": {
+          "bytes": 10890,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-sparse-cyclotomic/response.md",
+          "sha256": "1d4640ebca13b5294b2241da3072f1cff154aa8101a615f186323382ad194eda"
+        },
+        "response_characters": 10599,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2083,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-sparse-cyclotomic/result.json",
+          "sha256": "697293f470cfbf107fd8278ea2de4a9b45845a30a6743f35bb746a67077befc2"
+        },
+        "session_id": 41012,
+        "session_reaping_note": "Terminal sessions reaped per parent; no session polling in this milestone.",
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 21669,
+          "output_tokens": 55964
+        },
+        "usage_cost_estimate_usd": "1.205956",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-gaudin-generator",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "gaudin-generator",
+        "provider": "OpenAI",
+        "report_authority": "Advisory saved API artifact only; completed status does not certify conclusions. Parent fully read all six reports.",
+        "response": {
+          "bytes": 9880,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-gaudin-generator/response.md",
+          "sha256": "46d05ce483608c58e37a07c4d661a8cc92d921cc103310790118fc3d52a9a2ae"
+        },
+        "response_characters": 9865,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1713,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-gaudin-generator/result.json",
+          "sha256": "493dcf30a370228cb22f70a69bf503787ce4c10439d97f41c2748c15468a9493"
+        },
+        "session_id": 72335,
+        "session_reaping_note": "Terminal sessions reaped per parent; no session polling in this milestone.",
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 7713,
+          "input_tokens_details": {
+            "cache_write_tokens": 7710,
+            "cached_tokens": 0
+          },
+          "output_tokens": 29426,
+          "output_tokens_details": {
+            "reasoning_tokens": 26554
+          },
+          "total_tokens": 37139
+        },
+        "usage_cost_estimate_usd": "1.548430",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-gaudin-locality",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "gaudin-locality",
+        "provider": "Anthropic",
+        "report_authority": "Advisory saved API artifact only; completed status does not certify conclusions. Parent fully read all six reports.",
+        "response": {
+          "bytes": 7826,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-gaudin-locality/response.md",
+          "sha256": "81b2d1879664ea00655e99af9c7fee0e0ffa91b234872450c32c9ebc0ef8718e"
+        },
+        "response_characters": 7591,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1819,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-gaudin-locality/result.json",
+          "sha256": "1740670662c91f77c8d7c2d13dfe193adb1f0db92a75f8dc305149cac57749c3"
+        },
+        "session_id": 22196,
+        "session_reaping_note": "Terminal sessions reaped per parent; no session polling in this milestone.",
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 12927,
+          "output_tokens": 61778
+        },
+        "usage_cost_estimate_usd": "1.287268",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-sparse-vertical",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "sparse-vertical",
+        "provider": "OpenAI",
+        "report_authority": "Advisory saved API artifact only; completed status does not certify conclusions. Parent fully read all six reports.",
+        "response": {
+          "bytes": 16212,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-sparse-vertical/response.md",
+          "sha256": "e52da630f72492f6d654723acb3858661d0897bd2983ab7c2fe438639b428631"
+        },
+        "response_characters": 16196,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1928,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-sparse-vertical/result.json",
+          "sha256": "7f64e36cb84f566d489d0d4d25cd506abec06295fc526d014e0b41b0bacde0dc"
+        },
+        "session_id": 62828,
+        "session_reaping_note": "Terminal sessions reaped per parent; no session polling in this milestone.",
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 10459,
+          "input_tokens_details": {
+            "cache_write_tokens": 10456,
+            "cached_tokens": 0
+          },
+          "output_tokens": 54108,
+          "output_tokens_details": {
+            "reasoning_tokens": 49785
+          },
+          "total_tokens": 64567
+        },
+        "usage_cost_estimate_usd": "2.809990",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-sparse-torus-clock",
+        "completed_review": true,
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "obligation": "sparse-torus-clock",
+        "provider": "Anthropic",
+        "report_authority": "Advisory saved API artifact only; completed status does not certify conclusions. Parent fully read all six reports.",
+        "response": {
+          "bytes": 11882,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-sparse-torus-clock/response.md",
+          "sha256": "bdcb0da6b7b060d50f2b6f3527a704115cd56e1cac7f341e9289516ad3976c10"
+        },
+        "response_characters": 11247,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2094,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-sparse-torus-clock/result.json",
+          "sha256": "49bce924f331096389da45350fa6af70ec5f37d66dab7d3900073c75f916612d"
+        },
+        "session_id": 69808,
+        "session_reaping_note": "Terminal sessions reaped per parent; no session polling in this milestone.",
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 17672,
+          "output_tokens": 37720
+        },
+        "usage_cost_estimate_usd": "0.825088",
+        "usage_is_partial": false
+      }
+    ],
+    "known_nonpartial_usage_records": 6,
+    "new_excluded_partial_runner_estimate_usd": "0.000000",
+    "status_counts": {
+      "completed": 6
+    },
+    "terminal_jobs": 6,
+    "truncated_empty_reports": 0,
+    "truncated_nonempty_reports": 0,
+    "unknown_total_bill_records": 0,
+    "usage_estimate_usd": "9.531872"
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 59,
+      "empty_response_count": 17,
+      "frozen_prior_estimate_usd": "128.451242",
+      "frozen_prior_known_terminal_records": 127,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_six_explicit_jobs": 135,
+      "known_estimate_by_status_usd": {
+        "completed": "48.572280",
+        "empty_response": "3.767794",
+        "truncated": "79.429480"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "131.769554",
+      "known_terminal_nonpartial_usage_records": 130,
+      "next_mechanisms_round": {
+        "completed_nonempty_reports": 3,
+        "empty_refusal_reports": 0,
+        "jobs": 3,
+        "known_nonpartial_usage_records": 3,
+        "new_excluded_partial_runner_estimate_usd": "0.000000",
+        "status_counts": {
+          "completed": 3
+        },
+        "terminal_jobs": 3,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 0,
+        "usage_estimate_usd": "3.318312"
+      },
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_generation_failure_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.485230",
+          "failure_stage": "generation",
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "obligation": "quadratic-composition",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 48498,
+            "output_tokens": 5
+          },
+          "provider": "Anthropic",
+          "response_bytes": 7862,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "status_counts_through_next_mechanisms": {
+        "completed": 59,
+        "dry_run": 1,
+        "empty_response": 17,
+        "failed": 4,
+        "truncated": 54
+      },
+      "terminal_results": 134,
+      "truncated_and_empty": 41,
+      "truncated_and_nonempty": 13,
+      "unknown_partial_failure_bill_count": 3
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 32,
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "64.774690",
+      "frozen_prior_known_terminal_records": 30,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_six_explicit_jobs": 33,
+      "known_estimate_by_status_usd": {
+        "completed": "68.484740",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "70.988250",
+      "known_terminal_nonpartial_usage_records": 33,
+      "next_mechanisms_round": {
+        "completed_nonempty_reports": 3,
+        "empty_refusal_reports": 0,
+        "jobs": 3,
+        "known_nonpartial_usage_records": 3,
+        "new_excluded_partial_runner_estimate_usd": "0.000000",
+        "status_counts": {
+          "completed": 3
+        },
+        "terminal_jobs": 3,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 0,
+        "usage_estimate_usd": "6.213560"
+      },
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_generation_failure_totals_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_through_next_mechanisms": {
+        "completed": 32,
+        "incomplete": 1
+      },
+      "terminal_results": 33,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0,
+      "unknown_partial_failure_bill_count": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "report_note": "All six reports fully parent read; this bookkeeping snapshot makes no scientific conclusions or theorem promotion.",
+  "scope": "Frozen classical-two-family prior plus exactly six terminal next-mechanisms jobs. Actual final result metadata/saved usage authoritative. Three new torus-completion jobs excluded; no recursive ledger/run scan.",
+  "unknown_billing_exclusions": [
+    {
+      "excluded_partial_runner_estimate_usd": "0.0276",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 6875,
+        "output_tokens": 5
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.00625",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 585,
+        "output_tokens": 8
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.485230",
+      "failure_stage": "generation",
+      "failure_type": "ReadError",
+      "no_retry": true,
+      "obligation": "quadratic-composition",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 48498,
+        "output_tokens": 5
+      },
+      "provider": "Anthropic",
+      "response_bytes": 7862,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-12",
+  "selection": "Joint-polynomial native conductivity classical falsifier",
+  "local_ceiling_usd": 24,
+  "jobs": [
+    {
+      "provider": "openai",
+      "obligation": "correlated-tree",
+      "effort": "max",
+      "model": "gpt-6-astra",
+      "max_tokens": 128000,
+      "budget": 8,
+      "contexts": [
+        "research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md",
+        "research/audits/api_inputs/2026-11-12-conductivity-multiscale/primary-excerpts.md"
+      ],
+      "prompt": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/correlated-tree.md",
+      "bundle": "research/audits/openai_runs/2026-11-12-conductivity-correlated-tree",
+      "session_id": 82786
+    },
+    {
+      "provider": "openai",
+      "obligation": "wavelet-compression",
+      "effort": "max",
+      "model": "gpt-6-astra",
+      "max_tokens": 128000,
+      "budget": 8,
+      "contexts": [
+        "research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md",
+        "research/audits/api_inputs/2026-11-12-conductivity-multiscale/primary-excerpts.md"
+      ],
+      "prompt": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/wavelet-compression.md",
+      "bundle": "research/audits/openai_runs/2026-11-12-conductivity-wavelet-compression",
+      "session_id": 69096
+    },
+    {
+      "provider": "claude",
+      "obligation": "variational-resolvent",
+      "effort": "high",
+      "model": "claude-fable-5-1",
+      "max_tokens": 32768,
+      "budget": 3,
+      "contexts": [
+        "research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md",
+        "research/audits/api_inputs/2026-11-12-conductivity-multiscale/primary-excerpts.md"
+      ],
+      "prompt": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/variational-resolvent.md",
+      "bundle": "research/audits/claude_runs/2026-11-12-conductivity-variational-resolvent",
+      "session_id": 24269
+    },
+    {
+      "provider": "claude",
+      "obligation": "cross-scale-falsifier",
+      "effort": "high",
+      "model": "claude-opus-5-5",
+      "max_tokens": 32768,
+      "budget": 2,
+      "contexts": [
+        "research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md",
+        "research/audits/api_inputs/2026-11-12-conductivity-multiscale/primary-excerpts.md"
+      ],
+      "prompt": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/cross-scale-falsifier.md",
+      "bundle": "research/audits/claude_runs/2026-11-12-conductivity-cross-scale-falsifier",
+      "session_id": 29605
+    },
+    {
+      "provider": "claude",
+      "obligation": "full-energy-excursion",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 32768,
+      "budget": 3,
+      "prompt": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/full-energy-excursion.md",
+      "contexts": [
+        "research/CONDUCTIVITY_SEPARATED_SCALE_ATTACK.md",
+        "research/audits/reviews/2026-11-12-conductivity-separated-scales.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-12-conductivity-full-energy-excursion",
+      "note": "Distinct newly derived full scalar-output consequence; not a retry of empty isolated-moment request.",
+      "session_id": 15308
+    }
+  ],
+  "note": "Four distinct new obligations, not retries. Ceilings are not actual charges or provider caps."
+}

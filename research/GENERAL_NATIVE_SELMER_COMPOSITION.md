@@ -1,0 +1,265 @@
+# Native growing-genus two-Selmer dimension
+
+2026-11-13. REVIEWED WRITTEN quantum polynomial-bit composition UNDER GRH.
+The global argument, native dyadic whole-clock proof and complete odd-prime
+extension have now been read in full by the parent and independently
+reviewed. LOCAL_KUMMER_ALL_PRIMES.md supplies the formerly conditional
+local interface. This is not an implementation, novelty claim, classical
+lower bound or speedup claim.
+
+## Scientific contract
+
+Input: a monic squarefree integer polynomial f of degree n=2g+1, given by
+its binary coefficients, with maximum coefficient length B. No field
+generators, maximal orders, class groups, units, models, local images or
+conditioning bounds are supplied. Output: the integer
+
+    dim_F2 Sel^(2)(Jac(y^2=f)/Q).
+
+Target: bounded-error quantum time polynomial(n,B,log(1/eta)). Degree one
+has the trivial Jacobian. All other inputs permit arbitrary bad reduction,
+even-degree branch-field factors and non-Galois fields. No normal closure
+is constructed. The general statement assumes the published GRH
+class-generator bound; its native all-prime local interface is now supplied
+by the reviewed written classical algorithm in LOCAL_KUMMER_ALL_PRIMES.md.
+
+Mechanism: quantum integer factoring and the published complete compact
+T-unit algorithm provide explicit global squareclasses. Classical native
+local images and polynomial-size binary linear algebra impose the norm
+and local conditions. The local routines need not be coherent. No QRAM,
+unpaid state preparation or exponentially expanded unit is used.
+
+The expected asymptotic opportunity is replacing classical global
+class/unit arithmetic by polynomial quantum arithmetic. The exact dimension
+may admit cheaper classical methods: this construction does not prove that
+class groups or full units are necessary to compute it. The strongest
+retained comparator is the same Stoll descent with classical class/unit
+arithmetic, including rigorous ERH subexponential methods under their actual
+hypotheses. Fully split branch algebras already have a polynomial classical
+remainder once integer factorization and the local routine are supplied.
+
+Corpus been-tried and baseline lookups preceded the primary-source checks.
+The quarantined arbitrary-degree regulator barrier is not evidence against
+the published quantum primitive. A bounded search establishes no novelty.
+
+## Global construction and source boundaries
+
+1. Factor f over Q and factor |disc f| quantumly. The discriminant identity
+   pays the prime factorizations needed to construct each maximal order.
+   The actual number-field Poteaux--Weimann Theorem 1, its finite-precision
+   OM work and CRT proof supply polynomial-bit orders and conversion maps;
+   its word-operation display is not relabelled a sharp bit bound.
+2. Let P0 be the rational primes dividing 2 disc f. For each branch field
+   K_i, S_i contains every prime above P0. Under the cited GRH bound,
+   enumerate prime ideals of norm at most 48(log |Delta_i|)^2, using a
+   computable polynomial integer upper cutoff. Put T_i=S_i union these
+   generators. Rational field factors are handled directly. There are
+   polynomially many ideals, with polynomial logarithmic norms.
+3. Apply the COMPLETE Biasse--Song corrected-v2 Theorem 1, including its
+   approximate-basis conversion and Section 8.1 exact compact recovery.
+   Theorem 5 alone and independent valid units of the right rank do not
+   certify a full basis. Append the roots-of-unity squareclass bit in each
+   factor, as described below. This gives U_Ti/U_Ti^2, not merely a subgroup.
+4. Take the binary kernel of valuation parity at T_i minus S_i. It equals
+   K_i(S_i,2), including the S-class-group 2-torsion contribution. A
+   T-unit that is a field square has a T-unit square root, proving
+   injection. For surjection, the half outside-T ideal of an admissible
+   element can be cancelled by a T-supported ideal in its ideal class.
+   This last argument uses class generation only in a completeness proof;
+   no principal-ideal generator is secretly computed by the controller.
+5. Impose the rational norm-square rows. At a rational prime p the correct
+   row uses sum_(P|p) f_P v_P, with residue degrees. Include the real sign
+   row. There is no quotient by diagonal rational squareclasses. The norm
+   onto Q(P0,2) is surjective because the total degree n is odd.
+6. Evaluate compact atoms in common native local squareclass frames at
+   each p in P0. Exponent parities suffice; do not expand huge units. Clear
+   an atom's denominators by a rational SQUARE. Its nonzero integer norm
+   supplies a polynomial numerical valuation bound. The power-order index
+   and disc f pay CRT denominators. Local frames must include efficient
+   native evaluation or explicit translation maps, not uninterpretable bits.
+7. Compute the real image from the ordered real roots r_1,...,r_(2k+1).
+   Its basis is e_2+e_3,...,e_(2k)+e_(2k+1). Points in the positive bounded
+   intervals give these generators after binary basis change; conjugate
+   nonreal pairs contribute positive signs. Rational infinity removes the
+   divisor-class obstruction. No real-component enumeration is needed.
+8. Outside P0, good odd reduction and unramified local algebra make the
+   even-valuation norm-square condition exactly the unramified image.
+   This is the actual Stoll descent theorem's scope. All primes inside P0
+   use COMPLETE images from LOCAL_KUMMER_ALL_PRIMES.md.
+
+If m is the initial T-unit squareclass dimension, V the extra-prime parity
+matrix, N the norm matrix, R_v localization and ker A_v the complete local
+image, the exact answer is
+
+    m - rank [V; N; A_infinity R_infinity; (A_p R_p)_(p in P0)].
+
+Every matrix, atom list and field conversion has polynomial bit size.
+Completeness of the quantum unit basis is probabilistic, so the global
+claim is bounded error, not detectable-abort-only. Allocate constant total
+error per whole run, repeat independently O(log(1/eta)) times and majority
+vote the final INTEGER. Never majority vote bases in different frames.
+
+## A constructive roots-of-unity interface
+
+Starting at zeta=-1, repeatedly test whether it has a square root in K.
+Each successful root doubles its order; at most O(log [K:Q]) tests suffice.
+The last root generates mu(K)/mu(K)^2. Using only -1 fails in fields such
+as Q(i).
+
+No extra number-field factorization oracle is needed. For K=Q[theta] of
+degree d, form B=K[z]/(z^2-zeta) and
+
+    R_c(T)=Norm_K/Q((T-c theta)^2-zeta),
+    c=0,...,binom(2d,2).
+
+Some R_c is squarefree: each pair of distinct embeddings forbids at most
+one c; pairs with equal theta forbid none. If zeta is nonsquare, the
+separating polynomial is irreducible of degree 2d. If square, it has two
+distinct irreducible degree-d factors. Rational polynomial factorization
+and a gcd over K with (T-c theta)^2-zeta recover a root in the second
+case. Trace equations in a controlled integral basis bound coordinates of
+ALL roots of unity polynomially, since their conjugates have modulus one.
+This prevents repeated square tests from causing height growth.
+
+The parent derived this interface and the independent review checked the
+separation, gcd and height arguments. It does not assume a precomputed
+torsion generator or splitting field.
+
+## New sufficient two-primary replacement for GRH
+
+Full class generation is stronger than this application needs. Let T
+contain S and suppose Cl(K)/<classes of T> has ODD order. Then the same
+T-unit parity kernel equals K(S,2).
+
+Indeed for alpha in K(S,2), let a be the fractional ideal formed from
+half its valuations outside T. The principal ideal (alpha) implies that
+2[a] lies in the subgroup generated by T. The image of [a] in the odd
+quotient is therefore zero. Cancel a by a T-supported ideal as above and
+obtain a T-unit representative modulo a field square. Injection is
+unchanged. This is a sufficient condition, not a hardness equivalence.
+
+Consequently, explicit ideal representatives generating the ordinary
+2-Sylow subgroup suffice. Factor their polynomial-bit norms and retain all
+prime-ideal factors: the subgroup generated by that prime support contains
+the represented classes. Quantum factoring is paid. A surjection from a
+strict class group onto the ordinary class group maps its 2-primary part
+onto the ordinary 2-primary part; no negative-Pell decision is needed for
+this projection alone.
+
+The quadratic gap is now closed by a stronger classical construction:
+QUADRATIC_NATIVE_SQUARECLASSES.md gives complete K(S,2) from rational
+Hilbert symbols and primitive rational-conic numerators. The conic bit
+backend is independently source-checked, including its equality case and
+printed basis-sign repair. No full units, class group or extra factoring
+are needed after the native discriminant factorization. Bosma--Stevenhagen
+represented strict 2-class generators remain a valid source interface,
+but their separately cited discovery clock is not needed for this endpoint.
+
+## Unconditional native families
+
+Every native input whose branch factors have degrees at most three now
+has the unconditional written quantum composition. Rational and quadratic
+factors use direct classical squareclasses after factoring; cubic factors
+use their retained unconditional source in
+ODD_GALOIS_CLASS_GROUP_COMPOSITION.md, Section6. This does not claim a
+classical match for cubic factors.
+
+A second family permits growing branch degree: every additional branch
+field may be a Galois 2-power extension of Q ramified at at most one
+finite rational prime. Its ordinary class group has odd order, so T=S.
+For proof only, let M/K be the canonical maximal unramified elementary
+2-extension and Gamma=Gal(M/Q). Proper inertia at the unique ramified
+prime would lie in a normal index-two subgroup of the finite 2-group
+Gamma. Its quadratic fixed field would be unramified at all finite primes
+of Q, impossible. Thus inertia is Gamma; relative unramifiedness makes
+its intersection with Gal(M/K) trivial, so the latter is trivial.
+No Hilbert class field is constructed. This special-base-Q proof does
+not delete the nonsplitting hypothesis of more general Iwasawa lemmas.
+
+The complete compact S-unit algorithm still pays all generators, including
+extra primes from cross-resultants of native branch polynomials. The
+promise restricts the correctness domain; it supplies no class group,
+automorphism list, normal closure, or unit advice. Explicit recognizable
+example: f_k=x(x^(2^k)+1), whose nontrivial branch field is the 2-power
+cyclotomic field, with S only above 2. A classical circular-unit match for
+this example is now being tested; its full unit index is not assumed.
+
+A further parent-derived and independently checked algebraic strengthening
+holds for totally real fields in this family: the NARROW class group is
+also odd. Use the canonical class field for the modulus of ALL real places;
+it remains unramified at finite primes, so the same inertia contradiction
+applies even if infinity ramifies. Hence units modulo squares map
+isomorphically onto real signatures. This computes no units or finite-place
+coordinates. See the fully parent-read 99-line
+2026-11-13-one-prime-narrow-signatures.md in audits/reviews/.
+
+The 185-line independent audit is
+audits/reviews/2026-11-13-one-prime-two-class-coverage.md, parent read in
+full. General GRH removal remains OPEN. The exact f=x(x^2-17*89)
+counterexample in that audit shows that native bad primes alone do NOT
+always span classes with odd index: a nontrivial ordinary unramified
+quadratic character is trivial on every prime above 2*17*89. This refutes
+the general source identity, not by itself the final Selmer dimension.
+
+## Evidence and remaining obligations
+
+Full parent-read report: audits/openai_runs/2026-11-13-global-composition/
+response.md (798 lines). Independent proof review:
+audits/reviews/2026-11-13-global-selmer-composition.md (310 lines).
+Primary excerpts and original documents are linked by those files; main
+sources are Biasse--Song https://arxiv.org/pdf/2510.02280v2 and Stoll's 2001
+two-descent theorem. The strongest classical attack's accepted observations
+and rejected equivalences are recorded in
+audits/reviews/2026-11-13-classical-global-bypass-disposition.md.
+
+Falsifiers: incomplete units, missing torsion, unaligned local frames,
+unpaid coefficient/precision growth, an incorrect real image, a missing
+bad prime, or an accepted incomplete local basis. Passing finite examples
+cannot settle any of these quantifiers. Neither an unfinished classical
+attack nor a successful conditional composition establishes advantage.
+
+Next decisive work: test the strongest classical routes on the new
+unconditional family, especially relative norm lifting, direct dimension
+without global generators, and native cyclic quartic construction. The
+quadratic comparator is CLOSED at the reviewed written factored-input
+scope. General class-generation without GRH remains OPEN. No speedup,
+novelty, lower bound, implementation or practicality follows.
+
+## Pure classical match: literal dyadic cyclotomic family
+
+For m=2^t,t>=2,r=m/4 and f=X(X^(m/2)+1), the SAME native Selmer problem
+has a reviewed written CLASSICAL polynomial-bit algorithm, correct output
+or ABORT<=eta, with no factoring or quantum primitive. Parent read the
+full203line independent proof in
+audits/reviews/2026-11-13-literal-dyadic-cyclotomic-units.md.
+
+In K=Q(zeta_m), pi=1-zeta and
+c_j=1+zeta^(5^j)+zeta^(-5^j)+zeta^(2*5^j)+zeta^(-2*5^j).
+A complete basis of K(S,2), S unique prime over2, is
+zeta,c_0,...,c_(r-2),pi (empty c-list when r=1). Direct sign counting gives
+real norm -1; augmentation-one in F2[C_r] makes the conjugate signatures
+independent. A K-unit is a root of unity times a real unit since its
+relative norm is a totally positive real-unit square. The sole lost
+real class is -1=product c_j; zeta supplies torsion. Odd class order
+then pays all S-squareclasses. Coefficients are bounded, O(m) sparse
+terms or O(m²) dense entries; no huge unit is constructed.
+
+Global norm-square basis: (1,zeta),(1,c_j),(2,pi). Real conditions are
+automatic and every odd prime is good/unramified. With localization R2
+and complete dyadic image ker A2, answer=r+1-rank(A2 R2). This removes
+the literal family as an advantage candidate. Arbitrary extra S-primes
+and other conductors are NOT covered; no implementation/novelty claim.
+
+## Reviewed factoring-only quartic branch source (13 November)
+
+QUARTIC_RELATIVE_NORM_CLASSICAL.md now supplies complete native L(S,2)
+for quartic fields with quadratic F and odd S-class order, with polynomial
+integer-factorization calls on polynomial-bit intermediates. All native,
+relative norm/conic and support corrections are independently reviewed and
+parent-read. The one-prime Galoisquartic branch family satisfies the class
+condition without advice. Combining rational/quadratic/quartic branch
+bases with the retained native local compiler gives a polynomial-BIT
+classical reduction of this subclass's Selmer dimension to factoring.
+No quantum unit primitive or GRH needed in this subclass. Fixeddegree
+constants may be enormous; no implementation, novelty or speedup follows.
+General growing-degree quantum endpoint remains as previously scoped.

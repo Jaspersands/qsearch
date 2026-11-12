@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 23967,
+      "path": "research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md",
+      "sha256": "4aae2d6ddf87d7afb01b47157c940829b5fea647c47b8cb30cfde79908a7e9a0",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 19564,
+      "path": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/primary-excerpts.md",
+      "sha256": "92c719e6d6239922bf65c59143c2f365b56eb5db3cbd38cd4bfaeb53163e9eba",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 17256,
+  "effort": "high",
+  "finished_at": "2026-11-12T12:35:29.224030+00:00",
+  "input_token_allowance": 17602,
+  "max_budget_usd": 3.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.81442,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/variational-resolvent.md",
+    "sha256": "b8e3be63575a5fffd2ba42c033c93489d3af5b9327fd1ddddbb5eeb00cd5f6c1",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261112T122813.376392Z-63600572",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 17256,
+    "output_tokens": 31140
+  },
+  "usage_cost_estimate_usd": 1.72956
+}

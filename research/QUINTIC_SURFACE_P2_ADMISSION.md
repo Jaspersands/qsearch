@@ -1,17 +1,15 @@
 # Native quintic-surface P2 beyond the K3-type abelian mechanism
 
-Nov12 closure: the classical source's ordinary modular descent is refuted in
-both retained versions; a supplied-input finite parabolic filter is repaired.
-Full native classical reconstruction remains OPEN. See
-SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md; this quantum G0/Euler route is unaffected.
-
-2026-11-12 comparator update: see SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md.
-Saxena--Venkatesh2511.05272 claims a classical fixed-characteristic-zero
-surface algorithm. Native coefficient-height uniformity is not established
-by its cited bounds; a reviewed modular compact/open/parabolic dimension
-obstruction refutes its displayed Theorem4.1 identification. Constructive
-repair is under review. This does NOT prove classical hardness or separation,
-and does not affect the written quantum G0/Euler-induction route below.
+2026-11-12 comparator closure: SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md
+gives a reviewed WRITTEN bounded-error classical poly(log p,log(1/eta)) BIT
+algorithm for this SAME native smooth-quintic problem, every prime p. Thus
+this endpoint has a matching classical polynomial upper bound. Enormous fixed
+exponents; no implementation, practicality, novelty or separation claim.
+The source ordinary compact-Hom=parabolic assertion remains REFUTED; the
+repair uses open cohomology and an exact boundary determinant quotient.
+The quantum construction below remains a written upper bound. Historical
+classical-OPEN statements below describe the Nov7 admission and are superseded
+by this comparator closure.
 
 2026-11-07. CLOSED reviewed WRITTEN bounded-error quantum reduction for
 exact degree53 P2 of EVERY smooth quinticSURFACE overFp, from nativebinary

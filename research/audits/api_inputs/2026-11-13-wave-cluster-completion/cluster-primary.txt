@@ -1,0 +1,227 @@
+Primary uncertainty2017.txt SHA256 d82ca33eb954d799885115764dac103ee3fad92c01fe599edc2e08dd30935d75
+
+Physical lines 304-338
+
+already reached for moderate values of R.
+    The forgoing yields a very explicit understanding of the restricted Fourier transform FBR (0) .
+For |n| . R the singular values sn (R) are uniformly large, while for |n| & R the sn (R) are close to
+zero, and it is seen from (3.7)–(3.9) as well as from figure 3.1 that as R gets large the width of the
+n-interval in which sn (R) falls from uniformly large to zero decreases. Similar properties are known
+for the singular values of more classical restricted Fourier transforms (see [23]).
+    A physical source has limited power, which we denote by P > 0, and a receiver has a power
+threshold, which we denote by p > 0. If the radiated far field has power less than p, the receiver
+cannot detect it. Because s2−n (R) = s2n (R) and the odd and even squared singular values, s2n (R),
+are decreasing as functions of n ≥ 0, we may define:
+
+                                          N (R, P, p) :=          sup         n.                            (3.10)
+                                                              s2n (R)≥2π Pp
+
+
+So, if α ∈ L2 (S 1 ) is a far field radiated by a limited power source supported in BR (0) with
+kfα∗ k2L2 (BR (0)) ≤ P , then, for N = N (R, P, p)
+
+                         1 X |αn |2     1      1     X          P X
+                                                            2
+                  P ≥                ≥                 |αn |  >     |αn |2 .
+                        2π   s2n (R)   2π s2N +1 (R)            p
+                              |n|>N                               |n|>N                       |n|>N
+
+               P            2
+Accordingly,     |n|≥N |αn | < p is below the power threshold. So the subspace of detectable far
+fields, that can be radiated by a power limited source supported in BR (0) is:
+
+                                          n                              N
+                                                                         X                o
+                              VNE :=          α ∈ L2 (S 1 ) α(θ) =                 αn einθ .
+                                                                        n=−N
+
+    We refer to VNE as the subspace of non-evanescent far fields, and to the orthogonal projection
+
+Physical lines 390-438
+                                                    ∞
+                                                    X                          
+                                        αcm =             αm−n in Jn (|c|)einϕc ,                   m ∈ Z,                      (4.2)
+                                                  n=−∞
+
+where |c| and ϕc are the polar coordinates of c. Employing a slight abuse of notation, we also use
+Tc to denote the corresponding operator from l2 to itself that maps
+
+                                                           Tc : {αn } 7→ {αcm } .                                               (4.3)
+
+Note that Tc is a unitary operator on l2 , i.e. Tc∗ = T−c .
+    The following theorem, which we call an uncertainty principle for the translation operator, will
+be the main ingredient in our analysis of far field splitting.
+
+                                                                     7
+
+Theorem 4.1 (Uncertainty principle for far field translation). Let α, β ∈ L2 (S 1 ) such that the
+corresponding Fourier coefficients {αn } and {βn } satisfy supp{αn } ⊆ W1 and supp{βn } ⊆ W2 with
+W1 , W2 ⊆ Z, and let c ∈ R2 . Then,
+                                                p
+                                                  |W1 ||W2 |
+                        |hα, Tc βiL2 (S 1 ) | ≤              kαkL2 (S 1 ) kβkL2 (S 1 ) .
+                                                   |c|1/3
+   We will frequently be discussing properties of a far field α and those of its Fourier coefficients.
+The following notation will be a useful shorthand:
+                             Z              1/p
+                  kαkLp =         |α(θ)|p dθ      ,                  1 ≤ p ≤ ∞,                  (4.4)
+                                     S1
+                                   X
+                                    ∞               1/p
+                       kαklp =             |αn |p          ,                     1 ≤ p ≤ ∞.                     (4.5)
+                                    n=−∞
+
+The notation emphasizes that we treat the representation of the function α by its values, or by the
+sequence of its Fourier coefficients as simply a way of inducing different norms. That is, both (4.4)
+and (4.5) describe different norms of the same function on S 1 . Note that, because of the Plancherel
+equality (3.5), kαkL2 = kαkl2 , so we may just write kαk2 , and we write h·, ·i for the corresponding
+inner product.
+Remark 4.2. We will extend the notation a little more and refer to the support of α in S 1 as its
+L0 -support and denote by kαkL0 the measure of supp(α) ⊆ S 1 . We will call the indices of the
+nonzero Fourier coefficients in its Fourier series expansion the l0 -support of α, and use kαkl0 to
+denote the number of non-zero coefficients.                                                       ♦
+    With this notation, theorem 4.1 becomes
+
+Theorem 4.3 (Uncertainty principle for far field translation). Let α, β ∈ L2 (S 1 ), and let c ∈ R2 .
+Then,                                    p
+                                            kαkl0 kβkl0
+                           |hα, Tc βi| ≤                kαk2 kβk2 .                             (4.6)
+                                              |c|1/3
+
+Physical lines 480-537
+                                           kTc kLp ,Lp = 1 ,                                       (4.8)
+
+whereas Tc : l1 −→ l∞ fulfills
+                                                           1
+                                          kTc kl1 ,l∞ ≤        1   .                               (4.9)
+                                                          |c| 3
+Proof. Recalling (4.1), we see that Tc is multiplication by a function of modulus one, so (4.8) is
+immediate. On the other hand, combining (4.2) with the last inequality from page 199 of [20]; more
+precisely,
+                                            b
+                               |Jn (x)| <     1    with b ≈ 0.6749 ,
+                                          |x| 3
+shows that
+                                                                        1
+                                  kTc kl1 ,l∞ ≤ sup |Jn (|c|)| ≤            1   .
+                                                n∈Z                    |c| 3
+
+
+Proof of theorem 4.3. Using Hölder’s inequality and (4.9) we obtain that
+                                                               p
+                                             1                   kαkl0 kβkl0
+            |hα, Tc βi| ≤ kαkl1 kTc βkl∞ ≤     1 kαkl1 kβkl1 ≤         1     kαkl2 kβkl2 .
+                                           |c| 3                   |c| 3
+
+
+    We can improve the dependence on |c| in (4.6) under hypotheses on α and β that are more
+restrictive, but well suited to the inverse source problem.
+Theorem 4.6. Suppose that α ∈ l2 (−M, M ), β ∈ l2 (−N, N ) with M, N ≥ 1, and let c ∈ R2 such
+that |c| > 2(M + N + 1). Then
+                                        p
+                                          (2N + 1)(2M + 1)
+                          |hα, Tc βi| ≤            1       kαk2 kβk2 .                 (4.10)
+                                               |c| 2
+
+                                                      9
+
+Proof. Because the l0 -support of β is contained in [−N, N ]
+                                        N
+                                        X                                
+                              c
+                             βm =             βn im−n Jm−n (|c|)ei(m−n)ϕc
+                                       n=−N
+so
+                                        c
+                            sup       |βm | ≤ kβkl1               sup                |Jn (|c|)|
+                         −M <m<M                      −(M +N )<n<(M +N )
+
+and it follows from theorem 2 of [16], using the fact that M, N ≥ 1, together with our hypothesis,
+which implies that |c| > 6, that
+                                                             b
+                                sup           Jn2 (|c|) ≤               with b ≈ 0.7595           (4.11)
+                        −(M +N )<n<(M +N )                  |c|
+
+(see appendix B for details). We now simply repeat the proof of theorem 4.3, replacing the estimate
+for kTc βkl∞ from (4.9) with the estimate we have just established in (4.11), i.e.
+                                                                         1
+                                   kTc kl1 [−N,N ],l∞ [−M,M ] ≤              1   .                (4.12)
+                                                                        |c| 2
+
+Physical lines 736-811
+                          kα    1
+                                    − α0 k22 ≤        1−                     kw1 − w0 k22
+                                                             2π
+   and
+                                                                      −1
+                                                         (2N + 1)|Ω|
+                           kβ   1
+                                    − β 0 k22 ≤       1−                     kw1 − w0 k22
+                                                             2π
+
+and then note that (5.12) is true here as well to finish the proof.
+
+   A version of theorem 5.3 with multiple well-separated components is also true.
+
+                                                           13
+
+Theorem 5.6. Suppose that γ 0 , γ 1 ∈ L2 (S 1 ), ci ∈ R2 and Ni ∈ N, i = 1, . . . , I, such that |ci − cj | >
+2(Ni + Nj + 1) for every i 6= j and
+                         p               s
+                                      X 2Nj + 1 
+                              2Ni + 1                    < 1     for each i ,
+                                             |ci − cj |
+                                                      j6=i
+
+and let
+                                     I
+                                     X
+                              0 LS
+                             γ =           Tc∗i α0i ,                                         α0i ∈ l2 (−Ni , Ni ) ,
+                                     i=1
+                                     XI
+                               LS
+                             γ1 =          Tc∗i α1i ,                                         α1i ∈ l2 (−Ni , Ni ) .
+                                     i=1
+
+Then, for i = 1, . . . , I
+                                                                                     s                −1
+                                                           p                   X          2Nj + 1
+                      kα1i − α0i k22 ≤            1−             2Ni + 1                                     kγ 1 − γ 0 k22 .
+                                                                                          |cj − ci |
+                                                                               j6=i
+
+Proof. As in (5.9), we decompose each γ j
+                                                                             j
+                                                                 γ j = wj + w⊥ ,
+where each wj belongs to the subspace
+                                                                     I
+                                                                     M
+                                                      W =                  Tc∗i l2 (−Ni , Ni )
+                                                                     i=1
+          j
+and each w⊥ is orthogonal to W . Subtracting gives
+                                                                           I
+                                                                           X
+                                                w −w =1          0
+                                                                                 Tc∗i (α1i − α0i )
+                                                                           i=1
+
+and applying (4.10) shows that
+                     I
+                     X                          I X
+                                                X
+  kw1 − w0 k22 ≥           kα1i − α0i k22 −                      |hα1i − α0i , Tc∗j −ci (α1j − α0j )i|
+                     i=1                         i=1 j6=i
+                                                I X                                              r r 1                          
+                                                      ri rj  14
+                     I
+                     X                          X                                                       i j     4
+                 ≥         kα1i − α0i k22 −                                       kα1i − α0i k2                     kα1j − α0j k2
+                                                                      |cij |                           |cij |
+                     i=1                         i=1 j6=i
+                                                      X
+                                                       I X                                                                                    (5.15)
+                                                             ri rj  12                                         r r 1
+                     I
+                     X                      1                                                                       i j   2

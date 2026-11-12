@@ -1,0 +1,86 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 20948,
+      "path": "research/LOCAL_KUMMER_NATIVE_END_TO_END.md",
+      "sha256": "8a4162f5e0e946e1fde68ab1bce0cf10d777470e7809ffd93edbd2bfaa7081e3",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 13380,
+      "path": "research/audits/reviews/2026-11-13-canonical-materializer-precision.md",
+      "sha256": "a0f85c930d7a33776b180f7befc3a09c7fa9ebdfc343f9a210fecb789ffe96ee",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 11865,
+      "path": "research/audits/reviews/2026-11-13-stoll-half-precision-ledger.md",
+      "sha256": "37b3a0dbd7372d06a830d2b4ac51fddf553f06148c397e8f5db9120ebc71f37e",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 19365,
+      "path": "research/audits/reviews/2026-11-13-native-local-squareclass-backend.md",
+      "sha256": "f6f9380d869a1f9f3a57f266be3c36034747d23327033ea144332002dc5e98b4",
+      "snapshot": "context/003.txt"
+    },
+    {
+      "bytes": 12152,
+      "path": "research/audits/reviews/2026-11-13-dyadic-finite-group-stopping.md",
+      "sha256": "9083d9dca1ee80a5cd2283b5da6a5c23ef398353ce3468be3a13cb2def026bdd",
+      "snapshot": "context/004.txt"
+    },
+    {
+      "bytes": 12491,
+      "path": "research/audits/reviews/2026-11-13-kummer-finite-grid-stability.md",
+      "sha256": "866a8230361ac3fc761f855f05b91dd71db3077271bb710d63be7bc2325ca0eb",
+      "snapshot": "context/005.txt"
+    },
+    {
+      "bytes": 13987,
+      "path": "research/audits/reviews/2026-11-13-stoll-geometric-smith-bridge.md",
+      "sha256": "71fbf758d603e175dc03c9cf11b47c202bf26a712ae192973411bab4218378c3",
+      "snapshot": "context/006.txt"
+    },
+    {
+      "bytes": 643,
+      "path": "research/audits/controls/dyadic_extraction_guard/counterexample.json",
+      "sha256": "1059c31fb01f93f168c466936f42528ca1a27c458793e6b04e2b9bef8413100a",
+      "snapshot": "context/007.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 44994,
+  "effort": "high",
+  "failure_type": "EmptyResponse",
+  "finished_at": "2026-11-12T15:03:28.954333+00:00",
+  "input_token_allowance": 45894,
+  "max_budget_usd": 5.0,
+  "max_tokens": 64000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 3.65894,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-dyadic-composition/fixed-clock-final.md",
+    "sha256": "9f2aa9cab483aba7c816dae4917f4564e171ccfc5b230390dacee727fc057568",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261112T145944.337266Z-bfe2fc04",
+  "status": "empty_response",
+  "stop_reason": "refusal",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 44994,
+    "output_tokens": 16129
+  },
+  "usage_cost_estimate_usd": 1.25639
+}

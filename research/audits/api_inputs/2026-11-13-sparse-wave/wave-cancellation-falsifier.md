@@ -1,0 +1,5 @@
+# wave-cancellation-falsifier
+
+Prove or refute the exact five-source normalization/ring counterfamily in the contract. Need an ALL-L finite bound, no numerical fitting: Z0=||G||^2 grows at least cL (or whatever correct scaling can be proved); ||delta-iG/L||^2 stays bounded away fromzero and infinity; the fraction of its Fourier norm in |1-lambda|<=C/L tends0 for fixedC; hence usual source-LCU success tends0 at a quantified rate despite FIVE sources. Derive exact source-register success and detect the weighted-source uncompute error in the actual supplied primary equations. Separate continuum paper claims from our exact discrete native counterexample. Use elementary regular-curve lattice strip estimates, allowing weaker explicit powers if easier. State exact constants/thresholds if possible. These only falsify those mechanisms, not all wave algorithms.
+
+Read the attached native contract first. Keep theorem, conditional statement, exact counterexample and speculation separate. Do not claim novelty/advantage. Return concrete equations and proof, with the decisive result early; no tools or external actions. Do not rely on an unprovided source as verified.

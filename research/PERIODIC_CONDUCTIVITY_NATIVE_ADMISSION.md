@@ -389,3 +389,15 @@ Next scientific action: independently reselect by external value. This line
 re-enters for a concrete classical variance-reduction theorem polynomial in
 BOTH parameters, or a motivated native endpoint with a new paid mechanism.
 Do not add a PDE framework, more mesh plots, or another source/readout wrapper.
+
+## 2026-11-13 completed shortcut pass and priority pivot
+
+The scoped full-output nearby-band falsifier and two specified sampler variance
+attacks are checked; details in CONDUCTIVITY_SEPARATED_SCALE_ATTACK and
+CONDUCTIVITY_MULTISCALE_API_DISPOSITIONS. No generic classical lower bound.
+Independent heat sampling remains the strongest general written comparator:
+polynomial at fixed epsilon, quasipolynomial for inverse-polynomial epsilon.
+Joint-poly matching is OPEN. A return requires a concrete cancellation-
+preserving contraction with paid work/second moment, not another nearby
+barrier. Current selection is the native dyadic half compiler; no new quantum
+implementation or speedup/novelty claim.

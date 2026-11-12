@@ -1,0 +1,51 @@
+{
+  "D": 3,
+  "assertions": {
+    "first_phase_identity": true,
+    "first_relative_phase_integer": true,
+    "generating_polynomial_identity": true,
+    "global_q_27_over_64": true,
+    "negative_three_count_entry": true,
+    "negative_zero_count_entry": true,
+    "projected_coefficient_0": true,
+    "projected_coefficient_1": true,
+    "projected_coefficient_2": true,
+    "projected_coefficient_3": true,
+    "projected_entries_sum_one": true,
+    "second_phase_identity": true,
+    "second_relative_phase_half_integer_odd": true
+  },
+  "assertions_passed": 13,
+  "cas": "/opt/anaconda3/envs/qsearch-cas/bin/sage",
+  "eigenvalue_formula": "E_lambda=sum_i(q^(-lambda_i)-1)*t^(i-1), with i starting1",
+  "eigenvalues": {
+    "C": "1369/432",
+    "M": "16465/2916",
+    "R": "242461/19683"
+  },
+  "input_moment_vector": [
+    1,
+    1,
+    -1,
+    -1
+  ],
+  "projected_generating_polynomial": "-z^3 + 6*z - 4",
+  "projected_vector": [
+    -4,
+    6,
+    0,
+    -1
+  ],
+  "projection_formula": "X_m=binomial(3,m)*sum_r(-1)^r*binomial(3-m,r)*C_(m+r)",
+  "q": "27/64",
+  "relative_phase_signs": {
+    "M_vs_C": -1,
+    "R_vs_M": 1
+  },
+  "scope": "One exact globalD3 rational phase and samplewise binomial-projection control only. It verifies the stated signed vector, not the full probabilistic coupling, a Gaussian approximation theorem, variance lower bound or general classical impossibility.",
+  "status": "PASS",
+  "t": "3/4",
+  "tau": "157464/37",
+  "tau_E21_minus_E111": "21087/2",
+  "tau_E3_minus_E21": "28394"
+}

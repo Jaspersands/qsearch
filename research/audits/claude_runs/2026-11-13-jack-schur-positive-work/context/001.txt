@@ -1,0 +1,291 @@
+Actual primary-source excerpts. No abstracts are used as theorem evidence.
+
+SOURCE https://arxiv.org/pdf/2211.01586v2
+
+LINES 286-335
+2     Review of two results of Nazarov–Sklyanin
+In this section, we recall two results for the hierarchy Tℓ = π0 Lℓ due to Nazarov–Sklyanin [32].
+
+2.1   Definition of the Nazarov–Sklyanin hierarchy
+Recall F [w] = C[w, V1 , V2 , . . .] in (1.3) and the Lax operator L in (1.5). Let π0 be the projection
+to F = C[V1 , V2 , . . .] defined by setting w = 0.
+
+Definition 2.1. The Nazarov–Sklyanin hierarchy is the set of operators Tℓ = π0 Lℓ : F → F .
+6                                                                                                  R. Mickler and A. Moll
+
+   Here Tℓ is the top-left entry of the ℓth power of L in (1.6). Recall V−k = ℏk ∂V∂ k in (1.2).
+For ℓ = 3,
+               ∞
+               X                                     ∞
+                                                     X                                 ∞
+                                                                                       X
+      T3 =               V−k1 −k2 Vk1 Vk2 +                    V−k1 V−k2 Vk1 +k2 + ε         kVk V−k                (2.1)
+             k1 ,k2 =1                             k1 ,k2 =1                           k=1
+
+
+is the Hamiltonian of the quantum Benjamin–Ono equation on the torus discussed in [32, Sec-
+tion 1]. When ε = 0, (2.1) is the well-known cut and join operator discussed, e.g., in [6,
+Section 1.2].
+
+
+2.2   Commutativity and spectral theorem for the hierarchy
+Theorem 2.2 (Nazarov–Sklyanin [32]). Choose ε1 , ε2 ∈ C which parametrize ε ∈ R and ℏ > 0
+by the formulas (1.12) and (1.13). For u ∈ C \ R, consider the bounded transfer operators
+
+      T (u) = π0 (u − L)−1 : F → F,                                                                                 (2.2)
+
+which encode all unbounded operators in the hierarchy Tℓ = π0 Lℓ as coefficients of u−ℓ−1 .
+
+(1∨ ) The transfer operators (2.2) commute in F for distinct values of u and are simultaneously
+      diagonalized on Jack polynomials jλ in (1.7) with eigenvalues Tλ (u) ∈ C as in
+
+             T (u) jλ = Tλ (u) jλ .                                                                                 (2.3)
+
+(2∨ ) The eigenvalues Tλ (u) ∈ C in (2.3) are determined by the anisotropic contents (1.11) of
+      the elements of the Young diagram λ in (1.8) and their shifts by the product formula
+
+                                   Y (u − [s + (0, 0)])(u − [s + (1, 1)])
+             Tλ (u) = u−1 ·                                                            .
+                                         (u − [s + (1, 0)])(u − [s + (0, 1)])
+                                   s∈λ
+
+
+      Equivalently, if Aλ and Rλ are the addable and removable corner sets in (1.9) and (1.10),
+                             Q
+                                   (u − [r])
+
+LINES 678-743
+theory [25, 38] at ε = 0 and (ii) in the equivariant cohomology of nested Hilbert schemes of
+points in C2 [22, 30, 37, 40].
+
+5.1   Comments on the Nakamura–Bock–Kruskal classical Lax operator
+In [32, Sections 1 and 2], Nazarov–Sklyanin discuss how they thought to introduce their Lax
+operator L in (1.5) and (1.6) to the study of Jack polynomials jλ . They did so as a natural
+consequence of two observations. On the one hand, Jack polynomials have been long known to be
+eigenfunctions of the Hamiltonian (2.1) of the quantum Benjamin–Ono equation on the torus –
+see [32, Section 2] and [27] and references therein. On the other hand, the classical Benjamin–
+Ono equation admits a Lax pair due to Nakamura [31] and Bock–Kruskal [3]. When the spatial
+geometry is a torus, the Lax operator L from [3, 31] takes the form in (5.1)P   below. Assume
+u ∈ L (T, R) is a real-valued distribution with Fourier modes uk ∈ C satisfying ∞
+      2                                                                                    2
+                                                                                  k=1 |uk | < ∞,
+                                                           ∂
+u−k = uk , and u0 = 0. Then with π as in (1.4) and ∂w = ∂w ,
+                        ∞
+                        X               ∞
+                                        X
+      L = ε0 w∂w +                 k
+                              uk w +          uk πw−k                                                            (5.1)
+                        k=1             k=1
+Spectral Theory of the Nazarov–Sklyanin Lax Operator                                               13
+
+is the Nakamura–Bock–Kruskal Lax operator for the classical Benjamin–Ono equation on the
+torus with dispersion coefficient ε0 ∈ R [3, 31]. This L is partially-defined on C[w] and essentially
+self-adjoint with respect to the inner product ⟨·, ·⟩ on C[w] in which wl are an orthonormal basis.
+Just like (1.5), only the first terms involve the projection π in (1.4). However, unlike (1.5), the
+second infinite sum over uk wk applied to a polynomial in C[w] will not yield a polynomial if
+infinitely-many uk = u−k ̸= 0. As in Section 1.1, we can write L as a N × N matrix
+
+         0ε0 u1 u2 u3 u4 · · ·
+                                      
+                                  .. 
+         u1 1ε0 u1 u2 u3            .
+        
+                                  .. 
+                                      
+         u2 u1 2ε0 u1 u2
+                                    .
+      L=                         ..    .                                                      (5.2)
+         u3 u2 u1 3ε0 u1
+                                    .
+                                 .. 
+        u
+         4   u 3  u 2  u 1  4ε 0    .
+           .. ..   ..   ..   ..   ..
+            .    .    .    .    .    .
+
+With these two observations in mind, Nazarov–Sklyanin [32] realized that canonical quantization
+via (1.2)
+
+      (uk , u−k ) −→ (Vk , V−k )                                                                (5.3)
+
+performed directly in the matrix elements of L in (5.2) yields a well-defined L : F [w] → F [w]
+in (1.6) whose powers are well defined without normal ordering. Equivalently, Nazarov–Sklyanin
+realized that the classical field u(x) can be directly replaced in L by the affine gl
+                                                                                   b 1 -current at
+level ℏ to get L. For a discussion of (5.3) from the point of view of geometric quantization,
+see [27].
+
+
+5.2   Comparison to Gérard–Kappeler’s action-angle coordinates
+This paper was inspired by recent spectral analysis [7, 8, 9, 10, 11, 28] of the Nakamura–Bock–
+Kruskal Lax operator L in (5.2). At ε0 = 0, (5.2) is a Toeplitz operator whose spectrum has
+been studied for over a century [4, 43]. At ε0 ̸= 0, the spectrum of L is simple [9, 28]. In [27, 28],
+
+SOURCE https://arxiv.org/pdf/math/9905189v1
+
+LINES 55-126
+
+Here pi = λi − i is the number of boxes in the ith row of λ on the right of the ith
+diagonal box; likewise, qi = λ′i − i is the number of boxes in the ith column of λ
+below the ith diagonal box (λ′ stands for the transposed diagram).
+   Note that
+                                                                        d
+                                                                        X
+        p1 > · · · > pd ≥ 0,          q1 > · · · > qd ≥ 0,                    (pi + qi + 1) = |λ|.
+                                                                        i=1
+
+The numbers pi , qi are called the Frobenius coordinates of the diagram λ.
+   Let b = (i, j) be a box of λ; here i, j are the row number and the column number
+of b. Recall the definition of the content and the hook length of b:
+
+                    c(b) = j − i,         h(b) = (λi − j) + (λ′j − i) + 1.
+
+  We will consider two complex parameters z, z ′ such that the numbers (z)k (z ′ )k
+and (−z)k (−z ′ )k are real and strictly positive for any k = 1, 2, . . . . Here and below
+
+                    (a)k = a(a + 1) . . . (a + k − 1),                    (a)0 = 1,
+
+denotes the Pochhammer symbol.
+   The above assumption on z, z ′ means that one of the following two conditions
+holds:
+   • either z ′ = z̄ and z ∈ C \ Z
+   • or z, z ′ ∈ R and there exists m ∈ Z such that m < z, z ′ < m + 1
+   We set
+                                       t = zz ′
+and note that t > 0.
+   For a Young diagram λ let dim λ denote the number of the standard Young
+tableaux of shape λ. Equivalently, dim λ is the dimension of the irreducible repre-
+sentation (of the symmetric group of degree |λ|) corresponding to λ, see [Ma]. The
+well–known hook formula for dim λ has the form, see, e.g., [Ma],
+
+                                                           |λ|!
+                                       dim λ = Q                   .
+                                                          b∈λ h(b)
+
+    We introduce a function on the Young diagrams depending on the parameters
+z, z ′ :
+                Q                      ′
+                b∈λ (c(b) + z)(c(b) + z )             dim2 λ    |λ|! Y (c(b) + z)(c(b) + z ′ )
+ Mz,z ′ (λ) =                                     ·          =        ·                        .
+                         (t)|λ|                         |λ|!   (t)|λ|          h2 (b)
+                                                                              b∈λ
+                                                                      (1.1)
+  We agree that Mz,z ′ (∅) = 1. Thanks to our assumption on the parameters,
+Mz,z ′ (λ) > 0 for all λ.
+                                                      2
+Proposition 1.1. For any n,
+                                                   X
+                                                        Mz,z ′ (λ) = 1,
+                                                λ∈Yn
+
+
+so that the restriction of Mz,z ′ to Yn is a probability distribution on Yn .
+                                                                   (n)
+   We shall denote this distribution by Mz,z ′ and call it the nth level z–measure.
+   Proposition 1.1 is an easy corollary of Proposition 3.1 below.
+   Let Y = Y0 ⊔ Y1 ⊔ . . . denote the set of all Young diagrams. Consider the
+negative binomial distribution on the nonnegative integers, which depends on t and
+the additional parameter ξ, 0 < ξ < 1:
+
+                                                         (t)n n
+                          πt,ξ (n) = (1 − ξ)t                ξ ,         n = 0, 1, . . . .
+                                                          n!
+
+For λ ∈ Y we set
+                                      Mz,z ′ ,ξ (λ) = Mz,z ′ (λ) πt,ξ (|λ|).
+By the construction, Mz,z ′ ,ξ (·) is a probability distribution on Y, which can be
+                                                       (n)
+viewed as a mixture of the finite distributions Mz,z ′ . From the formulas for Mz,z ′
+
+SOURCE https://arxiv.org/pdf/2509.09640v2
+
+LINES 86-173
+TPM work and sudden quenches
+We consider a protocol in which external controls λ(t) are varied during a time window
+t ∈ [0, τ ]. The system Hamiltonian is
+
+                   H(t) ≡ H(λ(t)),          Hi := H(λ(0− )),        Hf := H(λ(τ + )).       (1)
+
+The drive generates the unitary
+                                                      Z τ              
+                                  Uτ = T exp − i             H(λ(t)) dt .                   (2)
+                                                         0
+
+In the TPM scheme [3], one measures Hi at t = 0− , evolves with Uτ , and measures Hf at
+                         (0)                     (1)
+t = τ + . If Hi |n0 ⟩ = En |n0 ⟩ and Hf |m1 ⟩ = Em |m1 ⟩, the work random variable is
+
+                                           w = Em
+                                                (1)
+                                                    − En(0) ,                               (3)
+                       (0)
+with probabilities pn = ⟨n0 |ρ0 |n0 ⟩ and pm|n = |⟨m1 |Uτ |n0 ⟩|2 . The characteristic function
+of work,                                   Z
+                                     χW (u) =          eiuw P (w) dw,                       (4)
+                                                   R
+has the standard operator form
+                                                                           
+                               χW (u) = Tr eiuHf Uτ e−iuHi ρ0 Uτ† .                         (5)
+
+Accepted in Quantum 2026-10-12, click title to verify. Published under CC-BY 4.0.            2
+    In a sudden quench [7] the drive is instantaneous at t = 0: we set τ = 0+ and evolve
+for a time t under Hf . If the prepared state is an eigenstate, Hi |ψ0 ⟩ = E0 |ψ0 ⟩ (the
+usual situation in our applications: a translation-invariant ground state, or a domain-wall
+preparation), then (5) reduces to
+
+                         χW (u) = e−iuE0 ⟨ψ0 |eiuHf |ψ0 ⟩ = e−iuE0 G(−u),                           (6)
+
+where
+                                        G(t) := ⟨ψ0 |e−iHf t |ψ0 ⟩                                  (7)
+is the Loschmidt amplitude and L(t) = |G(t)|2 the Loschmidt echo. Thus P (w) is the Fourier
+transform of a Loschmidt-type object, while L(t) quantifies fidelity decay [1, 2, 7, 8, 16, 17].
+This connection has driven much of the modern activity on DQPTs, where nonanalytic
+features in G(t) govern far-from-equilibrium behavior [8, 9]. On the experimental side,
+interferometric protocols access χW (u) directly via an ancilla, enabling reconstructions of
+P (w) and tests of fluctuation relations in a variety of platforms [4–6].
+
+Why random matrices enter: Toeplitz determinants and trace statistics
+The key structural observation we develop and exploit is that, for sudden quenches in
+quadratic (or effectively free) spin/fermion models with periodic boundary conditions (PBC),
+the Loschmidt amplitude admits a Toeplitz (or block-Toeplitz) determinant representation
+whose symbol is built from the post-quench single-particle dispersion ε(k) [18, 19]. Toeplitz
+determinants are exactly equivalent to partition functions of unitary random-matrix
+ensembles via the Heine–Szegő identity [20, 21]. In the present context, this equivalence
+upgrades the work problem to a random-matrix linear-statistics problem and allows us to
+import sharp probabilistic tools.
+    In the settings studied here one has a Toeplitz representation GN (t) = DN (e−it ε ), and
+therefore χW (u) = e−iuE0 DN (eiuε ). The deterministic phase from the zero Fourier mode
+only shifts the mean and will often be suppressed; the nontrivial factor is a characteristic
+function of a random-matrix linear statistic (Sec. III). Concretely, expanding the dispersion
+in Fourier modes,
+                           ε(k) = a0 +       am cos mk + bm sin mk ,                       (8)
+                                        X                          
+
+                                           m≥1
+
+the Heine–Szegő identity recasts the characteristic function as an average over the unitary
+group1 , For notational simplicity, we absorb the trivial phase from the zero Fourier mode
+a0 by writing DN (eiuε ) = eiuN a0 χ(u); equivalently, χ(u) is the characteristic function of
+the centered linear statistic.
+                                                                                  
+                                                                  ∗         −m 
+                    χ(u) = EU (N ) expiu           αm Tr U m + αm Tr U                            (9)
+                                               X
+                                                                                     ,
+                                               m≥1
+
+with αm = (am − ibm )/2 determined by the quench and microscopic couplings. In other
+words, the logarithm of the characteristic function is the cumulant generating function of a
+linear statistic of traces of powers of a Haar-distributed unitary.
+
+   1
+   We illustrate
+              P with finite   range in formulas for brevity; the Gaussian core extends to infinite-range
+                        2     2
+symbols under    r≥1
+                     r(ar + b r ) < ∞, or to truncations with m(N ) = o(N 2/3 ); cf. Sec. IV.
+
+
+
+

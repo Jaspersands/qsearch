@@ -1,0 +1,483 @@
+{
+  "captured_at_utc": "2026-11-12T15:11:31.630112+00:00",
+  "ceiling_note": "Local preflight ceiling total, not actual usage estimate, provider bill/cap or balance.",
+  "cost_note": "Stored runner estimates only, not invoices, actual bills, balances or spending caps. No owner balance subtraction. Two historical timeout totals remain UNKNOWN and excluded. The last request is empty_response/refusal, not truncation or unknown billing; no mathematical findings or retry.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 78,
+    "historical_unknown_timeout_bills_excluded": 2,
+    "known_terminal_nonpartial_usage_estimate_usd": "179.547418",
+    "known_terminal_nonpartial_usage_records": 148
+  },
+  "current_round_unknown_estimate_count": 0,
+  "dispatch_observed_status_changes": [
+    {
+      "after": "empty_response",
+      "before": "in_flight",
+      "obligation": "fixed-clock-final",
+      "session_id": 12439
+    }
+  ],
+  "dispatch_terminal_session_accounting": [
+    {
+      "obligation": "whole-dag",
+      "response_bytes": 27069,
+      "session_id": 17959,
+      "status": "completed",
+      "terminal_result_saved": true
+    },
+    {
+      "obligation": "unit-backend",
+      "response_bytes": 9829,
+      "session_id": 97499,
+      "status": "completed",
+      "terminal_result_saved": true
+    },
+    {
+      "obligation": "stoll-root-interface",
+      "response_bytes": 8558,
+      "session_id": 30873,
+      "status": "completed",
+      "terminal_result_saved": true
+    },
+    {
+      "obligation": "odd-prime-extension",
+      "response_bytes": 28856,
+      "session_id": 12288,
+      "status": "completed",
+      "terminal_result_saved": true
+    },
+    {
+      "obligation": "global-composition",
+      "response_bytes": 30404,
+      "session_id": 62281,
+      "status": "completed",
+      "terminal_result_saved": true
+    },
+    {
+      "obligation": "classical-global-bypass",
+      "response_bytes": 14724,
+      "session_id": 61043,
+      "status": "completed",
+      "terminal_result_saved": true
+    },
+    {
+      "obligation": "fixed-clock-final",
+      "response_bytes": 0,
+      "session_id": 12439,
+      "status": "empty_response",
+      "terminal_result_saved": true
+    }
+  ],
+  "dyadic_composition_round": {
+    "by_provider_usd": {
+      "Anthropic": "5.150502",
+      "OpenAI": "9.150060"
+    },
+    "completed_nonempty_reports": 6,
+    "empty_refusal_reports": 1,
+    "jobs": 7,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag",
+        "completed_review": true,
+        "failure_type": null,
+        "manifest_verification_status_snapshot": "pending_parent_verification",
+        "obligation": "whole-dag",
+        "parent_disposition_snapshot": null,
+        "provider": "OpenAI",
+        "report_authority": "Advisory API output only. Completed status/agent label does not certify mathematical claims.",
+        "response": {
+          "bytes": 27069,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/response.md",
+          "sha256": "dd54faee03427a7079c9982c41657ea80cdbfc31afc334b2d5a573e7eccff7ae"
+        },
+        "response_characters": 27051,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2270,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-whole-dag/result.json",
+          "sha256": "492f896c2395a29df496a04a89815359fd31149a405a7f95830326062a686e8f"
+        },
+        "session_id": 17959,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 27253,
+          "input_tokens_details": {
+            "cache_write_tokens": 27250,
+            "cached_tokens": 0
+          },
+          "output_tokens": 79760,
+          "output_tokens_details": {
+            "reasoning_tokens": 72518
+          },
+          "total_tokens": 107013
+        },
+        "usage_cost_estimate_usd": "4.260530"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend",
+        "completed_review": true,
+        "failure_type": null,
+        "manifest_verification_status_snapshot": null,
+        "obligation": "unit-backend",
+        "parent_disposition_snapshot": "Fully parent read; finite unit/root core checked, omitted OM source chain resolved by actual primary text and independent384line proof. No Round2 memory theorem used.",
+        "provider": "Anthropic",
+        "report_authority": "Advisory API output only. Completed status/agent label does not certify mathematical claims.",
+        "response": {
+          "bytes": 9829,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/response.md",
+          "sha256": "3c3aa0611d80728fc418e1dd304f509daa34b8683f1de94a3c2533484a8b6474"
+        },
+        "response_characters": 9364,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1628,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-unit-backend/result.json",
+          "sha256": "c25c128c341ff2986bec8c5a5dcb3c184db26a9228125223cbd7506a59f43930"
+        },
+        "session_id": 97499,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 14908,
+          "output_tokens": 30876
+        },
+        "usage_cost_estimate_usd": "0.677152"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface",
+        "completed_review": true,
+        "failure_type": null,
+        "manifest_verification_status_snapshot": null,
+        "obligation": "stoll-root-interface",
+        "parent_disposition_snapshot": "Fully parent read; missing visible extraction resultant guard verified with native genus2 exact finite-grid counterexample and repaired. No full-clock admission from this interface.",
+        "provider": "Anthropic",
+        "report_authority": "Advisory API output only. Completed status/agent label does not certify mathematical claims.",
+        "response": {
+          "bytes": 8558,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/response.md",
+          "sha256": "6c7620d998b8738ece161214cace829b0d3b58a23947abffefc3517a29d2f576"
+        },
+        "response_characters": 8328,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1871,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-stoll-root-interface/result.json",
+          "sha256": "2d3841119b91db88b63cde0318d1a07c64273c8973d6d0ba273f9d592583e167"
+        },
+        "session_id": 30873,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 23330,
+          "output_tokens": 36971
+        },
+        "usage_cost_estimate_usd": "0.832740"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension",
+        "completed_review": true,
+        "failure_type": null,
+        "manifest_verification_status_snapshot": "pending_parent_verification",
+        "obligation": "odd-prime-extension",
+        "parent_disposition_snapshot": "Completed report; parent full reads/proof checks pending. Not accepted or promoted from API status.",
+        "provider": "OpenAI",
+        "report_authority": "Advisory API output only. Completed status/agent label does not certify mathematical claims.",
+        "response": {
+          "bytes": 28856,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/response.md",
+          "sha256": "6650689e99cb814de030787f7f2203e140e6ab110c5759d997f58423b7513258"
+        },
+        "response_characters": 28839,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2456,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-odd-prime-extension/result.json",
+          "sha256": "dbb8a111ab8cc3152e293bf924f7c22f15585ba5384f4fad7aaeb9a7466c63e4"
+        },
+        "session_id": 12288,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 30961,
+          "input_tokens_details": {
+            "cache_write_tokens": 30958,
+            "cached_tokens": 0
+          },
+          "output_tokens": 49487,
+          "output_tokens_details": {
+            "reasoning_tokens": 40918
+          },
+          "total_tokens": 80448
+        },
+        "usage_cost_estimate_usd": "2.783960"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition",
+        "completed_review": true,
+        "failure_type": null,
+        "manifest_verification_status_snapshot": "pending_parent_verification",
+        "obligation": "global-composition",
+        "parent_disposition_snapshot": "Completed report; parent full reads/proof checks pending. Not accepted or promoted from API status.",
+        "provider": "OpenAI",
+        "report_authority": "Advisory API output only. Completed status/agent label does not certify mathematical claims.",
+        "response": {
+          "bytes": 30404,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/response.md",
+          "sha256": "5b9decea7095b5b4470e956554b4a80d099789f15b781a8406ee6882ea2d4f36"
+        },
+        "response_characters": 30360,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1923,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-global-composition/result.json",
+          "sha256": "28cfd096682a677bdc8d928c59ba57075e5e0f215cb4c4b39c3dffd95dbe8a5e"
+        },
+        "session_id": 62281,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 17467,
+          "input_tokens_details": {
+            "cache_write_tokens": 17464,
+            "cached_tokens": 0
+          },
+          "output_tokens": 38618,
+          "output_tokens_details": {
+            "reasoning_tokens": 30647
+          },
+          "total_tokens": 56085
+        },
+        "usage_cost_estimate_usd": "2.105570"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass",
+        "completed_review": true,
+        "failure_type": null,
+        "manifest_verification_status_snapshot": null,
+        "obligation": "classical-global-bypass",
+        "parent_disposition_snapshot": "Fully parent read; norm-row redundancy retained. Claimed ray-class/Selmer/class-group computational equivalences, implicit family, and reversed partial-relation bound rejected. No classical general match or hardness established.",
+        "provider": "Anthropic",
+        "report_authority": "Advisory API output only. Completed status/agent label does not certify mathematical claims.",
+        "response": {
+          "bytes": 14724,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/response.md",
+          "sha256": "e0c56591b62a49d8d7b439801613cfba6e01ab74f26cecee4c55766314a48641"
+        },
+        "response_characters": 14306,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2125,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-classical-global-bypass/result.json",
+          "sha256": "149449cd21e239e623725181ed08e00259b02edff1e7cc7e5381f6ecf7705be8"
+        },
+        "session_id": 61043,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 20877,
+          "output_tokens": 43509
+        },
+        "usage_cost_estimate_usd": "2.384220"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final",
+        "completed_review": false,
+        "failure_type": "EmptyResponse",
+        "manifest_verification_status_snapshot": "pending_parent_verification",
+        "obligation": "fixed-clock-final",
+        "obligation_note": "Newly explicit C_mat/C_half/compute-once clock and repaired native extraction counterexample; distinct corrected final assembly audit, not a retry.",
+        "parent_disposition_snapshot": null,
+        "provider": "Anthropic",
+        "report_authority": "Advisory API output only. Completed status/agent label does not certify mathematical claims.",
+        "report_classification": "EMPTY_REFUSAL; no report/findings, known saved usage, no retry",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 3100,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-fixed-clock-final/result.json",
+          "sha256": "57a9bebf0204af977da1ce8938916cf01b5a4715c945391f52c1e0987ec683d0"
+        },
+        "session_id": 12439,
+        "status": "empty_response",
+        "stop_reason": "refusal",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 44994,
+          "output_tokens": 16129
+        },
+        "usage_cost_estimate_usd": "1.256390"
+      }
+    ],
+    "status_counts": {
+      "completed": 6,
+      "empty_response": 1
+    },
+    "terminal_jobs": 7,
+    "truncated_empty_reports": 0,
+    "truncated_nonempty_reports": 0,
+    "usage_estimate_usd": "14.300562"
+  },
+  "exclusions": [
+    {
+      "reason": "Still being written; not read or hashed.",
+      "scope": "Global-composition and odd-prime independent reviews"
+    },
+    {
+      "reason": "Not hashed or edited. Root explicitly confirmed the candidate is stable for this snapshot.",
+      "scope": "STATE/HANDOFF/workflow and any other changing shared notes"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills remain UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 23988,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/dyadic_compiler_round/usage.json",
+    "sha256": "d9c3d742a8dcd74d5790b397d4b5f6c2a322c859fc6e2ebefc16f01bd3561618"
+  },
+  "local_request_ceiling_total_usd": "40.000000",
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 53,
+      "dyadic_composition_round": {
+        "completed_nonempty_reports": 3,
+        "empty_refusal_reports": 1,
+        "jobs": 4,
+        "status_counts": {
+          "completed": 3,
+          "empty_response": 1
+        },
+        "terminal_jobs": 4,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "5.150502"
+      },
+      "empty_response_count": 16,
+      "frozen_prior_estimate_usd": "118.367096",
+      "frozen_prior_known_terminal_records": 118,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_seven_explicit_jobs": 126,
+      "known_estimate_by_status_usd": {
+        "completed": "42.844076",
+        "empty_response": "2.565214",
+        "truncated": "78.108308"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "123.517598",
+      "known_terminal_nonpartial_usage_records": 122,
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "status_counts_through_dyadic_composition": {
+        "completed": 53,
+        "dry_run": 1,
+        "empty_response": 16,
+        "failed": 3,
+        "truncated": 53
+      },
+      "terminal_results": 125,
+      "truncated_and_empty": 40,
+      "truncated_and_nonempty": 13
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 25,
+      "dyadic_composition_round": {
+        "completed_nonempty_reports": 3,
+        "empty_refusal_reports": 0,
+        "jobs": 3,
+        "status_counts": {
+          "completed": 3
+        },
+        "terminal_jobs": 3,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "9.150060"
+      },
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "46.879760",
+      "frozen_prior_known_terminal_records": 23,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_seven_explicit_jobs": 26,
+      "known_estimate_by_status_usd": {
+        "completed": "53.526310",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "56.029820",
+      "known_terminal_nonpartial_usage_records": 26,
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_through_dyadic_composition": {
+        "completed": 25,
+        "incomplete": 1
+      },
+      "terminal_results": 26,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "report_note": "All API reports are advisory. Terminal/completed counts describe saved artifacts and do not certify conclusions. Parent scientific dispositions are preserved as snapshots; this milestone neither promotes nor rejects the candidate.",
+  "scope": "Frozen dyadic-compiler prior plus exactly seven terminal dyadic-composition jobs in the named dispatch. Actual result files/saved usage authoritative; no historical rescan or retry."
+}

@@ -1,0 +1,38 @@
+published reproduced: True []
+       p     comb       uk     ukTr     iiiQ    iiiTr   iiiTot       wd    worst      tri
+      11    202.1       --       --     42.3     28.3     47.0    103.5    202.1    202.1  old
+      11    118.7       --       --     42.3     28.3     47.0    103.5    118.7    118.7  new
+          changed: {'combined_Q': ('202.1', '118.7'), 'combined_worst_case_Q': ('202.1', '118.7')} | uk identical: True
+          BS grades old/new: [] [] | S2 kept: [] | S1 kept (BS rule): ['2', '4', '5', '6', '8'] | S1 (worst case): ['2', '4', '5', '6', '8']
+          S1 depths: [{'d': 2, 'kappa': 2, 't': 3, 'L': 2, 'full_depth': 2, 'h_even': False, 'preprocessing': 'deterministic'}, {'d': 4, 'kappa': 2, 't': 3, 'L': 2, 'full_depth': 2, 'h_even': False, 'preprocessing': 'deterministic'}, {'d': 5, 'kappa': 5, 't': 2, 'L': 1, 'full_depth': 3, 'h_even': True, 'preprocessing': 'deterministic'}, {'d': 6, 'kappa': 2, 't': 3, 'L': 2, 'full_depth': 2, 'h_even': False, 'preprocessing': 'deterministic'}, {'d': 8, 'kappa': 2, 't': 3, 'L': 2, 'full_depth': 2, 'h_even': False, 'preprocessing': 'deterministic'}]
+          new combined arities: {'2': ['S1', '419904'], '3': ['lin', '17'], '4': ['S1', '202500'], '5': ['S1', '3625908203125'], '6': ['S1', '40000'], '7': ['lin', '7'], '8': ['S1', '1024'], '9': ['lin', '2']}
+    1031    167.3       --       --     36.6     33.4     50.8     93.0    167.3    164.0  old
+    1031     83.9       --       --     36.6     33.4     50.8     93.0     83.9     80.5  new
+          changed: {'combined_Q': ('167.3', '83.9'), 'combined_worst_case_Q': ('167.3', '83.9')} | uk identical: True
+          BS grades old/new: [] [] | S2 kept: ['2', '4', '6', '8'] | S1 kept (BS rule): ['5'] | S1 (worst case): ['5']
+          S1 depths: [{'d': 5, 'kappa': 5, 't': 2, 'L': 1, 'full_depth': 3, 'h_even': True, 'preprocessing': 'deterministic'}]
+          new combined arities: {'2': ['S2', '324'], '3': ['lin', '17'], '4': ['S2', '225'], '5': ['S1', '3625908203125'], '6': ['S2', '100'], '7': ['lin', '7'], '8': ['S2', '16'], '9': ['lin', '2']}
+    5281    852.3     50.3    128.2     39.1     33.8     52.2    119.9    852.3    851.4  old
+    5281    271.5     50.3    128.2     39.1     33.8     52.2    119.9    271.5    270.5  new
+          changed: {'combined_Q': ('852.3', '271.5'), 'combined_worst_case_Q': ('852.3', '271.5')} | uk identical: True
+          BS grades old/new: [] [] | S2 kept: ['2'] | S1 kept (BS rule): ['3', '4', '5', '6', '8', '9'] | S1 (worst case): ['3', '4', '5', '6', '8', '9']
+          S1 depths: [{'d': 3, 'kappa': 3, 't': 2, 'L': 1, 'full_depth': 2, 'h_even': True, 'preprocessing': 'deterministic'}, {'d': 4, 'kappa': 4, 't': 2, 'L': 1, 'full_depth': 3, 'h_even': True, 'preprocessing': 'Las Vegas'}, {'d': 5, 'kappa': 5, 't': 2, 'L': 1, 'full_depth': 3, 'h_even': True, 'preprocessing': 'deterministic'}, {'d': 6, 'kappa': 6, 't': 2, 'L': 1, 'full_depth': 3, 'h_even': True, 'preprocessing': 'Las Vegas'}, {'d': 8, 'kappa': 8, 't': 2, 'L': 1, 'full_depth': 4, 'h_even': True, 'preprocessing': 'deterministic'}, {'d': 9, 'kappa': 3, 't': 2, 'L': 1, 'full_depth': 2, 'h_even': True, 'preprocessing': 'deterministic'}]
+          new combined arities: {'2': ['S2', '324'], '3': ['S1', '132651'], '4': ['S1', '207360000'], '5': ['S1', '3625908203125'], '6': ['S1', '470184984576000000'], '7': ['lin', '7'], '8': ['S1', '1267650600228229401496703205376'], '9': ['S1', '216']}
+  2^31-1    940.3     50.9    121.6     35.9     31.0     49.8    127.1    944.9    940.5  old
+  2^31-1    355.0     50.9    121.6     35.9     31.0     49.8    127.1    359.6    355.2  new
+          changed: {'combined_Q': ('940.3', '355.0'), 'combined_worst_case_Q': ('944.9', '359.6')} | uk identical: True
+          BS grades old/new: [2, 3] [2, 3] | S2 kept: ['4', '8'] | S1 kept (BS rule): ['6', '7', '9'] | S1 (worst case): ['6', '7', '9']
+          S1 depths: [{'d': 6, 'kappa': 6, 't': 3, 'L': 2, 'full_depth': 3, 'h_even': False, 'preprocessing': 'Las Vegas'}, {'d': 7, 'kappa': 7, 't': 2, 'L': 1, 'full_depth': 3, 'h_even': True, 'preprocessing': 'deterministic'}, {'d': 9, 'kappa': 9, 't': 2, 'L': 1, 'full_depth': 4, 'h_even': True, 'preprocessing': 'deterministic'}]
+          new combined arities: {'2': ['BS(J=3)', '91'], '3': ['BS(J=3)', '81'], '4': ['S2', '225'], '5': ['lin', '13'], '6': ['S1', '221073919720733357899776000000000000'], '7': ['S1', '459986536544739960976801'], '8': ['S2', '16'], '9': ['S1', '11534540567008857298862155711883592192']}
+  2^61-1    533.4     52.9    128.3     34.1     33.5     51.0    150.8    555.4    542.0  old
+  2^61-1    164.1     52.9    128.3     34.1     33.5     51.0    150.8    186.1    172.6  new
+          changed: {'combined_Q': ('533.4', '164.1'), 'combined_worst_case_Q': ('555.4', '186.1')} | uk identical: True
+          BS grades old/new: [2, 3, 4, 5, 6, 7, 8] [2, 3, 4, 5, 6, 7, 8] | S2 kept: [] | S1 kept (BS rule): ['9'] | S1 (worst case): ['9']
+          S1 depths: [{'d': 9, 'kappa': 9, 't': 2, 'L': 1, 'full_depth': 4, 'h_even': True, 'preprocessing': 'deterministic'}]
+          new combined arities: {'2': ['BS(J=3)', '91'], '3': ['BS(J=3)', '81'], '4': ['BS(J=3)', '64'], '5': ['BS(J=5)', '28'], '6': ['BS(J=6)', '16'], '7': ['BS(J=7)', '8'], '8': ['BS(J=3)', '7'], '9': ['S1', '11534540567008857298862155711883592192']}
+ 2^127-1     41.4     49.9    115.2     34.0     31.0     49.5    142.0     61.5     48.3  old
+ 2^127-1     41.4     49.9    115.2     34.0     31.0     49.5    142.0     61.5     48.3  new
+          changed: {} | uk identical: True
+          BS grades old/new: [2, 3, 4, 6, 7, 8, 9] [2, 3, 4, 6, 7, 8, 9] | S2 kept: [] | S1 kept (BS rule): [] | S1 (worst case): []
+          S1 depths: []
+          new combined arities: {'2': ['BS(J=3)', '91'], '3': ['BS(J=3)', '81'], '4': ['BS(J=3)', '64'], '5': ['lin', '13'], '6': ['BS(J=6)', '16'], '7': ['BS(J=7)', '8'], '8': ['BS(J=3)', '7'], '9': ['BS(J=9)', '3']}

@@ -1,7 +1,8 @@
 {
-  "billing_status": "unknown",
+  "billing_status": "usage_reported",
   "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
   "effort": "max",
+  "error": null,
   "files": [
     {
       "path": "research/audits/api_inputs/2026-11-12-precision-effectivity/arithmetic-precision.md",
@@ -40,6 +41,8 @@
       "sha256": "e2bbcf7e3ebf2fbabeafe7f922048505076fdeb4ef0640b01eb1595b6eb4be0c"
     }
   ],
+  "finished_at": "2026-11-12T12:22:32.510328+00:00",
+  "incomplete_details": null,
   "max_budget_usd": "10",
   "max_tokens": 128000,
   "model": "gpt-6-astra",
@@ -53,5 +56,18 @@
   },
   "response_id": "resp_08eed659c01cc09c016af5acf8074087d0be477bb4c887a745",
   "started_at": "2026-11-12T12:11:34.236553+00:00",
-  "status": "running"
+  "status": "completed",
+  "usage": {
+    "input_tokens": 30324,
+    "input_tokens_details": {
+      "cache_write_tokens": 30321,
+      "cached_tokens": 0
+    },
+    "output_tokens": 28390,
+    "output_tokens_details": {
+      "reasoning_tokens": 22152
+    },
+    "total_tokens": 58714
+  },
+  "usage_cost_estimate_usd": "1.72274"
 }

@@ -1,0 +1,101 @@
+Been tried? Stoll high degree 2g+1 nonspecial Riemann Roch dyadic halving projective
+
+Killed before
+  1. negative   NEG-COSET-TYPICAL-DIRECT-FIXED-SUPPORT-TRANSFER-CONTRACTION  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH]
+     research/registry/negative_results.json:64408
+     Claim: The fixed-support marked-class contraction can be applied termwise to finish high-degree typical-irrep transfer traces.
+     Why not: Full-support pairs carry 89.5% of n=9 degree-28 weight and 20.5% of n=10 degree-five weight; support nine or ten carries 62.0% at n=10 degree five. Marked injection costs n! there.
+  2. negative   NEG-CODE-SELF-DUAL-GL-HSP-OPENING-SELF-DUAL-K16  [rowspace-symmetric-hsp-automorphism-proof-debt · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION]
+     research/registry/negative_results.json:59286
+     Claim: The GL_k dimension term creates an essential high-rate HSP opening for self-dual-k16.
+     Why not: RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.
+  3. negative   NEG-CODE-SELF-DUAL-GL-HSP-OPENING-SELF-DUAL-K8  [rowspace-symmetric-hsp-automorphism-proof-debt · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION]
+     research/registry/negative_results.json:59394
+     Claim: The GL_k dimension term creates an essential high-rate HSP opening for self-dual-k8.
+     Why not: RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.
+  4. negative   NEG-CODE-SELF-DUAL-GL-HSP-OPENING-SELF-DUAL-K6  [rowspace-symmetric-hsp-automorphism-proof-debt · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION]
+     research/registry/negative_results.json:59367
+     Claim: The GL_k dimension term creates an essential high-rate HSP opening for self-dual-k6.
+     Why not: RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.
+  5. negative   NEG-CODE-SELF-DUAL-GL-HSP-OPENING-SELF-DUAL-K10  [rowspace-symmetric-hsp-automorphism-proof-debt · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION]
+     research/registry/negative_results.json:59232
+     Claim: The GL_k dimension term creates an essential high-rate HSP opening for self-dual-k10.
+     Why not: RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.
+
+Dequantization checks
+  1. dequant    DEQ-COSET-TYPICAL-FIXED-SUPPORT-CONTRACTION-FAILS-ON-DOMINANT-SECTOR  [critical]
+     research/registry/dequantization_checks.json:1074
+     Claim: Fixed-support marked-class contraction directly scales to the high-degree transfer states needed for typical multiplicities.
+     Why not: Do not extend marked injection termwise. Derive and validate a collective full-support representation, branching, centralizer, or tensor-network contraction before auditing higher n=10 blocks.
+  2. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIE  [high]
+     research/registry/dequantization_checks.json:3164
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+  3. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIES  [high]
+     research/registry/dequantization_checks.json:3186
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7366
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:7454
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO-CODE-FAMILY-SEARCH: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+
+Notes and handoff
+  1. note       Inverse Trace: Ray-Class Scope And A Direct HSP Barrier › Ray Convention And Bounded Effective Selection  [unlabelled]
+     research/INVERSE_TRACE_RAY_CLASS_SCOPE.md:107
+     Ordinary effective representatives in a Jacobian can be computed using Riemann-Roch; that fact does not supply this constrained representative.
+  2. note       Local Kummer images by halving and saturation › Selected question and independent comparison  [unlabelled]
+     research/LOCAL_HALVING_SATURATION.md:9
+     Native input is a monic squarefree f in Z[x], degree 2g+1 with growing g and coefficient bit size B, prime p in binary.
+  3. note       Numerical torsion lift from closed divisors › Exact statement  [unlabelled]
+     research/SURFACE_TORSION_NUMERICAL_LIFT.md:8
+     Given a genus-g curve with good reduction at P, an actual point O, a faithful separable plane/function-field presentation of its good special curve, and polynomial-size exact generic Riemann--Roch coordinates, an actual prime-to-P ell-torsion class represented by closed divisors can be lifted to pr…
+  4. handoff    2026-11-07 Local Saturation Dyadic Index  [journal]
+     research/AGENT_HANDOFF.md:2495
+     NEW closed addendum proves polynomial DYADIC iteration bound kappa<=D0+2g(4D+12)+gM+3g-t, D=v2(disc f), M=2ceil(log2g)+4.
+  5. handoff    2026-11-07 Local Halving Saturation Admission  [journal]
+     research/AGENT_HANDOFF.md:2520
+     OPEN native question: LOCAL_HALVING_SATURATION.md seeks complete Kummer image of J(Qp)/2 for EVERY monic odd-degree hyperelliptic input, growing genus, including bad/wild/dyadic primes.
+
+Code and experiments
+  1. hypothesis dcp_radix_4_quaternary_qft_butterfly_depth_halving_bridge_contract  [VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING]
+     research/hypotheses/dcp_radix_4_quaternary_qft_butterfly_depth_halving_bridge_contract.json
+     Factoring QFT_{4^k}^dagger into k radix-4 quaternary digit pairs is unitarily identical to the 2k-stage radix-2 QFT_{2^{2k}}^dagger while halving the number of outer Cooley-Tukey stages from 2k to k.
+  2. experiment Self Dual Wreath Dense Automaton Fiber Dyadic Boundary  [planned]
+     research/registry/experiments.json:5366
+     exp code self dual wreath dense automaton fiber dyadic boundary.
+  3. hypothesis dcp_even_sublattice_parity_blindness_and_rescaling_bridge_contract  [VERIFIED_SCOPED_BRIDGE]
+     research/hypotheses/dcp_even_sublattice_parity_blindness_and_rescaling_bridge_contract.json
+     Any target shift h with an odd coordinate has strictly zero compressed collisions on ker(A mod 2), while for t >= 2 halving maps tilde_A_j(x_0)/2 -> B_j(x_0) in Z_{2^{t-1}}^n and h -> h' = (2^{t-2}, 0, ..., 0).
+  4. theorem    DCP even-sublattice parity blindness and mod-2^{t-1} rescaling bridge.  [code]
+     theorems/dcp_even_sublattice_parity_blindness_and_rescaling_bridge.py:1
+     Odd-Shift Blindness and Mod-2^{t-1} Halving Isomorphism:
+   - Every compressed difference tilde_A (u - u') mod 2^t lies in (2 Z_{2^t})^n, so any
+     shift vector h in Z_{2^t}^n with at least one odd coordinate (including the t=1
+     half-period target h = (1, 0, ..., 0)) has strictly zero compres…
+  5. theorem    DCP radix-4 quaternary QFT butterfly stage-depth halving and truncation dominance bridge.  [code]
+     theorems/dcp_radix_4_quaternary_qft_butterfly_depth_halving_bridge.py:1
+     dcp radix 4 quaternary qft butterfly depth halving bridge.
+
+Literature
+  1. literature hermite_decoder_prior_art  [audit]
+     research/literature_audits/hermite_decoder_prior_art.json
+     A polynomial with a nonzero highest derivative coefficient need not have a regular base-field point in the high-degree regime.
+  2. literature dcp_projective_code_admission_sources  [audit]
+     research/literature_audits/dcp_projective_code_admission_sources.json
+     AUDIT-DCP-PROJECTIVE-CODE-ADMISSION DCP_BELL_INFERENCE_KERNEL.md DCP_NATIVE_SCHUR_EXPANSION.md DCP_BOOLEAN_PHASE_PULLBACK.md STATE_HSP_DHSP_SCOPE.md odd-secret Pauli target equivalence noncentral dihedral commutator criterion native fixed-CSS code shortened-kernel formula systematic-tail Bell signa…
+  3. literature ternary_pair_collimation_sources  [audit]
+     research/literature_audits/ternary_pair_collimation_sources.json
+     Underfull density1/3 gives exact4*beta informative acceptance after independent target high-trit rejection.
+  4. literature ternary_schur_closure_sources  [audit]
+     research/literature_audits/ternary_schur_closure_sources.json
+     2026-10-06 Complete native weighted top tensor admission using compact span bases and exact mixed derivative witnesses Characteristic3 odd function saturation bound2k-1 and legal product-witness padding Explicit disjoint native low-kernel refinement once odd powers saturate Independent fixed-frame…
+  5. literature Polynomial time key-recovery attack on high rate random alternant codes  [seed · code-equivalence, alternant-code, schur-product, support-recovery]
+     research/literature_records.json
+     Polynomial time key-recovery attack on high rate random alternant codes Shows that shortening, componentwise products, conductors, and algebraic recovery can destroy apparent alternant-code hardness.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

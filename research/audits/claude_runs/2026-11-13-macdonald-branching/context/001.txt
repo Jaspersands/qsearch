@@ -1,0 +1,1032 @@
+Actual https://arxiv.org/pdf/2610.12326v1, physical LF135-1165, definitions and full spectral/creation arguments.
+Q
+  b∈λ hλ (b)hλ (b) [1, Chapter VI, (6.19) and (8.3)].
+    A box s ∈ / λ is an addable corner of λ if λ ∪ {s} is a partition, and a box r ∈ λ is a removable
+corner if λ \ {r} is a partition. We write Aλ and Rλ for these sets, λ + s and λ − r for the resulting
+partitions, and b+ := b + (1, 1) for any box b. The set of outer corners is
+
+                                           R+     +
+                                            λ = {r : r ∈ Rλ },
+
+and |Aλ | = |Rλ | + 1. Explicitly, let the distinct nonzero parts of λ be L1 > L2 > · · · > Lm , with
+multiplicities d1 , . . . , dm , and put Ik = d1 + · · · + dk , I0 = 0 and Lm+1 = 0. Then
+
+                  Aλ = {(Ik , Lk+1 ) : 0 ≤ k ≤ m},             R+
+                                                                λ = {(Ik , Lk ) : 1 ≤ k ≤ m}.
+
+We call these the corner coordinates of λ. The content of a box b = (i, j), whether or not it lies in
+λ, is
+                                        [b] = [i, j] := ti q−j ,
+so that [a + b] = [a][b] and [a − b] = [a]/[b] for the coordinatewise sum and difference of boxes. Since
+q, t are indeterminates, distinct boxes have distinct contents.
+
+
+
+
+                                                       3
+2.2    The Nazarov–Sklyanin Lax operator
+We use notation from Nazarov–Sklyanin [2] where possible, and Pλ and Jλ denote Macdonald
+polynomials1 . Define the generating series
+                                                                     
+                                   X                  X 1 − tn
+                           Q(z) =      Qn z n = exp           pn z n  ,
+                                                          n
+                                           n≥0                  n≥1
+
+and let Q∗n be the adjoint to multiplication by Qn , that is
+                                                             
+                            X                  X 1 − qn                                        ∂
+                  Q∗ (z) =     Q∗n z n = exp            p⊥
+                                                          nz
+                                                             n
+                                                                ,                  p⊥
+                                                                                    n =n          .
+                                                     n                                        ∂pn
+                               n≥0                    n≥1
+
+
+    Let Λ∞ = z −1 Λ[z −1 ], so Λ[z −1 ] = Λ ⊕ Λ∞ . For a Laurent series f in z with coefficients in Λ,
+let π− f , π0 f and π≤0 f be its parts with negative, zero and nonpositive powers of z. Define the
+multiplication operator
+                                         Dx (z −m f ) = xm z −m f.
+
+Definition 2.1 (Nazarov–Sklyanin Macdonald Lax operator [2]).
+
+                                  LN S = Q∗ (z −1 )Dt π− Q(z) ∈ End(Λ∞ ).
+
+    Nazarov and Sklyanin also use the two maps
+
+                                     Q : Λ∞ → Λ,            Qf = π0 Q(z)f (z),
+
+and
+                        Q∗ : Λ → Λ∞ ,            Q∗ g = (Q∗ (z −1 ) − 1)g = π− Q∗ (z −1 )g,
+and the scalar resolvent
+                                           I(u) := Q(uDq − LN S )−1 Q∗ .                                       (4)
+   In [3], Nazarov and Sklyanin introduced ‘Macdonald’ operators A(k) on Λ, k = 0, 1, 2, . . ., via
+the series
+                              X A(k)                         k−1
+                                                             Y
+                                                     −1
+                      A(u) =                 , (u; t    )k =    (1 − ut−j ),
+                                  (u; t−1 )k
+                                     k≥0                                     j=0
+
+which is diagonal on Macdonald polynomials:
+                                                                       Y q−λi − ut1−i
+                            A(u)Pλ = Aλ (u)Pλ ,             Aλ (u) =                      ;                    (5)
+                                                                              1 − ut1−i
+                                                                       i≥1
+
+see also [2, (1.19)–(1.20)].
+
+Theorem 2.2 (Nazarov–Sklyanin, [2, Theorem 1]). The scalar resolvent (4) satisfies
+
+                                              uI(u)      A(u)
+                                                    =1−          .
+                                              u−1       A(ut−1 )
+  1
+    In [2], Pλ and Qλ are Hall–Littlewood functions and the Macdonald functions are written Mλ . For the Jack case,
+Mickler–Moll [5] use the power series variable w := z −1 .
+
+
+
+                                                            4
+    The eigenvalues Aλ (u) have a product form over the boxes of λ, in terms of the single-box factor
+                                               (1 − [1, 1]/u)(1 − [0, 0]/u)
+                                    N (u) :=                                .                        (6)
+                                               (1 − [0, 1]/u)(1 − [1, 0]/u)
+Lemma 2.3.
+                                          Aλ (u)      Y
+                                                    =   N (u/[b])−1 .
+                                         Aλ (ut−1 )
+                                                        b∈λ
+
+Equivalently,                                            Q
+                                                               (1 − [a]/u)
+                                     Aλ (u)             a∈Aλ
+                                               =                              .
+                                    Aλ (ut−1 )
+                                                          Q
+                                                                (1 − [b]/u)
+                                                   b∈R+
+                                                      λ ∪{(0,0)}
+
+Proof. For the boxes in row i − 1,
+                          i −1
+                         λY
+                                                        (1 − ti−1 q−λi /u)(1 − ti /u)
+                                 N (u/[i − 1, j])−1 =
+                                                        (1 − ti−1 /u)(1 − ti q−λi /u)
+                         j=0
+
+                                                        (q−λi − ut1−i )(1 − ut−i )
+                                                    =                              .
+                                                        (1 − ut1−i )(q−λi − ut−i )
+
+This is the ith factor of Aλ (u)/Aλ (ut−1 ), and the product over i gives the first identity. In the
+product over boxes the factors shared by adjacent boxes cancel, which leaves the second form.
+
+
+3     The full Lax operator
+We now reformulate the results of the previous section in the framework of Mickler–Moll [5] and
+Mickler [6].
+
+3.1   Definition and block form
+We define an inner product on the full space Λ[z −1 ] by
+
+                                     ⟨f, g⟩∞ = CTz ⟨f (q−1 z), g(z −1 )⟩q,t ,                        (7)
+
+where CTz takes the constant term in z. Equivalently, ⟨z −m pµ , z −n pν ⟩∞ = qm δmn ⟨pµ , pν ⟩q,t . Con-
+sider the following operator on Λ[z −1 ],
+                                                                               
+                                                        X 1 − tn
+                  (Qf )(z) = π≤0 Q(z)f (z) = π≤0 exp              pn z n  f (z) ,
+                                                              n
+                                                                   n≥1
+
+with formal adjoint with respect to (7) given by
+                                                              
+                                              X 1 − q−n
+                Q† = Q∗ (q−1 z −1 ) = exp −            p⊥
+                                                         nz
+                                                            −n 
+                                                                 ∈ End(Λ[z −1 ]).
+                                                   n
+                                                    n≥1
+
+Definition 3.1 (Full Macdonald Lax operator; compare [5, Definition 1.1]). The Macdonald Lax
+operator is
+                             L := Q† Dq−1 t Q ∈ End(Λ[z −1 ]).                            (8)
+
+                                                        5
+   The operator L is formally self-adjoint with respect to (7) and preserves the total degree, with
+deg z −1 = 1. This operator does not appear in [2], but its relation to their scalar resolvent (4) is
+explained in Section 3.2. We relate L to the following modified Nazarov–Sklyanin Lax operator on
+Λ∞ .
+Definition 3.2.
+                                        L+ := Dq−1 LN S ∈ End(Λ∞ ).
+Lemma 3.3 (Shift property; compare [6, Corollary 2.5]). As operators on Λ[z −1 ],
+                                               z L+ z −1 = q−1 t L.
+Proof. We start from L+ = Dq−1 LN S = Dq−1 Q∗ (z −1 )Dt π− Q(z). The series Q(z) and Q∗ (z −1 )
+commute with multiplication by z, so conjugation by z(·)z −1 only acts on the diagonal operators
+and the projection:
+                    z Dq−1 z −1 = q−1 Dq−1 ,       z Dt z −1 = t Dt ,   z π− z −1 = π≤0 .
+Therefore
+         z L+ z −1 = q−1 Dq−1 Q∗ (z −1 ) t Dt π≤0 Q(z) = q−1 t Dq−1 Q∗ (z −1 ) Dt π≤0 Q(z) = q−1 t L,
+where the last step uses Dq−1 t = Dq−1 Dt and Q∗ (q−1 z −1 )Dq−1 = Dq−1 Q∗ (z −1 ).
+Lemma 3.4 (Block form of L). With respect to Λ[z −1 ] = Λ ⊕ Λ∞ , we have
+                                                            
+                                    1               Q
+                           L=
+                                 Dq−1 Q∗ Dq−1 (Q∗ Q + LN S )
+Proof. By the previous lemma,
+                                         L = (qt−1 )zDq−1 LN S z −1 .
+For f ∈ Λ and χ ∈ Λ∞ ,
+                            π− Q(z)z −1 (f + χ) = z −1 (f + Qχ + π− Q(z)χ) .
+Using Dt z −1 = tz −1 Dt and
+                                               qzDq−1 z −1 = Dq−1 ,
+we get
+                           L(f + χ) = Dq−1 Q∗ (z −1 )Dt (f + Qχ + π− Q(z)χ) .
+Since f + Qχ ∈ Λ, this equals
+                                                                   
+                                                  f + Qχ
+                                                                      .
+                                      Dq−1 Q∗ (f + Qχ) + Dq−1 LN S χ
+
+
+   Although L is not multiplicative, it is multiplicative when one factor lies in Λ.
+Lemma 3.5. For η ∈ Λ = π0 Λ[z −1 ] and b ∈ Λ[z −1 ],
+                                               L(ηb) = L(η)L(b).
+Proof. Since η has no z-dependence, Q(ηb) = ηQb and Dq−1 t η = η. The operator Q† is an
+exponential of commuting derivations and hence preserves multiplication. Therefore
+                       L(ηb) = Q† ηDq−1 t Qb = (Q† η)L(b) = L(η)L(b).
+                                            
+
+
+
+
+                                                        6
+3.2     Transfer operators and Kerov measures
+We now make the connection to the integrable hierarchy, via the transfer function, which was one
+of the motivations of Nazarov–Sklyanin.
+
+Definition 3.6 (compare [5, (2.2)]). The transfer operator is
+                                                              ∞
+                                                              X
+                                          −1    −1
+                     T (u) := π0 (1 − u        L)     Λ
+                                                          =         u−k Tk ,      Tk ∈ End(Λ).
+                                                              k=0
+
+Proposition 3.7 (compare [5, (2.3)]). For every partition λ,
+
+                                                     Sλ (u)                           Aλ (ut−1 ) Y
+        T (u)Jλ = Tλ (u)Jλ ,     Tλ (u) := 1 +              ,           Sλ (u) :=               =  N (u/[b]),
+                                                     u−1                               Aλ (u)
+                                                                                                  b∈λ
+
+and                                                       Q
+                                                                    +   (1 − [b]/u)
+                                                      −1 Qb∈Rλ
+                                 Tλ (u) = 1 + u                                       .                         (9)
+                                                              a∈Aλ (1 − [a]/u)
+
+In particular the operators Tk commute and are diagonal on the Macdonald polynomials.
+
+Proof. Set
+                     F = u−1 (1 − u−1 L)−1 Jλ = f + χ,                    f = π0 F,       χ = π− F.
+Using the block form of L, the equation (u − L)F = Jλ is equivalent to (u − 1)f − Qχ = Jλ and
+
+                                   (uDq − LN S )χ = Q∗ (f + Qχ).
+
+The first equation gives f + Qχ = uf − Jλ . Substituting this into the second equation and applying
+Q(uDq − LN S )−1 gives Qχ = I(u)(uf − Jλ ). Substitution back into the first equation gives
+                                                
+                                 (u − 1) − uI(u) f = (1 − I(u))Jλ .
+
+By Theorem 2.2 and (5), I(u) is diagonal in the Macdonald basis, and on Jλ
+                                                    u−1
+                                                        1 − Sλ (u)−1 .
+                                                                    
+                                     I(u) =
+                                                     u
+Hence
+                                                                                 1 + (u − 1)Sλ (u)−1
+               (u − 1) − uI(u) = (u − 1)Sλ (u)−1 ,                  1 − I(u) =                       .
+                                                                                          u
+Therefore
+                1 + (u − 1)Sλ (u)−1
+                                                                     
+                                                               Sλ (u)
+             f=                     Jλ ,   T (u)Jλ = uf = 1 +           Jλ = Tλ (u)Jλ .
+                 u(u − 1)Sλ (u)−1                               u−1
+                                                    Q                 Q
+The corner form (9) follows from Sλ (u) = (1 − 1/u) b∈R+ (1 − [b]/u)/ a∈Aλ (1 − [a]/u), which is
+                                                         λ
+Lemma 2.3.
+
+Definition 3.8 (Kerov [9, Definitions 2.3 and 2.8]). The transition measure of λ is the family
+{τλs }s∈Aλ determined by
+                                            X       τλs
+                                   Tλ (u) =               .
+                                                1 − [s]/u
+                                                      s∈Aλ
+
+
+                                                          7
+Explicitly,                                      Q
+                                              1    b∈R+   (1 − [b − s])
+                                       τλs =    Q       λ
+                                                                           .
+                                             [s] a∈Aλ , a̸=s (1 − [a − s])
+The co-transition measure at an outer corner b ∈ R+      λ is
+                                          Q
+                                   b         a∈Aλ (1 − [a − b])
+                                τ̃λ := Q                        ′
+                                                                       .
+                                         b′ ∈R+ , b′ ̸=b (1 − [b − b])
+                                                      λ
+
+
+   By (9) and |Aλ | = |R+
+                        λ | + 1,
+                                                          Q
+                                                              b∈R+ (u − [b])
+                                                                 λ
+                                         Tλ (u) − 1 = Q                        ,                 (10)
+                                                          a∈Aλ (u − [a])
+
+so both measures are residues:
+                                     1                              1             1
+                            τλs =       Res Tλ (u),       τ̃λb =      2
+                                                                        Res             .        (11)
+                                    [s] u=[s]                      [b] u=[b] Tλ (u) − 1
+
+The expansionQdefining τλs Q
+                           holds because Tλ has simple poles at the [s], Tλ (∞) = 1 and Tλ (0) = 0,
+the last since b∈R+ [b] = a∈Aλ [a] in the corner coordinates of Section 2.1.
+                       λ
+
+Remark 3.9. We follow Kerov (see also [8]) and [5] in these names: the transition measure lives
+on the addable corners and the co-transition measure on the outer corners. Applied to (10), his
+expansion [9, (2.1)] would give the weights [s]τλs ; both families have total mass 1 (Lemma 3.10), and
+                                                                   b          2
+       P in the Jack limit, where every [s] → 1. Likewise τ̃λ = −νb /[b] , where 1/(Tλ (u) − 1) =
+they agree
+u − c − b∈R+ νb /(u − [b]) is Kerov’s expansion [9, (2.5)]. Kerov normalizes the νb to total mass 1;
+              λ
+we do not.
+
+Lemma 3.10 (Kerov moments). For every partition λ,
+                            X                X
+                                τλa = 1,         [a] τλa = 1,
+                                       a∈Aλ                   a∈Aλ
+
+and, as identities of rational functions of u,
+               X        τλa [a]                                 1          1  X [b] τ̃ b
+                                                                                      λ
+                                = u(Tλ (u) − 1),                        =1− +             .
+                      1 − [a]/u                           u(Tλ (u) − 1)    u   +
+                                                                                 u −  [b]
+               a∈Aλ                                                                     b∈Rλ
+
+For s ∈ Aλ ,
+                                              X     [b] τ̃λb     1
+                                                             =1− .                               (12)
+                                                +
+                                                  [b] − [s]     [s]
+                                            b∈Rλ
+
+                      = 1+u−1 +O(u−2 ) as u → ∞, while Definition 3.8 gives Tλ (u) = a τλa u/(u−
+                                                                                       P
+Proof. PBy (9), Tλ (u)P
+[a]) = a τλa + u−1 a [a]τλa + O(u−2 ). Comparing coefficients gives the first two identities. The
+third follows from [a]/(1 − [a]/u) = u/(1 − [a]/u) − u, Definition 3.8 and the first. The left side
+of the fourth is 1 at u = ∞, has residue −1 at u = 0 because Tλ (0) = 0, and has residue [b]τ̃λb at
+u = [b] by (11). Finally, (12) is the fourth identity at u = [s], where Tλ has a pole.
+
+
+
+
+                                                          8
+3.3   Spectral theorem
+Proposition 3.11 (Spectral theorem for L; compare [5, Theorem 1.4]). For a partition λ ̸= ∅ and
+s ∈ Aλ , let Ψsλ ∈ Λ[z −1 ] be the value at u = [s] of the Λ[z −1 ]-valued rational function of u
+                                                           −1
+                                       Jλ + Dq − LN S /u Q∗ Jλ .
+                                (0,0)
+For the empty partition, set Ψ∅         = 1. Then Ψsλ is well defined,
+
+                                        LΨsλ = [s]Ψsλ ,       π0 Ψsλ = Jλ ,
+
+and the vectors Ψsλ , over all partitions λ and all s ∈ Aλ , form a basis of Λ[z −1 ].
+Proof. Work in a fixed total degree. The empty-partition case is immediate. Let λ ̸= ∅. By
+Theorem 2.2 and (5),                                        
+                                                    Aλ (u)
+                            uI(u)Jλ = (u − 1) 1 −              Jλ .
+                                                  Aλ (ut−1 )
+By Lemma 2.3, the poles of Aλ (u)/Aλ (ut−1 ) lie at the contents [b] with b ∈ R+ λ ∪ {(0, 0)}, and the
+                                                             / R+
+pole at [0, 0] = 1 is cancelled by the factor u − 1. Since s ∈  λ ∪  {(0, 0)} and distinct boxes have
+distinct contents, uI(u)Jλ is regular at u = [s]. Moreover the ratio vanishes at u = [s], so the value
+there is ([s] − 1)Jλ .
+    By the block form, the adjoint of Q for ⟨·, ·⟩∞ is Dq−1 Q∗ , and L+ is self-adjoint, being the
+lower-right block of L minus Dq−1 Q∗ Q. Temporarily choose real 0 < q, t < 1 away from poles and
+content coincidences, so that the scalar product is positive definite. Put vλ = Dq−1 Q∗ Jλ . Then
+
+                                ⟨Jλ , I(u)Jλ ⟩q,t = ⟨vλ , (u − L+ )−1 vλ ⟩∞ .
+
+In the spectral decomposition of L+ , the residue on the right at each eigenvalue is the squared norm
+of the corresponding component of vλ . Regularity at u = [s] thus implies that (u − L+ )−1 vλ is
+regular there as well. This holds over Q(q, t): the entries of (u − L+ )−1 vλ are rational functions of
+q, t, u, and a pole of an entry along u = [s] would persist after specializing (q, t) to a Zariski-dense
+set of points, hence to points of the open set chosen above. Consequently the rational vector
+
+                          ψ(u) := u(u − L+ )−1 vλ = (Dq − LN S /u)−1 Q∗ Jλ
+
+is regular at u = [s].
+    Now write Ψsλ = Jλ + ψ with ψ = ψ([s]) ∈ Λ∞ , so that π0 Ψsλ = Jλ . Since Qψ(u) = uI(u)Jλ for
+generic u, the first paragraph gives
+                                      Qψ = ([s] − 1)Jλ .
+Moreover, (Dq − LN S /u)ψ(u) = Q∗ Jλ identically in u, so Dq−1 LN S ψ(u) = uψ(u) − uDq−1 Q∗ Jλ , and
+evaluating at u = [s] gives
+                               Dq−1 LN S ψ = [s]ψ − [s]Dq−1 Q∗ Jλ .
+By the block form, the Λ-component of LΨsλ is Jλ + Qψ = [s]Jλ , and its Λ∞ -component is
+
+Dq−1 Q∗ Jλ + Dq−1 Q∗ Qψ + Dq−1 LN S ψ = Dq−1 Q∗ Jλ + ([s] − 1)Dq−1 Q∗ Jλ + [s]ψ − [s]Dq−1 Q∗ Jλ = [s]ψ.
+
+Hence LΨsλ = [s]Ψsλ .
+   It remains to prove that these eigenvectors form a basis. Fix a total degree N and suppose that
+                                       X X
+                                                 cλ,s Ψsλ = 0.
+                                             λ⊢N s∈Aλ
+
+
+                                                          9
+                                                          Q
+For each corner content a occurring in degree N , apply b̸=a (L − b), the product over the other
+corner contents b occurring in degree N , and then project with π0 . After dividing by the resulting
+nonzero common scalar, and using π0 Ψsλ = Jλ , this gives
+                                              X
+                                                         cλ,s Jλ = 0.
+                                          λ⊢N, s∈Aλ
+                                            [s]=a
+
+The addable corners of a fixed partition have distinct contents, so at most one term occurs for each
+Jλ . Their linear independence implies cλ,s = 0 for every pair (λ, s).
+    It remains only to count the vectors. If p(N ) is the number of partitions of N , then
+                                            !
+                             X X                        1 Y        1
+                                       |Aλ | xN =                      .
+                                                      1−x       1 − xm
+                             N ≥0   λ⊢N                           m≥1
+
+Indeed, |Aλ | is one plus the number of distinct positive parts of λ. Hence
+
+                                 X               N
+                                                 X
+                                       |Aλ | =         p(k) = dim Λ[z −1 ]N .
+                                 λ⊢N             k=0
+
+
+
+
+Proposition 3.12 (compare [5, (1.17)]). For every partition λ,
+                                             X
+                                       Jλ =      τλs Ψsλ .                                        (13)
+                                                       s∈Aλ
+
+                                          r                                                      −1
+                     P       P
+Proof. Expand Jλ = µ⊢|λ|       r∈Aµ cµ,r Ψµ in the basis of Proposition 3.11. Applying π0 (1−L/u)
+and using Proposition 3.7,                       X X            cµ,r 
+                                 Tλ (u)Jλ =                             Jµ .
+                                                              1 − [r]/u
+                                                 µ⊢|λ| r∈Aµ
+
+The addable corners of µ have distinct contents, so the functions (1 − [r]/u)−1 , r ∈ Aµ , are linearly
+independent. Comparing coefficients of Jµ gives cµ,r = 0 for µ ̸= λ, and for µ = λ Definition 3.8
+gives cλ,s = τλs .
+
+Proposition 3.13. The basis {Ψsλ } of Proposition 3.11 is orthogonal for ⟨·, ·⟩∞ . More precisely,
+for a partition λ put
+                             Zλ := {f (L)Jλ : f ∈ Q(q, t)[w]}.
+Then Zλ = span{Ψsλ : s ∈ Aλ }, the spaces Zλ are mutually orthogonal, and within each Zλ the
+vectors Ψsλ are orthogonal.
+
+Proof. The argument follows the cyclic-space proof of [5, Section 3]. Since the eigenvalues [s],
+s ∈ Aλ , are distinct, Proposition 3.12 and Lagrange interpolation give
+
+                                                  1 Y L − [r]
+                                        Ψsλ =                   Jλ ,
+                                                 τλs  [s] − [r]
+                                                    r∈Aλ
+                                                     r̸=s
+
+
+
+
+                                                        10
+so Zλ = span{Ψsλ : s ∈ Aλ }. Here τλs ̸= 0, since no factor in its formula in Definition 3.8
+vanishes: distinct boxes have distinct contents. By Proposition 3.7, π0 f (L)Jλ ∈ Q(q, t)Jλ for every
+polynomial f . If λ ̸= µ, F = f (L)Jλ ∈ Zλ and G = g(L)Jµ ∈ Zµ , then self-adjointness of L gives
+
+                                  ⟨F, G⟩∞ = ⟨Jλ , f (L)g(L)Jµ ⟩∞
+                                                = ⟨Jλ , π0 f (L)g(L)Jµ ⟩q,t = 0,
+
+because the Jλ are orthogonal. Thus Zλ ⊥ Zµ for λ ̸= µ. Within a fixed Zλ , the vectors Ψsλ have
+distinct eigenvalues and are therefore orthogonal by self-adjointness of L.
+
+Corollary 3.14 (Spectral theorem for L+ ; compare [6, Theorem 2.11]). In each total degree N ≥ 1,
+the vectors z −1 Ψλ−r
+                  r , indexed by λ ⊢ N and r ∈ R , form an orthogonal basis of Λ∞ for ⟨·, ·⟩ ,
+                                                   λ                                N         ∞
+and
+                                  L+ z −1 Ψλ−r
+                                           r
+                                               = [r+ ] z −1 Ψλ−r
+                                                             r
+                                                                 .
+Equivalently, these vectors solve the generalized eigenvalue problem LN S φ = [r+ ] Dq φ.
+
+Proof. By Lemma 3.3, L+ = (t/q) z −1 Lz on Λ∞ , and (t/q)[r] = [r+ ]. The pairs (λ−r, r) run over all
+pairs (γ, c) with γ ⊢ N − 1 and c ∈ Aγ . Multiplication by z −1 is an isomorphism Λ[z −1 ]N −1 → Λ∞
+                                                                                                  N
+with z −1 F, z −1 G ∞ = q ⟨F, G⟩∞ , so the claim follows from Propositions 3.11 and 3.13.
+
+Lemma 3.15. The transition measure admits the hook product form
+
+                                        ′
+                                                 Y          hλ (b)       Y          h′λ (b)
+                              τλs = qa (s)                                                   ,         (14)
+                                                           hλ+s (b)                h′λ+s (b)
+                                                 b∈λ                    b∈λ
+                                              b∈Rows (λ)              b∈Cols (λ)
+
+where Rows (λ) is the set of boxes of λ in the same row as s, Cols (λ) the set of boxes in the same
+column as s, and h, h′ are the hook factors of Section 2.1.
+
+Proof. In the corner coordinates of Section 2.1, write
+
+                    ak = (Ik , Lk+1 )       (0 ≤ k ≤ m),          rk = (Ik , Lk )        (1 ≤ k ≤ m)
+
+for the addable and outer corners. Fix
+
+                                            s = ap = (Ip , Lp+1 ) = (i, j).
+
+In these coordinates, the formula for τλs in Definition 3.8 reads
+                                                       m
+                                                       Y
+                                                         (1 − [rk ]/[s])
+                                                   1  k=1
+                                            τλs =     Y                   .                            (15)
+                                                  [s]     (1 − [ak ]/[s])
+                                                     0≤k≤m
+                                                      k̸=p
+
+      We now compute the two hook products in (14). First consider the boxes (i, c) in the row of s.
+For
+                                   Lk+1 ≤ c < Lk ,               p + 1 ≤ k ≤ m,
+
+
+
+
+                                                            11
+one has ℓλ (i, c) = Ik − Ip − 1, while adding s increases the arm by one. Hence the factors in each
+such block telescope:
+
+                                      k −1
+                                     LY
+                                               hλ (i, c)     1 − qj−Lk tIk −Ip
+                                                          =
+                                              hλ+s (i, c)   1 − qj−Lk+1 tIk −Ip
+                                   c=Lk+1
+                                                                  1 − [rk ]/[s]
+                                                              =                 .
+                                                                  1 − [ak ]/[s]
+
+Therefore
+                                                              m
+                                      Y             hλ (b)    Y 1 − [rk ]/[s]
+                                                            =                 .                                                (16)
+                                                   hλ+s (b)     1 − [ak ]/[s]
+                                   b∈Rows (λ)                     k=p+1
+
+   Next consider the boxes (c, j) in the column of s. For
+
+                                           Ik−1 ≤ c < Ik ,               1 ≤ k ≤ p,
+
+one has aλ (c, j) = Lk − j − 1, while adding s increases the leg by one. Thus
+                                   Ik −1
+                                    Y        h′λ (c, j)     1 − qLk −j tIp −Ik
+                                                         =
+                                            h′λ+s (c, j)   1 − qLk −j tIp −Ik−1
+                                  c=Ik−1
+                                                             1 − [s]/[rk ]
+                                                          =
+                                                            1 − [s]/[ak−1 ]
+                                                            [ak−1 ] 1 − [rk ]/[s]
+                                                          =                        .
+                                                             [rk ] 1 − [ak−1 ]/[s]
+
+Since
+                                   p                    p
+                                   Y [ak−1 ]            Y
+                                                    =         tIk−1 −Ik = t−Ip = t−i ,
+                                           [rk ]
+                                   k=1                  k=1
+
+we obtain
+                                                                     p
+                                    Y          h′λ (b)     −i
+                                                              Y 1 − [rk ]/[s]
+                                                        = t                    .                                               (17)
+                                              h′λ+s (b)        1 − [ak−1 ]/[s]
+                                 b∈Cols (λ)                         k=1
+
+   Multiplying (16) and (17) accounts for every shifted removable corner and every addable corner
+except ap = s. Since [s] = ti q−j , (15) becomes
+                                                   Y       hλ (b)          Y        h′λ (b)
+                                 τλs = qj                                                    .
+                                                          hλ+s (b)                 h′λ+s (b)
+                                             b∈Rows (λ)               b∈Cols (λ)
+
+Finally j = a′ (s), proving (14).
+
+Lemma 3.16. Let s ∈ Aλ . Then
+
+                ∥Jλ ∥2q,t
+   ∥Ψsλ ∥2∞ =
+                  τλs
+                    ′
+                                 Y                                       Y                            Y
+            = q−a (s)                              hλ (b)h′λ (b)                 hλ+s (b)h′λ (b)                hλ (b)h′λ+s (b).
+                        b∈λ\(Rows (λ)∪Cols (λ))                     b∈Rows (λ)                     b∈Cols (λ)
+
+
+
+
+                                                               12
+Proof. Since π0 Ψsλ = Jλ , grading gives
+
+                                           ⟨Ψsλ , Jλ ⟩∞ = ⟨Jλ , Jλ ⟩q,t .
+
+                        3.13, ⟨Ψsλ , Jλ ⟩∞ = τλs ∥Ψsλ ∥2∞ , which gives the first equality. Substituting
+By (13) and Proposition Q
+the hook norm ∥Jλ ∥q,t = b∈λ hλ (b)h′λ (b) and the transition-measure formula (14), then cancelling
+                   2
+
+the row and column factors, gives the second equality.
+
+Example 3.17 (Low-degree eigenvectors). Write
+
+                                     Ψsλ = Jλ + ψλs ,        ψλs ∈ z −1 Λ[z −1 ].
+
+   For |λ| = 1,
+                                            (0,1)
+                                           ψ(1) = −q−1 (q − 1)z −1 ,
+                                            (1,0)
+                                           ψ(1) = (t − 1)z −1 .
+   For |λ| = 2,
+                     (0,2)
+                    ψ(2) = −q−1 (q − 1)(q + 1)z −1 J(1) + q−2 (q + 1)(q − 1)2 z −2 ,
+                     (1,0)
+                    ψ(2) = q(t − 1)z −1 J(1) − (t − 1)(q − 1)z −2 ,
+                     (0,1)
+                    ψ(1,1) = −q−1 (q − 1)z −1 J(1) − q−1 (t − 1)(q − 1)z −2 ,
+                     (2,0)
+                    ψ(1,1) = (t − 1)(t + 1)z −1 J(1) + (t + 1)(t − 1)2 z −2 .
+
+   For |λ| = 3,
+                           (0,3)
+                      ψ(3) = −q−1 (q − 1)(q2 + q + 1)z −1 J(2)
+                                   + q−2 (q + 1)(q − 1)2 (q2 + q + 1)z −2 J(1)
+                                   − q−3 (q + 1)(q − 1)3 (q2 + q + 1)z −3 ,
+                           (1,0)
+                      ψ(3) = q2 (t − 1)z −1 J(2) − q(q + 1)(q − 1)(t − 1)z −2 J(1)
+                                   + (t − 1)(q + 1)(q − 1)2 z −3 .
+                   (0,2)
+                  ψ(2,1) = −q−1 (q − 1)(qt − 1)−1 (t − 1)J(2) + (q2 t − 1)J(1,1) z −1
+                                                                                
+
+                              + q−2 (q − 1)(q2 − qt + q − 1)z −2 J(1)
+                              + q−2 (t − 1)(q + 1)(q − 1)2 z −3 ,
+                   (1,1)
+                  ψ(2,1) = −q−1 (q − 1)(qt − 1)−1 (qt2 − 1)z −1 J(2)
+                              + (t − 1)(qt − 1)−1 (q2 t − 1)z −1 J(1,1)
+                              − q−1 (t − 1)(q − 1)(qt + q + 1)z −2 J(1)
+                              + q−1 (q − t)(t − 1)(q − 1)z −3 ,
+                   (2,0)
+                  ψ(2,1) = (t − 1)(qt − 1)−1 (qt2 − 1)z −1 J(2)
+                              + qt(t − 1)(q − 1)(qt − 1)−1 z −1 J(1,1)
+                              + (t − 1)(qt2 − qt − q + t)z −2 J(1)
+                              − (t + 1)(q − 1)(t − 1)2 z −3 .
+
+
+                                                        13
+                   (0,1)
+                  ψ(1,1,1) = −q−1 (q − 1)z −1 J(1,1) − q−1 (t − 1)(t + 1)(q − 1)z −2 J(1)
+                              − q−1 (t + 1)(q − 1)(t − 1)2 z −3 ,
+                   (3,0)
+                  ψ(1,1,1) = (t − 1)(t2 + t + 1)z −1 J(1,1)
+                              + (t + 1)(t − 1)2 (t2 + t + 1)z −2 J(1)
+                              + (t + 1)(t − 1)3 (t2 + t + 1)z −3 .
+
+4     Specialization and creation
+This section computes the principal specialization of the eigenvectors and the action on the eigen-
+basis of multiplication by z −1 and of the down map zπ− .
+
+4.1   Specialization
+We use the principal specialization of Macdonald [1, Chapter VI, (6.16)],
+                                                                             1 − vr
+                                  ϵv : Λ → Q(q, t, v),          ϵv (pr ) =          .
+                                                                             1 − tr
+Theorem 4.1 (Principal specialization; [1, Chapter VI, (6.17)]). For a partition λ,
+                                                       Y 1 − vqa′ (b) t−ℓ′ (b)
+                                    ϵv (Pλ ) = tn(λ)                               .
+                                                       b∈λ
+                                                           1 − qaλ (b) tℓλ (b)+1
+
+Thus, for the integral form,                              Y
+                                       ϵv (Jλ ) = tn(λ)         (1 − v/[b]) .
+                                                          b∈λ
+
+    Extend ϵv to a ring homomorphism on Λ[z −1 ] by ϵv (z −1 ) = 1.
+Proposition 4.2 (compare [5, Proposition 4.3]). For every partition λ and s ∈ Aλ ,
+                                                         [s] − v
+                                          ϵv (Ψsλ ) =            ϵv (Jλ ).
+                                                          1−v
+Proof. Write Ψsλ = Jλ +ψλs with ψλs = π− Ψsλ . By the block form (Lemma 3.4) and Proposition 3.11,
+                                    Qψλs = π0 (L − 1)Ψsλ = ([s] − 1)Jλ .
+Since ϵv (Qm ) = 1 − v for m ≥ 1, ϵv (Qψλs ) = (1 − v)ϵv (ψλs ). Hence ϵv (Ψsλ ) = ϵv (Jλ ) + ϵv (ψλs ) =
+[s]−v
+ 1−v ϵv (Jλ ).
+
+Corollary 4.3.
+                                         (1 − v/u)Tλ (u) − 1
+                         ϵv (u − L)−1 Jλ =                    ϵv (Jλ ).
+                                                 1−v
+Proof. Using (13) and Proposition 4.2,
+                                           X τ s [s] − v
+                         ϵv (u − L)−1 Jλ =        λ
+                                        
+                                                             ϵv (Jλ ).
+                                               u − [s] 1 − v
+                                                       s∈Aλ
+
+By Lemma 3.10,
+                           X τ s [s]                             X      τλs v   v
+                               λ
+                                     = Tλ (u) − 1,                             = Tλ (u).
+                             u − [s]                                   u − [s]  u
+                           s∈Aλ                                 s∈Aλ
+Substituting these two sums proves the formula.
+
+                                                         14
+   The eigenvectors are normalized by π0 Ψsλ = Jλ . Let
+
+                                        π∞ : Λ[z −1 ] → Q(q, t)[z −1 ]
+
+set every pk to zero and leave z −1 fixed. Its restriction to Λ is ϵ1 . For λ ̸= ∅, set
+
+                                           ϵv (Jλ )         Y
+                             ϖλ := lim              = tn(λ)   (1 − 1/[b]) .
+                                       v→1 1 − v
+                                                                  b∈λ
+                                                                b̸=(0,0)
+
+For λ ̸= ∅ and s ∈ Aλ , the definition gives
+                                                       ′
+                                        ϖλ+s = qa (s) ([s] − 1) ϖλ .                             (18)
+
+We also write
+                                                         Jλ
+                                                  Jbλ :=    .
+                                                         ϖλ
+Proposition 4.4. For λ ̸= ∅ and s ∈ Aλ ,
+
+                                        π∞ Ψsλ = ([s] − 1)ϖλ z −|λ| .
+
+Proof. Since Ψsλ is homogeneous of total degree |λ|, π∞ Ψsλ = ϵ1 (Ψsλ )z −|λ| . By Proposition 4.2 and
+the definition of ϖλ ,
+                                           [s] − v
+                           ϵ1 (Ψsλ ) = lim         ϵv (Jλ ) = ([s] − 1)ϖλ .
+                                       v→1 1 − v
+
+
+
+Corollary 4.5. For λ ̸= ∅,
+
+                                                           Aλ (ut−1 )
+                                                                        
+                           π∞ (1 − L/u)    −1
+                                                Jλ =                  − 1 ϖλ z −|λ| .
+                                                            Aλ (u)
+
+Proof. Using (13) and Proposition 4.4,
+                                                            X τ s ([s] − 1)
+                             π∞ (u − L)−1 Jλ = ϖλ                  λ
+                                                                                  z −|λ| .
+                                                                    u − [s]
+                                                            s∈Aλ
+
+Now
+                            X τ s ([s] − 1)          X τ s [s]   X τs
+                                   λ                     λ           λ
+                                                 =             −          .
+                                   u − [s]             u − [s]    u − [s]
+                            s∈Aλ                     s∈Aλ                  s∈Aλ
+
+By Lemma 3.10 and Definition 3.8, the first sum is Tλ (u) − 1 and the second is Tλ (u)/u. Hence the
+bracket is
+                                         u−1
+                                              Tλ (u) − 1.
+                                           u
+Multiplying by u and using Tλ (u) = 1 + Sλ (u)/(u − 1) (Proposition 3.7) gives
+
+                                                                       Aλ (ut−1 )
+                           (u − 1)Tλ (u) − u = Sλ (u) − 1 =                       − 1.
+                                                                        Aλ (u)
+
+
+
+
+                                                           15
+Definition 4.6 (Hatted basis). For λ ̸= ∅ and s ∈ Aλ , define
+
+                                                  b s :=         Ψsλ
+                                                  Ψ λ                   .                                            (19)
+                                                            ([s] − 1)ϖλ
+         b (0,0)
+Also set Ψ ∅     := 1.
+   By Proposition 4.4,
+                                                        b s = z −|λ|
+                                                     π∞ Ψ λ
+
+for all λ. For λ ̸= ∅,
+                                                      bs =       Jbλ
+                                                   π0 Ψλ               .
+                                                               [s] − 1
+
+4.2    Creation and annihilation
+Multiplication by z −1 raises the total degree by one, and the down map
+
+                                                z π− : Λ[z −1 ] → Λ[z −1 ]
+
+lowers it by one. They satisfy z π− z −1 = Id and z −1 z π− = Id −π0 .
+   For γ ̸= ∅ and r ∈ Rγ , put
+                                         X        τγa [a]
+                                φrγ :=                     Ψa = L (L − [r+ ])−1 Jγ ,
+                                                [a] − [r+ ] γ
+                                         a∈Aγ
+
+the inverse taken on Zγ , where [r+ ] is not an eigenvalue since r+ ∈
+                                                                    / Aγ .
+Lemma 4.7. Let γ ̸= ∅.
+  (i) For r ∈ Rγ , φrγ ∈ Λ∞ and L+ φrγ = [r+ ] φrγ .
+
+ (ii) For r ∈ Rγ , Qφrγ = Jγ and π∞ φrγ = ϖγ z −|γ| .
+                                    +
+(iii) Dq−1 Q∗ Jγ = − r∈Rγ [r+ ] τ̃γr φrγ .
+                    P
+
+                               a               +             r             a                  +
+                                                                  P
+                  P ca = τγ [a]/([a]+ − [r ]), so that φrγ = P a ca Ψγ . By (10), rTγ ([r∞]) = 1, so
+Proof. Fix r and put
+Lemma 3.10 gives a ca = 1 − Tγ ([r ]) = 0. Hence π0 φγ = ( a ca )Jγ = 0 and φγ ∈ Λ .
+     For F ∈ Λ∞ the block form (Lemma 3.4) gives π0 LF = QF                 +
+                                                                 P and L aF = π− LF −P      Dq−1 Q∗ QF
+                                                                                                      ; it
+                         −1   ∗                   r
+also gives LJγ = Jγ + Dq Q Jγ . Take F = φγ . Then LF = a ca [a]Ψγ , so QF =                   c  [a] Jγ =
+                                                                                             a a
+Jγ , since
+              X           X                    X τγa [a]
+                               τγa [a] + [r+ ]              = 1 + [r+ ] 1 − Tγ ([r+ ]) = 1.
+                                                                                      
+                 ca [a] =                                +
+               a            a                  a
+                                                 [a] − [r ]
+Hence, by (13),
+                                                                           X
+               L+ F = LF − Jγ − Dq−1 Q∗ Jγ = LF − LJγ =                         (ca − τγa )[a] Ψaγ = [r+ ] F,
+                                                                            a
+
+since (ca − τγa )[a] = [r+ ] ca . This proves (i) and the first part of (ii). For the second part, Proposi-
+tion 4.4 gives π∞ φrγ = ϖγ z −|γ| a ca ([a] − 1), and
+                                    P
+
+      X                     X                           X       τγa [a]            +                    +
+                                τγa [a] + ([r+ ] − 1)
+                                                                                                            
+           ca ([a] − 1) =                                                = 1 + ([r   ] − 1) 1 − T γ ([r   ])  = 1.
+       a                    a                           a
+                                                             [a] − [r+ ]
+
+                                                             16
+For (iii), (13) and the block form give Dq−1 Q∗ Jγ = LJγ − Jγ = a τγa ([a] − 1)Ψaγ . On the right of
+                                                                           P
+                                                   +
+(iii) the coefficient of Ψaγ is τγa [a] r [r+ ]τ̃γr /([r+ ] − [a]) = τγa [a](1 − 1/[a]) = τγa ([a] − 1), by (12)
+                                       P
+with a in place of s.
+
+Proposition 4.8 (compare [6, (94)]). For a partition λ and s ∈ Aλ ,
+                                                        r
+                                                      τλ+s
+                                   ′                                       ′
+                                          X
+                    z −1 Ψsλ = q−a (s)                    +
+                                                                Ψrλ+s = q−a (s) φsλ+s ∈ Zλ+s ,             (20)
+                                                   1 − [s ]/[r]
+                                         r∈Aλ+s
+
+
+where [s+ ] = [s] t/q. In the hatted basis this reads
+                                                        d ([d] − 1)
+                                                    X τλ+s
+                                       z −1 Ψ
+                                            bs =                    Ψd ,
+                                                                    b                                      (21)
+                                             λ
+                                                       1 − [s+ ]/[d] λ+s
+                                                   d∈Aλ+s
+
+and the coefficients in (21) sum to 1.
+
+Proof. By induction on |λ|, following [6, Theorem 3.4] with Lemma 3.5 in place of the derivation
+                                                ′
+property used there, we show that z −1 Ψsλ = q−a (s) φsλ+s .
+                                          (0,0)
+    If λ = ∅ then s = (0, 0) and Ψ∅ = 1. The space Λ∞                          −1
+                                                              1 is spanned by z , and Qz
+                                                                                         −1 = Q =
+                                                                                                 1
+                                            (0,0)       −1
+(1 − t)p1 = J(1) , so Lemma 4.7(ii) forces φ(1) = z .
+    Now let |λ| = n ≥ 1 and assume the statement for all partitions of size n − 1. By Corollary 3.14,
+L is diagonalizable on Λ∞
+  +                                                    −1 a                               +
+                           n+1 , with eigenvectors z Ψµ (µ ⊢ n, a ∈ Aµ ) of eigenvalue [a ]. Let P
+be the projection of Λn+1 onto the [s ]-eigenspace of L along the other eigenspaces, and let P ′
+                        ∞                +                   +
+
+be the projection of Λ[z −1 ]n onto the [s]-eigenspace of L. Distinct boxes have distinct contents,
+so [a+ ] = [s+ ] only when a = s. Hence z −1 maps the [s]-eigenspace of L onto the [s+ ]-eigenspace
+of L+ , and the sum of the other eigenspaces of L onto the sum of the other eigenspaces of L+ , so
+P z −1 = z −1 P ′ .                                                                 Q
+    By the Pieri rule [1, Chapter VI, (6.24)(iv) and (6.23)], together with Jµ = b∈µ hµ (b) Pµ [1,
+Chapter VI, (8.3)],                         X
+                                  J(1) Jλ =       g a Jλ+a ,   g a ̸= 0.
+                                                   a∈Aλ
+
+Apply L. By Lemma 3.5 the left side becomes L(J(1) )L(Jλ ). The block form gives LJγ = Jγ +
+Dq−1 Q∗ Jγ for every γ, and in particular LJ(1) = J(1) + cz −1 with c = (1 − t)(1 − q)/q. Subtracting
+J(1) Jλ from both sides gives
+                             X
+                                   g a Dq−1 Q∗ Jλ+a = J(1) Dq−1 Q∗ Jλ + c z −1 LJλ .                       (22)
+                            a∈Aλ
+
+We apply P to the three terms.
+    By Lemma 4.7(i) and (iii), Dq−1 Q∗ Jλ+a is a combination of eigenvectors φrλ+a with eigenvalues
+[r ], r ∈ Rλ+a . Such an eigenvalue equals [s+ ] only if r = s, and s ∈ Rλ+a only if a = s. So
+  +
+                                                s+ φs
+the left side of (22) projects to −g s [s+ ] τ̃λ+s                                                         s+
+                                                    λ+s , and this coefficient is nonzero: no factor of τ̃λ+s
+vanishes, because s+ ∈ / Aλ+s
+                            P. a
+    By (13), c z LJλ = c a τλ [a] z −1 Ψaλ projects to c τλs [s] z −1 Ψsλ .
+                 −1
+                                                                                                ′
+    For the remaining term, Lemma 4.7(iii) for λ and the induction hypothesis φrλ = qa (r) z −1 Ψrλ−r
+give
+                                                                +  ′
+                                                 X
+                         J(1) Dq−1 Q∗ Jλ = −          [r+ ] τ̃λr qa (r) z −1 J(1) Ψrλ−r .
+                                                                                       
+
+                                                    r∈Rλ
+
+
+                                                            17
+By Lemma 3.5, L(J(1) Ψrλ−r ) = (J(1) + cz −1 )[r]Ψrλ−r , that is,
+                                                                       ′
+                      (L − [r]) J(1) Ψrλ−r = c[r] z −1 Ψrλ−r = c[r] q−a (r) φrλ .
+                                           
+
+Apply P ′ , which commutes with L. Since φrλ ∈ Zλ and the addable corners of λ have dis-
+tinct contents, P ′ keeps only the Ψsλ -component of φrλ , and the definition of φrλ gives P ′ φrλ =
+τλs [s] Ψsλ /([s] − [r+ ]); since [s] ̸= [r] and [s] ̸= [r+ ],
+                                                                          ′
+                                   ′                         c[r] q−a (r) τλs [s]
+                                       J(1) Ψrλ−r                                 Ψs .
+                                                    
+                               P                        =
+                                                          ([s] − [r])([s] − [r+ ]) λ
+Thus both terms on the right of (22) project to multiples of z −1 Ψsλ , so φsλ+s is a multiple of z −1 Ψsλ .
+Since Qφsλ+s = Jλ+s ̸= 0, the multiple is nonzero, and z −1 Ψsλ is a multiple of φsλ+s . Applying π∞ ,
+                                                                                         ′
+Proposition 4.4 and Lemma 4.7(ii) identify the multiple as ([s] − 1)ϖλ /ϖλ+s = q−a (s) , by (18).
+   For (21), let first λ ̸= ∅. The coefficient in (20) is multiplied by
+                              ([d] − 1)ϖλ+s                          ′       ϖλ+s
+                                            ,                q−a (s)                 = 1,
+                               ([s] − 1)ϖλ                               ([s] − 1)ϖλ
+                                   (0,0)      (0,0)
+by (18). For λ = ∅ we have b Ψ∅ = Ψ∅ = 1 and a′ (s) = 0, and the multiplier is ([d] − 1)ϖ(1) =
+                                                                     Ψcγ = z −|γ| (Definition 4.6)
+[d]−1, which gives the same formula. Applying π∞ to (21) and using π∞ b
+shows that the coefficients sum to 1.
+
+Corollary 4.9 (compare [6, (117)]). For a partition λ and an addable corner s ∈ Aλ ,
+                                                                          +
+                                            X           ′            τ̃λr
+                            z π− Ψsλ =              qa (r) [s]                Ψ r ∈ Xλ ,                           (23)
+                                                                 1 − [s]/[r+ ] λ−r
+                                           r∈Rλ
+
+where Xλ := span{Ψrλ−r : r ∈ Rλ }. For λ ̸= ∅, in the hatted basis this reads
+                                                                              +
+                                    bs =         [s] X     τ̃λr     br ,
+                               z π− Ψλ                              Ψ                                              (24)
+                                               [s] − 1 1 − [s]/[r+ ] λ−r
+                                                            r∈Rλ
+
+and the coefficients in (24) sum to 1.
+Proof. For λ = ∅ both sides vanish, so let λ ̸= ∅. By the definition of Ψsλ , the vector π− Ψsλ is the
+value at u = [s] of
+                                                                                        X u [r+ ] τ̃ r+
+              (Dq − LN S /u)−1 Q∗ Jλ = u (u − L+ )−1 Dq−1 Q∗ Jλ = −                                  λ
+                                                                                                           φrλ ,
+                                                                                               u − [r+ ]
+                                                                                        r∈Rλ
+
+where the last equality is Lemma 4.7(i) and (iii). The right side is regular at u = [s], because
+                                                                                    ′
+[s] ̸= [r+ ]. By Proposition 4.8 applied to λ − r and its addable corner r, φrλ = qa (r) z −1 Ψrλ−r .
+Multiplying by z gives (23), since −[s][r+ ]/([s] − [r+ ]) = [s]/(1 − [s]/[r+ ]).
+     For (24), for λ − r ̸= ∅ the coefficient in (23) is multiplied by
+                              ([r] − 1)ϖλ−r                      ′                ϖλ−r
+                                            ,               qa (r) ([r] − 1)           = 1,
+                               ([s] − 1)ϖλ                                         ϖλ
+                                                              ′            (0,0)   (0,0)
+by (18) for λ − r and r. For λ = (1) we have r = (0, 0), qa (r) = 1 and bΨ∅ = Ψ∅ = 1, and the
+multiplier is 1/(([s] − 1)ϖ(1) ) = 1/([s] − 1), which gives the same formula. The coefficients in (24)
+sum to 1 as in the proof of Proposition 4.8, since π∞ commutes with z and π− .
+                                                                                    ′
+   By Proposition 4.8, the eigenbasis of Corollary 3.14 is {q−a (r) φrλ : λ ⊢ N, r ∈ Rλ }.
+
+                                                             18
+5     The product-resolvent formula
+We prove Theorem 1.2 by an induction for the y-trace of the normalized product defect.
+
+5.1   The T-factor
+Definition 5.1 (T-factor). For finite sets of boxes µ, ν, in particular partitions or single boxes,
+define their T factor as                     Y
+                              Tµ⋆ν (u) :=          N (u/[x + y]) .                             (25)
+                                             x∈µ, y∈ν
+
+It is symmetric, Tµ⋆ν = Tν⋆µ , and multiplicative in each argument over disjoint unions of boxes.
+
+5.2   Preliminaries

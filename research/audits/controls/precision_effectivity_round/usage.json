@@ -1,0 +1,237 @@
+{
+  "captured_at_utc": "2026-11-12T12:26:23.259990+00:00",
+  "cost_note": "Stored runner estimates only, not invoices, actual bills, balances or spending caps. No subtraction from owner balance. Two historical timeout totals remain UNKNOWN and excluded. Analytic-constants is nonempty max_tokens truncation, not a completed audit.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 63,
+    "historical_unknown_timeout_bills_excluded": 2,
+    "known_terminal_nonpartial_usage_estimate_usd": "142.480614",
+    "known_terminal_nonpartial_usage_records": 126
+  },
+  "dispatch_observed_status_changes": [],
+  "dispatch_observed_statuses": [
+    {
+      "manifest_observed_status": null,
+      "obligation": "analytic-constants",
+      "terminal_result_status": "truncated"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "arithmetic-precision",
+      "terminal_result_status": "completed"
+    }
+  ],
+  "exclusions": [
+    {
+      "reason": "No live main notes hashed or edited; numerical audit integration remains with root.",
+      "scope": "Changing shared main notes, including precision ledger, STATE/HANDOFF/workflow"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills remain UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 12061,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/native_composition_round/usage.json",
+    "sha256": "eab52e0909427ed4cb38d736fe406cda75e514e3b197c48b6b64551814343ea7"
+  },
+  "precision_effectivity_round": {
+    "by_provider_usd": {
+      "Anthropic": "0.727576",
+      "OpenAI": "1.722740"
+    },
+    "completed_nonempty_reports": 1,
+    "empty_refusal_reports": 0,
+    "jobs": 2,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-precision-analytic-constants",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "obligation": "analytic-constants",
+        "provider": "Anthropic",
+        "report_classification": "PARTIAL_NONEMPTY_5325_BYTES; max_tokens truncation, not a completed audit",
+        "response": {
+          "bytes": 5325,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-precision-analytic-constants/response.md",
+          "sha256": "f8ae6424ceb38c6683460d02d3174c407737f2d56cd9561ce85da75b81324612"
+        },
+        "response_characters": 5058,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1904,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-precision-analytic-constants/result.json",
+          "sha256": "17c7e78709b2f08d1bfd5480109b9c310d904030bb46d7e5d54c022645589878"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 18054,
+          "output_tokens": 32768
+        },
+        "usage_cost_estimate_usd": "0.727576"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-precision-arithmetic-precision",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "arithmetic-precision",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 22530,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-precision-arithmetic-precision/response.md",
+          "sha256": "cc3e6599b59e3c98032b60d65bfca1d6030918e45fd17d1de27ca0b400edf06b"
+        },
+        "response_characters": 22504,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2627,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-precision-arithmetic-precision/result.json",
+          "sha256": "4e116aa0b5902d60c694274c23beaae902396c1a3bc43ee2e21e786bd2a00f1c"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 30324,
+          "input_tokens_details": {
+            "cache_write_tokens": 30321,
+            "cached_tokens": 0
+          },
+          "output_tokens": 28390,
+          "output_tokens_details": {
+            "reasoning_tokens": 22152
+          },
+          "total_tokens": 58714
+        },
+        "usage_cost_estimate_usd": "1.722740"
+      }
+    ],
+    "status_counts": {
+      "completed": 1,
+      "truncated": 1
+    },
+    "terminal_jobs": 2,
+    "truncated_empty_reports": 0,
+    "truncated_nonempty_reports": 1,
+    "usage_estimate_usd": "2.450316"
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 47,
+      "empty_response_count": 14,
+      "frozen_prior_estimate_usd": "107.278338",
+      "frozen_prior_known_terminal_records": 108,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_two_explicit_jobs": 113,
+      "known_estimate_by_status_usd": {
+        "completed": "35.298130",
+        "empty_response": "1.174984",
+        "truncated": "71.532800"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "108.005914",
+      "known_terminal_nonpartial_usage_records": 109,
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "precision_effectivity_round": {
+        "completed_nonempty_reports": 0,
+        "empty_refusal_reports": 0,
+        "jobs": 1,
+        "status_counts": {
+          "truncated": 1
+        },
+        "terminal_jobs": 1,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 1,
+        "usage_estimate_usd": "0.727576"
+      },
+      "status_counts_through_precision_effectivity": {
+        "completed": 47,
+        "dry_run": 1,
+        "empty_response": 14,
+        "failed": 3,
+        "truncated": 48
+      },
+      "terminal_results": 112,
+      "truncated_and_empty": 35,
+      "truncated_and_nonempty": 13
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 16,
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "32.751960",
+      "frozen_prior_known_terminal_records": 16,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_two_explicit_jobs": 17,
+      "known_estimate_by_status_usd": {
+        "completed": "31.971190",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "34.474700",
+      "known_terminal_nonpartial_usage_records": 17,
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "precision_effectivity_round": {
+        "completed_nonempty_reports": 1,
+        "empty_refusal_reports": 0,
+        "jobs": 1,
+        "status_counts": {
+          "completed": 1
+        },
+        "terminal_jobs": 1,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "1.722740"
+      },
+      "status_counts_through_precision_effectivity": {
+        "completed": 16,
+        "incomplete": 1
+      },
+      "terminal_results": 17,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "scope": "Frozen native-composition prior plus exactly the two terminal precision-effectivity jobs listed in named dispatch. Actual stored results and saved usage authoritative; no historical rescan."
+}

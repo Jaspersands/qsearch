@@ -1,4 +1,473 @@
+## 2026-11-13 Single-Source Wave Classical Match Under Audit
+
+Firstsix jobs terminal/read/reaped; two sourcelemmas remainlive. At clean
+terminal milestone reconcile known usage from frozen condensate_projector_round,
+retaining FIVEUNKNOWN bills. Freeze stable reports/sources/proofs only; no
+reruns, broadtests, wrapper or quantum implementation. Preserve concurrent
+Claude Code Rees entries; they do not change this selected wave endpoint.
+
+## 2026-11-13 Rees Headline 38 (Claude)
+
+- arxiv/: rebuild with build_package.sh after the owner edits the AI-use DRAFT paragraph;
+  arxiv/main-core.tex and arxiv/numbers.tex are stale (core is now 55 pp. with 38).
+- numbers_map.json: \ReesClassNineHalvedExp (38) is hand-added in core/numbers.tex only. If 38 should be
+  generated, add a source field to research/reductions/rees_hsp_reduction.json via
+  theorems/rees_hsp_reduction.py (no gate change), then map it.
+- Full version: charge the Las Vegas preprocessing in the block-steered free-coordinate (iii) split
+  (ε/9 unused) and the other Schedule-3 results; theorems/rees_fcs_budget.py still computes the full
+  depth only.
+- κ = 9: split (37, 9) searches with sat3_sub.py `one` option, m = 1..4, 25 min each.
+
+## 2026-11-13 Full Single-Source Wave Construction Under Audit
+
+Manifest nowrecords three completedClaude/full-read/reaped and oneOAIEMPTY
+RemoteProtocolError/UNKNOWNbilling/reaped. TwoOAI live. Reconcile only after
+all six terminal and parent materialchecks; preserve FIVEunknown bills.
+No retry or failedcharge estimate. No new backend, scan, quantumcode orGit.
+
+## 2026-11-13 Sparse Wave Source Cancellation Falsifiers
+
+Two wave reports terminal/full-read/reaped; statuses updated in existing
+sparse-wave dispatch. Preserve bundles. Do not run a sweep or reconcile
+partial usage. At six-job terminal milestone freeze stable source/proof/report
+hashes and known costs, preserving FOURhistoricalUNKNOWN entries. Parent owns
+proof acceptance and next mechanism choice. Old33hash pump checkpoint frozen.
+
+## 2026-11-13 Pump Window Closed and Sparse Wave Batch Active
+
+Freeze the now-stable pump proof/topic, D3 control and paid bundles into
+controls/condensate_projector_round/checkpoint.json against prepared usage.
+Do not rerun13assertions, broad suites or corpus validation. Track six wave
+sessions in their existing dispatch; terminal milestone only for new usage.
+All theorem decisions stay with parent; no inferred advantage from controls.
+
+## 2026-11-13 Sparse Wave Six-Task Constructive Pivot
+
+Preserve six exact request/context/response bundles and statuses in
+audits/api_inputs/2026-11-13-sparse-wave/dispatch.json. Reconcile usage and
+freeze stable hashes ONCE at terminal milestone after parent report checks.
+No retries, broad suite, solver infrastructure, quantum circuit or Git action.
+The previous projector checkpoint is held until parent final proof disposition.
+
+## 2026-11-13 Finite-Time Pump Proof and Projector Falsifier Audit
+
+At the terminal projector milestone, reconcile both saved result.json files
+against controls/native_driven_round/usage.json; preserve FOURunknown bills,
+report estimates not invoices/balances, update dispatch terminal states and
+freeze only stable source/report/control hashes. No retries, broad test run,
+new sampler or quantum circuit. Parent owns theorem/claim dispositions.
+
+## 2026-11-13 Static Condensate Projector and Pump Tests
+
+Preserve frozen35hash driven ledger and prior ledgers. New two-job static
+projector/pump manifest remains separate. Freeze only after terminal/read
+milestone; retain FOURunknown bills, no retries or balance inference.
+No new controls/sweeps/quantum implementation while dynamical proof unpaid.
+Codex owns exact generator, full-count sampler and direction selection.
+
+## 2026-11-13 Native Two-Control Encoding Written Closure
+
+Preserve frozen27hash condensate ledger and prior ledgers. Native-driven
+round remains separate until final OAI is terminal/parent-read; then freeze
+all three reports, stable249LF proof and singleD8 control. No implementation,
+controllability sweep or extra quantum subsystem. Keep conditional BPP=BQP
+consequence distinct from static-model hardness/novelty/speedup claims.
+FOURunknown bills excluded; no retries or estimate-to-balance conversion.
+
+## 2026-11-13 Condensate Normalized Moments Classically Matched
+
+Freeze two terminal/read/reaped condensate jobs and stable323LF audit,
+excluding new driven work. Expected3.320364USD round,242.770252USD cumulative,
+188priced,FOURunknown excluded; verify rawrecords, no invoice/balance claim.
+OneD8 exact native-frequency control is authorized only as normalization/
+alias falsifier; no universality sweep or quantum implementation. Preserve
+prior ledgers. Codex owns code/compiler and future scientific selection.
+
+## 2026-11-13 Native Driven Exact Cycle Repair
+
+No quantum implementation or numerical universality sweep. Keep three driven
+requests separate from terminal condensate pair; freeze terminal milestones
+only after parent reads. Preserve four UNKNOWN bills and prior ledgers.
+Use final parent scope: polynomial-duration reduction, no newly admitted
+Schur fast-forwarding, no static-model hardness transfer.
+
+## 2026-11-13 Condensate Pair Growth and Native Driven Candidate
+
+Freeze terminal two-job condensate usage after independent review stable;
+parent has fully read both reports and reaped both sessions. Preserve prior
+55hash dynamics ledger and FOURunknown bills, no retries or balance math.
+New three-job native-driven manifest separate; no implementation, finite
+sweep, registry or Git. Codex owns source/paired-path and uniform pulse
+proofs. Acceptance boundaries in matching handoff and topic notes.
+
+## 2026-11-13 Fixed-Boson Native Dynamics Classically Matched
+
+- Retain272line proof and D3 receipt; no new sweep or quantum implementation.
+- Keep colour empty truncation as no scientific result; no retry.
+- At terminal milestone freeze four dynamics records, and separately the
+  two condensate records, on previous37hash macdonald_round ledger. Preserve
+  four unknown bills; estimates not invoices/balances. Parent owns claims.
+
+## 2026-11-13 Native Real-Time Endpoint and Exact Doob Comparator
+
+- Retain251line realtime proof and exact Doob source locators; no quantum code.
+- Degree3 Sage control is a normalization falsifier only; generic symbolic
+  Macdonald conversion then rational specialization avoids a Sage API bug.
+- Four dynamics jobs: Doob completed/reaped, three pending; no retries.
+  Freeze usage only after terminal reports and parent scientific dispositions.
+
+## 2026-11-13 Few-Boson Macdonald Classical Candidate
+
+- Retain actual AHL2021 source and parent/independent proof locators.
+- One prescribed exact Sage control may check Newton lowering and the
+  occupation norm identity; no shape sweep and no theorem from a finite pass.
+- Keep four dynamics jobs independent; wait for terminal reports, no retries.
+  At terminal milestone add only their usage to macdonald_round ledger.
+
+## 2026-11-13 Macdonald Classical Baselines and Native Dynamics
+
+- Freeze terminal macdonald_round ledger from jack_logprecision_round plus
+  exactly three completed records; four historical unknown bills stay excluded.
+- Retain next four dynamics prompt/context hashes and terminal session locators.
+  No unknown/truncated retry, no tiny-D sweep, no quantum implementation.
+- After core review, only reproduce a concrete falsifier with Sage if requested.
+  Keep finite controls separate from all-D BIT/TV derivations.
+
+## 2026-11-13 Native Macdonald Transform Closed
+
+No quantum implementation, parameter sweep, registry or Git. Preserve
+frozen Jack ledgers. Parent must inspect final native paid report and
+stable independent classical review. Freeze three-job Macdonald usage
+only then, excluding newer work, with FOUR unknown bills and no retries.
+No finite-control expansion or exact exponent promotion from advisory text.
+
+## 2026-11-13 Macdonald Specialization and Overlap Bounds
+
+Preserve frozen27hash jack_logprecision_round and all prior ledgers.
+No quantum code, new finite sweep, registry or Git. Three Macdonald jobs
+remain separate; parent must verify actual-block polar stability and
+whole-workspace composition. Freeze usage only after terminal reports.
+Retain FOUR unknown bills and no estimate-to-balance conversion.
+
+## 2026-11-13 Native Macdonald Transform Candidate Selected
+
+No quantum implementation, sweep, registry or Git. Track new three-job
+Macdonald manifest separately from two-job Jack compiler. Freeze each
+terminal milestone only after parent report review; preserve prior ledgers
+and FOUR unknown bills. Native/classical/source proofs belong to Codex.
+No retries, no credit-balance inference from estimates.
+
+## 2026-11-13 Log-Precision Jack and BO Algorithms Closed
+
+No quantum implementation, sweep, registry or Git. Preserve all frozen
+ledgers. When final polar report is terminal and fully parent-read, freeze
+two compiler jobs' usage and stable proof/source packets once, excluding
+new Macdonald candidates. Retain FOUR unknown bills, estimate/balance
+boundary and no retry. Codex owns source specialization, native-access
+proofs and scientific selection; mechanical work must not promote claims.
+
+## 2026-11-13 Constructive Log-Precision Jack Compiler Selected
+
+Preserve frozen51hash jack_classical_round and prior ledgers. New two-job
+logprecision manifest holds sessions/explicit packets; separate two-job
+work manifest is terminal, frozen35hash jack_work_round complete. Do not implement quantum circuits, run
+additional controls, update registry, or perform Git. Codex checks compiler
+proofs and remaining work-law report. Freeze each terminal milestone once,
+with only stable inputs/proofs and final estimates; retain FOUR unknown bills
+and no retry/credit-balance inference.
+
+## 2026-11-13 Native Benjamin-Ono Quench Work Candidate
+
+No quantum implementation, parameter extension, sweep, registry or Git.
+Track classical four-job and work two-job dispatch manifests separately.
+Paired-map request truncated EMPTY, known estimate1.340204USD, no retry.
+At terminal milestones freeze stable actual sources/proofs/controls and
+provider estimates, preserving prior72hash Jack ledger and FOUR unknown
+historical bills. Codex checks work-law sampler claims and every remaining
+report. Do not import bounded-Durfee occupation theorem into work sampling.
+
+## 2026-11-13 Positive Jack Creation Shortcut Refuted
+
+Preserve the one lambda21 exact control and frozen72hash jack_lax_round.
+No new sweep, quantum implementation, registry or broad tests. Four paid
+jobs in api_inputs/2026-11-13-jack-classical/dispatch.json; freeze usage and
+stable sources/proofs only once all terminal. Keep FOUR historical unknown
+bills; no retries/balance inference. Codex checks all material claims before
+state changes. No Git.
+
+## 2026-11-13 Clean Jack Basis Transform Written and Reviewed
+
+No circuit implementation or new finite sweep. All six paid reports terminal
+and parent-read; controls/jack_lax_round is FROZEN with72 validated hashes,
+including stable300line branching proof and actual sources. Do not hash evolving topic
+notes or next-pass Bendali source into the six-job checkpoint. Preserve FOUR
+unknown historical bills and prior ledgers, with estimates distinct from
+invoices/balances. Codex handles new positive-formula classical attack. Keep
+novelty/separation/physical-state/polylogprecision gates false. No Git.
+
+## 2026-11-13 Jack Overlaps and Classical Shape Baseline Verified
+
+Six paid job locators in api_inputs/2026-11-13-jack-lax/dispatch.json; local
+ceilings33USD are not charges. Three terminal reports fully parent-read,
+three still active. Freeze final usage and stable sources/proofs only at the
+terminal milestone; keep prior48hash ledger and FOUR unknown bills. No
+larger-degree sweep, full circuit implementation, registry, broad tests or
+Git. Codex must finish clean-branching, uniform-error and native-BIT review.
+
+## 2026-11-13 Jack Raising Identity Verified at All Degrees
+
+No additional finite-size control or implementation. Five live job sessions
+are in api_inputs/2026-11-13-jack-lax/dispatch.json;31USD ceilings are not
+charges. At their terminal milestone, freeze the stable algebra proof and
+actual sources with final usage. Preserve prior48hash ledger and FOUR unknown
+bills. Codex must check overlap, coherent-workspace and classical-sampling
+claims before a new algorithm row. Do not infer unitary erasure from Apsi=J.
+No Git, registry or broad test pass at this algebra-only checkpoint.
+
+## 2026-11-13 Finite Constant Valuations Closed; Jack Growth Selected
+
+No solver, larger-degree sweep, registry or quantum circuit implementation.
+Preserve frozen48hash torus_completion_round and all prior ledgers unchanged.
+At the next TERMINAL Jack milestone, freeze exact control/source/review hashes
+and final provider-separated usage; preserve FOUR unknown historical bills,
+exclude partial estimates, never retry empty/failed requests. Four jobs and
+sessions are in api_inputs/2026-11-13-jack-lax/dispatch.json; ceilings22USD are
+not spending. Codex must check every report and source before any claim move.
+Do not infer a theorem or speedup from the degree3 control. No Git actions.
+
+## 2026-11-13 Certified Sparse Torus Archimedean Compiler
+
+No implementation or extra finite control is needed for this written arch lemma. At the NEXT terminal milestone freeze its stable308line proof and source metadata; do not alter the existing82hash next_mechanisms ledger. Torus-completion jobs are still excluded. Codex checks known-prime precision, full-lattice extraction, content and multiplicity results. Preserve arch-only/ABORT and all fullRel false gates; registry and broader tests stay deferred. No Git.
+
+Torus-completion update: cyclic report completed and fully parent-read;
+unit-log request empty ReadTimeout, billing UNKNOWN. Exclude its partial
+0.070644USD counter from final spending and never retry automatically.
+Taylor report still running. New milestone must carry FOUR unknown bills.
+
+## 2026-11-13 Sparse Finite Support Gate Is Explicit
+
+Six-job terminal ledger audits/controls/next_mechanisms_round/ is frozen with82validated hashes; do not refresh it against later source/note changes. Three torus-completion jobs are excluded and remain active. No API retry, global usage rescan, solver, fixture or registry edits needed. Codex must check known-prime precision and every returned constructive report; only then freeze their stable artifacts at a later milestone. Keep support discovery, fullRel and ordinary classical no-factoring gates false. No Git.
+
+## 2026-11-13 Bulk Gaudin Obstruction and Native Resultant Boundary
+
+No new numerical-size/locality sweep or resultant fixture. At the next terminal API milestone freeze the stable bulk/locality and native-resultant proof notes, source PDF/text and paid final usage; do not repin old ledgers or hash evolving STATE/HANDOFF. Finite support/analytic-clock dispositions are Codex work. Keep fullRel and general preparation gates false. No Git.
+
+## 2026-11-13 Fixed-Degree Sparse Relations Classically Matched
+
+No full LS solver, cyclotomic sweep or fixeddegree extension. Preserve exact theorem scope: numerical q polynomial for FIXEDdelta only, eta by repetition, full lattice intersection and partial-component acceptance. At the sixjob terminal milestone freeze final usage and stable report/proof/control hashes; prior ledger estimates193.225932USD excludeTHREE historical unknowns and this new round. Never count ceilings as spending. The two torus/vertical reports need Codex mathematical checks; do not infer fullRel from archrows or supplied prime support. No Git.
+
+## 2026-11-13 Native Three-Site Joint Transport Falsified
+
+No N6, largerlocality or parameter sweep. Preserve exact Gaudin certificate and separate tensor/symbolic verification hashes at the next terminal milestone; do not overwrite original results. Sixjob API manifest has four running/two completed when recorded; determine status from final metadata, not existence of response.md. No partial reading, no failed/empty retry. Codex verifies fixeddegree cyclotomic and new full-native mechanisms; Gemini must not infer growingdegree runtime from fixeddegree bounds or general preparation impossibility from3locality. Prior quartic/factoring scope unchanged.
+
+## 2026-11-13 Native Quartic Squareclasses Reduce to Factoring
+
+Keep full-algorithm implementation deferred. At the next clean terminal milestone check current title matches STATE, referenced stable proof paths exist, and new final proof/control hashes; never repin earlier frozen82hash evidence after notes changed. Existing tests are only two radical fixtures and28counterexample assertions, not whole solver. Preserve factoring-oracle/fixed-dimension/ABORT scope. Four active API jobs have locators in audits/api_inputs/2026-11-13-next-mechanisms/dispatch.json; record final metadata only when terminal, no empty retry, and retain THREE old unknown bills. Scientific report disposition and new selection stay with Codex. No Git action by Codex.
+
+## 2026-11-13 Fixed-Dimension Unimodular Clock Repaired
+
+Do not implement a new solver or run a broad sweep. At the terminal milestone validate immutable six-job usage/hashes in audits/controls/classical_two_family_round/; preserve THREE historical unknown bills, exclude partial counters, and keep estimates distinct from invoices/balances. Final Simon/native proofs require Codex judgment. Never infer growing-dimension complexity from fixed n<=9 or promote the pending whole quartic composition. No Git actions by Codex.
+
+## 2026-11-13 Quadratic Two-Class Clock Repaired
+
+- One229 exactideal-content control running, no classgroup/unitcalls.
+- Six-job ledger afterterminal/dispositions; preserve THREEunknownbills.
+- No fullsolver/sweep/registry/Git; clock/interface proof work staysCodex.
+
+## 2026-11-13 Literal Cyclotomic Selmer Classical Match
+
+- Two fixed nativequartic controls complete; no broadening or repeat without
+ a changedclaim. No solver/quantumcode/registry/manuscript/Git.
+- Six-job ledger only at terminal milestone after parent dispositions;
+29USDceilings notcharges. Preserve THREE earlier unknown bills. No retries.
+- Majorant, HNFminimization and Bosmaclock proofs remain Codex work.
+
+## 2026-11-13 Narrow Signatures and Constructive Quartic Attack
+
+- Preserve the frozen69hash two-primary checkpoint. New six-job dispatch
+  uses29USD localceilings, not spending. After alljobs terminal and parent
+  dispositions complete, freeze one new provider ledger; no intermediate
+  reruns. Literalcyclotomic emptyrefusal is terminal, not scientificresult,
+  and not retried. Preserve THREE earlier unknown bills.
+- No solver/sweep/quantumcode/registry/manuscript/Git. New source PDFs and
+  actual text live in audits/sources/selmer_classical_two/. Parent handles
+  proof/interface decisions; raw paid acceptance labels stay advisory.
+
+## 2026-11-13 Quadratic Conic Baseline and Unconditional Selmer Families
+
+- Once the current four-job two-primary round is terminal, freeze one
+  provider-separated usage checkpoint. Include three complete reports;
+  the failed Fable ReadError is a THIRD UNKNOWN bill. Its partial 0.485230
+  estimate is excluded. Keep the two historical unknown bills. Estimates
+  are not invoices or balances; ceilings are not spending. Do not repin
+  historical frozen checkpoints after topic notes have changed.
+- No full solver, broad sweep, quantum code, registry promotion or Git.
+  New work is theorem/source review of the distinct classical routes.
+- The exact d34 and extraction-guard controls are already run; do not repeat
+  them without a changed claim. Source corrections and theorem statements
+  remain Codex work. Follow the new paid dispatch manifest when present.
+
+## 2026-11-13 Native All-Prime Images and General GRH Selmer Algorithm
+
+- Preserve reviewed WRITTEN status and exact prime/native contracts in
+  LOCAL_KUMMER_ALL_PRIMES.md and GENERAL_NATIVE_SELMER_COMPOSITION.md.
+  Global GRH remains; no implementation/practicality/novelty/separation gates.
+- No broad solver implementation or extra finite sweeps. The one extraction
+  counterexample and one quadratic negativePell falsifier are sufficient controls.
+- At the next terminal API milestone freeze stable finalproof/source hashes;
+  retain UNKNOWN partialfailedcomposition bill, no retry. Parent owns theorem
+  disposition; mechanical updates must not promote API verdicts.
+- /opt/anaconda3/bin/python, no Git. Latest proofreviews are231line dyadic,
+  510line oddprime and310line global, not old pending snapshots.
+
+## 2026-11-13 Quadratic Virtual Squareclasses by Primitive Norm Conics
+
+- Preserve full-S support and ramified/dyadic support assumptions. Link the240line
+  proof and ONE exact d34 Sage script/JSON; do not broaden a finite control.
+- Original Cremona-Rusin PDF has broken textencoding. Use its retained OCR plus
+  actual page images, especially pp3–4 and15–17. Parent checked16–17 visually.
+  No conic theorem from abstract or software output alone.
+- Four new API jobs are not allterminal. Quadratic-source completed; restricted
+  composition FAILED ReadError withpartialtext and UNKNOWN bill. Do not include
+  its0.485230 partialcounter as finalcharge or retry it. Preserve existingUNKNOWNs.
+- No globalregistry/speedup promotion, no fullsolver implementation, no Git.
+  Once scientificsourceaudit finishes, update source/report dispositions at one
+  clean terminal milestone, /opt/anaconda3/bin/python.
+
+## 2026-11-13 General Selmer Composition and Two-Primary Generator Reduction
+
+- Preserve conditional global/local status in GENERAL_NATIVE_SELMER_COMPOSITION.md;
+  no registry theorem/speedup promotion. No broad tests or solver implementation.
+- Frozen seven-job ledger and91hashes: audits/controls/dyadic_composition_round/.
+  Four new jobs in audits/api_inputs/2026-11-13-selmer-two-primary/dispatch.json
+  require one terminal milestone, not repeated polls/partial ledger rewrites.
+- Keep original Bosma-Stevenhagen PDF, sanitized text and page locators. Missing
+  scanned equations must be transcribed from actual page images, not guessed.
+- Once parent finishes source/claim review, update dispositions and freeze stable
+  report/source/control hashes only. Distinguish estimates from bills, preserve
+  two historical UNKNOWN charges. Do not retry empty/refused jobs.
+- Interpreter /opt/anaconda3/bin/python; original-page rendering uses CAS
+  pdftoppm. No Git. No new finite scan unless parent names a decisive falsifier.
+
 # Mechanical Follow-Up Implementation Plan (pass 2)
+
+## 2026-11-13 Seven-job fixed-clock milestone
+
+Keep seven-job manifest current; terminalcheckpoint only when allsevenfinish.
+Include stable287line materializer/262line half/384line backend/260line group
+proofs and exact native extractioncounterexample. Latest candidate changed
+after firstsix snapshots; finalFable request has new fixedclock version. Keep
+both provenances. No automatic admission from reportverdicts. No new solver,
+fixture sweep, broadtest, registrypromotion or Git work. Parent owns fullreport
+reads, oddprime sourcechanges and global conditional-composition checks.
+
+
+## 2026-11-13 Native field-backend proof checkpoint
+
+Include stable native-local-squareclass-backend and exact extractioncounterexample
+in the next six-job terminal checkpoint. Root has checked full proof/source chain;
+no fresh field/solver implementation or fixture is requested. All full-local/global
+claim gates remainfalse until wholecomposition review. Preserve actualOMidentifier,
+fullmaximalideal, frozenrootball and visible-resultant requirements in any later
+mechanical transcription. Currentcandidate changed after paid snapshots; retain
+snapshotprovenance and parent corrections rather than rewriting reporthistory.
+
+
+## 2026-11-13 Guarded extraction and composition checkpoint
+
+One exact Sage acceptance-falsifier control is stable in dyadic_extraction_guard;
+its final integer-pencil example supersedes the first rational-scalar variant.
+No extra sweep/test expansion. Six-job manifest current; reconcile terminal
+usage and stable hashes ONCE when allsix finish. Do not retry empty/refusal or
+read/hash writing reports. Preserve full local/global admission OPEN pending
+parent's wholecomposition review. No registry promotion, new quantumcode or Git.
+
+
+## 2026-11-13 Canonical materializer milestone
+
+Ten-job dyadic milestone complete: dyadic_compiler_round/{usage,checkpoint}.json,
+93verifiedhashes,141 cumulative priced records. Ideal-saturation review was
+excluded while writing; parent has now read/checkedit, but no ritualrescan.
+Two-section canonical materializer is proved on the good-output event; full
+local-image gate staysfalse until wholecomposition checked. No implementation,
+registry promotion, broad tests or Git work requested. Parent owns nexttheory.
+
+
+## 2026-11-13 Finite-grid and matrix bridge checkpoint
+
+Parent checked both complete proofs. Preserve the distinction: finite-grid
+good charts and generic Stoll Smith caps are proved; actual reduced-divisor
+materialization/full HALF remain open. Ten paid tasks total; lasttwo active.
+At terminal milestone freeze only completed stable reports, usage/result and
+selected context hashes. No retry of three emptytruncations or gridrefusal.
+No new broad tests, implementation, registry promotion or Git action.
+
+
+## 2026-11-13 Coordinate Haar reset checkpoint
+
+Parent checked the full coordinate-tail proof; finite-grid/materialization/
+Stoll/full-HALF gates stay false. Six original dyadic calls terminal (three
+OpenAI completed, threeClaude empty); two NEW64K concrete proof tasks active.
+No empty retry. Reconcile all8 at terminal milestone, not changingfiles.
+No new implementation or fixture is requested by a Haar-only theorem.
+
+
+## 2026-11-13 Dyadic compiler parallel research checkpoint
+
+Conductivity five-job milestone is terminal/frozen in audits/controls/
+conductivity_multiscale_round (46hashes,131 cumulative priced records).
+Six new dyadic tasks are active; do not hash changing responses or retry
+empty/unknown-cost requests. Reconcile terminal usage once at next milestone.
+Parent owns proof dispositions, high-degree compiler note and STATE. No new
+fixture sweep, CLI wiring, quantum code, broad checks or Git action required.
+
+
+## 2026-11-12 Scoped conductivity falsifiers checkpoint
+
+Two stable fully parent-read reviews: conductivity-separated-scales and
+conductivity-uniform-decay. One exact L8 control complete. Include at terminal
+four-job usage/hash checkpoint. Claude variational completed with explicitly
+rejected overclaims; other Claude empty, no retry. Two OpenAI jobs active.
+No new fixture sweep, implementation, source-rate assumption or broad checks.
+Full all-circuit joint-polynomial classical match remains OPEN, not hard.
+
+
+## 2026-11-12 Distant-scale proof checkpoint
+
+One L8 exact Sage transcription control for the explicit striped material,
+audits/controls/conductivity_separated_scales; no further sizes/sweep needed.
+Independent separated-scales and uniform-decay reviews are active; do not
+hash changing files. API round remains active; terminal milestone only.
+Scope: nearby-band shortcut and source-rate hypotheses, no general lower
+bound or quantum advantage. Parent owns proof acceptance/shared state.
+
+
+## 2026-11-12 Conductivity parallel obligations checkpoint
+
+Precision round frozen28hashes,126 cumulative records, estimate142.480614USD.
+Do not rescan history or infer balances. Four new distinct conductivity tasks
+running in api_inputs/2026-11-12-conductivity-multiscale/dispatch.json; reconcile
+at terminal milestone only. Preserve completed surface native match and scoped
+height-to-precision theorem; keep all no novelty/separation/execution gates.
+No quantum code, new solver framework, broad tests or Git actions. Shared
+conductivity proof work active; do not hash changing notes/reviews.
+
+
+## 2026-11-12 Rees SDE & Repo Wiring Follow-Up (Gemini)
+
+- Completed: `q=17, K=4` (`12/12` orbits + `1/1` zero datum) streamed LRAT verified in `research/audits/reviews/2026-11-11-rees-sde-interval-s/cases17_K4_{lrat,zero_equi}.out`; `p=13` `37/37` + `p=17` regression assertions added in `tests/test_rees_sde_2026_11_11_checks.py`; `rees_fcs_budget.py`, `labelsat.py`, `core/experiment_runner.py`, 136 `if write_registry:` writers, `core/scaling_runner.py`, Node crosschecks (`lattice_*`, `dcp_paid_tree_receiver`, `cyclic_centre_state_hsp_receiver`), 288/300 dangling `EXP-*.json` links, and fast `coset_typical` certificates repaired.
+- Remaining (explicitly deferred): (1) owner-only `python docs/papers/rees-hsp/make_numbers.py` (`test_rees_paper_numbers.py`); (2) optional multi-hour recompute of `coset_typical_invariant_contraction_certificate.json` (~56 min) and the 6 `coset_typical_modular_yjm_n10_*prime1009.json` certificates (~2.8h) after `HEAD 0a7cf894` restored `if write_registry:` in their pure-math dependency modules; (3) external re-referee pass on the 4 `stale` referee entries (`JACOBI_KNOWN_NORM_REDUCTION`, `JACOBI_SURFACE_RECONSTRUCTION`, `NATIVE_RLWE_QUATERNION_KERNEL_AUDIT`, `OUTER_CODED_CHIRP_PROBE`); (4) optional full `test_run_all_supported_uses_available_seed_experiments` verification.
+
+## 2026-11-12 Native comparator closure checkpoint
+
+Written native classical quintic match admitted; exact scope is in the new
+handoff and SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION. Do not implement it or
+promote novelty/separation. Preserve compact/open/parabolic distinction and
+all rejected shortcuts. Precision round has one truncated/NONEMPTY Claude
+report and one active OpenAI report. Reconcile estimates/hashes once terminal,
+extending the frozen prior ledger; no historical rescan or balance inference.
+No broad tests, Git, or quantum code. Next selection is independent.
+
 
 ## 2026-11-12 Explicit precision and usage checkpoint
 
@@ -257,16 +726,9 @@ No backend, quantum code, registry/site sweep or old-control rerun.
 ## 2026-11-11 Rees SDE Queue Status & Repo Wiring Follow-Ups (after harsh pass)
 
 Status of items below ("2026-11-11 Rees SDE Open Items" and "2026-11-11 Rees SDE p = 5, k = 3"):
-- Open Items 2, 3 (`p7_L4b` 12.51 GB streamed LRAT VERIFIED in `lines7_lrat.out`), 5 (`dead_w3_search.py --item5 --ssc` 9/9 `False` in `dead_w3_search.out`; `count_check.py` fixed), 6 (six-point `m=3` 480/480 streamed LRAT VERIFIED in `small/lrat_six_m3_stream.out`), and `p=5, k=3` Item 1 (`tests/test_rees_sde_p5_d3.py`) are **DONE** and covered by `tests/test_rees_sde_{small_sets,p5_d3,2026_11_11_checks}.py`.
-- Open Item 1 (`p = 13` re-check `case_cert_stream.py` PID 3195): still **RUNNING** externally (`13` lines in `cases13_cases.out`); wait for completion before wiring final regression checks.
-- Open Item 4 (`interval-s` at `q = 17, K = 4`): precompute + coverage **DONE** (`13824/13824 COVERAGE OK`, 12 orbits); CPU probe shows `v=0` orbit 6 `UNSAT` in `215.1 s` (`--no-proof`) and `u=0` orbit 0 `UNKNOWN` at `300.2 s` (`--no-proof`, `441,558` vars / `8.74M` clauses), so full LRAT certification is `> 4 core-h` (**HALTED pending coordinator CPU approval**).
+- Open Items 1 (`p = 13` `37/37` LRAT verified in `recheck/cases13_cases.out`), 2, 3 (`p7_L4b`), 4 (`q = 17, K = 4` `12/12` orbits + zero datum streamed LRAT verified in `equi` mode in `cases17_K4_{lrat,zero_equi}.out`), 5 (`dead_w3_search.out`), 6 (`small/lrat_six_m3_stream.out`), and `p=5, k=3` Item 1 (`tests/test_rees_sde_p5_d3.py`) are **DONE** and covered by `tests/test_rees_sde_{small_sets,p5_d3,2026_11_11_checks}.py`.
 - `p = 5, k = 3` Item 2 (`sigma.c`): **BLOCKED** (`claude.ai/code/session_01B1JoCiWoB7SSi6bhNMLfEj` not available locally).
-
-New mechanical items for Gemini:
-1. Update `theorems/rees_fcs_budget.py` (with explicit paper check, do NOT run `make_numbers.py`) so it recomputes the updated `docs/papers/rees-hsp/main.tex` `tab:fcs-budget` (`w.-d. Q` column and lowered `combined Q` from commit `79d66f19`), fixing `tests/test_rees_fcs_budget.py::test_printed_table_is_the_live_main_tex_table`.
-2. Clean up or fix `tests/KNOWN_FAILURES.txt` (134 predated failures, including the 3 `lattice_sine_window_source.py` stale-hash Node checks in `research/classical_baselines/lattice_localization_gap_frontier.json` and `research/phase_workbench/dcp_paid_tree_receiver.json`).
-3. Audit/prune or regenerate the 288 / 300 legacy dangling `research/EXP-*.json` artifact links in `research/registry/experiment_results.json` and `research/experiment_run_history.json`, and refresh the 4 `stale` referee entries (`JACOBI_*`, `NATIVE_RLWE_QUATERNION_KERNEL_AUDIT`, `OUTER_CODED_CHIRP_PROBE`).
-4. Once `case_cert_stream.py` completes 37/37 cases, verify its output and add regression checks without keeping multi-GB LRAT files on disk.
+- 2026-11-11 wiring items 1 (`rees_fcs_budget.py`), 2 (`KNOWN_FAILURES.txt` & Node crosschecks), 3 (288/300 dangling `EXP-*.json` links), and 4 (`37/37` regression checks) are **DONE**; the 4 `stale` referee entries remain queued for an external referee pass (never forged).
 
 ## 2026-11-11 Rees SDE Open Items
 

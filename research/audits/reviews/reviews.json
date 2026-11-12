@@ -805,10 +805,10 @@
      "verified": true
     }
    ],
-   "content_sha": "c8a0764eb954429d1a96d84a6874ba9c6e91792f19fcda3d2adcff47b089adcf",
-   "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
+   "content_sha": "057cf85aefa47506298e7e9010f75cd0771bc797bd8f8316d842af816e2ef5a6",
+   "judge": "claude-subagent-refresh-2026-11-13",
    "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "reviewed_on": "2026-11-13",
    "stale": false,
    "summary": "Both judges rated the note needs-work on scope only: judge A flagged the bold Decision and judge B the title, and I kept both, since each headline states the classical algorithm or the removal without the status line's condition that the local application is review pending and without saying the Lenstra-Silverberg recovery was never executed. I dropped the part of both findings that ties the headline to the ell=poly(log p) promise, because the Decision says polynomial time in ell and log p, which is what the body proves. The judges agreed that the local steps hold, and I re-derived the conjugation identity I*bar(I)=p^2*A, the trace-Gram bound (Gram ell*I-11^T, eigenvalues ell and 1) and the index p^ell=|v(1)*N(J)|. The artifact records classical_known_norm_recovery_executed=false and independent_or_formal_review_completed=false for the 6 small and 51 large controls."
   },
@@ -863,10 +863,10 @@
      "verified": true
     }
    ],
-   "content_sha": "e764b4465aa3cdd1f14c526e46306ce7018199c35e15317c75e6e33c6a0429e1",
-   "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
+   "content_sha": "6dff440a61a9c7f8e30eb4e1aad83597aa711b78cb924d5c4f5709077cfaacd0",
+   "judge": "claude-subagent-refresh-2026-11-13",
    "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "reviewed_on": "2026-11-13",
    "stale": false,
    "summary": "Judge A rated the note sound; judge B flagged the opening 'superseding' paragraph as a scope gap. I kept B's gap but corrected its finding: that paragraph does say the imported recovery algorithm is not implemented, but it states the removal of the prime-conductor opening without the condition that the known-norm note's local application of Theorem 1.3 is review pending, which the closing section concedes. Both judges agreed on, and I re-checked, the technical core: brute-force projective counts at (p,d)=(7,3),(13,3),(13,4),(11,5) equal p^2+p+1+C with B=(d-1)(d^2-3d+3) terms of modulus p, and the primary congruence held on 1398 prime-conductor triples. The artifact confirms 14 controls, 1032 triple records, 64/64 balanced LLL rows, 246 phase checks, the six d in {3,5,7} completed reconstructions, and the 61-bit point count equal to p^2+p+1+C with |C|<=910p."
   },
@@ -1095,10 +1095,10 @@
      "verified": true
     }
    ],
-   "content_sha": "f242d0898ca0c954bc9d4987d6aaf42f72a0dea4c2029f285fc21ee4e87e2011",
-   "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
+   "content_sha": "825141161a87e7625aa63a3947fab77458d73d49ba4f51b249f75e8e95ce2b34",
+   "judge": "claude-subagent-refresh-2026-11-13",
    "overall": "sound",
-   "reviewed_on": "2026-10-22",
+   "reviewed_on": "2026-11-13",
    "stale": false,
    "summary": "Both judges rated the note sound and agreed on every claim; my rechecks agree. For q = 3 mod 8 and d >= 4, R/qR = E x E with conjugation swapping the factors, so a real nonzero residue is a unit and the Hamilton gate forces M*bar(M) = -1; the compatible count |E|-1 of |E|^2 matches the artifact (8/81, 120/14641, 80/6561) and the exponents 2304/12288/61440 equal (d/2)log2 q. The left-ideal closure, the always-principal basis with determinant q^d, the d2/q257 bound ||g||^2 >= 15870 against the norm-5 relation (-1,2) (256 = -1 mod 257), and the norm-one unit classification check. I also checked the mixture weight: a product of two uniform field elements is uniform with weight 1-1/|E| plus a point mass 1/|E| at zero, exactly as stated, and 4v/mu^2 ~ 0.1008 at d64 gives about 0.899 > 0.89. Judge A's remark that step 2 could get h in R directly from J(M,1) in R^2 is a shorter route, not a defect."
   },
@@ -1385,10 +1385,10 @@
      "verified": true
     }
    ],
-   "content_sha": "464eb78f3d50a837c062d2a3f1da38b91f6c471fffbef61ada9c66dee0510ad5",
-   "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
+   "content_sha": "7d73e743635f7668272514b5c371123a858cdeb84ddbe5e48270cf1f39c1d63a",
+   "judge": "claude-subagent-refresh-2026-11-13",
    "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "reviewed_on": "2026-11-13",
    "stale": false,
    "summary": "The formal-square-root completion holds: I recomputed it for every target at p=5,7,11 and a sample at p=13 for all 1<=r<N/2 with no failure, and only r=N/2 targets fail, including the stated p7,N6,r3,b=(0,0,1) countercontrol. Both judges flagged the 3.34e-16 summary number, and I confirmed it: the artifact's p=11 actual_diagonal_probability_max_error is 4.44e-16. The judges disagreed on the decision sentence 'solves EVERY target ... and beyond' (A holds, B gap). I side with B, because that sentence gives no upper limit on the rate and no review-pending status, while the method provably fails at r=N/2. The dense-puncturing extension and the average coherent-erasure identity hold and match the artifact."
   },

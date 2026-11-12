@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-13",
+  "selection": "Native Jack coefficient-state preparation by Lax corner growth",
+  "local_ceiling_usd": 33,
+  "note": "Ceilings not charges. No retries. Six distinct obligations. All claims remain conditional.",
+  "jobs": [
+    {
+      "id": "jack-intertwiner",
+      "provider": "openai",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-lax/jack-intertwiner.md",
+      "contexts": [
+        "research/JACK_LAX_PREPARATION_CANDIDATE.md",
+        "research/audits/api_inputs/2026-11-13-jack-lax/lax-primary.txt",
+        "research/audits/controls/jack_lax_intertwiner/result.json"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-jack-intertwiner",
+      "status": "completed",
+      "session_id": 56685,
+      "billing_status": "usage_reported",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "1.865960",
+      "response_bytes": 9806,
+      "parent_fully_read": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T18:33:53.063881+00:00",
+        "finished_at": "2026-11-12T18:15:01.837074+00:00",
+        "usage": {
+          "input_tokens": 27991,
+          "input_tokens_details": {
+            "cache_write_tokens": 27988,
+            "cached_tokens": 0
+          },
+          "output_tokens": 31721,
+          "output_tokens_details": {
+            "reasoning_tokens": 28172
+          },
+          "total_tokens": 59712
+        },
+        "usage_is_partial": false,
+        "session_reaped_per_parent": true
+      }
+    },
+    {
+      "id": "jack-overlap-clock",
+      "provider": "claude",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-lax/jack-overlap-clock.md",
+      "contexts": [
+        "research/JACK_LAX_PREPARATION_CANDIDATE.md",
+        "research/audits/api_inputs/2026-11-13-jack-lax/lax-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-jack-overlap-clock",
+      "status": "completed",
+      "session_id": 50071,
+      "billing_status": "usage_reported",
+      "stop_reason": "end_turn",
+      "usage_cost_estimate_usd": "1.122196",
+      "response_bytes": 11810,
+      "parent_fully_read": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T18:33:53.063881+00:00",
+        "finished_at": "2026-11-12T18:08:39.468722+00:00",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 34974,
+          "output_tokens": 49115
+        },
+        "usage_is_partial": false,
+        "session_reaped_per_parent": true
+      }
+    },
+    {
+      "id": "jack-native-measurements",
+      "provider": "openai",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-lax/jack-native-measurements.md",
+      "contexts": [
+        "research/JACK_LAX_PREPARATION_CANDIDATE.md",
+        "research/audits/api_inputs/2026-11-13-jack-lax/lax-primary.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-jack-native-measurements",
+      "status": "completed",
+      "session_id": 97949,
+      "billing_status": "usage_reported",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.521450",
+      "response_bytes": 23930,
+      "parent_fully_read": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T18:33:53.063881+00:00",
+        "finished_at": "2026-11-12T18:24:31.185788+00:00",
+        "usage": {
+          "input_tokens": 24025,
+          "input_tokens_details": {
+            "cache_write_tokens": 24022,
+            "cached_tokens": 0
+          },
+          "output_tokens": 45624,
+          "output_tokens_details": {
+            "reasoning_tokens": 38847
+          },
+          "total_tokens": 69649
+        },
+        "usage_is_partial": false,
+        "session_reaped_per_parent": true
+      }
+    },
+    {
+      "id": "jack-classical-sampler",
+      "provider": "claude",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-lax/jack-classical-sampler.md",
+      "contexts": [
+        "research/JACK_LAX_PREPARATION_CANDIDATE.md",
+        "research/audits/api_inputs/2026-11-13-jack-lax/lax-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-jack-classical-sampler",
+      "status": "completed",
+      "session_id": 85792,
+      "billing_status": "usage_reported",
+      "stop_reason": "end_turn",
+      "usage_cost_estimate_usd": "1.064412",
+      "response_bytes": 9992,
+      "parent_fully_read": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T18:33:53.063881+00:00",
+        "finished_at": "2026-11-12T18:08:45.037924+00:00",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 34968,
+          "output_tokens": 46227
+        },
+        "usage_is_partial": false,
+        "session_reaped_per_parent": true
+      }
+    },
+    {
+      "id": "jack-coherent-decoder",
+      "provider": "openai",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-lax/jack-coherent-decoder.md",
+      "contexts": [
+        "research/JACK_LAX_PREPARATION_CANDIDATE.md",
+        "research/audits/api_inputs/2026-11-13-jack-lax/coherent-decoder-proposal.md",
+        "research/audits/api_inputs/2026-11-13-jack-lax/lax-primary.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-jack-coherent-decoder",
+      "status": "completed",
+      "session_id": 75532,
+      "billing_status": "usage_reported",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.313200",
+      "response_bytes": 22968,
+      "parent_fully_read": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T18:33:53.063881+00:00",
+        "finished_at": "2026-11-12T18:27:57.566273+00:00",
+        "usage": {
+          "input_tokens": 24790,
+          "input_tokens_details": {
+            "cache_write_tokens": 24787,
+            "cached_tokens": 0
+          },
+          "output_tokens": 41306,
+          "output_tokens_details": {
+            "reasoning_tokens": 34704
+          },
+          "total_tokens": 66096
+        },
+        "usage_is_partial": false,
+        "session_reaped_per_parent": true
+      }
+    },
+    {
+      "id": "jack-branching-transform",
+      "provider": "claude",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-lax/jack-branching-transform.md",
+      "contexts": [
+        "research/JACK_COHERENT_BRANCHING_TRANSFORM.md",
+        "research/audits/reviews/2026-11-13-jack-lax-intertwiner-independent.md",
+        "research/audits/api_inputs/2026-11-13-jack-lax/qsvt-primary.txt",
+        "research/audits/api_inputs/2026-11-13-jack-lax/lax-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-jack-branching-transform",
+      "status": "completed",
+      "session_id": 16783,
+      "billing_status": "usage_reported",
+      "stop_reason": "end_turn",
+      "usage_cost_estimate_usd": "0.969592",
+      "response_bytes": 13621,
+      "parent_fully_read": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T18:33:53.063881+00:00",
+        "finished_at": "2026-11-12T18:23:12.432482+00:00",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 41318,
+          "output_tokens": 40216
+        },
+        "usage_is_partial": false,
+        "session_reaped_per_parent": true
+      }
+    }
+  ]
+}

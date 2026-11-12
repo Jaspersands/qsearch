@@ -1,0 +1,33 @@
+calibration (three-level, observed with sat3.py + kissat):
+  (p,k)=(41,4) |K|=1: e =     14.3   observed SAT
+  (p,k)=(7,3) |K|=1: e =      7.2   observed SAT
+  (p,k)=(13,3) |K|=1: e =      8.9   observed SAT
+  (p,k)=(13,4) |K|=1: e =      7.6   observed SAT
+  (p,k)=(11,5) |K|=1: e =     -6.7   observed SAT
+  (p,k)=(31,5) |K|=1: e =      6.8   observed SAT
+  (p,k)=(19,3) |K|=1: e =      9.8   observed SAT
+  (p,k)=(13,6) |K|=1: e =    -32.5   observed SAT
+  (p,k)=(7,6) |K|=1: e =    -48.1   observed UNSAT
+  (p,k)=(19,6) |K|=1: e =    -23.3   observed UNSAT
+  (p,k)=(19,9) |K|=1: e =   -240.0   observed UNSAT
+  (p,k)=(37,9) |K|=1: e =   -187.1   observed UNSAT (LRAT)
+  (p,k)=(41,8) |K|=1: e =    -96.0   observed timeout
+  (p,k)=(29,7) |K|=1: e =    -52.1   observed timeout
+  (p,k)=(31,6) |K|=1: e =    -12.3   observed timeout
+  (p,k)=(7,6) |K|=2: e =     -3.1   observed K={0,3} SAT, {0,2} UNSAT, {0,1} timeout
+targets at kappa = 9:
+  p=19 l=3: e(K={0}) =    -240.0   e(|K|=2) =    -113.5
+  p=19 l=4: e(K={0}) =   -1648.0   e(|K|=2) =    -509.7
+  p=19 l=5: e(K={0}) =  -10736.0   e(|K|=2) =    -491.7
+  p=19 l=6: e(K={0}) =  -63855.8   e(|K|=2) =   28343.0
+  p=19 l=7: e(K={0}) = -312557.9   e(|K|=2) =  517231.1
+  p=37 l=3: e(K={0}) =    -187.1   e(|K|=2) =     -68.4
+  p=37 l=4: e(K={0}) =   -1171.7   e(|K|=2) =    -103.7
+  p=37 l=5: e(K={0}) =   -6449.0   e(|K|=2) =    3163.0
+  p=37 l=6: e(K={0}) =  -25273.1   e(|K|=2) =   61235.1
+  p=37 l=7: e(K={0}) =   34685.9   e(|K|=2) =  813259.5
+  p=73 l=3: e(K={0}) =    -138.7   e(|K|=2) =     -30.6
+  p=73 l=4: e(K={0}) =    -736.0   e(|K|=2) =     236.6
+  p=73 l=5: e(K={0}) =   -2527.9   e(|K|=2) =    6225.1
+  p=73 l=6: e(K={0}) =   10016.9   e(|K|=2) =   88794.1
+  p=73 l=7: e(K={0}) =  352295.9   e(|K|=2) = 1061291.0

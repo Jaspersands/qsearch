@@ -121,6 +121,18 @@ Exact selected contexts/statuses in api_inputs/2026-11-12-precision-effectivity/
 These are distinct new proof obligations, not a repeat of the refused broad
 bit-uniformity request. Reconcile only at the next terminal milestone.
 
+Precision milestone Nov12: two terminal requests, one completed arithmetic
+report and one truncated/NONEMPTY analytic report. Valid nonbranch-value
+restriction repaired; explicit binary-table height and integer precision rule
+parent-checked. Frozen28hashes: controls/precision_effectivity_round. Round
+Anth0.727576/OpenAI1.722740,total2.450316USD; cumulativeAnth108.005914/OpenAI
+34.474700,total142.480614USD,126records, two historical UNKNOWN bills excluded.
+Written native surface classical comparator now closed; independent selection
+pivots to conductivity joint-polynomial classical falsifier. Four DISTINCT
+requests active (twoOpenAI/max,twoClaude/high), local ceilings21USD notcharges:
+api_inputs/2026-11-12-conductivity-multiscale/dispatch.json. No retries, no
+empty-call enlargement, no balance inference or quantum implementation.
+
 ## Scientific placement
 
 1. Start from STATE and TRAPS and refresh a stale state from the latest
@@ -403,3 +415,106 @@ checked final proof uses n^-8. Parent and CLOSED core/source reviews plus
 exact Sturm/native-bound arithmetic establish the counterfamily; nothing is
 promoted from this provider refusal. Weaker polynomial gap remains OPEN.
 Older unknown bills remain unknown; continue distinct useful obligations.
+
+Dyadic acceleration, Nov13: six concurrent DISTINCT obligations (three OpenAI
+astra/max, one ClaudeOpus, two ClaudeFable) target the high-degree/projective
+ONE-HALF compiler, uniform reset, actual source gates and whole-loop losses.
+Selected contexts and sessions: audits/api_inputs/2026-11-13-dyadic-high-degree/
+dispatch.json. Local ceilings32USD, not spend or provider caps. Prior conductivity
+round terminal: four completed/nonempty, one empty truncation, USD7.399194
+estimated; cumulative149.879808 across131priced records (Anth111.799008,
+OpenAI38.080800). Two historical UNKNOWN bills excluded. Frozen46hashes:
+audits/controls/conductivity_multiscale_round/. These are not account balances.
+All material findings verified; new round is scientifically distinct, no retry.
+
+Classical-two-family milestone Nov13: six terminal, fourcompleted, oneempty
+refusal and oneemptytruncation; no retries. Frozen82hash ledger under
+audits/controls/classical_two_family_round/. Round estimatesAnth4.353172/
+OpenAI4.269100,total8.622272USD. Cumulative128.451242/64.774690,
+total193.225932USD,157pricedrecords; THREEUNKNOWN historical bills excluded.
+Estimates are not invoices or balances. The written quartic squareclass
+constructor now reduces to factoring; literalcyclotomic family separately
+matched classically. Four NEW distinct paid obligations run, ceilings22USD
+notcharges, in audits/api_inputs/2026-11-13-next-mechanisms/dispatch.json:
+structuredresultant constant map, cyclotomic good specialization, explicit
+Gaudin generator and its locality attack. No failed/empty retry, wrapper
+or further fixed-degree extension.
+
+
+Next-mechanisms terminal milestone13November: allsix completed/nonempty,
+allfull responses parent-read. Round estimates Anth3.318312/OpenAI6.213560,
+total9.531872USD; cumulative known Anth131.769554/OpenAI70.988250,total
+202.757804USD across163pricedrecords. THREE historical UNKNOWN bills remain
+excluded. Frozen82hash ledger: audits/controls/next_mechanisms_round/.
+These are estimates, not invoices or measured balances. Three DISTINCT
+new tasks in api_inputs/2026-11-13-torus-completion/dispatch.json are running
+and excluded (localceilings13USD, not charges): unit-log lattice/phase,
+cyclic content cover, and native resultant Taylor multiplicity. No retries.
+The sixjob results closed fixeddelta fullRel, refuted universal Gaudin
+3locality, and narrowed growingdelta support discovery; fullRel staysOPEN.
+
+Nov13 torus completion milestone: two substantive completed reports and one
+empty ReadTimeout with UNKNOWN bill, not retried. Frozen48hash ledger
+audit in controls/torus_completion_round. Round estimates Anth1.099108/OAI
+1.752800,total2.851908USD; cumulative132.868662/72.741050,total205.609712USD
+across165pricedrecords, FOUR UNKNOWN bills excluded. Partial0.070644 excluded.
+Four distinct new Jack proof/resource/classical obligations now run, ceilings
+22USD, not charges. See api_inputs/2026-11-13-jack-lax/dispatch.json. No
+balance inference, retry, infrastructure expansion or claim promotion.
+
+Nov13 Jack-transform milestone: all six paid reports completed/nonempty and
+fully parent-read. Frozen72hash ledger controls/jack_lax_round. Round
+Anth3.156200/OAI6.700610,total9.856810USD; cumulativeAnth136.024862/
+OAI79.441660,total215.466522USD across171priced records, FOUR historical
+UNKNOWN bills excluded. Estimates, not invoices or measured balances. New
+classical attack round uses distinct exact-creation contraction, commuting-
+charge moment closure and positive doubled-map sampling obligations;
+api_inputs/2026-11-13-jack-classical/dispatch.json. No retries or new runners.
+
+Further Nov13 acceleration: six distinct new obligations across classical
+Jack sampling (four) and the complete BO quench-work candidate (two), three
+each provider, total localceilings33USD NOTcharges. One Lax report complete
+and checked, one paired-map request truncated EMPTY (known1.340204USD),
+no retry. Remaining four active. Work-law questions target energy aggregation
+and positive Schur/Selberg contraction, not new quantum infrastructure.
+Exact packets: api_inputs/2026-11-13-jack-{classical,work}/dispatch.json.
+
+Nov13 classical Jack milestone: four terminal, three completed/nonempty and
+one empty truncation; all substantive reports fully parent-checked. Frozen
+51hash controls/jack_classical_round. RoundAnth2.173968/OpenAI3.593140,
+total5.767108USD; cumulativeAnth138.198830/OpenAI83.034800,total221.233630
+USD across175priced records, FOUR unknown bills excluded. Work-law jobs
+remain outside this ledger; Schur report truncated NONEMPTY3060bytes,
+coarse recurrence active. Estimates are not invoices/balances. No retries.
+
+Nov13 constructive acceleration: two NEW paid log-precision compiler
+obligations (binomial polar/OAImax, native Taylor+finite gates/Claudehigh),
+localceilings11USD NOTcharges. Exact packets/sessions in api_inputs/2026-
+11-13-jack-logprecision/dispatch.json. These test explicit replacements of
+inverse-accuracy bottlenecks, not a retry of the truncated work/paired-map
+requests. Existing theorem stays poly(D,1/epsilon) pending independent
+whole-composition and parent verification. No infrastructure expansion.
+
+
+Jack-work milestone Nov13: two terminal jobs, one completed and one truncated
+NONEMPTY. Both fully parent-read, incomplete claims not adopted. Frozen35hash
+audits/controls/jack_work_round: roundAnth1.313596/OpenAI2.407580,total3.721176;
+cumulativeAnth139.512426/OpenAI85.442380,total224.954806USD/177priced. FOUR
+unknown bills excluded. Estimates NOTinvoices/balances. Two NEW constructive
+log-precision compiler jobs remain active and excluded from this milestone.
+
+
+Jack logprecision milestone Nov13: both reports completed and fully read.
+Frozen27hash controls/jack_logprecision_round: roundAnth1.305996/OAI2.056660,
+total3.362656USD; cumulativeAnth140.818422/OAI87.499040,total228.317462USD/
+179priced. FOUR unknown bills excluded. Estimates NOTinvoices/balances.
+Three new DISTINCT Macdonald native/branching/classical obligations active,
+localceilings13USD NOTcharges; explicit contexts/sessions in
+api_inputs/2026-11-13-macdonald/dispatch.json. They are excluded above.
+
+
+Owner spend update13November2026: Claude155.99USDspent;OpenAI101.71USDspent.
+These are owner-reported SPENT totals, not measured remainingbalances. Keep
+runnerestimates separately. Ongoing faster researchspend remainsauthorized;
+no unrelatedservice/Git action. Current wavebatch has a newOAIunknownbill,
+RemoteProtocolError andEMPTYreport, not retried; FIFTHunknown nowretained.

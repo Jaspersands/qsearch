@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 23967,
+      "path": "research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md",
+      "sha256": "4aae2d6ddf87d7afb01b47157c940829b5fea647c47b8cb30cfde79908a7e9a0",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 19564,
+      "path": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/primary-excerpts.md",
+      "sha256": "92c719e6d6239922bf65c59143c2f365b56eb5db3cbd38cd4bfaeb53163e9eba",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 17446,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T12:33:32.683712+00:00",
+  "input_token_allowance": 17795,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.72654,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/cross-scale-falsifier.md",
+    "sha256": "e25d383be06b876ec157fc60e0013c88cff8e35010c1c308208e9ae006113362",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T122813.376398Z-a83ccf26",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 17446,
+    "output_tokens": 32768
+  },
+  "usage_cost_estimate_usd": 0.725144
+}

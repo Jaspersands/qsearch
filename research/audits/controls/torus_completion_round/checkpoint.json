@@ -1,0 +1,407 @@
+{
+  "captured_at_utc": "2026-11-12T17:54:18.807141+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "partial_estimate_equals_total_bill": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 4795,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-torus-completion/dispatch.json",
+    "sha256": "4ae033205f9d059b593ec8f3bd87f7e859640768c928ec1fafa2dff72bdc5901"
+  },
+  "dispatch_mutation_scope": "Only this three-job manifest final status/billing/session metadata refreshed; scientific dispositions and other notes unchanged.",
+  "exclusions": [
+    {
+      "reason": "Not read or hashed in this milestone; no current scientific topic-note snapshots.",
+      "scope": "Evolving topic notes, STATE/HANDOFF/workflow and newly fetched jack_transform sources"
+    },
+    {
+      "reason": "Three inherited unknown bills plus new unit-lattice-phase ReadTimeout; all observed partial counters excluded from known provider/round/cumulative totals. No retry.",
+      "scope": "Four UNKNOWN partial-failure total bills",
+      "unknown_bill_records": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.485230",
+          "failure_stage": "generation",
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "obligation": "quadratic-composition",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 48498,
+            "output_tokens": 5
+          },
+          "provider": "Anthropic",
+          "response_bytes": 7862,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.070644",
+          "failure_stage": "generation",
+          "failure_type": "ReadTimeout",
+          "no_retry": true,
+          "obligation": "unit-lattice-phase",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 17621,
+            "output_tokens": 8
+          },
+          "provider": "Anthropic",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ]
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 2336,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-torus-completion/content-cyclic.md",
+      "sha256": "6c32141f223e18a75e55ca0890861f0b73ade454292047fbc34620ddd808de46"
+    },
+    {
+      "bytes": 1391,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-torus-completion/contract.md",
+      "sha256": "0aeec1f87ea334eb871d84deaf3a8e4fc76fce33101542bec80d60de780ecf4e"
+    },
+    {
+      "bytes": 4795,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-torus-completion/dispatch.json",
+      "sha256": "4ae033205f9d059b593ec8f3bd87f7e859640768c928ec1fafa2dff72bdc5901"
+    },
+    {
+      "bytes": 10784,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-torus-completion/multiplicity-primary.md",
+      "sha256": "0bbf469e56139375d43084b8a7d11132e568548d32e0aecb908c13ab74f26c93"
+    },
+    {
+      "bytes": 2541,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-torus-completion/native-resultant-multiplicity.md",
+      "sha256": "dd8a62a67256ff1fbc341e01e49233fa300cacb234057c1aa8e2dcf162778267"
+    },
+    {
+      "bytes": 2032,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-torus-completion/unit-lattice-phase.md",
+      "sha256": "8f716770fe2f1b5f6998c258581c51ce9581a2883a47d2c50a79c9f7d5f488d5"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 28509,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/next_mechanisms_round/checkpoint.json",
+    "sha256": "4ea2e95d31bb4908ef19d1ab49710b8deaffed380f0b8b6ce47497de0429cab8"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 23206,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/next_mechanisms_round/usage.json",
+    "sha256": "84c4e602e3ea4d4835af71b0f13a18768007523f22d777c516c4c52fa15abcb1"
+  },
+  "not_frozen": "Evolving topic notes/STATE/HANDOFF/workflow and new jack_transform source fetches. Immutable context snapshots in these three terminal bundles are frozen; live originals are excluded.",
+  "primary_source_artifacts": [
+    {
+      "bytes": 375233,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_torus_arch/mehlhorn_sagraloff_wang.pdf",
+      "sha256": "31e795da8e059eff24fcaec431d012719a39d37026cf3ce30fe47c8dbb5ec515"
+    },
+    {
+      "bytes": 152506,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_torus_arch/mehlhorn_sagraloff_wang.txt",
+      "sha256": "b9f7723fbfa913442aeec5c9533d4ccf708907aed046acf7eb0f21996e08a44f"
+    },
+    {
+      "bytes": 444,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_torus_arch/source.json",
+      "sha256": "9e459a6ffd19e8badec0cea4599a03fce6e46bff7b99a918c05cba83312c61bd"
+    },
+    {
+      "bytes": 296683,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_content_multiplicity/koiran_skomra.pdf",
+      "sha256": "b0c8ed3f3a315ddee0fa0f7e2e578703a6eb4ef65f4f360fe1f8e20ab2a9a44e"
+    },
+    {
+      "bytes": 77934,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_content_multiplicity/koiran_skomra.txt",
+      "sha256": "f57fd307710c910cfb90d7f7e5f9280118a0b09776fc0efbc4f18a8cd8934634"
+    },
+    {
+      "bytes": 413428,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_content_multiplicity/mousseau.pdf",
+      "sha256": "544dde18ad74e32b11d474ba8b2c5b5cad276f68d403ec8572f9021d953dca57"
+    },
+    {
+      "bytes": 48392,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_content_multiplicity/mousseau.txt",
+      "sha256": "49fce498bacd14f6da4b4eeb1d6bc15641630342ba2292de38052ddf1007443c"
+    },
+    {
+      "bytes": 987598,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/impurity_current_baseline/arunachalam_et_al.pdf",
+      "sha256": "52608af22a333fa80bac84e8d9556797d726a6fd0dc5f55b83273f51fe83731d"
+    },
+    {
+      "bytes": 298290,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/impurity_current_baseline/arunachalam_et_al.txt",
+      "sha256": "bc88afd8fe843659b7292345ce82cc81a002a332502c2ae5c8fb4d737e45cef6"
+    },
+    {
+      "bytes": 738835,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/impurity_current_baseline/jiang_et_al.pdf",
+      "sha256": "dd21597db523d90cccbaa43e6be8c72440c1d406c1e1d4f6d3d0c2df7dfd1842"
+    },
+    {
+      "bytes": 298380,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/impurity_current_baseline/jiang_et_al.txt",
+      "sha256": "b53629b2afa6badddc49fb14ed58bb8220e14094edf0eae50b13746dbdf362ff"
+    }
+  ],
+  "prior_hash_policy": "Frozen prior usage/checkpoint remain byte-identical. Earlier artifact hashes/unknown bill records preserved without recursive historical scans or repinning.",
+  "review_artifacts": [
+    {
+      "bytes": 14983,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-sparse-torus-arch-clock.md",
+      "sha256": "4a49c91e6e0dbe6f9d3c5e6998a297eda74425af5cfb63cf120726e68268ab40"
+    },
+    {
+      "bytes": 19791,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-sparse-known-prime-clock.md",
+      "sha256": "9395ebc01d9f5ff254269897028fab01404bae96b0bb79ca5816656332f35640"
+    },
+    {
+      "bytes": 12914,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-independent-next-direction.md",
+      "sha256": "0f692eb7f9756d9c6ed47979fb7b87fd9e248bb6071682309207bc374ba2f8fc"
+    }
+  ],
+  "scope": "Mechanical three-job usage and stable artifact hashes only; no scientific conclusions.",
+  "status": "TERMINAL_TORUS_COMPLETION_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1391,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/context/000.txt",
+      "sha256": "0aeec1f87ea334eb871d84deaf3a8e4fc76fce33101542bec80d60de780ecf4e"
+    },
+    {
+      "bytes": 21442,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/context/001.txt",
+      "sha256": "2b79ac7cc392bdb34d4d17be2b23718edfdbad43878d6e038295c4efad8f9eae"
+    },
+    {
+      "bytes": 14409,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/context/002.txt",
+      "sha256": "6160f31ebbf20f45bcbba7deb519c2b1b82dc4dbac152f45f0036706e4e436dc"
+    },
+    {
+      "bytes": 3912,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/context/003.txt",
+      "sha256": "b78402098b32ff492c6b0dd9f9432776c9fe6e5bdf179f40df7b618677e83350"
+    },
+    {
+      "bytes": 2032,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/prompt.txt",
+      "sha256": "8f716770fe2f1b5f6998c258581c51ce9581a2883a47d2c50a79c9f7d5f488d5"
+    },
+    {
+      "bytes": 45671,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/request.json",
+      "sha256": "3abd3938e6e06139bf90e70ee640a84009e835a25da162258345ccfecaa99a12"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2245,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+      "sha256": "e5be708184a1a5129dc00b75f5b4f52051342e81634ebc64159be8eddffec7f2"
+    },
+    {
+      "bytes": 1391,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/context/000.txt",
+      "sha256": "0aeec1f87ea334eb871d84deaf3a8e4fc76fce33101542bec80d60de780ecf4e"
+    },
+    {
+      "bytes": 21442,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/context/001.txt",
+      "sha256": "2b79ac7cc392bdb34d4d17be2b23718edfdbad43878d6e038295c4efad8f9eae"
+    },
+    {
+      "bytes": 14409,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/context/002.txt",
+      "sha256": "6160f31ebbf20f45bcbba7deb519c2b1b82dc4dbac152f45f0036706e4e436dc"
+    },
+    {
+      "bytes": 3912,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/context/003.txt",
+      "sha256": "b78402098b32ff492c6b0dd9f9432776c9fe6e5bdf179f40df7b618677e83350"
+    },
+    {
+      "bytes": 2336,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/prompt.txt",
+      "sha256": "6c32141f223e18a75e55ca0890861f0b73ade454292047fbc34620ddd808de46"
+    },
+    {
+      "bytes": 45975,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/request.json",
+      "sha256": "4e09b73e6a20222acb40a699d0bbf9115096352f166fdf0e6d4f68663145678a"
+    },
+    {
+      "bytes": 12576,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/response.md",
+      "sha256": "14c7e84d6114176d397766981ea9708d57f4e488692da288783b1595487f707f"
+    },
+    {
+      "bytes": 2093,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/result.json",
+      "sha256": "0b4d91dec5533ba62641a1e4fd0234c2c07c817936b1b033c39bbd1882d3d2d8"
+    },
+    {
+      "bytes": 2541,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/context-00.txt",
+      "sha256": "dd8a62a67256ff1fbc341e01e49233fa300cacb234057c1aa8e2dcf162778267"
+    },
+    {
+      "bytes": 1391,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/context-01.txt",
+      "sha256": "0aeec1f87ea334eb871d84deaf3a8e4fc76fce33101542bec80d60de780ecf4e"
+    },
+    {
+      "bytes": 10784,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/context-02.txt",
+      "sha256": "0bbf469e56139375d43084b8a7d11132e568548d32e0aecb908c13ab74f26c93"
+    },
+    {
+      "bytes": 14409,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/context-03.txt",
+      "sha256": "6160f31ebbf20f45bcbba7deb519c2b1b82dc4dbac152f45f0036706e4e436dc"
+    },
+    {
+      "bytes": 3177,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/context-04.txt",
+      "sha256": "09a5eb3022f65aace777fe47e9b3bd720ed54699520b430c09c1d5f0090ee13b"
+    },
+    {
+      "bytes": 563036,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/provider-response.json",
+      "sha256": "f9ffa729263a0c68de2357d46a8b29577aa085fe9ee8a593cf5df77d56ed1022"
+    },
+    {
+      "bytes": 34073,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/request.json",
+      "sha256": "f8b4189933b3fc4b56e2b8ddd0a67f50b51d5f2778602f057bfd15a8574306ce"
+    },
+    {
+      "bytes": 8226,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/response.md",
+      "sha256": "4d29fef511105dfddfd36cfade6f5f73dfe83826f9c8930068f36e2e7f57ad23"
+    },
+    {
+      "bytes": 1927,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/result.json",
+      "sha256": "2632d02749e72706fb06cff47eba6913561f4e392e05022333c87d242e485af1"
+    }
+  ],
+  "three_terminal_results_and_responses": [
+    {
+      "known_nonpartial_estimate": false,
+      "obligation": "unit-lattice-phase",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2245,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+        "sha256": "e5be708184a1a5129dc00b75f5b4f52051342e81634ebc64159be8eddffec7f2"
+      },
+      "session_id": 70464,
+      "status": "failed",
+      "usage_is_partial": true
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "content-cyclic",
+      "response": {
+        "bytes": 12576,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/response.md",
+        "sha256": "14c7e84d6114176d397766981ea9708d57f4e488692da288783b1595487f707f"
+      },
+      "response_characters": 12177,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2093,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-content-cyclic/result.json",
+        "sha256": "0b4d91dec5533ba62641a1e4fd0234c2c07c817936b1b033c39bbd1882d3d2d8"
+      },
+      "session_id": 72928,
+      "status": "completed",
+      "usage_is_partial": false
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "native-resultant-multiplicity",
+      "response": {
+        "bytes": 8226,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/response.md",
+        "sha256": "4d29fef511105dfddfd36cfade6f5f73dfe83826f9c8930068f36e2e7f57ad23"
+      },
+      "response_characters": 8221,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1927,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-native-resultant-multiplicity/result.json",
+        "sha256": "2632d02749e72706fb06cff47eba6913561f4e392e05022333c87d242e485af1"
+      },
+      "session_id": 15307,
+      "status": "completed",
+      "usage_is_partial": false
+    }
+  ],
+  "unique_hashed_artifact_count": 48,
+  "usage_snapshot": {
+    "bytes": 19090,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/torus_completion_round/usage.json",
+    "sha256": "b046eefff77a5bac1b775423a427e65e2bf9de264082589d53a9331cfe1c1183"
+  }
+}

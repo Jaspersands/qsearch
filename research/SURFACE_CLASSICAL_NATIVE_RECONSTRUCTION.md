@@ -1,10 +1,15 @@
-# Native classical quintic reconstruction: composition under attack
+# Native classical quintic reconstruction: written composition
 
-2026-11-12. CANDIDATE COMPOSITION, not yet an admitted full classical match.
-Every intermediate theorem has a stated input; the present review must check
-that the preceding step actually constructs it. Independent reconstruction
-is now proved; whole-composition review remains open. No quantum implementation, novelty,
-hardness or separation claim follows.
+2026-11-12. Reviewed WRITTEN bounded-error classical polynomial-BIT algorithm
+for EVERY native smooth quintic over every prime field. The complete
+356-line independent review, audits/reviews/2026-11-12-native-surface-
+composition.md, was parent-read against the established interface/source
+proofs. No further supplied-input condition remains in this written
+composition. This is not an implementation, practical runtime, novelty,
+human/formal verification, hardness, separation or quantum-execution claim.
+The concrete numerical-majorant ledger is now checked at its specified
+geometry/local-residue scope, including the nonbranch-value and arity guards.
+The full composition separately pays those geometric and computational inputs.
 
 ## Scientific question and native contract
 
@@ -14,9 +19,9 @@ degree-53 polynomial P2(T)=det(1-T Frob_geom | H2), hence the point count
 1+p^2-[T]P2. No pencil, Jacobian, torsion basis, cover, number field, height
 bound, cohomology, or target Frobenius is supplied. Fixed degree is essential.
 
-Proposed classical randomized bit complexity poly(B,log(1/eta)), with explicit
+Established written classical randomized bit complexity poly(B,log(1/eta)), with explicit
 failure probability eta and astronomically large constant exponents. It
-would match the established native quantum polynomial upper bound. It says
+matches the established native quantum polynomial upper bound. It says
 nothing about practical cost or growing-degree input. The relevant classical
 baseline is the actual small-prime torsion/lifting method, not direct point
 enumeration at large p. Corpus lookups: audits/selection/2026-11-12/
@@ -236,9 +241,9 @@ growth hidden behind polynomial field degree; missing numerical canonical
 RR; one-component arithmetic scalar ambiguity; unequal or non-equivariant
 global encodings; a target-ramified orbit; a fixed-family theorem with an
 unpaid Jacobian; or a determinant sign/Tate-twist error. These are mathematical
-obligations, not requests for finite examples. Full native classical matching
-stays UNADMITTED until reconstruction, all interfaces and whole composition
-survive independent review and parent source checking.
+obligations, not requests for finite examples. These interfaces and their whole composition have now survived independent
+review and parent source checking, at the WRITTEN mathematical level. A future
+counterexample or source correction must reopen the exact affected claim.
 
 ## Whole paid review: dispositions and the explicit precision follow-up
 
@@ -248,10 +253,12 @@ before maximalization, actual Frobenius, boundary/Tate factors, Leray/CRT and
 the small-p fallback. Its primary OPEN was effective height transfer whose
 upstream uniform-height/Merkl derivations were OMITTED from that packet. It
 correctly refuses to infer those inputs from labels. The existing source
-derivations are now being checked as a whole, and the new
+derivations were subsequently checked as a whole, and the new
 SURFACE_RECONSTRUCTION_PRECISION_LEDGER.md spells out computable majorants.
-Two distinct paid follow-ups test its analytic constants and arithmetic/
+Two distinct paid follow-ups tested its analytic constants and arithmetic/
 closed-coordinate precision with the actual previously omitted proof inputs.
+The completed arithmetic report is parent-checked; the partial analytic
+report supplied a valid nonbranch-domain correction, not a complete audit.
 
 Its warning about reusing KM data after changing background is accepted and
 already resolved by the source-checked reinitialization/product construction.
@@ -260,3 +267,22 @@ REJECTED without a disjointness hypothesis: intersections take the maximum
 of the two vanishing divisors, not their sum. The actual Mascot DivAdd/DivSub
 prefix used here does not use that invalid shortcut. Report agreement does
 not establish the theorem, and a missing packet is not a counterexample.
+
+## Whole review disposition
+
+The final independent review checks native pencil existence for every input,
+all-pencil finite-coefficient monodromy, fixed versus growing dimensions,
+complete auxiliary module, numerical auxiliary P, post-P known-b RR, actual
+canonical divisor conversion, effective logarithmic heights, global descent,
+quotient-first target maximalization, arithmetic Frobenius, boundary/Leray,
+CRT and capped finite clocks. Parent checked the complete argument, rather
+than promoting its ACCEPT label. The exact contract is C(1+B+log(1/eta))^c
+bit operations, absolute computable C,c, exact P2 with probability >=1-eta,
+otherwise FAIL. Small characteristic is paid by the polynomial-threshold
+direct-count branch. The source compact-Hom=parabolic assertion remains
+REFUTED; this construction uses open cohomology and determinant division.
+
+Research action: this exact fixed-degree quantum endpoint now has a matching
+classical polynomial upper bound. Stop surface variants and independently
+reselect an externally valuable native mechanism. Finish the already running
+precision audit; do not build the astronomically impractical algorithm.

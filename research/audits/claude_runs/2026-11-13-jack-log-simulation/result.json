@@ -1,0 +1,55 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 5081,
+      "path": "research/audits/api_inputs/2026-11-13-jack-logprecision/native-proposal.md",
+      "sha256": "0612480eb5e10ece3c99bd3d2b26989b22501fbd8b730b46528e4bca8e56ebcc",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 23930,
+      "path": "research/audits/openai_runs/2026-11-13-jack-native-measurements/response.md",
+      "sha256": "f2f67fdbe0388ab8d6ee6d6e87c7a387c4edb3a9cb76030446382ec9988bd045",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 17070,
+      "path": "research/audits/api_inputs/2026-11-13-jack-logprecision/taylor-primary.txt",
+      "sha256": "a81914556f893729143aca7e2840fc0caf2888eb33dfe0549709f6a3ae82ec0d",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 18394,
+  "effort": "high",
+  "finished_at": "2026-11-12T19:27:27.102395+00:00",
+  "input_token_allowance": 18762,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.355048,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-jack-logprecision/jack-log-simulation.md",
+    "sha256": "b9e5944e44e4d41fa59a8b5d6133061439e0f4570a1ee68a530b55539566a1cc",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261112T191708.625058Z-bd89edbe",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 18394,
+    "output_tokens": 61621
+  },
+  "usage_cost_estimate_usd": 1.305996
+}

@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 7746,
+      "path": "research/audits/api_inputs/2026-11-13-macdonald/native-contract.md",
+      "sha256": "2a299ed861de4509269b6815e1a5a370533bcd55c748275d3044730c26b3dcdc",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 60555,
+      "path": "research/audits/api_inputs/2026-11-13-macdonald/mickler-primary.txt",
+      "sha256": "45689baad1e008d5bdd268d37aaf2af4d302920b86d5358d99718f89077d2ee9",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 24455,
+  "effort": "high",
+  "finished_at": "2026-11-12T19:45:15.874136+00:00",
+  "input_token_allowance": 24945,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.37978,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-macdonald/macdonald-branching.md",
+    "sha256": "c2022204fa360a4dfff4aef833850208f1361b8a3e7b1f4d2d7b43b6365fdbf8",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T193855.704972Z-7321eac0",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 24455,
+    "output_tokens": 40081
+  },
+  "usage_cost_estimate_usd": 0.89944
+}

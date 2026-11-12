@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-13",
+  "selection": "Classical attacks on the unconditional one-prime Galois2 native Selmer family",
+  "local_ceiling_usd": 29,
+  "ceiling_note": "Six distinct obligations; total local preflight ceilings29USD, not actual spending, invoices, provider-enforced caps or balances. A saved result.json exists from launch; authoritative terminal status/stop reason comes from final result metadata. No unknown-cost retry.",
+  "jobs": [
+    {
+      "id": "relative-norm",
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "budget": 9,
+      "extra": [
+        "research/audits/reviews/2026-11-13-quadratic-norm-squareclasses.md",
+        "research/audits/reviews/2026-11-13-one-prime-two-class-coverage.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-relative-norm",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-classical-two-family/contract.md",
+        "research/audits/api_inputs/2026-11-13-classical-two-family/primary-notes.md",
+        "research/audits/reviews/2026-11-13-quadratic-norm-squareclasses.md",
+        "research/audits/reviews/2026-11-13-one-prime-two-class-coverage.md"
+      ],
+      "prompt": "research/audits/api_inputs/2026-11-13-classical-two-family/relative-norm.md",
+      "chunk_id": "e5b12a",
+      "wall_time_seconds": 1.003208291,
+      "session_id": 16584,
+      "original_token_count": 0,
+      "output": "",
+      "status": "completed",
+      "disposition": "Advisory; parent verification required",
+      "stop_reason": null
+    },
+    {
+      "id": "cyclotomic-literal",
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "budget": 5,
+      "extra": [
+        "research/audits/reviews/2026-11-13-one-prime-two-class-coverage.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-cyclotomic-literal",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-classical-two-family/contract.md",
+        "research/audits/api_inputs/2026-11-13-classical-two-family/primary-notes.md",
+        "research/audits/reviews/2026-11-13-one-prime-two-class-coverage.md"
+      ],
+      "prompt": "research/audits/api_inputs/2026-11-13-classical-two-family/cyclotomic-literal.md",
+      "chunk_id": "f48d1f",
+      "wall_time_seconds": 1.003186958,
+      "session_id": 27558,
+      "original_token_count": 0,
+      "output": "",
+      "status": "empty_response",
+      "disposition": "Advisory; parent verification required",
+      "stop_reason": "refusal"
+    },
+    {
+      "id": "cyclic-quartic",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "budget": 2,
+      "extra": [
+        "research/QUADRATIC_NATIVE_SQUARECLASSES.md",
+        "research/audits/reviews/2026-11-13-quadratic-conic-backend.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-cyclic-quartic",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-classical-two-family/contract.md",
+        "research/audits/api_inputs/2026-11-13-classical-two-family/primary-notes.md",
+        "research/QUADRATIC_NATIVE_SQUARECLASSES.md",
+        "research/audits/reviews/2026-11-13-quadratic-conic-backend.md"
+      ],
+      "prompt": "research/audits/api_inputs/2026-11-13-classical-two-family/cyclic-quartic.md",
+      "chunk_id": "d1f2e7",
+      "wall_time_seconds": 1.001729875,
+      "session_id": 52117,
+      "original_token_count": 0,
+      "output": "",
+      "status": "truncated",
+      "disposition": "Advisory; parent verification required",
+      "stop_reason": "max_tokens"
+    },
+    {
+      "id": "direct-dimension",
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "budget": 9,
+      "extra": [
+        "research/GENERAL_NATIVE_SELMER_COMPOSITION.md",
+        "research/audits/reviews/2026-11-13-one-prime-two-class-coverage.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-direct-dimension",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-classical-two-family/contract.md",
+        "research/audits/api_inputs/2026-11-13-classical-two-family/primary-notes.md",
+        "research/GENERAL_NATIVE_SELMER_COMPOSITION.md",
+        "research/audits/reviews/2026-11-13-one-prime-two-class-coverage.md"
+      ],
+      "prompt": "research/audits/api_inputs/2026-11-13-classical-two-family/direct-dimension.md",
+      "chunk_id": "3e76b0",
+      "wall_time_seconds": 1.000666125,
+      "session_id": 99949,
+      "original_token_count": 0,
+      "output": "",
+      "status": "completed",
+      "disposition": "Advisory; parent verification required",
+      "stop_reason": null
+    },
+    {
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 2,
+      "session_id": 94110,
+      "prompt": "research/audits/api_inputs/2026-11-13-classical-two-family/kutas-interface.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-classical-two-family/kutas-primary.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-kutas-interface",
+      "status": "completed",
+      "brief": "Exact Kutas source interface audit; distinct new obligation with supplied primary-source context, not a retry.",
+      "id": "kutas-interface",
+      "stop_reason": "end_turn"
+    },
+    {
+      "provider": "claude",
+      "id": "simon-bit-clock",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "budget": 2,
+      "session_id": 36546,
+      "prompt": "research/audits/api_inputs/2026-11-13-classical-two-family/simon-bit-clock.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-classical-two-family/simon-dim4-primary.md",
+        "research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-stevenhagen-primary.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-simon-bit-clock",
+      "status": "completed",
+      "disposition": "New actual source-clock obligation, not a retry; parent verification required.",
+      "stop_reason": "end_turn"
+    }
+  ]
+}

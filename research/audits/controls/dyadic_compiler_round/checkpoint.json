@@ -1,0 +1,692 @@
+{
+  "captured_at_utc": "2026-11-12T14:01:41.731200+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 8532,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/dispatch.json",
+    "sha256": "a7539e3f64471e0962f85ef2a676208665fbeed59997b94944bb6cb906cac09a"
+  },
+  "dispatch_mutation_scope": "Shared manifest unchanged; authoritative terminal statuses/session IDs captured only in usage.json.",
+  "exclusions": [
+    {
+      "reason": "Still writing; not read or hashed.",
+      "scope": "ideal-saturation independent review"
+    },
+    {
+      "reason": "No shared note hashed or edited.",
+      "scope": "Changing shared proof/main notes, STATE/HANDOFF/workflow"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills remain UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 3961,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/abel-grid-proposal.md",
+      "sha256": "55e38357c21e4faffb7c5f4b9909e5ad9d95914c938b01c226aac9e713ab20c1"
+    },
+    {
+      "bytes": 8532,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/dispatch.json",
+      "sha256": "a7539e3f64471e0962f85ef2a676208665fbeed59997b94944bb6cb906cac09a"
+    },
+    {
+      "bytes": 4506,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/mixed-pencil-proposal.md",
+      "sha256": "4fc10d566ef1cb7efc4f59ce8a92b19b735e1fabb783f17033e6799876983978"
+    },
+    {
+      "bytes": 3052,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/native-content-attack.md",
+      "sha256": "d67c1abb6a64af5e4b6b0f5319c09eb022594acf7815f2edab037cf4274a82c7"
+    },
+    {
+      "bytes": 4029,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/native-ideal-content.md",
+      "sha256": "2ee85f3d513d1d143728a73891999351cef51807b684312745fb5b1f36d3445c"
+    },
+    {
+      "bytes": 3228,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/nonspecial-rr-compiler.md",
+      "sha256": "a5b8cd25d939406ff1c8f43b2ee9c31eb23ba7071540c169b5df2360ddcfbea9"
+    },
+    {
+      "bytes": 8181,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/precision-primary-excerpts.md",
+      "sha256": "4328a2b94471748e30516e6353526ed12a542c8eb9f5d317476de6bbab1ed581"
+    },
+    {
+      "bytes": 23519,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/primary-excerpts.md",
+      "sha256": "eea134899272eb6c33bb4588b7aa47601331df1e89c3f6ddba948c9f3cd38eb4"
+    },
+    {
+      "bytes": 3188,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/projective-half-certificate.md",
+      "sha256": "f7bc525fc5d2bf448b94ce4ea8ac15a0f3211620f0614fce465e05e92c7cf309"
+    },
+    {
+      "bytes": 4594,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/reduced-rr-cokernel.md",
+      "sha256": "28a3de8404e47854dbf16454d0b3c98d082fa456b79fd707de4ebc6e5fe460b2"
+    },
+    {
+      "bytes": 3034,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/source-high-degree-gates.md",
+      "sha256": "dbf9c628b99439583f11b57c945c53b14c4542bcd3f947dc780941a3488b8e73"
+    },
+    {
+      "bytes": 3143,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/uniform-translation-reset.md",
+      "sha256": "050310f8c956ab0f34b89f3715ae32411e14097c432a93d6988d4f4f0707c317"
+    },
+    {
+      "bytes": 3114,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-dyadic-high-degree/whole-loop-invariant.md",
+      "sha256": "f7a950e04610184302e89b66f57dc38db741922557c0a64f360bb4d3139d295f"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 17824,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/conductivity_multiscale_round/checkpoint.json",
+    "sha256": "a9c89e9293b6591f8482fde9a55f5e8042984b4ebcf8130a5416dc63c877d3f4"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 13868,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/conductivity_multiscale_round/usage.json",
+    "sha256": "c118d2a43e070ccd61f0856fe669d1fc1d0dbc9d671528ab7c3c08b5d7ad5d1f"
+  },
+  "not_frozen": "Active ideal-saturation review and changing shared proof notes/STATE/HANDOFF/workflow. Immutable supplied prompt/context snapshots inside the ten terminal bundles are frozen; live shared originals excluded.",
+  "prior_hash_policy": "Prior usage/checkpoint files unmodified; hashes preserve earlier artifact chain without rescanning historical files.",
+  "review_artifacts": [
+    {
+      "bytes": 12172,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-kummer-coordinate-haar-tail.md",
+      "sha256": "082d73288c992e0dc09dc4dfe5904832f16acc5cd0f6e8e34bf9049a9f767474"
+    },
+    {
+      "bytes": 12491,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-kummer-finite-grid-stability.md",
+      "sha256": "866a8230361ac3fc761f855f05b91dd71db3077271bb710d63be7bc2325ca0eb"
+    },
+    {
+      "bytes": 13987,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-stoll-geometric-smith-bridge.md",
+      "sha256": "71fbf758d603e175dc03c9cf11b47c202bf26a712ae192973411bab4218378c3"
+    }
+  ],
+  "scope": "Mechanical bookkeeping and timestamped stable artifact hashes only; no mathematical certification.",
+  "status": "TERMINAL_DYADIC_COMPILER_USAGE_MILESTONE",
+  "ten_terminal_results_and_responses": [
+    {
+      "obligation": "nonspecial-rr-compiler",
+      "response": {
+        "bytes": 18949,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/response.md",
+        "sha256": "1dba37801b004c3e5b140bf9ee5024997c9c3fac0db0305fcbd58bd3260989cb"
+      },
+      "response_characters": 18935,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1899,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/result.json",
+        "sha256": "57b742aeaf7906040cbf61cc26354e09f761725b05dd937a859b5618ba7eea81"
+      },
+      "session_id": 95161,
+      "status": "completed"
+    },
+    {
+      "obligation": "projective-half-certificate",
+      "response": {
+        "bytes": 12702,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/response.md",
+        "sha256": "7fcc23f05727d5810cd791254e5bf40149f9dddf734f80d2352eeda0dd8f2f7d"
+      },
+      "response_characters": 12687,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1904,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/result.json",
+        "sha256": "5964c6a41ac17362995325eb89ddd51d593c898f3f8dbcc363b731c83dd03b7a"
+      },
+      "session_id": 63301,
+      "status": "completed"
+    },
+    {
+      "obligation": "uniform-translation-reset",
+      "response": {
+        "bytes": 15563,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/response.md",
+        "sha256": "0dd06387949076f4a73005095267b84a5f647c89f01a2c34e292c38454b16a42"
+      },
+      "response_characters": 15552,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1902,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/result.json",
+        "sha256": "a759dc1c7fe963ddf750dfa22c8f0f5c71e6db291c1e9c005c598bb74675aaf4"
+      },
+      "session_id": 3165,
+      "status": "completed"
+    },
+    {
+      "obligation": "source-high-degree-gates",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2098,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/result.json",
+        "sha256": "0067362dd5d6ef440772c5f6cb5b9e587c9909e0ea69b7073254a2b0fc877064"
+      },
+      "session_id": 66497,
+      "status": "truncated"
+    },
+    {
+      "obligation": "native-content-attack",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2094,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/result.json",
+        "sha256": "15b4641a1272755a82eaa62494c622da2b59defc0ad67f0d95f17f13003ffe39"
+      },
+      "session_id": 70716,
+      "status": "truncated"
+    },
+    {
+      "obligation": "whole-loop-invariant",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2093,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/result.json",
+        "sha256": "1d648132da476389736ccadb6c1aacbf6c1e66e6aef13c16cd86b9ec374d6087"
+      },
+      "session_id": 68290,
+      "status": "truncated"
+    },
+    {
+      "obligation": "abel-finite-grid-stability",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 1676,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/result.json",
+        "sha256": "c41fb2e46fbe0e5dd3dde71997d1ada8a586d20bcc222420fb0a250556ee7247"
+      },
+      "session_id": 32713,
+      "status": "empty_response"
+    },
+    {
+      "obligation": "mixed-pencil-resultant",
+      "response": {
+        "bytes": 13053,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant/response.md",
+        "sha256": "d84c53934b60f492d3fa2f5ab1c5640f3d0e858d56776d2d64f0ab25bfb7aca3"
+      },
+      "response_characters": 12387,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1383,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant/result.json",
+        "sha256": "9c2219fd597779250a2b23f2b20b766bab43c762ad06c25be569fc3892bec400"
+      },
+      "session_id": 58448,
+      "status": "completed"
+    },
+    {
+      "obligation": "native-ideal-content",
+      "response": {
+        "bytes": 17734,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/response.md",
+        "sha256": "baee6e200d1717f4afd9991ba5c7586f1cc3206fba303888dad8fbea500e4759"
+      },
+      "response_characters": 17725,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1591,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/result.json",
+        "sha256": "dca7ce0c9b4253d019f1240cd10296d3c932478dfe9fcff15c4588ad30b11f0e"
+      },
+      "session_id": 3739,
+      "status": "completed"
+    },
+    {
+      "obligation": "reduced-rr-cokernel",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 1454,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel/result.json",
+        "sha256": "a8496f9d2b2678ca502d8a75b404587d880d938ef90213880df3bca246c96b53"
+      },
+      "session_id": 98936,
+      "status": "truncated"
+    }
+  ],
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 3228,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/context-00.txt",
+      "sha256": "a5b8cd25d939406ff1c8f43b2ee9c31eb23ba7071540c169b5df2360ddcfbea9"
+    },
+    {
+      "bytes": 15922,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/context-01.txt",
+      "sha256": "85598e08eba11022f074738099cbeb9c0d89d7a532472c296a60093a64fd322d"
+    },
+    {
+      "bytes": 14343,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/context-02.txt",
+      "sha256": "c0b8a102526400b7abb412d6b89eb2a841d5096ee6e5576b874c7d44f4b688d8"
+    },
+    {
+      "bytes": 3885,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/context-03.txt",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f"
+    },
+    {
+      "bytes": 23519,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/context-04.txt",
+      "sha256": "eea134899272eb6c33bb4588b7aa47601331df1e89c3f6ddba948c9f3cd38eb4"
+    },
+    {
+      "bytes": 550788,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/provider-response.json",
+      "sha256": "33bf3f84ef100f4c16abfbcf9a9545d06d53ab697b0bf186919287fdea495f70"
+    },
+    {
+      "bytes": 63744,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/request.json",
+      "sha256": "d251f0db58ba628cc7bad84e8daa5f852a4000de76a1897b4f75d1424adb7a2e"
+    },
+    {
+      "bytes": 18949,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/response.md",
+      "sha256": "1dba37801b004c3e5b140bf9ee5024997c9c3fac0db0305fcbd58bd3260989cb"
+    },
+    {
+      "bytes": 1899,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/result.json",
+      "sha256": "57b742aeaf7906040cbf61cc26354e09f761725b05dd937a859b5618ba7eea81"
+    },
+    {
+      "bytes": 3188,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/context-00.txt",
+      "sha256": "f7bc525fc5d2bf448b94ce4ea8ac15a0f3211620f0614fce465e05e92c7cf309"
+    },
+    {
+      "bytes": 15922,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/context-01.txt",
+      "sha256": "85598e08eba11022f074738099cbeb9c0d89d7a532472c296a60093a64fd322d"
+    },
+    {
+      "bytes": 14343,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/context-02.txt",
+      "sha256": "c0b8a102526400b7abb412d6b89eb2a841d5096ee6e5576b874c7d44f4b688d8"
+    },
+    {
+      "bytes": 3885,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/context-03.txt",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f"
+    },
+    {
+      "bytes": 23519,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/context-04.txt",
+      "sha256": "eea134899272eb6c33bb4588b7aa47601331df1e89c3f6ddba948c9f3cd38eb4"
+    },
+    {
+      "bytes": 821544,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/provider-response.json",
+      "sha256": "365b0ad7cef523e1cbe77ae55e6a8fd7e09f3e1c65500743ea62927c475ff250"
+    },
+    {
+      "bytes": 63709,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/request.json",
+      "sha256": "c55a2bdc7cbc46644fd689f0ac79d9ff3c1b74ed03d5996b8bf8c0b7b8d330be"
+    },
+    {
+      "bytes": 12702,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/response.md",
+      "sha256": "7fcc23f05727d5810cd791254e5bf40149f9dddf734f80d2352eeda0dd8f2f7d"
+    },
+    {
+      "bytes": 1904,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/result.json",
+      "sha256": "5964c6a41ac17362995325eb89ddd51d593c898f3f8dbcc363b731c83dd03b7a"
+    },
+    {
+      "bytes": 3143,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/context-00.txt",
+      "sha256": "050310f8c956ab0f34b89f3715ae32411e14097c432a93d6988d4f4f0707c317"
+    },
+    {
+      "bytes": 15922,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/context-01.txt",
+      "sha256": "85598e08eba11022f074738099cbeb9c0d89d7a532472c296a60093a64fd322d"
+    },
+    {
+      "bytes": 14343,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/context-02.txt",
+      "sha256": "c0b8a102526400b7abb412d6b89eb2a841d5096ee6e5576b874c7d44f4b688d8"
+    },
+    {
+      "bytes": 3885,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/context-03.txt",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f"
+    },
+    {
+      "bytes": 23519,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/context-04.txt",
+      "sha256": "eea134899272eb6c33bb4588b7aa47601331df1e89c3f6ddba948c9f3cd38eb4"
+    },
+    {
+      "bytes": 561877,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/provider-response.json",
+      "sha256": "9bd5054d77b2f760221b2062249f4bedad6f1e65ed3d77d4b5e2b5381ac2a7d3"
+    },
+    {
+      "bytes": 63662,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/request.json",
+      "sha256": "3bafa503b39d44e76524d36995e8776ffb26855cd613f9fe77f083ce258e64e0"
+    },
+    {
+      "bytes": 15563,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/response.md",
+      "sha256": "0dd06387949076f4a73005095267b84a5f647c89f01a2c34e292c38454b16a42"
+    },
+    {
+      "bytes": 1902,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/result.json",
+      "sha256": "a759dc1c7fe963ddf750dfa22c8f0f5c71e6db291c1e9c005c598bb74675aaf4"
+    },
+    {
+      "bytes": 15922,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/context/000.txt",
+      "sha256": "85598e08eba11022f074738099cbeb9c0d89d7a532472c296a60093a64fd322d"
+    },
+    {
+      "bytes": 14343,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/context/001.txt",
+      "sha256": "c0b8a102526400b7abb412d6b89eb2a841d5096ee6e5576b874c7d44f4b688d8"
+    },
+    {
+      "bytes": 3885,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/context/002.txt",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f"
+    },
+    {
+      "bytes": 23519,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/context/003.txt",
+      "sha256": "eea134899272eb6c33bb4588b7aa47601331df1e89c3f6ddba948c9f3cd38eb4"
+    },
+    {
+      "bytes": 3034,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/prompt.txt",
+      "sha256": "dbf9c628b99439583f11b57c945c53b14c4542bcd3f947dc780941a3488b8e73"
+    },
+    {
+      "bytes": 64300,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/request.json",
+      "sha256": "0278824319b797dd07e03cf12a460ecc413f5dfcbee7c518d814bbe82ad8a15f"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2098,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/result.json",
+      "sha256": "0067362dd5d6ef440772c5f6cb5b9e587c9909e0ea69b7073254a2b0fc877064"
+    },
+    {
+      "bytes": 15922,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/context/000.txt",
+      "sha256": "85598e08eba11022f074738099cbeb9c0d89d7a532472c296a60093a64fd322d"
+    },
+    {
+      "bytes": 14343,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/context/001.txt",
+      "sha256": "c0b8a102526400b7abb412d6b89eb2a841d5096ee6e5576b874c7d44f4b688d8"
+    },
+    {
+      "bytes": 3885,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/context/002.txt",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f"
+    },
+    {
+      "bytes": 23519,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/context/003.txt",
+      "sha256": "eea134899272eb6c33bb4588b7aa47601331df1e89c3f6ddba948c9f3cd38eb4"
+    },
+    {
+      "bytes": 3052,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/prompt.txt",
+      "sha256": "d67c1abb6a64af5e4b6b0f5319c09eb022594acf7815f2edab037cf4274a82c7"
+    },
+    {
+      "bytes": 64319,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/request.json",
+      "sha256": "0a0b03ff79cf32fa312a980d5322a005c93f7d9d9c35bd524c78268447320056"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2094,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/result.json",
+      "sha256": "15b4641a1272755a82eaa62494c622da2b59defc0ad67f0d95f17f13003ffe39"
+    },
+    {
+      "bytes": 15922,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/context/000.txt",
+      "sha256": "85598e08eba11022f074738099cbeb9c0d89d7a532472c296a60093a64fd322d"
+    },
+    {
+      "bytes": 14343,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/context/001.txt",
+      "sha256": "c0b8a102526400b7abb412d6b89eb2a841d5096ee6e5576b874c7d44f4b688d8"
+    },
+    {
+      "bytes": 3885,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/context/002.txt",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f"
+    },
+    {
+      "bytes": 23519,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/context/003.txt",
+      "sha256": "eea134899272eb6c33bb4588b7aa47601331df1e89c3f6ddba948c9f3cd38eb4"
+    },
+    {
+      "bytes": 3114,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/prompt.txt",
+      "sha256": "f7a950e04610184302e89b66f57dc38db741922557c0a64f360bb4d3139d295f"
+    },
+    {
+      "bytes": 64381,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/request.json",
+      "sha256": "3765821dda4ee926dc6d234a273e13dfe26385018c986df0de08a2a86db9ae9f"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2093,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/result.json",
+      "sha256": "1d648132da476389736ccadb6c1aacbf6c1e66e6aef13c16cd86b9ec374d6087"
+    },
+    {
+      "bytes": 3885,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/context/000.txt",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f"
+    },
+    {
+      "bytes": 8181,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/context/001.txt",
+      "sha256": "4328a2b94471748e30516e6353526ed12a542c8eb9f5d317476de6bbab1ed581"
+    },
+    {
+      "bytes": 3961,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/prompt.txt",
+      "sha256": "55e38357c21e4faffb7c5f4b9909e5ad9d95914c938b01c226aac9e713ab20c1"
+    },
+    {
+      "bytes": 18313,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/request.json",
+      "sha256": "0acf0cbbda8636c7a46194aa27e961fe2fedd8e25a3a10916cc3c30fb64be0d9"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1676,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/result.json",
+      "sha256": "c41fb2e46fbe0e5dd3dde71997d1ada8a586d20bcc222420fb0a250556ee7247"
+    },
+    {
+      "bytes": 3885,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant/context/000.txt",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f"
+    },
+    {
+      "bytes": 4506,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant/prompt.txt",
+      "sha256": "4fc10d566ef1cb7efc4f59ce8a92b19b735e1fabb783f17033e6799876983978"
+    },
+    {
+      "bytes": 9666,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant/request.json",
+      "sha256": "7b32f9d246ca8c73435d7c3f0f99e589ce6d956aa28d21aebf5490919d93bb30"
+    },
+    {
+      "bytes": 13053,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant/response.md",
+      "sha256": "d84c53934b60f492d3fa2f5ab1c5640f3d0e858d56776d2d64f0ab25bfb7aca3"
+    },
+    {
+      "bytes": 1383,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant/result.json",
+      "sha256": "9c2219fd597779250a2b23f2b20b766bab43c762ad06c25be569fc3892bec400"
+    },
+    {
+      "bytes": 4029,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/context-00.txt",
+      "sha256": "2ee85f3d513d1d143728a73891999351cef51807b684312745fb5b1f36d3445c"
+    },
+    {
+      "bytes": 18949,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/context-01.txt",
+      "sha256": "1dba37801b004c3e5b140bf9ee5024997c9c3fac0db0305fcbd58bd3260989cb"
+    },
+    {
+      "bytes": 8341,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/context-02.txt",
+      "sha256": "e98666f13772865eaa25ade8a577e207d69cccdafba4629e080c4ba5f452a716"
+    },
+    {
+      "bytes": 665280,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/provider-response.json",
+      "sha256": "0e0be9563012bbe967a38aeca61bb4bb970a2eddaab04b58ba7b821b3fae735d"
+    },
+    {
+      "bytes": 33675,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/request.json",
+      "sha256": "b41baeab92ee4619fdfb677bb6e654ef2d22d97638c2e27acf30e28f04b78007"
+    },
+    {
+      "bytes": 17734,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/response.md",
+      "sha256": "baee6e200d1717f4afd9991ba5c7586f1cc3206fba303888dad8fbea500e4759"
+    },
+    {
+      "bytes": 1591,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/result.json",
+      "sha256": "dca7ce0c9b4253d019f1240cd10296d3c932478dfe9fcff15c4588ad30b11f0e"
+    },
+    {
+      "bytes": 18949,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel/context/000.txt",
+      "sha256": "1dba37801b004c3e5b140bf9ee5024997c9c3fac0db0305fcbd58bd3260989cb"
+    },
+    {
+      "bytes": 4594,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel/prompt.txt",
+      "sha256": "28a3de8404e47854dbf16454d0b3c98d082fa456b79fd707de4ebc6e5fe460b2"
+    },
+    {
+      "bytes": 26015,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel/request.json",
+      "sha256": "3156790b5a35ce4178ce9d1e792e7a35a395481a771570b7ecdc73798c079236"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1454,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel/result.json",
+      "sha256": "a8496f9d2b2678ca502d8a75b404587d880d938ef90213880df3bca246c96b53"
+    }
+  ],
+  "unique_hashed_artifact_count": 93,
+  "usage_snapshot": {
+    "bytes": 23988,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/dyadic_compiler_round/usage.json",
+    "sha256": "d9c3d742a8dcd74d5790b397d4b5f6c2a322c859fc6e2ebefc16f01bd3561618"
+  }
+}

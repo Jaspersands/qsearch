@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-13",
+  "captured_at_utc": "2026-11-12T15:17:33.787974+00:00",
+  "selection": "Two-primary global Selmer source, quadratic classical comparison and general odd-index coverage: four distinct obligations",
+  "contract": "research/audits/api_inputs/2026-11-13-selmer-two-primary/contract.md",
+  "local_ceiling_usd": 25,
+  "ceiling_note": "Local preflight ceilings only, not actual spending, provider bill/cap or account balance. No unknown-cost retry.",
+  "context_note": "Exact prompt/context paths copied from each saved runner result metadata; authoritative complete briefs remain in the named prompt snapshots. No report-body or ledger inspection.",
+  "jobs": [
+    {
+      "provider": "claude",
+      "obligation": "quadratic-source",
+      "brief": "Audit only the actual Bosma-Stevenhagen source: represented strict 2-Sylow generators for both signs, ordinary projection, termination and halving, with exact bit/output interfaces.",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 2,
+      "session_id": 31367,
+      "prompt": "research/audits/api_inputs/2026-11-13-selmer-two-primary/quadratic-source.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-selmer-two-primary/contract.md",
+        "research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-stevenhagen-primary.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-quadratic-source",
+      "status": "completed",
+      "billing_status": "usage_reported",
+      "response_bytes": 9374,
+      "stop_reason": "end_turn",
+      "failure_type": null,
+      "usage_cost_estimate_usd": "0.580472",
+      "disposition": "Completed advisory source report; scientific source proof checks remain with parent."
+    },
+    {
+      "provider": "openai",
+      "obligation": "quadratic-classical",
+      "brief": "Construct or falsify a classical polynomial-bit K(S,2) algorithm with explicit local maps for quadratic fields; factorization oracle separated, no free Pell/unit/norm solution.",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "max_tokens": 128000,
+      "budget": 9,
+      "session_id": 29778,
+      "prompt": "research/audits/api_inputs/2026-11-13-selmer-two-primary/quadratic-classical.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-selmer-two-primary/contract.md",
+        "research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-stevenhagen-primary.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/descent-primary.md",
+        "research/audits/reviews/2026-11-13-global-selmer-composition.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-quadratic-classical",
+      "status": "completed",
+      "billing_status": "usage_reported",
+      "response_bytes": 21548,
+      "stop_reason": null,
+      "failure_type": null,
+      "usage_cost_estimate_usd": "2.269560",
+      "disposition": "Completed report; all528lines parent read. No theorem promotion from API completion."
+    },
+    {
+      "provider": "claude",
+      "obligation": "quadratic-composition",
+      "brief": "Construct the conditional-on-local-images unconditional quantum Selmer-dimension composition for native branch factors of degrees at most three using quadratic strict 2-primary and retained cubic sources.",
+      "model": "claude-fable-5-1",
+      "effort": "high",
+      "max_tokens": 64000,
+      "budget": 5,
+      "session_id": 35025,
+      "prompt": "research/audits/api_inputs/2026-11-13-selmer-two-primary/quadratic-composition.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-selmer-two-primary/contract.md",
+        "research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-stevenhagen-primary.md",
+        "research/ODD_GALOIS_CLASS_GROUP_COMPOSITION.md",
+        "research/audits/reviews/2026-11-13-global-selmer-composition.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/global-primary.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-quadratic-composition",
+      "status": "failed",
+      "billing_status": "unknown",
+      "response_bytes": 7862,
+      "stop_reason": null,
+      "failure_type": "ReadError",
+      "usage_is_partial": true,
+      "total_cost_usd": "UNKNOWN",
+      "partial_runner_estimate_usd": "0.485230",
+      "disposition": "Failed ReadError during generation. Parent read the67-line partial report; advisory partial findings only, no retry. Total billing UNKNOWN; partial estimate is excluded from known-final usage totals. Preserve this new unknown alongside the two historical UNKNOWN timeout bills at the final milestone."
+    },
+    {
+      "provider": "openai",
+      "obligation": "general-two-coverage",
+      "brief": "Construct a polynomial-bit T with odd-order class-group quotient for arbitrary growing-degree fields; isolate exact analytic/algebraic obstacle if no native two-primary source is obtained.",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "max_tokens": 128000,
+      "budget": 9,
+      "session_id": 51481,
+      "prompt": "research/audits/api_inputs/2026-11-13-selmer-two-primary/general-two-coverage.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-selmer-two-primary/contract.md",
+        "research/UNCONDITIONAL_CLASS_GENERATOR_ADMISSION.md",
+        "research/ODD_GALOIS_CLASS_GROUP_COMPOSITION.md",
+        "research/audits/api_inputs/2026-11-13-dyadic-composition/global-primary.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-general-two-coverage",
+      "status": "completed",
+      "billing_status": "usage_reported",
+      "response_bytes": 13135,
+      "stop_reason": null,
+      "failure_type": null,
+      "usage_cost_estimate_usd": "2.206210"
+    }
+  ]
+}

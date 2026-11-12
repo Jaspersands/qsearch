@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 56532,
+      "path": "research/audits/api_inputs/2026-11-13-classical-two-family/simon-dim4-primary.md",
+      "sha256": "b30ec6ea3ac8d82615da6b93258c3d09f2aed65b42b004132d5b7450886a50e4",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 66070,
+      "path": "research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-stevenhagen-primary.md",
+      "sha256": "746970f00ff790aa83fbdd80c4a9b0dd161992e69a3c625b1051d539c3def9f1",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 45607,
+  "effort": "high",
+  "finished_at": "2026-11-12T16:11:55.968895+00:00",
+  "input_token_allowance": 46520,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.46608,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-classical-two-family/simon-bit-clock.md",
+    "sha256": "4b49c541d33c46fd47237a489f1fe26e449fbfd2a4618651a9884c866dfcbde0",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T160402.483307Z-ad80baf1",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 45607,
+    "output_tokens": 47788
+  },
+  "usage_cost_estimate_usd": 1.138188
+}

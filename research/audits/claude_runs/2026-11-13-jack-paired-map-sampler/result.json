@@ -1,0 +1,56 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2081,
+      "path": "research/audits/api_inputs/2026-11-13-jack-classical/native-contract.md",
+      "sha256": "bec06ecc557e3ff1582cef10e25648334106f5c955c88d7897cdf4c14cc3d775",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 29447,
+      "path": "research/audits/api_inputs/2026-11-13-jack-classical/creation-primary.txt",
+      "sha256": "743e4e24f7f10efbb3c3a69c8abd9501a13b2a223902458ab84320a7ae1332de",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 8713,
+      "path": "research/audits/reviews/2026-11-13-jack-classical-downset-independent.md",
+      "sha256": "72c5daa64a6d2fcc062c92c594cfd049da1b2a4c29e93b19ff2df157bc3d8464",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 15051,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T18:54:42.115419+00:00",
+  "input_token_allowance": 15353,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.341412,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-jack-classical/jack-paired-map-sampler.md",
+    "sha256": "89d24803eae47bde80d34175f66cc3de78e7a48e02ad7e7e481557368cbebe43",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261112T184452.738966Z-8f616736",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 15051,
+    "output_tokens": 64000
+  },
+  "usage_cost_estimate_usd": 1.340204
+}

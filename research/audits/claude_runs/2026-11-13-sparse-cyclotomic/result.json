@@ -1,0 +1,61 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2955,
+      "path": "research/audits/api_inputs/2026-11-13-next-mechanisms/contract.md",
+      "sha256": "e6303262931c59cb535cb70c4c2a0ae791788aeee82e73cfd4e172ac34e18090",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 14121,
+      "path": "research/GENERAL_SPARSE_CONSTANTS_ATTACK.md",
+      "sha256": "6c35d7d8277e23dbfeb410b9e5707bddef242e6e84fd172b5065a4a8462c2fb2",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 21154,
+      "path": "research/SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md",
+      "sha256": "208e3416576c23c387a2d197e40a860e8b79745c5107e2b69a5adf410ebb1935",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 14520,
+      "path": "research/audits/api_inputs/2026-11-13-next-mechanisms/sparse-primary.md",
+      "sha256": "bb8503d6c3925b7880d12865c3fa5069d4485af952be7a7a58ba0496eaa54749",
+      "snapshot": "context/003.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 21669,
+  "effort": "high",
+  "finished_at": "2026-11-12T16:47:26.713670+00:00",
+  "input_token_allowance": 22103,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.368412,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-next-mechanisms/sparse-cyclotomic.md",
+    "sha256": "df297f87722897a4f7b5f48d253b685fb2a5cc42187333029e20f60512b3a5f1",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "classical",
+  "run_id": "20261112T163753.106578Z-b13e89d6",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 21669,
+    "output_tokens": 55964
+  },
+  "usage_cost_estimate_usd": 1.205956
+}

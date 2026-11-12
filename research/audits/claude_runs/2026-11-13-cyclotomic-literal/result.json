@@ -1,0 +1,56 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2994,
+      "path": "research/audits/api_inputs/2026-11-13-classical-two-family/contract.md",
+      "sha256": "9647a312be697caa4c5130f1b87fda50e7ae7be211a6c4332569831090a6c1d4",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 2467,
+      "path": "research/audits/api_inputs/2026-11-13-classical-two-family/primary-notes.md",
+      "sha256": "9b98f9548030bf348beed4eceeb0a7e69dbc9a12ba25758b1c92b338e883f173",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 9800,
+      "path": "research/audits/reviews/2026-11-13-one-prime-two-class-coverage.md",
+      "sha256": "35eb3590dfa1e2839ed9bdefaf7313e4bc71ac58d14755e8da1c4060448182f9",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 6628,
+  "effort": "high",
+  "failure_type": "EmptyResponse",
+  "finished_at": "2026-11-12T15:59:55.523180+00:00",
+  "input_token_allowance": 6884,
+  "max_budget_usd": 5.0,
+  "max_tokens": 64000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 3.26884,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-classical-two-family/cyclotomic-literal.md",
+    "sha256": "1c4f031e2992c2bd780800815f816f49d5974d426fc6c5df853c956a40ec24cd",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "classical",
+  "run_id": "20261112T155513.195444Z-3fa235fc",
+  "status": "empty_response",
+  "stop_reason": "refusal",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 6628,
+    "output_tokens": 22726
+  },
+  "usage_cost_estimate_usd": 1.20258
+}

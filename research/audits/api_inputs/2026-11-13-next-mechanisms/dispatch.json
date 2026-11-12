@@ -1,0 +1,228 @@
+{
+  "date": "2026-11-13",
+  "selection": "New paid operations: structured sparse constant relation map and explicit Gaudin joint generator",
+  "local_ceiling_usd": 33,
+  "note": "Six distinct obligations including the new torus/vertical mechanism; ceilings are not charges/invoices/balances. No empty/failed retry.",
+  "jobs": [
+    {
+      "id": "sparse-structured",
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-next-mechanisms/sparse-structured.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/contract.md",
+        "research/GENERAL_SPARSE_CONSTANTS_ATTACK.md",
+        "research/SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md",
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/sparse-primary.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-sparse-structured",
+      "status": "completed",
+      "session_id": 25268,
+      "stop_reason": null,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T17:30:46.708691+00:00",
+        "finished_at": "2026-11-12T16:56:16.410650+00:00",
+        "billing_status": "usage_reported",
+        "usage_is_partial": false,
+        "usage_cost_estimate_usd": "1.855140",
+        "usage": {
+          "input_tokens": 13209,
+          "input_tokens_details": {
+            "cache_write_tokens": 13206,
+            "cached_tokens": 0
+          },
+          "output_tokens": 34461,
+          "output_tokens_details": {
+            "reasoning_tokens": 31197
+          },
+          "total_tokens": 47670
+        },
+        "response_bytes": 11091,
+        "session_reaped_per_parent": true,
+        "parent_fully_read_report": true
+      }
+    },
+    {
+      "id": "sparse-cyclotomic",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-next-mechanisms/sparse-cyclotomic.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/contract.md",
+        "research/GENERAL_SPARSE_CONSTANTS_ATTACK.md",
+        "research/SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md",
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/sparse-primary.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-sparse-cyclotomic",
+      "status": "completed",
+      "session_id": 41012,
+      "stop_reason": "end_turn",
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T17:30:46.708691+00:00",
+        "finished_at": "2026-11-12T16:47:26.713670+00:00",
+        "billing_status": "usage_reported",
+        "usage_is_partial": false,
+        "usage_cost_estimate_usd": "1.205956",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 21669,
+          "output_tokens": 55964
+        },
+        "response_bytes": 10890,
+        "session_reaped_per_parent": true,
+        "parent_fully_read_report": true
+      }
+    },
+    {
+      "id": "gaudin-generator",
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-next-mechanisms/gaudin-generator.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/contract.md",
+        "research/GAUDIN_JOINT_CHARGE_TRAVERSAL.md",
+        "research/GAUDIN_TWO_CLUSTER_GAP.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-gaudin-generator",
+      "status": "completed",
+      "session_id": 72335,
+      "stop_reason": null,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T17:30:46.708691+00:00",
+        "finished_at": "2026-11-12T16:51:48.795363+00:00",
+        "billing_status": "usage_reported",
+        "usage_is_partial": false,
+        "usage_cost_estimate_usd": "1.548430",
+        "usage": {
+          "input_tokens": 7713,
+          "input_tokens_details": {
+            "cache_write_tokens": 7710,
+            "cached_tokens": 0
+          },
+          "output_tokens": 29426,
+          "output_tokens_details": {
+            "reasoning_tokens": 26554
+          },
+          "total_tokens": 37139
+        },
+        "response_bytes": 9880,
+        "session_reaped_per_parent": true,
+        "parent_fully_read_report": true
+      }
+    },
+    {
+      "id": "gaudin-locality",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-next-mechanisms/gaudin-locality.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/contract.md",
+        "research/GAUDIN_JOINT_CHARGE_TRAVERSAL.md",
+        "research/GAUDIN_TWO_CLUSTER_GAP.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-gaudin-locality",
+      "status": "completed",
+      "session_id": 22196,
+      "stop_reason": "end_turn",
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T17:30:46.708691+00:00",
+        "finished_at": "2026-11-12T16:47:19.808092+00:00",
+        "billing_status": "usage_reported",
+        "usage_is_partial": false,
+        "usage_cost_estimate_usd": "1.287268",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 12927,
+          "output_tokens": 61778
+        },
+        "response_bytes": 7826,
+        "session_reaped_per_parent": true,
+        "parent_fully_read_report": true
+      }
+    },
+    {
+      "id": "sparse-vertical",
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-next-mechanisms/sparse-vertical.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/contract.md",
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/torus-vertical-proposal.md",
+        "research/GENERAL_SPARSE_CONSTANTS_ATTACK.md",
+        "research/SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-sparse-vertical",
+      "status": "completed",
+      "session_id": 62828,
+      "stop_reason": null,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T17:30:46.708691+00:00",
+        "finished_at": "2026-11-12T17:25:17.942762+00:00",
+        "billing_status": "usage_reported",
+        "usage_is_partial": false,
+        "usage_cost_estimate_usd": "2.809990",
+        "usage": {
+          "input_tokens": 10459,
+          "input_tokens_details": {
+            "cache_write_tokens": 10456,
+            "cached_tokens": 0
+          },
+          "output_tokens": 54108,
+          "output_tokens_details": {
+            "reasoning_tokens": 49785
+          },
+          "total_tokens": 64567
+        },
+        "response_bytes": 16212,
+        "session_reaped_per_parent": true,
+        "parent_fully_read_report": true
+      }
+    },
+    {
+      "id": "sparse-torus-clock",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-next-mechanisms/sparse-torus-clock.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/contract.md",
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/torus-vertical-proposal.md",
+        "research/GENERAL_SPARSE_CONSTANTS_ATTACK.md",
+        "research/SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-sparse-torus-clock",
+      "status": "completed",
+      "session_id": 69808,
+      "stop_reason": "end_turn",
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T17:30:46.708691+00:00",
+        "finished_at": "2026-11-12T17:01:02.634473+00:00",
+        "billing_status": "usage_reported",
+        "usage_is_partial": false,
+        "usage_cost_estimate_usd": "0.825088",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 17672,
+          "output_tokens": 37720
+        },
+        "response_bytes": 11882,
+        "session_reaped_per_parent": true,
+        "parent_fully_read_report": true
+      }
+    }
+  ]
+}

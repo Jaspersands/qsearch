@@ -1,0 +1,226 @@
+{
+  "captured_at_utc": "2026-11-12T20:57:25.056720+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "partial_estimate_equals_total_bill": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 2922,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate/dispatch.json",
+    "sha256": "0607f97300e57c467976f122df75be5d4a1ffaea3405f07c4dc2ea0949c314a8"
+  },
+  "dispatch_mutation_scope": "Only final two-job status/billing/usage/read/reaped metadata updated; raw results, prior ledgers and scientific notes unchanged.",
+  "exclusions": [
+    {
+      "reason": "Separate active research. No driven paid usage or D8 control artifact included in this condensate ledger.",
+      "scope": "All native driven cut-and-join requests/sources/reviews/controls and newer source explorations"
+    },
+    {
+      "reason": "Not hashed or edited; only explicit stable review/source files and immutable packet/context snapshots retained.",
+      "scope": "Evolving topic notes/STATE/HANDOFF/workflow"
+    },
+    {
+      "reason": "Preserved unchanged with all observed partial counters excluded from known usage totals.",
+      "scope": "Four inherited UNKNOWN bills"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 1307,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate/condensate-coherent.md",
+      "sha256": "cf9f3d939768f03d380122272249d1ee18aaff5a36e0235b1d84269b736775df"
+    },
+    {
+      "bytes": 1218,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate/condensate-spectral.md",
+      "sha256": "a8f2f3c94b112aa22958a8af6b416d6fa16f1d5382d5f1310c4c9e265ded984d"
+    },
+    {
+      "bytes": 2164,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate/contract.md",
+      "sha256": "5f3b9ed18d02d8607c2456fcdcda8805a0ccb74cb695842fe19162299bbc1d46"
+    },
+    {
+      "bytes": 2922,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate/dispatch.json",
+      "sha256": "0607f97300e57c467976f122df75be5d4a1ffaea3405f07c4dc2ea0949c314a8"
+    },
+    {
+      "bytes": 49502,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-condensate/qrst-primary.txt",
+      "sha256": "1a38adc9b730c79a9b105e8e0b4257ece9eb1bb949c60afa2bcaa44dea632259"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald-dynamics/contract.md",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 19255,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/macdonald_dynamics_round/checkpoint.json",
+    "sha256": "22d350769e7490362bbe939c6a19b8fad63b16b0018df756652d682048a056bf"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 18569,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/macdonald_dynamics_round/usage.json",
+    "sha256": "e569437597569b7bf56ede855f32c81e1fb3a0511e641be503485718eb84f970"
+  },
+  "not_frozen": "All driven work and newer source explorations; evolving topic notes/STATE/HANDOFF/workflow. Only actual qRSt source used by this packet included.",
+  "primary_source_artifacts": [
+    {
+      "bytes": 488467,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_dynamics/aigner_frieden_qrst_2020.pdf",
+      "sha256": "86dd4b450e05f1cd92bb634b2249e67cf038ac164830c9615a0ec2c24d93eafe"
+    },
+    {
+      "bytes": 172527,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/macdonald_dynamics/aigner_frieden_qrst_2020.txt",
+      "sha256": "7a8ea8e26c9029bba6d1c288b337826ef24f7635dc6e4e8fe9fc8a522941870b"
+    }
+  ],
+  "prior_hash_policy": "Frozen Macdonald-dynamics usage/checkpoint and four UNKNOWN bills remain unchanged; no recursive historical run scan or old artifact repinning.",
+  "review_artifacts": [
+    {
+      "bytes": 16087,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-condensate-spectral-independent.md",
+      "physical_LF_count": 322,
+      "sha256": "a165638d295f828bd6ad2f2166b7d7f44e0c062429f5875b2953d9325506eb22"
+    }
+  ],
+  "scope": "Exactly two terminal condensate requests and explicit immutable packet/source/stable-audit snapshots. Mechanical bookkeeping only, no scientific conclusions.",
+  "status": "TERMINAL_MACDONALD_CONDENSATE_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 2164,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-spectral/context/000.txt",
+      "sha256": "5f3b9ed18d02d8607c2456fcdcda8805a0ccb74cb695842fe19162299bbc1d46"
+    },
+    {
+      "bytes": 49502,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-spectral/context/001.txt",
+      "sha256": "1a38adc9b730c79a9b105e8e0b4257ece9eb1bb949c60afa2bcaa44dea632259"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-spectral/context/002.txt",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 1218,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-spectral/prompt.txt",
+      "sha256": "a8f2f3c94b112aa22958a8af6b416d6fa16f1d5382d5f1310c4c9e265ded984d"
+    },
+    {
+      "bytes": 64886,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-spectral/request.json",
+      "sha256": "1d83bd1e8d1afe7003bcd9fa8c8743da9b81c8f373ab19c5bb26a50c124fbe49"
+    },
+    {
+      "bytes": 14377,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-spectral/response.md",
+      "sha256": "2130c481fc4e7cbb996e4b16e39cbdc10b1df3dc711966bfb914e7f2204e2ea9"
+    },
+    {
+      "bytes": 1868,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-spectral/result.json",
+      "sha256": "8ccd893cb8486bd0b475d482f6cc264dc8cb03f0f66871de58f9704cb3f9bff4"
+    },
+    {
+      "bytes": 1307,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/context-00.txt",
+      "sha256": "cf9f3d939768f03d380122272249d1ee18aaff5a36e0235b1d84269b736775df"
+    },
+    {
+      "bytes": 2164,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/context-01.txt",
+      "sha256": "5f3b9ed18d02d8607c2456fcdcda8805a0ccb74cb695842fe19162299bbc1d46"
+    },
+    {
+      "bytes": 49502,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/context-02.txt",
+      "sha256": "1a38adc9b730c79a9b105e8e0b4257ece9eb1bb949c60afa2bcaa44dea632259"
+    },
+    {
+      "bytes": 4521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/context-03.txt",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "bytes": 629401,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/provider-response.json",
+      "sha256": "8073530c87b0eeed65223a5aa7cce055cca84d49bca328a0ace9692b97cd2dc4"
+    },
+    {
+      "bytes": 64365,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/request.json",
+      "sha256": "4250063b7d4afc2a2b0b99e6922c628cea51a091872becaf04b3d98a7a3da185"
+    },
+    {
+      "bytes": 16227,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/response.md",
+      "sha256": "f348be57ebf48d5199190dbba278b19816137d178dc0297cfce4a323c16d59fd"
+    },
+    {
+      "bytes": 1765,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/result.json",
+      "sha256": "f9e7b5681bc1249238fd6198d3dcd65e105fd1b48fcfb3ac86db0ca7b0a45bfc"
+    }
+  ],
+  "two_terminal_results_and_responses": [
+    {
+      "obligation": "condensate-spectral",
+      "response": {
+        "bytes": 14377,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-spectral/response.md",
+        "sha256": "2130c481fc4e7cbb996e4b16e39cbdc10b1df3dc711966bfb914e7f2204e2ea9"
+      },
+      "response_LF_count": 251,
+      "response_characters": 13300,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1868,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-condensate-spectral/result.json",
+        "sha256": "8ccd893cb8486bd0b475d482f6cc264dc8cb03f0f66871de58f9704cb3f9bff4"
+      },
+      "session_id": 21122,
+      "status": "completed",
+      "stop_reason": "end_turn"
+    },
+    {
+      "obligation": "condensate-coherent",
+      "response": {
+        "bytes": 16227,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/response.md",
+        "sha256": "f348be57ebf48d5199190dbba278b19816137d178dc0297cfce4a323c16d59fd"
+      },
+      "response_LF_count": 491,
+      "response_characters": 16223,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1765,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-condensate-coherent/result.json",
+        "sha256": "f9e7b5681bc1249238fd6198d3dcd65e105fd1b48fcfb3ac86db0ca7b0a45bfc"
+      },
+      "session_id": 53497,
+      "status": "completed",
+      "stop_reason": null
+    }
+  ],
+  "unique_hashed_artifact_count": 27,
+  "usage_snapshot": {
+    "bytes": 14279,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/macdonald_condensate_round/usage.json",
+    "sha256": "ecd97e2c5270af11b5f94a807be8db32f1a3802b2b7ea47e747240d1996426b3"
+  }
+}

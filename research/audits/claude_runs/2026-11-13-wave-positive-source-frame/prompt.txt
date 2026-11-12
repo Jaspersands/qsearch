@@ -1,0 +1,5 @@
+# wave-positive-source-frame
+
+Test a physically natural source promise that could make a complete algorithm: nonnegative rational real weights at distinct sites with pairwise torus distance >= a fixed numerical separation R0 (you may choose one explicitR0 independentL). Does the exact Green Gram quadratic form Z >= c*sum(w_j^2)*Z0 hold uniformly in L,m for a computable c>0? Or at least inverse poly(n,m,B)? This is an Ingham/radiation-frame question on the actual lattice regular resonant curve, not an assumption of source incoherence. Try explicit periodic source arrays/Bragg cancellation first and prove a counterfamily if the promise is insufficient. If false, identify ONE checkable stronger geometric promise with a proven lower bound or leave it open. No claim of arbitrarysource sampler, no full rank conditioning from finite scans.
+
+Read the attached native contract first. Keep theorem, conditional statement, exact counterexample and speculation separate. Do not claim novelty/advantage. Return concrete equations and proof, with the decisive result early; no tools or external actions. Do not rely on an unprovided source as verified.

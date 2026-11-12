@@ -1,0 +1,599 @@
+{
+  "captured_at_utc": "2026-11-12T14:01:41.731200+00:00",
+  "ceiling_note": "Sum of local preflight ceilings, not actual usage estimates, provider billing caps or balances.",
+  "cost_note": "Stored runner usage estimates only, not invoices, actual bills, balances or spending caps. No subtraction from owner balance. Two historical timeout totals remain UNKNOWN and excluded. Empty truncations/refusal have no findings. No retry performed in this milestone.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 72,
+    "historical_unknown_timeout_bills_excluded": 2,
+    "known_terminal_nonpartial_usage_estimate_usd": "165.246856",
+    "known_terminal_nonpartial_usage_records": 141
+  },
+  "current_round_unknown_estimate_count": 0,
+  "dispatch_observed_status_changes": [],
+  "dispatch_terminal_session_accounting": [
+    {
+      "manifest_status": "completed",
+      "obligation": "nonspecial-rr-compiler",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 18949,
+      "result_status": "completed",
+      "session_id": 95161,
+      "terminal_result_saved": true
+    },
+    {
+      "manifest_status": "completed",
+      "obligation": "projective-half-certificate",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 12702,
+      "result_status": "completed",
+      "session_id": 63301,
+      "terminal_result_saved": true
+    },
+    {
+      "manifest_status": "completed",
+      "obligation": "uniform-translation-reset",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 15563,
+      "result_status": "completed",
+      "session_id": 3165,
+      "terminal_result_saved": true
+    },
+    {
+      "manifest_status": "truncated",
+      "obligation": "source-high-degree-gates",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 0,
+      "result_status": "truncated",
+      "session_id": 66497,
+      "terminal_result_saved": true
+    },
+    {
+      "manifest_status": "truncated",
+      "obligation": "native-content-attack",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 0,
+      "result_status": "truncated",
+      "session_id": 70716,
+      "terminal_result_saved": true
+    },
+    {
+      "manifest_status": "truncated",
+      "obligation": "whole-loop-invariant",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 0,
+      "result_status": "truncated",
+      "session_id": 68290,
+      "terminal_result_saved": true
+    },
+    {
+      "manifest_status": "empty_response",
+      "obligation": "abel-finite-grid-stability",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 0,
+      "result_status": "empty_response",
+      "session_id": 32713,
+      "terminal_result_saved": true
+    },
+    {
+      "manifest_status": "completed",
+      "obligation": "mixed-pencil-resultant",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 13053,
+      "result_status": "completed",
+      "session_id": 58448,
+      "terminal_result_saved": true
+    },
+    {
+      "manifest_status": "dispatched",
+      "obligation": "native-ideal-content",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 17734,
+      "result_status": "completed",
+      "session_id": 3739,
+      "terminal_result_saved": true
+    },
+    {
+      "manifest_status": "dispatched",
+      "obligation": "reduced-rr-cokernel",
+      "reaping_evidence": "Process session not polled; this milestone verifies saved terminal result only.",
+      "response_bytes": 0,
+      "result_status": "truncated",
+      "session_id": 98936,
+      "terminal_result_saved": true
+    }
+  ],
+  "dyadic_compiler_round": {
+    "by_provider_usd": {
+      "Anthropic": "6.568088",
+      "OpenAI": "8.798960"
+    },
+    "completed_nonempty_reports": 5,
+    "empty_refusal_reports": 1,
+    "jobs": 10,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "nonspecial-rr-compiler",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 18949,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/response.md",
+          "sha256": "1dba37801b004c3e5b140bf9ee5024997c9c3fac0db0305fcbd58bd3260989cb"
+        },
+        "response_characters": 18935,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1899,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-nonspecial-rr-compiler/result.json",
+          "sha256": "57b742aeaf7906040cbf61cc26354e09f761725b05dd937a859b5618ba7eea81"
+        },
+        "session_id": 95161,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 16221,
+          "input_tokens_details": {
+            "cache_write_tokens": 16218,
+            "cached_tokens": 0
+          },
+          "output_tokens": 34921,
+          "output_tokens_details": {
+            "reasoning_tokens": 29614
+          },
+          "total_tokens": 51142
+        },
+        "usage_cost_estimate_usd": "1.908260"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "projective-half-certificate",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 12702,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/response.md",
+          "sha256": "7fcc23f05727d5810cd791254e5bf40149f9dddf734f80d2352eeda0dd8f2f7d"
+        },
+        "response_characters": 12687,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1904,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-projective-half-certificate/result.json",
+          "sha256": "5964c6a41ac17362995325eb89ddd51d593c898f3f8dbcc363b731c83dd03b7a"
+        },
+        "session_id": 63301,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 16220,
+          "input_tokens_details": {
+            "cache_write_tokens": 16217,
+            "cached_tokens": 0
+          },
+          "output_tokens": 50319,
+          "output_tokens_details": {
+            "reasoning_tokens": 46828
+          },
+          "total_tokens": 66539
+        },
+        "usage_cost_estimate_usd": "2.678150"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "uniform-translation-reset",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 15563,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/response.md",
+          "sha256": "0dd06387949076f4a73005095267b84a5f647c89f01a2c34e292c38454b16a42"
+        },
+        "response_characters": 15552,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1902,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-uniform-translation-reset/result.json",
+          "sha256": "a759dc1c7fe963ddf750dfa22c8f0f5c71e6db291c1e9c005c598bb74675aaf4"
+        },
+        "session_id": 3165,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 16207,
+          "input_tokens_details": {
+            "cache_write_tokens": 16204,
+            "cached_tokens": 0
+          },
+          "output_tokens": 36014,
+          "output_tokens_details": {
+            "reasoning_tokens": 31741
+          },
+          "total_tokens": 52221
+        },
+        "usage_cost_estimate_usd": "1.962770"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "obligation": "source-high-degree-gates",
+        "provider": "Anthropic",
+        "report_classification": "EMPTY_MAX_TOKENS_TRUNCATION; no report/findings; no retry performed",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 2098,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-source-high-degree-gates/result.json",
+          "sha256": "0067362dd5d6ef440772c5f6cb5b9e587c9909e0ea69b7073254a2b0fc877064"
+        },
+        "session_id": 66497,
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 24814,
+          "output_tokens": 32768
+        },
+        "usage_cost_estimate_usd": "0.754616"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "obligation": "native-content-attack",
+        "provider": "Anthropic",
+        "report_classification": "EMPTY_MAX_TOKENS_TRUNCATION; no report/findings; no retry performed",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 2094,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-native-content-attack/result.json",
+          "sha256": "15b4641a1272755a82eaa62494c622da2b59defc0ad67f0d95f17f13003ffe39"
+        },
+        "session_id": 70716,
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 24810,
+          "output_tokens": 32768
+        },
+        "usage_cost_estimate_usd": "1.886500"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "obligation": "whole-loop-invariant",
+        "provider": "Anthropic",
+        "report_classification": "EMPTY_MAX_TOKENS_TRUNCATION; no report/findings; no retry performed",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 2093,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-whole-loop-invariant/result.json",
+          "sha256": "1d648132da476389736ccadb6c1aacbf6c1e66e6aef13c16cd86b9ec374d6087"
+        },
+        "session_id": 68290,
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 24830,
+          "output_tokens": 32768
+        },
+        "usage_cost_estimate_usd": "1.886700"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability",
+        "completed_review": false,
+        "failure_type": "EmptyResponse",
+        "obligation": "abel-finite-grid-stability",
+        "provider": "Anthropic",
+        "report_classification": "EMPTY_REFUSAL; no report/findings; no retry performed",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1676,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-abel-finite-grid-stability/result.json",
+          "sha256": "c41fb2e46fbe0e5dd3dde71997d1ada8a586d20bcc222420fb0a250556ee7247"
+        },
+        "session_id": 32713,
+        "status": "empty_response",
+        "stop_reason": "refusal",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 6974,
+          "output_tokens": 1282
+        },
+        "usage_cost_estimate_usd": "0.133840"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "mixed-pencil-resultant",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 13053,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant/response.md",
+          "sha256": "d84c53934b60f492d3fa2f5ab1c5640f3d0e858d56776d2d64f0ab25bfb7aca3"
+        },
+        "response_characters": 12387,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1383,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-mixed-pencil-resultant/result.json",
+          "sha256": "9c2219fd597779250a2b23f2b20b766bab43c762ad06c25be569fc3892bec400"
+        },
+        "session_id": 58448,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 3816,
+          "output_tokens": 28431
+        },
+        "usage_cost_estimate_usd": "0.583884"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "native-ideal-content",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 17734,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/response.md",
+          "sha256": "baee6e200d1717f4afd9991ba5c7586f1cc3206fba303888dad8fbea500e4759"
+        },
+        "response_characters": 17725,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1591,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-dyadic-native-ideal-content/result.json",
+          "sha256": "dca7ce0c9b4253d019f1240cd10296d3c932478dfe9fcff15c4588ad30b11f0e"
+        },
+        "session_id": 3739,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 8423,
+          "input_tokens_details": {
+            "cache_write_tokens": 8420,
+            "cached_tokens": 0
+          },
+          "output_tokens": 43311,
+          "output_tokens_details": {
+            "reasoning_tokens": 37679
+          },
+          "total_tokens": 51734
+        },
+        "usage_cost_estimate_usd": "2.249780"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "obligation": "reduced-rr-cokernel",
+        "provider": "Anthropic",
+        "report_classification": "EMPTY_MAX_TOKENS_TRUNCATION; no report/findings; no retry performed",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1454,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-dyadic-reduced-rr-cokernel/result.json",
+          "sha256": "a8496f9d2b2678ca502d8a75b404587d880d938ef90213880df3bca246c96b53"
+        },
+        "session_id": 98936,
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 10637,
+          "output_tokens": 64000
+        },
+        "usage_cost_estimate_usd": "1.322548"
+      }
+    ],
+    "status_counts": {
+      "completed": 5,
+      "empty_response": 1,
+      "truncated": 4
+    },
+    "terminal_jobs": 10,
+    "truncated_empty_reports": 4,
+    "truncated_nonempty_reports": 0,
+    "usage_estimate_usd": "15.367048"
+  },
+  "exclusions": [
+    {
+      "reason": "Still writing; not read or hashed.",
+      "scope": "ideal-saturation independent review"
+    },
+    {
+      "reason": "No shared note hashed or edited.",
+      "scope": "Changing shared proof/main notes, STATE/HANDOFF/workflow"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills remain UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 13868,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/conductivity_multiscale_round/usage.json",
+    "sha256": "c118d2a43e070ccd61f0856fe669d1fc1d0dbc9d671528ab7c3c08b5d7ad5d1f"
+  },
+  "local_request_ceiling_total_usd": "48.000000",
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 50,
+      "dyadic_compiler_round": {
+        "completed_nonempty_reports": 1,
+        "empty_refusal_reports": 1,
+        "jobs": 6,
+        "status_counts": {
+          "completed": 1,
+          "empty_response": 1,
+          "truncated": 4
+        },
+        "terminal_jobs": 6,
+        "truncated_empty_reports": 4,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "6.568088"
+      },
+      "empty_response_count": 15,
+      "frozen_prior_estimate_usd": "111.799008",
+      "frozen_prior_known_terminal_records": 112,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_ten_explicit_jobs": 122,
+      "known_estimate_by_status_usd": {
+        "completed": "38.949964",
+        "empty_response": "1.308824",
+        "truncated": "78.108308"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "118.367096",
+      "known_terminal_nonpartial_usage_records": 118,
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "status_counts_through_dyadic_compiler": {
+        "completed": 50,
+        "dry_run": 1,
+        "empty_response": 15,
+        "failed": 3,
+        "truncated": 53
+      },
+      "terminal_results": 121,
+      "truncated_and_empty": 40,
+      "truncated_and_nonempty": 13
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 22,
+      "dyadic_compiler_round": {
+        "completed_nonempty_reports": 4,
+        "empty_refusal_reports": 0,
+        "jobs": 4,
+        "status_counts": {
+          "completed": 4
+        },
+        "terminal_jobs": 4,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "8.798960"
+      },
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "38.080800",
+      "frozen_prior_known_terminal_records": 19,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_ten_explicit_jobs": 23,
+      "known_estimate_by_status_usd": {
+        "completed": "44.376250",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "46.879760",
+      "known_terminal_nonpartial_usage_records": 23,
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_through_dyadic_compiler": {
+        "completed": 22,
+        "incomplete": 1
+      },
+      "terminal_results": 23,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "scope": "Frozen conductivity-multiscale prior plus exactly ten terminal dyadic-high-degree jobs listed in named dispatch. Actual stored results and saved usage authoritative; no historical rescan."
+}

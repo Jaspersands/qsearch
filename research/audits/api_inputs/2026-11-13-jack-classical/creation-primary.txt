@@ -1,0 +1,454 @@
+ACTUAL PRIMARY SOURCE https://arxiv.org/pdf/2305.07966v1
+Selected formula/operator and proof excerpts, LF-indexed.
+
+SOURCE LINES 255-395
+   From now on all the layered maps will be labelled (unless stated otherwise).
+Remark 2. This definition of layered maps is equivalent to maps equipped with a coloring
+such as in (3), cf. [DFS14, Section 1.6]. However, we prefer to present this definition as
+above since it will play a slightly different role in this paper.
+Theorem 1.4 (The First Main Result). There exists a statistic of non-orientability ϑ on lay-
+ered maps such that for any partitions µ and λ, we have
+                                    X                bϑρ (M )         Y (−αλi )|V◦(i) (M )|
+(4)          θµ(α) (λ) = (−1)|µ|
+                                       (∞)
+                                             2|V• (M )|−cc(M ) αcc(M ) i≥1    zν (i) (M )
+                                   M ∈Mµ                                         •
+6                                      H. BEN DALI AND M. DOŁ ˛
+                                                             EGA
+
+
+                                                                     2
+                                                 (2)
+                                             v2,1
+                                                                           (1)
+                                                                          v3,1
+
+
+                                                             (1)
+                                                            v3,2
+
+
+                                             2                            1
+                                                                    (1)
+                                                                   v4,1
+                                                                                 1
+
+
+
+
+         F IGURE 2. A 2-layered map on the Klein bottle, represented here by a square
+         whose left side should be glued to the right one (with a twist) and the top
+         side should be glued to the bottom one (without a twist), as indicated by the
+                               (i)
+         arrows. Moreover, vj,m denotes the black vertex of degree j numbered by m
+         in the layer i, and the integer next to a white vertices indicate the number of
+         its layer.
+
+where b is the parameter related to α by b := α − 1 and zν (i) (M ) is the classical normalization
+                                                          •
+factor (see Section 2.1).
+  Note that the product and the sum here are finite since each layered map has a finite number
+of non-empty layers. Actually, we prove that this theorem holds for a family of statistics
+ϑ. Although the two parameters α and b are related, we prefer to keep both of them in the
+previous formula since they play different roles. In particular, one may notice that the quantity
+                                                 (i)
+                               Q       (−αλi )|V◦ (M )|
+1/ 2(|V• (M )|−cc(M )) αcc(M )    1≤i≤k    z (i)
+                                                         depends only on the underlying "k-layered
+                                                  ν• (M )
+
+graph" of M and is rather straightforward. This will not be the case for the quantity bϑ(M ) ,
+called the b-weight of the map.
+  In the case b = 0, and by definition of a statistic of non-orientability, only bipartite maps
+appear in Eq. (4), so that it recovers Féray–Stanley formula (3). Similarly, Eq. (4) coincides
+when b = 1 with the expression given in [FŚ11b, Thm 1.2].
+  As a direct consequence of Theorem 1.4, we obtain the following interpretation of Jack
+polynomials in the basis of power-sum functions.
+Theorem 1.5. Let n be a positive integer and let λ be a partition of n. Then
+                                                                                                      (i)
+              (α)
+                              X                        bϑρ (M )                      Y      (−αλi )|V◦ (M )|
+             Jλ = (−1)n            pν (M ) |V• (M )|−cc(M ) cc(M )                                          ,
+                               M
+                                           2                α                                  zν (i) (M )
+                                                                                 1≤i≤`(λ)         •
+
+
+where the sum is taken over all `(λ)-layered maps M with n edges.
+  As in Eq. (3), the sum in Theorem 1.5 can be interpreted using maps whose edges are
+embedded in a non-bijective way in the Young diagram of λ (see also Remark 2). Hence, our
+second main result can be considered as a non-bijective version of Hanlon’s conjecture2.
+    2
+    It is worth mentioning that Haglund and Wilson have found recently a very different combinatorial formula
+for the expansion of Jack polynomials in the power-sum basis [HW20, Corollary 4.3.1]. The combinatorial
+objects in their formula are not weighted by a simple monomial in α/b, but by more complicated products of
+α-deformations of hooks, and the classical Young’s formula (1) is not immediately obtained as the special case.
+                 POSITIVE FORMULA FOR JACK POLYNOMIALS AND JACK CHARACTERS                           7
+
+   As we have already mentioned, the ideas used in the proofs of the special cases b = 0 and
+b = 1 of Theorem 1.4 do not apply to the general case, and we need to develop a new ap-
+                                                                      (α)
+proach. Our strategy is to use a characterization of Jack characters θµ given by Theorem 2.5
+(due to Féray [Śni15, Theorem A.2]) and prove that the right-hand side of Eq. (4) satisfies
+the conditions of Theorem 2.5, see Theorem 5.1 and Theorem 7.1.
+   A key technique for proving these theorems, is using differential operators to study the
+properties of the generating series of layered maps. We prove various commutation relations
+between them using methods inspired by the theory of Lie algebras, and we show that these
+algebraic relations reflect the desired combinatorial and algebraic properties of the right-hand
+side in Theorem 1.4.
+1.4. Lassalle’s conjecture and second main result. Our second main result is the proof of
+Conjecture 1.
+Theorem 1.6. The normalized Jack characters expressed in the Stanley coordinates
+             (α)
+(−1)|µ| zµ θ̃µ (s, r) are polynomials in the variables b, −s1 , −s2 , . . . , r1 , r2 , . . . with non-
+negative integer coefficients, where b := α − 1.
+   Note that Theorem 1.6 does not immediately follow from Theorem 1.4: the integrality part
+is not obvious, and requires new ideas. Indeed, the proof of Theorem 1.6 consists of two parts
+that are proved using very different techniques. In the first part we deduce positivity as a con-
+sequence of the combinatorial expression of Jack characters obtained in Theorem 1.4. In the
+second part, we obtain the integrality using integrable system of Nazarov–Sklyanin [NS13].
+We relate their theory with Jack characters by proving an explicit combinatorial formula
+expressing a certain basis of shifted symmetric functions in terms of normalized Jack charac-
+ters. We conclude by showing that the transition matrix between these two bases is invertible
+over Z. As a byproduct, we prove that Kerov polynomials for Jack characters have integer
+coefficients, which was an open problem posed by Lassalle in [Las09] (see Section 3 for
+details).
+1.5. Third main result: Jack polynomials via differential operators. Another application
+of the first main result is a formula for the expansion of Jack polynomials in the power-sum
+basis using creation operators (see also Theorem 8.2).
+Theorem 1.7. Fix a partition λ = (λ1 , . . . , λ` ). Then
+                                       (α)       (+)      (+)
+                                      Jλ     = Bλ1 · · · Bλ` · 1,
+         (+)
+where Bn       := [tn ] exp (B∞ (−t, p, −αn)).
+One may notice that this formula is simpler than the one obtained by combining Theorem 1.5
+and Proposition 4.6. In fact, it is obtained from these two results using some properties of the
+differential operators proved in Section 5 (see Section 8.2 for more details).
+1.6. Outline of the paper. The paper is organized as follows. In Section 2 we introduce
+some notation related to partitions and symmetric functions and we give a proof of The-
+orem 2.5 that characterizes the Jack characters. In Section 3, we prove the integrality in
+Theorem 1.6. In Section 4 we explain the combinatorial decomposition of layered maps and
+we give a differential expression for the generating series of layered maps. Section 5 is ded-
+icated to the proof of the first characterization property, namely the vanishing property. In
+Section 6 we prove a series of commutation relations for differential operators which are used
+8                                  H. BEN DALI AND M. DOŁ ˛
+                                                         EGA
+
+to obtain the second characterization property in Section 7. In Section 8, we finish the proof
+of Theorem 1.4 and 1.7 and we prove the positivity in Theorem 1.6.
+
+                             2. N OTATION AND PRELIMINARIES
+ For the definitions and notation introduced in Sections 2.1 and 2.2 we refer to [Sta89,
+Mac95].
+2.1. Partitions. A partition λ = [λ1 , ..., λ` ] is a weakly decreasing sequence of positive
+integers λ1 ≥ ... ≥ λ` > 0. We denote by Y the set of all integer partitions. The integer ` is
+called the length of λ and is denoted `(λ). The size of λ is the integer |λ| := λ1 +λ2 +...+λ` .
+
+SOURCE LINES 1087-1237
+s1 , s2 , . . . , sk . We consider the algebra
+                                          P := SpanQ(b) {pλ }λ∈Y .
+We also consider an alphabet Y := {y0 , y1 , . . . } and the space5 PY
+                                      PY := SpanQ(b) {yi pλ }i∈N,λ∈Y .
+     We fix a MON ρ. Let M be a k-layered map. We define its marking κ(M ) by
+                            ρ(M )                     Y             (i)
+           κ(M ) := |V• (M )|−cc(M ) cc(M ) pν (M )       (−αsi )|V◦ (M )| ∈ P[s1 , . . . , sk ],
+                   2                α                1≤i≤k
+
+where ν (M ) is the face-type of M defined in Section 1.2.
+Definition 4.3. We say that a layered map M is rooted if it has a distinguished oriented black
+corner c in layer 1, called the root of the map. A rooted layered map is labelled if all the black
+vertices are numbered as in Definition 1.3 except for the root vertex vc . As in Definition 4.2,
+we define an order <(M,c) on the black vertices of a labelled rooted layered map (M, c) with
+the convention that the root vertex is always maximal. Finally we denote ρ(M, c) the b-weight
+associated to (M, c) with respect to <(M,c) .
+     5
+     This notation is slightly different from the one used in [CD22].
+                POSITIVE FORMULA FOR JACK POLYNOMIALS AND JACK CHARACTERS                                  19
+
+  We associate to a rooted labelled k-layered map(M, c) the marking κ(M, c) defined by:
+                   ρ(M, c)                     Y              Y             (i)
+ κ(M, c) := |V• (M )|−cc(M ) cc(M ) ydeg(fc )       pdeg(f )       (−αsi )|V◦ (M )| ∈ PY [s1 , . . . , sk ],
+            2               α                 f 6=f          1≤i≤k
+                                                      c
+
+where deg(fc ) is the degree of the root face, and the first product runs over the faces of M
+different from the root face.
+   We use the catalytic operators Y+ , ΓY : PY → PY introduced in [CD22]:
+                                             X         ∂
+(23)                                  Y+ =       yi+1      ,
+                                             i≥0
+                                                      ∂y i
+
+
+                              X               i∂ 2     X             ∂        X        i∂
+(24)       ΓY = (1 + b) ·            yi+j            +      yi pj         +b·     yi+1     .
+                             i,j≥1
+                                            ∂pi ∂yj−1 i,j≥1       ∂yi+j−1     i≥1
+                                                                                       ∂yi
+   Note that the operator ΓY has a similar structure to the Laplace–Beltrami operator Dα , but
+it additionally uses variables from the family Y . This justifies the name “catalytic”, as these
+variables will play the same role as the catalytic variable in the classical Tutte decomposition,
+well-known to the combinatorial community. The following proposition gives a combinato-
+rial interpretation for the operator ΓY , which corresponds to the particular case k = 1 in
+[CD22, Proposition 4.4]. We give here the main arguments of the proof.
+Proposition 4.4 ([CD22]). Let (M, c) be a rooted k-layered map. Then for every MON ρ, we
+have                                       X
+                            ΓY κ(M, c) =       κ(M ∪ {e}, c),
+                                                      e
+where the sum is taken over all ways to add an edge e connecting c to some white corner c0
+(without adding a new white vertex).
+Proof. First, notice that by adding such an edge e, the maximal vertex in M ∪ {e} is the same
+as the maximal vertex in M , therefore ρ(M ∪ {e}) = ρ(M ∪ {e}, e) · ρ(M ). We distinguish
+three cases.
+      • The two corners c and c0 lie in distinct faces of respective sizes i and j. When we add
+        the edge e we form a face of size i + j + 1. Let us show that this case corresponds
+        to the first term of the operator ΓY . Let ẽ denote the edge obtained by twisting e, see
+        Section 4.1.
+           If the two faces lie in the same connected component of M , then e is a handle and
+        by definition of a MON
+                             ρ(M ∪ {e}, e) + ρ(M ∪ {ẽ}, ẽ) = 1 + b,
+         and this explains the factor 1 + b in the first terms of ΓY .
+           If the two faces lie in two different connected components, then e is a bridge and
+                                     ρ(M ∪ {e}, e) = ρ(M ∪ {ẽ}, ẽ).
+         In this case, the factor 1 + b = α in the first term of ΓY is related to the fact that the
+         number of connected components of M decreases by 1.
+       • The two corners c and c0 lie in the same face of degree i + j − 1 and the added edge
+         e is a border, which splits the face into two faces of respective degrees i and j. Then
+         ρ(M ∪ {e}, e) = 1.
+20                                 H. BEN DALI AND M. DOŁ ˛
+                                                         EGA
+
+       • The two corners c and c0 lie in the same face of degree i and the added edge e is a
+         twist. By adding e we form a face of degree i + 1 and ρ(M ∪ {e}, e) = b.         
+
+4.3. Proof of Proposition 4.6. We consider the operator ΘY : PY → P, defined by
+                                          X ∂
+                                   ΘY :=       pi     .
+                                           i≥1
+                                                  ∂yi
+
+Applied on the marking of a rooted map, ΘY allows to forget the root and to obtain the
+marking of an unrooted map. In other words, if (M, c) is a rooted map with vertex root vc ,
+and deg(vc ) is maximal among black vertices in the layer 1, then
+                                    ΘY · κ(M, c) = κ(M ),
+where M is the map obtained by numbering the root vertex such that it remains maximal
+(which is possible due to the definition of the order ≺M , and our assumption on deg(vc )) and
+then forgetting the map root c (but the vertex vc remains rooted in c, where this rooting is
+the one which is required in the definition of a layered map). For n ≥ 0, and variable u, the
+operator Bn : P → P[u] is defined by
+                                                              y0
+                            Bn (p, u) := ΘY (ΓY + uY+ )n          .
+                                                             1+b
+                                                                            
+                                                                       (1)
+Proposition 4.5. Let M be a k-layered bipartite map and let n ≥ ν• (M ) . Then
+                                                                                 1
+                                                        X
+                              Bn (p, −αs1 ) · κ(M ) =         κ(M 0 ),
+                                                         M0
+
+                        all k-layered maps obtained by adding a black vertex of degree n
+where the sumis taken over
+                (1)
+and label mn ν• (M ) + 1 to the map M in the layer 1 (using possibly new white vertices
+which are necessarily in the layer 1).
+Proof. We start by adding an isolated black vertex vc of degree 0 to M in layer 1 — this
+corresponds to the multiplication by y0 /α (the division by α is due to the fact that we increase
+the number of connected components of the map by 1). We have two ways to add an edge
+incident to v:
+      • We add an edge to an existing black corner in the map, this corresponds to the term
+        ΓY (see Proposition 4.4).
+      • We add an edge connected to a new white vertex. Since the weight of a white vertex
+        in the layer 1 is −αs1 , this corresponds to (−αs1 )Y+ .
+                                                0
+We apply ΘY to forget the              map M as explained above, in particular, we number
+                            root of the
+                              (1)
+the root vertex vc by mn ν• (M ) + 1. The algorithm ensures that ρ(M 0 ) is computed by
+erasing the edges in the same order as before, and the proof is finished.                      
+     For each `, k ≥ 0, we define C`,k (p) : P → P by
+                                   C`,k (p) := [u` ]Bk+` (p, u).
+From Proposition 4.5 we get that C`,k acts on the marking of a bipartite map by adding a black
+vertex of degree ` + k with ` new white neighbors. The operators C` : P → PJtK+ are then
+                     POSITIVE FORMULA FOR JACK POLYNOMIALS AND JACK CHARACTERS                                           21
+
+defined for ` ≥ 0 as the marginal sums
+                                     X t`+k                 t`
+(25)                    C` (t, p) :=         C`,k (p) + 1`>0 C`,0 (p),
+                                     k≥1
+                                         `+k                `
+where PJtK+ is the ideal in PJtK generated by t.
+  Finally, we set
+                            X tn               X
+(26)         B∞ (t, p, u) =        Bn (p, u) =     u` C` (t, p) : P → P[u]JtK+ .
+                             n≥1
+                                 n             `≥0
+
+We define the generating series of k-layered maps by:
+(27)
+                                X                          bϑρ (M )         Y (−αsi )|V◦(i) (M )|
+   (k)                                   |M |
+  F (t, p, s1 , . . . , sk ) :=      (−t) pν (M ) |V• (M )|−cc(M ) cc(M )                        .
+                                 (k)
+                                                  2                 α      1≤i≤k
+                                                                                 z (i)
+                                                                                  ν (M )
+                                       M ∈M                                                             •
+
+
+
+SOURCE LINES 1330-1430
+
+
+and we deduce that
+                                                                                    !
+                                                   X         Bn (p, −αs1 )
+     F (k) (t, p, s1 , . . . , sk ) = exp              (−t)n                            · F (k−1) (t, p, s2 , . . . , sk ). 
+                                                   n≥1
+                                                                   n
+
+
+                                               5. T HE VANISHING PROPERTY
+  In this section we consider expressions in two different alphabets p := (p1 , p2 , . . . , ) and
+q := (q1 , q2 , . . . ). We will use repeatedly without further mention the fact that operators and
+coefficient extraction which depend on different alphabets trivially commute.
+  Let λ be a partition, of length ` ≥ 1. Then we define
+(29)                                          F (λ) := F (`) (t, p, λ1 , λ2 , . . . , λ` )
+where F (`) is the generating series of k-layered maps given by Eq. (27). The main purpose
+of this section is to prove the following theorem.
+Theorem 5.1 (Vanishing property). Let λ be a partition of size n. Then the function F (λ) is
+a polynomial in t of degree less or equal than n. In other terms, if m > n then
+                                                          [tm ]F (λ) = 0.
+   Combinatorially, the vanishing property is equivalent to saying that the total contribution
+of maps with more than |λ| edges is zero in the series F (λ). In the cases b = 0 and b =
+1, a combinatorial proof of this property was given in [FŚ11a] and [FŚ11b], respectively.
+However, such a proof does not seem to work for the general b because of the presence of the
+b-weight.
+               POSITIVE FORMULA FOR JACK POLYNOMIALS AND JACK CHARACTERS                                       23
+
+5.1. The function τb . We consider the function τb introduced in [CD22].
+                                                      (α)       (α)          (α)
+                                  X
+                                               |ξ|
+                                                     Jξ (p)Jξ (q)Jξ (u)
+             τb (t, p, q, u) :=            t                        (α)
+                                                                                     ∈ Q(α)[p, q, u]JtK.
+                                  ξ∈   Y                        jξ
+   The following theorem, due to Chapuy and the second author, will play a crucial role in
+this section.
+Theorem 5.2. [CD22, Theorem 5.7] For any m ≥ 1, we have
+                           Bm (p, u)                       ∂
+                        tm            · τb (t, p, q, u) =     τb (t, p, q, u).
+                               m                          ∂qm
+  We start by giving a construction of the function τb using the operators Bm (p, u). This
+construction is related to the fact that τb is the generating series of bipartite maps, see [CD22,
+BD22].
+Corollary 5.3. The function τb has the following expression:
+                                                               !
+                                             X tm qm
+                       τb (t, p, q, u) = exp          Bm (p, u) · 1.
+                                             m≥1
+                                                  m
+                                                                     tm qm
+                                                              P                       
+Remark 6. Recall that Bm (t, p, u) : P → P[u], therefore exp    m≥1 m      B m (p, u)   :P→
+Q(α)[p, q, u]JtK is a well-defined operator.
+Proof. Fix an integer n ≥ 1 and a partition µ ` n. We prove that
+                                            1 X Bγ`(µ) (p, u)    Bγ (p, u)
+(30)            [tn qµ ]τb (t, p, q, u) =                     ··· 1        · 1,
+                                          `(µ)!    γ`(µ)            γ1
+                                                             γ|=µ
+
+where the sum is taken over all the reorderings γ of µ. We start by noticing that, for any
+reordering γ of µ,
+                                                        !         
+                                            Y 1            Y  ∂
+         [tn qµ ]τb (t, p, q, u) = [tn 1q ]                        τb (t, p, q, u),
+                                            j≥1
+                                                mj (µ)!      ∂q γi
+                                                                               1≤i≤`(µ)
+
+whereQ[1q ] denotes the extraction of the constant term in the variables q. Since there are
+`(µ)! j≥1 mj1(µ)! reorderings γ of µ, we can rewrite the last equation as follows
+                                                  1 X ∂          ∂
+             [tn qµ ]τb (t, p, q, u) = [tn 1q ]            ···         τb (t, p, q, u).
+                                                `(µ)! ∂qγ1     ∂qγ`(µ)
+                                                                γ|=µ
+
+  Using Theorem 5.2 and the fact that the operators ∂q∂ i commute with the operators Bj (p, u)
+we obtain
+                                            γ
+      n                        n       1 X t `(µ) Bγ`(µ) (p, u)     tγ1 Bγ1 (p, u)
+    [t qµ ]τb (t, p, q, u) = [t 1q ]                            ···                τb (t, p, q, u)
+                                     `(µ)!         γ`(µ)                  γ1
+                                                      γ|=µ
+
+                               1       X Bγ`(µ) (p, u)                      Bγ1 (p, u) 0
+                         =                                            ···             [t 1q ]τb (t, p, q, u)
+                             `(µ)!                      γ`(µ)                   γ1
+                                       γ|=µ
+
+                               1 X Bγ`(µ) (p, u)    Bγ (p, u)
+                         =                       ··· 1        · 1.
+                             `(µ)!    γ`(µ)            γ1
+                                       γ|=µ
+24                                    H. BEN DALI AND M. DOŁ ˛
+                                                            EGA
+
+This concludes the proof of Eq. (30) and hence the proof of the proposition.                                
+   A second consequence of Theorem 5.2 is Proposition 4.7. The key idea of the proof is to
+consider the action of the commutators B` (p, u) and Bm (p, u) on the function τb (p, q, u) and
+then extract some coefficient.
+
+SOURCE LINES 2475-2525
+                                                     =             pµ (λ1 , . . . , λk ).              
+                                                            zµ
+
+8.2. Proof of Theorem 1.7. In this section, we give a direct way to construct Jack polyno-
+mials by adding the rows in increasing order of their size. This formula is more efficient to
+generate Jack polynomials than the one given by Proposition 4.6.
+Theorem 8.2. Fix a partition λ. Let µ be the partition obtained from λ by removing the
+largest part; µ = λ\λ1 . Then
+                    (α)
+                 Jλ         = [tλ1 ] exp (B∞ (−t, p, −αλ1 )) · Jµ(α)
+                              X          X        1 Bn1 (p, −αλ1 )    Bn (p, −αλ1 ) (α)
+                            =                                      ··· `           · Jµ .
+                              `≥1     n ,...,n ≥1
+                                                  `!      n 1              n `
+                                      1     `
+                                   n1 +···+n` =λ1
+
+
+Proof. Let |λ| = n, and `(λ) = `. From the definition of the Jack characters and Theorem 1.4
+and Proposition 4.6, we have
+   (α)
+ Jλ = [t|λ| ] exp (B∞ (−t, p, −αλ1 )) · · · exp B∞ (−t, p, −αλ`(λ) ) · 1
+                                                                      
+            X
+                   ([tn1 ] exp (B∞ (−t, p, −αλ1 ))) · · · [tn` ] exp B∞ (−t, p, −αλ`(λ) ) · 1.
+                                                                                         
+       =
+            n1 ,...,n` ≥1
+           n1 +···+n` =n
+
+
+But from the proof of Theorem 5.1, the only choice for (ni )1≤i≤` that does not give a null
+term is ni = λi for all 1 ≤ i ≤ `. Indeed, otherwise there exists i such that ni > λi , and from
+Eq. (35), we have
+           [tni ] exp (B∞ (−t, p, −αλi )) · · · [tn` ] exp (B∞ (−t, p, −αλ` )) · 1 = 0.
+                                                                             
+
+     As a consequence, we obtain
+              (α)
+                    = [tλ1 ] exp (B∞ (−t, p, −αλ1 )) · · · [tλ` ] exp (B∞ (−t, p, −αλ` )) · 1.
+                                                                                        
+(63)        Jλ
+               POSITIVE FORMULA FOR JACK POLYNOMIALS AND JACK CHARACTERS                               41
+
+Comparing this expression for the partitions λ and µ we obtain the first part of the equation
+of the theorem. To obtain the second part of the equation we expand the exponential and we
+use the fact that the operators Bn (p, −αλ1 ) commute for n ≥ 1, see Proposition 4.7.      
+8.3. Positivity in Lassalle’s conjecture. We consider two sequences of variables s1 , . . . , sk
+and r1 , . . . , rk .                                                
+                                             (k)         s1 . . . s k
+    We introduce the generating series F   e       t, p,                inductively by F (0) = 1 and

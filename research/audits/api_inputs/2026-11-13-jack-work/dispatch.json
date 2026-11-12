@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-13",
+  "selection": "Classical falsification of complete quantum Benjamin-Ono quench-work candidate",
+  "local_ceiling_usd": 11,
+  "note": "Ceilings not actual spending or balances. No retries.",
+  "jobs": [
+    {
+      "id": "jack-coarse-work-law",
+      "provider": "openai",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-work/jack-coarse-work-law.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-jack-work/native-contract.md",
+        "research/audits/api_inputs/2026-11-13-jack-work/work-primary.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-jack-coarse-work-law",
+      "status": "completed",
+      "session_id": 75995,
+      "billing_status": "usage_reported",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.407580",
+      "response_bytes": 8139,
+      "parent_fully_read": true,
+      "session_reaped": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T19:25:51.067865+00:00",
+        "finished_at": "2026-11-12T19:20:23.549619+00:00",
+        "usage": {
+          "input_tokens": 5523,
+          "input_tokens_details": {
+            "cache_write_tokens": 5520,
+            "cached_tokens": 0
+          },
+          "output_tokens": 47047,
+          "output_tokens_details": {
+            "reasoning_tokens": 44672
+          },
+          "total_tokens": 52570
+        },
+        "usage_is_partial": false,
+        "report_is_complete": true,
+        "parent_read_all_available_text": true,
+        "incomplete_claims_adopted": null
+      }
+    },
+    {
+      "id": "jack-schur-positive-work",
+      "provider": "claude",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-work/jack-schur-positive-work.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-jack-work/native-contract.md",
+        "research/audits/api_inputs/2026-11-13-jack-work/work-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-jack-schur-positive-work",
+      "status": "truncated",
+      "session_id": 86515,
+      "billing_status": "usage_reported",
+      "stop_reason": "max_tokens",
+      "usage_cost_estimate_usd": "1.313596",
+      "response_bytes": 3060,
+      "parent_fully_read": true,
+      "session_reaped": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T19:25:51.067865+00:00",
+        "finished_at": "2026-11-12T19:07:08.074575+00:00",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 8399,
+          "output_tokens": 64000
+        },
+        "usage_is_partial": false,
+        "report_is_complete": false,
+        "parent_read_all_available_text": true,
+        "incomplete_claims_adopted": false
+      }
+    }
+  ]
+}

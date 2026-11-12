@@ -1,0 +1,62 @@
+{
+  "scope": "Single stored N4 M2 instance; independent full-Pauli reconstruction, exact rational verification only",
+  "certificate_sha256": "9c784de71a5d4519fd203fdf5bcaba92ee25f934f466fe1ca3b693dd4089f366",
+  "native_input": {
+    "N": 4,
+    "M": 2,
+    "sites": [
+      "0",
+      "1",
+      "3",
+      "7"
+    ],
+    "g": "1/3"
+  },
+  "basis": [
+    "0011",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1100"
+  ],
+  "full_pauli_native_matrices_match_certificate": true,
+  "charge_commutativity_polynomial_in_g_checked": true,
+  "derivatives_match_certificate": true,
+  "K_antisymmetric": true,
+  "all_576_joint_transport_constraints_zero": true,
+  "full_constraint_rank": 15,
+  "full_augmented_rank": 15,
+  "full_rank_minor_row_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    8,
+    9,
+    10,
+    11,
+    15,
+    16,
+    17,
+    22,
+    23,
+    29
+  ],
+  "full_rank_minor_determinant": "-496052898184463759383/6332627885807415128861820844069632",
+  "hamming_le3_subspace_dimension": 12,
+  "restricted_constraint_rank": 12,
+  "restricted_augmented_rank": 13,
+  "currents_match_certificate": true,
+  "stored_13_term_inconsistency_witness_verified": true,
+  "Q0_characteristic_polynomial": "x^6 - 251/63*x^5 + 45959/7938*x^4 - 14570/3969*x^3 + 551345/571536*x^2 - 20213/190512*x + 745/190512",
+  "Q0_charpoly_derivative_gcd_degree": 0,
+  "forbidden_matrix_entry": {
+    "bra": "0011",
+    "ket": "1100",
+    "value": "355248848800449/125250068977266446",
+    "hamming_distance": 4
+  },
+  "no_eigensolver_no_parameter_sweep": true
+}

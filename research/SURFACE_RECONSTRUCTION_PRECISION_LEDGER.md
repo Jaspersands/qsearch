@@ -1,10 +1,11 @@
 # Explicit majorants for the native reconstruction precision
 
-2026-11-12. Parent derivation under focused review. This supplies computable
+2026-11-12. Reviewed scoped height-to-precision derivation. This supplies computable
 majorants for the already proved height chain; it is not an implementation
 of Arakelov geometry, a semistable-model algorithm, or a new surface theorem.
-Do not use the particular numerical constants below until checked. The prior
-effective-polynomial proof and its hypotheses remain in the linked reviews.
+Parent checked the completed arithmetic report and its explicit derivations.
+The prior effective-polynomial proof and all geometry/local-computation
+hypotheses remain mandatory; this note does not construct those inputs.
 
 ## Input and aim
 
@@ -51,7 +52,7 @@ constant, spectral estimate, or ineffective existence theorem occurs.
 
 ## Point, Faltings, theta and discriminant majorants
 
-For a positive integer v define
+For a positive integer v OUTSIDE the branch set B define
 
     Z(v)=Lambda+(d+1)r(hB+log(1+v)+1)+2d^2 log d+7.
 
@@ -69,7 +70,10 @@ Set v0=g^3+r+1, A_g=g(g+1)/2 and
     Delta=2g(g+1)(4g+1)*Z(v0)+12W+93g^3,
     Theta=(g/4)log max(1,F)+(4g^3+5g+1)log2.
 
-Some v<=v0 has no Weierstrass point above it. Actual source Theorem2.4.1
+Some integer 1<=v<=v0 lies outside B and has no Weierstrass point above it:
+there are at most g^3-g Weierstrass points and r branch values, strictly
+fewer than v0 excluded integers. Integer v is finite and has no finite
+intersection with infinity. Actual source Theorem2.4.1
 and Lemma2.4.2 therefore bound h_Fal by F, minimal semistable node sum by
 Delta, and averaged log theta supremum by Theta. No test for that auxiliary
 height-proof point is needed by the algorithm: monotonic Z(v0) is a bound
@@ -105,9 +109,10 @@ support envelope. A simpler larger power bound can be used, but is unnecessary.
 Let Fplane(x,y) be the known GLOBAL rational monic plane equation restricted
 to a component, of total degree D. Fix an integral representative of its
 coefficient vector and compute upper bounds on its affine coefficient
-height and number of monomials. Root-height/specialization gives a computable
-bound H on the sum of multiplicity-weighted h(x)+h(y) from Support and those
-coefficients. It is enough to use this same H as an upper bound on EVERY
+height and number of monomials. Put C_F=h([1,coeff(Fplane)])+log max(1,number of monomials)+log2.
+The monic Cauchy root bound after specialization gives h(y)<=D h(x)+C_F.
+Thus H=(D+1)Support+g*C_F explicitly bounds the sum of
+multiplicity-weighted h(x)+h(y). It is enough to use this same H as an upper bound on EVERY
 individual support point's coordinate-height sum; this weakens the bound
 only polynomially. The actual model coefficients, not intrinsic theta data,
 pay the coordinate change.
@@ -149,7 +154,8 @@ and inverse-height rules after its residue unit check.
 
 ## Rational reconstruction threshold
 
-Add the explicit fibre-point height bound and height-zero cyclotomic entry
+The fibre-point bound is Hfib=(D+1)log(a)+C_F. Add this, each actual
+closed-coordinate bound as needed, and the height-zero cyclotomic entry
 to bound every scalar in the all-pair encoding by Henc. Let N_S=|Gamma|ell^m,
 q be its known tuple length and u the chosen integer separator. Put
 
@@ -157,9 +163,50 @@ q be its known tuple length and u the chosen integer separator. Put
     Hlambda=3(N_S-1)Halpha+2(N_S-1)log2,
     K=N_S^2*(Halpha+2Hlambda)+2log N_S+N_S*(Halpha+log2)+1.
 
-This dominates the product polynomial, fixed-arity operation and Boolean
-relation coefficients from the explicit Lagrange formulas. Global equivariance
+This dominates the product polynomial and all UNARY/BINARY operation and
+Boolean relation coefficients used here. The actual signature has maximum
+arity TWO: product, equality, unary maps and constants. For an extension with
+explicit maximum arity k>=2 replace K by
+
+    K_k=N_S^k*(Halpha+k Hlambda)+k log N_S+N_S*(Halpha+log2)+1.
+
+Unspecified fixed arity is not itself a numerical justification for K. Global equivariance
 proves they are rational; auxiliary separation proves their denominators are
-P-units. Take an integer T>=exp(K) by outward bit rounding and choose e with
-P^e>2T^2. These known bounds pay every precision digit. Semistable models,
+P-units. Let Kint>=1 be an integer upper bound for K (or K_k),
+s=floor(log2 P), T=2^(2Kint), and e=floor((4Kint+1)/s)+1. Then
+T>=exp(Kint) and P^e>=2^(s e)>2T^2. These known bounds pay every precision digit. Semistable models,
 complex atlas evaluation and global torsion splitting fields are not inputs.
+
+## Partial analytic audit disposition
+
+The Claude analytic-constants request ended max_tokens with a NONEMPTY partial
+report, not a completed review. Parent read all retained text. Its valid
+domain correction is applied above: v must avoid B, and v0 already pays r
+excluded values. Its independently checked Whitney counts agree with the
+source proof. The report stops during the density calculation, so its opening
+claim to have audited later constants is not used as evidence. The earlier
+complete internal proof remains authoritative; completed arithmetic precision review independently supplies the remaining
+derivations below. No retry.
+
+## Completed arithmetic audit disposition
+
+The completed OpenAI arithmetic-precision report (544 lines), fully parent-read,
+rederives the actual nonminimal Z, Wronskian, Faltings/theta/minimal-node,
+finite contraction/current, global Green and book9.2.5 support bounds. It
+preserves the negative one-half sign, degree d versus g factors and both
+pole/Green contributions. Accepted explicit additions above: monic root-height
+H/Hfib, maximum-arity qualification and integer-only precision rule.
+
+The jet identity D_z^n f=P_n/eta^(2n-1) follows by one differentiation;
+normalized confluent rows binom(j,n)z_i^(j-n) have determinant product of
+(z_j-z_i)^(m_i*m_j), no factorial denominator in that matrix. Shared Cramer
+heights and global equivariance respectively pay rational size and rationality;
+residue-unit separation separately pays P-integrality. Root checked these
+distinctions. All component coordinates must be covered by Henc/q; the report's
+one-divisor shorthand is not permission to omit components.
+
+This closes only the specified height-to-precision bridge with positive genus,
+regular integral a, unique supported divisors, actual global plane coefficients,
+unit eta/cyclicity/separator and correctly aligned finite-flat residues. It
+does not replace the independently charged geometry, model, or lifting proofs.
+No semistable extension, analytic atlas, or splitting field is computed.

@@ -1,0 +1,513 @@
+
+SOURCE research/audits/sources/macdonald_transform/nazarov_sklyanin_2015.txt
+URL https://arxiv.org/pdf/1411.1315
+SHA256 d45856bd4a03393bcc19c8f3a5441bdbcf268d02cdc55a740a45f3627ec09167
+
+Physical LF 109-178
+                                                            i⩾1
+
+By taking logarithms of the left and right hand side of the above display and then
+exponentiating,                        X p             
+                                               n
+                        E(z) = exp −             (−z)n .                      (1.3)
+                                              n
+                                                n⩾1
+
+   The complete symmetric functions h1 , h2 . . . can be determined by the relation
+                                    E(−z)H(z) = 1                                    (1.4)
+where
+                            H(z) = 1 + h1 z + h2 z 2 + . . . .
+4                                                                        Nazarov and Sklyanin
+
+
+The degree of the element hn ∈ Λ is n . Furthermore, by (1.3) we get an equality
+                                        X p       
+                                               n n
+                          H(z) = exp            z .                        (1.5)
+                                              n
+                                               n⩾1
+
+The elements h1 , h2 , . . . as well as the elements e1 , e2 , . . . are free generators of
+the commutative algebra Λ over the field F .
+
+
+1.3. Hall-Littlewood functions. Let F be the field Q(t) with t a parameter. Put
+
+                  Q(z) = E(−tz)H(z) = 1 + Q1 z + Q2 z 2 + . . . .
+
+Note that then by (1.3) and (1.4) we have
+                           Y 1 − t xi z               X 1 − tn             
+                 Q(z) =                      = exp                    pn z n .         (1.6)
+                                 1 − xi z                      n
+                           i⩾1                          n⩾1
+
+In this article we will employ the Jing vertex operator
+
+                                 J(z) = Q(z) E ⊥ (−z −1 ) .                            (1.7)
+
+This is a formal series in z with coefficients acting on Λ as linear operators. These
+operators do not commute, see [7, Proposition 2.12] for commutation relations
+between them. Using another variable w instead of z in the equalities (1.6) we get
+                                          X                 
+               ⊥     −1                            −n
+             E (−z )(Q(w)) = exp −                z ∂/∂ pn (Q(w)) =
+                                               n⩾1
+                                 X 1 − tn                            z−w
+                 Q(w) exp −                   z −n wn       = Q(w)                     (1.8)
+                                         n                            z − tw
+                                  n⩾1
+
+
+due to (1.2) and (1.3). The fraction at the right hand side of the equalities (1.8)
+should be expanded as a power series in the ratio w/z . It follows by (1.4) that
+                                                            z −tw
+                          H ⊥ (z −1 )(Q(w)) = Q(w)                .                    (1.9)
+                                                             z−w
+    Following [7, Proposition 3.9] we will use the relation
+                                                                k
+                                                                Y      z − zj
+        J(z)(Q(z1 ) . . . Q(zk )) = Q(z) Q(z1 ) . . . Q(zk )                   .      (1.10)
+                                                                      z − t zj
+                                                                j=1
+
+
+To prove (1.10) note that due to [Ex. I.5.25] the series E ⊥ (−z −1 ) with operator
+coefficients showing in the definition (1.7) is comultiplicative, so that
+
+
+Physical LF 222-297
+
+
+1.4. Macdonald functions. Now let F be the field Q(q, t) with q and t parameters
+independent of each other. Generalizing (1.12) define a bilinear form h , iq,t on
+Λ by setting for any partitions λ and µ
+                                                    ℓ(λ)
+                                                    Y 1 − q λi
+                        h pλ , pµ iq,t = kλ δλµ                            (1.15)
+                                                           1 − t λi
+                                                    i=1
+
+in the notation of (1.1). This form is again symmetric and non-degenerate. We
+will indicate by the superscript ∗ the operator conjugation relative to the latter
+form. In particular, by (1.2) and (1.15) for any n ⩾ 1 we have
+                                          1 − qn ⊥
+                                  pn∗ =          p .
+                                          1 − tn
+6                                                                      Nazarov and Sklyanin
+
+
+Hence by (1.6) we get
+                                                        X 1 − qn           
+       Q∗ (z) = 1 + Q∗1 z + Q∗2 z 2 + . . . = exp                    pn⊥ z n .      (1.16)
+                                                                 n
+                                                         n⩾1
+
+  Using (1.14) when λ consists of only one part n we get Pn = Qn /(1 − t) .
+Now consider the linear operator acting on the vector space Λ as the sum
+                  X                 X
+                      q −n Qn Pn∗ =      q −n Qn Qn∗ /(1 − t) .         (1.17)
+                    n⩾1                    n⩾1
+
+For future discussion note that (1.17) equals the coefficient at 1 of the series in z
+                          (Q(z) Q∗ (q −1 z −1 ) − 1)/(1 − t) .
+The operator (1.17) is clearly self-conjugate relative to the bilinear form (1.15).
+By [2, Eq. 32] for any partition λ the Macdonald symmetric function Mλ ∈ Λ can
+be defined up to normalization as an eigenvector of (1.17) with the eigenvalue
+                                X
+                                    (q −λi − 1) t i−1 .                      (1.18)
+                                 i⩾1
+
+For different partitions λ the eigenvalues (1.18) are pairwise distinct in Q(q, t). It
+follows that the eigenvectors Mλ with different λ are pairwise orthogonal relative
+to (1.15). In the present article we will not be choosing any normalization of Mλ .
+We will use only the fact [VI.4.7] that the Mλ form a basis of the vector space Λ .
+
+
+1.5. Higher Hamiltonians. In [11] we introduced the following generalization of
+the operator (1.17). For any k = 0, 1, 2, . . . consider the linear operator on Λ
+                                X
+                        A (k) =       q −λ1 −λ2 −... Qλ Pλ∗ .
+                                  ℓ(λ)=k
+
+Then A (0) = 1 while A (1) is the operator (1.17). For any k the operator A (k) is
+obviously self-conjugate relative to (1.15). Consider a series in a variable u
+                                    X
+                          A(u) =        A (k) /(u ; t −1 )k                  (1.19)
+                                       k⩾0
+
+where as usual
+                                             k−1
+                                             Y
+                           (u ; t −1 )k =          (1 − u t −j ) .
+                                             j=0
+
+In [11] we proved
+                                             Y q −λi − u t 1−i
+                       A(u) Mλ = Mλ                            .                    (1.20)
+                                                 1 − u t 1−i
+                                             i⩾1
+
+If follows from (1.20) that the operators A (1) , A (2) , . . . on Λ pairwise commute.
+The eigenvalue (1.18) of the operator A (1) can also be obtained from this equality.
+Lax operator                                                                                                    7
+
+
+
+
+SOURCE research/audits/sources/macdonald_transform/borodin_corwin_2014.txt
+URL https://arxiv.org/pdf/1111.4408
+SHA256 545e7766942d4f80e25d191c2788ac396d29f07b55edd2025a0c9bf281485b45
+
+Physical LF 1527-1705
+2.1.3      Macdonald symmetric functions
+We now introduce the Macdonald symmetric functions and identify a number of relevant
+properties which we will appeal to in our development of the Macdonald process. Macdonald
+symmetric functions are indexed by partitions and denoted Pλ (x; q, t) where q, t ∈ (0, 1). The
+coefficients for the symmetric functions are now in Q[q, t]. We will generally suppress the q
+and t and write Pλ (x) or Pλ unless their presence is pertinent. Pλ can be uniquely defined
+from the following two properties [79, VI,(4.7)]: (a) They can be expressed in terms of the
+monomial symmetric functions via a strictly upper unitriangular transition matrix:
+                                               X
+                                  Pλ = mλ +         Rλµ Pµ ,
+                                                               µ<λ∈Y
+
+
+where Rλµ are functions of q, t. (b) They are pairwise orthogonal with respect to a scalar
+product which can be defined on the power sum symmetric functions (since they form a linear
+basis for the symmetric functions) via
+                                                                            ℓ(λ)
+                                                                            Y    1 − q λi            Y
+    hpλ , pµ i = hpλ , pµ iq,t = δλµ zλ (q, t),            zλ (q, t) = zλ               ,     zλ =         imi (mi )!,
+                                                                            i=1
+                                                                                1 − tλi              i≥1
+
+for λ = 1m1 2m2 · · · . Along with Pλ one defines
+                                                                Pλ
+                                                     Qλ =               ,
+                                                              hPλ, Pλ i
+
+so that Pλ and Qµ are orthonormal.
+    Specializing q = t recovers the Schur symmetric functions, q = 0 recovers the Hall-
+Littlewood symmetric functions with parameter t, and taking q = tα with t → 1 recovers the
+Jack symmetric functions with parameter α.
+    The complete homogeneous symmetric      P function h      r has a (q, t)-analog which is denoted
+                                                            −1
+gr = Q(r) and can be expressed as gr = |λ|=r zλ (q, t) pλ (this is analogous in the sense that
+hr = s(r) ). These also form an algebraic basis for Sym [79, VI,(2.19)].
+    The Macdonald symmetric polynomial is defined as the restriction of Pλ onto a finite
+number of variables x1 , . . . , xm . Formally, since Pλ ∈ Sym|λ| , for any m ≥ 0, the Macdonald
+polynomial in m variables is written as Pλ (x1 , . . . , xm ) and is the projection of Pλ into Sym|λ|
+                                                                                                  m.
+If m < ℓ(λ) then Pλ (x1 , . . . , xm ) = 0.
+    Macdonald symmetric polynomials demonstrate the following index shift property [79,
+VI,(4.17)]:
+
+       Pλ (x1 , . . . , xℓ(λ) ) = x1 · · · xn Pµ (x1 , . . . , xℓ(λ) ),     µ = (λ1 − 1, · · · λℓ(λ) − 1).           (2.2)
+
+Owing to this property we can extend Macdonald symmetric polynomials so as to be defined
+for arbitrary integer values of λ1 ≥ λ2 ≥ · · · λℓ (λ) via iterating the above relation. For
+negative values of λj ’s, Pλ becomes a Laurent polynomial in the x’s.
+
+
+
+                                                               31
+   For u, v ∈ (0, 1) define a Q[q, t]-algebra endomorphism ωu,v on Sym in terms of its action
+on power sums [79, VI,(2.14)]:
+                                                                 1 − ur
+                                     ωu,v (pr ) = (−1)r−1               pr .                       (2.3)
+                                                                 1 − vr
+Clearly ωv,u wu,v is the identity on Sym. Moreover, ωu,v acts on Macdonald symmetric func-
+tions as [79, VI,(5.1)]
+
+                  ωq,t Pλ (x; q, t) = Qλ′ (x; t, q),          ωq,t Qλ (x; q, t) = Pλ′ (x; t, q).   (2.4)
+
+This endomorphism takes gr to er , the (usual) elementary symmetric functions.
+
+2.1.4     Cauchy identity
+For any two sequences of independent variables x1 , x2 , . . . and y1 , y2, . . . define
+                                          X
+                                Π(x; y) =    Pλ (x)Qλ (y).                                         (2.5)
+                                                   λ∈Y
+
+Then [79, VI,(2.5)],
+                                                       Y (txi yj ; q)∞
+                                       Π(x; y) =                            ,                      (2.6)
+                                                       i,j
+                                                             (xi yj ; q)∞
+
+where (a; q)∞ = (1 − a)(1 − aq)(1 − aq 2 ) · · · is the q-Pochhammer symbol (see Section 3.1.1).
+Additionally,                                                           !
+                                             X 1 1 − tn
+                         Π(x; y) = exp                      pn (x)pn (y) .
+                                             n≥1
+                                                   n 1 − qn
+
+If the Pλ and Qλ are considered as symmetric functions variables x1 , x2 , . . . and y1 , y2, . . .
+(respectively) then the above identities are as formal powers. If both sides can be evaluated
+as absolutely convergent series, then the identities are as numeric equalities. In particular
+if all but a finite number of the variables are finite (i.e., the case of Macdonald symmetric
+polynomials), the identities are necessarily numeric equalities. For symmetric functions there
+exists an extension to the concept of evaluating at an infinite sequence of variables. This is
+called specializing the functions and in Section 2.2.1 we will show how the Cauchy identity
+extends to this context. This will necessitate extending the notation Π(x; y) to Π(ρ1 , ρ2 )
+where ρ1 and ρ2 are specializations. When the specialization reduces to evaluation as here,
+the definition likewise reduces. Thus there should be no ambiguity in our usage of the symbol
+Π in this context.
+    Note that applying the endomorphism ωq,t to Π(x; y) gives
+                                                 Y
+                                  ωq,t Π(x; y) =    (1 + xi yi ).                          (2.7)
+                                                         i,j≥1
+
+
+
+
+                                                        32
+2.1.5     Torus scalar product
+The Macdonald symmetric polynomials in N independent variables are orthogonal under
+another scalar product which is called the torus scalar product and denoted by h·, ·i′N . It is
+defined [79, VI,(9.10)] as
+                                                 Z                 N                  N
+                                        1                         Y    (zi zj−1 ; q)∞ Y  dzi
+                      hf, gi′N :=                     f (z)g(z)              −1              ,
+                                    (2πι)N N!      TN           i6=j=1
+                                                                       (tzi zj ; q)∞ i=1 zi
+
+ where TN is the N-fold product of the torus {z = e2πιθ }.
+   Under this scalar product we can compute hPλ , Pλ i′N where we interpret Pλ as the Mac-
+donald symmetric polynomial with N variables [79, VI,(9, Ex 1d)]
+                                          Y       (q λi −λj tj−i ; q)∞ (q λi −λj +1 tj−i ; q)∞
+                        hPλ , Pλ i′N =            λi −λj tj−i+1 ; q) (q λi −λj +1 tj−i−1 ; q)
+                                                                                                 .                       (2.8)
+                                         1≤i<j
+                                               (q                    ∞                         ∞
+
+
+   It follows from equation (2.5) that
+                                                       1
+                                     Qλ (x) =                  hΠ(·; x), Pλ(·)i′N
+                                                  hPλ , Pλ i′N
+
+where the dot represents that the inner product is applied to the function which takes z 7→
+Π(z; x). Note that above z represents a N-vector (z1 , . . . , zN ).
+
+2.1.6     Pieri formulas for Macdonald symmetric functions
+Recall that gr = Q(r) is the (q, t)-analog of the complete homogeneous symmetric function,
+while er is the (usual) elementary symmetric function. Since the Macdonald symmetric
+functions form a basis for Sym it follows that for each µ and r there exist constants (depending
+on q, t) ϕλ/µ , ψλ/µ , ϕ′λ/µ and ψλ/µ
+                                  ′
+                                      such that:
+
+              X                            X                                X                               X
+   Pµ g r =         ϕλ/µ Pλ ,   Qµ gr =          ψλ/µ Qλ ,        Qµ er =         ϕ′λ/µ Qλ ,      Pµ er =          ′
+                                                                                                                  ψλ/µ Pλ .
+              λ∈Y                          λ∈Y                              λ∈Y                             λ∈Y
+                                                                                        (2.9)
+    Define f (u) = (tu; q)∞ /(qu; q)∞ . The coefficients above have exact formulas as follows
+[79, VI,(6.24)]: If λ − µ is a horizontal r-strip then
+                                              Y        f (q λi −λj tj−i )f (q µi −µj+1 tj−i )
+                            ϕλ/µ =                                                            ,                         (2.10)
+                                                       f (q λi −µj tj−i )f (q µi −λj+1 tj−i )
+                                          1≤i≤j≤ℓ(λ)
+                                              Y        f (q µi −µj tj−i )f (q λi −λj+1 tj−i )
+                            ψλ/µ =                                                            ,                         (2.11)
+                                                       f (q λi −µj tj−i )f (q µi −λj+1 tj−i )
+                                          1≤i≤j≤ℓ(µ)
+
+
+
+
+                                                             33
+ otherwise the coefficient is zero; Applying the endomorphism ωq,t implies that the coefficients
+ϕ′λ/µ (q, t) = ϕλ/µ (t, q) and ψλ/µ
+                                ′
+                                    (q, t) = ψλ/µ (t, q). These coefficients are zero unless λ − µ is
+a vertical r-strip.
+    The expressions above can be reduced significantly. For example, given λ − µ a vertical
+r-strip,
+                                  Y         (1 − q µi −µj tj−i−1 )(1 − q λi −λj tj−i+1 )
+                        ′
+                      ψλ/µ  =                         µi −µj tj−i )(1 − q λi −λj tj−i )
+                                                                                         .     (2.12)
+                                  i<j
+                                              (1 −  q
+                            λi =µi ,λj =µj +1
+
+
+2.1.7     Skew Macdonald symmetric functions
+Similar
+P        to equation (2.9), for two partitions µ, ν one can expand the product Pµ Pν =
+        λ                                    λ
+
+
+SOURCE research/audits/sources/macdonald_transform/mickler_2026.txt
+URL https://arxiv.org/pdf/2610.12326v1
+SHA256 d42664c6f10c70160e46efe21e3f0f608e7cf8ef0beda145c13cc689502cc435
+
+Physical LF 813-825
+We use the principal specialization of Macdonald [1, Chapter VI, (6.16)],
+                                                                             1 − vr
+                                  ϵv : Λ → Q(q, t, v),          ϵv (pr ) =          .
+                                                                             1 − tr
+Theorem 4.1 (Principal specialization; [1, Chapter VI, (6.17)]). For a partition λ,
+                                                       Y 1 − vqa′ (b) t−ℓ′ (b)
+                                    ϵv (Pλ ) = tn(λ)                               .
+                                                       b∈λ
+                                                           1 − qaλ (b) tℓλ (b)+1
+
+Thus, for the integral form,                              Y
+                                       ϵv (Jλ ) = tn(λ)         (1 − v/[b]) .
+                                                          b∈λ
+
+
+SOURCE research/audits/sources/macdonald_dynamics/gu_somma_fastforward.txt
+URL https://arxiv.org/pdf/2105.07304
+SHA256 8a680c9a5a94ca45683fda148edf04697b846b39a5c23a05cce5c95c1b60a89e
+
+Physical LF 166-218
+Definition 2.1 (Models of quantum computation). A model of quantum computation can be
+specified by a set of observables h = {O1 , O2 , . . .} acting on a Hilbert space H. The elementary
+quantum gates are unitary transformations expressed as exponentials e−iθl Ol , where θl ∈ R and
+|θl | ≤ 1. A quantum circuit in this model is a sequence of elementary quantum gates, and the
+number of these gates is the quantum complexity.
+
+   The condition |θl | ≤ 1 is arbitrary – i.e., we can bound the phases by a different constant
+– but is needed to restrict the power of each quantum gate. This is particularly relevant in
+bosonic models of computation where, in contrast with certain two-qubit gates (induced by
+Pauli operators), bosonic gates are not periodic in θl .
+    Second, known no-fast-forwarding results [4, 15, 16] place a lower bound on the worst-case
+quantum complexity for simulating classes of Hamiltonians as long as the evolution time satisfies
+t ≤ T , where T depends on certain problem parameters, such as the number of qubits or spins.
+These lower bounds are commonly presented as asymptotic scalings. If the Hamiltonian is fixed,
+however, it may be possible to simulate that particular Hamiltonian with quantum complexity
+that has a very mild (polylogarithmic) dependence on t, for example, by exact diagonalization
+for large t. Since the asymptotic scaling of the quantum complexity with t and other parameters
+is in general of relevance, we will consider sequences of Hamiltonians {Hn }n that depend on
+a “system-size” parameter n = 1, 2, . . .. For qubit systems, n is the number of qubits. For
+fermionic or bosonic systems, n can be the number of modes. By allowing the system size to
+grow, we are able to consider maximum evolution times that increase in order to determine the
+true asymptotic scaling of the gate complexity. For the problem of fast-forwarding quantum
+evolution, it is then important to determine the parameters of Hamiltonian simulation precisely
+as a function of n, which are defined as follows:
+
+
+
+                                                 4
+Definition 2.2 (Hamiltonian-simulation parameters). Let {Hn }n be a sequence of Hamiltonians
+acting on Hilbert spaces {Hn }n . The quantum circuits {Vn (t)}n,t simulate the Hamiltonians
+{Hn }n on subspaces {Sn ⊆ Hn }n with parameters (T (n), (n), G(n)) if the quantum complexity
+is at most G(n) in a given model of quantum computation and, for each n, all |ψn i ∈ Sn , and
+all t ≤ T (n),
+
+                           (e−itHn ⊗ 1lA − Vn (t)) |ψn i ⊗ |0iA ≤ (n) .                      (1)
+
+The operator 1lA is the identity operator acting on an ancillary register A and |0iA is some
+simple initial state for that register.
+
+    Throughout this paper, k |φi k is the Euclidean norm of the quantum state |φi and kAk is
+the spectral norm of the operator A.
+     Definition 2.2 concerns the largest quantum complexity, G(n), for approximating e−itHn for
+all times t ≤ T (n). While this is not necessary, we will see that understanding the asymptotic
+behavior of G(n) alone will suffice to classify many classes of Hamiltonians that can be fast-
+forwarded, including previously known examples and the examples we provide in the following
+sections. Nevertheless, one may be interested in the ability of fast-forwarding in, for example,
+other specific regions of t, in which case the above definition could be adapted to that setting.
+     It is important to remark that a circuit Vn (t) might include operations during a pre- or
+post-processing step. In some cases these steps can be implemented on a classical computer
+(see the examples in Sec. 4), but we will assume they are all part of the quantum operation
+that simulates the Hamiltonian, thereby avoiding any complication in separating quantum and
+classical complexities. Some examples in this paper do require some form of pre-processing, but
+the complexity of such a step is not dominant in those cases.
+
+Physical LF 437-527
+3.1 Block diagonalization
+Any n-spin Hamiltonian H can be decomposed based on its action on invariant subspaces as
+                                                    M
+                                          H=               H|Iµ ,                               (4)
+                                                      µ
+
+where µ may be associated with some conserved quantity (quantum number), H|Iµ is the restric-
+tion of the Hamiltonian to the subspace Iµ ⊆ H, and H = µ Iµ . To fast-forward H, we are
+                                                               L
+
+particularly interested in cases where the evolution under each H|Iµ can be fast-forwarded. More
+precisely, let U be a block diagonalizing unitary operation or quantum circuit that performs the
+mapping
+                           U (H ⊗ |0ih0| A ) U † =                 H 0 I 0 ⊗ |µihµ| A0 ,
+                                                          X
+                                                                                                (5)
+                                                                         µ
+                                                           µ
+
+where A, A0 are some ancillary systems and the basis states {|µiA0 }µ encode the values of
+µ. In general, Iµ0 are subspaces of a different Hilbert space H0 , so the Hamiltonians H 0 |Iµ0
+may be different than H|Iµ , but we require dim Iµ = dim Iµ0 . Note that the tensor product
+decompositions on the left and right hand sides of Eq. (5) may also be different. Consider now
+another unitary
+                                   U 0 (t) =
+                                               X
+                                                    Uµ (t) ⊗ |µihµ| A0                          (6)
+                                               µ
+
+that approximates the evolution under each H 0 |Iµ0 as
+                                                                  
+                                                   −itH 0 |I 0
+                                    Uµ (t) − e                 µ       |ψi ≤  ,                (7)
+
+for all |ψi ∈ Iµ0 . We obtain:
+
+                                                       8
+Theorem 3.1. Let  > 0, T > 0, g be the quantum complexity of U in Eq. (5), and g 0 (t, ) be
+an upper bound on the quantum complexity of U 0 (t) in Eq. (6), such that Eq. (7) holds. Assume
+that g 0 (T, ) ≥ g 0 (t, ) for all t ∈ [0, T ]. Then, there exist quantum circuits {V (t)}t that simulate
+H on H with parameters (T, , 2g + g 0 (T, )) for all 0 ≤ t ≤ T .
+Proof. For each t ≤ T , the quantum circuit V (t) = U † U 0 (t)U of Fig. 2 can be used to approximate
+e−itH . That circuit implements U and U † , adding 2g to the quantum complexity, and also
+implements U 0 (t) that has quantum complexity bounded by g 0 (T, ). We can bound the simulation
+error as follows:
+
+          k(e−itH ⊗ 1lA − V (t)) |ψi ⊗ |0iA k = k(e−it(H⊗ |0ih0| A ) − V (t)) |ψi ⊗ |0iA k              (8)
+                                                     X −itH 0 | 0
+                                                               Iµ
+                                                = k(         (e        − Uµ (t)) ⊗ |µihµ| A0 ) |φi k    (9)
+                                                         µ
+
+                                                ≤,                                                    (10)
+
+where |ψi ∈ H is any state and |φi = U |ψi ⊗ |0iA .
+                                          A0
+                         |0iA /         /       •                       /    |0iA
+                                   U      H0                      U†
+                        |ψiH /          /     Uµ (t)                    /    ≈ e−itH |ψiH
+
+Figure 2: The quantum circuit V (t) simulating the time evolution of a block diagonalizable Hamiltonian. The
+dashed box denotes the unitary U 0 (t), which implements Uµ (t) conditional on |µiA0 .
+
+
+
+    Fast-forwarding using this approach is possible if the quantum complexity of V (t) is sub-
+linear in t for a sufficiently large range of values of t. Thus, the ability to fast-forward block
+diagonalizable Hamiltonians depends on the complexity of the various procedures in Fig. 2. Of
+particular interest are those Hamiltonians where the unitary U in Eq. (5) has quantum com-
+plexity g = poly(n) and U 0 (t) in Eq. (6) has quantum complexity g 0 (T, ) = poly(n, log(T )),
+for constant error . These Hamiltonians can be exponentially fast-forwarded. They include
+Hamiltonians that can be efficiently (block) diagonalized, where dim Iµ0 is polynomial in n and,
+for each µ, the Hamiltonians H 0 |Iµ0 can be efficiently computed and simulated, as in the example
+of Sec. 3.1.1 below.
+    Note that implementing U 0 (t) requires implementing the unitaries Uµ (t) conditional on the
+ancillary state |µiA0 . There are at most dim H = dn different values of µ, and thus at most dn
+unitaries Uµ (t). The quantum complexity of U 0 (t) can then be exponential in n in the worst
+case, but as we discussed, we are interested in cases where this complexity is only poly(n). A
+standard approach to achieve this complexity in some cases is by having access to a classical
+algorithm that, on any input µ, provides a classical description of the quantum circuit Uµ (t)
+in time poly(n). The classical circuit can be efficiently implemented on a quantum computer
+using reversible quantum gates, which we denote by C; see Fig. 3. The unitary U 0 (t) can then
+be efficiently implemented by applying the corresponding quantum gates of Uµ (t) conditional
+on the ancillary register state that encodes the quantum circuit. The last step is to apply the
+inverse of C to reset the ancillary state.
+
+
+3.1.1   Permutation-invariant spin Hamiltonians
+We apply the results of Sec. 3.1 to fast-forward Hamiltonians that are invariant under permu-
+tations of spins. This setting is relevant for studying nuclear and condensed matter systems,
+

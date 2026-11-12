@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 7746,
+      "path": "research/audits/api_inputs/2026-11-13-macdonald/native-contract.md",
+      "sha256": "2a299ed861de4509269b6815e1a5a370533bcd55c748275d3044730c26b3dcdc",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 15039,
+      "path": "research/audits/api_inputs/2026-11-13-macdonald/classical-primary.txt",
+      "sha256": "9d483ac2ee311ebc536da39e75cfed2d36336586be456ebbcac7ee0e1d9f90d3",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 9142,
+  "effort": "high",
+  "finished_at": "2026-11-12T19:48:14.463652+00:00",
+  "input_token_allowance": 9398,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.317592,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-macdonald/macdonald-classical.md",
+    "sha256": "3c0b9f51cb8384b6080d83e5ca8667a973a7d3406cd8f28fe49f8aef654bef33",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "classical",
+  "run_id": "20261112T193856.862432Z-c8993128",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 9142,
+    "output_tokens": 57583
+  },
+  "usage_cost_estimate_usd": 1.188228
+}

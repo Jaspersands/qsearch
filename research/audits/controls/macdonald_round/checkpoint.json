@@ -1,0 +1,298 @@
+{
+  "captured_at_utc": "2026-11-12T20:08:47.272822+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "partial_estimate_equals_total_bill": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 4303,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald/dispatch.json",
+    "sha256": "64b256c854fe78956b1ad40cbc8fcb8e44ff98a3118865bc2b3ad2cc0380be01"
+  },
+  "dispatch_mutation_scope": "Only final status/billing/usage/read/session metadata updated; raw results and source/research notes unchanged.",
+  "exclusions": [
+    {
+      "reason": "No shared scientific note or unlisted source/request inspected or hashed.",
+      "scope": "Evolving research/topic notes, STATE/HANDOFF/workflow and other newer work"
+    },
+    {
+      "reason": "Preserved unchanged with all observed partial counters excluded from known usage totals.",
+      "scope": "Four inherited UNKNOWN bills"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 15039,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald/classical-primary.txt",
+      "sha256": "9d483ac2ee311ebc536da39e75cfed2d36336586be456ebbcac7ee0e1d9f90d3"
+    },
+    {
+      "bytes": 4303,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald/dispatch.json",
+      "sha256": "64b256c854fe78956b1ad40cbc8fcb8e44ff98a3118865bc2b3ad2cc0380be01"
+    },
+    {
+      "bytes": 894,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald/macdonald-branching.md",
+      "sha256": "c2022204fa360a4dfff4aef833850208f1361b8a3e7b1f4d2d7b43b6365fdbf8"
+    },
+    {
+      "bytes": 1151,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald/macdonald-classical.md",
+      "sha256": "3c0b9f51cb8384b6080d83e5ca8667a973a7d3406cd8f28fe49f8aef654bef33"
+    },
+    {
+      "bytes": 1196,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald/macdonald-native-access.md",
+      "sha256": "bc82d64534a4ec378d65069b58c283b02c7f496fb1ec79ea909ffd7e25b45c69"
+    },
+    {
+      "bytes": 60555,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald/mickler-primary.txt",
+      "sha256": "45689baad1e008d5bdd268d37aaf2af4d302920b86d5358d99718f89077d2ee9"
+    },
+    {
+      "bytes": 7746,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-macdonald/native-contract.md",
+      "sha256": "2a299ed861de4509269b6815e1a5a370533bcd55c748275d3044730c26b3dcdc"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 10602,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/jack_logprecision_round/checkpoint.json",
+    "sha256": "f0633ba8b38847331018f0e84ce65ad671a096158b67087fc9d5c6e793e80669"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 14473,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/jack_logprecision_round/usage.json",
+    "sha256": "b39f2513df12d96c6715313c7946db95d4638c80a09b609cbf061dff8ac79c65"
+  },
+  "not_frozen": "Evolving topic notes/STATE/HANDOFF/workflow, disposition notes and unlisted newer requests/sources.",
+  "primary_source_artifacts": [
+    {
+      "bytes": 390763,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_transform/mickler_macdonald.pdf",
+      "sha256": "9d37ddc648a0ae4a0c2878724b62101482ac527f5be8bbb39131efcbef8e5c45"
+    },
+    {
+      "bytes": 124867,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_transform/mickler_macdonald.txt",
+      "sha256": "d42664c6f10c70160e46efe21e3f0f608e7cf8ef0beda145c13cc689502cc435"
+    },
+    {
+      "bytes": 615637,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/diaconis_ram.pdf",
+      "sha256": "848b00bc849e672fb6784b8e25c1cd2f635a71fd1a8512c44ae6358a6f51f21c"
+    },
+    {
+      "bytes": 155911,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jack_work/diaconis_ram.txt",
+      "sha256": "366becd0fed064dd1ebc577595ea4d97331caecfc4aaab660022d0bb9a0484a0"
+    }
+  ],
+  "prior_hash_policy": "Frozen prior jack-logprecision usage/checkpoint and four UNKNOWN bills remain byte-identical; no recursive history scan or old artifact repinning.",
+  "review_artifacts": [
+    {
+      "bytes": 20808,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-macdonald-composition-independent.md",
+      "physical_LF_count": 408,
+      "sha256": "c869f0b095aeca997a0dd07ddc080923fdd8f2b7e12707560c14b569db71dbdb"
+    },
+    {
+      "bytes": 12407,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-macdonald-classical-independent.md",
+      "physical_LF_count": 271,
+      "sha256": "564d585782e48edf2ef8122ffc9ac413ac077d282e3230b0590388d04c91e073"
+    }
+  ],
+  "scope": "Exactly three completed requests, immutable packets/bundles and scoped stable source/review snapshots only; mechanical bookkeeping, no scientific conclusions.",
+  "session_locator_note": "Session73444 retained; reaping not independently queried. Saved result completed, parent fully read451 LF lines. Other session locators also preserved without polling.",
+  "stable_context_artifacts": [
+    {
+      "bytes": 16140,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-jack-logprecision-independent.md",
+      "sha256": "abcd4b2b514cfd9976a66d6b97d545c27762590d20f9b4be9a429c6573041a4c"
+    }
+  ],
+  "status": "TERMINAL_MACDONALD_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1196,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/context-00.txt",
+      "sha256": "bc82d64534a4ec378d65069b58c283b02c7f496fb1ec79ea909ffd7e25b45c69"
+    },
+    {
+      "bytes": 7746,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/context-01.txt",
+      "sha256": "2a299ed861de4509269b6815e1a5a370533bcd55c748275d3044730c26b3dcdc"
+    },
+    {
+      "bytes": 60555,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/context-02.txt",
+      "sha256": "45689baad1e008d5bdd268d37aaf2af4d302920b86d5358d99718f89077d2ee9"
+    },
+    {
+      "bytes": 16140,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/context-03.txt",
+      "sha256": "abcd4b2b514cfd9976a66d6b97d545c27762590d20f9b4be9a429c6573041a4c"
+    },
+    {
+      "bytes": 684106,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/provider-response.json",
+      "sha256": "12378daa3dc11bd163b3912b175944ec61a773999893c23d0b1c786aabec79b5"
+    },
+    {
+      "bytes": 95914,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/request.json",
+      "sha256": "9c18f201c2ee023dbdf277cf77aa3339119131dd23ae34589854ef678ff86b94"
+    },
+    {
+      "bytes": 19600,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/response.md",
+      "sha256": "4f23c62e1037b1eafcfb5b33a88c8470b0c0508dd762cd6ba2de933b368d8719"
+    },
+    {
+      "bytes": 1776,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/result.json",
+      "sha256": "ccdeb0b05e35564cda0d637224265e832a2d0760df2d0da480df8fa47e073a5e"
+    },
+    {
+      "bytes": 7746,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/context/000.txt",
+      "sha256": "2a299ed861de4509269b6815e1a5a370533bcd55c748275d3044730c26b3dcdc"
+    },
+    {
+      "bytes": 60555,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/context/001.txt",
+      "sha256": "45689baad1e008d5bdd268d37aaf2af4d302920b86d5358d99718f89077d2ee9"
+    },
+    {
+      "bytes": 894,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/prompt.txt",
+      "sha256": "c2022204fa360a4dfff4aef833850208f1361b8a3e7b1f4d2d7b43b6365fdbf8"
+    },
+    {
+      "bytes": 79510,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/request.json",
+      "sha256": "5cc647dbaca3d52f5b7a766e79decd2568e83c07559dee1c76d9b93197d026d7"
+    },
+    {
+      "bytes": 11204,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/response.md",
+      "sha256": "8ae256a45e0457cc1fd8a4b7e2f529f7c84206d66cbc7e8fdf6b195d423da0dd"
+    },
+    {
+      "bytes": 1635,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/result.json",
+      "sha256": "78742c891102a2570e2415fa6b516f6cdd266ce7051c12ce01b8ed2d24d8cda8"
+    },
+    {
+      "bytes": 7746,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/context/000.txt",
+      "sha256": "2a299ed861de4509269b6815e1a5a370533bcd55c748275d3044730c26b3dcdc"
+    },
+    {
+      "bytes": 15039,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/context/001.txt",
+      "sha256": "9d483ac2ee311ebc536da39e75cfed2d36336586be456ebbcac7ee0e1d9f90d3"
+    },
+    {
+      "bytes": 1151,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/prompt.txt",
+      "sha256": "3c0b9f51cb8384b6080d83e5ca8667a973a7d3406cd8f28fe49f8aef654bef33"
+    },
+    {
+      "bytes": 26601,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/request.json",
+      "sha256": "29790aebc910899ab47f1dc5f17e03571e0045531ea3e262aaa329c665731415"
+    },
+    {
+      "bytes": 13261,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/response.md",
+      "sha256": "eab49f4710b073b683ee1483d78bce3c14f604020dbe53cff4c7d960a7bc92f1"
+    },
+    {
+      "bytes": 1634,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/result.json",
+      "sha256": "4aab748f77d50eba47e1458fbd57f7d8ccf17b3b671aa1b9644fd7c7e7171b79"
+    }
+  ],
+  "three_terminal_results_and_responses": [
+    {
+      "obligation": "macdonald-native-access",
+      "response": {
+        "bytes": 19600,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/response.md",
+        "sha256": "4f23c62e1037b1eafcfb5b33a88c8470b0c0508dd762cd6ba2de933b368d8719"
+      },
+      "response_LF_count": 451,
+      "response_characters": 19573,
+      "response_nonempty": true,
+      "response_splitline_count": 452,
+      "result": {
+        "bytes": 1776,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/result.json",
+        "sha256": "ccdeb0b05e35564cda0d637224265e832a2d0760df2d0da480df8fa47e073a5e"
+      },
+      "session_id": 73444,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "macdonald-branching",
+      "response": {
+        "bytes": 11204,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/response.md",
+        "sha256": "8ae256a45e0457cc1fd8a4b7e2f529f7c84206d66cbc7e8fdf6b195d423da0dd"
+      },
+      "response_LF_count": 161,
+      "response_characters": 10304,
+      "response_nonempty": true,
+      "response_splitline_count": 162,
+      "result": {
+        "bytes": 1635,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/result.json",
+        "sha256": "78742c891102a2570e2415fa6b516f6cdd266ce7051c12ce01b8ed2d24d8cda8"
+      },
+      "session_id": 80307,
+      "status": "completed",
+      "stop_reason": "end_turn"
+    },
+    {
+      "obligation": "macdonald-classical",
+      "response": {
+        "bytes": 13261,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/response.md",
+        "sha256": "eab49f4710b073b683ee1483d78bce3c14f604020dbe53cff4c7d960a7bc92f1"
+      },
+      "response_LF_count": 214,
+      "response_characters": 12497,
+      "response_nonempty": true,
+      "response_splitline_count": 215,
+      "result": {
+        "bytes": 1634,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/result.json",
+        "sha256": "4aab748f77d50eba47e1458fbd57f7d8ccf17b3b671aa1b9644fd7c7e7171b79"
+      },
+      "session_id": 69941,
+      "status": "completed",
+      "stop_reason": "end_turn"
+    }
+  ],
+  "unique_hashed_artifact_count": 37,
+  "usage_snapshot": {
+    "bytes": 16507,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/macdonald_round/usage.json",
+    "sha256": "71339e24d48b059de0c41d5963b2760076295ab87a5eb684cc0a56c023b74ec5"
+  }
+}

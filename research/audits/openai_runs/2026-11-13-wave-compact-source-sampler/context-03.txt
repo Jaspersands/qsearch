@@ -1,0 +1,174 @@
+Primary tangential_markov.txt SHA256 0f2043e85d09316e93ee8389fbbb4574d26377948158882e71836d2f824bca75
+
+Physical lines 1-171
+     TOPICS IN COMPLEX ANALYSIS
+BANACH CENTER PUBLICATIONS, VOLUME 31
+      INSTITUTE OF MATHEMATICS
+     POLISH ACADEMY OF SCIENCES
+            WARSZAWA 1995
+
+
+
+
+       CHARACTERIZATION OF SMOOTH, COMPACT
+              ALGEBRAIC CURVES IN R2
+
+                                           L. B O S
+              Department of Mathematics and Statistics, University of Calgary
+                           Calgary, Alberta T2N 1N4, Canada
+
+                                     N. L E V E N B E R G
+             Department of Mathematics and Statistics, University of Auckland
+                       Private Bag 92019, Auckland, New Zeland
+
+                                      B. A. T A Y L O R
+                    Department of Mathematics, University of Michigan
+                        Ann Arbor, Michigan 48109–1092, U.S.A.
+
+
+
+
+    0. Introduction. The classical Bernstein inequality for derivatives of trigono-
+metric polynomials can be stated as follows: Let p(x, y) be a polynomial of two
+real variables so that q(θ) ≡ p(cos(θ), sin(θ)) is a trigonometric polynomial of
+degree equal to deg(p). Then
+                        |q 0 (θ)| ≤ (deg q)kqk[0,2π] ,      θ ∈ [0, 2π],
+which is equivalent to
+                       |DT p(x, y)| ≤ (deg p)kpkS ,          (x, y) ∈ S
+                       2     2
+where S = {(x, y) : x + y = 1}, kf kE is the supremum norm of a function f on
+a set E, and DT denotes the unit tangential derivative along S. We note that by
+general Banach space theory, for any smooth compact curve K in the plane one
+gets an estimate of the form
+                                 kDT p(x, y)kK ≤ CkpkK
+where C depends in some unspecified way on deg(p) and K. The main purpose
+of this paper is to prove the following result giving a characterization of algebraic
+
+   1991 Mathematics Subject Classification: 41A17, 31C10.
+   The paper is in final form and no version of it will be published elsewhere.
+
+                                             [125]
+
+126                                    L. BOS ET AL.
+
+
+curves among all smooth (C 1 ) compact curves in terms of whether certain classical
+analytical results in approximation theory are valid.
+  Main Theorem. Let K be a smooth compact connected curve in R2 and let
+C(K) denote the continuous functions on K. The following are equivalent:
+    1) K is algebraic.
+    2) K satisfies a tangential Markov inequality with exponent one, i.e., there
+exists M = M (K) > 0 such that
+(MT )                           kDT pkK ≤ M (deg p)kpkK
+for all polynomials p where DT denotes the unit tangential derivative (along K).
+    3) For some 0 < α < 1, K satisfies a Bernstein theorem: there exists B =
+B(K) > 0 such that for f ∈ C(K),
+(B)               if En (f ) ≤ n−α , then f ∈ Lip(α) and kf kα ≤ B
+where
+                      En (f ) ≡ inf{kf − pn kK : pn ∈ Pn }
+and Pn = polynomials of degree at most n in two variables.
+   4) For all 0 < α < 1, K satisfies a Bernstein theorem.
+   Here kf kα denotes the Lip(α) norm of f (defined in Section 2). In the next
+three sections we will prove the main theorem. We fix a smooth compact curve
+K in R2 which we may take to be irreducible.
+
+    1. Proof that 1) implies 2), i.e., K algebraic implies (MT ) with expo-
+nent one. There is a beautiful characterization of complex algebraic subvarieties
+of CN among the (complex-) analytic ones, due to Sadullaev [S]. We briefly de-
+scribe his result. Let A be a complex analytic subvariety of CN such that the
+regular points of A, Areg , from a complex manifold of pure dimension m < N .
+Let K be a compact subset of A and form the extremal function
+                                                                    
+                             1      |p(z)|
+          uK (z) ≡ sup          log        : p polynomial, deg(p) > 0 .
+                         deg(p)     kpkK
+Then u∗K (z) ≡ lim supζ→z uK (ζ) ≡ +∞; but clearly uK (z) ≤ 0 for z in K and
+uK (z) may be finite at other points z as well. We say that K is pluripolar in A
+if K is pluripolar as a subset of the complex manifold Areg .
+   Theorem 1.1 [S]. A is algebraic if and only if uK ∈ L∞
+                                                        loc (A) for some (and
+hence for each) non-pluripolar compact set K in A.
+      For example, if q(z, w) is a polynomial in two complex variables, then
+                                A ≡ {(z, w) : q(z, w) = 0}
+                            2
+is an algebraic curve in C . If we let
+                     K = A ∩ R2 = {(z, w) ∈ A : Jz = Jw = 0},
+
+                                  ALGEBRAIC CURVES                               127
+
+then locally the curve K looks like a piece of an interval in R2 and hence is not
+(pluri-) polar in A provided K is non-empty and non-singular. Thus uK is locally
+bounded on A and Lip(1) near K. This will be the basis for the proof of our
+characterization of algebraicity.
+    We now proceed with the proof. Let K = {(x, y) ∈ R2 : k(x, y) = 0} for some
+irreducible polynomial k with ∇k = (kx , ky ) 6= (0, 0) on K. Fix (x0 , y0 ) in K.
+Let A in C2 be the complexification of K, i.e.,
+                   K = A ∩ R2 = {(z, w) ∈ A : Jz = Jw = 0}.
+Without loss of generality, we can use a linear change of coordinates to arrange
+that (x0 , y0 ) = (0, 0) and ∇k(0, 0) = (0, 1). Note then that the tangential deriva-
+tive of a function atPthis point of K is just differentiation with respect to x = Rz.
+Let p = p(x, y) = a+b≤n cab xa y b be a polynomial of degree n in the real vari-
+                                                                          a b
+                                                             P
+ables x, y. We use the same notation p = p(z, w) =             a+b≤n cab z w for the
+polynomial of degree n in the complex variables z, w.
+    Let (u, v) = F (z, w) = (z, k(z, w)). This is a non-singular algebraic change
+of coordinates valid between a ball Br0 of radius r0 about (0, 0) in the (z, w)
+coordinates and a ball Br̃0 of radius re0 about (0, 0) in the (u, v) coordinates. By
+the smoothness and compactness of K, there is a uniform r0 (and re0 ) valid for
+all points (x0 , y0 ) in K. A simple computation shows that
+                                               ∂ pe
+                                DT p(0, 0) =        (0, 0)
+                                               ∂u
+where pe is p in the (u, v) coordinates.
+   By applying Cauchy’s integral formula to ∂ pe/∂u on the circle
+                        Cr̃ ≡ {(u, 0) : |u| = re},       re < re0 ,
+we obtain
+                                 1 R pe(u, 0)        ke
+                                                      pkCr̃   kpkγr
+               |DT p(0, 0)| =            2
+                                              , du ≤        =
+                                2πi     u              re       re
+                                    Cr̃
+where γr is the pre-image of Cr̃ under our coordinate change. Hence, by the
+definition of the extremal function uK , we have
+                                     1
+                       |DT p(0, 0)| ≤ kpkK exp[nkuK kγr ].
+                                      re
+    It follows from Sadullaev’s work that
+                                kuK kγr ≤ C log(1 + re)
+for some C = C(F (K)). Here we are using Corollary 3.3 and Proposition 3.4 of
+[S] which say that for a non-polar (real) algebraic curve E in a one (complex)
+dimensional variety V , the extremal function uE is harmonic in V − E and is the
+(one-variable) Green function for V − E. Furthermore, if V is smooth near E,
+then uE is Lip(1) on a neighborhood of E in V .
+
+128                                     L. BOS ET AL.
+
+
+      We conclude that
+                                      1
+                       |DT p(0, 0)| ≤    kpkK exp[nC log(1 + re)].
+                                      re
+Taking re = re0 /n in the above inequality we obtain
+                                             nC
+                                 n        re0             n
+                 |DT p(0, 0)| ≤      1+           kpkK ≤ er̃0 C kpkK .
+                                re0        n             re0
+
+   2. Proof that 2) implies 4), i.e., (MT ) with exponent one implies (B)
+for each 0 < α < 1. Suppose we have a tangential Markov inequality
+(MT )                        kDT pkK ≤ M (deg(p))kpkK .
+The proof of property (B) then follows very closely the proof of the classical
+Bernstein theorem using Bernstein’s inequality on trigonometric polynomials (cf.
+[L], pp. 59–60).
+    For points a, b ∈ K, we denote by %(a, b) the geodesic distance along K be-
+tween a and b. In the rest of this section, we assume for simplicity that our
+functions f ∈ C(K) satisfy kf kK ≤ 1.
+   Lemma 2.1. There exists a constant C depending only on K such that for any
+f ∈ C(K) we have
+                                       X
+            |f (a) − f (b)| ≤ C%(a, b)       En (f ),  a, b ∈ K,
+                                           n≤1/%(a,b)
+
+where En (f ) = inf{kf − pn kK : pn ∈ Pn }.

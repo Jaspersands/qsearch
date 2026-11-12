@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-13",
+  "selection": "Two distinct remaining interfaces for native torus fullRel attempt",
+  "local_ceiling_usd": 13,
+  "note": "Estimates and ceilings are not bills/balances. No failed-call retry.",
+  "jobs": [
+    {
+      "id": "unit-lattice-phase",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-torus-completion/unit-lattice-phase.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-torus-completion/contract.md",
+        "research/SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md",
+        "research/GENERAL_SPARSE_CONSTANTS_ATTACK.md",
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/torus-vertical-proposal.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-unit-lattice-phase",
+      "status": "failed",
+      "session_id": 70464,
+      "billing_status": "unknown",
+      "failure_type": "ReadTimeout",
+      "response_bytes": 0,
+      "stop_reason": null,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T17:54:18.807141+00:00",
+        "finished_at": "2026-11-12T17:33:29.171381+00:00",
+        "usage_is_partial": true,
+        "known_nonpartial_estimate": false,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 17621,
+          "output_tokens": 8
+        },
+        "usage_cost_estimate_usd": null,
+        "excluded_partial_runner_estimate_usd": "0.070644",
+        "total_cost_usd": "UNKNOWN",
+        "session_reaped_per_parent": true,
+        "parent_fully_read_nonempty_report": false
+      }
+    },
+    {
+      "id": "content-cyclic",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-torus-completion/content-cyclic.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-torus-completion/contract.md",
+        "research/SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md",
+        "research/GENERAL_SPARSE_CONSTANTS_ATTACK.md",
+        "research/audits/api_inputs/2026-11-13-next-mechanisms/torus-vertical-proposal.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-content-cyclic",
+      "status": "completed",
+      "session_id": 72928,
+      "billing_status": "usage_reported",
+      "failure_type": null,
+      "response_bytes": 12576,
+      "stop_reason": "end_turn",
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T17:54:18.807141+00:00",
+        "finished_at": "2026-11-12T17:27:20.850414+00:00",
+        "usage_is_partial": false,
+        "known_nonpartial_estimate": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 17702,
+          "output_tokens": 51415
+        },
+        "usage_cost_estimate_usd": "1.099108",
+        "excluded_partial_runner_estimate_usd": null,
+        "total_cost_usd": null,
+        "session_reaped_per_parent": true,
+        "parent_fully_read_nonempty_report": true
+      }
+    },
+    {
+      "id": "native-resultant-multiplicity",
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-torus-completion/native-resultant-multiplicity.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-torus-completion/contract.md",
+        "research/audits/api_inputs/2026-11-13-torus-completion/multiplicity-primary.md",
+        "research/GENERAL_SPARSE_CONSTANTS_ATTACK.md",
+        "research/SPARSE_NATIVE_RESULTANT_LIFT.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-native-resultant-multiplicity",
+      "status": "completed",
+      "session_id": 15307,
+      "stop_reason": null,
+      "billing_status": "usage_reported",
+      "failure_type": null,
+      "response_bytes": 8226,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T17:54:18.807141+00:00",
+        "finished_at": "2026-11-12T17:38:42.977833+00:00",
+        "usage_is_partial": false,
+        "known_nonpartial_estimate": true,
+        "usage": {
+          "input_tokens": 8215,
+          "input_tokens_details": {
+            "cache_write_tokens": 8212,
+            "cached_tokens": 0
+          },
+          "output_tokens": 33413,
+          "output_tokens_details": {
+            "reasoning_tokens": 31078
+          },
+          "total_tokens": 41628
+        },
+        "usage_cost_estimate_usd": "1.752800",
+        "excluded_partial_runner_estimate_usd": null,
+        "total_cost_usd": null,
+        "session_reaped_per_parent": true,
+        "parent_fully_read_nonempty_report": true
+      }
+    }
+  ]
+}

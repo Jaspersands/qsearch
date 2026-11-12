@@ -1,0 +1,460 @@
+Primary https://arxiv.org/pdf/2609.10282, actual selected physical LF ranges.
+SHA256 text acc5dae9736da86cf3b9d3cecdbf2bcda03cb9c8701d94e5354d46fde5243c9e
+
+
+## Physical LF 136-215
+structure in spectral space and subsequently encoding
+the appropriate phase information. This shifts the com-                      ui+1,j + ui−1,j + ui,j+1 + ui,j−1 − 4ui,j
+putational challenge from matrix inversion to geometric         ∇2 ui,j ≈                                              . (9)
+                                                                                                h2
+state preparation suggesting a new approach of efficient
+quantum algorithms for wave propagation and related              The resulting discretized Helmholtz equation again
+physical systems.                                              produces a linear system of the form of Eq. (5), where A
+                                                                                                                              3
+
+is now a sparse matrix whose nonzero entries couple each       directly reflected in the algorithmic complexity and can
+grid point to its nearest neighbors on the two-dimensional     eliminate the apparent exponential speedup.
+lattice. This structure is characteristic of local differen-      Consider our second-order differential operator, (1) in
+tial operators and naturally follows the five-point stencil    d spatial dimensions, discretized on a grid containing N
+connectivity pattern. Throughout the remainder of this         points. Following an analysis similar to that of Ref. [16],
+work we restrict our discussion to the two-dimensional         one finds
+case with equally spaced grid; the extension to three di-
+mensions is straightforward.
+   QLSS aims to prepare a quantum state proportional                       ∥A−1 ∥ = O(1),        ∥A∥ = O(h−2 ),           (12)
+to the solution of the linear system [8, 16–18]. Given
+                                                                where h ∼ N −1/d is the grid spacing in d spatial di-
+a suitable encoding of the right-hand side vector b as a
+                                                               mensions. Consequently,
+quantum state |b⟩, the goal is to generate the state
+
+                                                                             κ(A) = ∥A∥ ∥A−1 ∥ = O(N 2/d ).               (13)
+                      |u⟩ ∝ A−1 |b⟩ ,                  (10)
+                                                                 Therefore, the complexity (11) for optimal QLSSs be-
+   which encodes the solution vector u up to magnitude         comes
+factor. The central computational task is therefore the
+implementation of the matrix inverse A−1 on a quantum
+computer.                                                                       O N 2/d , polylog(N, 1/ϵ) ,
+                                                                                                          
+                                                                                                                          (14)
+   The first quantum algorithm for this task was the
+celebrated Harrow-Hassidim-Lloyd (HHL) algorithm [8],            eliminating the exponential advantage of the quantum
+which demonstrated that sparse linear systems can be           representation.
+solved with complexity that depends only polylogarith-
+mically on the system size. The
+                                complexity of HHL scales
+as O κ(A)2 , polylog(N, 1/ϵ) , where κ(A) is the condi-             C.    The basis transformation and quantum
+tion number of the matrix, ϵ is the desired accuracy,                           arithmetic algorithm
+and N is the matrix dimension. Subsequent develop-
+ments substantially improved this dependence, and the             A natural way to overcome this limitation is to exploit
+best known QLSS now achieve the optimal linear scaling         the structure of the matrix A. As discussed in [16], ma-
+with the condition number [19]. Among these develop-           trices arising from discretized differential equations of-
+ments, Quantum Singular Value Transformation (QSVT)            ten admit a simple representation in a suitable basis,
+has emerged as a powerful and general framework for im-        such as the Fourier basis. Under a unitary transforma-
+plementing matrix functions on quantum computers [20–          tion U , the matrix may become diagonal, Ã = U † AU =
+23]. The key idea is to encode the matrix A into a             diag(λ1 , . . . , λN ), with analytically known eigenvalues λj .
+larger unitary operator, known as a block encoding [24–        The inverse is then simply Ã−1 = diag(1/λ1 , . . . , 1/λN ),
+26], and then interleave applications of this unitary with     so that A−1 = U Ã−1 U † .
+phase rotations to implement a polynomial transforma-             Implementing A−1 therefore reduces to applying U † ,
+tion of its singular values. By approximating the func-        evaluating the known function 1/λj for each basis state
+tion f (x) = 1/x [27, 28], QSVT implements matrix inver-       |j⟩ using quantum arithmetic, and applying U . In this
+sion and thereby produces a state proportional to A−1 |b⟩.     approach, the inverse is constructed directly from its an-
+QSVT-based QLSS achieve complexity                             alytic form rather than through a general QLSS. Con-
+                                                               sequently, the complexity is determined by the cost of
+                                                               the arithmetic operations rather than by the condition
+                O κ(A), polylog(N, 1/ϵ) ,              (11)    number of the matrix.
+                                                                  As a simple example, consider the screened Poisson
+  which is known to be optimal with respect to the de-
+                                                               equation
+pendence on the condition number [16].
+                                                                                       C − ∇2 u(r) = f (r),
+                                                                                               
+                                                                                                                         (15)
+         B.   The condition number problem                     where C > 0 is a constant. This equation has almost the
+                                                               same form as the wave equation (1), differing only in the
+   The polylogarithmic dependence of QLSSs on the sys-         sign in front of the Laplacian operator ∇2 . In Fourier
+tem size suggests an exponential quantum advantage over        space,qthe equation is diagonal, with AF = diag(C + k 2 ),
+classical linear system solvers. However, for matrices         k = kx2 + ky2 , hence A−1                     2
+                                                                                                                
+                                                                                         F = diag 1/(C + k ) . Thus,
+arising from the discretization of differential equations,
+                                                               the inverse can be implemented by evaluating
+the condition number typically grows with domain size.
+Since the complexity of any QLSS necessarily scales at                                           1
+least linearly with the condition number, this growth is                              q(k) =                              (16)
+                                                                                               C + k2
+                                                                                                                                          4
+
+## Physical LF 236-450
+using quantum arithmetic. Specifically, a quantum recip-                   In this way, the inverse remains a well defined analytic
+rocal operation controlled by the register |k⟩ computes                 function of k, so the same quantum-arithmetic frame-
+q(k) and stores it in an auxiliary register of nq qubits.               work can still be applied. We note that in the discretized
+The value is encoded as a binary fraction, with nq chosen               problem, ϵ ∼ ω/c∆k, set by the Fourier-mode spacing.
+according to the desired precision. For example, nq = 10                Since quantum amplitudes are bounded by unity, the co-
+provides a resolution of 2−10 = 1/1024 ≈ 10−3 indepen-                  efficient encoded by the quantum circuit is taken to be
+dent on the domain size (since the precision of q(k) is
+decoupled from the resolution of the k-grid). The value                                                      ϵ
+                                                                                           q(k) =                         ,            (20)
+q(k) is then encoded into an auxiliary amplitude through                                             ω 2 /c2 − k 2 + iϵ
+a circuit that implements the transformation (e.g., [29])
+                                                                        whose magnitude is at most one and reaches unity on
+                                                                        resonance. The problem therefore reduces to evaluating
+                                p
+     |k⟩ |0⟩ −→ |k⟩ q(k) |0⟩ + 1 − q(k)2 |1⟩ ,       (17)
+                                                                        this complex-valued function using quantum arithmetic.
+followed by post-selection of the auxiliary qubit in the                As in the example above, one can compute q(k) and en-
+state |0⟩. A circuit diagram of this algorithm is shown in              code it into an auxiliary qubit amplitude, (17). The only
+Fig. 1. This example implements the idea introduced in                  essential modification is that complex-valued arithmetic
+Ref. [16] of replacing a generic QLSS with direct recipro-              necessitates the use of 2nq qubits to represent both the
+cal computation.                                                        real and imaginary parts.
+                                                                           One can gain further insight by decomposing (20) to
+                                                                        its real and imaginary parts, using the identity
+     D.    The wave-equation singularity and the                                                        
+                post-selection problem                                                   1 ϵ→0          1
+                                                                                              = PV        − iπδ(x),          (21)
+                                                                                      x + iϵ           x
+    While the same quantum-arithmetic framework can,
+in principle, be applied to the wave equation, which is                 where PV denotes the Cauchy principal value and δ is
+the focus of this work, the hyperbolic nature of the prob-              the Dirac delta function. One obtains
+lem introduces an additional complication as the inverse                                                             
+operator develops singularities on the dispersion surface.                       1         ϵ→0              1
+                                                                                            = PV                      −iπδ(ω 2 /c2 −k 2 ).
+After Fourier transforming, the wave equation (1) takes                 ω 2 /c2 − k 2 + iϵ            ω 2 /c2 − k 2
+the form                                                                                                                            (22)
+                                                                        Thus, the inverse consists of a principal-value contribu-
+                  ω 2 /c2 − k 2 ũ(k) = f˜(k),
+                                
+                                                       (18)             tion together with a singular term supported on the res-
+                 q                                                      onant surface k 2 = ω 2 /c2 , illustrated in Fig. 2.
+with k =          kx2 + ky2 , so that formally ũ(k) =                     However, this singular structure leads to a fundamental
+     1    ˜                                                             limitation. Since both terms vanish away from the dis-
+  2  2
+ω /c −k 2 f (k). Unlike the screened Poisson equation case,
+                                                                        persion surface (as seen in Fig. 2), only a small fraction
+the denominator vanishes when k 2 = ω 2 /c2 , making the
+                                                                        of Fourier modes contribute significantly to the solution.
+inverse singular.
+                                                                        In the two-dimensional setting, the dispersion surface is
+  To regularize this singular behavior and ensure the cor-
+                                                                        a circle (or a narrow ring) in Fourier space, while in three
+rect causal solution, one introduces a small imaginary
+                                                                        dimensions the corresponding surface is a sphere.
+part
+                                                                           The success probability of the amplitude-encoding step
+                      1       ϵ→0      1                                therefore scales approximately as the number of modes
+                               = 2 2              .         (19)
+                ω 2 /c2 − k 2     ω /c − k 2 + iϵ                       near the resonance divided by total number of Fourier
+                                                                                                                                         5
+
+                                                                           This construction extends naturally to multiple point
+                                                                         sources. For sources located at (xj , yj ) with complex
+                                                                         weights wj , the target state becomes
+                                                                                                                           
+                                                                            1       X           X
+                                                                           √                     wj q(k)e−i(kx xj +ky yj )  |kx , ky ⟩ ,
+                                                                             N k2 +k2 ≈ω2 /c2   j
+                                                                                 x   y
+
+                                                                                                                                (24)
+                                                                         where N is the normalization constant. Thus, the phase
+                                                                         contributions from all sources are coherently combined
+                                                                         according to their corresponding weights.
+                                                                            The implementation naturally decomposes into two
+FIG. 2. Illustration of the (a) real and (b) imaginary parts
+of Eq. (20), corresponding to the principal-value and delta-             steps. In the first step, a resonant state is prepared
+function contributions, respectively. The computation is per-            by constructing an equal superposition over the Fourier
+formed on a discretized 64 × 64 grid over a square domain                modes contained within a narrow ring surrounding the
+of side length L = 16λ, where λ denotes the wavelength. As               resonant manifold and assigning to each momentum com-
+seen, both terms are concentrated around the dispersion sur-             ponent the corresponding amplitude q(k). The ring
+face k2 = ω 2 /c2 = 2π/λ. Here, ϵ = 3∆kω/c                               width, r, determines the approximation accuracy, in-
+                                                                         creasing it includes more Fourier components, providing
+                                                                         a more accurate representation of the regularized inverse
+modes N = 2n . Since the resonant surface has lower di-                  operator q(k) at the expense of a lower post-selection suc-
+mension than the full Fourier domain, this ratio decreases               cess probability. In the second step, the Fourier phases
+with system size. Equivalently, the number of repetitions                associated with the source positions are applied, yielding
+required for successful post-selection grows exponentially               the desired propagated source state. A circuit diagram
+with the number of qubits n. Thus, the singular structure                is shown in Fig. 3.
+of the wave equation prevents a straightforward extension                   The construction of the resonant ring begins by eval-
+of the arithmetic algorithm and motivates the search for                 uating the dispersion relation that defines the inner
+a different strategy.                                                    boundary, r− = ω/c − r/2. The central ingredient is
+                                                                         a quantum
+                                                                                q square-root algorithm [12], which evaluates
+                                                                         ky = ± r−   2 − k 2 , and, starting from a uniform superpo-
+   III.     THE GEOMETRIC QUANTUM STATE                                                   x
+             PREPARATION ALGORITHM                                       sition over the kx register, generates the corresponding
+                                                                         values in the ky register, thereby preparing
+                                                                                                                    √    the arc of the
+                  A.    Algorithm description                            inner boundary satisfying |kx | ≤ r− / 2. The prepared
+                                                                         arc is then coherently extended up to the outer radius
+   We overcome this difficulty by introducing a new ap-                  r+ = ω/c + r/2, producing a uniform superposition over
+proach - geometric quantum state preparation. Rather                     the corresponding sector of the resonant ring. The re-
+than preparing the full Fourier space and then post-                     maining sectors are subsequently generated by exploiting
+selecting onto the resonant manifold, the algorithm pre-                 the symmetry of the circle, yielding a uniform superposi-
+pares only the resonant components from the outset by                    tion over all momentum components contained within the
+constructing a quantum state supported on the resonant                   resonant ring. This procedure is the quantum analogue
+                 2
+surface k 2 ≈ ωc2 . In the notation of the previous sec-                 of the Midpoint circle (Bresenham) algorithm [30, 31].
+tion, this method directly prepares the action of U A−1 ,                Finally, quantum arithmetic is used to encode the co-
+after which applying U † is the only remaining step. In                  efficient q(k) of Eq. (20). The implementation details
+this way, the exponentially small success probability as-                of the resonant-state preparation, including its quantum
+sociated with projecting from the full domain onto the                   arithmetic subroutines and the corresponding quantum
+resonant manifold is avoided entirely.                                   circuits, are presented in Appendix A.
+   To illustrate the algorithm, consider first the simple                   By preparing the state directly on the resonant man-
+case of a single point source located at (xs , ys ). The goal            ifold, the exponential suppression associated with post-
+is to prepare the Fourier state                                          selection from the full Fourier space is avoided. The re-
+                                                                         maining post-selection only reflects the amplitude encod-
+        1        X                                                       ing of q(k) within the resonant manifold, giving a success
+    √                      q(k) e−i(kx xs +ky ys ) |kx , ky ⟩ ,   (23)
+        N r k2 +k2 ≈ω2 /c2                                               probability equal to the average value of |q(k)|2 over the
+              x   y
+                                                                         resonant ring
+               P                     2                                                                               2
+where N r = k2 +k2 ≈ω2 /c2 |q(k)| is the normalization
+                                                                                                     P
+                    x   y                                                                              k∈ring |q(k)|
+                                                                                           Psucc =                     .           (25)
+factor associated with the resonant Fourier modes. The
+                                                                                                        P
+                                                                                                           k∈ring 1
+coefficient q(k) is given by Eq. (20), while the phase factor
+accounts for the source position.                                        In the continuous limit and using k = ω/c + x, such that
+                                                                                                                                       6
+
+
+
+    |0⟩⊗n
+                                                                                                                    )
+                                                         eikx x0   eikx x1   ···     eikx xNs
+                   Resonant state preparation                                                             iQFT          |u(x, y)⟩
+    |0⟩⊗n                                                eiky y0   eiky y1   ···     eiky yNs
+            
+                                                           •         •      ···                                    )
+   |0⟩⊗m       .                                    ⊗m      ..        ..                ..          ⊗m              |0⟩⊗m
+             ..                                H            .         .                 .      H
+                                                            •                ···
+
+
+FIG. 3. Quantum circuit for the geometric quantum state preparation algorithm. The momentum registers are first initialized
+in the resonant state by the state-preparation procedure described in Appendix A. The source-dependent phase encoding,
+highlighted by the dashed box, is then implemented by controlled phase gates that apply the phases ei(kx xj +ky yj ) . Finally,
+after unpreparing the source register and post-selecting it onto |0⟩⊗m , inverse quantum Fourier transform (iQFT) is applied to
+the momentum registers, yielding the solution state |u(x, y)⟩.
+
+
+ω 2 /c2 − k 2 ≃ 2(ω/c)x, we obtain (see Appendix A)                      regime, the success probability remains effectively con-
+                                                                         stant, and the algorithm retains an exponential speedup
+                        ϵ            (ω/c)r                              with respect to the domain size.
+              Psucc ≈        arctan           .     (26)
+                      (ω/c)r            ϵ                                   The present formulation assumes periodic boundary
+                                                                         conditions, the natural setting in which the governing
+Setting the ring width to span nr Fourier grid spacings,                 operator is diagonalized by the Fourier transform. How-
+r = nr ∆k, and the regularization parameter to nϵ times                  ever, reflecting boundary conditions can be incorporated
+the characteristic scale (ω/c)∆k, i.e., ϵ = nϵ (ω/c)∆k,                  through the standard odd- or even-extension technique,
+yields                                                                   in which the physical domain is embedded into a doubled
+                                                                         periodic domain with the appropriate symmetry. The
+                         nϵ        nr
+                Psucc =     arctan      ,           (27)                 Fourier representation of the extended problem then au-
+                        nr         nϵ                                    tomatically satisfies the original Dirichlet or Neumann
+                                                                         boundary conditions. In the quantum setting, this ex-
+which is independent of the Fourier spacing ∆k, and
+                                                                         tension requires only one additional qubit per spatial di-
+therefore of the domain size.
+                                                                         mension to represent the doubled coordinate range.
+   After preparing the resonant state, the next step is to
+incorporate the source-dependent Fourier phases. Sup-
+pose that the source consists of Ns emitters located at
+                                                                               B.   Approximation accuracy and scaling
+positions (xj , yj ), with j = 0, . . . , Ns − 1. One intro-
+duces an additional register of m = ⌈log(Ns )⌉ qubits to
+label the different sources. A Hadamard transform pre-                      The resonant ring introduces the only approximation
+pares an equal superposition over the source labels, cor-                in the algorithm, with its width controlling the trade-
+responding to equal source amplitudes. More generally,                   off between accuracy and post-selection probability. To
+arbitrary source amplitudes can be encoded with a corre-                 quantify this approximation, Figs. 4 and 5 compare
+sponding weighted superposition. Then, controlled phase                  the solution obtained from a classical emulation of the
+operations apply the phase factor e−i(kx xj +ky yj ) condi-              proposed quantum algorithm with the exact classical
+tioned on the corresponding source state. Afterward, the                 Fourier-space solution obtained numerically. In these
+source register is uncomputed by applying the inverse                    simulations, the ”quantum” solution is constructed ex-
+state-preparation circuit (for equal source weights, this is             actly as in the proposed algorithm: rather than evaluat-
+simply another Hadamard transform). Post-selecting the                   ing the contribution from the full Fourier domain, only
+source register onto the all-zero state yields the desired               the Fourier modes contained within the resonant ring are
+Fourier-space state, which takes the form of Eq. (24).                   retained. The resulting state is then compared with the
+This step is illustrated in the dashed-highlighted box of                exact solution obtained from the complete Fourier-space
+Fig. 3. Finally, applying the inverse QFT maps the sys-                  calculation.
+tem to spatial basis.                                                       Fig. 4(a) shows the overlap error,
+   The overall success probability of the post-selection
+step depends on the number of sources. In particular,                                           1 − |⟨uC |uQ ⟩| ,                   (29)
+the success probability scales as
+                                                                         where |uC ⟩ denotes the normalized classical solution and
+                                    1                                    |uQ ⟩ the state obtained from the resonant-ring approx-
+                            Psucc ∼    .                       (28)      imation on a 64 × 64 spatial grid. All simulations in
+                                    Ns
+                                                                         this subsection use ω/c = 2π (λ = 1), spatial discretiza-
+In many relevant physical scenarios, the number of                       tion h = λ/4, and nϵ = 3. As expected, increasing the
+sources is small compared to the system size. In this                    ring width incorporates additional Fourier components
+                                                                                                                            7
+
+                                                                  coarse Fourier discretization. As the Fourier resolution
+                                                                  improves, the required ring width approaches a constant
+                                                                  value. These results indicate that maintaining a pre-
+                                                                  scribed approximation accuracy requires only a constant
+                                                                  ring width in Fourier space, independent of the compu-
+                                                                  tational domain size. Consequently, the resonant-ring
+                                                                  approximation introduces only a constant computational
+                                                                  overhead while preserving the asymptotic complexity of
+
+## Physical LF 480-575
+FIG. 5. Minimum resonant-ring width required to achieve
+                                                                     Gate count. We begin by analyzing the number of
+target approximation errors of 0.05 and 0.01 as a function of
+the computational domain size. The slight increase for the
+                                                                  2QG. As shown in Fig. 3, the algorithm consists of reso-
+smallest domains is due to the coarse Fourier discretization.     nant state preparation, source-dependent phase encod-
+At higher resolution, the required ring width approaches a        ing, and an inverse quantum Fourier transform. The
+constant value, indicating independence from the domain size.     resonant state preparation, described in detail in Ap-
+                                                                  pendix A, constitutes the dominant computational com-
+                                                                  ponent, as it requires quantum arithmetic together with
+and yields a progressively more accurate representation           quantum comparator circuits. In particular, the evalu-
+of q(k). Fig. 4(b) separately shows the solution errors           ation of the square-root and reciprocal functions dom-
+for the real and imaginary components, corresponding to           inates the gate count. Efficient quantum implementa-
+the real (principal-value) and imaginary (delta-function)         tions of these arithmetic operations have been presented
+parts, respectively. The imaginary component converges            in Ref. [12], where both require O(n2 ) 2QG for an n-
+rapidly because it is strongly localized around the reso-         bit register. The remaining components of the algorithm
+nant manifold and is therefore accurately captured by a           consist primarily of controlled phase operations and a
+relatively narrow ring. Consequently, the total approxi-          single inverse quantum Fourier transform, each requiring
+mation error is dominated by the more slowly converging           at most quadratic resources. Consequently, these con-
+real component.                                                   tributions do not modify the overall asymptotic scaling,
+   Fig. 5 shows the minimum resonant-ring width re-               and the total gate complexity of the proposed algorithm
+quired to achieve target approximation errors of 0.05 and         is O(n2 ).
+0.01 as the computational domain is increased over sev-              We also consider the T -gate count relevant for fault-
+eral orders of magnitude. The slight increase for the             tolerant implementations. Both the square-root and re-
+smallest domains is a finite-resolution effect caused by the      ciprocal circuits consist of O(n) stages built from n-bit
+                                                                                                                          8
+
+                                                                   Qubit count. We next consider the total number of
+                                                                qubits required by the algorithm. The dominant con-
+                                                                tribution again arises from the resonant state prepara-
+                                                                tion described in Appendix A. In particular, the quan-
+                                                                tum square-root circuit requires 5n qubits for an n-
+                                                                bit register [12]. In our two-dimensional construction,
+                                                                the same register width is sufficient, since the radicand
+                                                                (ω/c)2 − kx2 − ky2 remains bounded by (ω/c)2 . Thus,
+                                                                the square-root operation requires 5n qubits for the 2n-
+                                                                qubit spatial register. The remaining components require
+                                                                substantially fewer qubits. Besides the spatial registers
+                                                                of size  2n, √
+                                                                             the   
+                                                                                  algorithm
+                                                                                           employs  an offset register of
+                                                                nℓ = log2 2 nr = 12 + log2 nr . qubits for the ring
+                                                                construction, two nq -qubit registers for evaluating the
+                                                                real and imaginary parts of q(k), an m = ⌈log(Ns )⌉-qubit
+                                                                source register encoding Ns sources, and only a constant
+                                                                number of auxiliary qubits for the comparator, controlled
+                                                                sign-flip, and controlled-SWAP operations. Since we con-
+                                                                sider the regime in which the number of sources is small,
+                                                                m ≪ n, the total number of qubits required by these
+                                                                additional registers is less than the 5n qubits already
+                                                                required by the square-root circuit. These qubits can
+                                                                therefore be allocated within the square-root workspace
+                                                                and reused after uncomputation. Consequently, the over-
+                                                                all qubit requirement is 5n. We note that in three di-
+FIG. 6.      Demonstration of the geometric quantum state
+                                                                mensions, the same 5n-qubit requirement is expected,
+preparation algorithm for a system of size 64 × 64 (corre-
+sponding to 6 + 6 data qubits). The top panel shows the
+                                                                since the additional spatial register does not increase the
+source configuration consisting of two emitters. The middle     square-root register width.
+and bottom rows compare the imaginary and real parts, re-          Number of repetitions. Finally, we consider the ex-
+spectively, of the wave field obtained from the classical em-   pected number of repetitions due to post-selection. As
+ulation of the quantum algorithm, uQ (left), with the exact     shown in Appendix A, a resonant-state preparation of
+classical solution, uC (right). The overlap error between uQ    radius ρ succeeds with probability
+and uC is 1 − |⟨uC |uQ ⟩| = 0.01, corresponding to the high-
+lighted point in Fig. 4(a).                                                                            
+                                                                                     ω/ch nϵ         nr
+                                                                              Pres =          arctan    ,             (30)
+                                                                                     32 nr nr        nϵ
+
+                                                                which is independent of the computational domain size.
+additions and subtractions [12]. Quantum adders and
+                                                                The only additional post-selection is associated with the
+subtractors, have an O(n) T -gate count [32–34]. Con-
+                                                                source register, whose success probability is 1/Ns . There-
+sequently, the square-root and reciprocal circuits each
+                                                                fore, the overall success probability is
+require O(n2 ) T gates. Comparator circuits can be con-
+structed from the same addition and subtraction rou-
+                                                                                                Pres
+tines and likewise require O(n) T gates using at most                                  Ptot =        .                (31)
+one auxiliary qubit [32, 34]. The controlled sign-flip and                                      Ns
+controlled-SWAP operations contain only O(n) constant-
+size controlled gates and therefore contribute at most            As an example, the simulations presented in Fig. 6 use
+O(n) T gates. At fixed synthesis precision, the Fourier-        the parameters h = λ/4, corresponding to ρ = ω/c =
+transform and phase-encoding operations contribute at           2π/λ, together with a resonant ring spanning nr = 9
+most O(n2 ) T gates [35]. Therefore, the overall T -gate        Fourier grid spacings and a regularization width of nϵ = 3
+count scales as O(n2 ).                                         Fourier grid spacings. These values give
+
+   We note that the above analysis is presented for the                             π
+                                                                          Pres =        arctan(3) ≈ 2.3 × 10−3 ,      (32)
+two-dimensional case. The three-dimensional extension                              1728
+is expected to exhibit the same asymptotic scaling, since
+it relies on the same quantum arithmetic subroutines, the       corresponding to an average of approximately 450 rep-
+square-root and reciprocal evaluations, which dominate          etitions for a single source, representing only a limited
+
+## Physical LF 874-931
+  Amplitude encoding. The final part of the resonant state preparation assigns the coefficient q(k) of Eq. (20) to
+each momentum component. As illustrated in Fig. 1, this is accomplished by evaluating q(k) with reversible quan-
+tum arithmetic, storing its finite-precision representation in auxiliary registers, and using the result to control an
+amplitude-encoding operation. In our case q(k) is complex, so separate arithmetic circuits are used to evaluate its real
+and imaginary parts, requiring two auxiliary registers of nq qubits each. The arithmetic circuits are subsequently un-
+computed, disentangling the auxiliary registers from the momentum registers. Post-selecting the amplitude auxiliary
+then yields the desired resonant state
+                                                      1 X
+                                            |ψres ⟩ =         q(k) |kx , ky ⟩ ,                                  (A18)
+                                                      N
+                                                                  k∈ring
+                                                                                                                      14
+
+where N is the normalization constant. Since the initial state is uniform over the ring, the success probability of this
+post-selection is given by the average of |q(k)|2 ,
+                                                                       2
+                                                        P
+                                                         k∈ring |q(k)|
+                                                Psucc =   P              .                                       (A19)
+                                                            k∈ring 1
+
+   In the continuous limit, we write k = ω/c + x, with x ∈ [−r/2, r/2]. In polar coordinates, d2 k = kdkdθ, and since
+|q(k)|2 depends only on the radial coordinate, the angular integral cancels between the numerator and denominator.
+                   2
+Near resonance, ωc2 − k 2 ≃ −2 ωc x, so that |q(k)|2 is an even function of x. Consequently, over the symmetric interval
+[−r/2, r/2], the contribution proportional to x in the radial Jacobian k = ω/c + x vanishes, and the remaining factor
+ω/c cancels between numerator and denominator. We therefore obtain
+                                     ˆ r/2
+                                               ϵ2
+                                                2 2   2
+                                                        dx
+                                    −r/2 4(ω/c) x + ϵ
+                                                                                     
+                                                               ϵ             (ω/c)r
+                            Psucc ≈       ˆ r/2            =        arctan            .                           (A20)
+                                                             (ω/c)r            ϵ
+                                                 dx
+                                              −r/2
+
+This reproduces the scaling given in Eq. (26) of the main text.
+  Overall success probability.   Combining the individual post-selection steps, the overall success probability of the
+resonant-state preparation is
+
+                                                                                 
+                                            ρh 1 π         1     1 nϵ          nr
+                                    Pres = √    · · ·    √      · ·     arctan
+                                             2π   2  4     2n    2  n r        nϵ
+                                                            r                                                     (A21)
+                                            ρh nϵ            nr
+                                         =          arctan       .
+                                           32 nr nr          nϵ
+
+   Here, the individual factors correspond, respectively, to the initial comparator selecting the 45◦ arc, the post-
+selection generating the ky ↔ −ky symmetry, the comparator removing points outside the ring, the uncomputation of
+the offset register, the post-selection generating the kx ↔ ky symmetry, and the amplitude encoding of q(k) (Eq. (27)
+in the main text). Since each factor is independent of the computational domain size, the overall success probability
+is likewise independent of the domain size. Consequently, the resonant-state preparation requires only a constant
+expected number of repetitions.

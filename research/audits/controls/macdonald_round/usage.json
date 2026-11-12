@@ -1,0 +1,419 @@
+{
+  "captured_at_utc": "2026-11-12T20:08:47.272822+00:00",
+  "ceiling_note": "Local ceilings are not actual spending, provider bills/caps or balances.",
+  "cost_note": "Stored runner estimates only, not invoices, actual bills, balances or spending caps. Four inherited UNKNOWN bills remain excluded; no owner balance subtraction or retry.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 108,
+    "excluded_observed_partial_runner_estimates_usd": "0.589724",
+    "known_terminal_nonpartial_usage_estimate_usd": "232.782710",
+    "known_terminal_nonpartial_usage_records": 182,
+    "unknown_generation_failure_bills_excluded": 1,
+    "unknown_partial_failure_bills_excluded": 4,
+    "unknown_timeout_bills_excluded": 3
+  },
+  "current_round_unknown_total_bill_count": 0,
+  "dispatch_observed_status_changes": [
+    {
+      "after": "completed",
+      "before": "running",
+      "obligation": "macdonald-native-access"
+    },
+    {
+      "after": "completed",
+      "before": "running",
+      "obligation": "macdonald-branching"
+    },
+    {
+      "after": "completed",
+      "before": "running",
+      "obligation": "macdonald-classical"
+    }
+  ],
+  "dispatch_terminal_session_accounting": [
+    {
+      "obligation": "macdonald-native-access",
+      "response_bytes": 19600,
+      "session_id": 73444,
+      "session_reaping_status": "Not independently checked; original session locator retained. Saved result status is terminal.",
+      "status": "completed"
+    },
+    {
+      "obligation": "macdonald-branching",
+      "response_bytes": 11204,
+      "session_id": 80307,
+      "session_reaping_status": "Not independently checked; original session locator retained. Saved result status is terminal.",
+      "status": "completed"
+    },
+    {
+      "obligation": "macdonald-classical",
+      "response_bytes": 13261,
+      "session_id": 69941,
+      "session_reaping_status": "Not independently checked; original session locator retained. Saved result status is terminal.",
+      "status": "completed"
+    }
+  ],
+  "exclusions": [
+    {
+      "reason": "No shared scientific note or unlisted source/request inspected or hashed.",
+      "scope": "Evolving research/topic notes, STATE/HANDOFF/workflow and other newer work"
+    },
+    {
+      "reason": "Preserved unchanged with all observed partial counters excluded from known usage totals.",
+      "scope": "Four inherited UNKNOWN bills"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 14473,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/jack_logprecision_round/usage.json",
+    "sha256": "b39f2513df12d96c6715313c7946db95d4638c80a09b609cbf061dff8ac79c65"
+  },
+  "local_request_ceiling_total_usd": "13.000000",
+  "macdonald_round": {
+    "by_provider_usd": {
+      "Anthropic": "2.087668",
+      "OpenAI": "2.377580"
+    },
+    "completed_nonempty_reports": 3,
+    "empty_refusal_reports": 0,
+    "jobs": 3,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access",
+        "completed_review": true,
+        "known_nonpartial_estimate": true,
+        "obligation": "macdonald-native-access",
+        "provider": "OpenAI",
+        "report_authority": "Advisory API artifact; parent fully read every response. Scientific dispositions remain with parent and are not inferred from completion.",
+        "response": {
+          "bytes": 19600,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/response.md",
+          "sha256": "4f23c62e1037b1eafcfb5b33a88c8470b0c0508dd762cd6ba2de933b368d8719"
+        },
+        "response_LF_count": 451,
+        "response_characters": 19573,
+        "response_nonempty": true,
+        "response_splitline_count": 452,
+        "result": {
+          "bytes": 1776,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-macdonald-native-access/result.json",
+          "sha256": "ccdeb0b05e35564cda0d637224265e832a2d0760df2d0da480df8fa47e073a5e"
+        },
+        "session_id": 73444,
+        "session_reaping_status": "Not independently checked; original session locator retained. Saved result status is terminal.",
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 20658,
+          "input_tokens_details": {
+            "cache_write_tokens": 20655,
+            "cached_tokens": 0
+          },
+          "output_tokens": 43420,
+          "output_tokens_details": {
+            "reasoning_tokens": 37771
+          },
+          "total_tokens": 64078
+        },
+        "usage_cost_estimate_usd": "2.377580",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching",
+        "completed_review": true,
+        "known_nonpartial_estimate": true,
+        "obligation": "macdonald-branching",
+        "provider": "Anthropic",
+        "report_authority": "Advisory API artifact; parent fully read every response. Scientific dispositions remain with parent and are not inferred from completion.",
+        "response": {
+          "bytes": 11204,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/response.md",
+          "sha256": "8ae256a45e0457cc1fd8a4b7e2f529f7c84206d66cbc7e8fdf6b195d423da0dd"
+        },
+        "response_LF_count": 161,
+        "response_characters": 10304,
+        "response_nonempty": true,
+        "response_splitline_count": 162,
+        "result": {
+          "bytes": 1635,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-branching/result.json",
+          "sha256": "78742c891102a2570e2415fa6b516f6cdd266ce7051c12ce01b8ed2d24d8cda8"
+        },
+        "session_id": 80307,
+        "session_reaping_status": "Not independently checked; original session locator retained. Saved result status is terminal.",
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 24455,
+          "output_tokens": 40081
+        },
+        "usage_cost_estimate_usd": "0.899440",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical",
+        "completed_review": true,
+        "known_nonpartial_estimate": true,
+        "obligation": "macdonald-classical",
+        "provider": "Anthropic",
+        "report_authority": "Advisory API artifact; parent fully read every response. Scientific dispositions remain with parent and are not inferred from completion.",
+        "response": {
+          "bytes": 13261,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/response.md",
+          "sha256": "eab49f4710b073b683ee1483d78bce3c14f604020dbe53cff4c7d960a7bc92f1"
+        },
+        "response_LF_count": 214,
+        "response_characters": 12497,
+        "response_nonempty": true,
+        "response_splitline_count": 215,
+        "result": {
+          "bytes": 1634,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-macdonald-classical/result.json",
+          "sha256": "4aab748f77d50eba47e1458fbd57f7d8ccf17b3b671aa1b9644fd7c7e7171b79"
+        },
+        "session_id": 69941,
+        "session_reaping_status": "Not independently checked; original session locator retained. Saved result status is terminal.",
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 9142,
+          "output_tokens": 57583
+        },
+        "usage_cost_estimate_usd": "1.188228",
+        "usage_is_partial": false
+      }
+    ],
+    "known_nonpartial_usage_records": 3,
+    "status_counts": {
+      "completed": 3
+    },
+    "terminal_jobs": 3,
+    "truncated_empty_reports": 0,
+    "truncated_nonempty_reports": 0,
+    "unknown_total_bill_records": 0,
+    "usage_estimate_usd": "4.465248"
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 67,
+      "empty_response_count": 17,
+      "frozen_prior_estimate_usd": "140.818422",
+      "frozen_prior_known_terminal_records": 138,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_three_explicit_jobs": 146,
+      "known_estimate_by_status_usd": {
+        "completed": "57.055016",
+        "empty_response": "3.767794",
+        "truncated": "82.083280"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "142.906090",
+      "known_terminal_nonpartial_usage_records": 140,
+      "macdonald_round": {
+        "completed_nonempty_reports": 2,
+        "empty_refusal_reports": 0,
+        "jobs": 2,
+        "known_nonpartial_usage_records": 2,
+        "status_counts": {
+          "completed": 2
+        },
+        "terminal_jobs": 2,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 0,
+        "usage_estimate_usd": "2.087668"
+      },
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_generation_failure_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.485230",
+          "failure_stage": "generation",
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "obligation": "quadratic-composition",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 48498,
+            "output_tokens": 5
+          },
+          "provider": "Anthropic",
+          "response_bytes": 7862,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.070644",
+          "failure_stage": "generation",
+          "failure_type": "ReadTimeout",
+          "no_retry": true,
+          "obligation": "unit-lattice-phase",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 17621,
+            "output_tokens": 8
+          },
+          "provider": "Anthropic",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ],
+      "status_counts_through_macdonald": {
+        "completed": 67,
+        "dry_run": 1,
+        "empty_response": 17,
+        "failed": 5,
+        "truncated": 56
+      },
+      "terminal_results": 145,
+      "truncated_and_empty": 42,
+      "truncated_and_nonempty": 14,
+      "unknown_partial_failure_bill_count": 4
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 41,
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "87.499040",
+      "frozen_prior_known_terminal_records": 41,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_three_explicit_jobs": 42,
+      "known_estimate_by_status_usd": {
+        "completed": "87.373110",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "89.876620",
+      "known_terminal_nonpartial_usage_records": 42,
+      "macdonald_round": {
+        "completed_nonempty_reports": 1,
+        "empty_refusal_reports": 0,
+        "jobs": 1,
+        "known_nonpartial_usage_records": 1,
+        "status_counts": {
+          "completed": 1
+        },
+        "terminal_jobs": 1,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 0,
+        "usage_estimate_usd": "2.377580"
+      },
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_generation_failure_totals_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_through_macdonald": {
+        "completed": 41,
+        "incomplete": 1
+      },
+      "terminal_results": 42,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0,
+      "unknown_partial_failure_bill_count": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "report_note": "All full reports parent read; scientific dispositions are advisory and being recorded separately. This mechanical snapshot adds no scientific conclusion.",
+  "scope": "Frozen jack-logprecision baseline plus ONLY three completed/nonempty requests in the Macdonald dispatch. Final saved result metadata authoritative; no historical run scan.",
+  "status": "FINALIZED_TERMINAL_USAGE_SNAPSHOT",
+  "unknown_billing_exclusions": [
+    {
+      "excluded_partial_runner_estimate_usd": "0.0276",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 6875,
+        "output_tokens": 5
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.00625",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 585,
+        "output_tokens": 8
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.485230",
+      "failure_stage": "generation",
+      "failure_type": "ReadError",
+      "no_retry": true,
+      "obligation": "quadratic-composition",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 48498,
+        "output_tokens": 5
+      },
+      "provider": "Anthropic",
+      "response_bytes": 7862,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.070644",
+      "failure_stage": "generation",
+      "failure_type": "ReadTimeout",
+      "no_retry": true,
+      "obligation": "unit-lattice-phase",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 17621,
+        "output_tokens": 8
+      },
+      "provider": "Anthropic",
+      "response_bytes": 0,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    }
+  ]
+}

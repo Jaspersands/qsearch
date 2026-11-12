@@ -1,0 +1,562 @@
+{
+  "captured_at_utc": "2026-11-12T18:33:53.063881+00:00",
+  "ceiling_note": "Local ceilings, not actual spending, provider bill/cap or balance.",
+  "checkpoint_status": "FINALIZED_TERMINAL_USAGE_SNAPSHOT",
+  "cost_note": "Stored runner estimates only, not invoices, actual bills, balances or spend caps. Four inherited UNKNOWN bills/partial observations excluded unchanged. No retry or balance subtraction.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 99,
+    "excluded_observed_partial_runner_estimates_usd": "0.589724",
+    "known_terminal_nonpartial_usage_estimate_usd": "215.466522",
+    "known_terminal_nonpartial_usage_records": 171,
+    "unknown_generation_failure_bills_excluded": 1,
+    "unknown_partial_failure_bills_excluded": 4,
+    "unknown_timeout_bills_excluded": 3
+  },
+  "current_round_unknown_total_bill_count": 0,
+  "dispatch_observed_status_changes": [
+    {
+      "after": "completed",
+      "before": "running",
+      "obligation": "jack-native-measurements"
+    },
+    {
+      "after": "completed",
+      "before": "running",
+      "obligation": "jack-coherent-decoder"
+    }
+  ],
+  "dispatch_terminal_session_accounting": [
+    {
+      "obligation": "jack-intertwiner",
+      "response_bytes": 9806,
+      "session_id": 56685,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "jack-overlap-clock",
+      "response_bytes": 11810,
+      "session_id": 50071,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": "end_turn"
+    },
+    {
+      "obligation": "jack-native-measurements",
+      "response_bytes": 23930,
+      "session_id": 97949,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "jack-classical-sampler",
+      "response_bytes": 9992,
+      "session_id": 85792,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": "end_turn"
+    },
+    {
+      "obligation": "jack-coherent-decoder",
+      "response_bytes": 22968,
+      "session_id": 75532,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "jack-branching-transform",
+      "response_bytes": 13621,
+      "session_id": 16783,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": "end_turn"
+    }
+  ],
+  "exclusions": [
+    {
+      "reason": "Not hashed or edited; immutable context snapshots within these six paid bundles are frozen.",
+      "scope": "Evolving topic notes, STATE/HANDOFF/workflow"
+    },
+    {
+      "reason": "Excluded from this six-job usage/hash milestone.",
+      "scope": "Bendali positive-formula and other next-pass exploration sources/requests"
+    },
+    {
+      "reason": "Preserved unchanged from frozen prior; all observed partial counters excluded from known estimates.",
+      "scope": "Four historical UNKNOWN bills"
+    }
+  ],
+  "finalized_at_utc": "2026-11-12T18:36:33.824622+00:00",
+  "frozen_prior_usage_snapshot": {
+    "bytes": 19090,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/torus_completion_round/usage.json",
+    "sha256": "b046eefff77a5bac1b775423a427e65e2bf9de264082589d53a9331cfe1c1183"
+  },
+  "jack_lax_round": {
+    "by_provider_usd": {
+      "Anthropic": "3.156200",
+      "OpenAI": "6.700610"
+    },
+    "completed_nonempty_reports": 6,
+    "empty_refusal_reports": 0,
+    "jobs": 6,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-intertwiner",
+        "completed_review": true,
+        "known_nonpartial_estimate": true,
+        "obligation": "jack-intertwiner",
+        "provider": "OpenAI",
+        "report_authority": "Advisory API artifact; completed status does not certify scientific claims. Parent fully read every response.",
+        "response": {
+          "bytes": 9806,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-intertwiner/response.md",
+          "sha256": "4bd24db5ce72a14229afa20ac9550e8b59423f82209e2e78a3457d03ac88b5a1"
+        },
+        "response_characters": 9778,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1729,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-intertwiner/result.json",
+          "sha256": "fa25974f4d045d05f21c6ace52ae8d4bd71318a0a8f83edb25ade4b60152c61f"
+        },
+        "session_id": 56685,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 27991,
+          "input_tokens_details": {
+            "cache_write_tokens": 27988,
+            "cached_tokens": 0
+          },
+          "output_tokens": 31721,
+          "output_tokens_details": {
+            "reasoning_tokens": 28172
+          },
+          "total_tokens": 59712
+        },
+        "usage_cost_estimate_usd": "1.865960",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-overlap-clock",
+        "completed_review": true,
+        "known_nonpartial_estimate": true,
+        "obligation": "jack-overlap-clock",
+        "provider": "Anthropic",
+        "report_authority": "Advisory API artifact; completed status does not certify scientific claims. Parent fully read every response.",
+        "response": {
+          "bytes": 11810,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-overlap-clock/response.md",
+          "sha256": "d1c4a77fe8c395994bea483d07659aa7768dddea2f9cf76af8d2b1c0ceaa5536"
+        },
+        "response_characters": 10957,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1606,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-overlap-clock/result.json",
+          "sha256": "b8653ae1f590fe746dea28fed21fd32144e74722d9b1ba94b84a1edbabe8dd66"
+        },
+        "session_id": 50071,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 34974,
+          "output_tokens": 49115
+        },
+        "usage_cost_estimate_usd": "1.122196",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-native-measurements",
+        "completed_review": true,
+        "known_nonpartial_estimate": true,
+        "obligation": "jack-native-measurements",
+        "provider": "OpenAI",
+        "report_authority": "Advisory API artifact; completed status does not certify scientific claims. Parent fully read every response.",
+        "response": {
+          "bytes": 23930,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-native-measurements/response.md",
+          "sha256": "f2f67fdbe0388ab8d6ee6d6e87c7a387c4edb3a9cb76030446382ec9988bd045"
+        },
+        "response_characters": 23891,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1565,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-native-measurements/result.json",
+          "sha256": "07a51bbf23b4a9cb73654c95252bf2ffb6d5af6c1638dfa2c7d81f7f2b4b9985"
+        },
+        "session_id": 97949,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 24025,
+          "input_tokens_details": {
+            "cache_write_tokens": 24022,
+            "cached_tokens": 0
+          },
+          "output_tokens": 45624,
+          "output_tokens_details": {
+            "reasoning_tokens": 38847
+          },
+          "total_tokens": 69649
+        },
+        "usage_cost_estimate_usd": "2.521450",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-classical-sampler",
+        "completed_review": true,
+        "known_nonpartial_estimate": true,
+        "obligation": "jack-classical-sampler",
+        "provider": "Anthropic",
+        "report_authority": "Advisory API artifact; completed status does not certify scientific claims. Parent fully read every response.",
+        "response": {
+          "bytes": 9992,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-classical-sampler/response.md",
+          "sha256": "3d52774f29c60e1d89aa97c55f7322369e92fec67c87d6eac849b2e1dfdd90e2"
+        },
+        "response_characters": 9410,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1608,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-classical-sampler/result.json",
+          "sha256": "b7afa7252bdc2d1564435eeaaab1d00d3a48908da2e358784aa68173a3e226d9"
+        },
+        "session_id": 85792,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 34968,
+          "output_tokens": 46227
+        },
+        "usage_cost_estimate_usd": "1.064412",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coherent-decoder",
+        "completed_review": true,
+        "known_nonpartial_estimate": true,
+        "obligation": "jack-coherent-decoder",
+        "provider": "OpenAI",
+        "report_authority": "Advisory API artifact; completed status does not certify scientific claims. Parent fully read every response.",
+        "response": {
+          "bytes": 22968,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coherent-decoder/response.md",
+          "sha256": "5ddede7e27829ae46823fa9d2c18ad88bfcd613986eabd5b1c77f7f6dc884863"
+        },
+        "response_characters": 22932,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1751,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-jack-coherent-decoder/result.json",
+          "sha256": "42135cbd70431afdb89a4d9bf04739be1a9627edd081161734e7a582fcf6b848"
+        },
+        "session_id": 75532,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 24790,
+          "input_tokens_details": {
+            "cache_write_tokens": 24787,
+            "cached_tokens": 0
+          },
+          "output_tokens": 41306,
+          "output_tokens_details": {
+            "reasoning_tokens": 34704
+          },
+          "total_tokens": 66096
+        },
+        "usage_cost_estimate_usd": "2.313200",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-branching-transform",
+        "completed_review": true,
+        "known_nonpartial_estimate": true,
+        "obligation": "jack-branching-transform",
+        "provider": "Anthropic",
+        "report_authority": "Advisory API artifact; completed status does not certify scientific claims. Parent fully read every response.",
+        "response": {
+          "bytes": 13621,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-branching-transform/response.md",
+          "sha256": "c8a2af36d1e3603f5c3f25b5f2f6a04ac461c3d2242f500e1b974a4d1effb9ef"
+        },
+        "response_characters": 12816,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 2091,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-jack-branching-transform/result.json",
+          "sha256": "7ce4dd93a724df59c161d8a3eeb29bdb5340aa1aa1d39b85e532f474205f265c"
+        },
+        "session_id": 16783,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 41318,
+          "output_tokens": 40216
+        },
+        "usage_cost_estimate_usd": "0.969592",
+        "usage_is_partial": false
+      }
+    ],
+    "known_nonpartial_usage_records": 6,
+    "status_counts": {
+      "completed": 6
+    },
+    "terminal_jobs": 6,
+    "truncated_empty_reports": 0,
+    "truncated_nonempty_reports": 0,
+    "unknown_total_bill_records": 0,
+    "usage_estimate_usd": "9.856810"
+  },
+  "local_request_ceiling_total_usd": "33.000000",
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 63,
+      "empty_response_count": 17,
+      "frozen_prior_estimate_usd": "132.868662",
+      "frozen_prior_known_terminal_records": 131,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_six_explicit_jobs": 140,
+      "jack_lax_round": {
+        "completed_nonempty_reports": 3,
+        "empty_refusal_reports": 0,
+        "jobs": 3,
+        "known_nonpartial_usage_records": 3,
+        "status_counts": {
+          "completed": 3
+        },
+        "terminal_jobs": 3,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 0,
+        "usage_estimate_usd": "3.156200"
+      },
+      "known_estimate_by_status_usd": {
+        "completed": "52.827588",
+        "empty_response": "3.767794",
+        "truncated": "79.429480"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "136.024862",
+      "known_terminal_nonpartial_usage_records": 134,
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_generation_failure_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.485230",
+          "failure_stage": "generation",
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "obligation": "quadratic-composition",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 48498,
+            "output_tokens": 5
+          },
+          "provider": "Anthropic",
+          "response_bytes": 7862,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.070644",
+          "failure_stage": "generation",
+          "failure_type": "ReadTimeout",
+          "no_retry": true,
+          "obligation": "unit-lattice-phase",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 17621,
+            "output_tokens": 8
+          },
+          "provider": "Anthropic",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ],
+      "status_counts_through_jack_lax": {
+        "completed": 63,
+        "dry_run": 1,
+        "empty_response": 17,
+        "failed": 5,
+        "truncated": 54
+      },
+      "terminal_results": 139,
+      "truncated_and_empty": 41,
+      "truncated_and_nonempty": 13,
+      "unknown_partial_failure_bill_count": 4
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 36,
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "72.741050",
+      "frozen_prior_known_terminal_records": 34,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_six_explicit_jobs": 37,
+      "jack_lax_round": {
+        "completed_nonempty_reports": 3,
+        "empty_refusal_reports": 0,
+        "jobs": 3,
+        "known_nonpartial_usage_records": 3,
+        "status_counts": {
+          "completed": 3
+        },
+        "terminal_jobs": 3,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 0,
+        "usage_estimate_usd": "6.700610"
+      },
+      "known_estimate_by_status_usd": {
+        "completed": "76.938150",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "79.441660",
+      "known_terminal_nonpartial_usage_records": 37,
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_generation_failure_totals_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_through_jack_lax": {
+        "completed": 36,
+        "incomplete": 1
+      },
+      "terminal_results": 37,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0,
+      "unknown_partial_failure_bill_count": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "report_note": "Every response fully parent read. Final independent branching proof explicitly confirmed stable and fully parent read/checked before checkpoint capture. This bookkeeping milestone makes no scientific conclusions or theorem promotion.",
+  "scope": "Frozen torus-completion prior plus exactly six terminal Jack-Lax jobs. All six completed/nonempty with final nonpartial usage. No other runs counted.",
+  "stable_branching_proof_instruction": {
+    "actual_physical_LF_count": 299,
+    "captured_at_utc": "2026-11-12T18:36:33.824622+00:00",
+    "line_count_note": "Stable file has299LF; recorded actual count without editing the source. Parent notified.",
+    "parent_confirmed_stable_and_fully_read": true,
+    "parent_descriptor_LF_count": 300,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-jack-branching-independent.md"
+  },
+  "unknown_billing_exclusions": [
+    {
+      "excluded_partial_runner_estimate_usd": "0.0276",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 6875,
+        "output_tokens": 5
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.00625",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 585,
+        "output_tokens": 8
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.485230",
+      "failure_stage": "generation",
+      "failure_type": "ReadError",
+      "no_retry": true,
+      "obligation": "quadratic-composition",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 48498,
+        "output_tokens": 5
+      },
+      "provider": "Anthropic",
+      "response_bytes": 7862,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.070644",
+      "failure_stage": "generation",
+      "failure_type": "ReadTimeout",
+      "no_retry": true,
+      "obligation": "unit-lattice-phase",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 17621,
+        "output_tokens": 8
+      },
+      "provider": "Anthropic",
+      "response_bytes": 0,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    }
+  ]
+}

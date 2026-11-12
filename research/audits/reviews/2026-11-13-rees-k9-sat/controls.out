@@ -1,0 +1,30 @@
+# Controls (2026-11-13). kissat 4.0.4, cadical 3.0.1. All runs nice -n 19.
+## positive controls (sat3.py + kissat, model decoded and verified by sat3.py --check)
+(41,4) K={0}: vars 4592 clauses 217173, SAT in 0.1 s, check True (model_41_4_0.txt.gz)
+(37,9) K=Z_9 (all classes): vars 35964 clauses 1143739, SAT 0.2 s, check True
+(37,9) K={0,3,6}: vars 35964 clauses 1791091, SAT 1 s, check True (model_37_9_036.txt.gz)
+## regression: sat3.py 37 9 0 regenerated, sha256 prefix c00a76cec23e16d2 (= 11-12 note item 8); sat3_sub.py with S = Z_9 writes the identical CNF (same sha)
+## small-instance scan sat3.py p k 0 + kissat (timeout 120 s; rc 10 SAT, 20 UNSAT, 124 timeout)
+7 3 K=0 rc=10 0s
+7 6 K=0 rc=20 0s
+13 3 K=0 rc=10 0s
+13 4 K=0 rc=10 0s
+13 6 K=0 rc=10 0s
+11 5 K=0 rc=10 1s
+19 3 K=0 rc=10 0s
+19 6 K=0 rc=20 35s
+19 9 K=0 rc=20 1s
+29 7 K=0 rc=124 120s
+31 5 K=0 rc=10 3s
+31 6 K=0 rc=124 120s
+
+## independent encoding indep_cnf.py (no gauge fixing) vs sat3.py at (7,6), kissat timeout 120 s each
+(7,6) K=0 indep(no gauge)=20 sat3=20
+(7,6) K=1 indep(no gauge)=20 sat3=20
+(7,6) K=0,1 indep(no gauge)=124 sat3=124
+(7,6) K=0,2 indep(no gauge)=124 sat3=20
+(7,6) K=0,3 indep(no gauge)=10 sat3=10
+(7,6) K=0,1,2 indep(no gauge)=10 sat3=10
+(7,6) K=0,1,2,3,4,5 indep(no gauge)=10 sat3=10
+
+(7,6) K=0,2 indep --gauge (independent code, same gauge) = 20 (UNSAT, 66 s): agrees with sat3

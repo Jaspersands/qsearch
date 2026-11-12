@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4424,
+      "path": "research/audits/api_inputs/2026-11-13-sparse-wave/contract.md",
+      "sha256": "0ad9462093e71f8f207f1af25fab68f2e8087fbb7cadc30d713206229a51e552",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 45220,
+      "path": "research/audits/api_inputs/2026-11-13-sparse-wave/primary.txt",
+      "sha256": "c796e9a92ead553a12e67b5c943291922c613e42f9576a0cd4ce1c94485e2bd3",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 14397,
+  "effort": "high",
+  "finished_at": "2026-11-12T21:35:42.628277+00:00",
+  "input_token_allowance": 14685,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.33874,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-sparse-wave/wave-lattice-shell.md",
+    "sha256": "75701964b82ef660086d9106ece5f54ea94cd333d4a3073882661dd15fb02ce9",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261112T212918.610716Z-362fd62c",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 14397,
+    "output_tokens": 38581
+  },
+  "usage_cost_estimate_usd": 0.829208
+}

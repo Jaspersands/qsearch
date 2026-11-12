@@ -1,0 +1,87 @@
+# Two branching circuits: proposed clean Jack transform
+
+2026-11-13, parent derivation; full circuit claim PENDING independent review.
+This is a constructive replacement for the coupon-collector label decoder,
+not a consequence inferred from fixed-label state preparation. Same native
+alpha3 degree-D Hall coefficient-state model as JACK_LAX_PREPARATION_CANDIDATE.
+
+## Algebra and overlaps already independently derived
+
+Write j_mu for normalized Jack and v_(lambda,s) for normalized Lax vector.
+The all-degree identity A psi=J, positive normalizations and AA†=3nI imply
+
+ V_(n-1) j_mu = sum_(r removable mu) sqrt(q_mu,r) v_(mu-r,r),
+ q_mu,r = tau_(mu-r,r) ||J_mu||²/[3n ||J_(mu-r)||²].
+
+All coefficients are POSITIVE. Up-corner tau>=3/[16(n-1)] for n>1;
+q>=1/n. Norms are actual integral-Jack hook products. All q and tau are
+computable rational numbers with polynomial bits from the explicit shapes.
+General alpha>0 algebra does NOT imply these integer-gap bounds for all
+binary-real alpha; alpha=3 remains fixed.
+
+## Quantum Fock branching B_n
+
+1. Apply the native isometry V=A†/sqrt(3n), implemented by removing mode k
+   with amplitude sqrt(k*m_k/n) and storing marker k-1.
+2. Coherently extract integer content c with phase estimation of L_(n-1).
+   Use modulus a power of2 exceeding the full spectral width, retain signed
+   c, and erase phase-estimation workspace. Charge sparse simulation error.
+3. Controlled on c, apply the positive polar map of P0 P_c, where P0 is
+   marker-zero projection and P_c is the content projector. Globally its
+   nonzero singular pairs are (v_(lambda,s),j_lambda), c(s)=c, and singular
+   values sqrt(tau_(lambda,s)). Different lambda are orthogonal; no supplied
+   Jack projector or recursively prepared inverse is present.
+
+The ACTUAL Gilyen--Su--Low--Wiebe1806.01838v1 Theorem26, read locally, supplies
+positive singular-vector transformation with uniform error above a threshold,
+O(delta^-1 log(1/error)) projector calls and one ancilla. Need convert its
+projected operator error to clean isometry error (square-root loss harmless
+if internal tolerance squared). Phase compilation and native simulation must
+be polynomial BIT, not only query complexity.
+
+The intended clean isometry is
+
+ B_n: j_mu |0> -> sum_r sqrt(q_mu,r) j_(mu-r) |c(r)>.
+
+Compose n=D down to1, retaining each content record. This yields vacuum
+times a coherent distribution over removal paths. Each path's amplitude is
+the positive square root of its product of q weights. Different terminal
+shapes have disjoint valid content paths: reverse the path from the empty
+partition; at each step a content identifies a UNIQUE addable corner.
+
+## Classical-label branching C_n, implemented reversibly
+
+On a shape register mu, enumerate its removable corners and calculate q.
+Prepare sum_r sqrt(q_mu,r)|c(r)> coherently, then update the shape to mu-r.
+The update is reversible on valid pairs: from (mu-r,c(r)), the unique
+addable corner with content c(r) reconstructs mu. No extra copy of mu or
+oracle for Jack coefficients is retained. All corner/weight arithmetic and
+state preparation involve polynomially many polynomial-bit quantities.
+
+Thus the intended clean isometry on LABELS is
+
+ C_n: |mu>|0> -> sum_r sqrt(q_mu,r)|mu-r>|c(r)>.
+
+Compose C_D,...,C_1 to map |mu> to the SAME positive removal-path state,
+with empty shape register. Recode empty shape as Fock vacuum by a fixed
+known unitary, then apply B_1†,...,B_D†. This should produce j_mu and erase
+ALL paths, uniformly on arbitrary superpositions of mu. There is no
+postselection, coupon collector, recursively prepared state inverse or
+unstated label-erasure operation. The inverses are of explicit native
+branching circuits with polynomial total descriptions.
+
+## Decisive obligations
+
+Verify global singular pairs despite content degeneracy; exact relative
+phase agreement between B and C; clean native isometry extensions; coherent
+shape update injectivity; uniform operator-norm error without a p(D) factor;
+and full finite gate/bit precision including source phase compilation.
+An invalid pair or input outside the valid subspace needs a unitary extension,
+not a claimed inverse of a rectangular matrix. No circuit implementation is
+requested until this complete argument survives review and classical checks.
+
+If sound this is a polynomial change of basis at fixed alpha3, not a proof
+of classical hardness, novelty, useful computational separation or a physical
+finite-variable Calogero--Sutherland position transform. The strongest current
+classical sampler costs poly(D)*#{nu subset mu}^O(1), polynomial for bounded
+Durfee size; general sampling remains unmatched, not hard.

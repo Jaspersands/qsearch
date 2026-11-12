@@ -1,0 +1,86 @@
+Been tried? succinct periodic conductivity multilevel heat Neumann variance
+
+Killed before
+  1. negative   NEG-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE, PO-MEASUREMENT]
+     research/registry/negative_results.json:71206
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE.
+     Why not: Falsified or refined by exact theorem evaluation.
+  2. negative   NEG-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY  [retained · CODE-COSET-COLLECTIVE, EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY, PO-MEASUREMENT]
+     research/registry/negative_results.json:71184
+     Claim: Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY.
+     Why not: Falsified or refined by exact theorem evaluation.
+  3. negative   DCP-AFFINE-MARKED-PAIRING-ENUMERATION-COST  [retained · DHS-GOWERS-SIEVE]
+     research/registry/negative_results.json:54959
+     Claim: Polynomial source coverage and a succinct affine seed make the implemented isolated-edge pairing finder polynomial time.
+     Why not: The clean streamed XOR evaluator visits every radius-r support twice. At the first radius with D=sum C(m,w)>=2^n, six XOR calls cost 12D>=12*2^n predicate evaluations, before arithmetic costs.
+  4. negative   NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER  [retained · SL2R-HSP, NONCOMPACT-LIE-GROUP, HARISH-CHANDRA-CHARACTERS, CONTINUOUS-PLANCHEREL-MEASURE]
+     research/registry/negative_results.json:72742
+     Claim: The Hidden Subgroup Problem over the non-compact Lie group SL(2, R) with respect to discrete Fuchsian subgroups can be solved in polynomial time by quantum Fourier sampling.
+     Why not: In SL(2, R), spherical principal series representations are infinite-dimensional on L^2(R), and Harish-Chandra characters are class functions invariant under conjugation. By the Selberg trace formula, weak Fourier sampling on the continuous unitary spectrum provides identically 0.000 bits of mutual 
+  5. negative   NEG-COSET-TYPICAL-FINITE-NONSCALAR-NOT-GAP  [retained · CODE-COSET-COLLECTIVE, EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT]
+     research/registry/negative_results.json:64508
+     Claim: Finite nonzero multiplicity-space variance of a bounded-support orbit average establishes an efficient typical-irrep resolving measurement.
+     Why not: Variance proves only non-scalarity. It does not prove simple spectrum, a minimum inverse-polynomial gap, a uniform circuit, or a decoder.
+
+Dequantization checks
+  1. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8807
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  2. dequant    DEQ-RESULT-EXP-DHS-DCP-IID-USTATISTIC-VARIANCE-DCP-USTATISTIC-VARIANCE-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:13152
+     Claim: RESULT-EXP-DHS-DCP-IID-USTATISTIC-VARIANCE-DCP-USTATISTIC-VARIANCE: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  3. dequant    DEQ-DHS-GOWERS-SIEVE-DCP-AFFINE-MARKED-ENUMERATION-COST  [high]
+     research/registry/dequantization_checks.json:2328
+     Claim: Polynomial source coverage and a succinct affine seed make the implemented isolated-edge pairing finder polynomial time.
+     Why not: Replace support enumeration with an actual structured reversible unique-neighbor solver. Polynomial workspace, a generic square-root search estimate, and finite coverage do not establish a speedup or a general search lower bound. This is an access or symmetry boundary, not classical dequantization.
+  4. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY-LATEST-FALSIFIERS  [medium]
+     research/registry/dequantization_checks.json:8796
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY-LATEST: Experiment result supports the candidate without triggering kill criteria.
+     Why not: Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.
+  5. dequant    DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-ORBIT-VARIANCE-CODE-FAMILY-SEARCH-NEGATIVE-FAMILIES  [high]
+     research/registry/dequantization_checks.json:3263
+     Claim: RESULT-EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-ORBIT-VARIANCE-CODE-FAMILY-SEARCH: Audited phase families remain viable positive evidence.
+     Why not: Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.
+
+Notes and handoff
+  1. handoff    2026-11-12 Native Conductivity Endpoint and Classical Heat-Kernel Attack  [journal]
+     research/AGENT_HANDOFF.md:777
+     PROVISIONAL independent direction: PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md.
+  2. note       Native periodic conductivity: endpoint admission › Strongest classical attacks and decisive falsifiers  [unlabelled]
+     research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md:86
+     Its assumptions and infinite-volume/ensemble target do NOT automatically cover an arbitrary succinct periodic coefficient circuit.
+  3. note       Native periodic conductivity: endpoint admission › Classical review, paid-report dispositions and decision  [unlabelled]
+     research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md:359
+     Frozen control: audits/controls/periodic_conductivity/control.py and result.json, ONE Sage run, exactly six L4/rho2 cases.
+  4. note       Native periodic conductivity: endpoint admission › Classical review, paid-report dispositions and decision  [unlabelled]
+     research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md:311
+     audits/reviews/2026-11-12-conductivity-heat.md is a completed independent proof, fully parent-read.
+  5. handoff    2026-11-12 Periodic Conductivity Quantum Endpoint and Fixed-Precision Classical Match  [journal]
+     research/AGENT_HANDOFF.md:708
+     CLOSED written algorithms: PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md.
+
+Code and experiments
+  1. theorem    Full-target feedback, multilevel beam search, J16 scaling, and 924-bit cosine attacks.  [code]
+     theorems/integer_character_feedback.py:1
+     Full-target feedback, multilevel beam search, J16 scaling, and 924-bit cosine attacks.
+  2. theorem    Actual paired-word heat bath, ground-space decision and local classical test.  [code]
+     theorems/native_word_local_decision.py:1
+     Actual paired-word heat bath, ground-space decision and local classical test.
+  3. theorem    Interval certificate for a fixed-state coordinate heat-bath mixing obstruction.  [code]
+     theorems/balanced_mpi_heatbath_trap.py:1
+     Interval certificate for a fixed-state coordinate heat-bath mixing obstruction.
+  4. theorem    Costed native block heat-bath sampler and exact local-move falsifiers.  [code]
+     theorems/ternary_native_block_walk.py:1
+     Costed native block heat-bath sampler and exact local-move falsifiers.
+  5. result     EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE periodic-counterfamily-falsified-by-uniform-rank-collap  [periodic-counterfamily-falsified-by-uniform-rank-collapse]
+     research/registry/experiment_results.json:9623
+     exp code self dual wreath periodic frame rank collapse.
+
+Literature
+  1. literature Polynomial-Time Quantum Algorithms for Pell's Equation and the Principal Ideal Problem  [seed · number-theory, principal-ideal, infrastructure, periodicity]
+     research/literature_records.json
+     Polynomial-Time Quantum Algorithms for Pell's Equation and the Principal Ideal Problem A non-Shor number-theoretic breakthrough template based on hidden periodic structure.
+
+Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.

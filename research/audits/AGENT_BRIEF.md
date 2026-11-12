@@ -1,18 +1,18 @@
 # Agent brief
 
-Generated 2026-11-11 by `python tools/brief/build_brief.py`; covers the 7 days since 2026-11-04 (00:00 local time, UTC+11:00). Do not edit by hand.
+Generated 2026-11-12 by `python tools/brief/build_brief.py`; covers the 7 days since 2026-11-05 (00:00 local time, UTC+11:00). Do not edit by hand.
 Read it before choosing a direction. "Not available" means the source could not be read, not that there is nothing to report.
 
 ## Registry
 
-969 negative records in the working copy; 969 at commit df47b77f (2026-10-30), the registry's last change before 2026-11-04.
+969 negative records in the working copy; 969 at commit df47b77f (2026-10-30), the registry's last change before 2026-11-05.
 
 Added (0): none.
 Removed (0): none.
 
 ## arXiv watch
 
-Possible kills and scoops with no person's verdict yet: 4. First seen since 2026-11-04 and already reviewed: 0. Labels are triage; verdicts are judgement.
+Possible kills and scoops with no person's verdict yet: 4. First seen since 2026-11-05 and already reviewed: 0. Labels are triage; verdicts are judgement.
 Open backlog: 0 possible kills; 4 possible scoops (oldest first within each label).
 Watch last saved a run on 2026-11-02.
 - Track algorithm_discovery last covered through 2026-11-02.
@@ -30,7 +30,7 @@ Watch last saved a run on 2026-11-02.
 - Track representation last covered through 2026-11-02.
 - Track state_discrimination last covered through 2026-11-02.
 The watch has checkpoints older than this brief's window; refresh the watch before treating it as current.
-Verdicts recorded since 2026-11-04: 0.
+Verdicts recorded since 2026-11-05: 0.
 
 Open actions from verdicts (6; once one is done, run `python tools/arxiv_watch/watch.py --action-done ID`):
 
@@ -91,14 +91,14 @@ No problems from the static checks of `python tools/preflight/preflight.py`.
 
 ## Inertia
 
-From `site/data/cockpit.json`, built 2026-11-11 (rebuild: `python tools/cockpit/build_cockpit.py`). A direction is flagged after 8 handoff sections with no registry gain in it.
+From `site/data/cockpit.json`, built 2026-11-12 (rebuild: `python tools/cockpit/build_cockpit.py`). A direction is flagged after 8 handoff sections with no registry gain in it.
 
-- OPI / prime character (`opi`): 97 sections since the registry last gained a record here (never).
+- OPI / prime character (`opi`): 100 sections since the registry last gained a record here (never).
 - BPQM / polar (`bpqm`): 31 sections since the registry last gained a record here (never).
-- DCP / dihedral coset (`dcp`): 52 sections since the registry last gained a record here (2026-10-12).
+- DCP / dihedral coset (`dcp`): 55 sections since the registry last gained a record here (2026-10-12).
 - Carrier / PGM (`carrier_pgm`): 35 sections since the registry last gained a record here (2026-10-12).
-- Ternary / lattice (`lattice`): 115 sections since the registry last gained a record here (2026-10-12).
-- Code equivalence (`code_equivalence`): 10 sections since the registry last gained a record here (2026-10-11).
+- Ternary / lattice (`lattice`): 119 sections since the registry last gained a record here (2026-10-12).
+- Code equivalence (`code_equivalence`): 14 sections since the registry last gained a record here (2026-10-11).
 
 ## Possible duplicates
 

@@ -1,0 +1,520 @@
+{
+  "captured_at_utc": "2026-11-12T15:55:32.377793+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "partial_estimate_equals_total_bill": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "control_note": "Existing script/result hashes only, no control execution or tests.",
+  "dispatch": {
+    "bytes": 5804,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/dispatch.json",
+    "sha256": "5933ee0291b5dc1305fde128541333245f8f55d6b346b300a84c9aebe3480bd1"
+  },
+  "dispatch_mutation_scope": "No manifest change; all terminal statuses and partial-failure billing classification captured in usage.json.",
+  "exclusions": [
+    {
+      "reason": "Parent actively updating; not inspected or hashed in this milestone.",
+      "scope": "STATE/HANDOFF/workflow and active new research notes/reviews/requests"
+    },
+    {
+      "reason": "Two inherited ReadTimeout bills and new generation ReadError total remain UNKNOWN. All partial estimates excluded from known-final provider/round/cumulative totals.",
+      "scope": "Three UNKNOWN partial-failure total bills",
+      "unknown_bill_records": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.485230",
+          "failure_stage": "generation",
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "obligation": "quadratic-composition",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 48498,
+            "output_tokens": 5
+          },
+          "provider": "Anthropic",
+          "response_bytes": 7862,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ]
+    }
+  ],
+  "existing_control_artifacts": [
+    {
+      "bytes": 1375,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-quadratic-norm-squareclasses-control.sage",
+      "sha256": "b9cd999df5aa16a07ef701b849710a6320e410e63345b4cff15379c2705bf34b"
+    },
+    {
+      "bytes": 610,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-quadratic-norm-squareclasses-control.json",
+      "sha256": "46d30744662c83825d2d52f80c9cd4db2c1d1baa50dbbf4bb9eddb35320c39f4"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 8213,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-stevenhagen-page-transcription.md",
+      "sha256": "3e440fbeb1793df16f32922e426071380f66be59b03a222a8c0c7a25e5902dc2"
+    },
+    {
+      "bytes": 66070,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-stevenhagen-primary.md",
+      "sha256": "746970f00ff790aa83fbdd80c4a9b0dd161992e69a3c625b1051d539c3def9f1"
+    },
+    {
+      "bytes": 2754,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/contract.md",
+      "sha256": "8baaea79f6b4703131869dfa59045636bd8f91379e317e419010b3157df2601e"
+    },
+    {
+      "bytes": 5804,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/dispatch.json",
+      "sha256": "5933ee0291b5dc1305fde128541333245f8f55d6b346b300a84c9aebe3480bd1"
+    },
+    {
+      "bytes": 1384,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/general-two-coverage.md",
+      "sha256": "5040ca3fda0b13e0198b3549bb53bb06974ed29882fb2e9d3dfdebd1ce93d950"
+    },
+    {
+      "bytes": 1134,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/quadratic-classical.md",
+      "sha256": "49395de116bb2506d23e889cebd6e23ca296b6c6e8b2ca345555bcc1ddd999b3"
+    },
+    {
+      "bytes": 1089,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/quadratic-composition.md",
+      "sha256": "007d2df5dbcddc623963eedbe0c4823fe41028a81fdc6b9026d3dd21bbf504fd"
+    },
+    {
+      "bytes": 971,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/quadratic-source.md",
+      "sha256": "85ce1ced028b7026f958be89eac4c0d974999f5f1a4657c004044cfe9df6f9d9"
+    }
+  ],
+  "four_terminal_results_and_responses": [
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "quadratic-source",
+      "response": {
+        "bytes": 9374,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-source/response.md",
+        "sha256": "e8db7f6a08aad6dc095498514d7a5165db0ff8f1d0900a018e172c70a05591e5"
+      },
+      "response_characters": 9179,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1663,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-source/result.json",
+        "sha256": "0d6cda6bdae7a853216b85bea608ffd614847fc9df709da5e989cc5e5e14a0b7"
+      },
+      "session_id": 31367,
+      "status": "completed",
+      "usage_is_partial": false
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "quadratic-classical",
+      "response": {
+        "bytes": 21548,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/response.md",
+        "sha256": "d5706f2a8e6adc8a5cca8a4027078a5dce505ec1f93b94ef7c5c167bc633c2ed"
+      },
+      "response_characters": 21506,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1986,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/result.json",
+        "sha256": "e642c77d08313dd166c18111526497bb47517e985280582f3a13f3763fca0846"
+      },
+      "session_id": 29778,
+      "status": "completed",
+      "usage_is_partial": false
+    },
+    {
+      "known_nonpartial_estimate": false,
+      "obligation": "quadratic-composition",
+      "response": {
+        "bytes": 7862,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/response.md",
+        "sha256": "ec4d32c264159318f4c9250cf7642b9029ad5a50a7c46c7ef4df2c6d26cc110c"
+      },
+      "response_characters": 7619,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 2517,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+        "sha256": "8275c7995650ff836d61bf1726a3039544179db89ec572c2174318080fee651a"
+      },
+      "session_id": 35025,
+      "status": "failed",
+      "usage_is_partial": true
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "general-two-coverage",
+      "response": {
+        "bytes": 13135,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/response.md",
+        "sha256": "fcad836da812f24fd47d0c0836c35fdb109c57aba9dbf38f2e07d2fa4a0bf8ee"
+      },
+      "response_characters": 13118,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1935,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/result.json",
+        "sha256": "6af38e61d735faa4526a6373e11aad97bedbf31a7570576ffa41eba55e3de489"
+      },
+      "session_id": 51481,
+      "status": "completed",
+      "usage_is_partial": false
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 30140,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/dyadic_composition_round/checkpoint.json",
+    "sha256": "9ad6734dca5a0357f35e026543191e83626ebe19adb7df3eaae8a9f27a4cd6fc"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 20169,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/dyadic_composition_round/usage.json",
+    "sha256": "a8c9ed20751ca5037df5ecf5faa8f5b7a7fd77c0cc8149eb5afa57a5240f2be3"
+  },
+  "not_frozen": "Changing STATE/HANDOFF/workflow and active new work; only the named stable quadratic note, proofs, sources, packets, page images and control are frozen.",
+  "primary_source_artifacts": [
+    {
+      "bytes": 3151294,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/quadratic_two_class/bosma_stevenhagen.pdf",
+      "sha256": "6acb1b1e09e84e20e3a09f265e9b4fa3e2cc9c19d749055fb824eef44bb95231"
+    },
+    {
+      "bytes": 65818,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/quadratic_two_class/bosma_stevenhagen.txt",
+      "sha256": "e69a5f8bd3cfd8c6b321c3935d30e4a2b133ca6412f79b7457a1c8b96bc90826"
+    },
+    {
+      "bytes": 154,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/quadratic_two_class/source.json",
+      "sha256": "e973ccd6c0270991119f3dfca1cf2eec802184544e759730c1ec88fa2d71b424"
+    },
+    {
+      "bytes": 312508,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/quadratic_norm/cremona_rusin.pdf",
+      "sha256": "4c8fc9d88461a4c4090cd5911012eb27112d0dae3c56bf17b6d78e9dec37871f"
+    },
+    {
+      "bytes": 143,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/quadratic_norm/cremona_rusin.source.json",
+      "sha256": "d6199b02d6c5b5dd102487b6ff3f26e2c0b0ce37fef42708607a8b33b4412db1"
+    },
+    {
+      "bytes": 197835,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/quadratic_norm/cremona_rusin.txt",
+      "sha256": "c4c5d5399e09b2209882c9cc4a3ee29f121e3546cf7aa479c7d0ba3162c74a4a"
+    },
+    {
+      "bytes": 69671,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/quadratic_norm/cremona_rusin_ocr.txt",
+      "sha256": "7561c01ef72009404b4d424a643bf6bb6a15121ecc6d648d49886498a407d9c3"
+    }
+  ],
+  "prior_hash_policy": "Frozen prior usage/checkpoint remain byte-identical; earlier UNKNOWN counts remain historical snapshots. New UNKNOWN bill is appended here without old checkpoint repinning or artifact rescans.",
+  "review_artifacts": [
+    {
+      "bytes": 11434,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-quadratic-norm-squareclasses.md",
+      "sha256": "7968bfe41e7bca50013b5e13fa5006b2c45d9e9e93f2ac3c57e6bfc32b1b9825"
+    },
+    {
+      "bytes": 11882,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-quadratic-conic-backend.md",
+      "sha256": "d80ad3399508b6f7751de22f754daa44770378ba3005d4a4e2d92cd6c0278df4"
+    }
+  ],
+  "scope": "Mechanical usage and stable artifact snapshot only; no mathematical certification.",
+  "source_page_images_and_locators": [
+    {
+      "bytes": 4159,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/page-locators.json",
+      "sha256": "080589af676d52eabf7f3f5b56bee21d570a1f0e884f7a62ede698f1ca202d39"
+    },
+    {
+      "bytes": 322487,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-010-printed-292.png",
+      "sha256": "b01817472c06a8e586f772169cd6070d82b6bd203bea6badd141fe03f7bdb59e"
+    },
+    {
+      "bytes": 323214,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-011-printed-293.png",
+      "sha256": "9397107a9b55592c1e111e8741eeeb49ffbdfdd9df699b9b6c26f9646a115c6a"
+    },
+    {
+      "bytes": 339200,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-012-printed-294.png",
+      "sha256": "e1237dfee4fde87d9e43330121033f3d4b2ae22ea8b3fb921f1af92b11289355"
+    },
+    {
+      "bytes": 362916,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-013-printed-295.png",
+      "sha256": "6464e8119398c7f59a3c4e64d88a4c2056b33280293e2c64ab7071b092074df4"
+    },
+    {
+      "bytes": 390633,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-014-printed-296.png",
+      "sha256": "effee97b0cd7f7bd4d3a2070b98e99f432559d311d4dd18524e7d1e1a3c41ee3"
+    },
+    {
+      "bytes": 257432,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-015-printed-297.png",
+      "sha256": "d7fcb66e07a6d4ddb21e2404f4053837facd22fa0c2ca9657ae60bb6acff8328"
+    },
+    {
+      "bytes": 222320,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-016-printed-298.png",
+      "sha256": "eb9cc2957080074bd99543d7534cbb04fd93b86deaa4fd5febd1d8b6ff852fcc"
+    },
+    {
+      "bytes": 197410,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-017-printed-299.png",
+      "sha256": "75ab5803203bf3491452c684ec1cbfc56585ac9a286b89b8cf34691d57c5f5fe"
+    },
+    {
+      "bytes": 270444,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-026-printed-308.png",
+      "sha256": "fe35effca08a7cebfdd587b4d87d418b9bf70299aa62b02417bcf76a6e76545a"
+    },
+    {
+      "bytes": 311123,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-027-printed-309.png",
+      "sha256": "1d63b53368dedd1e2cc127b5c433f797d4230432422c0aa7574cfd8796b9fdb4"
+    },
+    {
+      "bytes": 373852,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-028-printed-310.png",
+      "sha256": "287cbe00e903c1756aab08878e9c2af937c8130dd725399cde1daa40f119fae7"
+    },
+    {
+      "bytes": 299128,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-selmer-two-primary/bosma-page-images/pdf-page-029-printed-311.png",
+      "sha256": "b3051910038b4fb9812ec0e3b256e55a842592bebdac9946b5dc3e99aa631c23"
+    }
+  ],
+  "stable_candidate_artifacts": [
+    {
+      "bytes": 5264,
+      "path": "/Users/jaspersands/Developer/qsearch/research/QUADRATIC_NATIVE_SQUARECLASSES.md",
+      "sha256": "6ace4a27fa4dd674a224e25e10c64e28e4810e43a4a7da44c59cd641ea38c019"
+    }
+  ],
+  "status": "TERMINAL_SELMER_TWO_PRIMARY_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 2754,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-source/context/000.txt",
+      "sha256": "8baaea79f6b4703131869dfa59045636bd8f91379e317e419010b3157df2601e"
+    },
+    {
+      "bytes": 66070,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-source/context/001.txt",
+      "sha256": "746970f00ff790aa83fbdd80c4a9b0dd161992e69a3c625b1051d539c3def9f1"
+    },
+    {
+      "bytes": 971,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-source/prompt.txt",
+      "sha256": "85ce1ced028b7026f958be89eac4c0d974999f5f1a4657c004044cfe9df6f9d9"
+    },
+    {
+      "bytes": 73094,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-source/request.json",
+      "sha256": "80adab42bdd97f9de1b6089240f1b517a7234fc00a78d68e64464967b0e2f32c"
+    },
+    {
+      "bytes": 9374,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-source/response.md",
+      "sha256": "e8db7f6a08aad6dc095498514d7a5165db0ff8f1d0900a018e172c70a05591e5"
+    },
+    {
+      "bytes": 1663,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-source/result.json",
+      "sha256": "0d6cda6bdae7a853216b85bea608ffd614847fc9df709da5e989cc5e5e14a0b7"
+    },
+    {
+      "bytes": 1134,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/context-00.txt",
+      "sha256": "49395de116bb2506d23e889cebd6e23ca296b6c6e8b2ca345555bcc1ddd999b3"
+    },
+    {
+      "bytes": 2754,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/context-01.txt",
+      "sha256": "8baaea79f6b4703131869dfa59045636bd8f91379e317e419010b3157df2601e"
+    },
+    {
+      "bytes": 66070,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/context-02.txt",
+      "sha256": "746970f00ff790aa83fbdd80c4a9b0dd161992e69a3c625b1051d539c3def9f1"
+    },
+    {
+      "bytes": 8133,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/context-03.txt",
+      "sha256": "007e71e608eca18fb6a2b7f458234457cca61179704a4f3e716e3f79da4d9495"
+    },
+    {
+      "bytes": 16405,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/context-04.txt",
+      "sha256": "963ec3b73a5405e75d5bbda5afb093e3cfa47204defb27782c695b12716c1c8b"
+    },
+    {
+      "bytes": 629816,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/provider-response.json",
+      "sha256": "03aad2a56c5322173d3d446b389f1ae86d95541d08bf86e543661557d35ba9a9"
+    },
+    {
+      "bytes": 98270,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/request.json",
+      "sha256": "1af9e47d931222b365db33f0c2fe39f2469a9c5ef8c12029b0b7695af97b2580"
+    },
+    {
+      "bytes": 21548,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/response.md",
+      "sha256": "d5706f2a8e6adc8a5cca8a4027078a5dce505ec1f93b94ef7c5c167bc633c2ed"
+    },
+    {
+      "bytes": 1986,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-quadratic-classical/result.json",
+      "sha256": "e642c77d08313dd166c18111526497bb47517e985280582f3a13f3763fca0846"
+    },
+    {
+      "bytes": 2754,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/context/000.txt",
+      "sha256": "8baaea79f6b4703131869dfa59045636bd8f91379e317e419010b3157df2601e"
+    },
+    {
+      "bytes": 66070,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/context/001.txt",
+      "sha256": "746970f00ff790aa83fbdd80c4a9b0dd161992e69a3c625b1051d539c3def9f1"
+    },
+    {
+      "bytes": 23019,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/context/002.txt",
+      "sha256": "2f90ddebda4953274fc8ac4d0dcf2b6b2127d368de6726e25ed9c545cd9dd7bf"
+    },
+    {
+      "bytes": 16405,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/context/003.txt",
+      "sha256": "963ec3b73a5405e75d5bbda5afb093e3cfa47204defb27782c695b12716c1c8b"
+    },
+    {
+      "bytes": 21640,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/context/004.txt",
+      "sha256": "05abcda9dba13f9a49dc39a702690d28b22f6d249958684ec0dc80037c2e24f6"
+    },
+    {
+      "bytes": 1089,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/prompt.txt",
+      "sha256": "007d2df5dbcddc623963eedbe0c4823fe41028a81fdc6b9026d3dd21bbf504fd"
+    },
+    {
+      "bytes": 137331,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/request.json",
+      "sha256": "4b7dba704e39e6e23baf86843b7545fe63360477f098422099b06beb069517d7"
+    },
+    {
+      "bytes": 7862,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/response.md",
+      "sha256": "ec4d32c264159318f4c9250cf7642b9029ad5a50a7c46c7ef4df2c6d26cc110c"
+    },
+    {
+      "bytes": 2517,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+      "sha256": "8275c7995650ff836d61bf1726a3039544179db89ec572c2174318080fee651a"
+    },
+    {
+      "bytes": 1384,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/context-00.txt",
+      "sha256": "5040ca3fda0b13e0198b3549bb53bb06974ed29882fb2e9d3dfdebd1ce93d950"
+    },
+    {
+      "bytes": 2754,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/context-01.txt",
+      "sha256": "8baaea79f6b4703131869dfa59045636bd8f91379e317e419010b3157df2601e"
+    },
+    {
+      "bytes": 16044,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/context-02.txt",
+      "sha256": "f11e4deaeb3b191a696baae87932546a37f6382abbba2658d9124250ec311ed3"
+    },
+    {
+      "bytes": 23019,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/context-03.txt",
+      "sha256": "2f90ddebda4953274fc8ac4d0dcf2b6b2127d368de6726e25ed9c545cd9dd7bf"
+    },
+    {
+      "bytes": 21640,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/context-04.txt",
+      "sha256": "05abcda9dba13f9a49dc39a702690d28b22f6d249958684ec0dc80037c2e24f6"
+    },
+    {
+      "bytes": 665440,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/provider-response.json",
+      "sha256": "bfbc02dac5da78b451f7af9276b8fd9d4a3836733c9f019b6f826bd21acaf456"
+    },
+    {
+      "bytes": 68234,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/request.json",
+      "sha256": "c4c23fceb3936a621766b58a1a4e7f9afefd2bfb579c0e66d68f6c97b148501c"
+    },
+    {
+      "bytes": 13135,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/response.md",
+      "sha256": "fcad836da812f24fd47d0c0836c35fdb109c57aba9dbf38f2e07d2fa4a0bf8ee"
+    },
+    {
+      "bytes": 1935,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-general-two-coverage/result.json",
+      "sha256": "6af38e61d735faa4526a6373e11aad97bedbf31a7570576ffa41eba55e3de489"
+    }
+  ],
+  "unique_hashed_artifact_count": 69,
+  "usage_snapshot": {
+    "bytes": 19136,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/selmer_two_primary_round/usage.json",
+    "sha256": "a2235eb7b07eb0bca5a0906d4a90923b3e74ce6278260d763035a75990fca623"
+  }
+}

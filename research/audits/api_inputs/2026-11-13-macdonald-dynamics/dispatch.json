@@ -1,0 +1,153 @@
+{
+  "date": "2026-11-13",
+  "selection": "Classical simulation of native integrable real-time occupation output",
+  "local_ceiling_usd": 22,
+  "note": "Four distinct obligations; ceilings not charges or balances; no retries.",
+  "jobs": [
+    {
+      "id": "dynamics-direct-sampler",
+      "provider": "openai",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-direct-sampler.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-macdonald-dynamics/contract.md",
+        "research/audits/api_inputs/2026-11-13-macdonald-dynamics/primary.txt",
+        "research/MACDONALD_CLASSICAL_BASELINES.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-dynamics-direct-sampler",
+      "status": "completed",
+      "session_id": 64233,
+      "billing_status": "usage_reported",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.306160",
+      "response_bytes": 16450,
+      "parent_fully_read": true,
+      "session_reaped": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T20:35:57.419666+00:00",
+        "finished_at": "2026-11-12T20:31:08.733208+00:00",
+        "usage": {
+          "input_tokens": 10966,
+          "input_tokens_details": {
+            "cache_write_tokens": 10963,
+            "cached_tokens": 0
+          },
+          "output_tokens": 43930,
+          "output_tokens_details": {
+            "reasoning_tokens": 38614
+          },
+          "total_tokens": 54896
+        },
+        "usage_is_partial": false,
+        "response_LF_count": 526,
+        "parent_checked_nonempty_report": true
+      }
+    },
+    {
+      "id": "dynamics-few-phonon",
+      "provider": "openai",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-few-phonon.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-macdonald-dynamics/contract.md",
+        "research/audits/api_inputs/2026-11-13-macdonald-dynamics/primary.txt",
+        "research/JACK_POSITIVE_CREATION_CLASSICAL_ATTACK.md",
+        "research/MACDONALD_CLASSICAL_BASELINES.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-dynamics-few-phonon",
+      "status": "completed",
+      "session_id": 96933,
+      "billing_status": "usage_reported",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "1.983790",
+      "response_bytes": 19431,
+      "parent_fully_read": true,
+      "session_reaped": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T20:35:57.419666+00:00",
+        "finished_at": "2026-11-12T20:27:33.223817+00:00",
+        "usage": {
+          "input_tokens": 14344,
+          "input_tokens_details": {
+            "cache_write_tokens": 14341,
+            "cached_tokens": 0
+          },
+          "output_tokens": 36807,
+          "output_tokens_details": {
+            "reasoning_tokens": 30816
+          },
+          "total_tokens": 51151
+        },
+        "usage_is_partial": false,
+        "response_LF_count": 573,
+        "parent_checked_nonempty_report": true
+      }
+    },
+    {
+      "id": "dynamics-doob-kernel",
+      "provider": "claude",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-doob-kernel.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-macdonald-dynamics/contract.md",
+        "research/audits/api_inputs/2026-11-13-macdonald-dynamics/primary.txt",
+        "research/MACDONALD_CLASSICAL_BASELINES.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dynamics-doob-kernel",
+      "status": "completed",
+      "session_id": 15957,
+      "billing_status": "usage_reported",
+      "stop_reason": "end_turn",
+      "usage_cost_estimate_usd": "1.029516",
+      "response_bytes": 13979,
+      "parent_fully_read": true,
+      "session_reaped": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T20:35:57.419666+00:00",
+        "finished_at": "2026-11-12T20:18:17.348480+00:00",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 16899,
+          "output_tokens": 48096
+        },
+        "usage_is_partial": false,
+        "response_LF_count": 190,
+        "parent_checked_nonempty_report": true
+      }
+    },
+    {
+      "id": "dynamics-colour-free",
+      "provider": "claude",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-colour-free.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-macdonald-dynamics/contract.md",
+        "research/audits/api_inputs/2026-11-13-macdonald-dynamics/primary.txt",
+        "research/MACDONALD_CLASSICAL_BASELINES.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-dynamics-colour-free",
+      "status": "truncated",
+      "session_id": 70806,
+      "billing_status": "usage_reported",
+      "stop_reason": "max_tokens",
+      "usage_cost_estimate_usd": "1.347712",
+      "response_bytes": 0,
+      "parent_fully_read": false,
+      "session_reaped": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T20:35:57.419666+00:00",
+        "finished_at": "2026-11-12T20:21:14.341581+00:00",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 16928,
+          "output_tokens": 64000
+        },
+        "usage_is_partial": false,
+        "response_LF_count": 0,
+        "parent_checked_nonempty_report": false
+      }
+    }
+  ]
+}

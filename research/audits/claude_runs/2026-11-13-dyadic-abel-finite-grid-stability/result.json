@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 3885,
+      "path": "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 8181,
+      "path": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/precision-primary-excerpts.md",
+      "sha256": "4328a2b94471748e30516e6353526ed12a542c8eb9f5d317476de6bbab1ed581",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 6974,
+  "effort": "high",
+  "failure_type": "EmptyResponse",
+  "finished_at": "2026-11-12T13:21:49.396791+00:00",
+  "input_token_allowance": 7230,
+  "max_budget_usd": 4.0,
+  "max_tokens": 64000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 3.2723,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/abel-grid-proposal.md",
+    "sha256": "55e38357c21e4faffb7c5f4b9909e5ad9d95914c938b01c226aac9e713ab20c1",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "constructive",
+  "run_id": "20261112T132129.100600Z-7a8ef548",
+  "status": "empty_response",
+  "stop_reason": "refusal",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 6974,
+    "output_tokens": 1282
+  },
+  "usage_cost_estimate_usd": 0.13384
+}

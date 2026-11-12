@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 5613,
+      "path": "research/CONDUCTIVITY_SEPARATED_SCALE_ATTACK.md",
+      "sha256": "2a9c529fa4383e22f8dd0f5e34b0274c230de8779c120adb3f2eddee6534ab2c",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 7673,
+      "path": "research/audits/reviews/2026-11-12-conductivity-separated-scales.md",
+      "sha256": "d982f96e9171da10fd408bc3f1e2dee52c61a927ce1274f447dcaca9e75bbe09",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 7889,
+  "effort": "high",
+  "finished_at": "2026-11-12T12:52:01.529583+00:00",
+  "input_token_allowance": 8145,
+  "max_budget_usd": 3.0,
+  "max_tokens": 32768,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 1.71985,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/full-energy-excursion.md",
+    "sha256": "bc5ad613b385469ed354f5837f691dc451bd02ec9314d78c7f801490937438bf",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "adversarial",
+  "run_id": "20261112T124701.312186Z-c7a0d068",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 7889,
+    "output_tokens": 25190
+  },
+  "usage_cost_estimate_usd": 1.33839
+}

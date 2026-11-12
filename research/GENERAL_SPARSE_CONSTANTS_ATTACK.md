@@ -1,5 +1,10 @@
 # General sparse function-field constants: classical attack
 
+Update13November: EVERY fixed extensiondegree delta now has a REVIEWED
+WRITTEN classical polynomial sparse-BIT FULL Rel algorithm, uniformly in
+growing variables/atoms/binaryexponents; see SPARSE_CYCLOTOMIC_FIXED_DEGREE.md.
+No integerfactoring needed. General growingdelta remains OPEN.
+
 7 November2026. Reviewed pass complete. General Alg recovery is established;
 the FULL classical Rel counterpart remains open. No new constant-map
 subsystem or nearby refinement is queued. Full native question: can a classical

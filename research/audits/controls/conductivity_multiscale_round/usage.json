@@ -1,0 +1,354 @@
+{
+  "captured_at_utc": "2026-11-12T13:01:36.775601+00:00",
+  "conductivity_multiscale_round": {
+    "by_provider_usd": {
+      "Anthropic": "3.793094",
+      "OpenAI": "3.606100"
+    },
+    "completed_nonempty_reports": 4,
+    "empty_refusal_reports": 0,
+    "jobs": 5,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-correlated-tree",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "correlated-tree",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 12732,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-correlated-tree/response.md",
+          "sha256": "16491bd32e843d735350a0542101bc16e6d1239c955d4ee18011b4763a8f35fd"
+        },
+        "response_characters": 12728,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1598,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-correlated-tree/result.json",
+          "sha256": "e1440459560914e6a9eb39a50c22af74d1e1b2924b428cb3b24a63780bbae717"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 10986,
+          "input_tokens_details": {
+            "cache_write_tokens": 10983,
+            "cached_tokens": 0
+          },
+          "output_tokens": 40843,
+          "output_tokens_details": {
+            "reasoning_tokens": 36908
+          },
+          "total_tokens": 51829
+        },
+        "usage_cost_estimate_usd": "2.152010"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-wavelet-compression",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "wavelet-compression",
+        "provider": "OpenAI",
+        "response": {
+          "bytes": 10659,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-wavelet-compression/response.md",
+          "sha256": "1e7686c1373ebf673f6a38028d08cafd212334af03480d026a00edf1cb14a1b3"
+        },
+        "response_characters": 10649,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1603,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-12-conductivity-wavelet-compression/result.json",
+          "sha256": "9dbeb7ddcd3fb57abd271c5948aa1db011cd4d7eec99cbe3c9c9e2635ecda3ad"
+        },
+        "status": "completed",
+        "stop_reason": null,
+        "terminal": true,
+        "usage": {
+          "input_tokens": 10984,
+          "input_tokens_details": {
+            "cache_write_tokens": 10981,
+            "cached_tokens": 0
+          },
+          "output_tokens": 26885,
+          "output_tokens_details": {
+            "reasoning_tokens": 23802
+          },
+          "total_tokens": 37869
+        },
+        "usage_cost_estimate_usd": "1.454090"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-variational-resolvent",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "variational-resolvent",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 8934,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-variational-resolvent/response.md",
+          "sha256": "7f8c4b63f0b7f58f1d928ec7b142a6f487f095a4710b6bababd37331a7d1998e"
+        },
+        "response_characters": 8434,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1652,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-variational-resolvent/result.json",
+          "sha256": "eeafc9e447e3abf245e3d152cfadb0446e2f5b7ab5c78bd3393ded2797678278"
+        },
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 17256,
+          "output_tokens": 31140
+        },
+        "usage_cost_estimate_usd": "1.729560"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-cross-scale-falsifier",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "obligation": "cross-scale-falsifier",
+        "provider": "Anthropic",
+        "report_classification": "EMPTY_MAX_TOKENS_TRUNCATION; no findings, no retry",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-cross-scale-falsifier/response.md",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1684,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-cross-scale-falsifier/result.json",
+          "sha256": "e33f227e603d88891ba35de4111f88a692bfc76d3f9ae79792accb645ecb9698"
+        },
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 17446,
+          "output_tokens": 32768
+        },
+        "usage_cost_estimate_usd": "0.725144"
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-full-energy-excursion",
+        "completed_review": true,
+        "failure_type": null,
+        "obligation": "full-energy-excursion",
+        "obligation_note": "Distinct new full-output obligation; not a retry of the empty cross-scale request.",
+        "provider": "Anthropic",
+        "response": {
+          "bytes": 9548,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-full-energy-excursion/response.md",
+          "sha256": "a57f8965768e613a6f146ad097bf423e3c74b9115494fc1e8c15a37ee47c1049"
+        },
+        "response_characters": 8720,
+        "response_nonempty": true,
+        "result": {
+          "bytes": 1630,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-12-conductivity-full-energy-excursion/result.json",
+          "sha256": "5c697c4120f0a1d6cf014a2f4f8beadcc8cf4910acd0343432d338482ada0404"
+        },
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 7889,
+          "output_tokens": 25190
+        },
+        "usage_cost_estimate_usd": "1.338390"
+      }
+    ],
+    "status_counts": {
+      "completed": 4,
+      "truncated": 1
+    },
+    "terminal_jobs": 5,
+    "truncated_empty_reports": 1,
+    "truncated_nonempty_reports": 0,
+    "usage_estimate_usd": "7.399194"
+  },
+  "cost_note": "Stored runner estimates only, not invoices, actual bills, balances or spending caps. No subtraction from owner balance. Two historical timeout totals remain UNKNOWN and excluded. Empty cross-scale truncation has no findings; full-energy-excursion is a distinct new obligation, not a retry.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 67,
+    "historical_unknown_timeout_bills_excluded": 2,
+    "known_terminal_nonpartial_usage_estimate_usd": "149.879808",
+    "known_terminal_nonpartial_usage_records": 131
+  },
+  "dispatch_observed_status_changes": [],
+  "dispatch_observed_statuses": [
+    {
+      "manifest_observed_status": null,
+      "obligation": "correlated-tree",
+      "terminal_result_status": "completed"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "wavelet-compression",
+      "terminal_result_status": "completed"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "variational-resolvent",
+      "terminal_result_status": "completed"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "cross-scale-falsifier",
+      "terminal_result_status": "truncated"
+    },
+    {
+      "manifest_observed_status": null,
+      "obligation": "full-energy-excursion",
+      "terminal_result_status": "completed"
+    }
+  ],
+  "exclusions": [
+    {
+      "reason": "Still being written; not read or hashed.",
+      "scope": "api-sampler-attacks independent review"
+    },
+    {
+      "reason": "No shared note hashed or edited; full-energy naming repair integration remains with root.",
+      "scope": "Changing shared main notes, STATE/HANDOFF/workflow"
+    },
+    {
+      "excluded_partial_runner_estimates_usd": [
+        "0.0276",
+        "0.00625"
+      ],
+      "reason": "Total bills remain UNKNOWN; partial estimates excluded from all known cumulative totals.",
+      "results": [
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+        "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json"
+      ],
+      "scope": "Two historical Anthropic ReadTimeout runs inherited from frozen prior"
+    }
+  ],
+  "frozen_prior_usage_snapshot": {
+    "bytes": 9075,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/precision_effectivity_round/usage.json",
+    "sha256": "e3a02554c9c6732cb68ac1cf28facd12867e52f3daa5f7d7b49a591590247556"
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 49,
+      "conductivity_multiscale_round": {
+        "completed_nonempty_reports": 2,
+        "empty_refusal_reports": 0,
+        "jobs": 3,
+        "status_counts": {
+          "completed": 2,
+          "truncated": 1
+        },
+        "terminal_jobs": 3,
+        "truncated_empty_reports": 1,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "3.793094"
+      },
+      "empty_response_count": 14,
+      "frozen_prior_estimate_usd": "108.005914",
+      "frozen_prior_known_terminal_records": 109,
+      "incomplete_and_empty": 0,
+      "inherited_result_files_plus_five_explicit_jobs": 116,
+      "known_estimate_by_status_usd": {
+        "completed": "38.366080",
+        "empty_response": "1.174984",
+        "truncated": "72.257944"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "111.799008",
+      "known_terminal_nonpartial_usage_records": 112,
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        }
+      ],
+      "status_counts_through_conductivity_multiscale": {
+        "completed": 49,
+        "dry_run": 1,
+        "empty_response": 14,
+        "failed": 3,
+        "truncated": 49
+      },
+      "terminal_results": 115,
+      "truncated_and_empty": 36,
+      "truncated_and_nonempty": 13
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 18,
+      "conductivity_multiscale_round": {
+        "completed_nonempty_reports": 2,
+        "empty_refusal_reports": 0,
+        "jobs": 2,
+        "status_counts": {
+          "completed": 2
+        },
+        "terminal_jobs": 2,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "usage_estimate_usd": "3.606100"
+      },
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "34.474700",
+      "frozen_prior_known_terminal_records": 17,
+      "incomplete_and_empty": 1,
+      "inherited_result_files_plus_five_explicit_jobs": 19,
+      "known_estimate_by_status_usd": {
+        "completed": "35.577290",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "38.080800",
+      "known_terminal_nonpartial_usage_records": 19,
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_through_conductivity_multiscale": {
+        "completed": 18,
+        "incomplete": 1
+      },
+      "terminal_results": 19,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "scope": "Frozen precision-effectivity prior plus exactly five terminal conductivity-multiscale jobs listed in named dispatch, including distinct full-energy-excursion. Actual stored results and saved usage authoritative; no historical rescan."
+}

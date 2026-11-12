@@ -1,89 +1,319 @@
 # Research State
 
-Read this page and research/TRAPS.md at every Codex pass; research/GOAL.md is
-binding. Search handoff archives only for specific terms. Preserve other
-collaborators' Rees work below. Latest Codex handoff:
-"2026-11-12 Explicit Reconstruction Precision Bounds".
+Read STATE and TRAPS at each pass; GOAL is binding. Latest Codex handoff:
+"2026-11-13 Single-Source Wave Classical Match Under Audit".
 
-Selected single scientific question: can the native smooth-quintic surface
-quantum upper bound be classically matched in uniform poly(log p) BIT time?
-The complete candidate is SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md. It is
-UNDER WHOLE-COMPOSITION REVIEW, not an admitted native classical algorithm.
-Actual cubic pencil: genus31, rank62,220nodes,45basepoints; open multiplicity
-13516, parabolic96, surface P2degree53. Never silently substitute genus6.
+NOW SINGLE question: sparse-source damped lattice Helmholtz FULL spatial
+Born sampling with all normalization/shell/kernel access paid. Firstsix paid
+jobs terminal, five substantive FULLparent-read/reaped. One OAIEMPTY
+RemoteProtocolError UNKNOWNbill, no retry (FIFTHunknown). Single-source
+quantum fullshell compiler and NEW classical fullspatial sampler are under
+independent review. The latter uses exact lattice contour/stationary phase,
+finite periodization and explicit rejection; no Green oracle granted.
+Five-source actual spatialTV falsifier independently closed (282LF read);
+positive/fixedseparation cannot ensure noncancellation. Explicit polynomial
+exactquotient sources have a direct classical match. Two NEW source-backed
+Claude lemmas stilllive: sparse exactquotient recovery and uniform complex
+Green envelope,4USDceilings notcharges. Main general-m endpoint OPEN.
+See NATIVE_SPARSE_WAVE_SAMPLING.md and both wave dispatches. No quantum
+implementation, lowerbound, novelty or speedup. Owner-reportedSPENT totals
+Claude155.99USD/OpenAI101.71USD are separate from runnerestimates and
+not measured remainingbalances.
 
-Established/source-checked interfaces: native complete fixed-format Jacobian
-atlas, genuine normalized full-GSp frame/evaluation; small-auxiliary-prime
-complete natural module with actual zeta and Weil-rank certificate; growing
-cover normalization and faithful auxiliary model; uniform logarithmic height
-chain and closed A,B,C coordinate heights; numerical prime-to-P torsion lift;
-canonical divisor RR subspace and closed algebra using explicit Mascot
-Algorithm7 plus high-degree section multiplication; intrinsic target-prime
-unramifiedness and conditional known-prime p-maximal-order/Frobenius recovery.
-See SURFACE_NATIVE_COVER_CONSTRUCTION, SURFACE_NATIVE_TORSION_MODULE,
-SURFACE_TORSION_NUMERICAL_LIFT, SURFACE_TORSION_HEIGHT_CHAIN,
-SURFACE_UNIFORM_ARITHMETIC_HEIGHT and SURFACE_FINITE_ETALE_RECONSTRUCTION.
+CLOSED WRITTEN restricted full-output condensate classical baseline: at
+tau=uD, Poisson mode2 mean54pi²u² approximates SAME full occupation law
+within min(1,2^40exp84(1+|u|)^7/sqrtD), legal overflow to condensate. Parent
+checked full339LF independent proof and finite-bit CDF clock. This only
+meets requested precision where the explicit bound permits; arbitrary binary
+time/precision remainsOPEN. Full-count common-qRSt fixed-primary positive
+projection and square-conditional repair REFUTED by exactD3 phases and
+analytic negative expectations; no generic variance lower bound/hardness.
+Static line PARKED pending a materially new mechanism, no nearby variants.
 
-Numerical extraction does NOT assume an inverse-Abel oracle or divisor ideal.
-Residue h0=1, actual known RR data, enlarged pole/evaluation spaces and unit
-pivots are mandatory. Source prose sign fixed by its displayed divisor formula.
-Direct target reduction stays falsified by T(T-p); actual p-maximalization
-repairs it only after complete rational group-algebra reconstruction.
+Both projector jobs terminal/read/reaped: OAI completed; Claude truncated
+EMPTY,no retry. Round3.012588USD,cumulative249.179788USD/193priced records,
+Anth149.085718,OAI100.094070,FOURUNKNOWN excluded. Estimates not invoices
+or balances. Frozen33hash controls/condensate_projector_round checkpoint verified once.
 
-New simplification: U=ev_s0 Hom_Gamma(Ndual,J_full[ell]) has rank13516 and is
-Galois-stable by the constant coefficient module. It need not be Gamma-stable.
-Use all-component tuples, not an arbitrary one-component arithmetic scalar.
-Complete all-pair equivariant encoding/equalizer reconstruction is now proved
-and parent-checked (full806line review). Auxiliary-prime choice precedes b;
-known-b RR uses etale fibre orders, thick-fibre idempotents and semilocal
-saturation at that prime, without a circular new excluded integer.
+RECENT CLOSED WRITTEN native two-global-control encoding: S cut-and-join and
+N=sum k²n_k, explicit occupation input and full decoded occupation output.
+Parent checked249LF all-n proof; uniform poly(n,G,1/epsilon) compiler,
+D=O(n^5), polynomial pulse count/BIT/total duration. Prime/Sidon filtering
+and exact pi-cycle CZ, no postselection or free addressed controls. Ordinary
+sparse simulation pays the quantum upper bound. A classical polynomial
+sampler for every such driven input would imply BPP=BQP (conditional only).
+No novel/Shor-level algorithm, practicality or static-model hardness claim.
+All three paid reports terminal/full parent-read/reaped. Frozen35hash
+ledger246.167200USD/191priced cumulative(Anth147.724550,OAI98.442650),
+FOURunknown excluded; estimates notinvoices/balances. No further
+control infrastructure selected. See NATIVE_DRIVEN_CUT_JOIN.md.
 
-SURFACE_BOUNDARY_DETERMINANT.md independently proves direct ARITHMETIC
-open determinant / product[(1-epsilon*T^f)P_norm(T^f)] = GEOMETRIC parabolic
-polynomial, followed by exact Leray/blowup quotient to degree53. Native fixed-
-genus boundary counts use actual Pila2005 all-field stratification. Explicit
-parabolic-filter transport is UNNEEDED for this endpoint. The false source
-ordinary compact Hom=parabolic claim remains refuted in BOTH versions.
+Condensate pair-growth323LF proof parent-checked: CLOSED WRITTEN classical
+additive-epsilon estimators for EVERY normalized mode1 factorial moment,
+plus spectral/return laws; poly(D,L,epsilon^-1,log1/delta). Full mode1/full
+occupation TV sampling OPEN. Frozen27hash two-job milestone242.770252USD/
+188priced cumulative(Anth146.482482,OAI96.287770),FOURunknown excluded;
+estimates not invoices/balances. The next constructive classical question
+is whether the new paired representation can sample the full count law.
+Irrational single-boson spectral-law detour already classically matched;
+no quantum parameter-extension round. General Selmer has high external value
+but no new concrete global-bypass operation was identified.
 
-Paid Hopf readout independently proved/parent-checked: integer ranks of
-identity-kernel idempotents recover actual arithmetic Frobenius charpoly
-without a splitting field. A report's claim that output degree53 bounds the
-runtime exponent is rejected. All exponents are fixed but impractically large.
-No full comparator, novelty, speedup, hardness, separation or quantum execution
-is inferred from these scoped results or review agreement. Partial geometry
-report raised all-pencil conjugacy; actual Deligne4.2.7/4.2.8 and Hall3.1
-source repair is now independently proved and parent-checked for EVERY
-certified pencil/oddell!=p. Generic-only4.2.6 is
-not the last source statement; no extra primitivity premise in Hall3.1.
+NEW CLOSED written resource theorem: SAME full Jack transform and native
+BO work sampler now cost poly(D,log1/epsilon) BIT/gates, clean on arbitrary
+superpositions/reference including workspace. Full300line independent
+composition proof parent-checked. See JACK_LOG_PRECISION_COMPILER.md.
+Both paid compiler reports complete and fully parent-checked (340 and832
+lines); frozen27hash jack_logprecision_round: round3.362656USD; cumulative
+228.317462USD/179priced (Anth140.818422,OAI87.499040), FOUR unknown bills
+excluded. Estimates not invoices/balances; supersedes historical totals. Stronger global-workspace norm
+interface in the paid polar report is not imported; clean-sector hybrid
+already proves the needed composition. No code, novelty,
+classical hardness or useful/Shor-level advantage inferred.
 
-Owner requested faster API spending. The four-job native-composition round is
-terminal: two completed, one truncated/NONEMPTY geometry, one empty REFUSAL
-(no retry). Frozen47hashes and estimates: controls/native_composition_round,
-cumulative Anth107.278338/OpenAI32.751960USD,total140.030298,124records.
-Two historical timeout bills UNKNOWN/excluded. Estimates are not invoices or
-measured account balances. Exact request snapshots are in their API bundles.
-Two NEW precision-effectivity tasks now run, ceilings12USD (not charges):
-Claude analytic constants; OpenAI arithmetic/closed-height precision. Packets:
-audits/api_inputs/2026-11-12-precision-effectivity/dispatch.json.
+NEW CLOSED native Macdonald transform: EVERY numericalD with global
+q=t³,t=D/(D+1), held fixed across stages, full clean transform has WRITTEN
+poly(D,log1/epsilon) BIT/gates/workspace including arbitrary superpositions
+and reference. Parent checked full408line independent proof: exact
+nilpotent Qcal LCU, private-marker rectangular polar, noninteger coherent
+labels, finite gates/actual inverses all paid. Huge fixed constants; no
+practicality, code, novelty, classical hardness or useful/Shor-level
+advantage claim. See MACDONALD_NATIVE_TRANSFORM.md.
+All three paid reports terminal and fully parent-checked; final native OAI
+report451lines. Frozen37hash macdonald_round: round4.465248USD; cumulative232.782710USD/
+182priced (Anth142.906090,OAI89.876620), FOURunknown excluded. Estimates
+not invoices/balances.
+Reviewed272line proof closes near-row/column deficit s classical sampling
+D^O(s)poly(D,b), and elementary uniform Jack-row TV floor for allD>=200.
+General classical occupation sampler OPEN; rows/columns have exact cycle DP.
 
-The paid whole-composition review was fully read and leaves a conditional
-result because key upstream height proofs were omitted from its packet.
-SURFACE_RECONSTRUCTION_PRECISION_LEDGER.md now gives concrete computable
-majorants; its analytic constants/point-height formula have been independently
-checked, remaining ledger is under attack. A whole internal review is checking
-the complete source chain. Its proposed RR-intersection shortcut is rejected
-(absent disjointness, vanishings do not add); actual source DivAdd/Sub remains
-valid. Full native comparator stays UNADMITTED pending whole-claim review.
+Earlier endpoint: native NS real-time full occupation sampling from arbitrary
+explicit occupation mu, numericalD/globalq=t³,t=D/(D+1), binary rational
+time2pi*a/c. Parent checked251line proof: transform and exact rational eigenphase give CLOSED WRITTEN
+poly(D,bit(time),b) quantum endpoint. Known fast-forwarding mechanism;
+explicitp(D) classical baseline ALSO logarithmic in time. Four distinct
+paid classical attacks terminal: Doob/direct/few-phonon completed and fully
+parent-read; colour truncated EMPTY, no retry. See
+MACDONALD_REALTIME_DYNAMICS.md. No implementation, novelty, hardness or
+useful/Shor-level speedup claim. Previous BO quench work remains OPEN.
+CLOSED WRITTEN classical match,272line independent proof parent-checked:
+EVERY fixed k initial bosons, ALL binary rational times, SAME full native
+output TV2^-b in(D+1)^O(k)poly(D,L,b). Spectral hook plus coherent Pieri/
+Newton derivative sampler; all bounded-Durfee eigenstate laws also
+classically polynomial. See MACDONALD_FEW_PHONON_CLASSICAL.md. General
+growing k/h stays OPEN. OneD3 exact171assertion control is only local.
+Frozen55hash dynamics4job ledger:6.667178USD round, cumulative
+239.449888USD/186priced(Anth145.283318,OAI94.166570),FOURunknown excluded;
+estimates not invoices/balances. Condensate spectral Claude completed/read
+252lines; independent323LF source/pair/clock proof checked. Condensate coherent OAI
+completed/read492lines.11USD ceilings notcharges. Full coherent occupation output
+fromD bosons in mode1 staysOPEN. See MACDONALD_CONDENSATE_CLASSICAL.md.
 
-Other endpoints retained without inertial extensions: LOCAL_KUMMER_NATIVE_
-PERTURBATION pays original-E subgroup sampling and branch-resultant repair,
-but stable native ONE-HALF remains OPEN. CHARACTER_BROAD_PHASE_SOURCE proves
-only a public-parity-l1 source bound, escaped by native nonlinear BIT use;
-general polynomial decoding remains OPEN. PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION
-has a written all-circuit fixed-contrast quantum scalar algorithm, classically
-matched at fixed precision; joint-polynomial inverse-precision classical cost
-is OPEN, not hardness. Gaudin weak-window/prefix pass closed scoped attempt;
-full path gap parked. Reselect by external value after surface composition.
+SELECTED concrete external candidate: quantum Benjamin-Ono dispersion-
+quench WORK sampling, explicit lambda, SAME canonical boson momentumD
+sector. Existing Jack3 preparation plus sparse final-energy QPE gives a
+reviewed WRITTEN poly(D,log1/eta) BIT/gate sampler. Full193line independent
+selection/proof parent-checked. See JACK_BENJAMIN_ONO_WORK.md. Strong
+classical controls: row/column inputs are positive Schur z-measures and
+polynomially sampleable. General shapes OPEN; only O(D²) energy bins.
+Both work-law reports terminal and parent-checked: coarse completed; Schur
+truncated NONEMPTY, no retry. Frozen35hash jack_work_round: round3.721176USD;
+cumulative224.954806USD/177priced (Anth139.512426,OAI85.442380), FOUR
+unknown bills excluded; estimates NOTinvoices/balances. These supersede
+historical prior-round totals below. Local11USD ceilings NOTcharges.
+Exact controls refute (A,B)-only work laws and positive z-measure mixtures;
+these are scoped failures, never a general classical obstruction. No implementation,
+novelty, hardness, useful/Shor-level advantage or physical-position claim.
+
+NEW REVIEWED WRITTEN algorithm: FIXEDalpha3 full clean Jack basis transform,
+for every numerical degreeD, with poly(D,log1/epsilon) BIT/gate cost and uniform
+restricted operator-norm error on arbitrary superpositions. Independent300line
+proof fully checked. Classical-label/Fock branching produce identical positive
+path states; explicit inverse erases paths. Native principal-half-phase QPE,
+branch-cut gap, controlled phases, clean matching uncomputation and inverse-
+on-range error all PAID. See JACK_COHERENT_BRANCHING_TRANSFORM.md. Output is
+Hall power-sum occupation state; no implementation, free arbitrary input
+loading, novelty, classical lower bound, useful/Shor-level speedup, physical-
+position/FQH extension claim.
+
+Algebra all-degreeApsi=J (211line proof), uniform tau>=3/(16d),q>=1/(d+1)
+(209line proof), and same-output classical poly(D)*M(lambda)^2 BIT sampler
+(195line proof) checked. ALL bounded-Durfee shapes classically polynomial;
+general polynomial sampling remains OPEN. Six DISTINCT paid jobs ALL complete
+and parent-read, three each provider;33USD ceilings NOTcharges. Terminal
+ledger controls/jack_lax_round/ is frozen with72 validated hashes. Round
+estimate9.856810USD; cumulative215.466522USD across171priced records
+(Anth136.024862/OAI79.441660), FOUR unknown bills excluded. Estimates
+are neither invoices nor balances; prior ledgers unchanged.
+
+Secondary pending question: unrestricted classical occupation Born sampling for the
+reviewed full quantum Jack transform. Actual positive row formula does NOT
+supply it directly: lambda21 absolute-history Born law differs by exact
+TV648/2065. Scope is this shortcut only; rejection repairs the finite example.
+Row-only scalar cancellation is NOT a sampling obstruction. See
+JACK_POSITIVE_CREATION_CLASSICAL_ATTACK.md. Four DISTINCT paid jobs
+(two each provider), ceilings22USD NOTcharges: Lax report complete/checked,
+paired-map truncated EMPTY (no retry), creation/prefix complete and checked.
+Frozen51hash controls/jack_classical_round: round5.767108USD, cumulative
+221.233630USD/175priced (Anth138.198830,OAI83.034800), FOUR unknown bills
+excluded. This supersedes the historical prior-round totals above.
+Creation norm contraction,
+Lax moment closure, paired-map sampler, and BGL prefix-amplitude simulation.
+Actual source operators/Cor5.3/Thm8.2 and BGL Algorithm2/gap+sensitivity proof
+checked. Prefix amplitudes, normalizers and uniform precision remain charged.
+No quantum implementation or new easy-shape sweep.
+Independent selection compared impurity energy, Gaussian learning and Jack
+transforms. Actual Oct2026 papers classically match the fixed-impurity
+energy/compact-state target, so no paid impurity request was made.
+
+Prior sparse-torus completion pass is terminal. ARCH compiler CLOSED at its
+exact all-branch log-row scope (full308line proof/source checked). Supplied-
+prime CONSTANT-RESTRICTION compiler CLOSED as reviewed written polynomial
+BIT, correct-or-ABORT on true Alg (full378line proof checked): formal Cp[[X]]
+germs guarantee every accepted point gives ALL constant embeddings; explicit
+normalization precision and idempotents paid. Off-Alg Gauss rows are only
+bounded-error. See SPARSE_TORUS_ARCHIMEDEAN_ROWS.md and
+SPARSE_VERTICAL_VALUATION_COMPILER.md. COMPLETE prime support remains UNPAID.
+Cyclic content and Taylor multiplicity reports give no general success bound;
+see SPARSE_CYCLIC_CONTENT_PROJECTION.md. Park nearby support subcases absent
+new constructive progress. All growing-degree fullRel gates remain false;
+this finite-support route also charges integer FACTORING. Arch-only fullRel
+is falsified by((3+4i)/5,i,T); input-content support by the native prime7 family.
+
+NEW CLOSED fixeddegree sparse FULL Rel classical comparator: EVERY fixed
+extensiondegree delta, growingvariables/atoms/binaryexponents, nofactoring
+or constantfield advice. Full250line review and139line paid report parent-
+read. Exact cyclotomic partial-component specialization plus retainedAlg
+and actualLS on ORIGINAL atoms; confidencebyrepetition, wholeboundederror.
+See SPARSE_CYCLOTOMIC_FIXED_DEGREE.md. Growingdelta stillOPEN. Norm-resultant
+is a sufficient success condition, NOT equivalent to weakened acceptance;
+f=Y²-T^q,u=Y-1 is the exact counterexample. No implementation/sweep.
+
+GENERAL NATIVE Selmer endpoint remains REVIEWED WRITTEN quantum polynomial
+BIT underGRH for EVERY native monic squarefree odddegree f, coefficient
+bitsB, arbitrary bad reduction, no generators/models/localimages/advice.
+Classical ALL-PRIME local compiler is reviewed written poly(g,B,logp,
+log1/eta), complete image or ABORT<=eta. Global compact-unit completeness
+is boundederror, NOT abort-only. See LOCAL_KUMMER_ALL_PRIMES.md and
+GENERAL_NATIVE_SELMER_COMPOSITION.md. No practicality, novelty, hardness,
+speedup, MWrank or point-solving claim. General unconditional coverage OPEN.
+
+NEW CLOSED: QUARTIC_RELATIVE_NORM_CLASSICAL.md supplies a REVIEWED WRITTEN
+complete native L(S,2) polynomial-BIT classical algorithm with a charged
+INTEGER FACTORING oracle. L has quadratic F with Cl(O_F,S)/2=0; S all
+primes over explicit support containing2/ramification. Class condition is
+proved/natively recognizable for one-prime Galoisquartic fields. Full
+support254/native271/strict2Sylow264/L1L2 250/Simon4-6 280line independent
+proofs parent-read; Kutas236line paid interface and actual sources checked.
+Native radicals, Galois recognition, Hilbert normkernel, relative conics,
+enlarged quadratic support and quotient coordinates ALL PAID. Polynomial
+intermediate integer factoring, not just originaldiscriminant, is charged.
+Correct complete basis or ABORT<=eta. Fixed dimension<=9 and huge constants
+essential; no whole implementation or ordinary classical factoring claim.
+
+Consequently the native odddegree Selmer subclass with rational/quadratic/
+one-prime Galoisquartic branch fields reduces CLASSICALLY to integer
+factoring; no quantum S-units or GRH needed. Strongest exact229 ideal-content
+counterexample (28assertions) refutes naive gcd but is escaped by support
+correction. Do not pursue another fixed-degree extension or rayclass
+rank-only reformulation. General growing-degree classical match is OPEN.
+
+Prior CLOSED quadratic baseline: QUADRATIC_NATIVE_SQUARECLASSES.md computes
+complete K(S,2) classically in polynomialBIT after native integer factoring.
+Exact normkernel/Hilbert/conic numerator, no classgroup/units/Pell or extra
+denominator factoring; independent240+271line proofs parent-read. Native
+d34 control refutes negative-Pell prerequisite. No arbitrary-base import.
+
+Unconditional quantum families retained: all branchdegrees<=3 (quadratic
+directclassical and cubic retained source), and growing Galois2power branch
+fields ramified at at most ONE finite prime. Odd ordinary class order
+allows T=S, but COMPLETEcompact S-units with arbitrary extraS remain PAID.
+Full185line proof parent-read. Totallyreal narrowclassodd/fullsignatures
+also proved (99lines) but supply no finite images or units by themselves.
+Literal f_k=x(x^(2^k)+1) now has a separate PURE CLASSICAL polynomialBIT
+Selmer algorithm: explicit bounded-coefficient circular/signaturebasis,
+onlydyadiclocalcondition, nofactoring. Full203line proof parent-read;
+arbitraryextraS notcovered. Exact x(x²-17*89) refutes generic bad-prime-only
+oddindexcoverage, not by itself a Selmerdimension output.
+
+Gaudin exact joint-generator3locality is now REFUTED for EVERY N>=4,
+2<=M<=N-2, distinct real sites on every full couplinginterval[0,G].
+Operator-locality proof lifts the checked four-site coefficient to arbitrary
+external spectator occupations: -(3/4)Delta/Pi*g²+O(g³). Also refutes
+arbitrarily diagonally dressed single exchanges. Independent bulk167line
+review parent-read. ExactN4 rank12/13 versusfull15/15 certificate retained.
+No growing-support, approximation, chosenbranch or preparation no-go.
+See GAUDIN_JOINT_GENERATOR_LOCALITY.md. No N6 sweep.
+
+SPARSE_NATIVE_RESULTANT_LIFT.md verifies a native irreducible degree3d
+norm-LC-at-infinity reduction from arbitrary sparse resultant LC, intrinsic
+rank2Alg/rank1Rel and three nonconstant original atoms. Complete225line
+review parent-read. FullRel of this family and another LC place are easy;
+no hardness/generalLC obstruction. Park this intermediate route.
+
+Torus-completion terminal: two completed/nonempty reports fully parent-read,
+one empty ReadTimeout UNKNOWN bill and no retry. Frozen48hash ledger
+controls/torus_completion_round/. Round Anth1.099108/OpenAI1.752800,total
+2.851908USD. Cumulative known Anth132.868662/OpenAI72.741050,total205.609712USD,
+165pricedrecords; FOUR UNKNOWN bills excluded. Partial unit-log0.070644 is
+excluded, not a final charge. Estimates NOT invoices or measured balances;
+never subtract cumulative totals from owner anchors. Six Jack jobs excluded.
+All earlier frozen ledgers remain unchanged.
+
+Conductivity pass COMPLETE at its scoped claims. The nearby-scale shortcut
+fails on the ACTUAL scalar output: K->2c(1-z²)/(2-z²), shortcut->c(1-z²/2),
+gap=c z^4/[2(2-z²)]>0 for every w=o(n), uniformly in series length. Parent
+checked full paid proof, correcting notation/boundary multiplicity/heuristic.
+Additional fully checked attacks: shared-translation bias; antithetic product
+variance >=3(H²/16)^m for all joint SCALE laws in its precise class; separable
+Haar ungrouped path variance >=(n-1)^r for positive evenr. None is a generic
+classical lower bound. Independent heat sampling remains poly at fixedepsilon,
+quasipoly at inverse-polynomialepsilon; full joint-poly classical match OPEN.
+Conditional Galerkin brackets and general grouped/correlated methods survive.
+After repeated conditional/barrier-only work, pivot by external value to the
+native local-image compiler; Gaudin counterdiabatic and structured-resultant
+specialization are independent alternatives in the selection note.
+
+Previous dyadic milestone frozen93hashes: ten terminal paid jobs, five completed,
+four emptytruncated and one emptyrefusal. Round estimated15.367048USD;
+cumulative Anth118.367096/OpenAI46.879760USD, total165.246856/141records.
+Two historicalUNKNOWN bills excluded. Estimates are neither invoices nor
+balances;48USD local ceilings were not spending. No failed/empty/refusal retry.
+
+Established: the SAME native smooth-quintic exact P2 problem has a reviewed WRITTEN
+bounded-error classical poly(B,log(1/eta)) BIT algorithm for EVERY prime p.
+See SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md and its final356line review.
+All interfaces and whole composition parent-checked: native cubic pencil,
+full GSp frame, complete auxiliary module, numerical small P, closed-divisor
+lifting, effective heights/global descent, target maximal order/Frobenius,
+exact boundary/Leray division and CRT. No advice is supplied. Fixed degree
+and enormous fixed exponents are essential. No implementation, practicality,
+novelty, human/formal verification, hardness, separation or quantum execution.
+
+The false source ordinary compact-Hom=parabolic statement remains REFUTED.
+Actual open multiplicity13516 -> parabolic96 -> surface53, genus31 pencil,
+220nodes and45basepoints. U=ev_s0 Hom_Gamma(Ndual,J_full[ell]) is rank13516,
+Galois-stable but not generally Gamma-stable. No inverse-Abel/divisor-ideal
+oracle, arbitrary arithmetic scalar, target coordinate reduction or free
+parabolic projector is used. T(T-p) still falsifies direct target reduction;
+quotient-first p-maximalization is the paid repair. Mascot actual Algorithm7
+plus section products pays canonical RR; the paid review's intersection
+shortcut is false when vanishing divisors meet.
+
+Surface numerical precision audit now closed at its exact supplied-geometry
+scope: parent read the full544line arithmetic report, verified support/jet/
+shared-height chain, added explicit monic root-height H and integer precision
+rule. Actual maximum output arity TWO pays printed K; larger statedarityk
+uses explicit K_k. Positive integer v avoids branch set; v0 already pays it.
+Partial Claude report is not a completed review. Full native comparator uses
+independently proved geometry/lifting; this audit does not supply those inputs.
+
+Other endpoints: native local Kummer COMPLETE-image compiler now closed at
+the reviewed written all-prime scope above; character public-parity-l1
+source falsifier escaped by nonlinear native BIT use, full decoder OPEN;
+succinct fixed-contrast conductivity quantum polynomial scalar endpoint has
+fixed-precision classical match, joint-polynomial precision match OPEN;
+Gaudin full path gap parked after scoped weak-window/prefix failures.
 
 Now (11-11, AI only, pending human review): SDE open items worked; repo wiring audited. Paper NOT edited.
 - Earlier (AI-refereed): p = 5, S = {0,±1} worst case n²/4 + 3n/2 + 2 (Theorem B′). Theorem C:
@@ -108,18 +338,23 @@ Now (11-11, AI only, pending human review): SDE open items worked; repo wiring a
   + Python smoke found no dead bank (`False`, `dead_w3_search.out`); `count_check.py` `SyntaxWarning` fixed.
   PWPP complexity OPEN. (audits/reviews/2026-11-11-rees-sde-near-linear-total.md)
 - NEW, interval S: Lemma N′, Lemma Q exact for S ≠ F_p. q = 11, 13 UNSAT (`LRAT VERIFIED`). At q = 17, K = 4,
-  `linedata.py --no-brute` + `coverage_e1.py` give 13824/13824 `COVERAGE OK` across 12 orbits (6 `u=0` size 2176,
-  6 `v=0` size 128); `--no-proof` probe shows `v=0` orbit 6 UNSAT in 215.1 s, `u=0` orbit 0 UNKNOWN at 300.2 s
-  (441,558 vars, 8,736,943 clauses) -> full LRAT > 4 core-h, HALTED for coordinator signoff. (audits/reviews/2026-11-11-rees-sde-interval-s.md)
-- Exact, κ = 2: no two-dependency 2-dim gadget at p = 7, 11, 13, all LRAT-verified with the fixed checker.
+  `linedata.py --no-brute` + `coverage_e1.py` give 13824/13824 `COVERAGE OK` across 12 nonzero orbits + zero datum;
+  FIFO-streamed `cadical` + fixed `lrat-check` CERTIFIED `12/12` nonzero orbits (`cases17_K4_lrat.out`, `wall=1172.1s`,
+  `max_proof=547460770`) AND `1/1` zero e1 datum (`cases17_K4_zero_equi.out`, `115.8s`, `proof=157814027`) in `equi`
+  mode -> free q = 17, K = 4 closed by Corollary Q′ (`freeR` not run; q = 17 SAT-free not run; q >= 19 OPEN).
+  (audits/reviews/2026-11-11-rees-sde-interval-s.md)
+- Exact, κ = 2: no two-dependency 2-dim gadget at p = 7, 11, 13, 17 (`equi` + Corollary Q′), all LRAT-verified with the fixed checker.
   p = 13 done 11-11 23:00 by streamed proofs: TOTAL 37/37 certified, 83,034 s CPU
-  (2026-11-09-lrat-checker-fix/recheck/cases13_cases.out, case_cert_stream.py).
-- Repo wiring audit: refreshed stale `native_refresh_crossover_scope_audit.json` (`test_native_*.py` 2321/2321 pass),
-  extended `tests/test_rees_sde_2026_11_11_checks.py`. Open repo debts queued for Gemini: `tests/test_rees_fcs_budget.py`
-  fails vs `79d66f19` `tab:fcs-budget` (`w.-d. Q` column), `KNOWN_FAILURES.txt` (134), 288/300 legacy `EXP-*.json` links,
-  4 stale referee entries, 2 doc-banner hash mismatches.
+  (2026-11-09-lrat-checker-fix/recheck/cases13_cases.out, case_cert_stream.py); `bounded-p.md` updated.
+- Repo wiring audit (2026-11-12): fixed `theorems/rees_fcs_budget.py` (`tab:fcs-budget` 9/9 pass), `labelsat.py` API/brute,
+  chi-square `shape` NameError, `in globals():` writers (interleaved target margin & reversible automaton), negative-registry count
+  gates (969 active), `core/experiment_runner.py` nested/intercepted dispatch + missing imports, restored `core/scaling_runner.py` +
+  restored `if write_registry:` across 136 modules, refreshed the 3 Node crosscheck provenance chains (`96/96` pass) +
+  `cyclic_centre_state_hsp_receiver.json`, repaired 288/300 dangling `research/EXP-*.json` links, recomputed
+  `coset_typical_{modular_yjm_contraction_certificate,parity_complete_separator_n7,yjm_projector_certificate}.json`;
+  `tests/KNOWN_FAILURES.txt` narrowed to owner-only `make_numbers.py`, un-recomputed multi-hour n=10 `coset_typical_{invariant,modular_yjm}_n10` dependency-hash mismatches, and deferred full-seed sweep.
 - Disk rule: ≤ 1 proof > 5 GB on disk at once, stream LRAT into fixed `lrat-check`.
-- Next: await `case_cert_stream.py` (37/37), decide q = 17 > 4 core-h authorization, split `msfinalR:4`, and Gemini queue in `MECHANICAL_FOLLOW_UP_PLAN.md`.
+- Next: optionally recompute multi-hour n=10 certificates if needed; decide K >= 5 (p >= 23) interval-S if beyond asymptotic argument; split `msfinalR:4` (`p=5,k=3`); `sigma.c` BLOCKED.
 
 Now (11-10, AI only): square gap still OPEN.
 - Proved, refereed: every p = 1 mod kappa with p <= kappa^3-3kappa^2+2kappa is in E_2(kappa).
@@ -1369,6 +1604,24 @@ quadratic GL2 route. No poly(d) efficiency, quantum execution, novelty
 or separation is claimed.
 
 ## Now
+
+- **Rees headline 38 in the core theorem (11-13, Claude, AI only, pending human review).**
+  - Core (local, not posted, 55 pp.): new §5.1 Schedule 1H (halving the degree) with full proofs;
+    thm:main(4) now E_H(9) = 38 (attained exactly at p ≡ 1 mod 2520), E_1(9) = 53 for Schedule 1
+    alone, 145/95 at the Ivanyos-confirmed depth. Las Vegas per merge; ε/6 + ε/6 split. Second
+    AI referee (of the write-up): CORRECT WITH FIXES, all applied
+    (audits/reviews/2026-11-13-rees-headline-38-referee.md). Ivanyos covers neither L_d nor the
+    halving. Macro \ReesClassNineHalvedExp is hand-added in core/numbers.tex only.
+  - Full version (228 pp.): tab:fcs-budget combined column recomputed at depth L_d; the other
+    tables are depth-independent; preprocessing time and prop:mixed-schedule error charged; a
+    remark points to the core's halving (audits/reviews/2026-11-13-rees-full-tables.md).
+  - free23 exit (ii): two independently labelled copies carry nothing (PROVED, Lemma J);
+    dependent labels and hence any 3 copies carry information (PROVED). Exit (ii) UNKNOWN
+    (audits/reviews/2026-11-13-rees-free23-two-copy.md).
+  - κ = 9 bottleneck: (37, 9) union-step searches all timed out (NOT computed); (19, 9, {0,1})
+    SAT and verified, class-9 value at 19 drops 24 → 21 (conditional on IS Lemma 12 at ℓ = 3);
+    R7 = 25 unchanged, CONDITIONAL (audits/reviews/2026-11-13-rees-k9-sat.md).
+  - Handoff "2026-11-13 Rees Headline 38 Promoted, Full Tables, Two-Copy Holevo, κ = 9 SAT".
 
 - **Rees headline 53, harsh self-check, H_3(Z) (11-12 night, Claude, AI only, pending human review).**
   - Papers (local, not posted): headline class-9 exponent 145 → 53 (lem:rounds; Ivanyos confirmed
@@ -2858,14 +3111,14 @@ or separation is claimed.
 
 | Direction | Established result and scope | File |
 |---|---|---|
-| Surface classical reconstruction and boundary repair | Reviewed ordinary compact=parabolic descent REFUTED in both source versions (Legendre2 vs0, quintic13516 vs96). Native frame, complete auxiliary module, normalization/RR, uniform heights, canonical closed encoding, finite coordinate algebra and original-prime Frobenius now proved under stated geometry. Exact boundary determinant bypasses parabolic transport. Whole native quintic composition UNDER REVIEW; no full classical match, hardness, separation or execution. | `SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md`, `SURFACE_FINITE_ETALE_RECONSTRUCTION.md`, `SURFACE_BOUNDARY_DETERMINANT.md` |
+| Surface classical reconstruction and boundary repair | Reviewed ordinary compact=parabolic descent REFUTED in both source versions (Legendre2 vs0, quintic13516 vs96). Native frame, complete auxiliary module, normalization/RR, uniform heights, canonical closed encoding, finite coordinate algebra and original-prime Frobenius now proved under stated geometry. Exact boundary determinant bypasses parabolic transport. Whole native quintic composition now reviewed WRITTEN classical poly(logp,log1eta) BIT match, every prime. Enormous fixed exponents; no implementation, practicality, novelty, hardness, separation or execution. | `SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md`, `SURFACE_FINITE_ETALE_RECONSTRUCTION.md`, `SURFACE_BOUNDARY_DETERMINANT.md` |
 | Succinct periodic conductivity | Reviewed written quantum poly(B,n,1/epsilon) scalar estimator for every fixed-contrast 2D circuit material. Constructive classical heat-path estimator matches fixed precision, quasi-polynomial for inverse-polynomial precision. Joint-polynomial match OPEN; no hardness, novelty, separation or quantum execution. Two core reviews and one frozen exact control. | `PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md` |
 | Scalar OPI root-anchor tilted filter | Reviewed exact paired classical sampler; prescribed bM=O(log(D)^-2). Arbitrary tilt with uniform identity term, polynomial M and bounded sM matched with high probability over original halfset tables; native maximum attainment paid by second moment. Flat-conditioned actual amplitude bounded, paid projected sampler only. Two frozen controls; no generic OPI no-go, hardness, novelty or separation. | `SCALAR_OPI_TILTED_WALK_ADMISSION.md` |
 | Two-cluster Gaudin joint-gap counterfamily | Reviewed finite-distinct rational sites, spacingn^-8,g1/(2n),N=2n,M=n give squared gap<=2312n^-5/3 by fusion/min-max; exact128-site bound<1/400. Uniform1/N floor refuted, weaker polynomial preparation OPEN. Known critical BCS mechanism; no novelty, superpoly-gap or separation. | `GAUDIN_TWO_CLUSTER_GAP.md` |
 | Binary-Fock passive/Kerr circuit sampling | Reviewed WRITTEN full native quantum polynomial(nativebits,logK,log1epsilon) count sampler, known Prakash Cor2.3. Common coherent QHT/cutoff/phases paid. Classical bounded-time sampler matches BUNCHED input with polynomial numerical chi, using coherent rejection and binary-binomial precision; not arbitrary Fock/exponentialchi. Three reviews, five primary PDFs and exact mixture/CZ/parity controls. No novelty/separation, physical exponential-photon preparation or full/quantum execution. | `BINARY_FOCK_KERR_SAMPLING.md` |
 | Compact integral similarity, growing binary integer matrices | Reviewed WRITTEN bounded-error quantum poly(native bits,log1eta) compact INTEGER unimodular witness or NO, conservatively under GRH. Known BHJ algorithm; paid compact Steinitz/conductor descent, reused local residues, fractional-sum guard, Z-linear section and Jordan-length/small-covolume determinant test. Verified unit union amplifies completeness. Two reviews and one exact classical control; expanded witness obstruction retained. No tuple extension, generic compact PIT, novelty, separation or quantum execution. | `COMPACT_INTEGRAL_SIMILARITY.md` |
 | Open folded-chain coherent evolution | Reviewed WRITTEN arbitrary-input unitary fast-forwarding in poly(N,bitlength(t),log1/epsilon), complete boundary/terminal-word encoding and controlled free-fermion phases. Two reviews; four used sources/six retained PDFs; one exact classical run. Slater/CT methods match specified eigenstate and basis-input additive sparse readouts. Known bulk map; no novelty/separation, practical cost, human/formal verification, implementation or quantum execution. | `FOLDED_CHAIN_COHERENT_TRANSFORM.md` |
-| Fixed-degree quintic-surface P2 | Reviewed WRITTEN bounded-error quantum polynomial(logp,log1/eta) BIT/gate exactdegree53P2 for EVERY smoothquintic/P3/Fp, nativeinput. Verifiedgeometry/arithmeticreadout/source/CRT/finiteclocks; twonewreviews/fiveprimarysources/exactclassicalcontrol. KnownSchnell/Deligne excludes verygeneralCOMPLEX Hodge-compatible abelianreplacement, NOT everyFpclassicalalgorithm. No novelty/separation, growingdegree, practicality, human/formal verification or execution. | `QUINTIC_SURFACE_P2_ADMISSION.md` |
+| Fixed-degree quintic-surface P2 | Reviewed WRITTEN bounded-error quantum polynomial(logp,log1/eta) BIT/gate exactdegree53P2 for EVERY smoothquintic/P3/Fp, nativeinput. Verifiedgeometry/arithmeticreadout/source/CRT/finiteclocks; twonewreviews/fiveprimarysources/exactclassicalcontrol. Same native endpoint now classically matched by SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION. KnownSchnell/Deligne obstruction only excludes a Hodge-compatible abelian replacement. No novelty/separation, growingdegree, practicality, human/formal verification or execution. | `QUINTIC_SURFACE_P2_ADMISSION.md` |
 | Fixed-degree quartic-surface P2 | Reviewed WRITTEN bounded-error quantum polynomial(logp,log1/eta) BIT/gate reduction for EVERY smoothquartic overFp from nativebinaryinput. Paid unique-divisor charts/arithmetic frame and twist construction, modular induction, exact Fourier/Newton, localLeray/CRT and finiteclocks. Fourreviews/tennewprimaryPDFs/retainedcurve source/webscope/exactclassicalcontrol. Stronger KS classical marking/descent remainsOPEN; Elkies1997 already suggestedthatroute. No novelty/speedup, growingdegree, practicalcost, human/formal verification or full/quantumexecution. | `SURFACE_TORSION_COVER_RECONSTRUCTION.md` |
 | Two full Gaussian channels, diamond learning | Reviewed WRITTEN uniform polynomial-use/BIT/gate learner for EVERY exact memoryless two-map mixture, known Majoranas and ordinary qubit gates, no weight/branch/gap advice. Proper reconstruction and deterministic constant-core processor yield explicit CPTP output with full diamond guarantee. ALL data matched by nonadaptive product inputs/Pauli readout and classical processing. Five reviews/sixsources/exact classical control. No novelty, coherence/computational advantage, practicalcost, human/formal review, offmodel/many-map or full/quantumexecution. | `GAUSSIAN_CHANNEL_MIXTURE_ADMISSION.md` |
 | General central-simple-algebra minimal module | Reviewed WRITTEN quantum polynomial-BIT compact primitive idempotent and minimal left ideal/action under explicit GRH, arbitrary growing expanded CSA/field inputs. Classical factoring-paid Schur index, degree-index field, known KM split map, compact Hom/right-identity extraction. Exact classical positive certificate; two reviews/eightprimary sources/one exact classical control, scoped PARI table-index unsupported receipt. No novelty/separation, human/formal review, input-canonical/expanded/integral output, division normal form or full/quantumexecution. | `CSA_MINIMAL_MODULE.md` |
@@ -2883,7 +3136,7 @@ or separation is claimed.
 | Good-dyadic growing-genus two-Selmer dimension | Reviewed WRITTEN bounded-error quantum polynomial-BIT composition for explicit smooth good-Z2 models, odd-Galois branch fields and good odd p<=d. Paid local trace/shallow formal/O8 coordinates, large-p images, global compact arithmetic and aggregate errors. Nonvacuous unbounded Q x K x K family; duplicate-field baseline retained. Exact finite controls only; no execution, novelty, separation, arbitrary curve or MW rank. | `GOOD_DYADIC_GROWING_SELMER.md` |
 | Fixed-field bounded-degree contraction baseline | Reviewed WRITTEN source-based exact classical sum-product with explicit L>=n, fixed Q(zeta8), constant arity/occurrence. Subexponential n and polynomial BIT space; explicit H,T,CNOT ONE amplitude inherits n<=2G. Exact supplied-design control only; no whole ETH-paper/sharper appendix, polynomial/qubit-count simulation, sampler, novelty or quantum advantage. | `BOUNDED_DEGREE_CONTRACTION_BASELINE.md` |
 | Growing-degree monomial Kummer sparse relations | Reviewed WRITTEN classical polynomial sparse-bit full Rel for irreducible Y^delta-a*T^v, growing s,k,charged delta and binary exponents. Paid monomial constants, compact LC, derivative/LLL and original-small-tuple LS; one exact delta6 torsion/control case. No general f, poly(logdelta), novelty, separation or full execution. | `MONOMIAL_KUMMER_SPARSE_RELATIONS.md` |
-| Sparse characteristic-zero function-field relations | Reviewed WRITTEN bounded-error quantum polynomial-bit composition for explicit Q(T)[Y]/monic irreducible f, growing s,k,charged delta and binary sparse T degrees. Full constant-relation bit bound, large-prime content/point-norm union, finite-ring HSP and exact LLL paid. Full CLASSICAL polynomial sparse-bit solvers for degrees1 and2 using derivatives and original leading coefficients; quadratic cancellation uses one norm. One exact binary-exponent control; no advice, arbitrary ideal conversion, novelty, separation or full execution. General classical complexity unknown. | `SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md` |
+| Sparse characteristic-zero function-field relations | Reviewed WRITTEN bounded-error quantum polynomial-bit composition for explicit Q(T)[Y]/monic irreducible f, growing s,k,charged delta and binary sparse T degrees. Full constant-relation bit bound, large-prime content/point-norm union, finite-ring HSP and exact LLL paid. Full CLASSICAL polynomial sparse-bit solvers for EVERY FIXED degree via exact cyclotomic specialization/Alg/LS; polynomial exponent depends degree. One exact binary-exponent control; no advice, arbitrary ideal conversion, novelty, separation or full execution. General classical complexity unknown. | `SPARSE_CHARZERO_FUNCTION_FIELD_RELATIONS.md` |
 | Sparse function-field relation lattice | Reviewed WRITTEN bounded-error quantum polynomial-bit algorithm for explicit Fp(T)[Y]/monic irreducible f; growing s,k,charged delta and binary sparse T degrees. Uniform basis bound, finite specialization norm union bound, full-ring HSP and exact nonsaturated LLL prefix paid. Randomized-polytime Turing equivalent to finitefield DLog without integer factoring; whole fixed-p classical quasipolynomial comparator. Exact controls only; no arbitrary ideal conversion, novelty, separation or quantum execution. | `FUNCTION_FIELD_RELATIONS_RANDOM_SPECIALIZATION.md` |
 | Growing-tuple affine unit relations | Reviewed WRITTEN deterministic CLASSICAL polynomial-bit composition for PRIME affine Q-algebras at fixed variable count and growing supplied unit/inverse tuples; char0 PRIME Z-domain corollary. dlog/Hermann, explicit generic finite specialization and unrestricted LS relations paid without huge powers. Two exact controls; no complete units/class/PIP, general metabelian, positive-characteristic, novelty or full execution claim. | `AFFINE_UNIT_RELATIONS_DIFFERENTIAL_SPECIALIZATION.md` |
 | Classical chosen-sign Fourier feature estimation | Independently reviewed exact unbiased bounded estimator for any fixed F and public shift, polynomial(m,logp,epsilon^-1); adaptive robust SQ and public subspace-score extension. Root-free mask marginal identity; exact full-noise counterexamples; one reused p5 classical control. No full-label simulation, copy-only classical access, decoder or speedup claim. | `LEGENDRE_FOURIER_FEATURE_CLASSICAL_MATCH.md` |

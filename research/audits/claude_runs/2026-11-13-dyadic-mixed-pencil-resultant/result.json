@@ -1,0 +1,43 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 3885,
+      "path": "research/LOCAL_KUMMER_NATIVE_PERTURBATION.md",
+      "sha256": "76cabae2e3ada8f8e88d6285737487a1507f5b3b93731862c4cbc2daad174d8f",
+      "snapshot": "context/000.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 3816,
+  "effort": "high",
+  "finished_at": "2026-11-12T13:36:02.282928+00:00",
+  "input_token_allowance": 4072,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.296288,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/mixed-pencil-proposal.md",
+    "sha256": "4fc10d566ef1cb7efc4f59ce8a92b19b735e1fabb783f17033e6799876983978",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T133128.056703Z-ae967497",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 3816,
+    "output_tokens": 28431
+  },
+  "usage_cost_estimate_usd": 0.583884
+}

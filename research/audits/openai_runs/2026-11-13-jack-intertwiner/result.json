@@ -1,0 +1,53 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-13-jack-lax/jack-intertwiner.md",
+      "sha256": "0e76b6231dc39c48a4f93d65457c4e60ec7d1026cfbba2bbb7f657334b569cfa"
+    },
+    {
+      "path": "research/JACK_LAX_PREPARATION_CANDIDATE.md",
+      "sha256": "5895a65abd29ca8a839d3b98ed0f26945667f73c621312ad0d1bcd157224854e"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-jack-lax/lax-primary.txt",
+      "sha256": "363ab961eafc7626c786cbba3154a22535618e9805954e0072bf9cd0f2014a50"
+    },
+    {
+      "path": "research/audits/controls/jack_lax_intertwiner/result.json",
+      "sha256": "d3f52868c07ac4dcf42f5a30b9f0fb88bb20eec1fc3816ebfa29572209632b71"
+    }
+  ],
+  "finished_at": "2026-11-12T18:15:01.837074+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "9",
+  "max_tokens": 128000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "7.49794",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_0a55d9ab55b59ba9016af5fef0a75487d08fffec5799b3fa6d",
+  "started_at": "2026-11-12T18:01:18.683163+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 27991,
+    "input_tokens_details": {
+      "cache_write_tokens": 27988,
+      "cached_tokens": 0
+    },
+    "output_tokens": 31721,
+    "output_tokens_details": {
+      "reasoning_tokens": 28172
+    },
+    "total_tokens": 59712
+  },
+  "usage_cost_estimate_usd": "1.86596"
+}

@@ -1,0 +1,57 @@
+{
+  "scope": "One symbolic four-site complement entry; rational functions, no numerical instances or parameter sweep",
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "states": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "tau": "one half the adjacency of J(4,2)",
+  "entry": {
+    "bra": [
+      3,
+      4
+    ],
+    "ket": [
+      1,
+      2
+    ]
+  },
+  "Delta": "c+d-a-b",
+  "Pi": "(a-c)(a-d)(b-c)(b-d)",
+  "K0_and_K1_complement_entries_zero": true,
+  "first_order_double_commutator_recursion_verified": true,
+  "reported_second_order_recursion_matches_full_expansion": true,
+  "tau_K0_tau_complement_entry_zero": true,
+  "second_order_source_factorization": "(3/4) * (-a + c)^-1 * (-b + c)^-1 * (b - d)^-1 * (a - d)^-1 * (-a - b + c + d)^3",
+  "K2_complement_entry_factorization": "(-3/4) * (-a + c)^-1 * (-b + c)^-1 * (b - d)^-1 * (a - d)^-1 * (-a - b + c + d)",
+  "target_formula_exact": true,
+  "reported_auxiliary_polynomial_identity_exact": true,
+  "complement_symmetry_of_E_tau_K0_K1_verified": true
+}

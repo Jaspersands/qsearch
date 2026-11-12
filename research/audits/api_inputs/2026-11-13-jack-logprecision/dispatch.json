@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-13",
+  "selection": "Constructive polylog-accuracy upgrade of complete Jack/BO algorithms",
+  "local_ceiling_usd": 11,
+  "note": "Distinct new compiler obligations, not retries; ceilings not charges.",
+  "jobs": [
+    {
+      "id": "jack-binomial-polar",
+      "provider": "openai",
+      "budget": 9,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-logprecision/jack-binomial-polar.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-jack-logprecision/native-proposal.md",
+        "research/audits/reviews/2026-11-13-jack-branching-independent.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-jack-binomial-polar",
+      "status": "completed",
+      "session_id": 19888,
+      "billing_status": "usage_reported",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.056660",
+      "response_bytes": 26530,
+      "parent_fully_read": true,
+      "session_reaped": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T19:43:00.075302+00:00",
+        "finished_at": "2026-11-12T19:35:10.751942+00:00",
+        "usage": {
+          "input_tokens": 5561,
+          "input_tokens_details": {
+            "cache_write_tokens": 5558,
+            "cached_tokens": 0
+          },
+          "output_tokens": 40021,
+          "output_tokens_details": {
+            "reasoning_tokens": 31875
+          },
+          "total_tokens": 45582
+        },
+        "usage_is_partial": false,
+        "response_splitline_count": 832,
+        "parent_read_all_available_text": true
+      }
+    },
+    {
+      "id": "jack-log-simulation",
+      "provider": "claude",
+      "budget": 2,
+      "prompt": "research/audits/api_inputs/2026-11-13-jack-logprecision/jack-log-simulation.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-jack-logprecision/native-proposal.md",
+        "research/audits/openai_runs/2026-11-13-jack-native-measurements/response.md",
+        "research/audits/api_inputs/2026-11-13-jack-logprecision/taylor-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-jack-log-simulation",
+      "status": "completed",
+      "session_id": 28404,
+      "billing_status": "usage_reported",
+      "stop_reason": "end_turn",
+      "usage_cost_estimate_usd": "1.305996",
+      "response_bytes": 17581,
+      "parent_fully_read": true,
+      "session_reaped": true,
+      "final_metadata": {
+        "captured_at_utc": "2026-11-12T19:43:00.075302+00:00",
+        "finished_at": "2026-11-12T19:27:27.102395+00:00",
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 18394,
+          "output_tokens": 61621
+        },
+        "usage_is_partial": false,
+        "response_splitline_count": 340,
+        "parent_read_all_available_text": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4748,
+      "path": "research/audits/api_inputs/2026-11-13-native-driven/contract.md",
+      "sha256": "bcfd5bdb4e36e738c1bf620353850ec0546c9ff311304c80198b75045c801ce0",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 3148,
+      "path": "research/audits/api_inputs/2026-11-13-native-driven/native-primary.txt",
+      "sha256": "35f0f2da2d5d253ab55a3a0d201d18259b71d6642f24fd976e67e91f9779d773",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 3856,
+  "effort": "high",
+  "finished_at": "2026-11-12T20:50:25.995048+00:00",
+  "input_token_allowance": 4112,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.296448,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-native-driven/driven-entangler.md",
+    "sha256": "d0516ef1b271c4743c2e71121f7f7a55fddaa1f944cdff81099cb8533beeb7ba",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T204434.224687Z-43918fd0",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 3856,
+    "output_tokens": 35416
+  },
+  "usage_cost_estimate_usd": 0.723744
+}

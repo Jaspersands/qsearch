@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-13-jack-work/jack-coarse-work-law.md",
+      "sha256": "a6798963b7a837b5020e6e524fa79754385eebc56a605b056eee21abf0b0dcbd"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-jack-work/native-contract.md",
+      "sha256": "516d8f81329aa719d5d1df0a7a4442499ab00ed2bf2a4be34f3e1e0db13ef80e"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-jack-work/work-primary.txt",
+      "sha256": "e2a817beac3d5fb6772fd20f50d2bd09c7cb3da26dc6332bbf5d4e83839230f6"
+    }
+  ],
+  "finished_at": "2026-11-12T19:20:23.549619+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "9",
+  "max_tokens": 128000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "6.646",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_08370f1628421903016af60beeb59487d0900209f69b28b1d1",
+  "started_at": "2026-11-12T18:56:45.423097+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 5523,
+    "input_tokens_details": {
+      "cache_write_tokens": 5520,
+      "cached_tokens": 0
+    },
+    "output_tokens": 47047,
+    "output_tokens_details": {
+      "reasoning_tokens": 44672
+    },
+    "total_tokens": 52570
+  },
+  "usage_cost_estimate_usd": "2.40758"
+}

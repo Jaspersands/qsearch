@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 5183,
+      "path": "research/audits/api_inputs/2026-11-13-wave-source-lemmas/contract.md",
+      "sha256": "be72a6b6d88a203c7084f3a1ecb4e932e9f2e1d88e737021769eb15099727bad",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 19960,
+      "path": "research/audits/api_inputs/2026-11-13-wave-source-lemmas/green-primary.txt",
+      "sha256": "020285072bfc84c70b117ccfb16ed58bdc74541741deac734e1137945459854c",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 12315,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T21:57:19.700446+00:00",
+  "input_token_allowance": 12571,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.330284,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-wave-source-lemmas/wave-uniform-green-envelope.md",
+    "sha256": "e8c6b3de4dfc798247ce4d1d4fdf84af011fd822005235824d1c45a070ba2a22",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "classical",
+  "run_id": "20261112T214714.339465Z-85410bb8",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 12315,
+    "output_tokens": 64000
+  },
+  "usage_cost_estimate_usd": 1.32926
+}

@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/wavelet-compression.md",
+      "sha256": "de228a43f6b260ecbf8729d12cfa74e2175d763c108ecf3c449f5431d4cc65af"
+    },
+    {
+      "path": "research/PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md",
+      "sha256": "4aae2d6ddf87d7afb01b47157c940829b5fea647c47b8cb30cfde79908a7e9a0"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-12-conductivity-multiscale/primary-excerpts.md",
+      "sha256": "92c719e6d6239922bf65c59143c2f365b56eb5db3cbd38cd4bfaeb53163e9eba"
+    }
+  ],
+  "finished_at": "2026-11-12T12:39:24.950313+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "8",
+  "max_tokens": 128000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "6.88314",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_04239c3f84607298016af5b0de984487d0b29d9f205e2ceef9",
+  "started_at": "2026-11-12T12:28:13.378053+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 10984,
+    "input_tokens_details": {
+      "cache_write_tokens": 10981,
+      "cached_tokens": 0
+    },
+    "output_tokens": 26885,
+    "output_tokens_details": {
+      "reasoning_tokens": 23802
+    },
+    "total_tokens": 37869
+  },
+  "usage_cost_estimate_usd": "1.45409"
+}

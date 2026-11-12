@@ -1,0 +1,57 @@
+Extract from research/audits/api_inputs/2026-11-13-jack-work/work-primary.txt sha256 e2a817beac3d5fb6772fd20f50d2bd09c7cb3da26dc6332bbf5d4e83839230f6
+Actual primary-source excerpts. No abstracts are used as theorem evidence.
+
+SOURCE https://arxiv.org/pdf/2211.01586v2
+
+LINES 286-335
+2     Review of two results of Nazarov–Sklyanin
+In this section, we recall two results for the hierarchy Tℓ = π0 Lℓ due to Nazarov–Sklyanin [32].
+
+2.1   Definition of the Nazarov–Sklyanin hierarchy
+Recall F [w] = C[w, V1 , V2 , . . .] in (1.3) and the Lax operator L in (1.5). Let π0 be the projection
+to F = C[V1 , V2 , . . .] defined by setting w = 0.
+
+Definition 2.1. The Nazarov–Sklyanin hierarchy is the set of operators Tℓ = π0 Lℓ : F → F .
+6                                                                                                  R. Mickler and A. Moll
+
+   Here Tℓ is the top-left entry of the ℓth power of L in (1.6). Recall V−k = ℏk ∂V∂ k in (1.2).
+For ℓ = 3,
+               ∞
+               X                                     ∞
+                                                     X                                 ∞
+                                                                                       X
+      T3 =               V−k1 −k2 Vk1 Vk2 +                    V−k1 V−k2 Vk1 +k2 + ε         kVk V−k                (2.1)
+             k1 ,k2 =1                             k1 ,k2 =1                           k=1
+
+
+is the Hamiltonian of the quantum Benjamin–Ono equation on the torus discussed in [32, Sec-
+tion 1]. When ε = 0, (2.1) is the well-known cut and join operator discussed, e.g., in [6,
+Section 1.2].
+
+
+2.2   Commutativity and spectral theorem for the hierarchy
+Theorem 2.2 (Nazarov–Sklyanin [32]). Choose ε1 , ε2 ∈ C which parametrize ε ∈ R and ℏ > 0
+by the formulas (1.12) and (1.13). For u ∈ C \ R, consider the bounded transfer operators
+
+      T (u) = π0 (u − L)−1 : F → F,                                                                                 (2.2)
+
+which encode all unbounded operators in the hierarchy Tℓ = π0 Lℓ as coefficients of u−ℓ−1 .
+
+(1∨ ) The transfer operators (2.2) commute in F for distinct values of u and are simultaneously
+      diagonalized on Jack polynomials jλ in (1.7) with eigenvalues Tλ (u) ∈ C as in
+
+             T (u) jλ = Tλ (u) jλ .                                                                                 (2.3)
+
+(2∨ ) The eigenvalues Tλ (u) ∈ C in (2.3) are determined by the anisotropic contents (1.11) of
+      the elements of the Young diagram λ in (1.8) and their shifts by the product formula
+
+                                   Y (u − [s + (0, 0)])(u − [s + (1, 1)])
+             Tλ (u) = u−1 ·                                                            .
+                                         (u − [s + (1, 0)])(u − [s + (0, 1)])
+                                   s∈λ
+
+
+      Equivalently, if Aλ and Rλ are the addable and removable corner sets in (1.9) and (1.10),
+                             Q
+                                   (u − [r])
+

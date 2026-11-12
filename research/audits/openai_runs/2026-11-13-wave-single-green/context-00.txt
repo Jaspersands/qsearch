@@ -1,0 +1,5 @@
+# wave-single-green
+
+Isolate and solve the single-source CLASSICAL spatial Born sampler: m=1, G=(I-K+i/L)^-1 delta0 on the exact2D torus, output |G(x)|^2/||G||^2 at TVepsilon. Seek finite-clock poly(n,1/epsilon) including efficiently evaluable envelope/proposal and normalization bounds. This is the decisive classical primitive for the superposition baseline. Use exact lattice spectrum, not continuum free-space Hankel formulas without uniform periodization/error. A fixed spatial dimension may allow oscillatory quadrature, stationary phase with caustic patches, or random-walk analytic continuation. Prove error uniform in torus point and L; only additive global TV needed. A poly(L) series is not a match. Do not solve the m-source normalization problem; another task does that.
+
+Read the attached native contract first. Keep theorem, conditional statement, exact counterexample and speculation separate. Do not claim novelty/advantage. Return concrete equations and proof, with the decisive result early; no tools or external actions. Do not rely on an unprovided source as verified.

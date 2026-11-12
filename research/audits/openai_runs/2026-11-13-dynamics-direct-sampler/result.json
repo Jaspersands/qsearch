@@ -1,0 +1,53 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-direct-sampler.md",
+      "sha256": "7ab36897cd49a6aaaa9e6bc440af49297e53093d8dc8cd8d1c2d1ec7d26991e3"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/contract.md",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/primary.txt",
+      "sha256": "3b9da916229263fc3d97891b641f5ac04b904e9a700004e40cbd2f86dd67d937"
+    },
+    {
+      "path": "research/MACDONALD_CLASSICAL_BASELINES.md",
+      "sha256": "94638365055c31f4a2d56dbecbb0e77763a948061a167e2830b223fc0cf2bfd1"
+    }
+  ],
+  "finished_at": "2026-11-12T20:31:08.733208+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "9",
+  "max_tokens": 128000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "6.88246",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_0af2741092d8871c016af61d50626087d0b8bd468c56aeb312",
+  "started_at": "2026-11-12T20:10:54.556269+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 10966,
+    "input_tokens_details": {
+      "cache_write_tokens": 10963,
+      "cached_tokens": 0
+    },
+    "output_tokens": 43930,
+    "output_tokens_details": {
+      "reasoning_tokens": 38614
+    },
+    "total_tokens": 54896
+  },
+  "usage_cost_estimate_usd": "2.30616"
+}

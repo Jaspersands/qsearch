@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 5183,
+      "path": "research/audits/api_inputs/2026-11-13-wave-source-lemmas/contract.md",
+      "sha256": "be72a6b6d88a203c7084f3a1ecb4e932e9f2e1d88e737021769eb15099727bad",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 14852,
+      "path": "research/audits/api_inputs/2026-11-13-wave-source-lemmas/sparse-primary.txt",
+      "sha256": "8b53f39036121b186fc137b5710ed90af9eac101cba21c6cf8b4252aab2d4c9c",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 8983,
+  "effort": "high",
+  "finished_at": "2026-11-12T21:55:48.981363+00:00",
+  "input_token_allowance": 9239,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.316956,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-wave-source-lemmas/wave-sparse-deflation.md",
+    "sha256": "548b3e5c0ed5d3ace3cb88f106e2d4ac81f47ec7809c73ee6a9e0680498e78ae",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261112T214714.339354Z-3110b29b",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 8983,
+    "output_tokens": 52291
+  },
+  "usage_cost_estimate_usd": 1.081752
+}

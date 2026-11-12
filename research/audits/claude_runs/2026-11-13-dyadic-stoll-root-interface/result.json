@@ -1,0 +1,55 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 15839,
+      "path": "research/LOCAL_KUMMER_NATIVE_END_TO_END.md",
+      "sha256": "4176ba3a0eb57c5a2a087b0fb7ad6bf6fc6ac470b1447052a3710554699c0c72",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 13987,
+      "path": "research/audits/reviews/2026-11-13-stoll-geometric-smith-bridge.md",
+      "sha256": "71fbf758d603e175dc03c9cf11b47c202bf26a712ae192973411bab4218378c3",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 23519,
+      "path": "research/audits/api_inputs/2026-11-13-dyadic-high-degree/primary-excerpts.md",
+      "sha256": "eea134899272eb6c33bb4588b7aa47601331df1e89c3f6ddba948c9f3cd38eb4",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 23330,
+  "effort": "high",
+  "finished_at": "2026-11-12T14:29:08.830959+00:00",
+  "input_token_allowance": 23797,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.375188,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-dyadic-composition/stoll-root-interface.md",
+    "sha256": "98f2a4858dd516362474d8bf4712fc0013617d97be24eb56cd886953e794b807",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T142259.139910Z-b13e6501",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 23330,
+    "output_tokens": 36971
+  },
+  "usage_cost_estimate_usd": 0.83274
+}

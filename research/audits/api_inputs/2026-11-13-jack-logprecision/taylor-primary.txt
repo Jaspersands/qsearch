@@ -1,0 +1,158 @@
+ACTUAL PRIMARY https://arxiv.org/pdf/1412.4687v1
+Selected construction and robust-OAA proof; source discards ancillas, which is NOT allowed in our full transform.
+terms that are easy to implement. For example, local                        Next we explain how to implement a sum of unitary
+Hamiltonians can be decomposed into a sum of tensor                       operators such as (6). This procedure would work ex-
+products of Pauli matrices where each term acts nontriv-                  actly if the sum were unitary. While the sum is not ex-
+ially on a constant number of qubits. More generally, we                  actly unitary, it is close to unitary, and the error can be
+can treat any Hamiltonian that is a sum of polynomi-                      bounded.
+ally many tensor products of Pauli operators, even if the                   We begin by assuming that there is a mechanism avail-
+terms have high weight (as occurs after a Jordan-Wigner                   able for implementing each unitary Vj (and we address
+transformation of fermionic operators into Pauli matri-                   the details of this mechanism later). We abstract this
+ces). The method can also be applied more broadly, e.g.,                  mechanism as a unitary operation select(V ) such that,
+to sparse Hamiltonians. The overall simulation complex-                   for any j ∈ {0, 1, . . . , m − 1} and any state |ψi,
+ity is T := (α1 + · · ·+ αL )t times a factor that is logarith-
+mic in 1/ǫ and the other parameters of the simulation.                                  select(V ) |ji |ψi = |ji Vj |ψi .           (7)
+Summary of method. Suppose we wish to simulate                                           e , we first implement an m-dimensional
+                                                                            To simulate U
+the evolution under a Hamiltonian H for time t,
+                                                                          unitary B to prepare the ancillary state
+                         U := exp(−iHt),                           (2)                                   m−1
+                                                                                                  1 Xp
+                                                                                          B |0i = √       βj |ji ,                  (8)
+within error ǫ. We divide the evolution time into r seg-                                            s j=0
+ments of length t/r. Within each segment, the evolution
+                                                                                                 Pm−1
+can be approximated as                                                    where we define s :=     j=0   βj . If we define
+                                         K
+                                         X 1                                         W := (B † ⊗ 11)(select(V ))(B ⊗ 11),           (9)
+         Ur := exp(−iHt/r) ≈                        (−iHt/r)k ,    (3)
+                                               k!
+                                         k=0
+                                                                          then
+where the Taylor series is truncated at order K. With r                                                          r
+                                                                                                 1     e |ψi +            1
+segments, the accuracy required for each segment is ǫ/r.                           W |0i |ψi =     |0i U          1−         |Φi   (10)
+                                                                                                 s                        s2
+To obtain this accuracy (provided r ≥ kHkt), we can
+choose                                                                    for some |Φi whose ancillary state is supported in the
+                                                                        subspace orthogonal to |0i. In other words, applying the
+                            log(r/ǫ)
+                K =O                    .            (4)                  projector P := |0ih0| ⊗ 11,
+                          log log(r/ǫ)
+                                                                                                          1     e |ψi .
+The overall complexity is essentially given by the number                                 P W |0i |ψi =     |0i U                  (11)
+                                                                                                          s
+of segments r times K.
+   The oblivious amplitude amplification procedure of                        The value of s can be adjusted by choosing the size of
+[18] enables us to deterministically implement a sum of                   the segments. In particular, we aim for s = 2, which fits
+unitary operators, provided that sum is unitary. Here we                  the framework of oblivious amplitude amplification intro-
+wish to implement the sum of operators corresponding                                                               e is unitary then
+                                                                          duced in [18]. There it is shown that if U
+to the truncated Taylor series (3). The powers of H are                   it can be exactly implemented by interleaving W and W †
+not themselves unitary, but we can expand the series us-                  with the m-dimensional (ancilla) reflection R := 11 − 2P .
+ing the form (1) of the Hamiltonian. Then the truncated                   In particular, if Ue is unitary and A := −W RW † RW ,
+sum in (3) can be expanded as                                             then
+         K
+         X       L
+                 X                                                                                          e |ψi .
+                                                                                            A |0i |ψi = |0i U                      (12)
+                             (−it/r)k
+  Ur ≈                                αℓ1 · · · αℓk Hℓ1 · · · Hℓk , (5)
+                                k!                                        Effect of nonunitarity. The main approximation used
+         k=0 ℓ1 ,...,ℓk =1
+                                                                          in our construction is in truncating the Taylor series at a
+where, without loss of generality, we can set each αℓ > 0.                suitably large order K, which gives a good (but nonuni-
+This expression has a form that has been investigated                     tary) approximation U   e of Ur . Due to this nonunitarity,
+extensively in [21], namely                                               we cannot directly use oblivious amplitude amplification
+                                   m−1
+                                                                          as proved in [18]; instead, we prove a robust version of
+                                   X                                      oblivious amplitude amplification that works even when
+                             e=
+                             U           βj Vj ,                   (6)
+                                                                          Ue is only close to a unitary matrix.
+                                   j=0
+                                                                             To prove this, first observe that
+where βj > 0 and where each Vj is a unitary that corre-
+sponds to some (−i)k Hℓ1 · · · Hℓk .                                         P A |0i |ψi = (3P W − 4P W P W † P W ) |0i |ψi ,      (13)
+                                                                                                                                              3
+
+where we used unitarity of W , P 2 = P , and P |0i |ψi =                      We obtain Ue = P ˜ βj Vj and, according to (8), B is a
+                                                                                                 j∈J
+                                                 e )/s as
+|0i |ψi. In our construction, P W P = (|0i h0| ⊗ U                                                                e as
+                                                                              unitary that acts on span{|ji : j ∈ J}
+can be seen from (11). Thus, by (13), we obtain (for
+general Ue)                                                                                             1 Xp
+                                                                                                B |0i = √   βj |ji .                       (21)
+                                                                                                        s
+                                                                                                              j∈Je
+                             3e    4 e e† e
+         P A |0i |ψi = |0i     U − 3 U U U |ψi .     (14)                                                                    P
+                             s    s                                           The normalization constant is s =                j∈J˜ βj   =
+                                                                              PK 1           k
+This generalizes a step of oblivious amplitude amplifica-                        k=0 k! ln(2) . Our choice of K implies |s − 2| ≤ ǫ/r.
+tion [as in (12)] to the case of nonunitary U e and s 6= 2.                      When the length of the simulation is a multiple of
+It also enables us to bound the error in oblivious ampli-                     ln(2), the Hamiltonian simulation algorithm is simply a
+tude amplification due to these factors. Provided that                        sequence of r steps, each associated with a segment. At
+|s − 2| = O(δ) and kU  e − Ur k = O(δ), i.e., that the con-                   each step, the m-dimensional ancilla is initialized in |0i,
+ditions of oblivious amplitude amplification are true to                      then A is implemented, and the ancilla is discarded. The
+order δ, then kUeUe † − 11k = O(δ) and (14) implies                           initial state is |0i |ψi. To show that the overall error is
+                                                                              ≤ ǫ, it suffices to show that the final state, after tracing
+                kP A |0i |ψi − |0i Ur |ψik = O(δ),                   (15)     out the ancillas, is ǫ-close to U |ψi, where U is the evo-
+                                                                              lution operator induced by H for time t. Our choice of
+which is an approximate analogue of (12) up to order δ.                       K implies that δ = O(ǫ/r) in (16). Thus the error in the
+In turn, this means that                                                      state after tracing out the ancillas is O(ǫ/r) for each seg-
+                                                                              ment. Using subadditivity and appropriately selecting
+      kTranc (P A |0i |ψi) − Ur |ψi hψ| Ur† k = O(δ),                (16)     constants, the final error is ≤ ǫ.
+where Tranc denotes the trace over the ancilla. Thus                          Circuit constructions and gate counts. The basic
+if we initialize the ancilla for each segment and discard                     step of our method is the unitary A. By definition, the
+it afterward, the error is O(δ). Then the overall error                       cost of A is the cost of two instances of select(V ), one of
+for all segments is O(rδ), so we can take δ = O(ǫ/r).                         select(V )† , and three each of B and of B † . The complex-
+                                                      √
+In contrast, in [18] the error for each segment is O( δ)                      ity of implementing select(V ) is K times the complexity
+(though this does not affect the overall complexity, which                    of implementing any of the individual Hℓ .
+is logarithmic in δ).                                                            First we consider the number of ancillary qubits that
+                                                                              are required to store the basis states |ki |ℓ1 i · · · |ℓk i where
+Hamiltonian simulation algorithm. For Hamilto-                                0 ≤ k ≤ K and, for each ℓi , 1 ≤ ℓi ≤ L. For the
+nian simulation, the sum (6) is of the specific form given                    first register, we use a unary encoding, representing |ki
+in (5). It is then convenient to define the index set                         by the state 1k 0K−k , so the first register consists of
+                                                                              K = O(log(T /ǫ)/ log log(T /ǫ)) qubits. We store K reg-
+J := {(k, ℓ1 , . . . , ℓk ) : k ∈ N, ℓ1 , . . . , ℓk ∈ {1, . . . , L}} (17)
+                                                                              isters with the values ℓi , but those after position k are
+and, with respect to these indices, we let β(k,ℓ1 ,...,ℓk ) :=                ignored when the first register is in state |ki ≡ 1k 0K−k .
+                                               := (−i)k Hℓ1 · · · Hℓk .       Each of these registers contains log(L) qubits, so the total
+[(t/r)k /k!]αℓP
+              1 · · · αℓk and V(k,ℓ1 ,...,ℓk )
+                                                                              number of qubits required for the ancillary state is
+Then Ur = j∈J βj Vj with βj > 0.
+   Recall that T = (α1 +P· · · + αL )t. Taking r such that                                                            
+                                                                                                      log(L) log(T /ǫ)
+T /r = ln(2), we obtain j∈J βj = 2. If T is not a mul-                                            O                     .                   (22)
+                                                                                                        log log(T /ǫ)
+tiple of ln(2), then we can take r = ⌈T / ln(2)⌉, in which
+case the final segment has s < 2. We can compensate for                          Now we consider the number of elementary (1- and
+this using an ancilla qubit as in [18].                                       2-qubit) gates required to implement our construction.
+   Next we set                                                                The operation B is a tensor product of unitary opera-
+                                                                            tions acting on each of the K + 1 registers. The first
+                                 log(T /ǫ)
+                      K=O                                         (18)        such unitary maps 0K to the normalized version of
+                               log log(T /ǫ)                                  PK p k
+                                                                                 k=0   t /k! 1k 0K−k . This is easily achieved in O(K)
+so that                                                                       gates, using a rotation on the first qubit, followed by ro-
+                          ∞
+                                                                              tations on qubits k = 2 to K controlled by qubit k − 1.
+                          X ln(2)k
+                                   ≤ ǫ/r,                            (19)     The subsequent unitaries map |0i to the normalized ver-
+                                                                                      PL √
+                              k!                                              sion of ℓ=1 αℓ |ℓi, which has a gate cost of O(L) [22].
+                        k=K+1
+                                                                              Therefore the total gate cost of implementing B is
+and define the truncated index set                                                                                 
+                                                                                                        log(T /ǫ)
+                                                                                                 O L                 .               (23)
+               Je := {(k, ℓ1 , . . . , ℓk ) ∈ J : k ≤ K}.            (20)                             log log(T /ǫ)
+                                                                                                                                    4
+
+   The other basic component is the select(V ) opera-               where T is the time-ordering operator. As in the time-
+tion, which maps states of the form |ki |ℓ1 i · · · |ℓk i |ψi       independent case, we break the evolution time into r
+to |ki |ℓ1 i · · · |ℓk i (−i)k Hℓ1 · · · Hℓk |ψi. This may be im-   segments of size t/r and, with no loss of generality,

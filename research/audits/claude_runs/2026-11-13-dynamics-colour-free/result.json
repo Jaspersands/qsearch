@@ -1,0 +1,56 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4521,
+      "path": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/contract.md",
+      "sha256": "480c70ae01845625fc44a907af28937aec85961b3a51978a728213a336919fc2",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 31329,
+      "path": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/primary.txt",
+      "sha256": "3b9da916229263fc3d97891b641f5ac04b904e9a700004e40cbd2f86dd67d937",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 8076,
+      "path": "research/MACDONALD_CLASSICAL_BASELINES.md",
+      "sha256": "94638365055c31f4a2d56dbecbb0e77763a948061a167e2830b223fc0cf2bfd1",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 16928,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T20:21:14.341581+00:00",
+  "input_token_allowance": 17267,
+  "max_budget_usd": 2.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.349068,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-macdonald-dynamics/dynamics-colour-free.md",
+    "sha256": "0e49c1cbce565db874ceb4126a7e86537d5ac0bed805e891064b56a5f0fe68b7",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "classical",
+  "run_id": "20261112T201054.552957Z-b4fb5365",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 16928,
+    "output_tokens": 64000
+  },
+  "usage_cost_estimate_usd": 1.347712
+}

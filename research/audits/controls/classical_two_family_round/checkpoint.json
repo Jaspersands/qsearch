@@ -1,0 +1,613 @@
+{
+  "captured_at_utc": "2026-11-12T16:35:12.497872+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "partial_estimate_equals_total_bill": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_control_artifacts": [
+    {
+      "bytes": 4297,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/quartic_native_radicals/control.sage",
+      "sha256": "783e6e9b0dec1d20585a83b4a97b0480e45e16ac204dc9ff2320e08767a518d4"
+    },
+    {
+      "bytes": 2723,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/quartic_native_radicals/result.json",
+      "sha256": "e75804c41d3cfd84c5b0515bd8155e830809362cd99c0de2ddfebf2fd8a92315"
+    },
+    {
+      "bytes": 5436,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/quartic_content_counterexample/control.sage",
+      "sha256": "36d8b772adf63fe5a6ebf9bbf9e33cbdbf741bf40c4154d162c865a53e83e76f"
+    },
+    {
+      "bytes": 3115,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/quartic_content_counterexample/result.json",
+      "sha256": "1e773115d7d62433b894aa21b1d5009638866fd91ff81a8ccb7f056e1f53d02a"
+    }
+  ],
+  "control_note": "Existing fixed-case scripts/results hashed only; no execution, sweep or tests in this milestone.",
+  "dispatch": {
+    "bytes": 6099,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/dispatch.json",
+    "sha256": "18e5ad19a842f6c1e670020d50d3705be9541dc789e8b2e6c6cb4cddd63be7e4"
+  },
+  "dispatch_mutation_scope": "Existing status/stop_reason fields refreshed from final metadata; ceiling note corrected from five/27USD to six/29USD. No scientific disposition edits.",
+  "exclusions": [
+    {
+      "reason": "Evolving shared scientific artifacts not hashed or edited. Immutable context snapshots inside terminal API bundles remain frozen.",
+      "scope": "STATE/HANDOFF/workflow, QUARTIC_RELATIVE_NORM_CLASSICAL, general-composition and disposition note, active Simon/native independent reviews"
+    },
+    {
+      "reason": "Two ReadTimeout and one generation ReadError totals remain UNKNOWN. All observed partial estimates stay excluded; no new unknown bill in this six-job round.",
+      "scope": "Three historical UNKNOWN partial-failure total bills",
+      "unknown_bill_records": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.485230",
+          "failure_stage": "generation",
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "obligation": "quadratic-composition",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 48498,
+            "output_tokens": 5
+          },
+          "provider": "Anthropic",
+          "response_bytes": 7862,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ]
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 2994,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/contract.md",
+      "sha256": "9647a312be697caa4c5130f1b87fda50e7ae7be211a6c4332569831090a6c1d4"
+    },
+    {
+      "bytes": 1254,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/cyclic-quartic.md",
+      "sha256": "9a42a2b48210ce7c2ff7bc41c30108fb70097586419da299d84702ef2ed07a64"
+    },
+    {
+      "bytes": 1114,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/cyclotomic-literal.md",
+      "sha256": "1c4f031e2992c2bd780800815f816f49d5974d426fc6c5df853c956a40ec24cd"
+    },
+    {
+      "bytes": 1206,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/direct-dimension.md",
+      "sha256": "84f2c3c88f3564ae4908c622b2154de51090d30900afbb67219e515e04628eec"
+    },
+    {
+      "bytes": 6099,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/dispatch.json",
+      "sha256": "18e5ad19a842f6c1e670020d50d3705be9541dc789e8b2e6c6cb4cddd63be7e4"
+    },
+    {
+      "bytes": 1356,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/kutas-interface.md",
+      "sha256": "b88d49a8e4a99911e0c603a7abd14a8cf4b020f641ca0e217a047803f059aae1"
+    },
+    {
+      "bytes": 25348,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/kutas-primary.md",
+      "sha256": "c3639ff3803560a620673118d3de5e3237c18c1e95dea9335342e90ee42ef882"
+    },
+    {
+      "bytes": 2467,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/primary-notes.md",
+      "sha256": "9b98f9548030bf348beed4eceeb0a7e69dbc9a12ba25758b1c92b338e883f173"
+    },
+    {
+      "bytes": 1204,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/relative-norm.md",
+      "sha256": "6b5c849a4acae537a70f276ecbfd54c1aec234d063be89f3bd1e4f2ab7396884"
+    },
+    {
+      "bytes": 2065,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/simon-bit-clock.md",
+      "sha256": "4b49c541d33c46fd47237a489f1fe26e449fbfd2a4618651a9884c866dfcbde0"
+    },
+    {
+      "bytes": 56532,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-classical-two-family/simon-dim4-primary.md",
+      "sha256": "b30ec6ea3ac8d82615da6b93258c3d09f2aed65b42b004132d5b7450886a50e4"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 24488,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/selmer_two_primary_round/checkpoint.json",
+    "sha256": "78ec6c05f444987e4996c4fc9a9d666fa610a4872cb390d49d57f85ad2c70140"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 19136,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/selmer_two_primary_round/usage.json",
+    "sha256": "a2235eb7b07eb0bca5a0906d4a90923b3e74ce6278260d763035a75990fca623"
+  },
+  "not_frozen": "Evolving STATE/HANDOFF/QUARTIC_RELATIVE_NORM_CLASSICAL/general-composition/disposition and active Simon/native reviews; current scientific originals not used to infer conclusions.",
+  "primary_source_artifacts": [
+    {
+      "bytes": 178624,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/kutas_quadratic_conics.pdf",
+      "sha256": "0e7f6904c02bc61f4b431f9b18eeb1c99ea1b9ba90dde5faa03b19ee4c87d6d7"
+    },
+    {
+      "bytes": 128,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/kutas_quadratic_conics.source.json",
+      "sha256": "7c61a571cdbf54764e549315ca2b9b7ba7a2ee03790a439c332d4f83753d7f75"
+    },
+    {
+      "bytes": 40537,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/kutas_quadratic_conics.txt",
+      "sha256": "967e9c5df58127679097453fc3d7606436e3057ff2781e204a404b5af90757c4"
+    },
+    {
+      "bytes": 499368,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/norm_relations.pdf",
+      "sha256": "63bce575394f993b8905a4bb7bf522026fdd32b93c77a27b0334e389df95366a"
+    },
+    {
+      "bytes": 128,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/norm_relations.source.json",
+      "sha256": "8426630b4e76f0adaa16a84204ee13917b2f220d8820abbb94508c065fceada0"
+    },
+    {
+      "bytes": 132669,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/norm_relations.txt",
+      "sha256": "dfea0166a8c40a179f825a60dfd26ceb93b138154aa1b4a811e2705142f80d04"
+    },
+    {
+      "bytes": 82477,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/simon_conics.pdf",
+      "sha256": "4ff1fced9a7b83543a32db7693f57ad3d11780fb55e8b77035e3aa8140b78160"
+    },
+    {
+      "bytes": 165,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/simon_conics.source.json",
+      "sha256": "79f5d2e5a0a6ae2507e4d50649380565b9053950de2923ae2d8f82ead90e3c4c"
+    },
+    {
+      "bytes": 5054,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/simon_conics.txt",
+      "sha256": "39b6e9cd4df5952192107fb48fa40902b947811760462f878066278e90a03c28"
+    },
+    {
+      "bytes": 225510,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/simon_dim4.pdf",
+      "sha256": "d6f05535e58c846757ea636c1197ca93f2daef564670e50655a73b9ee5b101d3"
+    },
+    {
+      "bytes": 144,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/simon_dim4.source.json",
+      "sha256": "16d8a3fc16b01974a579c2c53f4fe06bebd85512b9c617010393210e8c2a9f6d"
+    },
+    {
+      "bytes": 56325,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/simon_dim4.txt",
+      "sha256": "8f1d98581d11bb3d35e859fbb64541d1f03b538bd0c663d555d5ad465ffbd476"
+    },
+    {
+      "bytes": 318394,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/unit_signatures.pdf",
+      "sha256": "b23012c36467836fdec5b3418e4bd2722d23cbe04e36797697f9bf5c51285e28"
+    },
+    {
+      "bytes": 148,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/unit_signatures.source.json",
+      "sha256": "cf59b3dd2be69649cc3a19685fb121a002d4bf639da668df405972830b5ae244"
+    },
+    {
+      "bytes": 49186,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/unit_signatures.txt",
+      "sha256": "0c55852e6a295a3460ab8deb79c4dbee19528ec928a5e052b1e5593a83cd6ac1"
+    }
+  ],
+  "prior_hash_policy": "Frozen prior usage/checkpoint remain byte-identical. No earlier artifact/hash repinning or historical-run rescan.",
+  "review_artifacts": [
+    {
+      "bytes": 9800,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-one-prime-two-class-coverage.md",
+      "sha256": "35eb3590dfa1e2839ed9bdefaf7313e4bc71ac58d14755e8da1c4060448182f9"
+    },
+    {
+      "bytes": 9293,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-literal-dyadic-cyclotomic-units.md",
+      "sha256": "5d71add7969069fa8982c01167ac3084a5ac3c5adc9e863142a1ad889787be2f"
+    },
+    {
+      "bytes": 4648,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-one-prime-narrow-signatures.md",
+      "sha256": "fe9e1e120caec06c7766998c78aece7f30663f53cd0c08d57e9d70dada2dc374"
+    },
+    {
+      "bytes": 11170,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-quadratic-tower-support-correction.md",
+      "sha256": "802c10534169ca22fe3ea1af766af443ae11c7fbdf48ad15279f90d2f4c845de"
+    },
+    {
+      "bytes": 12861,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-bosma-stevenhagen-conic-clock-repair.md",
+      "sha256": "e46c599d7171942809636b53c7e064d11617147dfcb19283264d079b5778e798"
+    }
+  ],
+  "scope": "Mechanical usage and completed artifact hashes only; no scientific conclusions.",
+  "six_terminal_results_and_responses": [
+    {
+      "obligation": "relative-norm",
+      "response": {
+        "bytes": 15776,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/response.md",
+        "sha256": "8e74a0957c1f2defca750508111275933a7ac12803cfa5661b7e1adeb4aa6b12"
+      },
+      "response_characters": 15762,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1966,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/result.json",
+        "sha256": "e0ddab311d2da29e3089a2ba183c1d4b736412c56667c605669e557bdea56737"
+      },
+      "session_id": 16584,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "cyclotomic-literal",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclotomic-literal/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 1930,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclotomic-literal/result.json",
+        "sha256": "12439edff84da80603172ca1ada3b6a3cb255a4a37b70a07d01ee718ca0784eb"
+      },
+      "session_id": 27558,
+      "status": "empty_response",
+      "stop_reason": "refusal"
+    },
+    {
+      "obligation": "cyclic-quartic",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response_characters": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 2133,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/result.json",
+        "sha256": "44c0c993e329d1261435de3089f088e859b9bf26fe2d692619b45fe1039e33c9"
+      },
+      "session_id": 52117,
+      "status": "truncated",
+      "stop_reason": "max_tokens"
+    },
+    {
+      "obligation": "direct-dimension",
+      "response": {
+        "bytes": 17294,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/response.md",
+        "sha256": "18c4186267f923c49ce38a5f396709c8e16ab9d3626d0298e9625e4ac7162742"
+      },
+      "response_characters": 17276,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1948,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/result.json",
+        "sha256": "8d3df1ae271ae0134a64e1b57b84a10ce3303fbe4f23b7147ddf8f4576bbaed7"
+      },
+      "session_id": 99949,
+      "status": "completed",
+      "stop_reason": null
+    },
+    {
+      "obligation": "kutas-interface",
+      "response": {
+        "bytes": 14855,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-kutas-interface/response.md",
+        "sha256": "e5c1dcc7ebbba62ecb6e17914d1e1e7b4f6efb463ac84d53be297a90b24d8b8f"
+      },
+      "response_characters": 14407,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1414,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-kutas-interface/result.json",
+        "sha256": "593a3676639c3ca2d2bf698077dbf938abd91337ccd28b72825d3b67f4510a80"
+      },
+      "session_id": 94110,
+      "status": "completed",
+      "stop_reason": "end_turn"
+    },
+    {
+      "obligation": "simon-bit-clock",
+      "response": {
+        "bytes": 12760,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-simon-bit-clock/response.md",
+        "sha256": "bd43004f8696d50213303feb3de2050b05c3a9a246edbf466d4148307b7f7f7b"
+      },
+      "response_characters": 12362,
+      "response_nonempty": true,
+      "result": {
+        "bytes": 1676,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-simon-bit-clock/result.json",
+        "sha256": "57182a38998c3c6bbd79228d7e1445b52b73b921b9eb48213c596ba20846ad54"
+      },
+      "session_id": 36546,
+      "status": "completed",
+      "stop_reason": "end_turn"
+    }
+  ],
+  "status": "TERMINAL_CLASSICAL_TWO_FAMILY_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1204,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/context-00.txt",
+      "sha256": "6b5c849a4acae537a70f276ecbfd54c1aec234d063be89f3bd1e4f2ab7396884"
+    },
+    {
+      "bytes": 2994,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/context-01.txt",
+      "sha256": "9647a312be697caa4c5130f1b87fda50e7ae7be211a6c4332569831090a6c1d4"
+    },
+    {
+      "bytes": 2467,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/context-02.txt",
+      "sha256": "9b98f9548030bf348beed4eceeb0a7e69dbc9a12ba25758b1c92b338e883f173"
+    },
+    {
+      "bytes": 11434,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/context-03.txt",
+      "sha256": "7968bfe41e7bca50013b5e13fa5006b2c45d9e9e93f2ac3c57e6bfc32b1b9825"
+    },
+    {
+      "bytes": 9800,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/context-04.txt",
+      "sha256": "35eb3590dfa1e2839ed9bdefaf7313e4bc71ac58d14755e8da1c4060448182f9"
+    },
+    {
+      "bytes": 632609,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/provider-response.json",
+      "sha256": "ebbac4850936e40da864dcb840f21e6146a34c21dc02f931748a4158c5145643"
+    },
+    {
+      "bytes": 29420,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/request.json",
+      "sha256": "9e389bd47a1cc84ea107d3761782f8df49271821ba42591e26d72d583d775fba"
+    },
+    {
+      "bytes": 15776,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/response.md",
+      "sha256": "8e74a0957c1f2defca750508111275933a7ac12803cfa5661b7e1adeb4aa6b12"
+    },
+    {
+      "bytes": 1966,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-relative-norm/result.json",
+      "sha256": "e0ddab311d2da29e3089a2ba183c1d4b736412c56667c605669e557bdea56737"
+    },
+    {
+      "bytes": 2994,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclotomic-literal/context/000.txt",
+      "sha256": "9647a312be697caa4c5130f1b87fda50e7ae7be211a6c4332569831090a6c1d4"
+    },
+    {
+      "bytes": 2467,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclotomic-literal/context/001.txt",
+      "sha256": "9b98f9548030bf348beed4eceeb0a7e69dbc9a12ba25758b1c92b338e883f173"
+    },
+    {
+      "bytes": 9800,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclotomic-literal/context/002.txt",
+      "sha256": "35eb3590dfa1e2839ed9bdefaf7313e4bc71ac58d14755e8da1c4060448182f9"
+    },
+    {
+      "bytes": 1114,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclotomic-literal/prompt.txt",
+      "sha256": "1c4f031e2992c2bd780800815f816f49d5974d426fc6c5df853c956a40ec24cd"
+    },
+    {
+      "bytes": 18185,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclotomic-literal/request.json",
+      "sha256": "4ecfac883b16f12bae5bc8aa6af74c940aed6770cf068bb5e5e9bdf03de24dbf"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclotomic-literal/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1930,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclotomic-literal/result.json",
+      "sha256": "12439edff84da80603172ca1ada3b6a3cb255a4a37b70a07d01ee718ca0784eb"
+    },
+    {
+      "bytes": 2994,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/context/000.txt",
+      "sha256": "9647a312be697caa4c5130f1b87fda50e7ae7be211a6c4332569831090a6c1d4"
+    },
+    {
+      "bytes": 2467,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/context/001.txt",
+      "sha256": "9b98f9548030bf348beed4eceeb0a7e69dbc9a12ba25758b1c92b338e883f173"
+    },
+    {
+      "bytes": 5264,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/context/002.txt",
+      "sha256": "6ace4a27fa4dd674a224e25e10c64e28e4810e43a4a7da44c59cd641ea38c019"
+    },
+    {
+      "bytes": 11882,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/context/003.txt",
+      "sha256": "d80ad3399508b6f7751de22f754daa44770378ba3005d4a4e2d92cd6c0278df4"
+    },
+    {
+      "bytes": 1254,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/prompt.txt",
+      "sha256": "9a42a2b48210ce7c2ff7bc41c30108fb70097586419da299d84702ef2ed07a64"
+    },
+    {
+      "bytes": 26181,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/request.json",
+      "sha256": "ee45310c6322d5d7bcf814ab5f23c45e8fe001064f7486782bd30deb80a57962"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2133,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-cyclic-quartic/result.json",
+      "sha256": "44c0c993e329d1261435de3089f088e859b9bf26fe2d692619b45fe1039e33c9"
+    },
+    {
+      "bytes": 1206,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/context-00.txt",
+      "sha256": "84f2c3c88f3564ae4908c622b2154de51090d30900afbb67219e515e04628eec"
+    },
+    {
+      "bytes": 2994,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/context-01.txt",
+      "sha256": "9647a312be697caa4c5130f1b87fda50e7ae7be211a6c4332569831090a6c1d4"
+    },
+    {
+      "bytes": 2467,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/context-02.txt",
+      "sha256": "9b98f9548030bf348beed4eceeb0a7e69dbc9a12ba25758b1c92b338e883f173"
+    },
+    {
+      "bytes": 12437,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/context-03.txt",
+      "sha256": "629ba54c0d88746ed8903d90d2ced566b9603d5fc13adf7e8c942d829d93b795"
+    },
+    {
+      "bytes": 9800,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/context-04.txt",
+      "sha256": "35eb3590dfa1e2839ed9bdefaf7313e4bc71ac58d14755e8da1c4060448182f9"
+    },
+    {
+      "bytes": 659521,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/provider-response.json",
+      "sha256": "03b1ded69b739b1ddd29032a7025416c63ca6e06fa14b0b79561b8a9bf1385a5"
+    },
+    {
+      "bytes": 30384,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/request.json",
+      "sha256": "d50023fc268a88d0245621ac95eb570f8f754a38f9fbfca6dec279b861a66d19"
+    },
+    {
+      "bytes": 17294,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/response.md",
+      "sha256": "18c4186267f923c49ce38a5f396709c8e16ab9d3626d0298e9625e4ac7162742"
+    },
+    {
+      "bytes": 1948,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-direct-dimension/result.json",
+      "sha256": "8d3df1ae271ae0134a64e1b57b84a10ce3303fbe4f23b7147ddf8f4576bbaed7"
+    },
+    {
+      "bytes": 25348,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-kutas-interface/context/000.txt",
+      "sha256": "c3639ff3803560a620673118d3de5e3237c18c1e95dea9335342e90ee42ef882"
+    },
+    {
+      "bytes": 1356,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-kutas-interface/prompt.txt",
+      "sha256": "b88d49a8e4a99911e0c603a7abd14a8cf4b020f641ca0e217a047803f059aae1"
+    },
+    {
+      "bytes": 29272,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-kutas-interface/request.json",
+      "sha256": "167d56a9b60af174f0753fe899dac4eeb2039410a6c16fbe3320e0aa7e3eace2"
+    },
+    {
+      "bytes": 14855,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-kutas-interface/response.md",
+      "sha256": "e5c1dcc7ebbba62ecb6e17914d1e1e7b4f6efb463ac84d53be297a90b24d8b8f"
+    },
+    {
+      "bytes": 1414,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-kutas-interface/result.json",
+      "sha256": "593a3676639c3ca2d2bf698077dbf938abd91337ccd28b72825d3b67f4510a80"
+    },
+    {
+      "bytes": 56532,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-simon-bit-clock/context/000.txt",
+      "sha256": "b30ec6ea3ac8d82615da6b93258c3d09f2aed65b42b004132d5b7450886a50e4"
+    },
+    {
+      "bytes": 66070,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-simon-bit-clock/context/001.txt",
+      "sha256": "746970f00ff790aa83fbdd80c4a9b0dd161992e69a3c625b1051d539c3def9f1"
+    },
+    {
+      "bytes": 2065,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-simon-bit-clock/prompt.txt",
+      "sha256": "4b49c541d33c46fd47237a489f1fe26e449fbfd2a4618651a9884c866dfcbde0"
+    },
+    {
+      "bytes": 131184,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-simon-bit-clock/request.json",
+      "sha256": "77433c18d937061a7a5d0b5b464f72d5c88a4c52d411c42c0163de8a39ccf108"
+    },
+    {
+      "bytes": 12760,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-simon-bit-clock/response.md",
+      "sha256": "bd43004f8696d50213303feb3de2050b05c3a9a246edbf466d4148307b7f7f7b"
+    },
+    {
+      "bytes": 1676,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-simon-bit-clock/result.json",
+      "sha256": "57182a38998c3c6bbd79228d7e1445b52b73b921b9eb48213c596ba20846ad54"
+    }
+  ],
+  "unique_hashed_artifact_count": 82,
+  "usage_snapshot": {
+    "bytes": 24220,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/classical_two_family_round/usage.json",
+    "sha256": "e9882e99ca6aa1addb410e0809eb330d5ceef03f86371fbaf374044c185fa98f"
+  }
+}

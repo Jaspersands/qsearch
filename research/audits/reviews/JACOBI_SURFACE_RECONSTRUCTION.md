@@ -1,6 +1,6 @@
 # Referee review: JACOBI_SURFACE_RECONSTRUCTION
 
-Note: `research/JACOBI_SURFACE_RECONSTRUCTION.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/JACOBI_SURFACE_RECONSTRUCTION.md`. Reviewed 2026-11-13 by claude-subagent-refresh-2026-11-13. Overall: **needs-work**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
