@@ -1,0 +1,55 @@
+D.1. Graph Cloning
+We begin with the subroutine G RAPH -C LONE which produces several independent samples from
+a planted subgraph problems given a single sample. This procedure is a simple generalization of
+PDS-C LONING in Section 10 of Brennan et al. (2018) and can be viewed as an exact variant of a
+simple multivariate rejection kernel to products of Bernoulli random variables.
+
+Lemma 14 (Graph Cloning) Let t ∈ N, 0 < q < p ≤ 1 and 0 < Q < P ≤ 1 satisfy that
+                                 1−P t
+                                                 t
+                       1−p                          P      p
+                            ≤               and          ≤
+                       1−q       1−Q                Q      q
+
+                                                  28
+                       U NIVERSAL R EDUCTIONS TO S UBMATRIX D ETECTION
+
+
+
+
+Then the algorithm A = G RAPH -C LONE runs in poly(t, n) time and satisfies that for each S ⊆ [n],
+              A (G(n, q)) ∼ G(n, Q)⊗t       and   A (G(n, S, p, q)) ∼ G(n, S, P, Q)⊗t
+
+Proof Let R0 , R1 : {0, 1}t → R be given by
+                      1 h         |v|1       t−|v|1         |v|1       t−|v|1
+                                                                              i
+         R0 (v) =            p · Q (1 − Q)          − q · P (1 − P )
+                    p−q
+                      1    h
+                                        |v|1        t−|v|1              |v|1     t−|v|1
+                                                                                        i
+         R1 (v) =            (1 − q) · P (1 − P )          − (1 − p) · Q (1 − Q)
+                    p−q
+Now observe that for each v ∈ {0, 1}t , the fact that P > Q implies that
+
+                              1 − P t P |v|1 (1 − P )t−|v|1
+                                                                   t
+                   1−p                                               P     p
+                          ≤               ≤ |v|           t−|v|
+                                                                  ≤      ≤
+                   1−q        1−Q            Q (1 − Q)
+                                                  1             1    Q     q
+which implies that R0 (v) ≥ 0 and R1 (v) ≥ 0 for each v ∈ {0, 1}t . Furthermore, we have that
+                                X                 X
+                                      R0 (v) =          R1 (v) = 1
+                                v∈{0,1}t          v∈{0,1}t
+
+which implies that R0 and R1 are well-defined probability mass functions. Also observe that
+                         (1 − p) · R0 (v) + p · R1 (v) = P |v|1 (1 − P )t−|v|1
+                         (1 − q) · R0 (v) + q · R1 (v) = Q|v|1 (1 − Q)t−|v|1
+Therefore it follows that if 1{i,j}∈E(G) ∼ Bern(p), then xij ∼ Bern(P )⊗t and if 1{i,j}∈E(G) ∼
+Bern(q), then xij ∼ Bern(Q)⊗t . Since the edge indicators 1{i,j}∈E(G) are independent in each
+of G(n, q) and G(n, S, p, q), this implies that (G1 , G2 , . . . , Gt ) ∼ G(n, Q)⊗t if G ∼ G(n, q) and
+(G1 , G2 , . . . , Gt ) ∼ G(n, P )⊗t if G ∼ G(n, k, p, q), completing the proof of the lemma.
+
+

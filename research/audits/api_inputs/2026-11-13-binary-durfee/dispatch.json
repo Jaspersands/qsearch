@@ -1,0 +1,33 @@
+{
+  "note": "New compact-input operation, not reuse of numerical-n clock. Two distinct algebra and bounded-counting obligations after corpus/actual primary checks. No retries; ceilings not charges.",
+  "jobs": [
+    {
+      "id": "binary-durfee-coefficient",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-binary-durfee/coefficient-attack.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-binary-durfee/contract.md",
+        "research/audits/api_inputs/2026-11-13-binary-durfee/actual-sources.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-binary-durfee-coefficient",
+      "budget": 3,
+      "max_tokens": 64000,
+      "status": "running",
+      "session_id": 24012
+    },
+    {
+      "id": "binary-durfee-counting",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-binary-durfee/counting-compiler.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-binary-durfee/contract.md",
+        "research/audits/api_inputs/2026-11-13-binary-durfee/actual-sources.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-binary-durfee-counting",
+      "budget": 4,
+      "max_tokens": 64000,
+      "status": "running",
+      "session_id": 34322
+    }
+  ]
+}

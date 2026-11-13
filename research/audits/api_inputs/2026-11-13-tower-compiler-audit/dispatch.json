@@ -1,0 +1,43 @@
+{
+  "note": "Two distinct audits of NEW concrete positive compiler proposal; not retries. Claims unverified. Ceilings not charges.",
+  "jobs": [
+    {
+      "id": "tower-one-tag-gluing-audit",
+      "model": "claude-fable-5-1",
+      "prompt": "research/audits/api_inputs/2026-11-13-tower-compiler-audit/gluing-attack.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-tower-compiler-audit/compiler-sections-2-4.md",
+        "research/audits/api_inputs/2026-11-13-tower-native-composition/wesolowski-primary.txt",
+        "research/audits/reviews/2026-11-13-sparse-gluing-support.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-tower-one-tag-gluing-audit",
+      "budget": 3,
+      "max_tokens": 40000,
+      "status": "failed",
+      "session_id": 19888,
+      "failure_type": "ReadTimeout",
+      "billing_status": "unknown",
+      "parent_read": "EMPTY; no findings",
+      "session_reaped": true,
+      "note": "No retry. 0.1267USD streaming estimate is partial, not final charge; exclude from priced totals."
+    },
+    {
+      "id": "tower-coordinate-rebasing-audit",
+      "model": "claude-opus-5-5",
+      "prompt": "research/audits/api_inputs/2026-11-13-tower-compiler-audit/coordinate-attack.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-tower-compiler-audit/compiler-sections-2-4.md",
+        "research/audits/api_inputs/2026-11-13-tower-compiler-audit/compiler-sections-5-8.md",
+        "research/audits/reviews/2026-11-13-tagged-tower-conditional-composition.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-tower-coordinate-rebasing-audit",
+      "budget": 2,
+      "max_tokens": 40000,
+      "status": "truncated",
+      "session_id": 16966,
+      "parent_read": "FULL1435bytes; introductory verdict only, truncates before claimed amendments. No auditable proof/counterexample imported.",
+      "session_reaped": true,
+      "note": "No retry. Independent internal proof continues on existing newly concrete compiler."
+    }
+  ]
+}

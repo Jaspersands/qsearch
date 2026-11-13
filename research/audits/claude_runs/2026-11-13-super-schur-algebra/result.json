@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 3870,
+      "path": "research/audits/api_inputs/2026-11-13-super-schur/contract.md",
+      "sha256": "096eb25447cdc1c7edb3bb5821891bd8e8fc3d01580619cd14e13362fc279547",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 29711,
+      "path": "research/audits/api_inputs/2026-11-13-super-schur/actual-sources.txt",
+      "sha256": "988b3de12f5456f4704c5d2830a44d4a781d3e4927664083e608d3d593875347",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 12411,
+  "effort": "high",
+  "finished_at": "2026-11-13T01:59:54.523202+00:00",
+  "input_token_allowance": 12667,
+  "max_budget_usd": 3.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.330668,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-super-schur/algebra-attack.md",
+    "sha256": "3d35d9e052750532813de88d1783262c75cd6d0c95de75bde6f398c3aae59690",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261113T015610.262800Z-912c9a50",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 12411,
+    "output_tokens": 23595
+  },
+  "usage_cost_estimate_usd": 0.521544
+}

@@ -1,0 +1,661 @@
+{
+  "captured_at_utc": "2026-11-12T22:09:58.670392+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "finite_control_proves_general_theorem": false,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": [
+    {
+      "bytes": 4489,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/dispatch.json",
+      "sha256": "17d8e91faf9b8a984a681a7d2ba654f001386c1afde4c927537cd9f621effe93"
+    },
+    {
+      "bytes": 1629,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-source-lemmas/dispatch.json",
+      "sha256": "3d703b2b45ab76e87342e144cda5ecca4d84fb9664cc99919ad9ea9f807419ad"
+    }
+  ],
+  "dispatch_mutation_scope": "No manifest edits during this freeze; parent-provided terminal/read/reaped metadata retained.",
+  "eight_terminal_results_and_responses": [
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-full-resolvent",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 19204,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/response.md",
+        "sha256": "6c3a045eb85774ebf6846ee271c263361ace858363e8502ddad9d8a4bd1c7df4"
+      },
+      "result": {
+        "bytes": 1580,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/result.json",
+        "sha256": "93c711174e0cf74712dc4083cc8c68d683ff60d54f8c026507fdb11cce99ac30"
+      },
+      "session_id": 80230,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "total_cost_usd": "Not a measured bill",
+      "usage_cost_estimate_usd": "2.163620"
+    },
+    {
+      "known_nonpartial_estimate": false,
+      "obligation": "wave-classical-superposition",
+      "parent_read_disposition": "empty failure metadata checked",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "result": {
+        "bytes": 1269,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/result.json",
+        "sha256": "442133052a3dd17727d9937e8e44ebf723cd1722c8bf15f8a8a08bfe80905c84"
+      },
+      "session_id": 45476,
+      "session_reaped_per_parent": true,
+      "status": "failed",
+      "total_cost_usd": "UNKNOWN",
+      "usage_cost_estimate_usd": null
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-single-green",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 18142,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/response.md",
+        "sha256": "58d4b51a1a5152358493eacbaf048d5d7ebbd966e4aff5feff80dc66bf9a5131"
+      },
+      "result": {
+        "bytes": 1578,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/result.json",
+        "sha256": "f2836a2c169da1304e3b936ad487f5351d215574f6ffb196d0ac5afc5cdae267"
+      },
+      "session_id": 58359,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "total_cost_usd": "Not a measured bill",
+      "usage_cost_estimate_usd": "2.385910"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-cancellation-falsifier",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 11955,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/response.md",
+        "sha256": "af1c8ef6171b5500e5ec9e681a10b6e2a75bb4380581833cc878e3bc1a47ab01"
+      },
+      "result": {
+        "bytes": 1635,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/result.json",
+        "sha256": "fb2d8de8b52378c0ae1e7f8c02a65d84ac7e6b88d93aef7a39fb59efe9f962a7"
+      },
+      "session_id": 1138,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "total_cost_usd": "Not a measured bill",
+      "usage_cost_estimate_usd": "0.631880"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-lattice-shell",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 10853,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/response.md",
+        "sha256": "47b148163f99d91a16fdea842059d60b912f869abf359d2a740db4555db0d212"
+      },
+      "result": {
+        "bytes": 1627,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/result.json",
+        "sha256": "00fbde5820a44bc2ddcb31110fe50bcc75baec0a1caa3094012f03abd37b84ff"
+      },
+      "session_id": 93922,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "total_cost_usd": "Not a measured bill",
+      "usage_cost_estimate_usd": "0.829208"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-positive-source-frame",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 9753,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/response.md",
+        "sha256": "caa6c60ed7ce23ae4e843690499bbcf118a39664d84f932e5908092201283d23"
+      },
+      "result": {
+        "bytes": 1633,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/result.json",
+        "sha256": "1c4b2ed35f7ae1f03f8fd00aa4ba8a695fd125596a86cd586a859abad85f9e48"
+      },
+      "session_id": 20516,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "total_cost_usd": "Not a measured bill",
+      "usage_cost_estimate_usd": "0.578124"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-sparse-deflation",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 15042,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/response.md",
+        "sha256": "f4e7432af12d663c07d75eba74553e4e3c2f63088308ce470842c8ed86d52428"
+      },
+      "result": {
+        "bytes": 1656,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/result.json",
+        "sha256": "e2c4d376e9cf6c26f5a7d003fddacd12153c9fa94781c72e78b1e1813f1e1528"
+      },
+      "session_id": 91843,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "total_cost_usd": "Not a measured bill",
+      "usage_cost_estimate_usd": "1.081752"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-uniform-green-envelope",
+      "parent_read_disposition": "EMPTY truncation; no findings",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "result": {
+        "bytes": 1693,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/result.json",
+        "sha256": "84cdf454f917f980d6b0b239ded68243d67aa728f3ece01d46370e11d902cb73"
+      },
+      "session_id": 51592,
+      "session_reaped_per_parent": true,
+      "status": "truncated",
+      "total_cost_usd": "Not a measured bill",
+      "usage_cost_estimate_usd": "1.329260"
+    }
+  ],
+  "exclusions": [
+    {
+      "reason": "Four exact inherited exclusions preserved plus new empty RemoteProtocolError with no reported usage; all observed partial estimates remain excluded.",
+      "scope": "Five UNKNOWN total bills"
+    },
+    {
+      "reason": "Outside this eight-job checkpoint. Only a labelled snapshot of the current topic note is frozen.",
+      "scope": "Live wave-cluster-completion requests/bundles/sources/reviews, evolving topic original, STATE/HANDOFF/MECHANICAL and newer work"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 4424,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/contract.md",
+      "sha256": "0ad9462093e71f8f207f1af25fab68f2e8087fbb7cadc30d713206229a51e552"
+    },
+    {
+      "bytes": 4489,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/dispatch.json",
+      "sha256": "17d8e91faf9b8a984a681a7d2ba654f001386c1afde4c927537cd9f621effe93"
+    },
+    {
+      "bytes": 45220,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/primary.txt",
+      "sha256": "c796e9a92ead553a12e67b5c943291922c613e42f9576a0cd4ce1c94485e2bd3"
+    },
+    {
+      "bytes": 1170,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/wave-cancellation-falsifier.md",
+      "sha256": "30b8326707d68fa7573833354a2226565fe6128e6d8b320123219c356b6743f7"
+    },
+    {
+      "bytes": 1219,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/wave-classical-superposition.md",
+      "sha256": "5c35ec7097ecdf5b96ed19a4dabbaac1401e24d9331f21515aa2f74bb4f6f7a6"
+    },
+    {
+      "bytes": 1331,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/wave-full-resolvent.md",
+      "sha256": "023a94fbb8edccf2e45c915943e24028e851404db38f204d295687d3eda75971"
+    },
+    {
+      "bytes": 1141,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/wave-lattice-shell.md",
+      "sha256": "75701964b82ef660086d9106ece5f54ea94cd333d4a3073882661dd15fb02ce9"
+    },
+    {
+      "bytes": 1151,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/wave-positive-source-frame.md",
+      "sha256": "0f60c4c71ad8c0a4dfd24a46dd22a1a8f2c5ae1f04d2323cd3710a7518185389"
+    },
+    {
+      "bytes": 1090,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-sparse-wave/wave-single-green.md",
+      "sha256": "086d5cb49aa487b89885706432d94a0c129d1869e87ebdb0511b95d3875e2f27"
+    },
+    {
+      "bytes": 5183,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-source-lemmas/contract.md",
+      "sha256": "be72a6b6d88a203c7084f3a1ecb4e932e9f2e1d88e737021769eb15099727bad"
+    },
+    {
+      "bytes": 1629,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-source-lemmas/dispatch.json",
+      "sha256": "3d703b2b45ab76e87342e144cda5ecca4d84fb9664cc99919ad9ea9f807419ad"
+    },
+    {
+      "bytes": 19960,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-source-lemmas/green-primary.txt",
+      "sha256": "020285072bfc84c70b117ccfb16ed58bdc74541741deac734e1137945459854c"
+    },
+    {
+      "bytes": 14852,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-source-lemmas/sparse-primary.txt",
+      "sha256": "8b53f39036121b186fc137b5710ed90af9eac101cba21c6cf8b4252aab2d4c9c"
+    },
+    {
+      "bytes": 1425,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-source-lemmas/wave-sparse-deflation.md",
+      "sha256": "548b3e5c0ed5d3ace3cb88f106e2d4ac81f47ec7809c73ee6a9e0680498e78ae"
+    },
+    {
+      "bytes": 1576,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-source-lemmas/wave-uniform-green-envelope.md",
+      "sha256": "e8c6b3de4dfc798247ce4d1d4fdf84af011fd822005235824d1c45a070ba2a22"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 12698,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/condensate_projector_round/checkpoint.json",
+    "sha256": "0881b61785e4fd74899477c184c4f0f5821fcfac370ec32e27886a1219fce2c2"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 22338,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/condensate_projector_round/usage.json",
+    "sha256": "9b06bbeb3f47386c91a509ac3b9a7ec5bea1d9fb4c3605af292aa7257cbbaf2c"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 83
+  },
+  "labelled_topic_snapshot": {
+    "bytes": 20794,
+    "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/NATIVE_SPARSE_WAVE_SAMPLING.md",
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/sparse_wave_round/topic-snapshot.md",
+    "sha256": "3238b7616b73a621a00d8fa6c95a0e795a9e6f9e509b0c979297739f78e84f86",
+    "snapshot_label": "Exact byte snapshot of NATIVE_SPARSE_WAVE_SAMPLING.md captured for this milestone; original evolving topic note is not hashed."
+  },
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 2132330,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/helmholtz.pdf",
+      "sha256": "a859234ec79a16883207efa75531cf57c6c43ea410fd24ad7d047197b60e8c92"
+    },
+    {
+      "bytes": 89832,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/helmholtz.txt",
+      "sha256": "acc5dae9736da86cf3b9d3cecdbf2bcda03cb9c8701d94e5354d46fde5243c9e"
+    },
+    {
+      "bytes": 128,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/helmholtz-source.json",
+      "sha256": "93e6831be30123d44462ec0525b0836c6357f0a3c308ebdb8dd3885ba0a32e6d"
+    },
+    {
+      "bytes": 168486,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/martin2006.pdf",
+      "sha256": "495a618e60034f5d8dc718582e4ec406e5978e811cae029802c893225ce09468"
+    },
+    {
+      "bytes": 40716,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/martin2006.txt",
+      "sha256": "ea089e5ae5e438834c8f2def8a0e4e4c624bdb58f1a5d7cc52aed256bc908ae8"
+    },
+    {
+      "bytes": 152,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/martin2006-source.json",
+      "sha256": "c569a32ea31daebd43a1193e0d53bc1fdbb96ea82f65260acc6673a0631753bf"
+    },
+    {
+      "bytes": 302527,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/sparse_bivariate_arxiv.pdf",
+      "sha256": "7d5b6419f2b0d164cc34a6d378f42e87fcb431bed742c50a56d6b96689f7a70d"
+    },
+    {
+      "bytes": 75483,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/sparse_bivariate_arxiv.txt",
+      "sha256": "e146ff98093d005ce468bcc919ccbe3a9242a75f433f709c244e88f82a244350"
+    },
+    {
+      "bytes": 130,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/sparse_bivariate_arxiv-source.json",
+      "sha256": "3ad020d0795d019f64e3d201af492ab6c05f1e5021e5d200c1670186388a6066"
+    },
+    {
+      "bytes": 172952,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/sparse_bivariate_cor25.png",
+      "sha256": "3934b5fc8d6dce57d8d38bb7e7432c4f7996c82d557e78918c34f84c4d7a8151"
+    }
+  ],
+  "prior_hash_policy": "Prior condensate-projector ledgers and all historical artifact pins remain unchanged. Only prior ledger/checkpoint continuity files referenced; no historical run rescan or repinning.",
+  "scope": "Frozen condensate-projector baseline plus ONLY six sparse-wave and two wave-source-lemmas terminal requests. Artifact checkpoint finalized for their immutable paid packets/bundles, four explicitly stable independent reviews, specified primary sources, and labelled topic snapshot. No historical rescan.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-12T22:09:58.670392+00:00",
+    "parent_confirmed_stable_and_fully_read": true,
+    "topic_original_not_hashed": "/Users/jaspersands/Developer/qsearch/research/NATIVE_SPARSE_WAVE_SAMPLING.md",
+    "topic_snapshot": "/Users/jaspersands/Developer/qsearch/research/audits/controls/sparse_wave_round/topic-snapshot.md"
+  },
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 17597,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 348,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-wave-single-source-compiler-independent.md",
+      "physical_LF_count": 347,
+      "sha256": "d9dec9e2a5db0d345a3d056d1e3d6a74fb75a9717e99a04c22cb85d2dd2993fe"
+    },
+    {
+      "bytes": 16545,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 359,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-wave-single-green-classical-independent.md",
+      "physical_LF_count": 359,
+      "sha256": "3d8df8f7fba2d28d4326289bbbb024dc2742185dabaf9f979c8562ecd951a2d7"
+    },
+    {
+      "bytes": 15598,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 282,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-independent-upside-selection.md",
+      "physical_LF_count": 282,
+      "sha256": "f510c01b815235a6065dd53b74bb001797f236709357d34ff0f360207cb8d49f"
+    },
+    {
+      "bytes": 7727,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 193,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-wave-positive-array-independent.md",
+      "physical_LF_count": 192,
+      "sha256": "d4037954984ac1484554283da446e1df0538cb1c57e3046859b94b22e3289b2b"
+    }
+  ],
+  "status": "TERMINAL_SPARSE_WAVE_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1331,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/context-00.txt",
+      "sha256": "023a94fbb8edccf2e45c915943e24028e851404db38f204d295687d3eda75971"
+    },
+    {
+      "bytes": 4424,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/context-01.txt",
+      "sha256": "0ad9462093e71f8f207f1af25fab68f2e8087fbb7cadc30d713206229a51e552"
+    },
+    {
+      "bytes": 45220,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/context-02.txt",
+      "sha256": "c796e9a92ead553a12e67b5c943291922c613e42f9576a0cd4ce1c94485e2bd3"
+    },
+    {
+      "bytes": 639816,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/provider-response.json",
+      "sha256": "9076f37de4b3b6e7e0334dd94424bb33915dfac5a50f430a56ec8c71bbb5bf15"
+    },
+    {
+      "bytes": 53424,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/request.json",
+      "sha256": "4d020cb3d6600edc342b3b8a8440dcc1693789cc821bdd806b0d6000a287278a"
+    },
+    {
+      "bytes": 19204,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/response.md",
+      "sha256": "6c3a045eb85774ebf6846ee271c263361ace858363e8502ddad9d8a4bd1c7df4"
+    },
+    {
+      "bytes": 1580,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-full-resolvent/result.json",
+      "sha256": "93c711174e0cf74712dc4083cc8c68d683ff60d54f8c026507fdb11cce99ac30"
+    },
+    {
+      "bytes": 1219,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/context-00.txt",
+      "sha256": "5c35ec7097ecdf5b96ed19a4dabbaac1401e24d9331f21515aa2f74bb4f6f7a6"
+    },
+    {
+      "bytes": 4424,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/context-01.txt",
+      "sha256": "0ad9462093e71f8f207f1af25fab68f2e8087fbb7cadc30d713206229a51e552"
+    },
+    {
+      "bytes": 45220,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/context-02.txt",
+      "sha256": "c796e9a92ead553a12e67b5c943291922c613e42f9576a0cd4ce1c94485e2bd3"
+    },
+    {
+      "bytes": 53321,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/request.json",
+      "sha256": "99575ca378693771a20f9aae2f374c0255d36dd517037b45160e8e077121e28c"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1269,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/result.json",
+      "sha256": "442133052a3dd17727d9937e8e44ebf723cd1722c8bf15f8a8a08bfe80905c84"
+    },
+    {
+      "bytes": 1090,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/context-00.txt",
+      "sha256": "086d5cb49aa487b89885706432d94a0c129d1869e87ebdb0511b95d3875e2f27"
+    },
+    {
+      "bytes": 4424,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/context-01.txt",
+      "sha256": "0ad9462093e71f8f207f1af25fab68f2e8087fbb7cadc30d713206229a51e552"
+    },
+    {
+      "bytes": 45220,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/context-02.txt",
+      "sha256": "c796e9a92ead553a12e67b5c943291922c613e42f9576a0cd4ce1c94485e2bd3"
+    },
+    {
+      "bytes": 676849,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/provider-response.json",
+      "sha256": "77d263500f3bf51f7f2bf7b373463242ed3df3f245017bc0f9d163361d563b2b"
+    },
+    {
+      "bytes": 53181,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/request.json",
+      "sha256": "0568186ef8c44b2df6a68d5936befb51e4a1e2d4433c9341dde14837cdf78fe9"
+    },
+    {
+      "bytes": 18142,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/response.md",
+      "sha256": "58d4b51a1a5152358493eacbaf048d5d7ebbd966e4aff5feff80dc66bf9a5131"
+    },
+    {
+      "bytes": 1578,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-single-green/result.json",
+      "sha256": "f2836a2c169da1304e3b936ad487f5351d215574f6ffb196d0ac5afc5cdae267"
+    },
+    {
+      "bytes": 4424,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/context/000.txt",
+      "sha256": "0ad9462093e71f8f207f1af25fab68f2e8087fbb7cadc30d713206229a51e552"
+    },
+    {
+      "bytes": 45220,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/context/001.txt",
+      "sha256": "c796e9a92ead553a12e67b5c943291922c613e42f9576a0cd4ce1c94485e2bd3"
+    },
+    {
+      "bytes": 1170,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/prompt.txt",
+      "sha256": "30b8326707d68fa7573833354a2226565fe6128e6d8b320123219c356b6743f7"
+    },
+    {
+      "bytes": 53713,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/request.json",
+      "sha256": "cb9faa7a3f8a2df4a66241d05b047204b898568e0b8004e90cfd38a57bf6d574"
+    },
+    {
+      "bytes": 11955,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/response.md",
+      "sha256": "af1c8ef6171b5500e5ec9e681a10b6e2a75bb4380581833cc878e3bc1a47ab01"
+    },
+    {
+      "bytes": 1635,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-cancellation-falsifier/result.json",
+      "sha256": "fb2d8de8b52378c0ae1e7f8c02a65d84ac7e6b88d93aef7a39fb59efe9f962a7"
+    },
+    {
+      "bytes": 4424,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/context/000.txt",
+      "sha256": "0ad9462093e71f8f207f1af25fab68f2e8087fbb7cadc30d713206229a51e552"
+    },
+    {
+      "bytes": 45220,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/context/001.txt",
+      "sha256": "c796e9a92ead553a12e67b5c943291922c613e42f9576a0cd4ce1c94485e2bd3"
+    },
+    {
+      "bytes": 1141,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/prompt.txt",
+      "sha256": "75701964b82ef660086d9106ece5f54ea94cd333d4a3073882661dd15fb02ce9"
+    },
+    {
+      "bytes": 53686,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/request.json",
+      "sha256": "18189a4572bf7e995a61f085f801c6ae581feb0eca79727d1cd334335ff878a4"
+    },
+    {
+      "bytes": 10853,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/response.md",
+      "sha256": "47b148163f99d91a16fdea842059d60b912f869abf359d2a740db4555db0d212"
+    },
+    {
+      "bytes": 1627,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-lattice-shell/result.json",
+      "sha256": "00fbde5820a44bc2ddcb31110fe50bcc75baec0a1caa3094012f03abd37b84ff"
+    },
+    {
+      "bytes": 4424,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/context/000.txt",
+      "sha256": "0ad9462093e71f8f207f1af25fab68f2e8087fbb7cadc30d713206229a51e552"
+    },
+    {
+      "bytes": 45220,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/context/001.txt",
+      "sha256": "c796e9a92ead553a12e67b5c943291922c613e42f9576a0cd4ce1c94485e2bd3"
+    },
+    {
+      "bytes": 1151,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/prompt.txt",
+      "sha256": "0f60c4c71ad8c0a4dfd24a46dd22a1a8f2c5ae1f04d2323cd3710a7518185389"
+    },
+    {
+      "bytes": 53698,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/request.json",
+      "sha256": "75f31795c839f75c289ab51fe26bfaac6b12414af31a613b3ca2cee793ac37a4"
+    },
+    {
+      "bytes": 9753,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/response.md",
+      "sha256": "caa6c60ed7ce23ae4e843690499bbcf118a39664d84f932e5908092201283d23"
+    },
+    {
+      "bytes": 1633,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-positive-source-frame/result.json",
+      "sha256": "1c4b2ed35f7ae1f03f8fd00aa4ba8a695fd125596a86cd586a859abad85f9e48"
+    },
+    {
+      "bytes": 5183,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/context/000.txt",
+      "sha256": "be72a6b6d88a203c7084f3a1ecb4e932e9f2e1d88e737021769eb15099727bad"
+    },
+    {
+      "bytes": 14852,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/context/001.txt",
+      "sha256": "8b53f39036121b186fc137b5710ed90af9eac101cba21c6cf8b4252aab2d4c9c"
+    },
+    {
+      "bytes": 1425,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/prompt.txt",
+      "sha256": "548b3e5c0ed5d3ace3cb88f106e2d4ac81f47ec7809c73ee6a9e0680498e78ae"
+    },
+    {
+      "bytes": 24837,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/request.json",
+      "sha256": "010c836df4963a59b975e1a6f1efe1faffd50392da155add7c6e7ef6b1ea51b6"
+    },
+    {
+      "bytes": 15042,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/response.md",
+      "sha256": "f4e7432af12d663c07d75eba74553e4e3c2f63088308ce470842c8ed86d52428"
+    },
+    {
+      "bytes": 1656,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-sparse-deflation/result.json",
+      "sha256": "e2c4d376e9cf6c26f5a7d003fddacd12153c9fa94781c72e78b1e1813f1e1528"
+    },
+    {
+      "bytes": 5183,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/context/000.txt",
+      "sha256": "be72a6b6d88a203c7084f3a1ecb4e932e9f2e1d88e737021769eb15099727bad"
+    },
+    {
+      "bytes": 19960,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/context/001.txt",
+      "sha256": "020285072bfc84c70b117ccfb16ed58bdc74541741deac734e1137945459854c"
+    },
+    {
+      "bytes": 1576,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/prompt.txt",
+      "sha256": "e8c6b3de4dfc798247ce4d1d4fdf84af011fd822005235824d1c45a070ba2a22"
+    },
+    {
+      "bytes": 32014,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/request.json",
+      "sha256": "4d8f162645fd08911f6ea5d226c83708a9c00abdcf86e09571a22a691cced7e3"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1693,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-uniform-green-envelope/result.json",
+      "sha256": "84cdf454f917f980d6b0b239ded68243d67aa728f3ece01d46370e11d902cb73"
+    }
+  ],
+  "unique_hashed_artifact_count": 83,
+  "usage_snapshot": {
+    "bytes": 26087,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/sparse_wave_round/usage.json",
+    "sha256": "7c33db895958d06ddbd96c2ff74b1e33f2d9f2f10808487df5e8cc5dd31a77ea"
+  }
+}

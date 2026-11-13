@@ -1,0 +1,326 @@
+{
+  "captured_at_utc": "2026-11-13T00:49:54.225541+00:00",
+  "claim_gates": {
+    "best_classical_claim": false,
+    "bookkeeping_itself_proves_theorem": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "implementation_claim": false,
+    "novelty_claim": false,
+    "quantum_advantage_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "unknown_bill_equals_zero": false,
+    "unrestricted_sparse_q_extension_claim": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_control_artifacts": [
+    {
+      "bytes": 1592,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_source/exact_falsifiers.py",
+      "sha256": "2a5f7321f108fb355e60f51ce023034206438eb8bcef6a74d10ac6119ebf8b1e"
+    },
+    {
+      "bytes": 770,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_source/exact_falsifiers.json",
+      "sha256": "fa2c07f9552710effe7f6e37dc40fa24fd9d0fd4a406e3eb7e0d1f2cf4871ace"
+    }
+  ],
+  "control_note": "Existing exact falsifier script/receipt only; no test rerun.",
+  "dispatch": {
+    "bytes": 2257,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-source-repair/dispatch.json",
+    "sha256": "688bf920bbea9109a40ae87ead586fe22badaceaed37210249a3e8fc1c1dcc96"
+  },
+  "dispatch_mutation_scope": "Parent updated final dispatch before freeze; no dispatch/raw-result edits by this controls-only task.",
+  "exclusions": [
+    {
+      "reason": "Preserved exactly and excluded from known runner estimates.",
+      "scope": "Six inherited UNKNOWN bills and all observed partial counters"
+    },
+    {
+      "reason": "Not part of these two paid repair jobs or their checked proof chain.",
+      "scope": "Ongoing baseline-attack artifacts and community-baselines primary files/new audits/live work"
+    },
+    {
+      "reason": "Only explicitly labelled topic and STATE snapshots are hashed.",
+      "scope": "Live original topic, STATE/HANDOFF/MECHANICAL"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 907,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-source-repair/compiler.md",
+      "sha256": "8f7b95ff9c4524a6739db32a9ae8085344fbcbebf74ded6c8a0dbc81a63b6c8f"
+    },
+    {
+      "bytes": 3405,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-source-repair/contract.md",
+      "sha256": "f30439d6ad50a60ee76d37a7e25fd742d3574f8b305133f2150d2f23469b5665"
+    },
+    {
+      "bytes": 738,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-source-repair/covariance.md",
+      "sha256": "978f1330fb90248eb935c51d95225f08b9c2fec9455bf711f6a6d86c53679155"
+    },
+    {
+      "bytes": 2257,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-source-repair/dispatch.json",
+      "sha256": "688bf920bbea9109a40ae87ead586fe22badaceaed37210249a3e8fc1c1dcc96"
+    },
+    {
+      "bytes": 48248,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-source-repair/primary-certificate.txt",
+      "sha256": "0c9037f73718f0e05a688cc557b29f4b716086b9f6c854d1f496aa0b4d8fcaba"
+    },
+    {
+      "bytes": 3261,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-source-repair/primary-cloning.txt",
+      "sha256": "7e22a28d75f6c49b335c7dda024d6b3beba17fc7f395003671802fcf77065c9e"
+    },
+    {
+      "bytes": 61195,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-source-repair/primary-guiding-proof.txt",
+      "sha256": "a7708e87fcf4f8f238856ed1cbfda3179474a6784c13ad354caadc9089bd913b"
+    },
+    {
+      "bytes": 37164,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-source-repair/primary-model-and-quantum.txt",
+      "sha256": "c5780d1bd307ca41704173b5757cc4c5f992ada180436ed07baaacd2f1a54562"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 15667,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_compiler_audit_round/checkpoint.json",
+    "sha256": "5d2b86bde18ce40258d97fd815e1e849f48f50759957395c16dcc560c7568a6a"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 19237,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_compiler_audit_round/usage.json",
+    "sha256": "57a5f2c3658cac63adc27e98bdec0ccfe31e4ffd070ff1fa1e58a7d7d2b38ebf"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 39
+  },
+  "labelled_snapshots": [
+    {
+      "bytes": 16846,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/NATIVE_COMMUNITY_SOURCE_REPAIR.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_source_repair_round/native_community_source_repair-snapshot.md",
+      "sha256": "2a11776d447caf15967610db6a21f29984f8538dcbc4c7dceeefe5c8e8c701a5",
+      "snapshot_label": "Exact byte snapshot of parent-confirmed stable closed-endpoint state; original live path not hashed."
+    },
+    {
+      "bytes": 278643,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/STATE.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_source_repair_round/state-snapshot.md",
+      "sha256": "a8cca2e7d9c151140aa3a687792971e1e87f51ae4389ea22e07fb020cdf41ca3",
+      "snapshot_label": "Exact byte snapshot of parent-confirmed stable closed-endpoint state; original live path not hashed."
+    }
+  ],
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 672622,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-selection/schmidhuber_zlokapa.pdf",
+      "sha256": "4feec7feb97c31927be06846dde3130be9dd32cada608485529d4320cb92f191"
+    },
+    {
+      "bytes": 210224,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-selection/schmidhuber_zlokapa.txt",
+      "sha256": "c4a42b745ef40c96dcf5fa3837c2901eb0f90abdc6c212e77269adcad13b8c9c"
+    },
+    {
+      "bytes": 128,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-selection/source.json",
+      "sha256": "9eae5a09033190dee9fe73b0b2299dde09cf6ca06caeb54edc911b46929e1cf6"
+    },
+    {
+      "bytes": 466880,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-selection/brennan_clone.pdf",
+      "sha256": "3c867700f86c5c5afbd9094304ca1815bdad0011c82e3fe45e91f5b9cbdd874a"
+    },
+    {
+      "bytes": 194508,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-selection/brennan_clone.txt",
+      "sha256": "3f599061f30c3a4bfe5b09fee8612dace2eebfaaf2ff036b5d1aaff03815aaf0"
+    },
+    {
+      "bytes": 155,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-selection/brennan_clone.source.json",
+      "sha256": "e5af21f1b75ec516b31980b0f5bb3a69b46e8f9aabdc784fd5922a15e66488c6"
+    }
+  ],
+  "prior_hash_policy": "Prior ledger/checkpoint continuity references only. Historical artifact pins remain unchanged; no historical run/hash scan or repinning.",
+  "scope": "Frozen tower-compiler-audit ledger plus ONLY two terminal community source-repair jobs; immutable packets/bundles, stable checked three-proof chain, exact falsifier script/result and actual community/Brennan primary sources, labelled current topic/STATE snapshots.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-13T00:49:54.225541+00:00",
+    "labelled_snapshots": [
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_source_repair_round/native_community_source_repair-snapshot.md",
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_source_repair_round/state-snapshot.md"
+    ],
+    "originals_not_hashed": [
+      "/Users/jaspersands/Developer/qsearch/research/NATIVE_COMMUNITY_SOURCE_REPAIR.md",
+      "/Users/jaspersands/Developer/qsearch/research/STATE.md"
+    ],
+    "parent_confirmed_stable_and_fully_read": true,
+    "snapshot_state_title": "2026-11-13 Native Community Source Repair Closed"
+  },
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 11516,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 208,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-community-source-independence.md",
+      "physical_LF_count": 207,
+      "sha256": "45f52a997ca63dd4ae55137c12651256c61698c5dd6f38468eecee27b452de0a"
+    },
+    {
+      "bytes": 20554,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 375,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-community-classical-certificate.md",
+      "physical_LF_count": 375,
+      "sha256": "fa167d08cf2eb1166087539de63d73dcbcd0b761a56076c8406a04f52a2c0349"
+    },
+    {
+      "bytes": 19998,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 341,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-community-approximate-cloning.md",
+      "physical_LF_count": 340,
+      "sha256": "6479ad17bbdcd2e7492ea6278930e78c52b8b48ba4c9165ae46db0b788e94af8"
+    }
+  ],
+  "status": "TERMINAL_COMMUNITY_SOURCE_REPAIR_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 3405,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-collisionfree-covariance/context/000.txt",
+      "sha256": "f30439d6ad50a60ee76d37a7e25fd742d3574f8b305133f2150d2f23469b5665"
+    },
+    {
+      "bytes": 738,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-collisionfree-covariance/prompt.txt",
+      "sha256": "978f1330fb90248eb935c51d95225f08b9c2fec9455bf711f6a6d86c53679155"
+    },
+    {
+      "bytes": 5257,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-collisionfree-covariance/request.json",
+      "sha256": "66d2a06a00ecf4cc487d93167dbf2950ff0d1cd053924a03f102ce4ed42dad47"
+    },
+    {
+      "bytes": 16056,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-collisionfree-covariance/response.md",
+      "sha256": "7caa36253cfed25328f20860bd1278e7f1b3650f171af5c8dd2a62f3f6453dba"
+    },
+    {
+      "bytes": 1406,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-collisionfree-covariance/result.json",
+      "sha256": "8ab20a64bcaeaab658db9ee600be17f346fe95c0909ed6927c7d3bd63c510f3c"
+    },
+    {
+      "bytes": 907,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/context-00.txt",
+      "sha256": "8f7b95ff9c4524a6739db32a9ae8085344fbcbebf74ded6c8a0dbc81a63b6c8f"
+    },
+    {
+      "bytes": 3405,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/context-01.txt",
+      "sha256": "f30439d6ad50a60ee76d37a7e25fd742d3574f8b305133f2150d2f23469b5665"
+    },
+    {
+      "bytes": 37164,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/context-02.txt",
+      "sha256": "c5780d1bd307ca41704173b5757cc4c5f992ada180436ed07baaacd2f1a54562"
+    },
+    {
+      "bytes": 48248,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/context-03.txt",
+      "sha256": "0c9037f73718f0e05a688cc557b29f4b716086b9f6c854d1f496aa0b4d8fcaba"
+    },
+    {
+      "bytes": 61195,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/context-04.txt",
+      "sha256": "a7708e87fcf4f8f238856ed1cbfda3179474a6784c13ad354caadc9089bd913b"
+    },
+    {
+      "bytes": 3261,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/context-05.txt",
+      "sha256": "7e22a28d75f6c49b335c7dda024d6b3beba17fc7f395003671802fcf77065c9e"
+    },
+    {
+      "bytes": 456757,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/provider-response.json",
+      "sha256": "a079731f410da95cb7753621cc372d95b6cc460de4c5ce7850d1e08c7f2bf7a7"
+    },
+    {
+      "bytes": 198974,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/request.json",
+      "sha256": "2a0f8f1374270cfb921cd71c197d62a1806afb78359b3087744330b0f7f75645"
+    },
+    {
+      "bytes": 21345,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/response.md",
+      "sha256": "85d5502df7c8f900be9ef9e666a77f793a05c1a15893de5b0a51a6d7342d4c54"
+    },
+    {
+      "bytes": 2219,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/result.json",
+      "sha256": "2b452009185a2c72d28db457cc14beaf6034b31e5ddbbfa5d86f383273a2476c"
+    }
+  ],
+  "two_terminal_results_and_responses": [
+    {
+      "obligation": "community-collisionfree-covariance",
+      "parent_disposition": "Exact partial-matching covariance and directional bound accepted after proof check. Ancillary O6/F4 necessity of rank-paid trace and fourth moments rejected for small-mass spectral detection; second-moment norm Markov and null projector zero suffice.",
+      "parent_fully_read_nonempty_report": true,
+      "response": {
+        "bytes": 16056,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-collisionfree-covariance/response.md",
+        "sha256": "7caa36253cfed25328f20860bd1278e7f1b3650f171af5c8dd2a62f3f6453dba"
+      },
+      "result": {
+        "bytes": 1406,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-collisionfree-covariance/result.json",
+        "sha256": "8ab20a64bcaeaab658db9ee600be17f346fe95c0909ed6927c7d3bd63c510f3c"
+      },
+      "session_id": 3817,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "usage_cost_estimate_usd": "0.540688"
+    },
+    {
+      "obligation": "community-native-source-compiler",
+      "parent_disposition": "Checked core all-label PSD certificate, approximate asymmetric clone, matching covariance and charged fixed-q detector. Explicit J retained in directional step. Parent second-moment Markov replaces optional sparse-q concentration extension. No best-classical or novelty/advantage inference.",
+      "parent_fully_read_nonempty_report": true,
+      "response": {
+        "bytes": 21345,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/response.md",
+        "sha256": "85d5502df7c8f900be9ef9e666a77f793a05c1a15893de5b0a51a6d7342d4c54"
+      },
+      "result": {
+        "bytes": 2219,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-native-source-compiler/result.json",
+        "sha256": "2b452009185a2c72d28db457cc14beaf6034b31e5ddbbfa5d86f383273a2476c"
+      },
+      "session_id": 14789,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "usage_cost_estimate_usd": "1.992530"
+    }
+  ],
+  "unique_hashed_artifact_count": 39,
+  "usage_snapshot": {
+    "bytes": 19155,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_source_repair_round/usage.json",
+    "sha256": "08c87ceb6e8ee062594c2f7cc700a0b06c65728d54d8145b8d9bc9f3f1416a15"
+  }
+}

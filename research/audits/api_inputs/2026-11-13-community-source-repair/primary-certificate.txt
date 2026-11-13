@@ -1,0 +1,604 @@
+                                                    16
+A      Correctness and efficiency of the classical Kikuchi algorithm
+In this section, we formally describe the classical algorithm based on the Kikuchi hierarchy, and prove the
+detection threshold in Theorem 11. The upper bound in the null case follows from a simple Matrix Chernoff
+bound. Proving the lower bound in the planted case is straight-forward in previous work [WAM19, Has20,
+SOKB25] for Tensor PCA and 𝑝XORSAT, because a simple certificate with product structure suffices.
+However, the natural certificate in our setting has entries proportional to 𝑓 (𝑥), which do not exhibit a
+product structure. As a result, our proof of Theorem 11 uses more complex combinatorial arguments.
+    Recall the setup from Section 2. We draw random variables
+
+                                                     𝑌𝑆 ∼ Bern(𝜃0 + 𝜖𝑓 (𝑥𝑆 ))                                     (26)
+
+conditioned on some 𝑥 ∈ [𝑘]𝑛 , and we define
+                                                           𝑘 ∏︁𝑝 (︂            )︂
+                                                          ∑︁                 1
+                                                𝑓 (𝑥𝑆 ) =          1𝑥𝑆𝑗 =𝑖 −      .                               (27)
+                                                          𝑖=1 𝑗=1
+                                                                             𝑘
+                                                                                                     √︁
+                                                                                                               1
+We consider drawing 𝑥 ∼ [𝑘]𝑛 uniformly at random and then drawing all 𝑌𝑆 . We use 𝛽 = 𝜖                   𝜃0 (1−𝜃0 )   to
+denote the Signal-to-Noise ratio (SNR). The proof of Theorem 11 boils down to two statements:
+    • Show that in the planted case, there exists a certificate vector |𝑣⟩ such that 𝛽𝑛𝑝/2 ℓ𝑝/2 with high
+      probability.
+    • Show (using Matrix-Chernoff) that in the null case, no such vector exists.
+
+A.1      Kikuchi hierarchy
+We repeat the definition of the Kikuchi matrix here.
+Definition 24. Denote 𝒯𝑛 (ℓ) the set of ℓ-tuples 𝑆 = (𝑖1 , . . . , 𝑖ℓ ) ∈ [𝑛]ℓ with no repeated entries. This set
+has cardinality |𝒯𝑛 (ℓ)| = 𝑛!/(𝑛 − ℓ)!.
+Definition 25. Let 𝑆 = (𝑖1 , . . . , 𝑖ℓ ), 𝑉 = (𝑗1 , . . . , 𝑗ℓ ) ∈ 𝒯𝑛 (ℓ) and define
+
+                                                    𝑑 = 2 · |{𝑎 ∈ [ℓ] : 𝑖𝑎 ̸= 𝑗𝑎 }|
+
+to count the number of disagreements. We denote by 𝑆 ⊖ 𝑉 the 𝑑-tuple that first lists the disagreeing entries
+of 𝑆 (in increasing index order) followed by those of 𝑉 (same order).
+Definition 26 (Bosonic Kikuchi matrix). For even 𝑝 ≥ 2, let 𝑇 be a symmetric 𝑝-tensor indexed by
+(𝜇1 , . . . , 𝜇𝑝 ) ∈ [𝑛]𝑝 . The ℓ-th order bosonic Kikuchi matrix 𝒦 = 𝒦(𝑇 ) is defined on 𝒯𝑛 (ℓ) entry-wise by
+                                             {︃
+                                               𝑇𝜇1 ,...,𝜇𝑝 if (𝜇1 , . . . , 𝜇𝑝 ) = 𝑆 ⊖ 𝑉,
+                                     𝒦𝑆,𝑉 =                                                                    (28)
+                                               0           otherwise.
+
+Definition 27 (Homogeneous subspace). Given subset 𝑆 ∈ [𝑛]
+                                                                       (︀ )︀
+                                                                         𝑝 , define the symmetrized basis vector
+       1
+         ∑︀
+|𝑆⟩ = 𝑝! 𝜋∈Sym(𝑝) |𝜋(𝑖1 , . . . , 𝑖𝑝 )⟩. Define the collision-free index set
+     √
+
+                                      {︂                          (︂ )︂𝑚                       }︂
+                                                                    [𝑛]
+                               𝒞𝑚 =        (𝑆1 , . . . , 𝑆𝑚 ) ∈          : 𝑆𝑎 ∩ 𝑆𝑏 = ∅ ∀ 𝑎 ̸= 𝑏 .                 (29)
+                                                                     𝑝
+The homogeneous subspace projector Π𝑚 projects onto collision-free tuples
+                                      ∑︁
+                            Π𝑚 =              |𝑆1 ⟩⟨𝑆1 | ⊗ · · · ⊗ |𝑆𝑚 ⟩⟨𝑆𝑚 | .                                   (30)
+                                                (𝑆1 ,...,𝑆𝑚 )∈𝒞𝑚
+
+    The following facts about the collision-free index set will be useful.
+
+
+                                                                     17
+                                         √
+Lemma 28 (Counting overlaps). For 𝜆 = 𝑜( 𝑛), the collision-free index set has size
+                                  𝜆−1
+                                  ∏︁ (︂𝑛 − 𝑟𝑝)︂ (︂𝑛)︂𝜆 (︂       (︂ 2 )︂)︂
+                                                                  𝜆
+                          |𝒞𝜆 | =              =          1+𝑂             .                                            (31)
+                                  𝑟=0
+                                         𝑝        𝑝               𝑛
+
+Moreover, the number 𝑟(𝐶, 𝐶 ′ ) of coordinates contained in at least one set of 𝐶 ∈ 𝒞𝜆 and at least one set of
+𝐶 ′ ∈ 𝒞𝜆 satisfies
+                                                                 (︂ )︂ (︂ )︂𝑟
+                                       ′         ′              2 𝜆𝑝     𝜆𝑝
+                             #{(𝐶, 𝐶 ) : 𝑟(𝐶, 𝐶 ) = 𝑟} ≤ |𝒞𝜆 |                  .                        (32)
+                                                                   𝑟      𝑛
+Proof. We compute
+                             #{(𝐶, 𝐶 ′ ) : 𝑟(𝐶, 𝐶 ′ ) = 𝑟} = |𝒞𝜆 |2 Pr [𝑟(𝐶, 𝐶 ′ ) = 𝑟]                        (33)
+
+over uniformly sampled 𝐶, 𝐶 ′ ∈ 𝒞𝜆 . The elements of 𝐶 are uniform over [𝑛]                                  ′
+                                                                                    (︀   )︀
+                                                                                       𝜆𝑝 ; the probability 𝐶 has 𝑟
+overlapping elements is thus
+                                               (︀ 𝑛−𝑟 )︀ (︂ )︂𝑟
+                                                 𝜆𝑝−𝑟       𝜆𝑝
+                                                 (︀ 𝑛 )︀ ≤         .                                           (34)
+                                                   𝜆𝑝
+                                                            𝑛
+
+There are 𝜆𝑝
+          (︀ )︀
+            𝑟   choices of where to place the overlapping elements and thus
+                                                           (︂ )︂ (︂ )︂𝑟
+                                                  ′          𝜆𝑝      𝜆𝑝
+                                      Pr [𝑟(𝐶, 𝐶 ) = 𝑟] ≤                   .                                  (35)
+                                                              𝑟       𝑛
+
+
+Definition 29 (Certificate vector). Let |𝑣 ′ ⟩ be the unnormalized vector given by
+                                                    ∑︁
+                                          |𝑣 ′ ⟩ =         𝑓 (𝑥𝑆 ) |𝑆⟩ .                                               (36)
+                                                      [𝑛]
+                                                   𝑆∈( 𝑝 )
+
+                                                                    ⊗ℓ/𝑝
+The certificate vector |𝑣⟩ is the unnormalized vector Π𝜆 |𝑣 ′ ⟩            .
+
+A.2      Analysis in the random case
+Lemma 30. The bosonic Kikuchi matrix of a 𝑝-marginal HSBM satisfies
+                               [︂       √︁               ]︂
+                            Pr ‖𝒦‖ ≥ 6𝑛𝑝/2 ℓ1+𝑝/2 log(𝑛) ≤ 𝑜(1).                                                       (37)
+                                       Q
+
+Proof. Write the bosonic Kikuchi matrix as
+                                        {︃
+             ∑︁
+                        (𝐸)      (𝐸)       1      if 𝑆 ⊖ 𝑉 = (𝜇1 , . . . , 𝜇𝑝 ) with {𝜇1 , . . . , 𝜇𝑝 } = 𝐸,
+      𝒦=            𝐴𝐸 𝒦 ,      𝒦𝑆,𝑉 =                                                                                  (38)
+                                           0      otherwise.
+            𝐸∈([𝑛]
+                𝑝 )
+                        √︀
+The 𝐴𝐸 = (𝑌𝐸 − 𝜃0 )/ 𝜃0 (1 − 𝜃0 ) are independent random variables associated to the hyperedges of the
+                                                            (𝐸)
+𝑝-marginal HSBM, with mean zero and variance one. 𝐾𝑆,𝑉 = 1 if and only if 𝑆 and 𝑉 differ in exactly 𝑝/2
+positions and 𝑆 ⊖ 𝑉 has underlying set 𝐸 (order ignored). For fixed 𝑆 and 𝐸 with |𝐸 ∩ 𝑆| =             ⃦ 𝑝/2, ⃦the first 𝑝/2
+entries of 𝑆 ⊖ 𝑉 are determined by 𝑆; there are (𝑝/2)! permutations for the 𝑉 -half, hence ⃦𝐾 (𝐸) ⃦∞ ≤ (𝑝/2)!
+and 𝑅 := 𝜆max (𝒦(𝐸) ) ≤ (𝑝/2)!. The Matrix Bernstein inequality [Tro12] states that
+                                                                    𝜎2
+                                                              (︂            (︂ )︂)︂
+                                                    𝑛!                         𝑅𝑡
+                          Pr {𝜆max (𝒦) ≥ 𝑡} ≤            exp − 2 · ℎ
+                                               (𝑛 − ℓ)!            𝑅           𝜎2
+                                                                        2
+                                                              (︂               )︂
+                                                    𝑛!               −𝑡
+                                             ≤           exp                                                            (39)
+                                               (𝑛 − ℓ)!          𝜎 2 + 𝑅𝑡/3
+                                               {︃                                           2
+                                                     𝑛!
+                                                                                  for 𝑡 ≤ 𝜎𝑅 ;
+                                                             (︀     2     2
+                                                                            )︀
+                                                  (𝑛−ℓ)! exp −3𝑡 /8𝜎
+                                             ≤       𝑛!                                     2
+
+                                                  (𝑛−ℓ)! exp(−3𝑡/8𝑅)              for 𝑡 ≥ 𝜎𝑅 .
+
+
+                                                            18
+Here, we have introduced the notation 𝜎 2 for the “variance”
+                                               ⃦                   ⃦
+                                               ⃦
+                                                ∑︁ [︂(︁      )︁2 ]︂⃦
+                                        𝜎2 = ⃦     E 𝒦(𝐸)
+                                               ⃦                   ⃦
+                                                                   ⃦.                                                            (40)
+                                               ⃦ 𝑗 Q
+                                               ⃦                   ⃦
+                                                                   ⃦
+
+To compute this quantity, we note that
+                                      {︃       ∑︀
+                    (︁
+                        (𝐸)
+                            )︁2          (𝑝/2)! 𝜋∈Π𝑆|𝐸 |𝜋(𝑆)⟩                  if |𝑆 ∩ 𝐸| = 𝑝/2,
+                      𝒦         |𝑆⟩ =                                                                                            (41)
+                                         0     otherwise.
+
+Here, Π𝑆|𝐸 denotes the set of permutations that reorder the 𝑝/2 indices of 𝑆 lying in 𝐸 while fixing all other
+coordinates. Summing over all sets 𝐸 yields
+                                                (︂     )︂
+                          ∑︁ (︁
+                                  (𝐸)
+                                      )︁2          𝑛−ℓ            ∑︁      ∑︁
+                                𝒦         |𝑆⟩ =          (𝑝/2)!                 |𝜋(𝑆)⟩ .                  (42)
+                                                   𝑝/2               [ℓ] 𝜋∈Π𝑆|𝑃
+                           𝐸                                    𝑃 ∈(𝑝/2 )
+
+By a row sum bound, the spectral norm of the variance matrix is therefore
+                                 (︂     )︂(︂     )︂
+                             2      𝑛−ℓ       ℓ
+                            𝜎 ≤                    (𝑝/2)!2 = (1 − 𝑜(1)) · 𝑛𝑝/2 ℓ𝑝/2 .               (43)
+                                    𝑝/2      𝑝/2
+                   √︀
+For the choice 𝑡 = 6𝜎 2 ℓ log(𝑛) we have 𝑡 = 𝑜(𝜎 2 /𝑅) for 𝑝 ≥ 4, and hence Matrix Bernstein implies, for
+large enough 𝑛, that
+                                 √︀                         𝑛!
+                                                                  exp (−18/8 · ℓ log 𝑛) = 𝑜 𝑛−ℓ .
+                                                                                           (︀  )︀
+                     Pr[‖𝒦‖ ≥         6𝜎 2 ℓ log(𝑛)] ≤                                                                           (44)
+                                                         (𝑛 − ℓ)!
+
+
+                             √
+Remark 31. The constant          6 is chosen almost arbitrarily and can be improved by a tighter analysis.
+
+A.3     Analysis in the planted case
+We compute several necessary moments in terms of the quantity
+
+                             𝜇 = E 𝑓 (𝑥𝑆 )2 = 𝑘 1−2𝑝 ((𝑘 − 1)𝑝 + (𝑘 − 1)) .
+                                  [︀       ]︀
+                                                                                                                                 (45)
+
+We also compute moments in terms of the following quantity.
+                                                                                                 (︀[𝑛])︀
+Lemma 32. Let 𝑟 ≥ 1 and 𝑢 ∈ [𝑟]; for 𝑠𝑢 ∈ {0, 1, . . . , 𝑝}, any sets 𝐴𝑢 , 𝐵𝑢 ∈                    𝑝       such that
+                                                                                          𝑟
+                                                                                         ∑︁
+                 |𝐴𝑢 ∩ 𝐴𝑣 | = |𝐵𝑢 ∩ 𝐵𝑣 | = 𝑝𝛿𝑢𝑣 ,            |𝐴𝑢 ∩ 𝐵𝑢 | = 𝑠𝑢 ,                   |𝐴𝑢 △𝐵𝑢 | = 𝑝                   (46)
+                                                                                         𝑢=1
+                                 (︀[𝑛])︀
+we have for 𝐶 = ⊔𝑢 𝐴𝑢 △𝐵𝑢 ∈          𝑝     that
+                                     (︃ 𝑟                    )︃                𝑟
+                                       ∏︁                                     ∏︁
+                                 E             𝑓 (𝑥𝐴𝑢 )𝑓 (𝑥𝐵𝑢 ) 𝑓 (𝑥𝐶 ) = 𝑘         𝑔𝑘,𝑝 (𝑠𝑢 )                                   (47)
+                                 𝑥
+                                         𝑢=1                                  𝑢=1
+
+for
+                                                                                                            𝑘−1              1
+  𝑔𝑘,𝑝 (𝑠) = 𝑎2𝑝−𝑠 + 2(𝑘 − 1)𝑎𝑝−𝑠 𝑏𝑝 + (𝑘 − 1)𝑎𝑠 𝑏2(𝑝−𝑠) + (𝑘 − 1)(𝑘 − 2)𝑏2𝑝−𝑠 ,                   𝑎=           ,      𝑏 = − 2 . (48)
+                                                                                                             𝑘2             𝑘
+
+
+
+                                                              19
+Proof. We compute
+                                            [︂(︂                )︂ (︂           )︂]︂ {︃
+                                                            1                 1        𝑎 𝑖=𝑗
+                                        E          1𝑥𝑡 =𝑖 −          1𝑥𝑡 =𝑗 −       =                                                (49)
+                                                            𝑘                 𝑘        𝑏 𝑖 ̸= 𝑗
+
+for 𝑎, 𝑏 defined in the lemma statement. Observe that each index 𝑡 appears in exactly two sets: either
+𝑡 ∈ 𝐴𝑢 ∩ 𝐵𝑢 , or 𝑡 ∈ 𝐴𝑢 △𝐵𝑢 and exactly one of 𝐴𝑢 , 𝐵𝑢 . Fix some 𝑢 and 𝑐 ∈ [𝑘]. Then the 𝑢th block
+contributes
+                      (︃         [︂         ]︂)︃ (︃ ∏︁   [︂         ]︂)︃ (︃ ∏︁  [︂          ]︂)︃
+                   ∑︁     ∏︁              1                       1                       1
+   ℎ𝑘,𝑝 (𝑠𝑢 , 𝑐) =             E 1𝑥𝑡 =𝑐 −              E 1𝑥𝑡 =𝑐 −              E 1𝑥𝑡 =𝑐 −        . (50)
+                                          𝑘                       𝑘                       𝑘
+                 𝑖,𝑗∈[𝑘]   𝑡∈𝐴𝑢 ∩𝐵𝑢                                  𝑡∈𝐴𝑢 ∩𝐶                              𝑡∈𝐵𝑢 ∩𝐶
+
+The choice 𝑖 = 𝑗 = 𝑐 appears once and contributes 𝑎2𝑝−𝑠𝑢 ; the choice 𝑖 = 𝑐, 𝑗 ̸= 𝑐 appears 𝑘 − 1 times
+and contributes 𝑎𝑝−𝑠𝑢 𝑏𝑝 and similarly for 𝑖 ↔ 𝑗; the choice 𝑖 = 𝑗 ̸= 𝑐 appears 𝑘 − 1 times and contributes
+𝑎𝑠 𝑏2(𝑝−𝑠𝑢 ) ; the choice where 𝑖, 𝑗, 𝑐 are all distinct appears (𝑘 − 1)(𝑘 − 2) times and contributes 𝑏2𝑝−𝑠𝑢 . Hence,
+ℎ𝑘,𝑝 (𝑠𝑢 , 𝑐) = 𝑔𝑘,𝑝 (𝑠𝑢 ) as defined in the lemma statement. By independence of the coordinates in 𝑥, we can
+rewrite
+                           (︃ 𝑟                  )︃
+                              ∏︁                             ∑︁ 𝑟
+                                                              𝑘  ∏︁                     𝑟
+                                                                                       ∏︁
+                         E       𝑓 (𝑥𝐴𝑢 )𝑓 (𝑥𝐵𝑢 ) 𝑓 (𝑥𝐶 ) =          ℎ𝑘,𝑝 (𝑠𝑢 , 𝑐) = 𝑘    𝑔𝑘,𝑝 (𝑠𝑢 ).            (51)
+                       𝑥
+                           𝑢=1                                            𝑐=1 𝑢=1                        𝑢=1
+
+
+
+                                                                 √
+Lemma 33 (Expectation of certificate energy). Assuming ℓ = 𝑜( 𝑛), we have
+                                               (︂ )︂𝜆
+                                                 𝑛
+                           E ⟨𝑣| 𝒦 |𝑣⟩ = 𝛽𝐶𝑘,𝑝        𝜇𝜆 𝑛𝑝/2 𝜆𝑝/2 (1 + 𝑜(1))                                                        (52)
+                           P                     𝑝
+for constant 𝐶𝑘,𝑝 independent of 𝜆, 𝑛, 𝛽.
+Proof. For 𝑆, 𝑇 ∈ 𝒞𝜆 , we track the indices at which blocks agree and disagree by
+                           ag(𝑆, 𝑇 ) = {𝑖 ∈ [𝜆] : 𝑆𝑖 = 𝑇𝑖 },                    dis(𝑆, 𝑇 ) = [𝜆] ∖ ag(𝑆, 𝑇 ).                        (53)
+Note that |𝑣⟩ is only supported
+                             ∑︀ on 𝑆 such that for all 𝑖 ̸= 𝑗, |𝑆𝑖 ∩ 𝑆𝑗 | = 0. Recall that each set 𝑆𝑖 ∈ 𝑆 is
+encoded as state |𝑆𝑖 ⟩ = √1𝑝! 𝜋∈Sym(𝑝) |𝜋(𝑗1 , . . . , 𝑗𝑝 )⟩ for 𝑆𝑖 = {𝑗1 , . . . , 𝑗𝑝 }. Since matrix elements of 𝒦 are
+indexed by an ordered tuple (𝑗1 , . . . , 𝑗ℓ ) ∈ 𝒯𝑛 (ℓ), we have matrix element
+                                           1     ∑︁
+                        ⟨𝑆| 𝒦 |𝑇 ⟩ =          𝜆
+                                                        𝒦(𝜋1 (𝑆1 )||···||𝜋𝜆 (𝑆𝜆 )),(𝜎1 (𝑇1 )||···||𝜎𝜆 (𝑇𝜆 )) .      (54)
+                                       (𝑝!) 𝜋1 ,...,𝜋𝜆
+                                                        𝜎1 ,...,𝜎𝜆
+
+Since the elements of 𝒦 are either zero or elements of a symmetric tensor, we simply obtain the following:
+                                       (︃ 𝜆                  )︃
+                               ∑︁        ∏︁
+            E ⟨𝑣| 𝒦 |𝑣⟩ = E                  𝑓 (𝑥𝑆𝑖 )𝑓 (𝑥𝑇𝑖 ) ⟨𝑆1 , . . . , 𝑆𝜆 | 𝒦 |𝑇1 , . . . , 𝑇𝜆 ⟩  (55)
+             P              P
+                                (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆       𝑖=1
+                                (𝑇1 ,...,𝑇𝜆 )∈𝒞𝜆
+                                                       ⎛                        ⎞⎛                                  ⎞
+                                         ∑︁                   ∏︁                           ∏︁
+                           =𝛽E                         ⎝                𝑓 (𝑥𝑆𝑖 )2 ⎠ ⎝                 𝑓 (𝑥𝑆𝑖 )𝑓 (𝑥𝑇𝑖 )⎠ 𝑓 (𝑥𝑆⊖𝑇 ).   (56)
+                                𝑥
+                                    (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆       𝑖∈ag(𝑆,𝑇 )                   𝑖∈dis(𝑆,𝑇 )
+                                    (𝑇1 ,...,𝑇𝜆 )∈𝒞𝜆
+                                      |𝑆△𝑇 |=𝑝
+
+To evaluate the sum, we sum over the number 𝑟 = |dis(𝑆, 𝑇 )| ∈ {1, . . . , 𝑝/2} of disagreeing blocks; label the
+blocks in 𝑆 as 𝐴1 , . . . , 𝐴𝑟 and the blocks in 𝑇 as 𝐵1 , . . . , 𝐵𝑟 . We also sum over the number of overlaps in
+each disagreeing block, 𝑠𝑢 = |𝐴𝑢 ∩ 𝐵𝑢 |; i.e., over the set
+                                     {︃                                     𝑟
+                                                                                           }︃
+                                                                        𝑟
+                                                                           ∑︁            𝑝
+                                𝒮𝑟 = (𝑠1 , . . . , 𝑠𝑟 ) ∈ {0, . . . , 𝑝} :     𝑠𝑢 = 𝑟𝑝 −      ,               (57)
+                                                                           𝑢=1
+                                                                                         2
+
+
+                                                                         20
+where the constraint ensures that
+                                                         𝑟
+                                                        ∑︁                    𝑟
+                                                                             ∑︁
+                                       𝑝 = |𝑆 ⊖ 𝑇 | =         |𝐴𝑢 △𝐵𝑢 | =          2(𝑝 − 𝑠𝑢 ).                        (58)
+                                                        𝑢=1                  𝑢=1
+
+This gives for a particular 𝑟 and 𝑠 the term
+     ⎛               ⎞ (︃                    )︃         ⎛               ⎞ (︃                    )︃
+        ∏︁                 𝑟
+                          ∏︁                              ∏︁                  𝑟
+                                                                             ∏︁
+                    2⎠                                                 2⎠
+   E ⎝      𝑓 (𝑥𝑇𝑖 )         𝑓 (𝑥𝐴𝑢 )𝑓 (𝑥𝐵𝑢 ) 𝑓 (𝑥𝐶 ) = ⎝    E 𝑓 (𝑥𝑇𝑖 ) E       𝑓 (𝑥𝐴𝑢 )𝑓 (𝑥𝐵𝑢 ) 𝑓 (𝑥𝐶 )              (59)
+    𝑥                                                                    𝑥              𝑥
+        𝑖∈ag              𝑢=1                                     𝑖∈ag                      𝑢=1
+
+                                                              = 𝜇𝜆−𝑟 𝜓𝑟 (𝑠),                                          (60)
+                            (︀[𝑛])︀
+where 𝐶 = ⊔𝑢 𝐴𝑢 △𝐵𝑢 ∈         𝑝       and 𝜓𝑟 (𝑠) is given by Lemma 32. For some counting factor 𝑁disj (𝑟, 𝑠), we thus
+have
+                                                          𝑝/2
+                                                          ∑︁  ∑︁
+                                        E ⟨𝑣| 𝒦 |𝑣⟩ = 𝛽              𝑁disj (𝑟, 𝑠)𝜇𝜆−𝑟 𝜓𝑟 (𝑠).                         (61)
+                                           P
+                                                          𝑟=1 𝑠∈𝒮𝑟
+
+We compute the counting factor step by step.
+   • There
+     (︀𝜆)︀   are |𝒞𝜆 | ways to choose (𝑆1 , . . . , 𝑆𝜆 ) ∈ 𝒞𝜆 . To construct (𝑇1 , . . . , 𝑇𝜆 ), we first decide on one of
+       𝑟   positions to disagree on.
+
+   • Within each
+              (︀ )︀ disagreeing position 𝑢 ∈ [𝑟], we choose where the 𝑠𝑢 agreements in 𝐴𝑢 occur, giving a
+     factor of 𝑠𝑝𝑢 .
+   • To construct the corresponding 𝐵𝑢 that disagrees with 𝐴𝑢 in the remaining 𝑝 − 𝑠𝑢 positions, we need
+     to choose the values in 𝐵𝑢 ∖ 𝐴𝑢 out of the(︀ 𝑛 − 𝜆𝑝
+                                                      )︀ remaining values not in 𝑆. We need to choose a total
+     of 𝑝/2 values across all 𝐵𝑢 ∖ 𝐴𝑢 , giving 𝑛−𝜆𝑝
+                                                  𝑝/2 . They are then assigned into blocks with occupancies
+                                        ∏︀𝑟
+     𝑝 − 𝑠𝑢 , giving a factor of (𝑝/2)!/ 𝑢=1 (𝑝 − 𝑠𝑢 )!.
+This gives
+                    (︂ )︂(︂     )︂         𝑟
+                                                 (︀ 𝑝 )︀      (︂ )︂𝜆 (︂     (︂ 2 )︂)︂ (︂ )︂(︂     )︂         𝑟
+                                                                                                                   (︀ 𝑝 )︀
+                      𝜆 𝑛 − 𝜆𝑝            ∏︁       𝑠𝑢           𝑛             𝜆         𝜆 𝑛 − 𝜆𝑝            ∏︁       𝑠𝑢
+𝑁disj (𝑟, 𝑠) = |𝒞𝜆 |               (𝑝/2)!                   =           1+𝑂                          (𝑝/2)!                  .
+                      𝑟     𝑝/2           𝑢=1
+                                              (𝑝 −   𝑠 𝑢 )!     𝑝             𝑛         𝑟     𝑝/2           𝑢=1
+                                                                                                                (𝑝 −   𝑠𝑢 )!
+                                                                                                                      (62)
+                                          √
+This gives for asymptotically large 𝜆 = 𝑜( 𝑛) the final quantity
+                                                            (︂ )︂𝜆
+                                                              𝑛
+                                      E ⟨𝑣| 𝒦 |𝑣⟩ = 𝛽𝐶𝑘,𝑝          𝜇𝜆 𝑛𝑝/2 𝜆𝑝/2 (1 + 𝑜(1)).                           (63)
+                                       P                      𝑝
+
+
+                                                          √
+Lemma 34 (Variance of certificate energy). For any ℓ = 𝑜( 𝑛) and 𝛽 = Ω(𝑛−𝑝/2 log 𝑛), we have
+                                                    (︁              )︁
+                                                                  2
+                                   Var ⟨𝑣| 𝒦 |𝑣⟩ = 𝑜 (E ⟨𝑣| 𝒦 |𝑣⟩) .                                                  (64)
+
+
+
+
+                                                                21
+Proof. We expand the second moment as
+                                                                (︃ 𝜆                                           )︃
+              2
+                                ∑︁                ∑︁              ∏︁
+  E ⟨𝑣| 𝒦 |𝑣⟩ = E                                                      𝑓 (𝑥𝑆𝑖 )𝑓 (𝑥𝑇𝑖 )𝑓 (𝑥𝑆𝑖′ )𝑓 (𝑥𝑇𝑖′ )
+  P                   P
+                          (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆 (𝑆1′ ,...,𝑆𝜆′
+                                                         )∈𝒞𝜆    𝑖=1
+                          (𝑇1 ,...,𝑇𝜆 )∈𝒞𝜆 (𝑇1′ ,...,𝑇𝜆′ )∈𝒞𝜆
+
+                     × ⟨𝑆1 , . . . , 𝑆𝜆 | 𝒦 |𝑇1 , . . . , 𝑇𝜆 ⟩ ⟨𝑆1′ , . . . , 𝑆𝜆′ | 𝒦 |𝑇1′ , . . . , 𝑇𝜆′ ⟩                                            (65)
+                                                         ⎛                           ⎞⎛                                      ⎞
+                         ∑︁                 ∑︁                 ∏︁                                  ∏︁
+                  =E                                     ⎝                𝑓 (𝑥𝑆𝑖 )2 ⎠ ⎝                             𝑓 (𝑥𝑆𝑖′ )2 ⎠
+                      P
+                          (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆 (𝑆1′ ,...,𝑆𝜆′
+                                                         )∈𝒞𝜆    𝑖∈ag(𝑆,𝑇 )                       𝑖∈ag(𝑆 ′ ,𝑇 ′ )
+                          (𝑇1 ,...,𝑇𝜆 )∈𝒞𝜆 (𝑇1′ ,...,𝑇𝜆′ )∈𝒞𝜆
+                            |𝑆△𝑇 |=𝑝             ′     ′
+                                               |𝑆 △𝑇 |=𝑝
+                             ⎛                                   ⎞⎛                                          ⎞
+                                    ∏︁                                       ∏︁                                     (𝑌𝑆⊖𝑇 − 𝜃0 )(𝑌𝑆 ′ ⊖𝑇 ′ − 𝜃0 )
+                          ×⎝                   𝑓 (𝑥𝑆𝑖 )𝑓 (𝑥𝑇𝑖 )⎠ ⎝                         𝑓 (𝑥𝑆𝑖′ )𝑓 (𝑥𝑇𝑖′ )⎠                                    .   (66)
+                                                                                                                           𝜃0 (1 − 𝜃0 )
+                                 𝑖∈dis(𝑆,𝑇 )                            𝑖∈dis(𝑆 ′ ,𝑇 ′ )
+
+Let 𝑟(𝑆, 𝑇, 𝑆 ′ , 𝑇 ′ ) denote the number of coordinates in [𝑛] that are in both ∪𝑖 𝑆𝑖 ∪𝑖 𝑇𝑖 and ∪𝑖 𝑆𝑖′ ∪𝑖 𝑇𝑖′ . We
+deterministically bound
+                             ⃒⎛                            ⎞⎛                                  ⎞⃒
+                             ⃒                                                                  ⃒
+                             ⃒     ∏︁                             ∏︁                            ⃒
+                             ⃒⎝            𝑓 (𝑥𝑆𝑖 )𝑓 (𝑥𝑇𝑖 )⎠ ⎝                 𝑓 (𝑥 ′
+                                                                                   𝑆𝑖 )𝑓 (𝑥 ′
+                                                                                           𝑇𝑖 )⎠⃒≤1             (67)
+                             ⃒                                                                  ⃒
+                             ⃒ 𝑖∈dis(𝑆,𝑇 )                    𝑖∈dis(𝑆 ′ ,𝑇 ′ )                  ⃒
+
+and compute
+
+                                                                                                   𝑆 ⊖ 𝑇 ̸= 𝑆 ′ ⊖ 𝑇 ′
+                                                                       {︃ 2
+                        (𝑌𝑆⊖𝑇 − 𝜃0 )(𝑌𝑆 ′ ⊖𝑇 ′ − 𝜃0 )                    𝛽 𝑓 (𝑥𝑆⊖𝑇 )𝑓 (𝑥𝑆 ′ ⊖𝑇 ′ )
+                    E                                 =                        1−2𝜃                                                                   (68)
+                   P(𝑥)        𝜃0 (1 − 𝜃0 )                              1+ √      0
+                                                                                       𝛽𝑓 (𝑥𝑆⊖𝑇 ) 𝑆 ⊖ 𝑇 = 𝑆 ′ ⊖ 𝑇 ′ .
+                                                                                  𝜃0 (1−𝜃0 )
+
+We refer to the first case as “off-diagonal” terms and the second case as “diagonal” terms. We will upper-
+bound each case in a similar fashion, starting with the diagonal terms. For convenience, we will set 𝑚 =
+𝜆𝑝 + 𝑝/2.
+    Let 𝒫 denote the set of pairs (𝑆, 𝑇 ) with 𝑆, 𝑇 ∈ 𝒞𝜆 such that |𝑆△𝑇 | = 𝑝. Let 𝑈 = ∪𝑖 𝑆𝑖 ∪𝑖 𝑇𝑖 and
+𝑈 ′ = ∪𝑖 𝑆𝑖′ ∪𝑖 𝑇𝑖′ ; then for (𝑆, 𝑇 ) ∈ 𝒫 we have |𝑈 | = 𝑚. The condition 𝑟(𝑆, 𝑇, 𝑆 ′ , 𝑇 ′ ) = 𝑟 is equivalent to
+|𝑈 ∩ 𝑈 ′ | = 𝑟. Define for 𝐶 ∈ [𝑛]
+                                 (︀ )︀
+                                   𝑝   counting factor
+
+                                     𝐴𝑈 (𝐶) = #{(𝑆, 𝑇 ) ∈ 𝒫 : 𝑆 ⊖ 𝑇 = 𝐶, ∪𝑖 𝑆𝑖 ∪𝑖 𝑇𝑖 = 𝑈 }.                                                           (69)
+
+Then for 𝒰𝐶 = {𝑈 ⊂ [𝑛] : |𝑈 | = 𝑚, 𝐶 ⊂ 𝑈 } we define counting factor
+
+                 𝑁diag (𝑟) = #{(𝑆, 𝑇, 𝑆 ′ , 𝑇 ′ ) ∈ 𝒫 2 : 𝑆 ⊖ 𝑇 = 𝑆 ′ ⊖ 𝑇 ′ , 𝑟(𝑆, 𝑇, 𝑆 ′ , 𝑇 ′ ) = 𝑟}                                                (70)
+                              ∑︁ ∑︁                           ∑︁
+                           =                𝐴𝑈 (𝐶)                          𝐴𝑈 ′ (𝐶).                                                                 (71)
+                             𝐶∈([𝑛]) 𝑈 ∈𝒰𝐶            𝑈 ′ ∈𝒰𝐶 : |𝑈 ∩𝑈 ′ |=𝑟
+                                 𝑝
+
+                (︀ 𝑛−𝑝 )︀
+We count |𝒰𝐶 | = 𝑚−𝑝 so
+                                                   ∑︀
+                                                              𝐴𝑈 (𝐶)         𝐴(𝐶)
+                                     𝐴𝑈 (𝐶) = 𝑈 ∈𝒰𝐶                      = (︀ 𝑛−𝑝 )︀                                                                  (72)
+                                                           |𝒰𝐶 |             𝑚−𝑝
+
+for
+
+                                                  𝐴(𝐶) = #{(𝑆, 𝑇 ) ∈ 𝒫 : 𝑆 ⊖ 𝑇 = 𝐶}.                                                                  (73)
+
+We also count
+                                                                                           (︂     )︂(︂     )︂
+                                                                                             𝑚−𝑝 𝑛−𝑚
+                                         #{𝑈 ′ ∈ 𝒰𝐶 : |𝑈 ∩ 𝑈 ′ | = 𝑟} =                                                                               (74)
+                                                                                              𝑟−𝑝      𝑚−𝑟
+
+
+                                                                             22
+since outside the 𝑝 elements of 𝐶, we must choose 𝑟 − 𝑝 elements from 𝑈 ∖ 𝐶 to complete the overlap, and
+then the remaining elements of 𝑈 ′ from [𝑛] ∖ 𝑈 . Combining everything gives
+                                             ∑︁ 𝐴(𝐶)2 (︂𝑚 − 𝑝)︂(︂𝑛 − 𝑚)︂
+                                𝑁diag (𝑟) =         (︀ 𝑛−𝑝 )︀              .                         (75)
+                                               [𝑛]    𝑚−𝑝
+                                                              𝑟−𝑝  𝑚−𝑟
+                                            𝐶∈( 𝑝 )
+
+
+We finish evaluating this with
+                                                                        (︃(︂ )︂             )︃
+                                                                                2𝜆−1
+                                     ∑︁              |𝒫|2                   𝑛
+                                             𝐴(𝐶)2 = (︀𝑛)︀ = Θ                       𝑛𝑝 𝜆 𝑝                          (76)
+                                                               𝑝
+                                                                            𝑝
+                                   𝐶∈([𝑛]
+                                       𝑝 )
+
+
+                                                                           (︀𝑛)︀𝜆
+using the |𝒫| = Θ(|𝒞𝜆 |𝑛𝑝/2 𝜆𝑝/2 ) from Lemma 33 and |𝒞𝜆 | =                 𝑝       from Lemma 28. Hence, we find
+                                                    {︃
+                                                      0 (︁                                𝑟<𝑝
+                                   𝑁diag (𝑟) =          (︀ )︀2𝜆          )︀)︁                                        (77)
+                                                      𝑂 𝑛𝑝 𝑛𝑝−𝑟 𝜆𝑝 𝑚−𝑝
+                                                                  (︀
+                                                                     𝑟−𝑝                  𝑟 ≥ 𝑝.
+
+We now similarly bound the number of off-diagonal terms as
+
+                  𝑁offdiag (𝑟) = #{(𝑆, 𝑇, 𝑆 ′ , 𝑇 ′ ) ∈ 𝒫 2 : 𝑆 ⊖ 𝑇 ̸= 𝑆 ′ ⊖ 𝑇 ′ , 𝑟(𝑆, 𝑇, 𝑆 ′ , 𝑇 ′ ) = 𝑟}          (78)
+                                                ′    ′         2                 ′   ′
+                               ≤ #{(𝑆, 𝑇, 𝑆 , 𝑇 ) ∈ 𝒫 : 𝑟(𝑆, 𝑇, 𝑆 , 𝑇 ) = 𝑟}                                         (79)
+                                      (︂ )︂ (︁ )︁
+                                        𝑚     𝑚 𝑟
+                               ≤ |𝒫|2                                                                                (80)
+                                        𝑟     𝑛
+                                   (︃(︂ )︂        (︂ )︂ (︁ )︁ )︃
+                                          2𝜆
+                                        𝑛     𝑝 𝑝 𝑚       𝑚 𝑟
+                               =𝑂            𝑛 𝜆                                                                     (81)
+                                        𝑝           𝑟     𝑛
+
+by a union bound. In both the diagonal and off-diagonal cases we have by Cauchy-Schwarz, when 𝑟(𝑆, 𝑇, 𝑆 ′ , 𝑇 ′ ) =
+𝑟, that
+                ⃒ ⎛                        ⎞⎛                            ⎞⃒
+                ⃒                                                         ⃒
+                         ∏︁                       ∏︁                                           ′  ′
+                                          2⎠ ⎝
+                                                              𝑓 (𝑥𝑆𝑖′ ) ⎠⃒⃒ ≤ 𝜇|ag(𝑆,𝑇 )|+|ag(𝑆 ,𝑇 )|−2𝑟 𝛼𝑟
+                                                                       2
+                ⃒                                                         ⃒
+                ⃒E ⎝             𝑓 (𝑥𝑆𝑖 )                                                                   (82)
+                ⃒𝑥
+                ⃒     𝑖∈ag(𝑆,𝑇 )              𝑖∈ag(𝑆 ′ ,𝑇 ′ )             ⃒
+                                                                                     (︂ )︂𝑟
+                                                                               2𝜆−𝑝      𝛼
+                                                                            ≤𝜇                              (83)
+                                                                                        𝜇2
+
+since |ag(𝑆, 𝑇 )| ∈ {𝜆 − 𝑝/2, . . . , 𝜆 − 1} and 𝜇 < 1. Only 𝑟 ≥ 1 terms contribute to the variance, giving
+                                     𝑚 (︂   )︂𝑟
+                                    ∑︁    𝛼
+           Var ⟨𝑣| 𝒦 |𝑣⟩ ≤ 𝜇2𝜆−𝑝                         𝛽 2 𝑁offdiag (𝑟) + 𝑁diag (𝑟)
+                                                (︀                                   )︀
+                                                                                                                     (84)
+                                    𝑟=1
+                                           𝜇2
+                                 (︂ )︂𝜆       (︃     𝑚                    𝑚 (︂                  )︂𝑟 )︃
+                                   𝑛                ∑︁ (︂𝑚)︂ (︂ 𝑚𝛼 )︂𝑟 ∑︁      𝑚 −  𝑝
+                                                                                      )︂ (︂
+                                                                                             𝛼
+                         ≤ 𝜇2𝜆−𝑝        𝑛𝑝 𝜆 𝑝 𝛽 2                     +                                             (85)
+                                   𝑝                𝑟=1
+                                                          𝑟     𝑛𝜇2      𝑟=𝑝
+                                                                               𝑟−𝑝          𝑛𝜇2
+                                 (︂ )︂𝜆       (︃[︂ (︂           )︂𝑚   ]︂ (︂      )︂𝑝 (︂          )︂𝑚−𝑝 )︃
+                             2𝜆−𝑝 𝑛      𝑝 𝑝       2        𝑚𝛼                𝛼               𝛼
+                         ≤𝜇             𝑛 𝜆       𝛽 1+              −1 +                1+                           (86)
+                                   𝑝                        𝑛𝜇2              𝑛𝜇2             𝑛𝜇2
+                           (︃ (︂ )︂               )︃2
+                                    𝜆                    (︂ 2         )︂
+                                𝑛      𝜆 𝑝/2 𝑝/2            𝜆       1
+                         ≤ 𝛽          𝜇 𝑛 𝜆           ·𝑂       + 2 𝑝 .                                               (87)
+                                𝑝                           𝑛     𝛽 𝑛
+                              (︁
+                                          2
+                                            )︁           √
+This gives Var ⟨𝑣| 𝒦 |𝑣⟩ = 𝑜 (E ⟨𝑣| 𝒦 |𝑣⟩) for all 𝜆 = 𝑜( 𝑛) and 𝛽 ≫ 𝑛−𝑝/2 ; we set 𝛽 = Ω(𝑛−𝑝/2 log 𝑛) as
+a sufficient condition in the lemma statement.
+
+
+
+                                                                   23
+                            √
+Corollary 35. For any ℓ = 𝑜( 𝑛) and 𝛽 = Ω(𝑛−𝑝/2 log 𝑛), we have with probability 1 − 𝑜(1) that
+
+                                            ‖𝒦‖ ≥ 𝐶𝑝,𝑘 𝛽𝑛𝑝/2 ℓ𝑝/2 ,                                                (88)
+
+where 𝐶𝑝,𝑘 is independent of 𝑛 and ℓ. Note that the information-theoretic threshold is 𝛽 ≳ 𝑛(1−𝑝)/2 , which
+satisfies the above condition on 𝛽.
+Proof. Follows immediately from applying Chebyshev’s inequality to the quantity ⟨𝑣| 𝒦 |𝑣⟩ (using the mean
+                                                                                                  2
+and variance of Lemma 33 and Lemma 34) and union bounding with the concentration bound of ‖𝑣‖ shown
+in Lemma 52.
+
+A.4     Proof of the detection threshold
+The proof of Theorem 11 follows from combining Lemma 30 with Corollary 35 proven below.
+
+Proof of Theorem 11. By Corollary 35 and Lemma 30, we have
+         [︁                          ]︁                [︂   √︁                 ]︂
+                      ′      𝑝/2 𝑝/2                           𝑝/2 1+𝑝/2
+      Pr 𝜆max (𝒦) ≤ 𝐶𝑝,𝑘 · 𝛽𝑛 ℓ         = 𝑜(1), and Pr ‖𝒦‖ ≥ 6𝑛 ℓ        log(𝑛) ≤ 𝑜(1).                            (89)
+       P                                                       Q
+
+
+Hence estimating the largest eigenvalue of the Kikuchi matrix up to an (arbitrary) multiplicative factor 0.49
+achieves detection provided                          √︁
+                                   ′
+                                  𝐶𝑝,𝑘 · 𝛽𝑛𝑝/2 ℓ𝑝/2 ≥ 2 6𝑛𝑝/2 ℓ1+𝑝/2 log(𝑛).                                       (90)
+                                                                       𝜀
+Rewriting this in terms of the signal to noise ratio 𝛽 = √                    shows that we achieve detection for any
+                                                                   𝜃0 (1−𝜃0 )
+SNR
+                                           √ √︂
+                                          2 6       1
+                                        𝛽= ′               log(𝑛),                                                 (91)
+                                          𝐶𝑝,𝑘 𝑛𝑝/2 ℓ𝑝/2−1
+
+and setting 𝐶 ′ = 23 𝐶𝑘,𝑝 completes the proof. For 𝑝 > 2, increasing ℓ thus allows detection at a smaller noise
+rate, and the detection threshold smoothly interpolates between the computational threshold 𝛽 ∼ 𝑛−𝑝/4 and
+the information-theoretic threshold 𝛽 ∼ 𝑛(1−𝑝)/2 .
+                                                                                        √︀
+   In the next section, we show that our Kikuchi-based algorithm is optimal (up to a log(𝑛) factor, which
+can likely be removed by using stronger bounds than Matrix Bernstein).
+
+
+B     Lower bounds against low coordinate degree functions
+                                                                                                            √︀
+We now establish that our classical Kikuchi-based algorithm is asymptotically optimal (up to a                   log(𝑛)
+factor, which can likely be removed via a tighter concentration bound than Matrix Bernstein).

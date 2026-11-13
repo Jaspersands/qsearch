@@ -1,0 +1,150 @@
+p=7 pair (lam, c lam), lam=(1,0), c=1; cube root of -c: [3, 5, 6]
+  orbit sizes per copy: [[7, 7, 7, 7, 7, 7, 7], [7, 7, 7, 7, 7, 7, 7]]  (orbit check err ['1e-18', '1e-18'])  [1s]
+    class 1/49 [1s]
+    class 7/49 [3s]
+    class 13/49 [5s]
+    class 19/49 [7s]
+    class 25/49 [8s]
+    class 31/49 [10s]
+    class 37/49 [11s]
+    class 43/49 [13s]
+    class 49/49 [15s]
+  labels=[[1, 0], [1, 0]]  weight total=2401 (= p^{2k}: 2401)  meanS(HYP2)=14.0368  max off-r-block (d=-c)=8.4e-21  #hyp {'HYP1': 8, 'HYP2': 56, 'HYP1g': 7, 'HYP2g': 49}
+                 HYP1 (prior 0.125)       HYP1g (prior 0.143)      HYP2 (prior 0.018)       HYP2g (prior 0.020)   
+    Holevo       chi=0.7108                 chi=0.7347                 chi=2.7180                 chi=2.6849              
+    PGM          MI=0.0703 succ=0.2207    MI=0.0630 succ=0.2478    MI=0.2347 succ=0.1249    MI=0.2176 succ=0.1339 
+    comp         MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.3427 succ=0.1119    MI=0.0000 succ=0.0204 
+    F2           MI=0.0647 succ=0.2321    MI=0.0630 succ=0.2478    MI=0.1056 succ=0.0463    MI=0.1098 succ=0.0508 
+    line 0       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 1       MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0419 succ=0.0200    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 2       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 3       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 4       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 5       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 6       MI=0.0647 succ=0.2321    MI=0.0630 succ=0.2478    MI=0.3922 succ=0.1250    MI=0.3905 succ=0.1279   | post-r chi: 0.7108 0.7347 2.7180 2.6849
+    line inf     MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+p=7 pair (lam, c lam), lam=(1,0), c=2; cube root of -c: []
+  orbit sizes per copy: [[7, 7, 7, 7, 7, 7, 7], [7, 7, 7, 7, 7, 7, 7]]  (orbit check err ['1e-18', '1e-18'])  [0s]
+    class 1/49 [1s]
+    class 7/49 [3s]
+    class 13/49 [5s]
+    class 19/49 [6s]
+    class 25/49 [8s]
+    class 31/49 [10s]
+    class 37/49 [12s]
+    class 43/49 [13s]
+    class 49/49 [15s]
+  labels=[[1, 0], [2, 0]]  weight total=2401 (= p^{2k}: 2401)  meanS(HYP2)=14.0368  max off-r-block (d=-c)=8.4e-21  #hyp {'HYP1': 8, 'HYP2': 56, 'HYP1g': 7, 'HYP2g': 49}
+                 HYP1 (prior 0.125)       HYP1g (prior 0.143)      HYP2 (prior 0.018)       HYP2g (prior 0.020)   
+    Holevo       chi=0.7108                 chi=0.7347                 chi=2.7180                 chi=2.6849              
+    PGM          MI=0.1151 succ=0.2202    MI=0.1261 succ=0.2478    MI=0.2766 succ=0.1220    MI=0.2815 succ=0.1330 
+    comp         MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.3427 succ=0.1119    MI=0.0000 succ=0.0204 
+    F2           MI=0.0803 succ=0.1897    MI=0.0814 succ=0.2088    MI=0.1213 succ=0.0402    MI=0.1282 succ=0.0448 
+    line 0       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 1       MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0419 succ=0.0200    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 2       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 3       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 4       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 5       MI=0.0803 succ=0.1897    MI=0.0814 succ=0.2088    MI=0.6079 succ=0.0660    MI=0.5724 succ=0.0755   | post-r chi: 0.7108 0.7347 2.7180 2.6849
+    line 6       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0488 succ=0.0332    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line inf     MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+p=7 pair (lam, c lam), lam=(1,0), c=3; cube root of -c: []
+  orbit sizes per copy: [[7, 7, 7, 7, 7, 7, 7], [7, 7, 7, 7, 7, 7, 7]]  (orbit check err ['1e-18', '1e-18'])  [0s]
+    class 1/49 [1s]
+    class 7/49 [2s]
+    class 13/49 [4s]
+    class 19/49 [6s]
+    class 25/49 [7s]
+    class 31/49 [9s]
+    class 37/49 [10s]
+    class 43/49 [12s]
+    class 49/49 [14s]
+  labels=[[1, 0], [3, 0]]  weight total=2401 (= p^{2k}: 2401)  meanS(HYP2)=14.0368  max off-r-block (d=-c)=8.4e-21  #hyp {'HYP1': 8, 'HYP2': 56, 'HYP1g': 7, 'HYP2g': 49}
+                 HYP1 (prior 0.125)       HYP1g (prior 0.143)      HYP2 (prior 0.018)       HYP2g (prior 0.020)   
+    Holevo       chi=0.7108                 chi=0.7347                 chi=2.7180                 chi=2.6849              
+    PGM          MI=0.1151 succ=0.2202    MI=0.1261 succ=0.2478    MI=0.2766 succ=0.1220    MI=0.2815 succ=0.1330 
+    comp         MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.3427 succ=0.1119    MI=0.0000 succ=0.0204 
+    F2           MI=0.0803 succ=0.1897    MI=0.0814 succ=0.2088    MI=0.1213 succ=0.0402    MI=0.1282 succ=0.0448 
+    line 0       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 1       MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0419 succ=0.0200    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 2       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 3       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 4       MI=0.0803 succ=0.1897    MI=0.0814 succ=0.2088    MI=0.6079 succ=0.0660    MI=0.5724 succ=0.0755   | post-r chi: 0.7108 0.7347 2.7180 2.6849
+    line 5       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 6       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0488 succ=0.0332    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line inf     MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+p=7 pair (lam, c lam), lam=(1,0), c=4; cube root of -c: []
+  orbit sizes per copy: [[7, 7, 7, 7, 7, 7, 7], [7, 7, 7, 7, 7, 7, 7]]  (orbit check err ['1e-18', '1e-18'])  [0s]
+    class 1/49 [1s]
+    class 7/49 [2s]
+    class 13/49 [4s]
+    class 19/49 [5s]
+    class 25/49 [7s]
+    class 31/49 [9s]
+    class 37/49 [11s]
+    class 43/49 [13s]
+    class 49/49 [15s]
+  labels=[[1, 0], [4, 0]]  weight total=2401 (= p^{2k}: 2401)  meanS(HYP2)=14.0368  max off-r-block (d=-c)=8.4e-21  #hyp {'HYP1': 8, 'HYP2': 56, 'HYP1g': 7, 'HYP2g': 49}
+                 HYP1 (prior 0.125)       HYP1g (prior 0.143)      HYP2 (prior 0.018)       HYP2g (prior 0.020)   
+    Holevo       chi=0.7108                 chi=0.7347                 chi=2.7180                 chi=2.6849              
+    PGM          MI=0.1151 succ=0.2202    MI=0.1261 succ=0.2478    MI=0.2766 succ=0.1220    MI=0.2815 succ=0.1330 
+    comp         MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.3427 succ=0.1119    MI=0.0000 succ=0.0204 
+    F2           MI=0.0803 succ=0.1897    MI=0.0814 succ=0.2088    MI=0.1213 succ=0.0402    MI=0.1282 succ=0.0448 
+    line 0       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 1       MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0419 succ=0.0200    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 2       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 3       MI=0.0803 succ=0.1897    MI=0.0814 succ=0.2088    MI=0.6079 succ=0.0660    MI=0.5724 succ=0.0755   | post-r chi: 0.7108 0.7347 2.7180 2.6849
+    line 4       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 5       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 6       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0488 succ=0.0332    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line inf     MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+p=7 pair (lam, c lam), lam=(1,0), c=5; cube root of -c: []
+  orbit sizes per copy: [[7, 7, 7, 7, 7, 7, 7], [7, 7, 7, 7, 7, 7, 7]]  (orbit check err ['1e-18', '1e-18'])  [0s]
+    class 1/49 [1s]
+    class 7/49 [3s]
+    class 13/49 [4s]
+    class 19/49 [6s]
+    class 25/49 [8s]
+    class 31/49 [9s]
+    class 37/49 [11s]
+    class 43/49 [13s]
+    class 49/49 [14s]
+  labels=[[1, 0], [5, 0]]  weight total=2401 (= p^{2k}: 2401)  meanS(HYP2)=14.0368  max off-r-block (d=-c)=8.4e-21  #hyp {'HYP1': 8, 'HYP2': 56, 'HYP1g': 7, 'HYP2g': 49}
+                 HYP1 (prior 0.125)       HYP1g (prior 0.143)      HYP2 (prior 0.018)       HYP2g (prior 0.020)   
+    Holevo       chi=0.7108                 chi=0.7347                 chi=2.7180                 chi=2.6849              
+    PGM          MI=0.1151 succ=0.2202    MI=0.1261 succ=0.2478    MI=0.2766 succ=0.1220    MI=0.2815 succ=0.1330 
+    comp         MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.3427 succ=0.1119    MI=0.0000 succ=0.0204 
+    F2           MI=0.0803 succ=0.1897    MI=0.0814 succ=0.2088    MI=0.1213 succ=0.0402    MI=0.1282 succ=0.0448 
+    line 0       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 1       MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0419 succ=0.0200    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 2       MI=0.0803 succ=0.1897    MI=0.0814 succ=0.2088    MI=0.6079 succ=0.0660    MI=0.5724 succ=0.0755   | post-r chi: 0.7108 0.7347 2.7180 2.6849
+    line 3       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 4       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 5       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 6       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0488 succ=0.0332    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line inf     MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+p=7 pair (lam, c lam), lam=(1,0), c=6 (=-1, binary); cube root of -c: [1, 2, 4]
+  orbit sizes per copy: [[7, 7, 7, 7, 7, 7, 7], [7, 7, 7, 7, 7, 7, 7]]  (orbit check err ['1e-18', '1e-18'])  [0s]
+    class 1/49 [1s]
+    class 7/49 [2s]
+    class 13/49 [4s]
+    class 19/49 [6s]
+    class 25/49 [7s]
+    class 31/49 [9s]
+    class 37/49 [10s]
+    class 43/49 [12s]
+    class 49/49 [14s]
+  labels=[[1, 0], [6, 0]]  weight total=2401 (= p^{2k}: 2401)  meanS(HYP2)=14.0368  max off-r-block (d=-c)=8.4e-21  #hyp {'HYP1': 8, 'HYP2': 56, 'HYP1g': 7, 'HYP2g': 49}
+                 HYP1 (prior 0.125)       HYP1g (prior 0.143)      HYP2 (prior 0.018)       HYP2g (prior 0.020)   
+    Holevo       chi=0.3673                 chi=0.3438                 chi=2.7737                 chi=2.7501              
+    PGM          MI=0.0849 succ=0.2321    MI=0.0630 succ=0.2478    MI=0.2500 succ=0.1250    MI=0.2436 succ=0.1404 
+    comp         MI=0.0419 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.3427 succ=0.1119    MI=0.0000 succ=0.0204 
+    F2           MI=0.0647 succ=0.2321    MI=0.0630 succ=0.2478    MI=0.1056 succ=0.0463    MI=0.1098 succ=0.0508 
+    line 0       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 1       MI=0.3673 succ=0.2321    MI=0.3438 succ=0.2478    MI=0.6681 succ=0.1250    MI=0.6875 succ=0.1404   | post-r chi: 0.3673 0.3438 2.7737 2.7501
+    line 2       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 3       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 4       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 5       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line 6       MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.0488 succ=0.0332    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000
+    line inf     MI=0.0079 succ=0.1403    MI=0.0000 succ=0.1429    MI=0.1058 succ=0.0357    MI=0.0000 succ=0.0204   | post-r chi: 0.0419 0.0000 0.3427 -0.0000

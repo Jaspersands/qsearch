@@ -1,0 +1,39 @@
+{
+  "note": "Distinct algebra-attack and exact bit-compiler obligations, after corpus and actual primary source checks. No retries; local ceilings not charges.",
+  "jobs": [
+    {
+      "id": "super-schur-algebra",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-super-schur/algebra-attack.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-super-schur/contract.md",
+        "research/audits/api_inputs/2026-11-13-super-schur/actual-sources.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-super-schur-algebra",
+      "budget": 3,
+      "max_tokens": 64000,
+      "status": "completed",
+      "session_id": 15819,
+      "reaped": true,
+      "parent_read": "full:189 LF",
+      "disposition": "Tensor parity, coefficient injection, hook vanishing and leading monomials checked. Numerical-n fixed-Durfee scope upheld. O1/O2/O6 closed by independent explicit finite-grid bit compiler; O3 separable extraction optional because charged product peeling is proved; O4 convention consistency checked algebraically and finite exact residual identity; O5 early zero optional. Correct missing-primary-paragraph warning accepted and parent actual LF1065-1078 read. Generic one-hook/unrestricted-others disclaimer correct but not the actual Panova bounded-others case. No novelty or full-ratio claim."
+    },
+    {
+      "id": "super-schur-bit-compiler",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-super-schur/bit-compiler.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-super-schur/contract.md",
+        "research/audits/api_inputs/2026-11-13-super-schur/actual-sources.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-super-schur-bit-compiler",
+      "budget": 4,
+      "max_tokens": 64000,
+      "status": "completed",
+      "session_id": 30624,
+      "reaped": true,
+      "parent_read": "full:327 LF",
+      "disposition": "Checked full ordinary symmetric-function identity, hook injection, finite construction, integer Newton trace/determinant recurrence and polynomial intermediate degree/bit bounds. Independent looser polynomial clock valid; retained tighter separately checked grid compiler. No source-priority claim from omitted section7.5. Exact fixed-Durfee numerical-n theorem only, no growing bounds/full-ratio/novelty/quantum claim."
+    }
+  ]
+}

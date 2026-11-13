@@ -1,0 +1,253 @@
+SOURCE panova: https://arxiv.org/pdf/2502.20253v2; PDF SHA256 e515fcdfb893225efe512397ae5b5f0eadee6b107135b89c792372dba922fe61
+
+Actual pdftotext LF lines 1065-1078:
+7.5. The LR and Kronecker coefficients are polynomially bounded in size whenever the three
+partitions involved have fixed Durfee square size (diagonal length) as shown in [PP23]. Trying to
+modify these proofs to compute the exact value runs into problems, in particular some exponentially
+large alternating sums. Even in the simplest case when ν = (n − a, 1a ) is a hook, d(λ), d(µ) ≤ k, it
+is not clear how to efficiently compute g(λ, µ, ν). The combinatorial interpretation of Blasiak-Liu
+[Bla17, BL18, Liu17] requires constructing exponentially many tableaux. We expect that there will
+still be a poly-time algorithm in this case.
+
+7.6. While in this paper we were concerned with unary input (i.e. input size is equal to n = |λ|),
+in some cases binary input is also relevant. Binary input for partitions means that we write the part
+sizes λ1 , λ2 , · · · in binary, so that the input size becomes log(λ1 ) + log(λ2 ) + · · · = O(ℓ(λ) log(λ1 )).
+With binary input and ℓ(λ), ℓ(µ), ℓ(ν) – constants, we still have that g(λ, µ, ν) can be computed in
+polynomial time, see [CDW12, PP17]. It is thus natural to ask3 whether the Kronecker coefficients’s
+positivity is in QMA when the input is in binary (and there is no further restriction on lengths).
+
+SOURCE moens: https://users.ugent.be/~jvdjeugt/files/tex/MoensJeugt.pdf; PDF SHA256 f7730ad1ce8f2b3be6a16def756ca0fc01d9cff8e2daf38ea27b86273835b2f8
+
+Actual pdftotext LF lines 284-315:
+           3. Supersymmetric Schur polynomials.
+           Let us now recall some notions of supersymmetric S-functions [4, 19, 20].
+           The ring of doubly symmetric polynomials in x = (x1 , . . . , xm ) and y =
+           (y1 , . . . , yn ) is S(x, y) = S(x) ⊗Z S(y). An element p ∈ S(x, y) has the
+           cancellation property if it satisfies the following: when the substitution x1 =
+           t, y1 = −t is made in p, the resulting polynomial is independent of t. We
+           denote S(x/y) the subring of S(x, y) consisting of the elements satisfying
+           the cancellation property. The elements of S(x/y) are the supersymmetric
+           polynomials [20].
+                The complete supersymmetric functions hr (x/y) belong to S(x/y), and
+           are defined by
+                                                    r
+                                                    X
+                                      hr (x/y) =          hr−j (x)ej (y),                    (15)
+                                                    j=0
+
+           where hi (x) resp. ej (y) are the usual complete resp. elementary symmetric
+           functions [21]. We can use hr (x/y) to give a first formula for the super-
+           symmetric S-functions:
+                                                          
+                             sλ (x/y) = det hλi −i+j (x/y)            ,          (16)
+                                                                        1≤i,j≤`(λ)
+
+           where `(λ) denotes the length of λ. The polynomials sλ (x/y) are identically
+           zero when λm+1 > n.
+               Berele and Regev [4] showed that the character of a covariant module is
+           a supersymmetric Schur function: ch Vλ = sλ (x/y). Thus, our formula (14)
+           gives an alternative expression for sλ (x/y). In fact, (14) is the supersym-
+           metric equivalent of the determinantal formula for the symmetric Schur
+           polynomials as a quotient of two alternants.
+December 15, 2003   9:43   WSPC/Trim Size: 9in x 6in for Proceedings                          MoensJeugt
+
+
+SOURCE pragacz: https://www.impan.pl/~pragacz/bedthom1.pdf; PDF SHA256 de1d1bfb8e8f75f1c01cada43c91f69207e4d69a232c6e33a4ae04ff92dea8d5
+
+Actual pdftotext LF lines 260-296:
+   Fix two positive integers m and n. Let I be a partition. Suppose that the
+diagram of I and the following (m, n)-hook :
+
+
+                                  n    -
+
+
+                                                 6
+                                                 m
+                                                 ?
+share the lowest row and the leftmost column. If the diagram of I is contained
+in this hook, then we say that the partition I is contained in the (m, n)-hook.
+   We record the following vanishing property. Given alphabets A and B of
+cardinalities m and n, if the diagram of a partition I is not contained in the
+(m, n)-hook, then
+                                SI (A − B) = 0 .                           (6)
+   For instance, I = (2, 5, 6, 8) is not contained in the (2, 4)-hook
+
+                                  4 -
+
+
+                                          *
+                                                     6
+                                                     2
+                                                     ?
+
+Therefore S2568 (A2 − B4 ) = 0. This vanishing property is an immediate conse-
+quence of the factorization property (see Eq.(9)).
+   Moreover, we have the following result.
+Theorem 3 If A and B are alphabets of cardinalities m and n, then the Schur
+polynomials SI (A − B), where I runs over partitions contained in the (m, n)-
+hook, are Z-linearly independent. (I.e., they form a basis of the abelian group
+of supersymmetric Schur functions in A and B.)
+
+For a proof, see, e.g., [34, Proposition 2.3].
+
+Note 4 We shall often identify partitions with their diagrams, as is customary.
+
+Actual pdftotext LF lines 309-343:
+
+
+                                         6
+Definition 6 Given two alphabets A, B, we set
+                                     Y
+                       R(A, B) :=         (a − b) ,                                               (7)
+                                                a∈A, b∈B
+
+the resultant of A, B.
+Thus R(A, B) is the resultant of the polynomials R(x, A) = R({x}, A) and
+R(x, B).
+
+   We now record some properties of Schur functions that are used in our
+computations with Thom polynomials.
+   The first one is the following linearity formula. We have (see [17])
+               Sj (−E − Bn ) = Sj (−E − Bn−1 ) − bn Sj−1 (−E − Bn−1 ) .                           (8)
+    This equality is used quite often to estimate the sizes of partitions indexing
+Schur function expansions of Thom polynomials (see, e.g., [32], [19], [23], [24],
+[25]). It serves also to establish an extremely useful Transformation Lemma (see
+Lemma 7).
+   The second one is the following factorization property [3]. For partitions
+I = (i1 , . . . , im ) and J = (j1 , . . . , js ), we have
+         S(j1 ,...,js ,i1 +n,...,im +n) (Am − Bn ) = SI (Am ) R(Am , Bn ) SJ (−Bn ) .             (9)
+    For example, with m = 4, n = 2, I = (2, 3), J = (1, 3), we have
+
+
+
+
+                                              =            −B4
+
+                                                             R               A2
+
+
+                     S1367 (A2 − B4 ) = S23 (A2 )R(A2 , B4 )S13 (−B4 ) .
+This factorization property is useful to simplify the h-parts (cf. the end of
+
+SOURCE giambelli: https://arxiv.org/pdf/2604.23286; PDF SHA256 a198e1accb5895bb12cc345b5f79db99773e3a4c99970821f95d0128019228bb
+
+Actual pdftotext LF lines 154-171:
+to the Kronecker problem.
+
+1.1     Outline
+Let λ be an integer partition written in Frobenius notation so that λ =
+(α1 , α2 , . . . , αd | β1 , β2 , . . . , βd ), for the number d of diagonal boxes of λ, and
+where αi and βi , respectively, denote the arm and leg length of the ith box,
+for i ∈ {1, 2, . . . , d}. The Giambelli identity may then be formulated so that
+                                                           
+                                     sλ = det s(αi +1,1βj )         .                     (8)
+                                                                1≤i,j≤d
+
+Rewriting (8) using the Leibniz formula, we find that
+                                 X                 d
+                                                   Y
+                          sλ =          sgn(σ)              sα +1,1βσ(i)  .            (9)
+                                                                i
+                                 σ∈Sd                 i=1
+
+
+SOURCE barvinok_pommersheim: https://library.slmath.org/books/Book38/files/barvinok.pdf; PDF SHA256 bd803c27b438e3803db0e2b8fa4194e1102daca5176a94df3852762d7f5d465d
+
+Actual pdftotext LF lines 155-174:
+
+points by how much time it allows us to save compared with this straightforward
+procedure of enumeration. In particular, we will be interested in a special class
+of formulae whose complexity is bounded by a polynomial in the input size of
+the polytope P . A polytope P may be given by its description as a set of linear
+inequalities (as a rational polyhedron: see Definition 1.1). The input size of this
+facet description of P is the total size in binary encoding of the coefficients of the
+inequalities needed to describe P . For example, the input size of the description
+I = {x : 0 ≤ x ≤ a} of an interval, where a is a positive integer, is O(log a).
+A polytope P ⊂ R d may be given as the convex hull of its vertices; the input
+size of such a vertex description is defined in a similar way: the total size of the
+coordinates of the vertices of P in binary encoding. It is well understood that if
+the dimension d is fixed and not a part of the input, then the facet description
+and the vertex description are polynomially equivalent; that is, the length of one
+is bounded by a polynomial in the length of the other. See any of [Grötschel
+et al. 1993; Lovász 1986; Schrijver 1986], for example. Sometimes we talk about
+formulae that can be applied to polytopes from some particular class. In this
+case, we are looking at the computational complexity of the formula relative to
+the input size of the description of P within the class.
+    From this perspective, the formula of Example 1.2 is very nice: it is much more
+
+Actual pdftotext LF lines 934-955:
+are moved parallel to themselves so that the combinatorial structure of P does
+not change.
+Theorem 4.4. Fix d. There exists a polynomial time algorithm, which, for a
+given rational polyhedron P ⊂ R d ,
+        
+   P = x ∈ R d : hci , xi ≤ βi for i = 1, . . . , m , where ci ∈ Z d and βi ∈ Q,
+                                                  P
+computes the generating function f(P ; x) = m∈P ∩Z d xm in the form
+                                   X                     xai
+                      f(P ; x) =         εi                                 ,     (4.4.1)
+                                              (1 − xbi1 ) · · · (1 − xbid )
+                                   i∈I
+
+where εi ∈ {−1, 1}, ai ∈ Z d , and bi1 , . . . , bid is a basis of Z d for each i.
+   Suppose that the vectors ci : i = 1, . . . , m are fixed and the βi vary in such
+a way that the combinatorial structure of the polyhedron P = P (β) : β =
+(β1 , . . . , βm ) stays the same. Then the exponents bij in the denominator of each
+fraction remain the same, whereas the exponents ai = ai (β) in the numerator
+change with β ∈ Q m as
+                                        X
+                                         d
+                                                      
+
+Actual pdftotext LF lines 1056-1105:
+Algorithm 5.2 (A polynomial time algorithm for counting integer
+points in rational polytopes when the dimension is fixed). Suppose
+the dimension d is fixed and P ⊂ R d is a rational polytope. We use Theorem
+4.4 to compute
+                                        X                           xai
+                        f(P ; x) =            εi                                             .
+                                                    (1 − xbi1 ) · · · (1 − xbid )
+                                        i∈I
+
+
+We construct a vector l ∈ Z d such that hl, bij i 6= 0 for each i and j. To do this
+efficiently, we consider the “moment curve” g(τ ) = (1, τ, τ 2 , . . . , τ d−1 ) ∈ R d . For
+each bij , the function hg(τ ), bij i : τ ∈ R is a nonzero polynomial of degree at most
+d−1 in τ , and thus this function has at most d−1 zeros. Therefore, we can select
+l from the set of integer vectors {g(0), g(1), . . . , g(m)}, where m = d(d −1)|I|      +1.
+    Let l = (λ1 , . . . , λd ). For τ > 0, let xτ = exp(τ λ1 ), . . . , exp(τ λd ) and let
+ξij = hl, bij i and ηi = hl, aii. Then
+                                            X                            exp(τ hl, ai i)
+ |P ∩ Z d | = lim f(P ; xτ ) = lim                  εi
+              τ→0                     τ→0                (1 − exp(τ hl, bi1 i)) · · · (1 − exp(τ hl, bid i))
+                                              i∈I
+                    1 X                        τ d exp(τ ηi )
+           = lim              εi                                             .
+              τ→0 τ d              (1 − exp(τ ξi1 )) · · · (1 − exp(τ ξid ))
+                        i∈I
+112         ALEXANDER BARVINOK AND JAMES E. POMMERSHEIM
+
+
+Now, each fraction
+                                            τ d exp(τ ηi)
+                     hi(τ ) =
+                                (1 − exp(τ ξi1 )) · · · (1 − exp(τ ξid ))
+is a holomorphic function in a neighborhood of τ = 0 and the d-th coefficient of
+its Taylor series is
+
+                             1        X ηk
+                                        d
+                                         i
+                                           tdd−k (ξi1 , . . . , ξid).
+                        ξi1 · · · ξid   k!
+                                      k=0
+
+Finally, we get an efficient formula for the number of integer points in P :
+                              X          εi       X ηk
+                                                   d
+               |P ∩ Z d | =                          i
+                                                       tdd−k (ξi1 , . . . , ξid).   (5.2.1)
+                                    ξi1 · · · ξid   k!
+                              i∈I                k=0
+

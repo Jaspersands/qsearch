@@ -1,0 +1,39 @@
+{
+  "note": "Distinct classical attacks after corpus lookup and primary-source inspection; ceilings not charges; no retries.",
+  "jobs": [
+    {
+      "id": "community-sharp-classical",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-community-baseline-attack/sharp.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-community-baseline-attack/contract.md",
+        "research/audits/api_inputs/2026-11-13-community-baseline-attack/sharp-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-community-sharp-classical",
+      "budget": 3,
+      "max_tokens": 64000,
+      "status": "completed",
+      "session_id": 46257,
+      "parent_read": "full:12473 bytes",
+      "reaped": true,
+      "disposition": "Parent checked direct deterministic-support trace counting and Schatten moment symmetrization. Supports log-free classical native bound. Specific finite-n Rayleigh constants not adopted; independent all-label pure-community certificate replaces them. Old quantum log\u00b2n clock dominated, but same trace lemma sharpens quantum compiler, so no all-quantum dominance claim."
+    },
+    {
+      "id": "community-cycle-classical",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-community-baseline-attack/hce.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-community-baseline-attack/contract.md",
+        "research/audits/api_inputs/2026-11-13-community-baseline-attack/hce-primary.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-community-cycle-classical",
+      "budget": 6,
+      "max_tokens": 64000,
+      "status": "completed",
+      "session_id": 28636,
+      "parent_read": "full:13451 bytes",
+      "reaped": true,
+      "disposition": "Checked triangle fourth-moment positive circuit contraction, exact connected degree-two cover count, uniform growing-order overlap count including shared vertices, variance constants and integer clock. Accept p4 k3 q1/4 even l<=ln(n)/8 and beta\u00b2n\u00b2l>=2^15 scope. Old quantum clock dominated; no dominance over trace-sharpened quantum compiler or arbitrary-C/all-label extension."
+    }
+  ]
+}

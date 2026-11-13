@@ -1,0 +1,800 @@
+C      Correctness and efficiency of the quantum Kikuchi algorithm
+In this section, we describe a quantum algorithm that achieves a quartic quantum speedup over the classical
+Kikuchi method presented in Section 3. The core idea is to instantiate hypergraph community detection as
+an instance of a fine-grained version of the guided sparse Hamiltonian problem.
+
+
+
+
+                                                                            30
+C.1     Quantized Kikuchi algorithm
+Recall our quantum algorithm from Section 5.
+
+                                        Quantized Kikuchi method
+
+
+Input: A 𝑝-marginal HSBM(𝑛, 𝑘, 𝜃0 , 𝜀) instance Y.
+Preprocessing: As in the classical Kikuchi algorithm, choose a sufficiently large ℓ and a threshold 𝜏 in
+accordance with a classical “Kikuchi Theorem” at SNR 𝛽, such as Theorem 11.
+Quantum algorithm: Encode the following in Amplitude Amplification and repeat 𝑂(𝑛ℓ/4 ) times:
+
+ • Prepare ℓ/𝑝 unentangled copies of a guiding state |𝜑⟩. Symmetrize the resulting state to obtain a guiding
+   state |Φ⟩.
+ • Perform Quantum Phase Estimation with the sparse Hamiltonian 𝒦ℓ on the initial state |Φ⟩.
+ • Measure the eigenvalue register and record whether an eigenvalue above the threshold 𝜏 was sampled.
+
+Output: If during any of the repetitions, an eigenvalue above 𝜏 was found, return “Planted”. Otherwise,
+return “Random”.
+
+   A main technical analysis of this algorithm is already provided by the classical discussion in Section A.
+The main challenge we address in this section is the existence of an efficiently preparable guiding state that
+has improve overlap with the leading eigenspace of the Kikuchi matrix, that is, the eigenspace that certifies
+the presence of a community structure. We show this in two main steps: First, that there exists an efficiently
+preparable guiding state |𝑢⟩ that has improved overlap with the certificate vector |𝑣⟩.
+Definition 49 (Guiding vector). Let |𝑢′ ⟩ be the unnormalized vector given by
+
+                                                            𝑌 − 𝜃0
+                                                          √︀ 𝑆
+                                                   ∑︁
+                                        |𝑢′ ⟩ =                          |𝑆⟩ .                             (141)
+                                                     [𝑛]
+                                                            𝜃0 (1 − 𝜃0 )
+                                                  𝑆∈( 𝑝 )
+
+                                                                ⊗ℓ/𝑝
+The guiding vector |𝑢⟩ is the unnormalized vector Π𝜆 |𝑢′ ⟩             .
+
+    Then, we prove lower bounds on the overlap between a slight modification of this guiding state and the
+leading eigenspace of the Kikuchi matrix. Our final result is summarized below.
+Theorem 50. Consider the 𝑝-marginal HSBM with 𝑝 even. Let ℓ ∈ [𝑝/2, 𝑛 − 𝑝/2] and 𝜖, 𝜃0 in accordance
+with (14), and let                               √
+                                     𝜖          3 6 1/2−𝑝/4 −𝑝/4 √︀
+                         𝛽 := √︀              ≥      ℓ     𝑛        log(𝑛),                    (142)
+                                 𝜃0 (1 − 𝜃0 )   𝐶𝑘,𝑝
+
+in accordance with the classical Kikuchi theorem Theorem 11. Let 𝒦        ˜ be the ℓ-th order bosonic Kikuchi
+matrix obtained by sample splitting as described in Section C.3.1. Let Π≥ (𝒦)   ˜ denote the projector onto the
+                ˜
+eigenvectors of 𝒦 with eigenvalues at least 𝜏. Then there exists an efficiently preparable guiding state |˜
+                                                                                                          𝑢⟩ such
+that               [︃                                                                ]︃
+                      ⟨˜       ˜ |˜
+                       𝑢| Π≥ (𝒦)  𝑢⟩      (︁      )︁   (︁      )︁   (︁            )︁
+                Pr                   ≥ exp − ˜𝑂(ℓ) · 𝑂˜ 𝑛−ℓ/2 · 𝑂  ˜ log(𝑛)−ℓ/𝑝         ≥ 1 − 𝑜(1).         (143)
+                 P         ⟨˜
+                            𝑢|˜
+                              𝑢⟩
+
+    The exponential factors in ℓ and polynomial factors in 𝑛 are negligible compared to the overall scaling
+of 𝑛𝑂(ℓ) . The inverse of the square root of the guiding state overlap is the source of our quartic quantum
+speedup. We prove in Section C.5 that the guiding state can be prepared efficiently.
+
+
+
+
+                                                          31
+C.2    Guiding state overlap
+The following moments will be useful.
+Lemma 51. For sets 𝑆, 𝑇 ∈ [𝑛]
+                            (︀ )︀
+                              𝑝 , define
+
+  𝜇 = E 𝑓 (𝑥𝑆 )2 ,      𝛾 = E 𝑓 (𝑥𝑆 )3 ,               𝛼 = E 𝑓 (𝑥𝑆 )4 ,                  𝛽𝑟 = E 𝑓 (𝑥𝑆 )2 𝑓 (𝑥𝑇 )2 for |𝑆 ∩ 𝑇 | = 𝑟
+       [︀       ]︀           [︀       ]︀                    [︀       ]︀                        [︀                ]︀
+
+                                                                                                                               (144)
+
+where expectations are over uniform 𝑥 ∈ [𝑘]𝑛 . Then for even 𝑝,
+
+              (𝑘 − 1)𝑝 + (−1)𝑝 (𝑘 − 1)
+          𝜇=                                                                                                                  (145)
+                        𝑘 2𝑝−1
+          𝛾 = 𝑘 −2𝑝 ((𝑘 − 1)𝑝 (𝑘 − 2)𝑝 + 3(𝑘 − 1)(𝑘 − 2)𝑝 + (𝑘 − 1)(𝑘 − 2)2𝑝 )                                                (146)
+                (︃                                                           )︂𝑝 (︂                  )︂𝑝
+                                                               (𝑘 − 1)3 + 1         (𝑘 − 1)4 + 𝑘 − 1
+                                                            (︂
+                                           𝑝 −4𝑝
+          𝛼 = 𝑘 (𝑘 − 3)(𝑘 − 2)(𝑘 − 1)3 𝑘         + 4(𝑘 − 1)                     +
+                                                                    𝑘5                     𝑘5
+                                       (︂      )︂𝑝            (︂        )︂𝑝 )︃
+                                          𝑘−3                    2𝑘 − 3
+                   + 6(𝑘 − 2)(𝑘 − 1)               + 3(𝑘 − 1)                                                                 (147)
+                                            𝑘4                     𝑘4
+         𝛽𝑟 ≤ 𝛼.                                                                                                              (148)
+
+Proof. The computations of 𝜇, 𝛾, 𝛼 are direct evaluations. Cauchy-Schwarz gives
+                                          √︀
+                                    𝛽𝑟 ≤ E [𝑓 (𝑥𝑆 )4 ] E [𝑓 (𝑥𝑇 )4 ] = 𝛼.                                                     (149)
+
+
+                                              √
+Lemma 52 (Certificate state norm). For ℓ = 𝑜( 𝑛) and any constant 𝛿 > 0
+                                [︃⃒      (︂ )︂𝜆 ⃒⃒   (︂ )︂𝜆 ]︃
+                                  ⃒
+                                     2     𝑛    𝜆⃒     𝑛
+                             Pr ⃒‖𝑣‖ −         𝜇 ⃒≥𝛿       𝜇𝜆 = 𝑜(1).                                                         (150)
+                                  ⃒
+                                  ⃒        𝑝     ⃒     𝑝
+
+Proof. The first moment is
+
+                                                            ∑︁          𝜆
+                                                                       ∏︁
+                                        2
+                                 E ‖𝑣‖ = E                                   𝑓 (𝑥𝑆𝑖 )2 = |𝒞𝜆 |𝜇𝜆                              (151)
+                                                  𝑥
+                                                      (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆 𝑖=1
+
+by independence of the 𝑥 coordinates. The second moment is computed via Lemma 28 using
+                                                        𝜆𝑝
+                                                        ∑︁             ∑︁                  𝜆
+                                                                                          ∏︁
+                             4          2
+                      E ‖𝑣‖ = (E ‖𝑣‖ )2 + E                                                    𝑓 (𝑥𝐶𝑖 )2 𝑓 (𝑥𝐶𝑖′ )2 .         (152)
+                                                        𝑟=1 𝐶,𝐶 ′ ∈𝒞𝜆 : 𝑟(𝐶,𝐶 ′ )=𝑟 𝑖=1
+
+
+Since at most 𝑟 blocks agree when 𝑟(𝐶, 𝐶 ′ ) = 𝑟, we have that
+                                             𝜆                                (︂        )︂𝑟
+                                            ∏︁                                     𝛼
+                                       E          𝑓 (𝑥𝐶𝑖 )2 𝑓 (𝑥𝐶𝑖′ )2 ≤                      𝜇2𝜆                             (153)
+                                            𝑖=1
+                                                                                   𝜇2
+
+for 𝛼 = E 𝑓 (𝑥𝑆 )4 computed in Lemma 51. Hence,
+                                                                         𝜆𝑝 (︂    )︂ (︂     )︂𝑟
+                                  4                   2 2         2 2𝜆
+                                                                         ∑︁    𝜆𝑝       𝛼𝜆𝑝
+                             E ‖𝑣‖ ≤ (E ‖𝑣‖ ) + |𝒞𝜆 | 𝜇                                                                       (154)
+                                                                         𝑟=1
+                                                                                    𝑟           𝜇2 𝑛
+                                                                         [︃(︂                  )︂𝜆𝑝      ]︃
+                                                      2 2         2 2𝜆            𝛼𝜆𝑝
+                                      = (E ‖𝑣‖ ) + |𝒞𝜆 | 𝜇                      1+ 2                   −1 .                   (155)
+                                                                                  𝜇 𝑛
+
+
+                                                                  32
+          √
+For ℓ = 𝑜( 𝑛), we thus obtain variance
+                                 [︃(︂               )︂𝜆𝑝                ]︃          (︂ 2 )︂
+                    2         2 2         𝛼𝜆𝑝                                         ℓ     2 2
+                                                                                               (︁
+                                                                                                      2
+                                                                                                         )︁
+            Var ‖𝑣‖ ≤ (E ‖𝑣‖ )          1+ 2                     − 1 = (E ‖𝑣‖ ) · 𝑂         = 𝑜 (E ‖𝑣‖ )2 .                              (156)
+                                          𝜇 𝑛                                         𝑛
+
+Chebyshev’s inequality thus gives the claimed statement.
+                                              √
+Lemma 53 (Guiding state norm). For ℓ = 𝑜( 𝑛) and any constant 𝛿 > 0,
+                                     [︃⃒      (︂ )︂𝜆 ⃒⃒   (︂ )︂𝜆 ]︃
+                                       ⃒
+                                           2    𝑛 ⃒         𝑛
+                                  Pr ⃒‖𝑢‖ −           ⃒≥𝛿           = 𝑜(1).                                                              (157)
+                                       ⃒
+                                       ⃒        𝑝 ⃒         𝑝
+                                                                                            √︀
+Proof. Direct computation for random variable 𝑢′𝑆 = (𝑌𝑆 − 𝜃0 )/                                  𝜃0 (1 − 𝜃0 ) gives EP (𝑢′𝑆 )2 = 1 and
+
+                                                                        1      1
+                                        𝛼′ := E(𝑢′𝑆 )4 =                   +        −3                                                   (158)
+                                               P                        𝜃0   1 − 𝜃0
+                                                   (︀[𝑛])︀
+and thus by Cauchy-Schwarz, for any 𝑆, 𝑇 ∈           𝑝       ,
+                                                                 √︁
+                                    E(𝑢′𝑆 )2 (𝑢′𝑇 )2 ≤             E(𝑢′𝑆 )4 E(𝑢′𝑇 )4 ≤ 𝛼′ .                                              (159)
+                                    P                               P                 P
+
+The first moment is, by independence of edges and coordinates of 𝑥,
+
+                                                         ∑︁                   𝜆
+                                                                             ∏︁
+                                         2
+                                 E ‖𝑢‖ =                                          E(𝑢′𝑆𝑖 )2 = |𝒞𝜆 |.                                     (160)
+                                 P                                                P
+                                               (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆 𝑖=1
+
+                                 √
+Note that by Lemma 28, for ℓ = 𝑜( 𝑛) we have
+                                                         (︂ )︂𝜆
+                                                           𝑛
+                                             |𝒞𝜆 | =            (1 + 𝑜(1)) .                                                             (161)
+                                                           𝑝
+
+The second moment is
+                               (︁      )︁2    𝜆𝑝
+                                              ∑︁                                  ∑︁                𝜆
+                                                                                                   ∏︁
+                             4       2
+                        E ‖𝑢‖ = E ‖𝑢‖      +E                                                              (𝑢′𝐶𝑖 )2 (𝑢′𝐶𝑖′ )2            (162)
+                        P           P                P
+                                                         𝑟=1 𝐶,𝐶 ′ ∈𝒞𝜆 : 𝑟(𝐶,𝐶 ′ )=𝑟 𝑖=1
+                                                                 [︃(︂                     )︂𝜆𝑝        ]︃
+                                         2 2             2                 𝛼′ 𝜆𝑝
+                              ≤ (E ‖𝑢‖ ) + |𝒞𝜆 |                        1+                       −1                                      (163)
+                                 P                                          𝑛
+                                                                          √
+by Lemma 28 following similar steps to the proof of Lemma 52. For ℓ = 𝑜( 𝑛), we thus obtain variance
+                                 [︃(︂         )︂𝜆𝑝    ]︃
+                                        𝛼′ 𝜆𝑝
+                                                                      (︂ 2 )︂
+                  2          2 2                               2 2      ℓ        (︁
+                                                                                        2
+                                                                                           )︁
+          Var ‖𝑢‖ ≤ (E ‖𝑢‖ )         1+            − 1 = (E ‖𝑢‖ ) · 𝑂         = 𝑜 (E ‖𝑢‖ )2 .     (164)
+                                          𝑛                             𝑛
+
+Chebyshev’s inequality thus gives the claimed statement.
+                                                 √
+Lemma 54 (Guiding state overlap). For ℓ = 𝑜( 𝑛) and any constant 𝛿 > 0, we have
+                                  [︂⃒                 ⃒           ]︂
+                                    ⃒ ⟨𝑢|𝑣⟩      √ 𝜆⃒         √ 𝜆
+                               Pr ⃒⃒         − (𝛽 𝜇) ⃒⃒ ≥ 𝛿 (𝛽 𝜇) = 𝑜(1).                                                                (165)
+                                      ‖𝑢‖‖𝑣‖
+
+In particular, choosing 𝛽 = Θ̃(ℓ1/2−𝑝/4 𝑛−𝑝/4 ) gives
+                                   [︂                               )︁]︂
+                                       ⟨𝑢|𝑣⟩      (︁
+                                                ˜ 𝑛−ℓ/4 ℓℓ(1/2𝑝−1/4) = 𝑜(1).
+                                Pr           ≤𝑂                                                                                          (166)
+                                      ‖𝑢‖‖𝑣‖
+
+                                                                    33
+Proof. We have first moment
+
+                                               ∑︁            𝜆
+                                                            ∏︁                                        ∑︁          𝜆
+                                                                                                                 ∏︁
+                  E ⟨𝑢|𝑣⟩ = E                                      𝑢′𝑆𝑖 𝑓 (𝑥𝑆𝑖 ) = 𝛽 𝜆                                 E 𝑓 (𝑥𝑆𝑖 )2 = |𝒞𝜆 |(𝛽𝜇)𝜆 .      (167)
+                  P                  P                                                                                 𝑥
+                                          (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆 𝑖=1                                 (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆 𝑖=1
+
+To show the second moment, we compute
+                                                                      (︃ 𝜆                      )︃ (︃ 𝜆                    )︃
+                                      2
+                                                        ∑︁              ∏︁                           ∏︁
+                              E ⟨𝑢|𝑣⟩ = E                                       𝑢′𝑆𝑖 𝑓 (𝑥𝑆𝑖 )               𝑢′𝑇𝑖 𝑓 (𝑥𝑇𝑖 )                              (168)
+                               P              P
+                                                   (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆       𝑖=1                         𝑖=1
+                                                   (𝑇1 ,...,𝑇𝜆 )∈𝒞𝜆
+                                                        𝜆𝑝
+                                                                                             (︃ 𝜆                     )︃ (︃ 𝜆                 )︃
+                                              (︁   )︁2  ∑︁                        ∑︁           ∏︁                          ∏︁
+                                          = E ⟨𝑢|𝑣⟩ + E                                               𝑢′𝑆𝑖 𝑓 (𝑥𝑆𝑖 )               𝑢′𝑇𝑖 𝑓 (𝑥𝑇𝑖 )    .   (169)
+                                                   P                  P
+                                                                          𝑟=1 𝑆,𝑇 ∈𝒞𝜆           𝑖=1                         𝑖=1
+                                                                             𝑟(𝑆,𝑇 )=𝑟
+
+                  (︀[𝑛])︀
+For any 𝑆 ∈           𝑝       , observe that
+                                                              (︃                            )︃
+                          ′                                           𝛽(1 − 2𝜃0 )                            𝛽(1 − 2𝜃0 )
+                      𝛼       := E(𝑢′𝑆 )2 𝑓 (𝑥𝑆 )2 = E           1 + √︀              𝑓 (𝑥𝑆 ) 𝑓 (𝑥𝑆 )2 = 𝜇 + √︀             𝛾.                          (170)
+                                 𝑃                   𝑥                  𝜃0 (1 − 𝜃0 )                          𝜃0 (1 − 𝜃0 )
+            (︀[𝑛])︀
+If 𝑆, 𝑇 ∈     𝑝       satisfy |𝑆 ∩ 𝑇 | = 𝑘 ≥ 1, then we have
+
+                                                   E 𝑢′𝑆 𝑓 (𝑥𝑆 )𝑢′𝑇 𝑓 (𝑥𝑇 ) = 𝛽 2 E 𝑓 (𝑥𝑆 )2 𝑓 (𝑥𝑇 )2 ≤ 𝛽 2 𝛼                                          (171)
+                                                   P                                       𝑥
+
+by Lemma 51. If |𝑆 ∩ 𝑇 | = 0, then we have
+
+                                               E 𝑢′𝑆 𝑓 (𝑥𝑆 )𝑢′𝑇 𝑓 (𝑥𝑇 ) = 𝛽 2 E 𝑓 (𝑥𝑆 )2 𝑓 (𝑥𝑇 )2 = 𝛽 2 𝜇2 .                                           (172)
+                                               P                                         𝑥
+
+Hence, we obtain the second moment bound
+
+                                                      )︁2
+                                                       (︁        𝜆𝑝
+                                                                ∑︁ (︂𝜆𝑝)︂ (︂ 𝜆𝑝 )︂𝑟 (︂ 𝛼 )︂𝑟
+                                                   2          2
+                                     E ⟨𝑢|𝑣⟩ ≤ E ⟨𝑢|𝑣⟩ + |𝒞𝜆 |                          2
+                                                                                             (𝛽𝜇)2𝜆                                                    (173)
+                                     P           P
+                                                                𝑟=1
+                                                                      𝑟       𝑛        𝜇
+                                                                       [︃(︂          )︂𝜆𝑝     ]︃
+                                              (︁      )︁2                       𝛼𝜆𝑝
+                                                              2     2𝜆
+                                             ≤ E ⟨𝑢|𝑣⟩ + |𝒞𝜆 | (𝛽𝜇)         1+ 2          −1                                                           (174)
+                                                 P                              𝜇 𝑛
+          √
+for 𝜆 = 𝑜( 𝑛). By (167), this gives variance
+                                   [︃(︂       )︂𝜆𝑝    ]︃               (︂ 2 )︂
+                                 2        𝛼𝜆𝑝                     2      ℓ        (︁
+                                                                                            2
+                                                                                              )︁
+           Var ⟨𝑢|𝑣⟩ ≤ (E ⟨𝑢|𝑣⟩)        1+ 2       − 1 = (E ⟨𝑢|𝑣⟩) · 𝑂         = 𝑜 (E ⟨𝑢|𝑣⟩) .                                                         (175)
+                                          𝜇 𝑛                            𝑛
+
+Chebysehv’s inequality thus implies concentration of ⟨𝑢|𝑣⟩ to its mean with probability 1 − 𝑜(1), i.e., for any
+𝛿 > 0,
+                              [︃⃒
+                                ⃒ ⟨𝑢|𝑣⟩    [︂(︂ )︂ ]︂𝜆 ⃒⃒   [︂(︂ )︂ ]︂𝜆 ]︃
+                                               𝑛                𝑛
+                           Pr ⃒          −        𝛽𝜇 ⃒ ≥ 𝛿         𝛽𝜇      = 𝑜(1).                        (176)
+                                ⃒                       ⃒
+                                ⃒ ‖𝑢‖‖𝑣‖       𝑝        ⃒       𝑝
+
+                                                                                                             2              2
+Finally, we union bound all bad events for the quantities ⟨𝑢|𝑣⟩ , ‖𝑢‖ and ‖𝑣‖ from Lemma 52 and Lemma 53
+to obtain the claimed concentration. Substituting
+                                                                              (︂ )︂𝜆
+                                                                                𝑛
+                                                                      |𝒞𝜆 | =        (1 + 𝑜(1))                                                        (177)
+                                                                                𝑝
+
+
+                                                                                      34
+from Lemma 28, we find that for any constant 𝛿 > 0,
+                                [︂⃒                 ⃒          ]︂
+                                  ⃒ ⟨𝑢|𝑣⟩      √ 𝜆 ⃒⃒      √ 𝜆
+                             Pr ⃒ ⃒        − (𝛽 𝜇) ⃒ ≥ 𝛿 (𝛽 𝜇) = 𝑜(1).                                      (178)
+                                    ‖𝑢‖‖𝑣‖
+
+Taking 𝛽 = Θ̃(ℓ1/2−𝑝/4 𝑛−𝑝/4 ) gives
+                                   [︂                             )︁]︂
+                                       ⟨𝑢|𝑣⟩    (︁
+                                              ˜ 𝑛−ℓ/4 ℓℓ(1/2𝑝−1/4) = 𝑜(1).
+                                Pr           ≤𝑂                                                             (179)
+                                      ‖𝑢‖‖𝑣‖
+
+
+
+C.3     Cutoff eigenspace proof
+                                    √
+Fix even 𝑝, write ℓ = 𝜆𝑝 with ℓ = 𝑜( 𝑛), and keep the scaling assumptions from the previous sections. Set
+                                                     √
+                                         𝜖          3 6 1/2−𝑝/4 −𝑝/4 √︀
+                             𝛽 := √︀              ≥    ℓ       𝑛        log(𝑛),                     (180)
+                                     𝜃0 (1 − 𝜃0 )    𝐶
+
+and
+                                                   1
+                                                     𝐶𝛽𝑛𝑝/2 ℓ𝑝/2 ,
+                                                      𝜏 :=                                           (181)
+                                                   2
+in accordance with Theorem 11. The previous sections defined two vectors, a certificate |𝑣⟩ and a guiding
+state |𝑢⟩, and established that with probability 1 − 𝑜(1) over P, the following two statements hold:
+
+                                ˜ |𝑣⟩
+                            ⟨𝑣| 𝒦      4                          ⟨˜
+                                                                   𝑢|𝑣⟩      √ 𝜆
+                                      ≥ 𝜏,            and               > (𝜁𝛽 𝜇) (1 − 𝑜(1)) .               (182)
+                              ‖𝑣‖2     3                         ‖𝑢‖‖𝑣‖
+
+To show correctness of our quantum algorithm, we have to prove a subtler statement establishing that the
+guiding state has improved overlap not just with the certificate but with the leading eigenspace of the Kikuchi
+matrix. Intuitively, the leading eigenspace of 𝒦 in the planted case is the space of eigenvectors of 𝒦 with an
+eigenvalue that is larger than 𝜏 (𝒦) in the null case. We choose an arbitrary constant, as in Theorem 11, and
+define Π≥ (𝒦) to be the projector onto the eigenspaces of 𝒦 with eigenvalues larger than 𝜏 . By Theorem 11,
+the largest eigenvalue of 𝒦 in the null case does not exceed 23 𝜏 with high probability over Q. Our main result
+is summarized in Theorem 50.
+
+C.3.1    Step 1: Sample splitting
+Throughout, let 𝑌 be a hypergraph instance sampled from the planted distribution as (︀ specified  in Definition 2.
+Fix 𝐿 := ⌈log 𝑛⌉ and define 𝜁 = 1/𝐿. Independently of (𝑥, 𝑌 ), assign each 𝑝-set 𝑆 ∈ [𝑛]
+                                                                                         )︀
+                                                                                       𝑝    uniformly at random
+to one of the 𝐿 batches; let 𝑀𝑆 ∈ {0, 1} be the indicator that 𝑆 lands in Batch 𝐵1 , and let 𝑀𝑆⊥ be the
+indicator function of the complement. (Thus E 𝑀𝑆 = 𝜁, and for 𝑆 ̸= 𝑇, E [𝑀𝑆 𝑀𝑇 ] = 𝜁 2 ; 𝑀𝑆2 = 𝑀𝑆 .) We
+construct our guiding state from the first batch.
+Definition 55 (Split guiding vector). Let |𝑢′′ ⟩ be the unnormalized vector given by
+                                                       ∑︁           𝑌𝑆 − 𝜃0
+                                           |𝑢′′ ⟩ =           𝑀𝑆 √︀              |𝑆⟩ .                      (183)
+                                                         [𝑛]
+                                                                   𝜃 0 (1 − 𝜃0 )
+                                                      𝑆∈( 𝑝 )
+
+                                                                            ⊗ℓ/𝑝
+                          𝑢⟩ is the unnormalized vector Π𝜆 |𝑢′′ ⟩
+The split guiding vector |˜                                                        .
+   Similarly, define a split the bosonic Kikuchi matrix 𝒦           ˜ on 𝒯𝑛 (ℓ) entry-wise by
+                               ⎧
+                               ⎨𝑀 ⊥              𝑌{𝜇1 ,...,𝜇𝑝 } −𝜃0
+                                   {𝜇1 ,...,𝜇𝑝 }
+                                                   √                    if (𝜇1 , . . . , 𝜇𝑝 ) = 𝑆 ⊖ 𝑉,
+                      ˜
+                      𝒦𝑆,𝑉 =                         𝜃0 (1−𝜃0 )                                             (184)
+                               ⎩0                                     otherwise.
+
+
+                                                                35
+Here and in what follows, we absorb the distribution of the random uniform splitting into the notation P(𝑥).
+Under the probability distribution P(𝑥) conditioned on 𝑥, the matrix and guiding state are independent.
+Due to independence of 𝑀𝑆 , the split Kikuchi matrix satisfies
+
+                           ⟨𝑣| 𝒦 |𝑣⟩  4
+                                     ≥ (1 − 𝜁)𝜏,            with probability 1 − 𝑜(1) over P.                          (185)
+                             ‖𝑣‖2     3
+
+C.3.2    Step 2: Leading eigenspace mass
+We record the simple observation that |𝑣⟩ has large support on the leading eigenspace of ˜
+                                                                                         𝒦.
+
+Theorem 56. Let Π≥ (𝒦)   ˜ denote the projector onto the eigenvectors of 𝒦
+                                                                         ˜ with eigenvalues at least 𝜏 . Then
+with probability 1 − 𝑜(1) over P,
+                                     ⟨𝑣| Π≥ ( ˜
+                                             𝒦) |𝑣⟩    1 − 4𝜁
+                                                    ≥           = Ω(1).                                  (186)
+                                          ⟨𝑣|𝑣⟩       6/𝐶 ′ − 1
+Proof. Conditioned on labels x, EP(𝑥) [𝐴𝑆 ] = 𝛽 𝑓 (𝑥𝑆 ) with |𝑓 | ≤ 1, hence we have the loose upper bound
+          ˜ ≤ 𝛽𝑛𝑝/2 ℓ𝑝/2 . The centered random variable 𝒦
+|| EP(𝑥) [𝒦]||                                              ˜ − EP(𝑥) [𝒦]
+                                                                       ˜ is bounded by 2 𝜏 whp, which is ≤
+                                                                                          3
+1      𝑝/2 𝑝/2
+3 𝐶𝛽𝑛      ℓ   by choice of 𝛽 in Theorem 11) except with probability 𝑜(1) following the analysis of Lemma 30.
+Hence 𝒦  ˜ ≤ (1 + 𝐶/3)𝛽𝑛𝑝/2 ℓ𝑝/2 = (2/𝐶 + 2/3) · 𝜏 with probability 1 − 𝑜(1). The claim follows from eq. (185)
+and a Markov-style argument applied to the eigenvalues of 𝒦,  ˜ absorbing the negligible loss of 1 − 𝜁 due to
+sample splitting into the constant.
+
+C.3.3    Step 3: Directional unbias
+Our third main ingredient states that the guiding vector |˜
+                                                          𝑢⟩ is directionally unbiased.
+
+Theorem 57. Let 𝑝 ≥ 1, 𝜆 ≥ 1, and ℓ = 𝜆𝑝. Let |𝑠⟩ be a unit vector (indexed by 𝒯𝑛 (ℓ)) that is independent
+of |˜
+    𝑢⟩ under P(𝑥). Then
+                                                    1 𝜆 𝜆
+                                            ⟨𝑠|˜
+                                               𝑢⟩ ≥   𝜁 𝛽 ⟨𝑠|𝑣⟩
+                                                    2
+except with probability (over P) of at most
+
+                                                                      4 𝜆!
+                                               FAIL :=                         2 .                                     (187)
+                                                                𝜁 2𝜆 𝛽 2𝜆 ⟨𝑠|𝑣⟩
+
+   To prove this, we start with an auxiliary lemma.
+Lemma 58. Let 𝑝 ≥ 1 and 𝜆 ≥ 1, and fix integers 𝑎, 𝑏 ≥ 0 with 𝑎 + 𝑏 = 𝜆. Let (𝐴𝑆 )𝑆 be i.i.d. for 𝑆 ∈ 𝑛𝑝 .
+                                                                                                                (︀ )︀
+
+For distinct 𝑝-sets 𝑆1 , . . . , 𝑆𝑎 , 𝑆1′ , . . . , 𝑆𝑏′ , 𝑆1′′ , . . . , 𝑆𝑏′′ , define
+                                                               ⎡                                           ⎤
+                                                                  ∏︁𝑎            𝑏
+                                                                                ∏︁          𝑎
+                                                                                           ∏︁      𝑏
+                                                                                                  ∏︁
+                                  𝑊 (𝑎, 𝑏) = Cov ⎣ 𝐴𝑆𝑖                              𝐴𝑆𝑗′ ,    𝐴𝑆𝑖    𝐴𝑆𝑗′′ ⎦ . (188)
+                                            P(𝑥)
+                                                    𝑖=1         𝑗=1          𝑖=1     𝑗=1
+
+
+Then:
+                    {︃
+                      0,             𝑎 = 0, 1, . . . , 𝜆 − 1,
+     E 𝑊 (𝑎, 𝑏) =                                                                                                      (189)
+     𝑥            1 − (𝛽 2 𝜇)𝜆 , 𝑎 = 𝜆 (𝑏 = 0),
+                 ⎧
+                 ⎨(𝛽 2 𝜇)2𝑏 (1 + 𝜀2 𝜇𝑐2 )𝑎 + (𝛽 4 𝛼)𝑎 − 2 𝛽 2 (𝜇 + 𝜀𝛾𝑐) 𝑎 ,
+                            (︀                             [︀             ]︀ )︀
+                                                                                            𝑎 = 0, 1, . . . , 𝜆 − 1,
+  Var 𝑊 (𝑎, 𝑏) =                                                                                                       (190)
+   𝑥             ⎩(1 + 𝜀2 𝜇𝑐2 )𝜆 + (𝛽 4 𝛼)𝜆 − 2 [︀𝛽 2 (𝜇 + 𝜀𝛾𝑐)]︀𝜆 − (︀1 − (𝛽 2 𝜇)𝜆 )︀2 ,   𝑎 = 𝜆 (𝑏 = 0).
+
+
+
+
+                                                                36
+Proof. Recall the dictionary of 𝑥-averaged moments:
+
+                                                                          E E [𝐴𝑆 ] = 0,                                                                  (191)
+                                                                          𝑥 P(𝑥)
+
+                                                                      E E [𝐴𝑆 ]2 = 𝛽 2 𝜇,                                                                 (192)
+                                                                        𝑥 P(𝑥)
+
+                                                                      E E [𝐴𝑆 ]4 = 𝛽 4 𝛼,                                                                 (193)
+                                                                        𝑥 P(𝑥)
+
+                                                                          E E [𝐴2𝑆 ] = 1,                                                                 (194)
+                                                                          𝑥 P(𝑥)
+
+                                                                      E E [𝐴2𝑆 ]2 = 1 + 𝜀2 𝜇𝑐2 ,                                                          (195)
+                                                                        𝑥 P(𝑥)
+
+                                                E E [𝐴2𝑆 · ( E [𝐴𝑆 ])2 ] = 𝛽 2 (𝜇 + 𝜀𝛾𝑐),                                                                 (196)
+                                                𝑥 P(𝑥)                  P(𝑥)
+
+
+where 𝑐 = 𝜃01−2𝜃
+             (1−𝜃0 ) and 𝜇, 𝛼, 𝛾 depend only on (𝑘, 𝑝).
+                 0
+
+             ∏︀𝑎                ∏︀𝑏                      ∏︀𝑏
+   Let 𝑈 = 𝑖=1 𝐴𝑆𝑖 , 𝑉 ′ = 𝑗=1 𝐴𝑆𝑗′ , and 𝑉 ′′ = 𝑗=1 𝐴𝑆𝑗′′ . Because the sets are disjoint, independence
+under P(𝑥) gives
+                                                     𝑎
+                                                    ∏︁            𝑏
+                                                                 ∏︁
+                                E [𝑈 2 𝑉 ′ 𝑉 ′′ ] =    E [𝐴2𝑆𝑖 ]    E [𝐴𝑆𝑗′ ] E [𝐴𝑆𝑗′′ ],          (197)
+                                       P(𝑥)                                P(𝑥)                    P(𝑥)          P(𝑥)
+                                                                   𝑖=1                    𝑗=1
+
+                                  𝑎
+                                 ∏︁                      𝑏
+                                                        ∏︁                                                        𝑎
+                                                                                                                 ∏︁                    𝑏
+                                                                                                                                      ∏︁
+                  E [𝑈 𝑉 ′ ] =           E [𝐴𝑆𝑖 ]              E [𝐴𝑆𝑗′ ],                 E [𝑈 𝑉 ′′ ] =                 E [𝐴𝑆𝑖 ]            E [𝐴𝑆𝑗′′ ].   (198)
+              P(𝑥)                      P(𝑥)                  P(𝑥)                       P(𝑥)                          P(𝑥)                P(𝑥)
+                                 𝑖=1                    𝑗=1                                                      𝑖=1                 𝑗=1
+
+It follows that
+                                          ⎛                                             ⎞ (︃                                                    )︃
+                                                𝑏
+                                               ∏︁                                               𝑎
+                                                                                               ∏︁                         𝑎
+                                                                                                                         ∏︁
+                        𝑊 (𝑎, 𝑏)(𝑥) = ⎝                 E [𝐴𝑆𝑗′ ] E [𝐴𝑆𝑗′′ ]⎠                         E [𝐴2𝑆𝑖 ] −               E [𝐴𝑆𝑖 ]    2
+                                                                                                                                                     .    (199)
+                                                     P(𝑥)             P(𝑥)                           P(𝑥)                      P(𝑥)
+                                               𝑗=1                                             𝑖=1                       𝑖=1
+
+
+   Averaging over 𝑥 factorizes across distinct 𝑝-sets, so
+                                               (︂            )︂2𝑏 (︂(︂          )︂𝑎 (︂        )︂𝑎 )︂
+                                                                             2              2
+                           E 𝑊 (𝑎, 𝑏) =             E E [𝐴𝑆 ]          E E [𝐴𝑆 ] − E E [𝐴𝑆 ]         .                                                    (200)
+                           𝑥                        𝑥 P(𝑥)                            𝑥 P(𝑥)                      𝑥 P(𝑥)
+
+
+Using the dictionary, E𝑥 EP(𝑥) [𝐴𝑆 ] = 0, E𝑥 EP(𝑥) [𝐴2𝑆 ] = 1, and E𝑥 EP(𝑥) [𝐴𝑆 ]2 = 𝛽 2 𝜇. Thus if 𝑏 ≥ 1 the
+expectation is zero, while if 𝑏 = 0 we obtain E𝑥 𝑊 (𝜆, 0) = 1 − (𝛽 2 𝜇)𝜆 , proving (189).
+   For the variance, write 𝑊 = 𝐺 · 𝐻 where
+                                  𝑏
+                                 ∏︁                                                                  𝑎
+                                                                                                    ∏︁                         𝑎
+                                                                                                                              ∏︁
+                        𝐺(𝑥) =           E [𝐴𝑆𝑗′ ] E [𝐴𝑆𝑗′′ ],                        𝐻(𝑥) =               E [𝐴2𝑆𝑖 ] −               E [𝐴𝑆𝑖 ]2 .          (201)
+                                        P(𝑥)            P(𝑥)                                              P(𝑥)                      P(𝑥)
+                                 𝑗=1                                                                𝑖=1                       𝑖=1
+
+The variables 𝐺 and 𝐻 depend on distinct sets and are independent under E𝑥 , so
+
+                                                              E[𝑊 2 ] = E[𝐺2 ] · E[𝐻 2 ].                                                                 (202)
+                                                               𝑥                  𝑥            𝑥
+
+Independence again gives
+                                                                   (︂                     )︂2𝑏
+                                                    E[𝐺2 ] =            E E [𝐴𝑆 ]2                  = (𝛽 2 𝜇)2𝑏 ,                                         (203)
+                                                    𝑥                   𝑥 P(𝑥)
+
+while                            (︂                     )︂𝑎          (︂                                          )︂𝑎    (︂           )︂𝑎
+                          2
+                   E[𝐻 ] =            E E [𝐴2𝑆 ]2             −2          E E [𝐴2𝑆 · ( E [𝐴𝑆 ])2 ]                     + E E [𝐴𝑆 ] 4
+                                                                                                                                         .                (204)
+                    𝑥                 𝑥 P(𝑥)                              𝑥 P(𝑥)      P(𝑥)                                    𝑥 P(𝑥)
+
+Substituting the dictionary values yields
+
+                           E[𝑊 (𝑎, 𝑏)2 ] = (𝛽 2 𝜇)2𝑏 (1 + 𝜀2 𝜇𝑐2 )𝑎 − 2[𝛽 2 (𝜇 + 𝜀𝛾𝑐)]𝑎 + (𝛽 4 𝛼)𝑎 .
+                                                    (︀                                            )︀
+                                                                                                                                                          (205)
+                           𝑥
+
+
+                                                                                  37
+Finally, subtracting (E𝑥 𝑊 (𝑎, 𝑏))2 (from (200)) gives
+
+                      Var 𝑊 (𝑎, 𝑏) = (𝛽 2 𝜇)2𝑏 (1 + 𝜀2 𝜇𝑐2 )𝑎 + (𝛽 4 𝛼)𝑎 − 2[𝛽 2 (𝜇 + 𝜀𝛾𝑐)]𝑎
+                                              (︀                                             )︀
+                                                                                                                               (206)
+                           𝑥
+
+when 𝑎 ≤ 𝜆 − 1 (so 𝑏 ≥ 1), while for 𝑎 = 𝜆 and 𝑏 = 0 we obtain
+                                                                                                )︀2
+                     Var 𝑊 (𝜆, 0) = (1 + 𝜀2 𝜇𝑐2 )𝜆 + (𝛽 4 𝛼)𝜆 − 2[𝛽 2 (𝜇 + 𝜀𝛾𝑐)]𝜆 − 1 − (𝛽 2 𝜇)𝜆 ,
+                                                                                   (︀
+                                                                                                                               (207)
+                      𝑥
+
+which is exactly (190).
+   Lemma 58 is the key ingredient in the below proof.
+Proof of Theorem 57. Fix 𝑥 ∈ [𝑘]𝑛 and work under the conditional probability P(𝑥). We first work with the
+full guiding state |𝑢⟩; the statement transfers to |˜
+                                                    𝑢⟩ by taking the expectation over the splitting process (using
+𝐴𝑆 ↦→ 𝑀𝑆 𝐴𝑆 and E 𝑀𝑆 = 𝜁, leading to 𝛽 ↦→ 𝜁𝛽 in all dictionary entries). By construction, EP(𝑥) |𝑢⟩ = 𝛽 𝜆 |𝑣⟩,
+so
+                                                E ⟨𝑠|𝑢⟩ = 𝛽 𝜆 ⟨𝑠|𝑣⟩ .                                        (208)
+                                                    P(𝑥)
+
+Thus, for the one-sided event                          {︁                       }︁
+                                             ℰ𝑥 :=          ⟨𝑠|𝑢⟩ < 21 𝛽 𝜆 ⟨𝑠|𝑣⟩ ,
+
+Chebyshev’s inequality (applied to the centered variable ⟨𝑠|𝑢⟩ − EP(𝑥) ⟨𝑠|𝑢⟩) gives
+                                         (︀ )︀    4 VarP(𝑥) ⟨𝑠|𝑢⟩
+                                      Pr ℰ𝑥 ≤                  2  .                                     (209)
+                                             P(𝑥)    𝛽 2𝜆 ⟨𝑠|𝑣⟩
+                                                      ∏︀𝜆
+We next bound the conditional variance. Writing 𝑢𝑇 = 𝑖=1 𝐴𝑆𝑖 for 𝑇 = (𝑆1 , . . . , 𝑆𝜆 ) ∈ 𝒯𝑛 (ℓ), we have
+                            ∑︁                                ∑︁      ∑︁
+             Var ⟨𝑠|𝑢⟩ =           𝑠𝑇 𝑠𝑉 Cov(𝑢𝑇 , 𝑢𝑉 ) ≤          𝑠2𝑇      Cov(𝑢𝑇 , 𝑢𝑉 ),               (210)
+                P(𝑥)                                P(𝑥)                                                P(𝑥)
+                               𝑇,𝑉 ∈𝒯𝑛 (ℓ)                                    𝑇 ∈𝒯𝑛 (ℓ)     𝑉 ∈𝒯𝑛 (ℓ)
+
+by Cauchy-Schwarz. Taking expectation over 𝑥 and using Lemma 58 (the terms with 𝑎 < 𝜆 vanish in
+expectation, and the 𝑎 = 𝜆 term equals 𝑊 (𝜆, 0)),
+                                                (︁ ∑︁ )︁
+                              E Var ⟨𝑠|𝑢⟩ = 𝜆!       𝑠2𝑇 E 𝑊 (𝜆, 0) ≤ 𝜆! .                (211)
+                                    𝑥 P(𝑥)                                𝑥
+                                                               𝑇
+
+Finally, average (209) over 𝑥 and use (211):
+                 (︁                 )︁                                         4                                  4 𝜆!
+             Pr ⟨𝑠|𝑢⟩ < 12 𝛽 𝜆 ⟨𝑠|𝑣⟩ = E Pr (ℰ𝑥 ) ≤
+                                          [︀     ]︀
+                                                                                     2    E Var ⟨𝑠|𝑢⟩ ≤                  2 ,
+            𝑥,P(𝑥)                            𝑥     P(𝑥)                𝛽 2𝜆 ⟨𝑠|𝑣⟩        𝑥 P(𝑥)               𝛽 2𝜆 ⟨𝑠|𝑣⟩
+as claimed. Setting 𝛽 ↦→ 𝜁𝛽 completes the proof.
+Remark 59. The bound (187) can be almost certainly improved, for example by a refined variance control
+using geometric decay in the overlap levels and the 𝑎 = 1 term domination, as in the proof of theorem 38 in
+[SOKB25].
+
+C.4     Putting everything together
+We now prove Theorem 50, and use that to establish Theorem 22 stated in Section 5.
+Proof of Theorem 50. With Π≥ as defined in the theorem statement, define the  √︁ normalized     quantum state
+                                                                                   √     𝑛    𝜆
+|𝑠⟩ = ||Π≥1|𝑣⟩|| Π≥ |𝑣⟩. By Theorem 56 and Lemma 52, ⟨𝑠|𝑣⟩ = ||Π≥ |𝑣⟩ || ≥ 𝐶 ′ / 12 𝑝 𝜇𝜆 except with
+                                                                                      (︀   )︀
+
+probability 𝑜(1). Following the proof of Theorem 57, we thus have
+                                                     √          (︂ )︂𝜆/2
+                                       1    𝜆          𝐶′     𝜆 𝑛
+                               ⟨𝑠|˜
+                                  𝑢⟩ ≥ (𝛽𝜁) ⟨𝑠|𝑣⟩ ≥       (𝛽𝜁)           𝜇𝜆/2                           (212)
+                                       2              12          𝑝
+
+                                                                   38
+except with probability (over P) of at most
+                                      ⎛            ⎞
+                                                         (︂ )︂
+                                           𝜆!              𝜆!
+                         FAIL = 𝑂 ⎝         (︀𝑛)︀𝜆 ⎠ = 𝑂     𝜆
+                                                               = 𝑂(𝑛−𝜆/2 ) = 𝑜(1).                           (213)
+                                         2𝜆
+                                        𝛽 𝑝                𝑛
+
+Because Π≥ is a positive semi-definite operator, and using Lemma 53 appropriately re-normalized with
+E[𝑀𝑆 ] = 𝜁, this implies
+                                                                      (︀ )︀𝜆
+                        𝑢| Π≥ ( ˜
+                       ⟨˜      𝒦) |˜
+                                   𝑢⟩   ⟨˜
+                                         𝑢| |𝑠⟩⟨𝑠| |˜
+                                                    𝑢⟩   𝐶 ′ (𝛽𝜁)2𝜆 𝑛𝑝 𝜇𝜆
+                                                                             ≥ Ω 𝜁 𝜆 𝜇𝜆 𝛽 2𝜆
+                                                                                (︀           )︀
+                                      ≥                ≥            (︀𝑛)︀𝜆                                   (214)
+                            ⟨˜
+                             𝑢|˜
+                               𝑢⟩           ⟨˜
+                                             𝑢|˜𝑢⟩            12𝜁 𝜆    𝑝
+
+                                                                                                                         2
+except with probability 𝑜(1), where we have union bounded away all bad (︀events for the quantities ⟨𝑠|𝑣⟩ , ⟨𝑠|˜
+                                                                                                              𝑢⟩ , ‖˜
+                                                                                                                    𝑢‖
+        2
+and ‖𝑣‖ . The statement follows by plugging in 𝜁 = ⌈log1 𝑛⌉ and 𝛽 = Ω̃ ℓ1/2−𝑝/4 𝑛−𝑝/4 .
+                                                                                         )︀
+
+Proof of Theorem 22. As shown already previously, sample slitting reduces the planted energy in Corol-
+lary 35 by at most a factor of (1 − 𝜁), which is well within the threshold gap in Theorem 11. By
+Lemma 60, preparing the guiding state requires time 𝑂   ˜ (ℓ𝑛𝑝 ). By the proof of Theorem 50, Quantum
+Phase
+  (︁   Estimation combined with Amplitude
+                                   )︁          Amplification requires a number of repetitions scaling as
+                            ℓ    ℓ
+        ℓ/2            ℓ/4    − 2𝑝
+𝑂 log 𝑛 · exp(𝑂(ℓ)) · 𝑛 · ℓ 4         to find an eigenvector certifying the community structure. Imple-
+menting the sparse oracle for QPE costs 𝑂(𝑛𝑝 ℓ log 𝑛) as stated in Section 5.2, which combines additively
+with the state preparation step. Putting everything together establishes the claimed gate cost. The quantum
+and classical space requirements follow from the discussion in Section 5.2.
+
+C.5     Guiding state: efficient preparation
+We now show that the guiding state can be efficiently prepared.
+                                                         √
+Lemma 60 (Guiding state preparation). Assume ℓ = 𝑜( 𝑛) and let |𝑢⟩ be the unnormalized guiding vector
+of Definition 49. With probability 1 − 𝑜(1), the normalized guiding state |˜
+                                                                           𝑢⟩ = |𝑢⟩ /‖𝑢‖ can be prepared to
+trace distance 𝜖 with cost
+                                                 (︂         )︂
+                                              𝑂˜ ℓ𝑛𝑝 log 1 .                                            (215)
+                                                          𝜖
+
+Proof. Let |𝑤′ ⟩ = 𝑆∈([𝑛]) 𝑤𝑆′ |𝑆⟩ be a normalized vector. The success probability of preparing the state |𝑤⟩
+                   ∑︀
+                         𝑝
+                        ⊗𝜆
+proportional to Π𝜆 ‖𝑤′ ‖ is then
+                                                                            𝜆
+                                               ⊗𝜆 ⃦2
+                                      ⃦           ⃦            ∑︁          ∏︁
+                                  𝜂 = ⃦Π𝜆 |𝑤′ ⟩ ⃦ =                              |𝑤𝑆′ 𝑡 |2 .                 (216)
+                                      ⃦
+                                                          (𝑆1 ,...,𝑆𝜆 )∈𝒞𝜆 𝑡=1
+
+
+Hence, if 𝐶𝑤′ = 𝑂(𝑛𝑝 ) is the gate cost to prepare |𝑤′ ⟩ and 𝐶Π = 𝑂(𝜆𝑝 ˜   log 𝑛) is the cost to test collision-
+freeness, the total cost of preparing the state |𝑤⟩ to 𝜖 trace distance is
+                                               (︂                  )︂
+                                             ˜    𝜆𝐶𝑤′ + 𝐶Π      1
+                                             𝑂       √       log                                          (217)
+                                                       𝜂         𝜖
+
+via amplitude amplification. We proceed to show concentration bounds on 𝜂 for vector |𝑢′ ⟩.
+                              ⊗𝜆
+    Recall that |𝑢⟩ = Π𝜆 |𝑢′ ⟩ . As computed in Lemma 53, for any 𝛿 > 0,
+                                      [︃⃒     (︂ )︂𝜆 ⃒⃒   (︂ )︂𝜆 ]︃
+                                        ⃒
+                                          2     𝑛 ⃒         𝑛
+                                   Pr ⃒‖𝑢‖ −          ⃒≥𝛿           = 𝑜(1)                                   (218)
+                                        ⃒
+                                        ⃒       𝑝     ⃒     𝑝
+
+
+
+
+                                                         39
+          √                                          2
+for ℓ = 𝑜( 𝑛). Hence, it suffices to show that ‖𝑢′ ‖ = 𝑛𝑝 (1 ± 𝑜(1/𝜆)) with high probability. The first
+                                                            (︀ )︀
+
+moment is
+                                   2
+                                         ∑︁ (︂                 1 − 2𝜃0
+                                                                         )︂ (︂ )︂
+                                                                              𝑛
+                           E ‖𝑢′ ‖ = E         1 + 𝜖𝑓 (𝑥𝑆 )                =                     (219)
+                                       𝑥                    𝜃0 (1 − 𝜃0 )      𝑝
+                                                 𝑆
+
+and the second moment is
+                              ⎛                                                           ⎞
+         ′ 4         1             ∑︁                      ∑︁
+    E ‖𝑢 ‖ =                  ⎝E       (𝑌𝑆 − 𝜃0 )4 +            (𝑌𝑆 − 𝜃0 )2 (𝑌𝑇 − 𝜃0 )2 ⎠                            (220)
+             [𝜃0 (1 − 𝜃0 )]2
+                                    𝑆                     𝑆̸=𝑇
+             (︂ )︂ 4                             4
+               𝑛 𝜃0 (1 − 𝜃0 ) + 𝜃0 (1 − 𝜃0 )
+           =
+               𝑝           [𝜃0 (1 − 𝜃0 )]2
+                          1            ∑︁
+               +                 2
+                                   E        [𝜃0 (1 − 𝜃0 ) + 𝜖𝑓 (𝑥𝑆 )(1 − 2𝜃0 )][𝜃0 (1 − 𝜃0 ) + 𝜖𝑓 (𝑥𝑇 )(1 − 2𝜃0 )]   (221)
+                   [𝜃0 (1 − 𝜃0 )] 𝑥
+                                      𝑆̸=𝑇
+                              (︂(︂ )︂ (︂                                     [︂(︂ )︂     ]︂                  )︂)︂
+                     1            𝑛        4                             4       𝑛                         2
+           =                             𝜃 0 (1 −  𝜃 0 ) + 𝜃 0 (1 − 𝜃 0 )  +         − 1    [𝜃0 (1 − 𝜃 0 )]          (222)
+             [𝜃0 (1 − 𝜃0 )]2      𝑝                                              𝑝
+             (︂ )︂2
+               𝑛 (︀
+                       1 + 𝑂(𝑛−𝑝 ) .
+                                    )︀
+           =                                                                                                         (223)
+               𝑝
+
+Hence, we obtain variance
+                                                            2
+                                                  Var ‖𝑢′ ‖ = 𝑂(𝑛𝑝 ).                                                (224)
+                      √︁(︀ )︀
+                                      2
+Taking |𝑤′ ⟩ = |𝑢′ ⟩ / 𝑛𝑝 so Var ‖𝑤′ ‖ = 𝑂(𝑛−𝑝 ), Chebyshev’s inequality gives for any 𝛿 > 0 that
+                                     [︂⃒             ]︂    (︂ 2 )︂
+                                       ⃒ ′ 2
+                                               ⃒   𝛿         𝜆
+                                   Pr ⃒‖𝑤 ‖ − 1⃒ ≥      =𝑂         .                                                 (225)
+                                               ⃒
+                                                   𝜆         𝑛𝑝
+                                      √
+We complete the proof by taking 𝜆 = 𝑜( 𝑛).
+
+
+
+
+                                                            40

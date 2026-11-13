@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-13",
+  "note": "Two new concrete composition/sparse-support gates enabled by returned operations and actual primary subgroup theorem. No retries.",
+  "jobs": [
+    {
+      "id": "tower-batched-native-compiler",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-tower-native-composition/tower-batched-native-compiler.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-tower-native-composition/contract.md",
+        "research/audits/api_inputs/2026-11-13-tower-native-composition/wesolowski-primary.txt",
+        "research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/response.md",
+        "research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/response.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-tower-batched-native-compiler",
+      "budget": 7,
+      "max_tokens": 64000,
+      "status": "completed",
+      "session_id": 67279,
+      "session_reaped": true,
+      "parent_read": "full"
+    },
+    {
+      "id": "tower-sparse-gluing-height",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-tower-native-composition/tower-sparse-gluing-height.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-tower-native-composition/contract.md",
+        "research/audits/api_inputs/2026-11-13-tower-native-composition/wesolowski-primary.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-tower-sparse-gluing-height",
+      "budget": 2,
+      "max_tokens": 32768,
+      "status": "truncated",
+      "session_id": 94620,
+      "parent_read": "EMPTY; no findings",
+      "session_reaped": true,
+      "note": "No retry. Parent independently derived codimension/pivot sparsification; internal review pending."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+p37 p=37 a=1 M=12: 150/150 verified; exits {'stage-onesided': 142, 'finish': 8}
+p37 p=37 a=2 M=60: 150/150 verified; exits {'stage-onesided': 136, 'finish': 14}
+p37 p=37 a=3 M=200: 150/150 verified; exits {'finish': 17, 'stage-onesided': 133}
+p73 p=73 a=1 M=12: 150/150 verified; exits {'stage-onesided': 146, 'finish': 4}
+p73 p=73 a=2 M=60: 150/150 verified; exits {'finish': 8, 'stage-onesided': 142}
+p73 p=73 a=3 M=200: 150/150 verified; exits {'stage-onesided': 136, 'finish': 14}
+p19 p=19 a=1 M=16: 150/150 verified; exits {'stage-onesided': 148, 'finish': 2}
+p19 p=19 a=2 M=100: 150/150 verified; exits {'stage-onesided': 147, 'finish': 3}
+p19 p=19 a=3 M=400: 150/150 verified; exits {'stage-onesided': 149, 'finish': 1}
+p29k7 p=29 a=1 M=12: 150/150 verified; exits {'stage-onesided': 135, 'finish': 15}
+p29k7 p=29 a=2 M=60: 150/150 verified; exits {'finish': 16, 'stage-onesided': 134}
+p29k7 p=29 a=3 M=200: 150/150 verified; exits {'finish': 22, 'stage-onesided': 128}
+p127chain p=127 a=1 M=5: 150/150 verified; exits {'finish': 145, 'zero-object': 5}
+p127chain p=127 a=2 M=15: 150/150 verified; exits {'finish': 150}
+p127chain p=127 a=3 M=35: 150/150 verified; exits {'finish': 150}
+p181chain p=181 a=1 M=5: 150/150 verified; exits {'finish': 150}
+p181chain p=181 a=2 M=15: 150/150 verified; exits {'finish': 150}
+p181chain p=181 a=3 M=35: 150/150 verified; exits {'finish': 150}
+p433chain p=433 a=1 M=5: 150/150 verified; exits {'finish': 150}
+p433chain p=433 a=2 M=15: 150/150 verified; exits {'finish': 150}
+p433chain p=433 a=3 M=35: 150/150 verified; exits {'finish': 150}
+TOTAL 3150/3150
+nice -n 19 /opt/anaconda3/bin/python chain_exec.py 30  0.71s user 0.01s system 99% cpu 0.728 total

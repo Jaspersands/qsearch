@@ -1,0 +1,57 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-13-tower-native-composition/tower-batched-native-compiler.md",
+      "sha256": "c068dfe4250e5c0bab49d7d016770a51b805d84ca85b4ec5f0f8a411ad94109e"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-tower-native-composition/contract.md",
+      "sha256": "858e0aec2945b6a85c93887e43a5b88d631615a92e84cbcc510d613487c00ccd"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-tower-native-composition/wesolowski-primary.txt",
+      "sha256": "77cd75dc2a406b2c522d514838da80eb418517ebfd4ad84fbbf167f39dd306d7"
+    },
+    {
+      "path": "research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/response.md",
+      "sha256": "332b1c503294feef026c58b3428300e9a0ded8270c6940dfff0689e12cf4b226"
+    },
+    {
+      "path": "research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/response.md",
+      "sha256": "6a167d746c56fb8c47c41c596fb7124dece613e17501c54dfbdf159fb1a9ce4d"
+    }
+  ],
+  "finished_at": "2026-11-12T23:37:00.686134+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "7",
+  "max_tokens": 64000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "3.6994",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_0883c008691271c3016af64773d87c87d0918140e81d9c48bc",
+  "started_at": "2026-11-12T23:10:42.320098+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 14427,
+    "input_tokens_details": {
+      "cache_write_tokens": 14424,
+      "cached_tokens": 0
+    },
+    "output_tokens": 52880,
+    "output_tokens_details": {
+      "reasoning_tokens": 45511
+    },
+    "total_tokens": 67307
+  },
+  "usage_cost_estimate_usd": "2.78827"
+}

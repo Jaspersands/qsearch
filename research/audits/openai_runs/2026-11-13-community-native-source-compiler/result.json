@@ -1,0 +1,61 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-13-community-source-repair/compiler.md",
+      "sha256": "8f7b95ff9c4524a6739db32a9ae8085344fbcbebf74ded6c8a0dbc81a63b6c8f"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-community-source-repair/contract.md",
+      "sha256": "f30439d6ad50a60ee76d37a7e25fd742d3574f8b305133f2150d2f23469b5665"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-community-source-repair/primary-model-and-quantum.txt",
+      "sha256": "c5780d1bd307ca41704173b5757cc4c5f992ada180436ed07baaacd2f1a54562"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-community-source-repair/primary-certificate.txt",
+      "sha256": "0c9037f73718f0e05a688cc557b29f4b716086b9f6c854d1f496aa0b4d8fcaba"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-community-source-repair/primary-guiding-proof.txt",
+      "sha256": "a7708e87fcf4f8f238856ed1cbfda3179474a6784c13ad354caadc9089bd913b"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-community-source-repair/primary-cloning.txt",
+      "sha256": "7e22a28d75f6c49b335c7dda024d6b3beba17fc7f395003671802fcf77065c9e"
+    }
+  ],
+  "finished_at": "2026-11-13T00:36:15.618347+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "7",
+  "max_tokens": 64000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "4.77255",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_0907ead5a33cc899016af6588aecc487d0ba1b43e2e0fd350c",
+  "started_at": "2026-11-13T00:23:36.975308+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 40128,
+    "input_tokens_details": {
+      "cache_write_tokens": 40125,
+      "cached_tokens": 0
+    },
+    "output_tokens": 31825,
+    "output_tokens_details": {
+      "reasoning_tokens": 25380
+    },
+    "total_tokens": 71953
+  },
+  "usage_cost_estimate_usd": "1.99253"
+}

@@ -1,0 +1,419 @@
+{
+  "status": "EXACT_TAGGED_PARITY_CONTROL_PASS",
+  "scope": "One fixed quartic control only; no tower complexity theorem.",
+  "sage_version": "10.9",
+  "proof": true,
+  "base_polynomial": "x^2 + 14",
+  "absolute_polynomial": "x^4 + 24*x^2 + 256",
+  "base_generator_in_absolute": "-1/32*t^3 - 5/4*t",
+  "relative_generator_in_absolute": "-1/32*t^3 - 1/4*t",
+  "base_supported_generators": [
+    "1/9*a - 2/9",
+    "1/9*a + 7/9",
+    "2*a - 5",
+    "-1"
+  ],
+  "base_expanded_generators": [
+    "3",
+    "1/9*a - 2/9",
+    "1/9*a + 7/9",
+    "2*a - 5",
+    "-1"
+  ],
+  "upper_expanded_generators": [
+    "-1/32*t^3 + 1/4*t + 1",
+    "-1/32*t^3 + 1/8*t^2 - 1/4*t + 1",
+    "-1/16*t^3 - t + 1",
+    "-1/4*t^2 - 3",
+    "-1/32*t^3 - 1/8*t^2 - 1/4*t - 2",
+    "1/8*t^2 + 1",
+    "-1",
+    "-1/32*t^3 - 1/4*t - 1"
+  ],
+  "first_native_elements": [
+    "-1",
+    "2",
+    "a",
+    "1/9*a - 2/9",
+    "1"
+  ],
+  "norm_lifts": [
+    "3*b - 3",
+    "b + 2",
+    "(1/4*a - 1)*b - 1/2",
+    "(-1/12*a - 5/6)*b + 1/6*a + 7/6",
+    "1"
+  ],
+  "support_rational_primes": [
+    2,
+    7
+  ],
+  "extra_base_primes": [
+    "Fractional ideal (3, a + 1)",
+    "Fractional ideal (3, a + 2)"
+  ],
+  "extra_upper_primes": [
+    "Fractional ideal (3, 1/32*t^3 + 1/8*t^2 + 1/4*t)",
+    "Fractional ideal (3, 1/32*t^3 - 1/8*t^2 + 1/4*t)"
+  ],
+  "upper_target_prime": "Fractional ideal (3, 1/32*t^3 - 1/8*t^2 + 1/4*t)",
+  "norm_target_parity": [
+    0,
+    0
+  ],
+  "first_pair_matrix": [
+    [
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "residual_matrix": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      1
+    ]
+  ],
+  "base_expanded_valuation_matrix": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "obstruction_matrix": [
+    [
+      0,
+      0,
+      0,
+      1,
+      1
+    ]
+  ],
+  "second_pair_basis": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ]
+  ],
+  "upper_constraint_matrix": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "upper_image_basis": [
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ]
+  ],
+  "kernel_ambient": [
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "d_pair_coordinates": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "tagged_beta4_image": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1
+  ],
+  "dimensions": {
+    "base_supported": 4,
+    "first_pair": 5,
+    "second_pair": 8,
+    "upper_supported": 6,
+    "upper_expanded": 8,
+    "upper_generalized_reference": 7,
+    "descent_image": 7,
+    "descent_kernel": 1,
+    "image_if_tag_discarded": 6
+  },
+  "checks": {
+    "one_upper_prime_over_base_prime_1": true,
+    "one_upper_prime_over_base_prime_2": true,
+    "nonodd_base_S_class": true,
+    "relative_extension_unramified": true,
+    "base_dimension_four": true,
+    "first_pair_dimension_five": true,
+    "first_element_projection_rank_four": true,
+    "pure_tag_retained": true,
+    "all_first_classes_norm_compatible": true,
+    "exact_norm_witnesses": true,
+    "both_extra_primes_inert": true,
+    "norm_of_target_parity_zero": true,
+    "residual_columns_include_target_tag": true,
+    "obstruction_is_last_two_tags_sum": true,
+    "second_lower_dimension_eight": true,
+    "upper_reference_dimension_seven": true,
+    "descent_image_dimension_seven": true,
+    "descent_image_equals_full_upper_reference": true,
+    "map_kernel_dimension_one": true,
+    "kernel_is_exactly_d_with_zero_tags": true,
+    "d_is_nonzero_downstairs": true,
+    "d_maps_to_zero_upstairs": true,
+    "beta4_plus_tag_combination_is_admissible": true,
+    "tagged_beta4_has_expected_nonzero_image": true,
+    "beta4_without_tag_fails_upper_constraint": true,
+    "discarding_tag_loses_one_output_dimension": true
+  }
+}

@@ -1,0 +1,938 @@
+SOURCE PHYSICAL LINES 35-150
+                                            the hidden vector, and how many are needed for an efficient algorithm? In some natural regimes, this
+                                            task appears to be computationally difficult, and is indeed a canonical model for the algorithmic limits
+                                            of extracting a planted discrete signal from sparse, noisy, high-order data. [4, 5]
+                                               Here we examine the planted noisy k-XOR problem, which is also known as sparse LPN, since we
+                                            require the observations si to be Hamming weight k. [4, 6] This problem is closely related to tensor PCA
+                                            [7–9] and to the refutation of random sparse CSPs [10–13]. It is more conveniently framed in terms of
+                                            signed vectors with entries in {±1} instead of vectors in F2 . A k-XOR instance I consists of clauses
+                                            (Sa , ba ), a = 1, . . . , m, where each support Sa ⊆ [n] has size
+                                                                                                            Q k and each label ba ∈ {±1}. Given an
+                                            assignment z ∈ {±1}n , the clause is satisfied when zSa := v∈Sa zv = ba . In the planted noisy model
+                                            there is a hidden x ∈ {±1}n such that
+                                                                                            Y
+                                                                                   ba = ηa      xv ,    a = 1, . . . , m,                            (1)
+                                                                                           v∈Sa
+
+                                            where the supports Sa are i.i.d. uniform k-subsets of [n] and the noise variables ηa ∈ {±1} are independent
+                                            with E[ηa ] = ρ. The detection task is to decide whether the data has a planted solution, i.e., to distinguish
+                                            ρ = 0 null case from planted case with some ρ > 0. The recovery task is to reconstruct x. The noiseless
+                                            case ρ = 1 is solved by Gaussian elimination whenever m ≳ n. Information-theoretically, weak recovery
+                                            (non-trivial correlation with x) is possible already at m = Θ(n) clauses for any constant ρ ∈ (0, 1], while
+                                            exact recovery requires every variable to appear in at least one clause, necessitating m = Ω(n log n)
+                                            clauses [14]. No polynomial-time algorithm is known below m = e          Θ(nk/2 ) for even k ≥ 4, and this
+                                            threshold is conjectured optimal for efficient algorithms [10, 13, 15]. The noisy case is conjectured to
+                                            exhibit a sharp statistical–computational gap [10, 13, 15, 16].
+                                               Historically this and related problems have been approached with methods such as tensor unfolding [9]
+                                            and the sum-of-squares (SoS) hierarchy [1, 8, 17]. We review these algorithms in Section III. The
+                                            dominant family of algorithms in the computational threshold regime is the Kikuchi hierarchy [14, 16, 18]:
+                                            spectral methods indexed by a degree parameter ℓ that trade runtime nO(ℓ) for a sample complexity that
+                                            decreases smoothly with ℓ. This smooth trade-off is precisely the property that makes the Kikuchi
+                                            and SoS hierarchies interesting, since it interpolates between the polynomial-time and the information-
+                                            theoretic thresholds.
+                                               This work started as an attempt to answer the following question: can Gaussian elimination produce a
+                                            2-XOR from which the planted solution of the original k-XOR problem can be extracted in the noisy case?
+
+                                                                                                          2
+
+The algorithm we propose is inspired by Gaussian elimination. More formally, we introduce a practical
+hypergraph-cycle-enumeration hierarchy for planted noisy k-XOR that retains the smooth trade-off of
+Kikuchi-type methods, while reducing recovery at every level to spectral estimation on an n × n matrix.
+Our contributions can be summarized as follows:
+• We introduce hypergraph cycle enumeration (HCE), a hierarchical algorithmic approach to planted
+  noisy k-XOR (Section IV). On level l, HCE aggregates sets of l clauses, each giving a weak parity signal,
+  into an n × n recovery matrix. Crucially, unlike Kikuchi, whose level-ℓ operator acts on a lifted space
+  of dimension nℓ , HCE keeps the spectral problem in the original variable space, with matrix size
+                   
+  independent of l.
+• We provide detection and recovery guarantees based respectively on collecting size-l even covers,
+  and using size-l sets of clauses with symmetric difference of size 2 to generate a dense n × n matrix, the
+  principal component of which aligns with the solution. For both detection and recovery, the parameter
+  l traces a similar threshold curve as in the Kikuchi and SoS hierarchies: increasing l combines more
+  clauses at higher computational cost. Specifically, HCE succeeds at the same threshold number of
+  clauses per variable, m/n = e  Ω(ρ−2 (n/l)k/2−1 ). Thus, the HCE hierarchy exhibits a smooth trade-
+  off, joining SoS, Kikuchi and the gadget-based methods reviewed in Section III as hierarchies with this
+  property.
+• We compare the complexity of HCE to the best competitor, the Kikuchi method. At matched even
+  levels and k = 4, their stated runtime bounds have the same leading exponent with the improved HCE
+  probing rule, while HCE uses a smaller matrix representation. We run experiments for k = 4, 5, 6
+  (Section VI) using the original all-pairs probe, showing that HCE matches Kikuchi recovery overlap at
+  equal level while using substantially less memory and runtime, especially in the ultra-sparse regimes
+  (e.g., at n = 50, k = 4, level 6, HCE completes in ≈300 s versus ≈5.5 h per instance for Kikuchi, a ∼60×
+  speed-up; Appendix G). Thus HCE presents a practical advantage, being able to solve some instances
+  beyond the capability of Kikuchi, and the advantage is largest in the hardest (sparsest) regime.
+   Note: for recovery, we use smooth trade-off in the soft-asymptotic sense common in work on the Kikuchi
+hierarchy, where thresholds are compared after suppressing logarithmic factors [16]. Our detection result
+(Theorem 3) is stronger: it has no logarithmic loss. We conjecture that a normalized or suitably trimmed
+HCE recovery operator removes the logarithmic slack, uniformly over a non-trivial range of growing levels
+l = l(n); proving this remains open.
+   Figure 1 summarizes where each method is preferable. At m = Cnk/2 the level-l threshold reduces
+to an n-independent condition ρ2 C ≳ cl with cl decreasing in l (Section V), so the (C, ρ) plane splits
+into nested regions indexed by the minimum usable level. Easy instances with large C and ρ are already
+solved at l = ℓ = 2; for weaker signals deeper levels are needed, and HCE remains preferable in the ultra-
+sparse regime C ≪ 1, whereas Kikuchi overtakes it at larger densities, where the cost of enumerating
+l-clause products outweighs the benefit of HCE’s smaller matrix (Section VI).
+
+
+                                        II.    PRELIMINARIES
+
+                                          A.   Kikuchi method
+
+  The Kikuchi hierarchy [16, 18, 19] is the benchmark spectral method for planted noisy k-XOR, and
+the main baseline for HCE. For even k and a level ℓ ≥ k/2, the symmetric level-ℓ Kikuchi matrix is
+indexed by ℓ-subsets of variables,
+                                    m                                
+                                   X                                [n]
+                            KT,U =      ba 1[T △U = Sa ],  T, U ∈       ,                       (2)
+                                   a=1
+                                                                     ℓ
+
+so each clause links two ℓ-sets that differ
+                                           exactly by its support. Its top eigenvector correlates with the
+planted signal once m ≳ Θ e n(n/ℓ)k/2−1 , at cost nO(ℓ) ; increasing ℓ gives the smooth trade-off discussed
+in the introduction. Odd k requires an unbalanced lifting [16].
+   HCE is similar in spirit: both methods multiply clause labels along chains of symmetric differences,
+so  
+   that planted signs cancel. The difference is where the spectral step takes place. Kikuchi works on
+a nℓ -dimensional lifted space, whereas HCE compresses all such chains onto an n × n matrix. The
+two hierarchies follow the same threshold curve (Section IV A), so we compare them at matched level
+in Table I and Section VI. In the numerical experiments, K is stored sparsely, solved by Lanczos and
+decoded by a voting matrix. HCE uses the meet-in-the-middle construction of Section V C and the
+post-processing of Appendix H (details in Appendix I).
+
+                                                                                                              3
+
+             1
+                                                l = = 2 (Easy)
+
+
+                                                                             HCE faster
+                                                                             Kikuchi faster
+           0.5                                              l= =4            Impossible to recover
+                                                            l= =6            Recovery threshold
+                                                            l= =8
+                                                           l = = 10
+
+
+
+
+SOURCE PHYSICAL LINES 280-500
+                                                                                         table when r = s.
+       3. Accumulate                                  2. Multiply the l labels        3: Probe same-size partners by replacing one
+       (l)    Q                                       Q                Q
+      Aij +=    a∈S ba                                  a∈S ba = xi xj   a∈S ηa
+                                                                                         element in each r-boundary.
+                                                                                      4: Probe size-difference-two partners by delet-
+                                                                                         ing two elements from keys in either table.
+                                                                   n                  5: Accumulate each match in G(l) with its mul-
+                                                                                         tiplicity.
+     4. Spectral recovery                                                             6: Recover A(l) from G(l) and the lower-level
+                                                                                         matrices using (G1).
+   A(l) ≈ ρl Nl xx⊤ + noise                                n
+                                                                                      7: if k is odd and l ≥ 6 then
+   x̂ = sgn(top eigenvector)                                                          8:     M ← Ā(l) as in Definition D.35.
+                                                                                      9: else
+                                                        A(l) : rank one + noise;     10:      M ← A(l) .
+                                                         size independent of l       11: end if
+                                                                                     12: û ← a top eigenvector of M .
+                                                                                     13: return x̂ = sgn(û).
+
+  FIG. 2: Overview of hypergraph cycle enumeration (HCE) algorithm. Left: the clauses are sparse
+noisy entries of the rank-one order-k tensor x⊗k ; HCE multiplies l clauses whose supports XOR to a pair {i, j},
+so that every variable cancels modulo two except i and j, leaving an effective noisy 2-XOR constraint on xi xj .
+The case l = 2 is elementary: two clauses with Sa △Sb = {i, j} share a common (k − 1)-set. Right: Algorithm 1,
+                        the meet-in-the-middle implementation, analyzed in Section V C.
+
+
+particular weighting of even covers. Comparing these weightings is a natural way to understand where
+the thresholds of spectral methods come from.
+
+
+                                     IV.    HYPERGRAPH CYCLE ENUMERATION
+
+                                                 A.     Cycles carry the signal
+
+  The core idea is to use the clause structure of the k-XOR instance directly. Recall that Cl denotes the
+set of length-l even covers, with Zl = |Cl |. Consider an even cover F ∈ Cl . Every variable in F appears
+an even number of times, so all planted signs cancel and
+                            Y          Y
+                   XF =         bS =        ηS ,   E[XF ] = ρl ,    Var(XF ) = 1 − ρ2l .              (4)
+                                     S∈F         S∈F
+
+Under the null model (ρ = 0) the mean vanishes, so even covers are exactly the local structures that
+certify planting. Collecting enough of them therefore enables detection; hence the name hypergraph cycle
+enumeration. Define the level-l discriminator
+                                           (
+                                             Zl−1 F ∈Cl XF , Zl > 0,
+                                                  P
+                                  X(l) :=                                                            (5)
+                                             0,                 Zl = 0.
+If the summands were uncorrelated — as they are for edge-disjoint covers, and asymptotically after
+the overlap terms are controlled through Proposition B.12 — then detection with constant probability
+requires
+                                           (EX(l))2
+                                                    ≈ ρ2l Zl ≫ 1 ⇐⇒ Zl = Ω(ρ−2l ).                                               (6)
+                                           Var X(l)
+For random uniform hypergraphs Zl concentrates around its expectation (Corollary B.10), whose asymp-
+totics follow from an exact Kravchuk-polynomial count of even covers in the complete hypergraph (Ap-
+pendix C) combined with the sampling step (Subsection C 2, Theorem C.14). Writing ZlK = (αk,l +
+on (1)) nkl/2 for the count on the complete hypergraph, sampling gives µl := E[Zl ] = (αk,l + on (1))(k! C)l ,
+and for large admissible l
+                                                k/2−1 l
+                                                      
+                                         −1 m l                                         −(k−1)/2
+                                  −1/2
+           E[Zl ] = Lk + ol (1) l       γk              , γk := k −k/2 ek/2−1 , Lk := e √π .              (7)
+                                              nk/2
+
+                                                                                                              6
+
+Detection is therefore possible for large n, constant k and large admissible l whenever
+                                                            n  k/2−1
+                                         m ≫ γk ρ−2 n                  .                                    (8)
+                                                            l
+Up to logarithmic factors, the Kikuchi detection threshold [16, 18, 19] is the same condition with γk
+               k −1
+                  
+replaced by k/2      and l replaced by the Kikuchi level ℓ. Thus HCE exhibits the same smooth trade-
+off, and at k = 4 the two constants agree to within 2%.
+
+
+                        B.    From cycles to a matrix: the recovery matrix A(l)
+
+  Recovery proceeds by reducing the problem to standard (matrix) PCA. Here the clauses are the i.i.d.
+sample S1 , . . . , Sm , and witnesses are indexed by clause indices: for I ⊆ [m] put ∂I := △a∈I Sa and
+define the recovery matrix
+                                  (l)                                  (l)
+                                           X Y
+                                Aij :=                ba (i ̸= j),   Aii := 0.                       (9)
+                                             [m]
+                                          I∈( l ) a∈I
+                                        ∂I={i,j}
+
+Every I in the sum Q
+                   has the property
+                                  Q that all variables cancel modulo two except i and j. If x is the
+planted assignment, a∈I ba = xi xj a∈I ηa by problem definition. Conditionally on the supports,
+                                     (l)
+                                  E Aij S1 , . . . , Sm = ρl xi xj Wl (i, j),
+                                                        
+                                                                                                           (10)
+
+where Wl (i, j) is the number of (i, j)-witnesses of level l. Hence A(l) is a weighted noisy estimator of the
+rank-one matrix xx⊤ . Recall that Nl is the expected number of witnesses for a fixed pair i ̸= j. In the
+i.i.d. support model, where clauses are drawn with independent equal probabilities
+                                                     
+                                                    m                              
+                             Nl = E[Wl (i, j)] =        P ∂{1, . . . , l} = {i, j} .                     (11)
+                                                     l
+
+Averaging (10) also over the supports gives E[A(l) ] = ρl Nl (xx⊤ − I). We therefore write
+
+                                           A(l) = ρl Nl xx⊤ + R(l) ,                                       (12)
+
+where the residual R(l) includes both the random fluctuations and the deterministic diagonal correction.
+   Since xx⊤ x = nx, the rank-one signal has eigenvector x and eigenvalue ρl nNl . Therefore, for recovery
+it suffices to show that ∥R(l) ∥op is suitably smaller than ρl nNl , so that the top eigenvector of A(l) remains
+close to the planted direction. HCE estimates x, up to a global sign, by reading off the signs of this
+eigenvector; see Figure 2. Comparing this condition across levels l gives the recovery trade-off.
+   Recovery is, thus, a signal–noise comparison: it suffices that ∥R(l) ∥op be suitably smaller than θl .
+Comparing this condition across fixed levels gives the formal trade-off curve. HCE estimates x from the
+sign pattern of the top eigenvector of A(l) ; see Figure 2.
+
+
+                                 V.    THEORETICAL GUARANTEES
+
+   Theorems 3 and 4 lay the theoretical foundation of detection and recovery via HCE. These are the
+two main results that we will state in this section, and defer complete proofs to Appendices B and D.
+   The literature on planted inference problems uses a number of different models for how the clauses
+are sampled. For convenience and clarity of derivation, we consider two models. For detection, H is a
+uniformly random m-edge subhypergraph of K: the supports are drawn uniformly without replacement,
+so H is a simple hypergraph and even covers are sets of distinct edges. This model was used in Ref. [6].
+For recovery, S1 , . . . , Sm are i.i.d. uniform k-subsets, so repeated supports may occur and witnesses are
+indexed by clause indices rather than by edges; repeated supports are retained rather than discarded.
+This model or its Poissonization were used in Refs. [4, 14, 16, 22]. In practice the two models can be seen
+to be equivalent up to constants factors. Given a Poissonized instance with m̂ variables, E[m̂] = m, with
+high probability m̂ = (1 + o(1))m and so asymptotically the regimes are equivalent. The Poissonized
+instance may have repeated clauses; in that case one can deduplicate the clauses, again with a subleading
+loss in the regime of interest m = Θ(nk/2 ).
+
+                                                                                                                   7
+
+Method                                          Memory                                    Runtime
+                                                                                                              
+HCE, level l                               Oe n2 + m⌈l/2⌉                         e n3 + m⌈l/2⌉ + nm⌊l/2⌋
+                                                                                  O
+                                                                                                          
+HCE, even l, m = Cnk/2                    e n2 + C l/2 nkl/4
+                                          O                                         e n3 + C l/2 nkl/4+1
+                                                                                    O
+                                                                                                                   
+HCE, odd l, m = Cnk/2              e n2 + C (l+1)/2 nk(l+1)/4 O
+                                   O                           e n3 + C (l+1)/2 nk(l+1)/4 + C (l−1)/2 nk(l−1)/4+1
+                                                                                                   
+Kikuchi, level ℓ                       e nℓ + mnℓ−k/2
+                                       O                                    Oe mnℓ−k/2 + nℓ+1
+Kikuchi, even ℓ, m = Cnk/2                e (C + 1) nℓ                              e nℓ+1
+                                                                                            
+                                         O                                          O
+                                                                                                ∗
+Quantum HCE, even l, m = Cnk/2                 —                              e C l/3 nkl/6+2
+                                                                              O
+                                                                                                 
+Quantum Kikuchi, even ℓ, m = Cnk/2             —                              Oe C nℓ/4+k/2+1
+
+
+ TABLE I: Asymptotic runtime and memory for level-l HCE and level-ℓ Kikuchi spectral
+ recovery on planted noisy k-XOR with m = Cnk/2 clauses and even k. e   O(·) suppresses logarithmic
+  factors and constants depending on k, l and ℓ. Classical HCE uses the memory tricks discussed in
+ Appendix G. Quantum rows: HCE with quantum-walk claw finding [23] for witness search, and the
+                        quartic quantum speedup of Kikuchi [4] (Section V C).
+
+
+                                               A.       Detection
+
+   The heuristic of Section IV A used two unproven simplifications: that Zl concentrates around µl =
+EH [Zl ], and that the variance of X(l) is dominated by edge-disjoint pairs of covers. Both are controlled
+by a single combinatorial estimate. Let ns be the number of ordered pairs of even l-covers of H sharing
+exactly s hyperedges. Lemma B.7 computes the corresponding count on the complete hypergraph with
+its constant, and after sampling this yields
+                        l
+           VarH [Zl ] X µs µ2l−s
+                                 + on (1) = Θk,C l−(k−2)πk + on (1),                µq := αk,q (C k!)q ,
+                                                           
+                   2
+                     =      2                                                                                    (13)
+           EH [Zl ]    s=1
+                           µl
+
+with πk as in Section II. The rate l−(k−2)πk is the mechanism behind the trade-off: at fixed density,
+deeper levels make overlapping covers relatively rarer, and the discriminator behaves like an average of
+independent ±1 variables of mean ρl . This makes the error probabilities explicit.
+Theorem 3 (Smooth trade-off for detection). Fix k > 2, ρ ∈ (0, 1] and a target error probability
+δ ∈ (0, 1). There is a constant ck > 0, depending only on k, such that the following holds for every
+fixed admissible l ≥ ck δ −2/((k−2)πk ) and every fixed C > 0. Set m = Cnk/2 (assumed integral). Then,
+for all sufficiently large n, the test that declares the instance planted when Zl > 0 and X(l) > ρl /2 has
+false-positive and false-negative probabilities each at most δ provided
+                                                         1/l
+                                                                ρ−2
+                                                
+                                                   32
+                                        m ≥                        1/l
+                                                                         nk/2 .                                  (14)
+                                                    δ          k! αk,l
+                                                                                √         1/l
+For large l this reads m ≥ θl,k,δ ρ−2 n (n/l)k/2−1 with θl,k,δ = (1 + ol (1)) 32 l/(δLk )     γk , i.e. exactly
+the threshold (8) up to an explicit factor tending to one as l grows. The same sample condition gives a
+test whose decision rule does not use ρ: declare the instance planted when Zl > 0 and
+                                                      r
+                                                          2
+                                               X(l) >         .                                            (15)
+                                                         δZl
+Its false-positive and false-negative probabilities are again at most δ for all sufficiently large n.
+
+
+
+                                               B.       Recovery
+
+  It is convenient to define expected witness count, its n-scaled and noise-normalized versions below,
+                              
+                            m
+
+SOURCE PHYSICAL LINES 998-1456
+   γk , ak , Lk            positive reals                       γk = k−k/2 ek/2−1 ; ak = 1/(γk k!); Lk =
+                                                                              √
+                                                                e−(k−1)/2 / π
+
+   Two conventions are worth restating. First, the HCE level is always l and the Kikuchi level is always
+ℓ; the two coincide only in the matched-level experiments, where we write l = ℓ explicitly. Second,
+
+                                                                                                              16
+
+C denotes the clause density throughout, so the even-cover count present in the instance is written Zl
+(and not Cl ), the witness constants are κl , κl,k (and not Cl , Cl,k ), and the generic constants appearing
+in the moment bounds    are written B. The trace-moment order is q, which is unrelated to the inclusion
+probability p = m/ nk of Appendix E.
+
+
+                              Appendix B: Proof of the Detection Theorem
+
+  Throughout this appendix H is a uniformlyQrandom m-edge subhypergraph of K with m = Cnk/2 ,
+and X(l) is the discriminator (5), with XF = Sa ∈F ba . We keep the two sources of randomness apart
+by a subscript: PH , EH , VarH refer to the draw of the clause supports, while Pρ , Eρ , Varρ and Covρ refer
+to the signs at planted advantage ρ, the null model being ρ = 0.
+  We only consider admissible levels, i.e. l ≥ 3 with kl even, for which K possesses proper even l-covers;
+the minimal admissible level is πk of Section II. By Theorem C.13, ZlK = αk,l nkl/2 + on (nkl/2 ) for an
+n-independent αk,l , with αk,l = 0 when l is inadmissible and αk,0 = 1 (the empty family is the unique
+even 0-cover). For k > 2 and large admissible l,
+
+                                        l                     k k/2 e1−k/2     1               e−(k−1)/2
+     αk,l = Lk + ol (1) l−1/2 ak lk/2−1 ,
+                        
+                                                      ak :=                =       ,   Lk :=      √      .   (B1)
+                                                                    k!       γk k!                  π
+
+Finally set
+
+     ns := {(F, F ′ ) ∈ Cl × Cl : |F ∩ F ′ | = s} ,        nK          ′     K    K         ′
+                                                            s := {(F, F ) ∈ Cl × Cl : |F ∩ F | = s} ,        (B2)
+
+for the instance and for the complete hypergraph respectively.
+
+Lemma B.7 (Pairs of covers meeting in s edges). Fix k, l and 0 ≤ s ≤ l, and set r := l − s. Then
+
+                                      nK         2
+                                                               kl−ks/2
+                                       s = αk,s αk,r + on (1) n        .                                     (B3)
+
+If K has no proper even cover of size s or of size r, the corresponding coefficient αk,s or αk,r vanishes
+and the statement is to be read as nK
+                                    s = on (n
+                                             kl−ks/2
+                                                     ).
+
+Proof. Define J := F ∩ F ′ , A := F \ J and B := F ′ \ J. Every triple (J, A, B) corresponds to a unique
+pair (F, F ′ ), so we count triples with |J| = s and |A| = |B| = r. Since F and F ′ are even covers,
+△(J) = △(A) = △(B); call this common vertex set U and put u := |U |.
+  A family of q hyperedges with symmetric difference U uses at most u + (kq − u)/2 vertices: the vertices
+of U consume at least one incidence each, while every other used vertex has positive even degree and
+hence consumes at least two. Counting the vertices of U only once across J, A, B, the whole triple uses
+at most
+                                        ks − u     kr − u        ks u
+                                   u+          +2·        = kl −   −                                         (B4)
+                                           2          2          2   2
+distinct vertices. Therefore U ̸= ∅ contributes at a strictly lower order in n. If U = ∅, then J, A, B
+are themselves even covers, of sizes s, r, r, and the leading contribution comes from triples with pairwise
+disjoint vertex sets, since sharing a vertex again reduces the number of free labels. The number of such
+triples is
+                                              2
+                                   ZsK ZrK                2
+                                                              + on (1) nks/2+kr ,
+                                                                       
+                                                  = αk,s αk,r                                                (B5)
+
+and removing the vertex-intersecting triples does not affect the leading term. Since ks/2+kr = kl−ks/2,
+the claim follows.
+                                                                     (m)l
+Proposition B.8. Under the detection sampling model, EH [Zl ] = ZlK        , where (y)j denotes the
+                                                                     (M )l
+falling factorial and M = nk . Consequently, for m = Cnk/2 and fixed k, l, EH [Zl ] = µl + on (1) with
+                             
+
+µl = αk,l (C k!)l .
+
+Proof. The first identity is linearity of expectation: a fixed l-set of edges lies in H with probability
+(m)l /(M )l . The second follows from ZlK = (αk,l + on (1))nkl/2 , (m)l /(M )l = (1 + on (1))(m/M )l and
+M = (1 + O(k 2 /n))nk /k!.
+
+                                                                                                            17
+
+Lemma B.9 (Normalized second moment). Fix k, l with αk,l > 0 and let m = Cnk/2 for a constant
+C > 0. With µq := αk,q (C k!)q and µ0 = 1,
+                                                   l
+                                      VarH [Zl ] X µs µ2l−s
+                                                =           + on (1).                                     (B6)
+                                      EH [Zl ]2   s=1
+                                                      µ2l
+
+For large admissible l the right-hand side is Θk,C l−(k−2)πk + on (1).
+                                                                 
+
+Proof. Writing Zl = F ∈C K 1(F ⊆ H) gives Zl2 = F,F ′ 1(F ∪ F ′ ⊆ H). For two even covers with
+                       P                                 P
+                             l
+|F ∩ F ′ | = s we have |F ∪ F ′ | = 2l − s, hence EH [1(F ∪ F ′ ⊆ H)] = (m)2l−s /(M )2l−s and
+                                                   l
+                                      EH [Zl2 ]   X    nKs    (m)2l−s
+                                              2
+                                                =           2 (M )
+                                                                        .                                 (B7)
+                                      EH [Zl ]       E  [Z
+                                                  s=0 H l
+                                                           ]       2l−s
+
+
+By Lemma B.7, for every fixed s,
+                                                                     !
+                                                       2
+                                   nK            αk,s αk,l−s
+                                     s
+                                        2 =           2      + on (1) n−ks/2 ,                            (B8)
+                                    K
+                                   Zl               αk,l
+
+while, for fixed l and s,
+                                                         2
+                                                                           nks/2
+                                             
+                                 (m)2l−s        (M )l
+                                                             = 1 + on (1)         .                       (B9)
+                                 (M )2l−s       (m)l                      (C k!)s
+
+Multiplying the two displays and using the definition of µq gives µs µ2l−s /µ2l +on (1) for the s-th summand;
+the s = 0 term equals 1 + on (1). As the sum has only l + 1 terms, subtracting one from the normalized
+second moment proves (B6).
+  For the large-l estimate the summation must be uniform in s. Put
+                                                 (kt − 1)!!
+                                      gk,t :=                      (kt even).
+                                                  t! (k!)t
+The pairing argument in the proof of Theorem C.13 gives constants 0 < ck < Ck < ∞ such that
+ck gk,t ≤ αk,t ≤ Ck gk,t for every sufficiently large admissible t; enlarging the constants covers the finitely
+many smaller admissible levels. We use the two-sided factorial bounds
+                      √                                 √
+                         2π tt+1/2 e−t e1/(12t+1) ≤ t! ≤ 2π tt+1/2 e−t e1/(12t) ,   t ≥ 1.               (B10)
+
+Applied to the factorials in gk,t , these bounds give constants ηk , ck,C , Bk,C > 0 such that, uniformly over
+admissible indices,
+                               µs µ2l−s
+                                                   s  k−2  s
+                                         ≤ Bk,C              ,    1 ≤ s ≤ ηk l,
+                                    µ2l            l
+
+and the same bound with s replaced by r = l−s holds for 1 ≤ r ≤ ηk l. On the interior ηk l ≤ s ≤ (1−ηk )l,
+the same substitution gives e−ck,C l log l . For example, the power-carrying part of the logarithm at the
+lower endpoint is
+                 k − 2                                           
+                        s log s + 2(l − s) log(l − s) − 2l log l ≤ (k − 2)s log(s/l) + Ok (s),
+                   2
+                                                                                             s
+uniformly after choosing ηk small; the square-root factors in (B10) are absorbed into Bk,C     . The first
+nonzero lower-endpoint index is s = πk , and its summand is Θk,C (l−(k−2)πk ). The opposite endpoint
+and the interior are smaller, while s = l equals 1/µl and is superpolynomially small at fixed C. Summing
+the three ranges proves the stated Θk,C (l−(k−2)πk ) estimate.
+Corollary B.10 (Concentration of the cover count). Fix an admissible l and t > 0. Then
+                                     l
+                                                       !
+                               1 X µs µ2l−s
+                           
+             Zl
+                                               + on (1) = Ok,C t−2 l−(k−2)πk + on (1)
+                                                                              
+       PH            −1 >t ≤ 2             2                                                            (B11)
+            EH [Zl ]           t   s=1
+                                          µl
+
+for large admissible l.
+
+                                                                                                                 18
+
+Proof. Immediate from Lemma B.9 and Chebyshev’s inequality.
+
+Lemma B.11 (Overlap sums at the detection scale). Fix k > 2, ρ ∈ (0, 1] and δ ∈ (0, 1). If
+                                                                  1/l
+                                                                          ρ−2
+                                                         
+                                                            32
+                                                  C≥                        1/l
+                                                                                  ,
+                                                             δ          k! αk,l
+
+then, for large admissible l,
+                                      l
+                                      X µs µ2l−s            1                         
+                                                       =       + Ok ρ2πk l−(k−2)πk /2 ,                        (B12)
+                                      s=1
+                                                µ2l         µl
+                                l−1
+                                X             µs µ2l−s                       
+                                      ρ−2s             = Ok   l −(k−2)πk /2
+                                                                              .                                (B13)
+                                s=1
+                                                µ2l
+
+Proof. Put p = (k − 2)/2. By (B1), after enlarging constants to cover the finitely many small admissible
+indices,
+
+                                   ck t−1/2 (ak tp )t ≤ αk,t ≤ Ck t−1/2 (ak tp )t
+                                                                                                         1/l
+for every admissible t. The sample lower bound implies ρ−2 (Ck!)−1 ≤ Bk αk,l . Therefore the sth
+summand of (B13), denoted Tl,s , satisfies
+                                                                            −2+s/l
+                                               Tl,s ≤ Bks αk,s αk,l−s
+                                                                2
+                                                                      αk,l              .
+
+Applying (B10) to this display gives constants ηk , ck , Bk > 0 such that
+
+                        Tl,s ≤ [Bk (s/l)p ]s ,                                        1 ≤ s ≤ ηk l,
+                                               2p r
+                      Tl,l−r ≤ [Bk (r/l) ] ,                                          1 ≤ r ≤ ηk l,
+                                 −ck l
+                        Tl,s ≤ e         ,                                            ηk l ≤ s ≤ (1 − ηk )l.
+
+Indeed, after writing x = s/l, the exponential part in the interior is
+
+                                             pl [x log x + 2(1 − x) log(1 − x)],
+
+which is strictly negative on every compact subinterval of (0, 1). At the lower endpoint, the inequality
+log(1 − s/l) ≤ −s/l yields the first bound uniformly for s ≤ ηk l; at the upper endpoint, setting r = l − s
+gives the second. The square-root remainders in (B10) are absorbed into Bks or Bkr .
+  Only admissible indices contribute, and the first positive one is πk . Summing the lower endpoint gives
+Ok (l−pπk ), the upper endpoint gives Ok (l−2pπk ), and the interior is exponentially small. This proves
+(B13). The corresponding unweighted summand is ρ2s Tl,s ; hence its lower endpoint acquires ρ2πk , while
+the remaining ranges are no larger. Finally the omitted term s = l is exactly 1/µl , proving (B12).
+
+  We now address the second heuristic assumption.
+
+Proposition B.12. Let F, F ′ ∈ Cl with |F | = |F ′ | = l and |F ∩ F ′ | = s. Then, conditionally on
+F, F ′ ⊆ H, Covρ (XF , XF ′ ) = ρ2l−2s − ρ2l .
+
+Proof. XF XF ′ = XF △F ′ , and since even covers form a closed cycle space, F △F ′ is an even cover of size
+2l − 2s. Hence Eρ [XF XF ′ ] = ρ2l−2s , while Eρ [XF ]Eρ [XF ′ ] = ρ2l .
+
+Proof of Theorem 3. Let m = Cnk/2 and declare the model planted when Zl > 0 and X(l) > ρl /2. We
+first control the hypergraph randomness. Let G be the event {Zl ≥ EH [Zl ]/2}. Corollary B.10 with
+t = 1/2 bounds
+                                                            l
+                                                            X µs µ2l−s
+                                             PH (Gc ) ≤ 4                   + on (1);                          (B14)
+                                                            s=1
+                                                                    µ2l
+
+we bound this after imposing the sample condition below, l being fixed from this point onwards.
+
+                                                                                                         19
+
+  For H ∈ G under the null model (ρ = 0), X(l) has mean zero and distinct covers have zero covariance, so
+Var0 (X(l)) = 1/Zl . Chebyshev’s inequality, together with the contribution of Gc and EH [Zl ] = µl +on (1),
+gives
+                                                                   8
+                              P0 (false positive) ≤ PH (Gc ) +          + on (1).                     (B15)
+                                                                 ρ2l µl
+Under the planted model the conditional mean is ρl , and Proposition B.12 gives
+                                          l−1
+             Varρ (X(l))   ρ−2l − 1    1 X −2s                        EH [ns ]   µs µ2l−s
+                         =          +   2     ρ − 1 ns ,                  2    =          + on (1),   (B16)
+                 ρ 2l        Zl       Zl s=1                           µl          µ2l
+
+the second identity being Lemma B.7 together with the sampling step of Proposition B.8. Chebyshev’s
+inequality and averaging over H then yield
+                                                                l−1
+                                                        8       X        µs µ2l−s
+                   Pρ (false negative) ≤ PH (Gc ) +        + 16     ρ−2s          + on (1).           (B17)
+                                                       2l
+                                                      ρ µl      s=1
+                                                                           µ2l
+
+  It remains to choose C and l. Requiring 8/(ρ2l µl ) ≤ δ/4 is exactly
+                                               1/l −2
+                                              32         ρ
+                                        C≥                  1/l
+                                                                ,                                     (B18)
+                                               δ        k! αk,l
+
+which is (14) after substituting C = m/nk/2 , and which for large l forces C = Ω(ρ−2 l1−k/2 ). Lemma B.11
+gives the required uniform bounds on the two sums above. The sample condition gives 1/µl ≤ δρ2l /32,
+hence 4/µl ≤ δ/8; since ρ ≤ 1,  the second remainder also controls the first. Choosing the implicit
+constant in l = Ω δ −2/((k−2)πk ) large enough makes four times the first remainder at most δ/8 and
+sixteen times the second sum at most δ/4. Then PH (Gc ) ≤ δ/4 + on (1) by (B14), and both error
+probabilities are below δ for all sufficiently large n.
+   Finally, inserting the large-l form (B1) of αk,l into (14) gives
+
+                                        n  k/2−1                             √ !1/l
+                                 −2
+                                                                           32 l
+                     m ≥ θl,k,δ ρ n              ,    θl,k,δ = 1 + ol (1)           γk ,            (B19)
+                                        l                                  δLk
+
+which is (8) up to a factor tending to one as l grows.
+  It remains to verify the adaptive rule (15). Under the null model, conditionally on every hypergraph
+with Zl > 0, E0 X(l) = 0 and Var0 (X(l)) = 1/Zl . Hence Chebyshev’s inequality gives
+                                                   r       
+                                                       2       δ
+                                       P0 X(l) >         H ≤ .
+                                                     δZl       2
+Under the planted model, on the event G = {Zl ≥ EH Zl /2}, the sample condition implies
+                                             1 2l              16
+                                  ρ2l Zl ≥     ρ µl + on (1) ≥    + on (1).
+                                             2                  δ
+In particular, for all sufficiently large n the left-hand side exceeds 8/δ, so the adaptive threshold is at
+most ρl /2. Its false-negative event on G is contained in the one already bounded above, while Gc has
+already been included in that bound. Thus both adaptive errors are at most δ.
+
+
+                              Appendix C: Counting Hypergraph Cycles
+
+                        1.   Asymptotics for Complete Uniform Hypergraphs
+
+  We count proper even l-covers (Definition 1) on the complete k-uniform hypergraph K = ([n], [n]
+                                                                                                          
+                                                                                                       k ),
+assuming kl even. Such identities are classical in the analysis of random CSP refutation and appear e.g.
+in Allen et al. [10], Raghavendra et al. [13], Wein et al. [16], Hsieh et al. [19], Coja-Oghlan et al. [27].
+We use the unnormalized Kravchuk polynomials
+                                                 j                 
+                                                 X        x M −x
+                                                          r
+                                  Kj (x, M ) :=     (−1)            .                                  (C1)
+                                                r=0
+                                                          r   j−r
+
+                                                                                                                              20
+
+Theorem C.13. Fix k > 2 and l ≥ 1. The number of proper even l-covers (up to permutation) in K is
+                                 n                                             
+              K              1 X n           M − Kk (w, n)                   n
+            Zl = En,k (l) = n           Kl                 ,M ,       M=        .            (C2)
+                            2 w=0 w               2                          k
+
+For fixed k, l, as n → ∞,
+                                                                                   l/2                 
+                                                                    1        1                Hk (Z)
+          ZlK = αk,l nkl/2 + on       kl/2
+                                              
+                                  n              ,           αk,l =                      E Hl  √        ,   Z ∼ N (0, 1),   (C3)
+                                                                    l!       k!                  k!
+with αk,l an n-independent constant, equal to zero when l is inadmissible and equal to 1 when l = 0. For
+fixed k > 2 and large admissible l, αk,l obeys (B1). In the iterated limit n → ∞ followed by admissible
+l → ∞, this is equivalently
+                                                      kl/2  
+                                      e−(k−1)/2 M
+                                                                          
+                    K                                  2          kl + 1               
+                  Zl = 1 + ol (1)        √                     Γ            1 + on (1) .            (C4)
+                                           π     l     n             2
+Proof. Let vS ∈ Fn2 be the characteristic vector of hyperedge S. Then
+                                           "          #
+                                  X          M            1 X X               P
+                     En,k (l) =          1      vS = 0 = n              (−1)y· S∈T vS ,                                     (C5)
+                                                         2
+                                T ⊆([n]     S∈T             y∈Fn   T
+                                     k )                       2
+                                                                 |T |=l
+                                  |T |=l
+
+
+using Boolean Fourier analysis. The sum over T may be seen as a sum over T ∈ [Ml ] ; defining
+                                                                                    
+
+X(y) ∈ {0, 1}M by XS (y) = y · vS , the Kravchuk lemma gives        X·vT
+                                                             P
+                                                              T (−1)     = Kl (|X(y)|, M ). By
+symmetry |X(y)| depends only on |y|:
+                             X 1 − (−1)XS (y)                      M   1X           M − Kk (|y|, n)
+                  |X(y)| =                                     =     −   (−1)y·vS =                 .                       (C6)
+                                                 2                 2   2                 2
+                             S                                                    S
+
+Grouping by Hamming weight yields (C2).                                            √
+   For the fixed-l asymptotics, let W ∼ Bin(n, 1/2) and Zn √:= (n − 2W )/ n. For every fixed j the
+central limit of the Kravchuk polynomial reads M −j/2 Kj M −2 M z , M → Hj (z)/j!, where Hj is the jth
+                                                                            
+(probabilists’) Hermite polynomial. The scaled expressions are fixed-degree polynomials whose coeffi-
+cients converge, and Zn converges in moments to Z ∼ N (0, 1), so applying this first to the inner and
+then to the outer polynomial gives
+                           M l/2
+                                                  
+                      K                  Hk (Z)
+                     Zl =        E Hl     √         + on (nkl/2 ) = αk,l nkl/2 + on (nkl/2 ),
+                             l!             k!
+                                                                                              √
+using M = nk ∼ nk /k!, which is (C3). Since αk,l is a fixed multiple of E[Hl (Hk (Z)/ k!)], it vanishes
+                
+exactly when no proper even l-cover exists, i.e. when l is inadmissible.
+   It remains to estimate αk,l for large l. View the kl factors in E[Z kl ] as l boxes of size k. By Wick’s
+formula (kl−1)!! counts all pairings of these factors. Put Ak,l := E[Hk (Z)l ]; this counts those with no pair
+inside a box. The number of within-box pairs in a uniform pairing converges to a Poisson variable    of mean
+(k − 1)/2 — its rth factorial moment tends to ((k − 1)/2)r — whence Ak,l = e−(k−1)/2 + ol (1) (kl − 1)!!.
+          ⋆
+   Let Pk,l count pairings with neither an internal box pair nor two boxes paired completely to one
+another. Intersections of complete-pairing events correspond exactly to matchings of disjoint pairs of
+boxes, so inclusion–exclusion gives
+                                                     ⌊l/2⌋
+                                   ⋆
+                                                     X               l!
+                                  Pk,l =                 (−1)r r             (k!)r Ak,l−2r .                                (C7)
+                                                     r=0
+                                                              2  r!(l − 2r)!
+                                                            r l−2r
+                                                                   /(2r r!(l − 2r)!) therefore yields exactly
+                                             P
+The probabilists’ identity Hl (y) = l!                r (−1) y
+                                                                            ⋆
+                                                                          Pk,l
+                                                               αk,l =            .
+                                                                         l!(k!)l
+                                             l
+                                              
+Moreover, a union bound over the        possible completely paired box pairs gives
+                                             2
+                                                                 ⋆
+                                                       Ak,l − Pk,l
+                                        
+                               ⋆      l
+                   0 ≤ Ak,l − Pk,l ≤     k! Ak,l−2 ,               = Ok (l2−k ) = ol (1).
+                                      2                    Ak,l
+
+                                                                                                          21
+
+Thus the outer Hermite polynomial changes the pairing count only by this relative error. Inserting
+(kl − 1)!! = (kl)!/(2kl/2 (kl/2)!) and Stirling’s formula into (C3) gives
+                                                                  l
+                                                                                     e−(k−1)/2
+                                               k/2 1−k/2
+                                              k e
+                  αk,l = Lk + ol (1) l−1/2                 k/2−1
+                                     
+                                                         l          ,         Lk =      √      ,
+                                                  k!                                      π
+
+which is (B1). Combining this formula with Stirling’s identity for Γ((kl + 1)/2) yields (C4). The factor
+e−(k−1)/2 is essential: omitting the Hermite exclusion terms would, for example, give the wrong fixed-level
+constant already at (k, l) = (4, 3).
+
+
+                       2.   Expected Cycles in Random Uniform Hypergraphs
+
+  Now sample m hyperedges uniformly from [n]
+                                                 
+                                              k   and let Zl be the number of proper even l-covers in
+the resulting random hypergraph. Its mean follows from Proposition B.8 together with Theorem C.13.
+Theorem C.14. For fixed k > 2 and admissible l, with m = Cnk/2 ,
+                                K
+                             m Zl
+                                      = αk,l + on (1) (C k!)l = µl + on (1),
+                                                       
+                 EH [Zl ] =       M
+                                                                                                        (C8)
+                              l   l
+
+so that, for large admissible l,
+                                                                l
+
+SOURCE PHYSICAL LINES 2794-2928
+Vandermonde gives
+                              ′  
+                  D    l−2   D                            (k − 2)l + 2                  (k − 2)r + 1
+                     ≥            ,              D′ =                  ,        a′r =                .
+                  ar   r−1   a′r                               2                             2
+
+The r = 3 term is Ok (l−(3k−5)/2 ). For r ≥ 5, convexity of y log(y/D′ ) on [a′5 , D′ /2] bounds the remaining
+sum by Ok (l1−(5k−9)/2 ) + l2−l/4 , which is of the same or smaller order. Dividing (E25) by P(L) ≥ ck
+proves the claim.
+Proposition E.44 (Boundary-connected witness constant). Fix odd k ≥ 3 and even l ≥ 2.
+(a)
+                                                            ml
+                                Nl,bc = (κbc
+                                          l,k + on (1))             ,      0 < κbc
+                                                                                l,k ≤ κl,k .
+                                                          nkl/2+1
+    For l ∈ {2, 4} equality holds between the two constants.
+(b) As l → ∞ through even values,
+                                             κbc
+                                              l,k
+                                                                      
+                                                  = 1 − Ok l−(3k−5)/2 .
+                                             κl,k
+                                    1/l
+    Consequently (κbc
+                   l,k )
+                        1/l
+                            ∼ κl,k .
+Proof. Part (a) follows by repeating the leading-pattern count of (E12) with the connectivity restriction
+in (E24). At l = 2, positivity follows from the exact count (E3). For l ≥ 4, it follows from the feasible
+α = β class, in which both boundary variables lie in one support position. Equality for l ∈ {2, 4} follows
+from Proposition D.21.
+   For part (b), configurations with α = β are always boundary-connected. Lemma E.43, applied to every
+α ̸= β class, shows that the complementary weighted sum is at most Ok (l−(3k−5)/2 )κl,k . This proves the
+ratio estimate, and the lth-root conclusion follows from (E23).
+
+                                                                                                           39
+
+            Appendix F: Operator Comparison with Kikuchi and Square Constructions
+
+  This appendix shows that the HCE matrix, the Kikuchi matrix and the square construction are all
+restrictions of one operator on the Boolean cube. The methods differ only in whether the restriction to
+a slice is applied before or after the degree-l polynomial is taken.
+  We work in the Hilbert space on the n-length Boolean cube ℓ2 (2[n] ). Let X̂i be the operator that acts on
+                                                                                                   Q
+the basis state corresponding to string S as X̂i eS = eS△i . For a clause index a ∈ [n] let Aa = ba i∈Sa X̂i ,
+                                                       Q       Q
+and similarly for a subset of clauses I ⊆ [n] let AI = a∈I ba i∈Sa X̂i . Then define the instance operator
+                                                              m
+                                                              X
+                                                       H :=         Aa .                                 (F1)
+                                                              a=1
+
+In quantum terms, this is the Hadamard transform of the diagonal kXOR Hamiltonian corresponding to
+the instance.
+  Let Πℓ be the orthogonal projection onto the span of Hamming weight ℓ basis vectors. Then the level-ℓ
+Kikuchi matrix is simply the Hamming weight ℓ slice
+                                                       Kℓ = Πℓ HΠℓ .
+  Now define the elementary clause operator
+                                                              X
+                                                  El :=               AI .                               (F2)
+                                                           I∈([m]
+                                                               l )
+
+
+The HCE side can be expressed as slices of this operator too. In the detection model, the discriminator
+can be written as
+                                        X
+                                             XF = ⟨e∅ , El e∅ ⟩,
+                                               F ∈Cl
+
+while the recovery matrix is
+                                              A(l) = offdiag(Π1 El Π1 ),
+  The operators H and El can be related by a formal power series:
+                         m
+                         X              m
+                                        Y
+                                l
+                                            (I + zAa ) = (1 − z 2 )m/2 exp artanh(z) H ,
+                                                                                       
+                               z El =                                                                    (F3)
+                         l=0            a=1
+
+On a simultaneous eigenvector of the commuting involutions (Aa )a≤m , suppose
+                                                                              exactly r eigenvalues equal
+−1. Then B has eigenvalue m − 2r, while El has eigenvalue j (−1)j rj m−r
+                                                          P            
+                                                                         l−j = Kl (r, m). Consequently,
+                                                             
+                                                  mI − H
+                                        El = Kl          ,m ,                                        (F4)
+                                                    2
+where Kl (·, m) is the unnormalized Kravchuk polynomial.
+  Thus HCE is a matrix-valued degree-l low-degree polynomial in H, while Kikuchi is a constant Ham-
+ming weight slice of the same operator. HCE is not in general a power of one fixed Kikuchi slice: in
+Π1 Kl ((mI − H)/2, m)Π1 the intermediate Boolean-cube boundaries are unrestricted, whereas powers of
+Kℓ = Πℓ HΠℓ force every intermediate state to remain on the ℓ-slice. For odd k the balanced slice Πℓ HΠℓ
+vanishes because the symmetric difference of two ℓ-sets has even cardinality, while odd-level HCE can
+be nonzero.
+
+
+                  Appendix G: Meet-in-the-Middle Construction and Complexity
+
+  A direct implementation of (9) enumerates all l-tuples of clauses and has runtime O(ml ) = O(nkl/2 )
+when m = Cnk/2 . This naive cost is reduced by the standard meet-in-the-middle (MITM) strategy
+shown in Figure 2. Put r = ⌊l/2⌋ and s = ⌈l/2⌉, and aggregate rather than list the hash buckets:
+                                             X
+                                  Fs (u) :=         XS ,    u ∈ Fn2 .
+                                            S∈([m]
+                                                s )
+                                                   △(S)=u
+
+                                                                                                             40
+
+The raw MITM matrix is then
+                                (l)
+                                         X
+                              Gij :=                  XS ′ Fs (△(S ′ )△{i, j})     (i ̸= j),
+                                            [m]
+                                       S ′ ∈(r    )
+
+which takes e O(ms + n2 mr ) time if every pair {i, j} is probed for each r-set. The key-scan construction
+works for any l: also build Fr , and write Uq := {u : Fq (u) ̸= 0} for q = r, s. Each key in Uq has
+size at most kq. To find partners of the same size, for each u ∈ Ur and i ∈ u, j ∈           / u, probe Fs at
+(u \ {i}) ∪ {j}. For partners of different sizes, delete every pair {i, j} from each u ∈ Ur and probe Fs , and
+similarly delete pairs from keys in Us and probe Fr . These exhaust all cross-table pairs of boundaries
+with |u△v| = 2. When r = s, the tables coincide: same-size partners are visited twice and different-
+size partners are visited twice by scanning both tables. When r < s, each cross-table match is visited
+                                             (l)
+once. Weighting accordingly recovers Gij exactly. There are Ok,l (n) replacement probes per key in Ur
+and Ok,l (1) deletion probes per key in either table. Thus building the tables and the raw matrix costs
+Oek,l (ms + n|Ur | + n2 ) time and O ek,l (ms + n2 ) memory. For even l = 2h this is Oek,l (nmh + n2 ) time; for
+                              h+1          h     2
+odd l = 2h + 1 it is Ok,l (m
+                        e           + nm + n ) time. An ordered dictionary on the sparse keys gives these

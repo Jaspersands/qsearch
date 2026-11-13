@@ -10,20 +10,17 @@ factoring, hardness, separation or quantum execution claim.
 
 Input a native monic irreducible quartic h in Z[X], defining L, and a
 list S_Q of rational primes containing2 and every prime ramified in L.
-Suppose L contains a quadratic subfield F with Cl(O_F,S)/2=0, where S
-contains ALL F-primes above S_Q. Output a complete explicit basis of
+Suppose L contains a quadratic subfield F, where S
+contains ALL F-primes above S_Q. No odd S-class hypothesis is required. Output a complete explicit basis of
 L(S_L,2)={alpha modL*2 : all valuations outside S_L are even}, where
 S_L contains all primes above S_Q. No subfield, generators, units, ideal
 principalizations, local frames or conic solutions are supplied.
 
-The odd S-class condition is a mathematical promise in this general
-statement. It is PROVED and natively recognizable for the relevant
-one-finite-ramified-prime Galois quartic family: its quadratic subfield
-also has at most one ramified finite prime, and the retained inertia
-proof makes its ordinary class number odd. Extra native support primes
-are permitted. The algorithm also applies to a nonnormal quartic with
-a quadratic subfield satisfying the stated class condition; no arbitrary
-quartic or growing-degree field theorem is inferred.
+The earlier odd S-class promise is removed by the exact support-obstruction
+kernel below. The result now covers EVERY irreducible quartic with a quadratic
+subfield, including nonnormal cases, with the same factoring-oracle resource
+model. Quartics without a quadratic subfield and growing towers remain open.
+The one-finite-ramified-prime Galois family is a contained special case.
 
 Cost is polynomial in the native coefficient/support BIT length and
 log(1/eta), with polynomially many INTEGER FACTORIZATION calls on
@@ -35,7 +32,7 @@ dimension<=9 isotropy may be enormous.
 
 For native monic squarefree odddegree branch polynomial f, all support
 primes divide2disc(f). If every branch field is rational, quadratic, or
-one-prime Galois quartic, combine this construction with the retained
+a quartic containing a quadratic subfield, combine this construction with the retained
 classical all-prime local Kummer compiler and global binary norm matrix.
 The resulting exact Selmer-dimension computation reduces to integer
 factoring in polynomial BIT time. It does not require complete S-units,
@@ -83,7 +80,10 @@ polynomially; constant table cardinality is not free inputprecision.
 ## Exact sequence and the constructive support correction
 
 The complete sequence is
- 0 -> F(S,2)/<d> -> L(S_L,2) --Norm--> V ->0.
+ 0 -> F(S,2)/<d> -> L(S_L,2) --Norm--> a(C) ->0,
+
+where C is the support-obstruction kernel below, in coordinates of a basis
+of V. It may be a proper subspace of V.
 For the kernel, if N(alpha)=c², then
  (alpha+c)²=(Tr(alpha)+2c)alpha;
 separate alpha=-c. Outside-S unramified valuations force the rational-
@@ -99,25 +99,41 @@ be read as min(v_P(x),v_P(y)+v_P(d)/2) mod2 outside S.
 Clear beta in an explicit integral order O_F[M0*z], using an integer R.
 Factor R*abs(N_L/Q(R*beta)); its polynomial-bit size is paid by the conic
 bound. All outside-S support is above these primes E. Compute complete
-F(S union E,2) using the quadratic compiler. The parity map to E outside
-S is SURJECTIVE because its cokernel lies in Cl(O_F,S)/2=0. A binary
-linear solve constructs gamma with parity J; beta*gamma has even outside
-valuations and the same relative norm squareclass, since N(gamma)=gamma².
-This uses no computed principal generator or ideal class identity.
-Batch all conic supports into one enlarged quadratic basis/matrix.
+F(S union E,2) using the quadratic compiler. Let W be the image of its parity map to E outside S. For the
+basis a_i of V and conic lifts beta_i, let J_i be their pulled-back parity
+columns. Compute
+
+    C=ker(c -> sum_i c_i J_i mod W).
+
+For each basis vector c of C, solve in the enlarged quadratic basis for
+gamma with parity sum c_i J_i; then gamma*product beta_i^c_i has even
+outside-S valuations and norm squareclass product a_i^c_i. Conversely any
+even-supported lift differs from this beta product by a square-norm element;
+the trace identity expresses its squareclass by a base gamma belonging to
+F(S union E,2), so its coordinate c lies in C. This proves that a(C), not
+unconditionally V, is the entire norm image. No principalization or class
+identity is computed. Odd S-class order is sufficient for C=V, but unnecessary
+for computing C. Batch all conic supports into one enlarged quadratic matrix.
 
 Polynomially many polynomial-bit fixed-degree products preserve bit size.
 Coordinates of [d] in the original quadratic basis are obtained using
 its recorded norm lifts and the same trace identity; take a complement
-to<d> and append the corrected norm lifts. The exact sequence proves
+to<d> and append the corrected lifts for a basis of C. The exact sequence proves
 spanning AND independence, not merely returned valid elements.
 
 Strongest counterexample: the native cyclicquartic over Q(sqrt229) in
 the paid relative-norm report has element-gcd1 conic coordinates but
 common nonprincipal ideal(3,t), with odd numerator valuations at BOTH
 primes over it. All28 exact assertions pass. Naive element-gcd or rational
-prime correction fails. The enlarged-support construction above escapes
-this example and proves the general promised correction.
+prime correction fails. The enlarged-support construction escapes this example. A stronger new
+complete control uses F=Q(sqrt(-14)), L=F(sqrt2), S_Q={2,7}: Cl(F,S)=(2),
+V dimension4, obstruction rank1, C dimension3, and the resulting six quartic
+generators have full rank in an independent complete S-squareclass space.
+One obstructed lift has an odd denominator valuation at an inert prime over3.
+Thus full-V surjectivity would give the wrong dimension7 instead of6.
+Parent read the entire296-line proof and reproduced EXACT_CONTROL_PASS:
+`audits/reviews/2026-11-13-relative-squareclass-obstruction-kernel.md`;
+`audits/controls/tower_recurrence/relative_obstruction_control.py`.
 
 ## Paid relative conic backend over a quadratic base
 
@@ -185,8 +201,8 @@ https://simond.users.lmno.cnrs.fr/maths/Dim4.pdf ,
 https://jtnb.centre-mersenne.org/item/10.5802/jtnb.170.pdf .
 Local PDFs/texts/hashes are retained under audits/sources/.
 
-Only two native radical controls and the28assertion229 counterexample
-were run, not the full solver. Direct-dimension reciprocity/rayclass
+The two native radical controls, the28assertion229 counterexample and the
+new complete sqrt(-14)/sqrt2 obstruction control were run, not the full solver. Direct-dimension reciprocity/rayclass
 reformulation still requires global residue positions; it supplies no
 separate algorithm and no hardness. Do not build that subsystem or extend
 this fixed-degree result by inertia. NEXT_CONSTRUCTIVE_MECHANISMS.md

@@ -274,3 +274,200 @@ fallback. Thus exact-divisible small-support quotient sources are classically
 matched, with quotient RECOVERED rather than suppliedadvice. General
 approximate/source-conditioned deflation remains OPEN. No genericdivision,
 classicalhardness, quantumadvantage or new algorithm novelty follows.
+
+## Single-source endpoint CLOSED WRITTEN on both sides
+
+Parent FULLread the348LF independent quantum compiler and359LF independent
+classical sampler proofs. Quantum work is poly(n,inputbits,log1/epsilon);
+classical work poly(n,inputbits,1/epsilon), at exactly the originalfull
+spatialBorn output. At fixed/inversepolynomialepsilon both arepolynomial.
+No practicalconstants, novelty, general-m match or Shor-leveladvantageclaim.
+Quantum proof repairs totalchartwindows, uses computed labels, uncomputes
+allpath/workregisters, relativeinverseerror<=2Ldelta, known Pstar1/124800
+and249600ceil(log2(4/epsilon)) cap. Classicalproof derives exactresidue and
+periodization, fixedsmoothcontour, uniform C4 damping exp(-a*eta/4)
+timespolynomial(a*eta), central/middle/outerpatch bounds; explicitconstant
+K=2^1000000 pays the formerlyunquantified bounds. Radial/uniformproposal,
+O((n+log1/epsilon)^2)images, l2error, finitequadrature andrandomness allpaid.
+The enormousconstant is explicit andimpractical; no numericalcontrol used.
+Proofs: audits/reviews/2026-11-13-wave-single-source-compiler-independent.md
+and audits/reviews/2026-11-13-wave-single-green-classical-independent.md.
+
+Eightjobround nowterminal/read/reaped: sixcompleted, oneemptytruncation,
+oneemptyprotocolfailure UNKNOWNbill. Preparedusage controls/sparse_wave_round/
+usage.json: round8.999754USD; cumulative258.179542USD/200pricedrecords,
+Anth153.535942/OpenAI104.643600. FIVEUNKNOWN excluded. Estimates, not
+invoices/balances; ownerreportedSPENT155.99/101.71 remainsseparate.
+
+## Last cluster-completion round and a new angular construction
+
+Three DISTINCT newpaid jobs active in api_inputs/2026-11-13-wave-cluster-
+completion/dispatch.json,20USDceilings notcharges: compactsource fullclassical
+sampler, globalquantumconditioneddeflation, rationalangularsampler. Actual
+Griesmaier--Sylvester1607.05678 Theorems4.1/4.6/5.6 and BLT1995 MainTheorem
+plus1=>2 proof checked after corpuslookups. The former assumescontinuum
+circular farfields withbandlimitedangularcomponents and paidseparation;
+it does NOT grant our lattice/torus theorem. Naive merge-until-separated
+may squareclusterdiameters repeatedly. This is the LAST clustercontinuation
+absent completeconstructiveprogress; do not produce a sequence ofnearby
+conditionalnorm barriers. General-m FULL quantum endpoint remains OPEN.
+
+NEW parent angular operation, underindependentreview: set x=sin p,y=sin q
+onGamma2cos p+2cos q=3. Then cos p=3/4+(y²-x²)/3 and
+cos q=3/4+(x²-y²)/3, soGamma maps exactly to smoothcompactplaneoval
+K:16(x²-y²)²+72(x²+y²)-63=0. Conversely K implies both displayed
+cosines positive andtheirunitcircleidentities, recoveringuniqueprincipal
+p,q. Every e^(+/-ip),e^(+/-iq) is a degree2 polynomialin(x,y). Thus a
+compactsource LaurentF ofexponents|a|,|b|<=D restricts to degree<=4D
+POLYNOMIAL onK; no exponentiallyvaryingdenominator. Actual BLTplane
+algebraiccurve theorem therefore gives a tangentialMarkov bound and an
+inversepolynomialangularnormenvelope evenwitharbitrarilytiny coefficients.
+A fullypaidangularsampler is underindependent BIT/realoptimization review;
+unknown geometricconstants cannotbe hiddenadvice. Fourregular signed/swapped
+charts have x in[-sqrt7/4,sqrt7/4], y²=x²-9/4+3sqrt(1-x²), y>=sqrt7/4.
+No fullspatialsampler follows before local/radiative/periodicinterference ispaid.
+
+## Compact full-field parent construction: UNDER independent review
+
+A finite-bit angular sampler cannot have smallTV to a continuous law: its
+discrete support has continuousmeasurezero. The useful nativeoutput is the
+finite torus site; this construction avoids that mismatch by using angular
+maximum bounds only. A separateangularinterface must specify finitecells.
+
+For compactsource radiusD, planeembedding above makes N=|F|² a polynomial
+onK. Compute algebraic S=max_K N, a rationalupper U in[S,2S], and
+Hbar>=max_K|DT N| withHbar/S=O(D). Exact criticalpoint resultants and
+realrootisolation inconstantvariables havepolynomialdegree/BIT; Kconstant,
+J=Kx*Ny-Ky*Nx,80<=||gradK||<=180, soHbar=sup|J|/80 worksup toconstant.
+Zero/constantrestrictions requireexact Kdivision, notrelative numerics.
+BLT proves C_F=1+Hbar/U=O(D), whiletheactualalgorithm uses computedC_F
+ratherthananunknownuniversalconstant. Finite rootseparation costsbitsB,
+not inverseamplitude. These algorithmicdetails remain underreview.
+
+Potential decisive normalizationlemma: a regularcurvemaxchart has anarc
+ofwidthOmega(1/C_F) where|F|²>=U/4. L>=constC_F yieldsOmega(L/C_F)
+nearestgridpointswith|b|<=2pi/L. Their sourceamplitude differs fromthecurve
+byatmostpi D||w||1/L. Ifthis<=sqrtU/4, then Z>=cLU/C_F. Otherwise
+LU<=16pi²D²||w||1²/L<=poly(D,m)Z usingZ>=||f||²/50. Hence
+LU<=poly(D,m,C_F)Z withoutanassumedradiativepowerlowerbound. This is
+a promisingallcoefficients proofobligation, NOT yet aclosedtheorem.
+
+Proposedcompleteclassical sampler: choose R=poly(D,m,n,1/epsilon),
+fullgrid ifL<=polyR; nearthecluster use exactGreenimagekernel evaluator
+to polynomialinverseaccuracy. OutsideR, replaceeachperiodicimage ofthe
+wholesource byasmoothdampedray leadingkernel timesF atrealstationaryk.
+Needprove l2error<=poly(D,m,M)(R^-1/2+L^-1/2)||f||, M=O(n+log1/eps)
+images. Uniformstationaryphase+translation Taylor iscandidateproof,
+including chartdiagonals andfiniteeta terms. Farfieldenvelope scale
+poly(M)*LU is then <=poly*Z bythelemma; nearpatchscale
+poly(R,M,m)||f||² <=poly*Z. Mixturerejection finitecap wouldsamplethe
+FULL approximated field witharbitrarycancellation andcoherentimages.
+Bothanalyticerror andfiniteBITcomposition remainUNDERREVIEW in
+reviews/2026-11-13-wave-compact-parent-construction.md. No newcode.
+
+## Angular interface closed; global cluster report disposition
+
+FULLparentread296LF independent wave-plane-angular proof. CLOSEDWRITTEN
+finiteprecision chartcell sampler for |F|² arclength onK orGamma,
+poly(m,numericalD,B,outputbits,log1/epsilon); exactzero detected. Fixed
+variable realalgebraicoptimization pays maximaS,H includingdegenerate
+criticalsets. Computed R=1+ceil(Hbar/Slo)=O(D+1) suppliesactualcap,
+withoutunknownBLTconstant asadvice. Fourregular charts, finitegrid
+Bernoulliprobabilities and2^18Rceil(log2(4/epsilon)) retries arepaid.
+Specifiedfixedpositivealgebraicweights extendbycomputedbounds; no
+unspecified stationaryphaseweight orfullspatialsampler followsautomatically.
+IndividualmodLrelifts areNOTidentical oncontinuousGamma; compactsource
+requiresoneconsistentintegerlift. LiteralcontinuousTV cannotbeclaimed.
+Claude angularrequest truncatedEMPTY, terminal/reaped,no findings/noretry.
+The closedproof isparentconstruction plusindependentreview, notthatresponse.
+
+OAIglobal-conditioned-deflation completed/FULLread/reaped. ACCEPTexact
+scopedcounterfamily n>=8,L=2^n,R=L/8,f=delta_(R,0)+delta_(-R,0).
+OnM=L/8 regularnearestgridcrossings, sourceF_k=2cos(pi*k/4),
+1<=|L a_k|<=7=C and L/(4C²)<=||u||²<=512L. For anycommoncenter
+angulartrigpolynomialg ofdegreeN<=L/256 andANYunitphasesD_k,
+||F-Dg||_2>=sqrtM/8: evenk magnitudesalternate2,0, requiring
+Omega(M) zerosof |g|²-1, which hasatmost4N. If uapproximately=h+v,
+h hassupports andpreparationscaleLambda>=||h||, v hasthatcommoncenter
+angularnumerator, relativevectorerror<=1/(1024C), then
+Lambda/||u||>=sqrt(L/s)/(16C sqrt512). Polynomialbandwidth/support/
+scale cannotallhold. Scope is THIS compressioninterface, NOTallcluster
+algorithms or a spatialBornTVlowerbound. Thetwo sourcesneedNOTbe merged;
+rawLCU hasconstantsuccess>=1/(2048C²). This family is a control, nothard.
+Largeangularbandwidth also doesnotimplylargequantumcircuitcomplexity.
+GeneralquantumendpointremainsOPEN; thisround suppliedno universalcompiler.
+Do notextendthelinebyanotherconditionalmerginglemma. Independentcomparison
+ofoutsidehigh-upside directions nowpreparesnextselection whilethecompact
+fullclassicalproof anditsseparatepaidtaskfinish.
+
+## Compact paid report completed: independent alternative construction
+
+OAIcompact-source report nowcompleted/FULLparentread/reaped. Allthree
+clusterjobs terminal. It proposes anentireclassicalcompactendpoint via
+algebraicangularlevelsets,rationalwedgecountingandcoherentfoldedrejection,
+independentlyoftheparent sineoval maximumenvelope. Its broadPROVEDlabel
+isnotbyitselfadmission; theindependentwholeparentproof isstillbeingwritten.
+Parentverifiedthese materialnewlemmas: replacingcomplex stationaryphase
+by smoothreal dampedray costs C a^-1/2(eta+a eta²)e^-c aeta <=C a^-3/2.
+The nonoscillatoryamplitudegradient similarly isO(r^-3/2), uniformlyeta.
+Thuswholecompactfieldtranslation error<=C||w||1(D+1)²r^-3/2 and
+its squaredtail<=C m(D+1)^4||f||²/R. CauchyoverNimgperiodicimages
+chargesNimg, preservingpolynomialnearpatchR. No freeinverseaccuracy.
+
+AlsoACCEPT scalar normcomparison: I=integralT² |F|²/(b²+eta²),
+I<=C Z+C mD²||f||² byfrequencycellcomparabilityandambientderivative
+errorCD||w||1/L. Fixedtubularcoords ontheactualoval yield
+L*integralGamma|F|²<=C I+C mD²||f||²/L, henceboth<=poly(D,m)Z.
+Thisdirectlypayspotentialperiodicimagecancellation. Strongfalsifier
+f=(Bop+i/L)delta0 hasexactu=delta0 whileF|Gamma=i/L; normalized
+radiativepowercanbetinybutnativeoutputnormfloorstillholds.
+
+Alternatepaidproposal uses algebraic levelsetsandfloorS/L, dyadicradial
+bins, exactEuclideanfloorsums forrationalwedges, thenfoldedproposalHx
+andacceptance |sum_images v|²/(Nimg Hx). Itretainsthecoherentsum.
+Thisisadvisoryalternative; selectedparentmaximumenvelope avoidsbuilding
+a newwedgecounter. No codeornewarithmeticsubsystem requested.
+No polynomial-in-logD theorem: arbitrarybinaryspan remainsoutside.
+
+## Compact FULL spatial endpoint CLOSED WRITTEN
+
+Parent FULLread407LF independentconstruction plusits7-line netextension
+replacing the irreducibility proof by anexactLaurent coordinate-ring
+isomorphism; finalstableproof414LF:
+audits/reviews/2026-11-13-wave-compact-parent-construction.md.
+
+ForEVERYn>=2 andexplicitrationalcomplexnonzerosource list supportedin
+a translateof[-D,D]^2, the SAMEfullnative torusspatialBornlaw nowhas a
+WRITTEN classical finiteclock sampler poly(n,numericalD,m,B,1/epsilon).
+Center neednotbesupplied: firstsource center enlargesradiusby2, orsmallgrid
+iscomputedexplicitly. Allsigns/phases andexact/approximatecancellation
+allowed. No norm, Greenfunction, angularsampler, maximizer or gap isadvice.
+This is a classicalMATCH forpolynomialradius sources, notanewquantum
+algorithm orclaimofnovelty/practicality/hardness. Generalbinarydiameter
+sparseinputs remainOPEN; polynomialD cannotbereplaced bypolynomiallogD.
+
+Verifiedcore: exactplaneoval representationandBLT pluscomputablealgebraic
+maximaU,Hbar,C=O(D); allcriticaldegeneracy andrelativeprecisionpaid.
+Discretebound L*U<=2^26(C+1)(D+1)^2(m+1)Z coverslarge/tinyangular
+amplitude. Globallysmoothray hasnormalizedcurvature/speed bounds, and
+uniform translatedcluster remainderA||w||1(D+1)^2r^-3/2. With
+K0=2^1000000,A=K0^100, chooseM=256(n+ceil(log2(1/epsilon))
++ceil(log2(m+1))+30), R=ceil(2^30 A²m(D+1)^4(M+1)^6/epsilon²).
+Fullgrid ifL<=8R; otherwise nearpatch usesinversepolynomial kernel
+accuracy andfarfield usesonlyelementaryfunctions toabsoluteepsilon/L.
+Coherentperiodicimages,global l2error, rationalnear/radialmixture and
+explicitrejectioncapallpaid; U=0 handledwithnearpatchonly. Theseconstants
+are enormous, explicit, andimpractical. No finiteexampleinference.
+
+Threejobclusterround terminal/read/reaped:2completedOAI,1emptyClaude
+truncation,noretry. Prepared controls/wave_cluster_round/usage.json:
+round5.146450USD; cumulative263.325992USD/203pricedrecords,
+Anth154.841602/OAI108.484390. FIVEUNKNOWNbillsexcluded; estimatesnot
+invoices/balances, ownerreportedSPENT155.99/101.71 separate.
+
+GENERALwave line PARKED afterm1andcompactclassicalmatches andno universal
+quantumsourcecompiler fromthelastclusterround. Reopenonlywithanactual
+newfullypaid source-conditioningoperationforarbitrarybinarypositions;
+do notfundmorecommoncenterbounds, numericalsweeps orrestrictedvariants.
+Independentpost-wave comparison isselectingthenextscientificquestionby
+externalvalue; no newquantumimplementation isqueued.

@@ -1,0 +1,43 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 3655,
+      "path": "research/audits/api_inputs/2026-11-13-tower-recurrence/contract.md",
+      "sha256": "399e4d029ec1a675abd97e3ba86bb4c2307d44ee5d1d4cda4294ec936d842a99",
+      "snapshot": "context/000.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 2841,
+  "effort": "high",
+  "finished_at": "2026-11-12T23:02:19.116553+00:00",
+  "input_token_allowance": 3097,
+  "max_budget_usd": 3.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.292388,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-tower-recurrence/tower-parity-constrained-descent.md",
+    "sha256": "fd7d55e200cc9a1ecc097b28dd5ae425ee57a55eeb9aa2d32028f7a787f4dcf7",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261112T225257.460026Z-c7c3b4cd",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 2841,
+    "output_tokens": 55853
+  },
+  "usage_cost_estimate_usd": 1.128424
+}

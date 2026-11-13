@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 6149,
+      "path": "research/audits/api_inputs/2026-11-13-binary-durfee/contract.md",
+      "sha256": "8d9a0a21d131ad84de11220c7e4e200e0a6747e4de58b63abb13b19b5d860af7",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 14295,
+      "path": "research/audits/api_inputs/2026-11-13-binary-durfee/actual-sources.txt",
+      "sha256": "4045ba21f050bdf627f11d562a6f5528595dffd1cb5ff199c4123cb2e908b1f0",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 8488,
+  "effort": "high",
+  "finished_at": "2026-11-13T02:15:40.531782+00:00",
+  "input_token_allowance": 8744,
+  "max_budget_usd": 3.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.314976,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-binary-durfee/coefficient-attack.md",
+    "sha256": "74d30741b7e00e8f37bbc74152258104714f040cc76a793adffc4c9f5e031b87",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261113T021143.657101Z-5d208390",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 8488,
+    "output_tokens": 24966
+  },
+  "usage_cost_estimate_usd": 0.533272
+}

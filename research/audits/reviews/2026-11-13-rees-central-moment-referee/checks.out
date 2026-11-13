@@ -1,0 +1,48 @@
+== (C) exact integer test, K = 3..3000; log test with margin 3000..20000
+fails: [24, 25, 26, 27, 28, 29, 30, 31] max fail 31
+m_of float/mp disagreements: []
+tail f(20000) = 98588.41613509243 (f increasing for K>=20000 since df/dK >= lnK/2 - O(lnK/K) > 0)
+f increasing on samples: True
+== Cor 5' direct: G_m(p*) with m = ceil(ln 4K)
+32 5 0.00051952
+33 5 8.0146e-5
+37 5 5.9654e-8
+38 6 2.8349e-5
+45 6 1.5625e-10
+60 6 1.8155e-10
+80 6 2.4206e-10
+100 6 3.0258e-10
+500 8 1.9676e-14
+1000 9 1.165e-16
+worst G over list: 0.00051952
+K=32 main term K*lam^-2m A = 2.1127e-8  bound 1/4
+== T_C < (K-1)K^K < T_A: direct test at p0 = (K-1)K^K for 15 <= K <= K1
+K1 = 926 ; need also K>=32 for Cor 5' (holds)
+4e ceil(ln4K)^2 < K-1 for all K in [ 882 , 1e5]
+15 min_m G(p0) = 0.4437 m = 2
+16 min_m G(p0) = 0.26397 m = 2
+20 min_m G(p0) = 0.16919 m = 2
+30 min_m G(p0) = 0.0051925 m = 4
+50 min_m G(p0) = 6.5663e-6 m = 8
+100 min_m G(p0) = 1.4994e-9 m = 10
+200 min_m G(p0) = 2.0229e-12 m = 10
+400 min_m G(p0) = 3.1878e-15 m = 10
+926 min_m G(p0) = 1.4595e-18 m = 10
+failures: []  max G(p0) over [15, K1] = 0.4437
+K = 13 min_m G((K-1)K^K) = 1.0849 ; T_C > T_A?  True
+K = 14 min_m G((K-1)K^K) = 1.0773 ; T_C > T_A?  True
+== TH9 range (C): G_2 at p = sqrt(8K) K^K + 1
+729 G_2 = 0.37663682 main = 0.37663682 excess = 0.0 (K-1)eps* = 6.464e-1030
+1000 G_2 = 0.37639754 main = 0.37639754 excess = -3.889e-62 (K-1)eps* = 8.451e-1486
+1677 G_2 = 0.37607919 main = 0.37607919 excess = -3.889e-62 (K-1)eps* = 1.67e-2688
+10000 G_2 = 0.37544194 main = 0.37544194 excess = -7.779e-62 (K-1)eps* = 4.756e-19981
+100000 G_2 = 0.37513975 main = 0.37513975 excess = 3.889e-62 (K-1)eps* = 2.675e-249976
+1000000 G_2 = 0.37504419 main = 0.37504419 excess = 7.779e-62 (K-1)eps* = 1.504e-2999971
+== data: min_m G_m at known E_2 members (must be >= 1 or inf)
+E_2(7) list length 56 max 3221
+kappa=7 min over list of min_m G: 35148.0
+kappa 5 p 181 min_m G = +inf  p/T_C = 0.0001044
+kappa 8 p 14281 min_m G = 1.0502e+5  p/T_C = 4.187e-5
+kappa 9 p 24967 min_m G = 2.1299e+6  p/T_C = 5.209e-6
+kappa 4 p 53 min_m G = +inf  p/T_C = 0.0002689
+kappa 6 p 859 min_m G = 7914.0  p/T_C = 8.705e-5

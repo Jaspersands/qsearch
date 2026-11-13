@@ -1,0 +1,378 @@
+SOURCE panova: https://arxiv.org/pdf/2502.20253v2; PDF sha256 e515fcdfb893225efe512397ae5b5f0eadee6b107135b89c792372dba922fe61
+
+pdftotext -layout LF lines 77-150:
+ing combinatorial interpretations for plethysm and Kronecker coefficients are major open problems,
+see [COS+ 24, Pak24, Pan24, Sta00]. A combinatorial interpretation usually implies that verifying
+positivity is “easy”, that is, if we exhibit one object among the ones they are counting, there is
+a polynomial time algorithm which checks that this is the right object. Computing them does
+not have to be efficient, and in particular it would be at least exponential in general as they are
+#P-hard (assuming the exponential time hypothesis of [IP01]). However, in many cases there are
+efficient (polynomial time algorithms) beyond the ones described in [CDW12, PP17]. Here we show
+that
+Theorem 1.1. Let λ, µ, ν ⊢ n and suppose that f ν ≤ nk for some k. Then g(λ, µ, ν) can be
+                              2                              4   2
+computed in time O(D(k)n4k +1 log(n)), where D(k) = (4k)8(8k +k ) . In particular, if λ(n) , µ(n) , ν (n)
+                                              (n)
+are families of partitions of n, such that f ν ≤ nk for a fixed constant k then g(λ(n) , µ(n) , ν (n) )
+                                            2
+can be computed in polynomial time O(n4k +1 log(n)).
+   In particular, this refutes Conjecture 2 of [LH24] and partially answers the discussion in [BCG+ 24]
+(after Lemma 2). There are polynomial time algorithms for computing Kronecker coefficients when
+all three partitions have constant lengths, see [CDW12, PP17], however here we have no restrictions
+on two of the partitions.
+Theorem 1.2. Let d, m be integers, n = dm and λ ⊢ n, such that λ1 ≥ ℓ(λ). Then the plethysm
+coefficient aλd,m can be computed in time
+    (1) O(ndℓ log(d)) where ℓ = ℓ(λ).
+               3
+    (2) O(n4K (K+1) log(d)) where f λ ≤ nk and K = 4k 2 for arbitrary d, m.
+In particular, we have a polynomial time algorithm for computing aλd,m if either d and ℓ(λ) are
+fixed, or d grows but the dimension f λ grows at most polynomially.
+   In particular, the second case refutes Conjecture 1 [LH24] for the case when µ = (d) and ν = (m),
+as then both classical and quantum algorithms run in polynomial time O(f λ ). Polynomial time
+algorithms when d is fixed are also given in [KM16].                                           ν µ
+   The main results of [LH24] give quantum algorithms for computing g(λ, µ, ν) in time O f f fλ
+                                                                        λ
+                                                                               
+(also stated in [BCG+ 24]), plethysm coefficient aλµ,ν in time O (f ν )f|µ| f µ , Kostka numbers Kλ,µ
+                                                                            λ 
+in times O(f λ ) and Littlewood–Richardson coefficient cλµν in time O f fµ f ν . The authors show
+that the Kostka numbers can also be computed by a classical algorithm with the same efficiency,
+and conjecture that the Littlewood–Richardson coefficients can also be computed by a classical
+                                                                                                                   3
+                           λ 
+algorithm with runtime O f fµ f ν , but conjectured that the analogy would not hold for Kronecker
+and plethysm coefficients. Here we generalize the results for Kostka numbers, and explore the
+computation of Littlewood–Richardson coefficients. As we disprove some of the [LH24] conjectures
+about the Kronecker and plethysm coefficients, we pose the opposite conjecture, which is true in
+many cases, most of them for trivial reasons, see Section 7.7.
+
+Conjecture 1.3. Let λ, µ, ν ⊢ n and suppose that f λ ≥ f µ ≥ f ν . The Kronecker coefficient can be
+                                               µ ν
+computed by a classical algorithm in time O( f f λf poly(n)).
+                                                                                              
+                                                                                    fλ
+   We suspect the plethysm coefficients could also be computed in time O       (f ν )|µ| f µ
+                                                                                                   , see Section 7.8
+for a discussion, and we pose it as a question.
+
+Question 1. Let λ ⊢ n, µ ⊢ d, ν ⊢ m, such thatdm = n. Does there exist a classical algorithm
+                                       λ
+computing aλµν running in time O (f νf)d f µ poly(n) ?
+
+   Our analysis starts with characterizing the partitions ν ⊢ n for which f ν is of polynomial
+size in Propositions3.1 and 3.2. We are able to describe such partitions as the ones for which
+aft(λ) := |λ| − λ1 (assuming by symmetry that λ1 ≥ ℓ(λ)) is fixed. However, it is not clear how to
+characterize all regimes considered in [LH24], as the dimensions can have polynomial, exponential
+and superexponential growths, but in the considered ratios the leading terms could cancel.
+
+Question 2. Characterize the triples of partitions (λ, µ, ν) of n, such that if f λ ≥ f µ ≥ f ν then
+      µ ν
+1 ≤ f f λf ≤ nk for some fixed integer k.
+
+   The first condition is necessary in order to have g(λ, µ, ν) > 0. Similar questions pertain to
+regimes for polynomially large nonzero Littlewood–Richardson coefficients as discussed in Section 3.
+
+Paper outline. In Section 2 we describe all the necessary concepts and definitions from Algebraic
+Combinatorics and Computational Complexity as well as simple asymptotic tools. In Section 3 we
+characterize the partitions for the various dimension regimes of interest in this paper. In Section 4
+
+pdftotext -layout LF lines 798-855:
+Proposition 5.1. Let λ, µ, ν ⊢ n and set k = n − ν1 , i.e. aft(ν) = k. Then g(λ, µ, ν) can be
+                                                                       2
+computed in time O((ℓ(λ) log(λ1 ) + log(µ1 )ℓ(µ)) min{ℓ(λ), ℓ(µ)}k k 2k +2k ).
+
+Proof. Let ℓ := ℓ(ν), then by the Jacobi–Trudy identity and the identification of hm = s(m) – the
+character of the trivial representation, we have
+                                              X         Y
+                                  sν [x y ] =    sgn(σ)   hνi +σi −i [xy]
+                                                      σ∈Sℓ             i
+                                       X                   X           Y
+                                   =          sgn(σ)                       sαi (x)sαi (y).
+                                       σ∈Sℓ            αi ⊢νi +σi −i
+
+Here we used the notation f [x y ] := f (x1 y1 , x1 y2 , . . . , x2 y1 , x2 y2 , . . .), i.e. substituting all products
+of pairs as variables into f . We also used that g((m), λ, µ) = 1 if λ = µ and 0 otherwise. Expanding
+both sides in terms sα (x)sβ (y), using (2.4) for the left side, and comparing coefficients we have
+
+                                                                              cλα1 ,...,αℓ cµα1 ,...,αℓ .
+                                              X                   X
+(5.1)                        g(λ, µ, ν) =            sgn(σ)
+                                              σ∈Sℓ            αi ⊢νi +σi −i
+
+
+Note that in the formula above we have α1 ⊢ ν1 + σ1 − 1 ≥ n − k, and so |α2 | + · · · + |αℓ | ≤ k. Thus,
+for each choice of α1 , . . . , αℓ we can compute the product of the two multi-LR coefficients in time
+                                             2
+O((ℓ(λ) log(λ1 ) + ℓ(µ) log(µ1 ))k 2k ) by Proposition 4.3. We can generate each of the α2 , . . . , αℓ in
+p(k)ℓ−1 steps. Finally, we can choose α1 as follows. First, observe that we are only considering
+α1 ⊂ λ ∩ µ, otherwise the multi-LR coefficient would be 0. Assume that ℓ(λ) ≤ ℓ(µ). So we can
+determine α1 via the values λi −αi1 ≤ k for each i = 1, . . . , ℓ(λ). For the nonzero such differences we
+choose a strong composition (c1 , . . . , cr ) of k − σ1 + 1 in at most k−1         ≤ k r many steps. We choose
+                                                                                  
+                                                                              r−1
+                                                               ℓ(λ)
+a set I = {i1 , . . . , ir } ⊂ {1, . . . , ℓ(λ)} of size r in r ≤ ℓ(λ)r many ways and set αi1j := λij − cj
+                                                                    
+
+and αi = λi for i ̸∈ I. We accept α1 if αi1 ≥ αi+1           1    for all i which can be checked in ℓ(λ) steps.
+                                                           k
+Altogether generating α takes at most O( r=1 k ℓ(λ)r ℓ(λ)) = O(k k ℓ(λ)k ℓ(λ)) steps. Iterating
+                               1                                r
+                                                        P
+over all ℓ! permutations σ and repeating the above procedures gives the Kronecker coefficient.
+   The runtime of generating all α           √ tuples  involved is thus O(ℓ!k k ℓ(λ)k+1 p(k)ℓ−1 ) = O(k 2k ℓ(λ)k ),
+where we bound ℓ ≤ k and p(k) ke                 −k  ≤ 1 from the asymptotic approximations (2.1) and use
+Stirling’s formula. Multiplying by the times it takes to compute each multi-LR gives the desired
+bound.                                                                                                          □
+
+Proof of Theorem 1.1. Suppose that f ν ≤ nk . By Proposition 3.2 we have that aft(ν) ≤ 4k 2 . Since
+g(λ, µ, ν) = g(λ, µ′ , ν ′ ) we can assume ℓ(ν) ≤ ν1 , otherwise we repeat the argument with ν ′ and µ′
+instead. Set m := 4k 2 , then ν1 ≥ n − m and we can apply Proposition 5.1, so g(λ, µ, ν) can be
+                                                                             2
+computed in time O((ℓ(λ1 ) log(λ1 ) + log(µ1 )ℓ(µ1 )) min{ℓ(λ), ℓ(µ)}m m2m +2m ). We have ℓ(λ1 ) ≤ n,
+                                                                  2
+log(λ1 ) ≤ log(n) and this gives the desired bound of D(k)n4k +1 log(n).                             □
+                                                                                                                     15
+
+
+
+pdftotext -layout LF lines 1043-1063:
+see [BMS15, MRS21, MT22]. When one partition has two rows, but the others are not bounded,
+in certain cases we have criteria, see [BO05] and [PP14].
+
+7.3. There are even less available formulas or other results for the plethysm coefficients, see [COS+ 24]
+for an overview and [OSSZ22] for another representation theoretic interpretation. Special cases for
+aλd,m are being considered when d = 2, 3, 4 as in [OSSZ24]. Earlier work on the aλd,m in relation
+to Geometric Complexity theory was done in [IP17] and special cases of three-row plethysm co-
+efficients were derived in [DIP20]. In [DIP20] we first used the approach described in Section 6,
+which was later used to show that computing plethysm coefficients is in GapP in [FI20]. The cases
+subject to Theorem 1.2 give families when computing the plethysm coefficient is in FP ⊂ #P, and
+so should have a positive combinatorial interpretation.
+
+7.4. There is a curious parallel between Kronecker and plethysm coefficients. Even though they do
+not live in the same “space” informally speaking, they exhibit similar behavior and computational
+hardness. Using a quite indirect approach via Geometric Complexity Theory, Ikenmeyer and the
+author observed in [IP17] that in a certain stable limits we have g(λ, (md ), (md )) ≥ aλd,m . It is also
+easy to see that g(λ, (md ), (md )) = aλd,m when λ is a two-row partition. These values are actually
+the difference between successive numbers of partitions inside a rectangle, whose combinatorial
+proof of positivity by Kathy O’Hara [O’H90] leads to a combinatorial interpretation (as observed
+in [PP14] and explicitly stated in [Pan23]). In the opposite direction, the multiplicity approach
+could lead to the desired symmetric chain decomposition as done in [OSSZ24] for d ≤ 4.
+
+SOURCE larocca_havlicek: https://arxiv.org/pdf/2407.17649v5; PDF sha256 7623b9cf1d1cdaab0cd6bff391320305bdd3178560dbad701e14bb258715be2e
+
+pdftotext -layout LF lines 148-202:
+all inputs, we give quantum algorithms that are efficient on                   Theorem 1. Let H ⊆ G. Let H be the size of a quantum
+nontrivial subsets of inputs and analyze their performance.                    circuit for H-QFT, R be the size of the circuit for preparing
+   Quantum Algorithms.– Let G be a finite group and                            ραG in Eq. (8) and D be the size of a circuit that implements
+R be a G-representation on C[G] with orthonormal basis                         a controlled action of G-regular representation. Then there
+{|g⟩}g∈G acting as:                                                            is an O((H + R + D)(dα /dβ )2 ) quantum algorithm for the
+                                                                               following problem: given a pair of irrep labels (α, β) as an
+             R(h) |g⟩ = |hg⟩ ,          for all h, g ∈ G.             (6)      input, compute mult(rH  β
+                                                                                                              ↓H ) (with constant probability
+                                                                                                            α G
+                                                                                                         , rG
+                                                                               of success) [21].
+Such representation is called left-regular representation. A
+transformation U that maximally block-diagonalizes this                        Proof. The algorithm is a variation on Harrow’s generalized
+representation as in Eq. (1) is the Quantum Fourier Trans-                     phase estimation [22] shown in Fig. 1. Let G be a finite
+form (QFT); we write G-QFT whenever we need to make                            group and let H ⊆ G. The algorithm uses two registers: a
+                                                                                                                                  3
+
+target register T and a control register C. It inputs ρα
+                                                       G from
+Eq. (8) to the target register and a uniform superposition
+over H ⊆ G to the control, prepared by applying an inverse
+H-QFT to the state |triv, 1, 1⟩, where triv labels the trivial
+irrep of H. The algorithm then applies a controlled action
+of the G-regular representation R to ρα    G . Since R is con-
+trolled by a register that contains a superposition over the
+subgroup H, this acts as a restricted representation R ↓G    H
+and decomposes into irreducible representations of H. The
+algorithm concludes by measuring the H-irrep label on the
+                                                                      Figure 1: The quantum algorithm in Thm. 1. The
+control register. All of this can be described by:
+                                                                     algorithm initializes the state from Eq. (8), applies a
+                                                                       G-regular representation controlled by a uniform
+                  "                            #     "    #
+          1 X
+Eβ = p              (|β⟩⟨β| ⊗ Idβ ⊗ Idβ )V |h⟩ ⊗ R(h) ,              superposition over H and weak-Fourier samples the
+          |H| h∈H                               C           T                            control register.
+                                                           (9)
+where V is the H-QFT and β labels inequivalent irreps of
+H. A measurement outcome β appears with probability:              This suffices to compute the Kostka number in O(n4 d2ν )
+                h
+                         †
+                           i
+                                           α G dβ
+                                                                  Computing Kostka numbers Kνµ on an input µ, ν in unary
+    pα (β) = Tr Eβ ρα                 β
+                      G β = mult(rH , rG ↓H )
+                       E                             .    (10)    is conjectured to be #P-complete in [17, Conjecture 5.11]
+                                                  dα
+                                                                  and one could hope that restricting dν ≤ poly(n) remains
+                 β
+Because mult(rH         ↓H ) is an integer, we can get its ex-
+                      α G
+                   , rG                                           classically hard. We show that this is not the case:
+act value in O((dα /dβ )2 )-many shots with high probabil-
+ity by the Chernoff-Hoeffding bound (see Supp. Mat.).             Theorem 2. There is a deterministic algorithm that on an
+
+pdftotext -layout LF lines 247-326:
+algorithm in Thm. 1 is only efficient for cνλµ ≤ poly(n) in              Thm. 1, for the choice H = Sn ⊆ G = Sn × Sn . It samples
+which case it counts only up to poly(n) many LR tableaux.                from the output distribution:
+In analogy to Thm. 2, we expect that there is a classical
+                                                                                                          dν
+algorithm that efficiently computes LR coefficients under                                    pλµ (λ) =         gλµν ,             (14)
+this constraint:                                                                                         dλ dµ
+
+Hypothesis 1. There is a polynomial-time randomized al-                  and computes gλµν (with      high constant probability) in
+                                                                         time O n4 (dλ dµ /dν )2 . Similarly to Plethysms, it re-
+                                                                                                 
+gorithm for computing LR coefficients cνλµ for ν ⊢ n, λ ⊢ a
+and µ ⊢ b for a + b = n and dν /dλ dµ ≤ poly(n).                         mains a major open question if the Kronecker coefficients
+                                                                         count some simple set of combinatorial objects (Stanley’s
+   See also [27]. If true, this rules out superpolynomial                Prob. 10 [29]), which again precludes straightforward ap-
+speedups for computing LR coefficients by Thm. 1. [28]                   plication of the simulation strategy of Thm. 2. The classi-
+   Plethysm Coefficients.— The algorithm for Plethysm co-                cal complexity of computing the Kronecker coefficients was
+efficients sets H = Sc ≀Sd ⊆ G = Sn for cd = n. An efficient             studied in Ref. [31] which identified the extensive number
+implementation of the QFT over this group is known only                  of parts as a potential obstruction to their efficient compu-
+for |Sc | ≤ poly(n) [20]. Under this restriction, the quantum            tation. They show that gλµν can be computed in time:
+algorithm in Thm. 1 samples efficiently from a distribution:
+                                                                                                       O(L3 log L)
+                                         dλ ddµ                                    O L log(N ) + L log(M )             ,          (15)
+                      pν (λ, µ) = aνλµ            ,              (13)
+                                          dν                                                          
+                                                                         where L = max ℓ(λ), ℓ(µ), ℓ(ν) , N = max(λ1 , µ1 , ν1 ) is
+where aνλµ = mult(rSλ,µc ≀Sd
+                             , rSν n ↓SSnc ≀Sd ) is the Plethysm coef-   the largest length of the first row and M = max(λ2 , µ2 , ν2 )
+ficient. It is not known if Plethysm coefficients count a well           is the largest length of the second row among these parti-
+defined set of combinatorial objects (Prob. 9 on Stanley’s               tions [31, Thm. 3.5]. Even for fixed L, the algorithms of
+list [29]), and the simulation strategy of Thm. 2 doesn’t                Refs. [33, 34] compute the Kronecker coefficient in poly-
+straightforwardly apply [16, 30, 31]. The classical com-                 nomial time but become inefficient when the length of the
+plexity of computing the Plethysm coefficients was recently              input partitions varies with input size. The algorithm in
+studied in Ref. [16] where it was shown that the problem is              Ref. [35] computes Kronecker coefficient by reduction to
+in P if the number of parts ℓ(λ) is constant and µ = triv,               vector partition function problem. All of these algorithms
+but becomes #P-hard even for fixed d = 3 and ℓ(λ) un-                    are based on Barvinok’s algorithm for counting the lattice
+restricted. While this suggests that the complexity of the               points in convex polytopes (Refs. [36–42]).
+problem is controlled by the parameter c, its complexity                    The quantum algorithm in Thm. 1 is for all practical
+for |Sc | = poly(n) (c ∼ log(n)) remains, to our best knowl-             purposes outperformed by such algorithms on some in-
+edge, open. We thus state:                                               puts. For example, Ref. [35, Ex. 3.4] computes gλµν = 391
+Conjecture 1 (See also [27]). There is no polynomial time                for λ = [1402 ], µ = [704 ], ν = [573 , 333 , 10] for which
+randomized algorithm that (with high probability) computes               dν /(dλ dµ ) ≈ 1.8 × 10−31 on which the quantum algorithm
+aνλµ for λ ⊢ c and µ ⊢ d, such that cd = n, c ≤ poly(log(n))             in Thm 1 requires an order of 1031 samples. On the other
+                                                                         hand, it runs in polynomial when dµ ≤ poly(n) and λ = ν
+and dλ ddµ /dν ≥ 1/poly(n).
+                                                                         is arbitrary. We give an explicit construction of a family of
+   If true, the quantum algorithm for Plethysm coefficients              such inputs in the Supp. Mat..
+gives a superpolynomial quantum speedup. The fact that                      We originally took the length obstruction in Eq. (15) as
+an analog of Thm. 2 does not apply here supports this, but               a support for the conjecture of Ref. [1] that the algorithm
+the constraints on the conjectured computationally hard                  for the Kronecker coefficients can outperform classical algo-
+regime for the problem are very stringent and can make                   rithms for triples of partitions with large number of parts.
+the restricted computational problem significantly easier.               This lead us to state:
+We have little intuition whether the conjecture is true or
+                                                                         Conjecture 2 (Disproved in [27]). There is no polyno-
+false, besides the obstructions proved in [27] while we were
+                                                                         mial time randomized algorithm that (with high probability)
+finishing this manuscript.
+                                                                         computes gλµν for µ, ν, λ ⊢ n and dµ ≤ poly(n).
+   Kronecker Coefficients.— Given λ, µ, ν ⊢ n, the Kro-
+necker coefficient gλµν is defined as gλµν = mult(rSλn ⊗                   However, Greta Panova disproved this conjecture by ex-
+rSµn , rSν n ). The algorithm in Ref. [32] is a special case of          tending the result of Ref. [33] by showing that whenever
+                                                                                                                            5
+                             2
+dµ ≤ nk , there is a Õ(n4k +1 ) classical algorithm for the
+problem [27, Theorem 1.]. A more general form of this con-
+jecture (as discussed in [1]) narrowly escapes this disproof
+but requires fine-tuned inputs, so we take Panova’s re-
+sult as a strong evidence against superpolynomial quantum
+speedups for this problem (see footnote [43]). Interestingly,
+the gate complexity of our algorithm is O(n4 (dµ dλ /dν )2 )
+                               2
+so that a O(n4+2k ) vs. Ω̃(n4k +1 ) polynomial speedup for
+                                                                   Figure 2: The quantum algorithm in Thm. 3. The
+dλ = dν and dµ ≤ nk is possible, assuming that the scaling
+                                                                   algorithm applies the embedding unitary UE to the
+in [27, Theorem 1.] is tight. As this asks for additional
+                                                                 subgroup and coset register and weak Fourier samples.
+scrutiny, we pose:
+
+Question 1. Is there a classical algorithm that computes
+gµνλ in time O(n2k+4 ) whenever dµ ≤ nk ?                          The sampling cost of the restriction algorithm in Thm. 1
+
+SOURCE moens: https://users.ugent.be/~jvdjeugt/files/tex/MoensJeugt.pdf; PDF sha256 f7730ad1ce8f2b3be6a16def756ca0fc01d9cff8e2daf38ea27b86273835b2f8
+
+pdftotext -layout LF lines 284-315:
+           3. Supersymmetric Schur polynomials.
+           Let us now recall some notions of supersymmetric S-functions [4, 19, 20].
+           The ring of doubly symmetric polynomials in x = (x1 , . . . , xm ) and y =
+           (y1 , . . . , yn ) is S(x, y) = S(x) ⊗Z S(y). An element p ∈ S(x, y) has the
+           cancellation property if it satisfies the following: when the substitution x1 =
+           t, y1 = −t is made in p, the resulting polynomial is independent of t. We
+           denote S(x/y) the subring of S(x, y) consisting of the elements satisfying
+           the cancellation property. The elements of S(x/y) are the supersymmetric
+           polynomials [20].
+                The complete supersymmetric functions hr (x/y) belong to S(x/y), and
+           are defined by
+                                                    r
+                                                    X
+                                      hr (x/y) =          hr−j (x)ej (y),                    (15)
+                                                    j=0
+
+           where hi (x) resp. ej (y) are the usual complete resp. elementary symmetric
+           functions [21]. We can use hr (x/y) to give a first formula for the super-
+           symmetric S-functions:
+                                                          
+                             sλ (x/y) = det hλi −i+j (x/y)            ,          (16)
+                                                                        1≤i,j≤`(λ)
+
+           where `(λ) denotes the length of λ. The polynomials sλ (x/y) are identically
+           zero when λm+1 > n.
+               Berele and Regev [4] showed that the character of a covariant module is
+           a supersymmetric Schur function: ch Vλ = sλ (x/y). Thus, our formula (14)
+           gives an alternative expression for sλ (x/y). In fact, (14) is the supersym-
+           metric equivalent of the determinantal formula for the symmetric Schur
+           polynomials as a quotient of two alternants.
+December 15, 2003   9:43   WSPC/Trim Size: 9in x 6in for Proceedings                          MoensJeugt
+
+
+SOURCE pragacz: https://www.impan.pl/~pragacz/bedthom1.pdf; PDF sha256 de1d1bfb8e8f75f1c01cada43c91f69207e4d69a232c6e33a4ae04ff92dea8d5
+
+pdftotext -layout LF lines 260-296:
+   Fix two positive integers m and n. Let I be a partition. Suppose that the
+diagram of I and the following (m, n)-hook :
+
+
+                                  n    -
+
+
+                                                 6
+                                                 m
+                                                 ?
+share the lowest row and the leftmost column. If the diagram of I is contained
+in this hook, then we say that the partition I is contained in the (m, n)-hook.
+   We record the following vanishing property. Given alphabets A and B of
+cardinalities m and n, if the diagram of a partition I is not contained in the
+(m, n)-hook, then
+                                SI (A − B) = 0 .                           (6)
+   For instance, I = (2, 5, 6, 8) is not contained in the (2, 4)-hook
+
+                                  4 -
+
+
+                                          *
+                                                     6
+                                                     2
+                                                     ?
+
+Therefore S2568 (A2 − B4 ) = 0. This vanishing property is an immediate conse-
+quence of the factorization property (see Eq.(9)).
+   Moreover, we have the following result.
+Theorem 3 If A and B are alphabets of cardinalities m and n, then the Schur
+polynomials SI (A − B), where I runs over partitions contained in the (m, n)-
+hook, are Z-linearly independent. (I.e., they form a basis of the abelian group
+of supersymmetric Schur functions in A and B.)
+
+For a proof, see, e.g., [34, Proposition 2.3].
+
+Note 4 We shall often identify partitions with their diagrams, as is customary.

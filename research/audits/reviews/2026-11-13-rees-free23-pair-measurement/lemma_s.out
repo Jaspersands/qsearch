@@ -1,0 +1,45 @@
+p=5 check 1 (degree <= 3, a0 = 0, a3 independent of y, a3 = kappa*beta, eta_c only in a1 as SGN lam(eta_c)/f(e)): {'deg': 0, 'const': 0, 'a3': 0, 'y': 0, 'ec': 0, 'n': 1800}
+     e3-part of a2 (Lemma Q input) mismatches / checked: (0, 1200)
+     kappa(lam) for lam=(1,0),(c,0): [np.int64(1), np.int64(4), np.int64(4), np.int64(1)]  (chart for (c,0) has g0 scaled by c: kappa ~ c^2, beta ~ 1/c, so a3 ~ c)
+p=7 check 1 (degree <= 3, a0 = 0, a3 independent of y, a3 = kappa*beta, eta_c only in a1 as SGN lam(eta_c)/f(e)): {'deg': 0, 'const': 0, 'a3': 0, 'y': 0, 'ec': 0, 'n': 1800}
+     e3-part of a2 (Lemma Q input) mismatches / checked: (0, 1200)
+     kappa(lam) for lam=(1,0),(c,0): [np.int64(6), np.int64(3), np.int64(5), np.int64(5), np.int64(3), np.int64(6)]  (chart for (c,0) has g0 scaled by c: kappa ~ c^2, beta ~ 1/c, so a3 ~ c)
+p=11 check 1 (degree <= 3, a0 = 0, a3 independent of y, a3 = kappa*beta, eta_c only in a1 as SGN lam(eta_c)/f(e)): {'deg': 0, 'const': 0, 'a3': 0, 'y': 0, 'ec': 0, 'n': 900}
+     e3-part of a2 (Lemma Q input) mismatches / checked: (0, 600)
+     kappa(lam) for lam=(1,0),(c,0): [np.int64(2), np.int64(8), np.int64(7), np.int64(10), np.int64(6), np.int64(6), np.int64(10), np.int64(7), np.int64(8), np.int64(2)]  (chart for (c,0) has g0 scaled by c: kappa ~ c^2, beta ~ 1/c, so a3 ~ c)
+p=5 IS cubic-cancellation counts:
+   [(1, 0), (2, 0)]: max lines=5 of 5 generic, #delta cancelling on all=1
+   [(1, 0), (4, 0)]: max lines=5 of 5 generic, #delta cancelling on all=1
+   [(1, 0), (0, 1)]: max lines=2 of 4 generic, #delta cancelling on all=0
+   [(1, 0), (1, 1)]: max lines=2 of 4 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (1, 1)]: max lines=2 of 3 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (1, 2)]: max lines=2 of 3 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (2, 3)]: max lines=2 of 3 generic, #delta cancelling on all=0
+   [(1, 0), (2, 0), (0, 1)]: max lines=4 of 4 generic, #delta cancelling on all=1
+p=7 IS cubic-cancellation counts:
+   [(1, 0), (2, 0)]: max lines=1 of 7 generic, #delta cancelling on all=0
+   [(1, 0), (6, 0)]: max lines=7 of 7 generic, #delta cancelling on all=3
+   [(1, 0), (0, 1)]: max lines=2 of 6 generic, #delta cancelling on all=0
+   [(1, 0), (1, 1)]: max lines=2 of 6 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (1, 1)]: max lines=2 of 5 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (1, 2)]: max lines=2 of 5 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (2, 3)]: max lines=2 of 5 generic, #delta cancelling on all=0
+   [(1, 0), (2, 0), (0, 1)]: max lines=2 of 6 generic, #delta cancelling on all=0
+p=11 IS cubic-cancellation counts:
+   [(1, 0), (2, 0)]: max lines=11 of 11 generic, #delta cancelling on all=1
+   [(1, 0), (10, 0)]: max lines=11 of 11 generic, #delta cancelling on all=1
+   [(1, 0), (0, 1)]: max lines=2 of 10 generic, #delta cancelling on all=0
+   [(1, 0), (1, 1)]: max lines=2 of 10 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (1, 1)]: max lines=3 of 9 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (1, 2)]: max lines=3 of 9 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (2, 3)]: max lines=3 of 9 generic, #delta cancelling on all=0
+   [(1, 0), (2, 0), (0, 1)]: max lines=10 of 10 generic, #delta cancelling on all=1
+p=13 IS cubic-cancellation counts:
+   [(1, 0), (2, 0)]: max lines=1 of 13 generic, #delta cancelling on all=0
+   [(1, 0), (12, 0)]: max lines=13 of 13 generic, #delta cancelling on all=3
+   [(1, 0), (0, 1)]: max lines=2 of 12 generic, #delta cancelling on all=0
+   [(1, 0), (1, 1)]: max lines=2 of 12 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (1, 1)]: max lines=3 of 11 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (1, 2)]: max lines=3 of 11 generic, #delta cancelling on all=0
+   [(1, 0), (0, 1), (2, 3)]: max lines=3 of 11 generic, #delta cancelling on all=0
+   [(1, 0), (2, 0), (0, 1)]: max lines=2 of 12 generic, #delta cancelling on all=0

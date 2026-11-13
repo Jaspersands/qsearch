@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 3235,
+      "path": "research/audits/api_inputs/2026-11-13-bosonic-parent/contract.md",
+      "sha256": "ba93cf79eab4118988851830883c90a451a6e140bf33e90a5c2ecae8e9e2c6ab",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 13026,
+      "path": "research/audits/api_inputs/2026-11-13-bosonic-parent/actual-loss-theorems.txt",
+      "sha256": "9fe0ff32bfe99c631bb6250a632c0229f8356933bb7be8a8bf4b021b88139912",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 6335,
+  "effort": "high",
+  "finished_at": "2026-11-13T01:31:14.332674+00:00",
+  "input_token_allowance": 6591,
+  "max_budget_usd": 3.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.306364,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-bosonic-parent/gap-proof.md",
+    "sha256": "da22fa0fc220c9bf4dc8030b54f25fc82404105c424b34081153b44f47b70158",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261113T012538.806163Z-788dd05c",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 6335,
+    "output_tokens": 34372
+  },
+  "usage_cost_estimate_usd": 0.71278
+}

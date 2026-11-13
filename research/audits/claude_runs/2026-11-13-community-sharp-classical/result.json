@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2112,
+      "path": "research/audits/api_inputs/2026-11-13-community-baseline-attack/contract.md",
+      "sha256": "4387f73121e9c48c569f4bba48b83d2bfc9455fbf62e097e79c1e0c84006755e",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 74662,
+      "path": "research/audits/api_inputs/2026-11-13-community-baseline-attack/sharp-primary.txt",
+      "sha256": "6e2909cff47ccf2bfb78d29998eafa6da124942ddb61af3d359cfba10896e3a8",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 27117,
+  "effort": "high",
+  "finished_at": "2026-11-13T00:52:05.037607+00:00",
+  "input_token_allowance": 27660,
+  "max_budget_usd": 3.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.39064,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-community-baseline-attack/sharp.md",
+    "sha256": "3b57a457b33d163ce88e1151759f7ce56c962d9e61a86b3bc27fe56c809d80fa",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "classical",
+  "run_id": "20261113T004424.726148Z-eb0f452b",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 27117,
+    "output_tokens": 49312
+  },
+  "usage_cost_estimate_usd": 1.094708
+}

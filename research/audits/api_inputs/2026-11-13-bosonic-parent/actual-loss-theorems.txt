@@ -1,0 +1,187 @@
+PRIMARY PHYSICAL LINES 522-541
+simulate classically. One of them (type B) will be used later in a classical simulation for optical
+networks with nonuniform losses. We start by providing a generalization of the algorithm by P.
+Clifford and R. Clifford [17]. This generalization, contrary to its predecessor, works for bunched
+input states, and similarly avoids an exponential cost in the number of modes m. The proof of
+the following Theorem follows a similar reasoning to that of [17]. The main difference lays in the
+extensive usage of the first quantization formalism, which makes it easier to perform the necessary
+combinatorics and, in our opinion, can make the algorithm more approachable for physicists.
+Theorem 2 (Generalization of the algorithm of P. Clifford and R. Clifford to collision input states).
+Consider an n-photon, m-mode boson sampling instance described by linear optical transformation
+                       ~ = |s1 , s2 , . . . , sm i. We do not assume si ≤ 1. There exists a classical
+U and an input state |Si                                                                   
+algorithm that generates a sample from the output probability distribution pU S     ~ → T~ in time
+upper bounded by
+                                                        m
+                                                        Y
+                                             T = nm           (sj + 1)2 αS ,                         (5)
+                                                        j=1
+
+where αS is the number of nonzero si ’s. Moreover, the algorithm also outputs the probability
+corresponding to the sampled outcome.
+
+PRIMARY PHYSICAL LINES 654-682
+from the initial               ~ [see discussion preceding Eq.(30)]. Finally, note that Pn Nl ( ~
+                 configuration S                                                               S) =
+Qm                                                                                       l=1
+     (s
+  i=1 i  + 1) −  1, which concludes  the  proof.
+    A straightforward inspection of Eq. (5) shows that, for the standard collision-free boson sam-
+pling input (i.e. si = 1, i = 1, . . . , n), our algorithm remains with an exponential (in n) running
+time. However, using this formula we can identify two new families of input states for which boson
+sampling can be efficiently simulated classically.
+Corollary 1 (Efficient classical simulation of boson sampling for certain classes of unbalanced
+inputs). Consider the following two types of input states:
+   A : A Fock state with photons distributed arbitrarily in k =O(1) different input modes (or bins).
+   B : A Fock state with photons distributed in k=c log n bins such that k − 1 modes contain a
+     single photon and all remaining photons are in the kth mode.
+Then, from (5) it follows that there exists an efficient classical algorithm to simulate the corre-
+sponding instances of boson sampling. The runtimes of this algorithm for inputs of type A and B
+are, respectively,
+
+                                                TA = kmn(n + 1)2k ,
+                                                TB = cmn2c+3 log n.
+
+If c and k are constants, and in the standard boson sampling assumption that m =O(n2 ), we have
+
+                                         TA = O n3+2k ,
+                                                        
+
+                                         TB = O n6+2c .
+                                                        
+
+
+PRIMARY PHYSICAL LINES 694-826
+which is super-polynomial in n. Therefore, the restriction that inputs of type B have most photons
+starting in a single mode is important.
+    We finally remark that types A and B of inputs states do not exhaust all the cases for which
+the reasoning given in the proof of Theorem 2 gives an efficient classical sampling algorithm.
+In particular, it was pointed out to us by Alex Moylett that the following class of input states,
+interpolating between types A and B, is also classically simulable:
+   C : An n-photon Fock state with photons distributed in k = kA + kB input modes, where
+     kA = O(1) and kB = c log n. Moreover, photons located in modes “A” are distributed
+     arbitrarily and remaining photons follow the distribution specified in the definition of input
+     of type B.
+
+
+5 Efficient simulation of lossy boson sampling with some lossless inputs
+We now combine the ideas underlying the classical simulation of lossy boson sampling from [23]
+with the results from the preceding section to expand the known scenarios for which boson sampling
+becomes classically simulable. We begin by recalling the notion of total variation distance—the
+figure of merit typically used to assess the accuracy of boson sampling [2]. The total variation
+distance between probability distributions {px } and {qx } is given by
+                                                                 1X
+                                     dTV ({px }, {qx }) =            |px − qx | .                 (12)
+                                                                 2 x
+
+Importantly, the total variation distance between probabilities {pρx } and {pσx } generated by mea-
+suring two quantum states ρ and σ, respectively, with the same measurement M = {Mx } is always
+upper bounded by the trace distance between ρ and σ,
+
+                                        dTV ({pρx }, {pσx }) ≤ dtr (ρ, σ) .                       (13)
+
+    We are now ready to formally state our result.
+Theorem 3 (Classical simulation of lossy states when photons in some modes are not lost).
+Consider an m-mode n-photon input state
+                                                             n      m−n
+                                                       z }| { z }| {
+                                              |Ψ0 i = |1 · · · 1 0 · · · 0i                       (14)
+
+and a linear-optical transformation Λ = Λ0 ◦ Λk,η , where Λ0 is some (perhaps lossy) linear optical
+transformation, and Λk,η is a pure loss channel such that the first k modes have zero loss, while
+the remaining m − k modes have transmission probability η, i.e. we have
+                                                        k
+                                                  z }| { z m−k      }| {
+                                            ~η = (1, . . . , 1, η, . . . , η) .                   (15)
+
+Let {pΛx } be the probability distribution obtained by measuring the output state Λ (|Ψ0 ihΨ0 |) with
+particle-number measurements. Then, provided k = O(log n), for any Λ there exists a (weakly)
+classically simulable distribution {qxΛ } which satisfies
+                                                  η 2 (n − k) η(1 − η)
+                             dTV {pΛ         Λ
+                                      x }, {qx } ≤           +           .                         (16)
+                                                        2          2
+                            √
+Consequently, if η = o(1/ n − k), the error incurred in approximating {pΛ     x } with the (classically
+easy) distribution {qxΛ } goes to 0 as the number of particles n tends to infinity.
+
+
+Accepted in Quantum 2020-04-14, click title to verify. Published under CC-BY 4.0.                   11
+
+Proof sketch. The proof generalizes the main idea from [23] where the classical simulation of lossy
+linear optics was based on approximating the lossy bosonic state on ñ particles by particle-separable
+states, i.e. states of the form           X
+                                     σ̃ =    P̃α |φα ihφα |⊗nα ,                                  (17)
+                                                  α
+                                ⊗nα
+Importantly, state |φα ihφα |      can be generated from |nα 0 · · · 0i by application of linear-optical
+transformation ΛUα .
+    The lossy state considered in [23] was of the form ρ̃ = Λη (|Φ0 ihΦ0 |), where Λη is the channel that
+describes uniform losses [see Eq.(2)] and |Φ0 ihΦ0 | is a standard boson sampling input state on ñ
+particles. It was shown that there exists a particle-separable state σ̃ and a probability distribution
+{P̃α } that can be sampled efficiently, and such that the trace distance to the target state ρ̃ is upper
+bounded by
+                                                     η 2 ñ η(1 − η)
+                                   dtr (ρ̃, σ̃) ≤ ˜
+                                                  ∆=       +          .                              (18)
+                                                        2          2
+From the above and the fact that boson sampling with input states |ψα ihψα |⊗nα can be simulated
+classically it follows that any linear-optical process Λ̃ applied to ρ̃ and terminating with particle-
+number measurements can also be (weakly) simulated classically within total variation distance
+ ˜
+∆.
+    Here we generalize the above argument to the situation at hand. The key difference is that, as
+the (partially) lossy input state, we take the state ρ = Λk,η (|Ψ0 ihΨ0 |) for which no particles are
+lost in the first k modes. We can approximate ρ by
+                                                 X
+                                             σ=     Pα |ψα ihψα | ,                                  (19)
+                                                      α
+
+where, in contrast to Eq. (17), states entering in the above convex decomposition are of the type
+                                           k
+                                       z }| {
+ΛUα (|Ψk,α ihΨk,α |), where |Ψk,α i = |1 · · · 1, nα , 0 · · · 0i and ΛUα is a suitable linear optical unitary
+transformation that acts as the identity on the first k optical modes. If k = O(log n), states of
+type |Ψk,α i lead to classically easy boson sampling instances (they belong to type B appearing in
+Theorem 2). Repeating the considerations that led to Eq.(18) we conclude it is possible to choose
+a distribution {Pα } which can be sampled efficiently and for which we have
+                                                          η 2 (n − k) η(1 − η)
+                                  dtr (ρ, σ) ≤ ∆ =                   +         .                         (20)
+                                                                2         2
+By the assumptions stated above, sampling from Λ0 (σ) can be done efficiently, which concludes
+the proof.
+
+
+6 Classical simulation of linear optics in unbalanced lossy networks
+In this Section we combine results from Theorems 1 and 3 to show that, for arbitrary lossy linear
+networks, boson sampling becomes classically simulable provided there are at most O(log n) input
+modes for which the input-output paths are short.
+Theorem 4 (Classical simulation in unbalanced lossy networks). Consider an m-mode lossy optical
+linear network N acting on the standard input n-photon state of the form
+                                                            n   m−n
+                                                     z }| { z }| {
+                                            |Ψ0 i = |1 · · · 1 0 · · · 0i .                              (21)
+Assume every beam splitter introduces losses, characterized by transmissivity η, on the modes on
+which it acts. Moreover, assume that at most O(log n) inputs are such that their shortest input-
+output path has length smaller than c log n for some suitable constant c > 0. Then there exists a
+classical algorithm to sample from a {qxN } that approximates the target output distribution {pN
+                                                                                               x },
+obtained by evolving the input state through network N , to accuracy
+                                                  2
+                                                 ηeff (n − k) ηeff (1 − ηeff )
+                         dTV {pN      N
+                                          
+                               x }, {qx } = ∆N ≤             +                                           (22)
+                                                       2              2
+
+Accepted in Quantum 2020-04-14, click title to verify. Published under CC-BY 4.0.                          12
+
+where ηeff = η c log(n) = n−c log(1/η) . In particular, if c > 2 log(1/η)
+                                                                    1
+                                                                          , then ∆N → 0 as the number of
+photons n increase.
+Proof. The result follows directly from Theorems 1 and 3. First, note that at most k input modes
+have their shortest input-output path of length si ≤ c log n. Then, by Theorem 1, we can extract
+from the network a layer of nonuniform losses that, up to relabeling of modes, is of the form
+                                                      k
+                                               z }| { z m−k          }|        {

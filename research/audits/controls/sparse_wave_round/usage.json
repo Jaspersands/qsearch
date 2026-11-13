@@ -1,7 +1,7 @@
 {
   "captured_at_utc": "2026-11-12T22:03:54.999273+00:00",
   "ceiling_note": "Local request ceilings are not actual usage estimates, invoices, provider billing caps or balances.",
-  "checkpoint_status": "PREPARED_USAGE_ONLY_AWAITING_PARENT_STABLE_PROOF_PATHS",
+  "checkpoint_status": "FINALIZED_TERMINAL_USAGE_SNAPSHOT",
   "cost_note": "Known stored runner estimates only, not invoices, actual bills or balances. Four inherited UNKNOWN bills plus one new RemoteProtocolError UNKNOWN bill are excluded. No retries, balance subtraction or interpreting absent usage as zero.",
   "cumulative_totals": {
     "completed_nonempty_reports": 123,
@@ -25,10 +25,11 @@
       "scope": "Five UNKNOWN total bills"
     },
     {
-      "reason": "Held pending explicit parent stable-proof instruction. No such files hashed or edited.",
-      "scope": "Artifact hash freeze, two independent proofs, evolving topic/STATE/HANDOFF and newer work"
+      "reason": "Outside this eight-job checkpoint. Only a labelled snapshot of the current topic note is frozen.",
+      "scope": "Live wave-cluster-completion requests/bundles/sources/reviews, evolving topic original, STATE/HANDOFF/MECHANICAL and newer work"
     }
   ],
+  "finalized_at_utc": "2026-11-12T22:09:58.670392+00:00",
   "frozen_prior_usage_snapshot": {
     "bytes": 22338,
     "note": "Prior frozen ledger read as immutable baseline; prior artifact hashes/ledgers not repinned or rescanned.",
@@ -212,8 +213,8 @@
     }
   },
   "reconciliation_unexplained_delta_usd": "0.000000",
-  "report_note": "Parent fully read six substantive nonempty completed reports; one empty protocol failure and one empty max_tokens truncation provide no findings. All eight sessions reaped per manifest/parent. Scientific dispositions remain advisory and are not promoted by this bookkeeping.",
-  "scope": "Frozen condensate-projector baseline plus ONLY six sparse-wave and two wave-source-lemmas terminal requests; no historical rescan. No artifact hash checkpoint frozen in this preparation.",
+  "report_note": "Parent fully read six substantive completed reports; one empty protocol failure and one empty max_tokens truncation provide no findings. All eight sessions reaped per manifest/parent. Four independent reviews explicitly confirmed stable and parent-read. This bookkeeping adds no scientific conclusion.",
+  "scope": "Frozen condensate-projector baseline plus ONLY six sparse-wave and two wave-source-lemmas terminal requests. Artifact checkpoint finalized for their immutable paid packets/bundles, four explicitly stable independent reviews, specified primary sources, and labelled topic snapshot. No historical rescan.",
   "sparse_wave_round": {
     "by_provider_usd": {
       "Anthropic": "4.450224",
@@ -543,6 +544,12 @@
     "truncated_nonempty_reports": 0,
     "unknown_total_bill_records": 1,
     "usage_estimate_usd": "8.999754"
+  },
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-12T22:09:58.670392+00:00",
+    "parent_confirmed_stable_and_fully_read": true,
+    "topic_original_not_hashed": "/Users/jaspersands/Developer/qsearch/research/NATIVE_SPARSE_WAVE_SAMPLING.md",
+    "topic_snapshot": "/Users/jaspersands/Developer/qsearch/research/audits/controls/sparse_wave_round/topic-snapshot.md"
   },
   "unknown_billing_exclusions": [
     {

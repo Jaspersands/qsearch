@@ -73,8 +73,8 @@ The last inequality follows directly from the geometric-series derivative;
 exp(−1/16)<=16/17 and exp(1/16)<2 suffice with room to spare.
 Put s_e=ceil(log_2(1/epsilon)) and M=128(n+s_e+20). Then (4) is at most
 epsilon/(2^14 L). For example, use (31/32)^M<=exp(−M/32)
-<=2^(−5(n+s_e+20)); the remaining linear M+1 is absorbed by the displayed
-constant. Only O(M^2) infinite-kernel evaluations are required at a proposed
+<=2^(−5(n+s_e+20)); with h=n+s_e+20, log_2(M+1)<=h+8 verifies the
+remaining inequality directly. Only O(M^2) kernel evaluations are required at a proposed
 site. The values of y have O(n+log(M+1)) bits.
 
 ## 3. Residue formula, branch, and a genuinely nonsingular contour
@@ -284,7 +284,10 @@ Here c has positive real and negative imaginary part, the selected z is in
 the first quadrant and inside the unit circle, and |z|>=1/9. Resolving its
 small imaginary part costs O(n) extra bits, not O(L) work. Square root,
 logarithm, trigonometric functions, and atan on the displayed domains admit
-Taylor/Newton evaluation in polynomial bit work. Large negative real
+Taylor/Newton evaluation in polynomial bit work: fixed-rational Machin series
+pay pi, argument reduction and half-angle identities keep the series in
+fixed convergence discs, and Newton iteration pays the square roots.
+Large negative real
 exponents are clipped only below the allocated absolute error. Large real
 phases are evaluated with O(log(2+a)) guard bits before periodic reduction.
 Continuous piecewise-polynomial cutoffs can be evaluated at approximate
@@ -331,8 +334,8 @@ success probability at least 1/(2048 C_H M^3).
 
 Cap the attempts at T=ceil(2048 C_H M^3(s_e+4)); failure is <=epsilon/16.
 Uniform integer draws use binary rejection with success >=1/2 and an explicit
-per-draw cap ceil(log_2(64T/epsilon)) plus a fixed allowance for the constant
-number of draws per trial. Use b-bit acceptance probabilities with
+per-draw cap ceil(log_2(256T/epsilon)); there are at most three such draws per
+trial. Use b-bit acceptance probabilities with
 2^(−b)<=epsilon/(64T), obtained by exact integer division. Coupling over all
 trials charges at most T*2^(−b); cap failures and proposal failures add another
 <=epsilon/8. Output a fixed site on failure. Combined with the field error,

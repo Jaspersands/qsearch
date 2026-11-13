@@ -1,0 +1,337 @@
+{
+  "captured_at_utc": "2026-11-13T02:10:23.981294+00:00",
+  "claim_gates": {
+    "binary_n_polynomial_clock_claim": false,
+    "bookkeeping_itself_proves_theorem": false,
+    "bookkeeping_only": true,
+    "finite_control_proves_general_theorem": false,
+    "full_ratio_claim": false,
+    "growing_Durfee_claim": false,
+    "hardness_claim": false,
+    "implementation_claim": false,
+    "novelty_claim": false,
+    "quantum_advantage_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_control_artifacts": [
+    {
+      "bytes": 2687,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur/exact_identity.py",
+      "sha256": "4c3f9accc637a434d2907d7c074a6781a3da0c99448a3954f4cb4185b7acf8cf"
+    },
+    {
+      "bytes": 2872,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur/exact_identity.json",
+      "sha256": "5b4e69bed68317b02ba77c250ce5e46699905f4b4ef4253fb1fda6cc8ec16e70"
+    }
+  ],
+  "control_note": "Existing exact-identity script/result pinned; no control rerun.",
+  "dispatch": {
+    "bytes": 2412,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-super-schur/dispatch.json",
+    "sha256": "88709cde5191e8c0e2bb559f258afb56531a1f5113865738a314725a08c3e6c1"
+  },
+  "dispatch_mutation_scope": "Parent final terminal/read/reaped metadata retained; no manifest/raw-result edits by this task.",
+  "exclusions": [
+    {
+      "reason": "Preserved exactly and excluded from known estimates.",
+      "scope": "Six inherited UNKNOWN bills and all observed partial counters"
+    },
+    {
+      "reason": "Outside this two-job milestone; topic/STATE snapshots only. Unused Barvinok/Pak fixed-counting source files are not swept into current source pins.",
+      "scope": "Future compact-input coefficient/counting candidate requests/artifacts and original live topic/STATE/HANDOFF/MECHANICAL"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 29711,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-super-schur/actual-sources.txt",
+      "sha256": "988b3de12f5456f4704c5d2830a44d4a781d3e4927664083e608d3d593875347"
+    },
+    {
+      "bytes": 1119,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-super-schur/algebra-attack.md",
+      "sha256": "3d35d9e052750532813de88d1783262c75cd6d0c95de75bde6f398c3aae59690"
+    },
+    {
+      "bytes": 1290,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-super-schur/bit-compiler.md",
+      "sha256": "13c337873d44ef066f13df9720ae23e1dc7e34f454a4767fce6f2770b6709b75"
+    },
+    {
+      "bytes": 3870,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-super-schur/contract.md",
+      "sha256": "096eb25447cdc1c7edb3bb5821891bd8e8fc3d01580619cd14e13362fc279547"
+    },
+    {
+      "bytes": 2412,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-super-schur/dispatch.json",
+      "sha256": "88709cde5191e8c0e2bb559f258afb56531a1f5113865738a314725a08c3e6c1"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 12895,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/bosonic_parent_round/checkpoint.json",
+    "sha256": "f512fec9f129ea32d3c641881415352982d81bdd1512f72cb6a123924d3aac89"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 18027,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/bosonic_parent_round/usage.json",
+    "sha256": "7505f04528167167835d34748ceb9e23f201e50ebd0279776376255735c3b0bb"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 42
+  },
+  "labelled_snapshots": [
+    {
+      "bytes": 10935,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/KRONECKER_FIXED_DURFEE_CLASSICAL.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur_round/kronecker_fixed_durfee_classical-snapshot.md",
+      "sha256": "873c6d0e70cf8681101754b015ea62cfa54dcf891db03f5ef2d3ef6384feaa62",
+      "snapshot_label": "Exact byte snapshot captured for this milestone; evolving original path not hashed."
+    },
+    {
+      "bytes": 283429,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/STATE.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur_round/state-snapshot.md",
+      "sha256": "c246c5eb98a83da08716ce466e55d188dba35ec9df3d9a07e8916727b3fb0319",
+      "snapshot_label": "Exact byte snapshot captured for this milestone; evolving original path not hashed."
+    }
+  ],
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 500196,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/panova.pdf",
+      "sha256": "e515fcdfb893225efe512397ae5b5f0eadee6b107135b89c792372dba922fe61"
+    },
+    {
+      "bytes": 94743,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/panova.txt",
+      "sha256": "f0eeb750952a974ddf5c2a54c9e9816678134058b7583f294fff571ea3248440"
+    },
+    {
+      "bytes": 149,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/panova.source.json",
+      "sha256": "49cac0324c4926a7230b8c312d7586c4f38d42d09dde93a78713e0fb0196ca51"
+    },
+    {
+      "bytes": 1285181,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/larocca_havlicek.pdf",
+      "sha256": "7623b9cf1d1cdaab0cd6bff391320305bdd3178560dbad701e14bb258715be2e"
+    },
+    {
+      "bytes": 161384,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/larocca_havlicek.txt",
+      "sha256": "c463f45e70e43f97a48e30d45144aa145b29a81077fa2808b2f9c50edbe9d412"
+    },
+    {
+      "bytes": 150,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/larocca_havlicek.source.json",
+      "sha256": "b82c8ea11c9a9ea383b2a439dbcddf3d3a43cf5beb2ae893e5b42fe27d890a61"
+    },
+    {
+      "bytes": 209204,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/moens.pdf",
+      "sha256": "f7730ad1ce8f2b3be6a16def756ca0fc01d9cff8e2daf38ea27b86273835b2f8"
+    },
+    {
+      "bytes": 33197,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/moens.txt",
+      "sha256": "497bf11a179c0780d7db2853e92fb1b9552d4d453c20b6e4f521db8bdff38fc6"
+    },
+    {
+      "bytes": 172,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/moens.source.json",
+      "sha256": "12dc55ee8c14007a9e942dd09ff6519fa49a7508630b4a470bee9001f382e5fa"
+    },
+    {
+      "bytes": 328544,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/pragacz.pdf",
+      "sha256": "de1d1bfb8e8f75f1c01cada43c91f69207e4d69a232c6e33a4ae04ff92dea8d5"
+    },
+    {
+      "bytes": 92937,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/pragacz.txt",
+      "sha256": "0bc6c82a47f120f7b7c2b37f0d18135bb2a635ce36874da10e065c5f06c5aaf9"
+    },
+    {
+      "bytes": 157,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/pragacz.source.json",
+      "sha256": "b47ab9d6cb148d431eacf2493c3591c956d088f6b24ea9d9f9aab8a0140907dc"
+    },
+    {
+      "bytes": 594573,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/giambelli.pdf",
+      "sha256": "a198e1accb5895bb12cc345b5f79db99773e3a4c99970821f95d0128019228bb"
+    },
+    {
+      "bytes": 102355,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/giambelli.txt",
+      "sha256": "9a5832216240a5eaf0b83f294c9c0511e5d8d75b3be93b96c7ef7304ce0e28c0"
+    },
+    {
+      "bytes": 147,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/giambelli.source.json",
+      "sha256": "6cb9db0e51d67c4b27c3c2e82dae3015f23c6feab052016db3664a5a0931d7c1"
+    }
+  ],
+  "primary_source_selection_note": "Panova/Larocca-Havlicek/Moens/Pragacz supplied in actual-sources.txt; Giambelli source explicitly referenced in frozen topic priority caveat. Future unused counting-source files excluded.",
+  "prior_hash_policy": "Only prior usage/checkpoint continuity references; prior ledgers/pins unchanged, no historical run/hash rescan or repinning.",
+  "scope": "Frozen bosonic-parent ledger plus ONLY two completed super-Schur requests; terminal packets/bundles/dispositions, stable native proof and post-bosonic selection, exact identity control and relevant primary sources, labelled fixed-Durfee topic/STATE snapshots.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-13T02:10:23.981294+00:00",
+    "labelled_snapshots": [
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur_round/kronecker_fixed_durfee_classical-snapshot.md",
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur_round/state-snapshot.md"
+    ],
+    "native_audit_opening_locator_parent_corrected": true,
+    "originals_not_hashed": [
+      "/Users/jaspersands/Developer/qsearch/research/KRONECKER_FIXED_DURFEE_CLASSICAL.md",
+      "/Users/jaspersands/Developer/qsearch/research/STATE.md"
+    ],
+    "parent_confirmed_stable_and_fully_read": true
+  },
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 10660,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 204,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-super-schur-native-audit.md",
+      "physical_LF_count": 204,
+      "sha256": "8c911315b570061807f3de7580965a9b31c19d8edbfd704957db8f2e66be70ad"
+    },
+    {
+      "bytes": 10699,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 175,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-post-bosonic-selection.md",
+      "physical_LF_count": 174,
+      "sha256": "e4f1d759acff7b76ce2ffddcf4822553fd988b4476919f7e27ea1dd02ce367c3"
+    }
+  ],
+  "status": "TERMINAL_SUPER_SCHUR_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 3870,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-super-schur-algebra/context/000.txt",
+      "sha256": "096eb25447cdc1c7edb3bb5821891bd8e8fc3d01580619cd14e13362fc279547"
+    },
+    {
+      "bytes": 29711,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-super-schur-algebra/context/001.txt",
+      "sha256": "988b3de12f5456f4704c5d2830a44d4a781d3e4927664083e608d3d593875347"
+    },
+    {
+      "bytes": 1119,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-super-schur-algebra/prompt.txt",
+      "sha256": "3d35d9e052750532813de88d1783262c75cd6d0c95de75bde6f398c3aae59690"
+    },
+    {
+      "bytes": 38546,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-super-schur-algebra/request.json",
+      "sha256": "6024d3d0c2c5244eafff5a8aebadf1df6d7257a6858c15b899d5d3830139fee8"
+    },
+    {
+      "bytes": 12834,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-super-schur-algebra/response.md",
+      "sha256": "223f8c2ee9a4f3d5f5d6ebb633671808589395c3102b4a99495cc89ab274dc0d"
+    },
+    {
+      "bytes": 1630,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-super-schur-algebra/result.json",
+      "sha256": "9bfc858d0e50a455c76ab287ae7ecf73141384ad083ae7cf46bf2c57d2c3a574"
+    },
+    {
+      "bytes": 1290,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-super-schur-bit-compiler/context-00.txt",
+      "sha256": "13c337873d44ef066f13df9720ae23e1dc7e34f454a4767fce6f2770b6709b75"
+    },
+    {
+      "bytes": 3870,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-super-schur-bit-compiler/context-01.txt",
+      "sha256": "096eb25447cdc1c7edb3bb5821891bd8e8fc3d01580619cd14e13362fc279547"
+    },
+    {
+      "bytes": 29711,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-super-schur-bit-compiler/context-02.txt",
+      "sha256": "988b3de12f5456f4704c5d2830a44d4a781d3e4927664083e608d3d593875347"
+    },
+    {
+      "bytes": 382993,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-super-schur-bit-compiler/provider-response.json",
+      "sha256": "5682769b049419843926f5c5fafe52d98d12bb3e2fe4e4bcf0983ed7debaa83e"
+    },
+    {
+      "bytes": 38259,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-super-schur-bit-compiler/request.json",
+      "sha256": "cbeba5154a1eb468edd462cc21c4c7dd3b801dee3cae500515a6b49182787c5c"
+    },
+    {
+      "bytes": 12554,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-super-schur-bit-compiler/response.md",
+      "sha256": "415cc24887dbc729b123edf04350efe202301d3ecef26284dd104775d6e4542e"
+    },
+    {
+      "bytes": 1579,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-super-schur-bit-compiler/result.json",
+      "sha256": "f78e93f7ed107a3b8a2a97b81bb73e68f62824afb8775b5fece2ce58d53758a2"
+    }
+  ],
+  "two_terminal_results_and_responses": [
+    {
+      "obligation": "super-schur-algebra",
+      "parent_read_disposition": "full:189 LF",
+      "parent_scientific_disposition": "Tensor parity, coefficient injection, hook vanishing and leading monomials checked. Numerical-n fixed-Durfee scope upheld. O1/O2/O6 closed by independent explicit finite-grid bit compiler; O3 separable extraction optional because charged product peeling is proved; O4 convention consistency checked algebraically and finite exact residual identity; O5 early zero optional. Correct missing-primary-paragraph warning accepted and parent actual LF1065-1078 read. Generic one-hook/unrestricted-others disclaimer correct but not the actual Panova bounded-others case. No novelty or full-ratio claim.",
+      "response": {
+        "bytes": 12834,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-super-schur-algebra/response.md",
+        "sha256": "223f8c2ee9a4f3d5f5d6ebb633671808589395c3102b4a99495cc89ab274dc0d"
+      },
+      "result": {
+        "bytes": 1630,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-super-schur-algebra/result.json",
+        "sha256": "9bfc858d0e50a455c76ab287ae7ecf73141384ad083ae7cf46bf2c57d2c3a574"
+      },
+      "session_id": 15819,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "usage_cost_estimate_usd": "0.521544"
+    },
+    {
+      "obligation": "super-schur-bit-compiler",
+      "parent_read_disposition": "full:327 LF",
+      "parent_scientific_disposition": "Checked full ordinary symmetric-function identity, hook injection, finite construction, integer Newton trace/determinant recurrence and polynomial intermediate degree/bit bounds. Independent looser polynomial clock valid; retained tighter separately checked grid compiler. No source-priority claim from omitted section7.5. Exact fixed-Durfee numerical-n theorem only, no growing bounds/full-ratio/novelty/quantum claim.",
+      "response": {
+        "bytes": 12554,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-super-schur-bit-compiler/response.md",
+        "sha256": "415cc24887dbc729b123edf04350efe202301d3ecef26284dd104775d6e4542e"
+      },
+      "result": {
+        "bytes": 1579,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-super-schur-bit-compiler/result.json",
+        "sha256": "f78e93f7ed107a3b8a2a97b81bb73e68f62824afb8775b5fece2ce58d53758a2"
+      },
+      "session_id": 30624,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "usage_cost_estimate_usd": "1.312230"
+    }
+  ],
+  "unique_hashed_artifact_count": 42,
+  "usage_snapshot": {
+    "bytes": 18765,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur_round/usage.json",
+    "sha256": "0fcacb3aae825a4160e14ae6f14dc9d995f0c467395665a46064f2a6178504a3"
+  }
+}

@@ -1,0 +1,19 @@
+p37 a=1 uniform  forced=False: 4/10 verified; exits {'ASSERT:stage output class outside {0,m}': 6, 'stage-onesided': 4}
+p37 a=1 uniform  forced=True : 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+p37 a=1 repeat   forced=False: 2/10 verified; exits {'ASSERT:stage output class outside {0,m}': 8, 'stage-onesided': 2}
+p37 a=1 repeat   forced=True : 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+p37 a=1 lowrank  forced=False: 3/10 verified; exits {'ASSERT:stage output class outside {0,m}': 7, 'stage-onesided': 3}
+p37 a=1 lowrank  forced=True : 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+p37 a=2 uniform  forced=False: 2/10 verified; exits {'ASSERT:stage output class outside {0,m}': 8, 'stage-onesided': 2}
+p37 a=2 uniform  forced=True : 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+p37 a=2 repeat   forced=False: 1/10 verified; exits {'ASSERT:stage output class outside {0,m}': 9, 'stage-onesided': 1}
+p37 a=2 repeat   forced=True : 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+p37 a=2 lowrank  forced=False: 1/10 verified; exits {'ASSERT:stage output class outside {0,m}': 9, 'stage-onesided': 1}
+p37 a=2 lowrank  forced=True : 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+p37 a=3 uniform  forced=False: 1/10 verified; exits {'ASSERT:stage output class outside {0,m}': 9, 'stage-onesided': 1}
+p37 a=3 uniform  forced=True : 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+p37 a=3 repeat   forced=False: 1/10 verified; exits {'stage-onesided': 1, 'ASSERT:stage output class outside {0,m}': 9}
+p37 a=3 repeat   forced=True : 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+p37 a=3 lowrank  forced=False: 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+p37 a=3 lowrank  forced=True : 0/10 verified; exits {'ASSERT:stage output class outside {0,m}': 10}
+TOTAL 15/180   (negative control wrongm: expect failures)

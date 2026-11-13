@@ -1,0 +1,470 @@
+                                             𝑘 ∏︁                     )︂
+                                            ∑︁                    1
+                   𝑓 (𝑎1 , . . . , 𝑎𝑝 ) =                1𝑎𝑗 =𝑖 −          ,        0 < 𝜃0 < 1/2,           0 < 𝜖 < 𝜃0 ,                   (1)
+                                            𝑖=1 𝑗=1
+                                                                  𝑘
+
+where 𝜃0 , 𝜖 may scale nontrivially with 𝑛. For each 𝑎 ∈ [𝑘]𝑝 , define
+
+                                      𝜇𝑎 = Bern(𝜃0 + 𝜖𝑓 (𝑎)),                   𝜇avg = Bern(𝜃0 ).                                          (2)
+
+The 𝑝-marginal HSBM(𝑛, 𝑘, 𝜃0 , 𝜀) then consists of the following two probability measures over hypergraphs
+𝑌 with vertex set 𝑉 = [𝑛] and hyperedge sets 𝐸 defined as follows.
+  1. Under Q, for each 𝑆 ∈ [𝑛]
+                              (︀ )︀
+                                𝑝   draw hyperedges 𝑌𝑆 ∼ 𝜇avg independently and add 𝑆 to 𝐸 if 𝑌𝑆 = 1.
+
+  2. Under P, first fix labels 𝑥 ∼ Unif([𝑘]𝑛 ). Then for each 𝑆 = {𝑠1 < · · · < 𝑠𝑝 } ∈ [𝑛]
+                                                                                          (︀ )︀
+                                                                                            𝑝 , draw 𝑌𝑆 ∼
+     𝜇𝑥𝑠1 ,...,𝑥𝑠𝑝 independently and add 𝑆 to 𝐸 if 𝑌𝑆 = 1.
+   Although we show a rigorous end-to-end analysis of a quartic speedup only for this model, we conjecture
+that our algorithm produces a quartic speedup for more general SBM-like models. One type of generalized
+SBM (GSBM) that we study later (Definition 42) replaces the function 𝑓 above by any 𝑓 : [𝑘]𝑝 → R such
+that, for any 𝑝* ≥ 3,
+
+            E [𝑓 (𝑎)] = 0,                   E           [𝑓 (𝑎1 , . . . , 𝑎𝑝 ) | 𝑎1 , . . . , 𝑎𝑟 ] = 0 ∀ 𝑟 < 𝑝* , 𝑎1 , . . . , 𝑎𝑟 ∈ [𝑘].   (3)
+          𝑎∼[𝑘]𝑝                     𝑎𝑟+1 ,...,𝑟𝑝 ∈[𝑘]
+
+    Even more generally, we expect that our quantum algorithm produces a quartic speedup for any GSBM
+with a marginal order of 𝑝* ≥ 3, which we introduce in Definition 40. These models can be shown to have a
+statistical-computational gap with precisely the same SNR-computation tradeoff as a 𝑝* -order Tensor PCA
+problem (see Theorem 41 due to [Kun24]). For any of these models, the Kikuchi algorithm takes a fairly
+generic form and can be readily applied. While we show its correctness only for specific models, we anticipate
+that more generic proofs can address these more general models.
+    The 𝑝-marginal HSBM approaches the 2-marginal HSBM as the number of communities increases: in
+Lemma 46, we show that
+
+                                               𝑓 (𝑎) → 1𝑎1 =···=𝑎𝑝*            as     𝑘 → ∞,                                               (4)
+
+i.e., the model assigns hyperedges within communities with probability 𝜃0 + 𝜖 and between communities
+with probability 𝜃0 . Crucially, unlike the standard definition of HSBM, our model captures higher-order
+interactions of the underlying distribution. In many real-world contexts [MXS17, SGBO+ 19, KLXG06,
+KVC+ 11], pairwise marginals are known to be insufficient to capture community structure.
+     The task of community detection that our algorithm solves is to distinguish samples from the planted
+distribution P from samples from the null distribution Q. This is formalized as a strong detection task as
+follows.
+Problem 3 (Hypergraph community detection). Let 𝑝, 𝑘, 𝑛 ≥ 2 and let Q and P be specified by a 𝑝-
+marginal HSBM. An algorithm that takes as input a degree-𝑝 hypergraph 𝑌 on 𝑛 vertices and outputs a bit
+𝑟(𝑌 ) ∈ {0, 1} is said to solve the hypergraph community detection problem if
+
+                          Pr [𝑟(𝑌 ) = 1] = 1 − 𝑜(1)                  and        Pr [𝑟(𝑌 ) = 0] = 1 − 𝑜(1).                                 (5)
+                         𝑌 ∼Q                                                  𝑌 ∼P
+
+   For the task of hypergraph community detection, we show lower bounds that rule out low coordinate
+degree functions (LCDF), which include low-degree polynomials. This is generically the best evidence one
+can hope for in average-case hardness.
+Theorem 4 (Lower bound on hypergraph community detection, informal). No function with coordinate
+degree ℓ can solve hypergraph community detection on a 𝑝-marginal HSBM with 𝑝 > 2 if
+                                                         𝜖
+                                            SNR := √︀             ≲ ℓ1/2−𝑝/4 𝑛−𝑝/4 .                                                       (6)
+                                                     𝜃0 (1 − 𝜃0 )
+
+                                                                       5
+    A more formal statement is available in Theorem 19; we introduce LCDF and prove this lower bound in
+Section B.
+    We show a spectral classical algorithm based on the Kikuchi method that matches this lower bound (up
+to a logarithmic factor). Briefly, the algorithm works by constructing a matrix (the Kikuchi matrix) whose
+spectral norm either exceeds a threshold value if a hypergraph is sampled from P or falls below that value
+if the hypergraph is sampled from Q.
+Theorem 5 (Classical upper bound on hypergraph community detection, informal). The ℓth order Kikuchi
+method solves hypergraph community detection for a 𝑝-marginal HSBM with even 𝑝 > 2 in time 𝑂(𝑛ℓ ) and
+space 𝑂(𝑛ℓ ) if
+                                                𝜖                        √︀
+                                 SNR := √︀               ≳ ℓ1/2−𝑝/4 𝑛−𝑝/4 log 𝑛.                        (7)
+                                            𝜃0 (1 − 𝜃0 )
+                                                                                       √
+    See Theorem 11 for a formal statement; we prove this theorem in Section A. The log 𝑛 factor, which
+also appears in previous algorithms using the Kikuchi method [WAM19, Has20, SOKB25], is believed to be
+loose; indeed, it has already been removed for Tensor PCA [KX25] and we expect it can be removed for
+𝑝XORSAT and community detection as well, cf. Remark 1. Similarly, the constraint that 𝑝 is even is likely
+unnecessary [WAM19].
+    We then show a quantum algorithm based on the guided Hamiltonian problem: We construct a guiding
+state that can be efficiently prepared and has improved overlap with the leading eigenspace of the Kikuchi
+matrix. Quantum Phase Estimation then prepares the eigenstate, and measurement of the corresponding
+eigenvalue can be used to certify its spectral norm and decide if a hypergraph was sampled from the planted
+(i.e., clustered) or null model. We show that this quantized Kikuchi method achieves a quartic speedup over
+the classical Kikuchi method, as summarized informally below.
+Theorem 6 (Quantum upper bound on hypergraph community detection, informal). Given an ℓth order
+Kikuchi method that solves hypergraph community detection for a 𝑝-marginal HSBM instance with even 𝑝 > 2
+and any constant number of communities 𝑘 ≥ 2, there is an explicit quantum algorithm that solves the same
+                                         ˜ 𝑝 ) up to negligible factors, using 𝑂(ℓ
+problem on the same HSBM in time 𝑛ℓ/4 · 𝑂(𝑛                                    ˜ log(𝑛)) qubits and 𝑂(ℓ𝑛
+                                                                                                    ˜ 𝑝)
+classical space.
+   Compared to the classical cost of 𝑂(𝑛ℓ ), this algorithm achieves a quartic speedup and a super-polynomial
+space advantage. We formally state the result in Theorem 22 and prove it in Section C. We also anticipate
+that, analogous to the Tensor PCA case [Has20], the eigenstate itself encodes the community labels. Per-
+forming state tomography and a rounding procedure should thus recover the community labels.
+Remark 7 (Generality of quantum algorithm). Although our proofs for the quartic speedup use the precise
+form of 𝑓 given in Definition 2, the quantum algorithm itself does not use any information about 𝑓 . Hence,
+we expect exactly the same algorithm to apply to any generalized SBM with marginal order 𝑝* ≥ 3.
+
+2.1    Organization of the paper
+The remainder of this paper is organized as follows. We give a detailed description of our classical Kikuchi
+upper bounds in Section 3, and of our low coordinate degree lower bounds in Section 4. Section 5 summarizes
+our quantum upper algorithm for hypergraph community detection. The corresponding technical proofs for
+the classical Kikuchi method are presented in Section A and Section B, respectively, while the technical
+proofs related to our quantum algorithm are provided in Section C.
+
+
+3     The Kikuchi method for 𝑝-marginal HSBM
+The 𝑝-marginal HSBM we study in this work belongs to the family of higher-order planted inference prob-
+lems, which generally concern the detection of a signal or planted structure hidden in random noise. The
+development of efficient algorithms for these problems has seen intensive study for over two decades (see,
+e.g., [Fei02, GK01, GJ02, CGL07, CCF10, AOW15, BM22, dT23, AR01, Sch08, OW14, MW16, KMOW17]),
+and is typically characterized by a Signal-to-Noise ratio SNR.
+
+
+                                                     6
+    When the SNR is small enough, the problem is statistically impossible, but once the SNR exceeds a certain
+threshold, the two distributions can be distinguished, although not necessarily in polynomial time. For
+planted inference problems that exhibit a statistical-computational gap, that is, a regime where the problem
+is information-theoretically solvable but computationally hard, the Kikuchi hierarchy [WAM19] is generally
+expected to be the the fastest and simplest algorithm in this regime. However, on a technically rigorous level
+the algorithmic Kikuchi method was as of now only shown to apply to Tensor PCA and 𝑝XORSAT [WAM19],
+which are technically similar: 𝑝XORSAT can be recast as a variant of the spiked tensor problem with sparse
+Rademacher observations instead of Gaussian ones. Since then, all further applications of the Kikuchi
+algorithm have been restricted to directly related settings [GKM22, HKM23, AGKM23, HKM+ 24].
+    In this work, we establish that the Kikuchi hierarchy extends to other planted inference problems by
+finding a new application in community detection. We prove matching lower bounds against low coordinate
+degree functions. Our results suggest that the classical and quantum Kikuchi algorithm is more widely
+applicable and may encompass more practically relevant applications than previously thought. At a technical
+level, our proofs require recent advancements in lower bounds [Kun24] and more involved combinatorial
+arguments in our upper bounds due to the increased complexity of the problem. We summarize in this
+section the Kikuchi upper bound and show matching classical lower bounds (up to logarithmic factors) that
+rule out algorithms including low-degree polynomials.
+
+3.1    Kikuchi method
+The Kikuchi method, introduced by [WAM19] and independently discovered by [Has20], is a general technique
+for reducing a degree-𝑝 optimization problem to a degree-2 optimization problem. This is desirable because
+degree-2 problems may be modeled with matrices, allowing linear algebraic methods to be used.
+    For the√︀
+            𝑝-marginal HSBM(𝑛, 𝑘, 𝜃0 , 𝜀), the relevant SNR is given by the ratio of the bias 𝜀 and the standard
+deviation 𝜃0 (1 − 𝜃0 ) of the random edge distribution. We show that the 𝑝-marginal HSBM(𝑛, 𝑘, 𝜃0 , 𝜀)
+exhibits a statistical-computational gap: It is solvable in polynomial time for
+                                                         𝜀
+                                              √︀                  ≫ 𝑛−𝑝/4 ,                                 (8)
+                                                   𝜃0 (1 − 𝜃0 )
+
+and statistically impossible for
+                                                     𝜀
+                                           √︀                    ≪ 𝑛(1−𝑝)/2 .                               (9)
+                                                𝜃0 (1 − 𝜃0 )
+In between, the best classical algorithm is expected to be the Kikuchi method.
+
+                                                 Kikuchi method
+
+
+Input: A 𝑝-marginal HSBM(𝑛, 𝑘, 𝜃0 , 𝜀) instance Y.
+Preprocessing: Choose a sufficiently large ℓ√︀and a threshold 𝜏 in accordance with a Kikuchi theorem (see
+Theorem 11 for an example) at SNR 𝛽 = 𝜀/ 𝜃0 (1 − 𝜃0 ). That is, the Kikuchi theorem guarantees that if
+𝑌 ∼ Q, then whp the spectral norm ‖𝐾ℓ ‖ of the ℓ-th order Kikuchi matrix is less than 𝜏 ; for 𝑌 ∼ P, it is
+larger than 𝜏 .
+Classical algorithm: Construct the ℓ-th order Kikuchi matrix and estimate its largest eigenvalue, for
+instance using the Power Method.
+Output: If the largest eigenvalue is above 𝜏 , return “Planted”. Otherwise, return “Random”.
+
+   We describe the setting more formally. Let 𝑌 be a hypergraph drawn from the 𝑝-marginal HSBM(𝑛, 𝑘, 𝜀, 𝜃0 ).
+Recall that for any hyperedge 𝑆 ∈ [𝑛]
+                                   (︀ )︀
+                                     𝑝 , the indicator function of the hyperedge is denoted 𝑌𝑆 . Define
+
+                                         𝑌𝑆 − 𝜃0                                   𝜀
+                               𝐴𝑆 = √︀                       and       𝛽 = √︀                  .           (10)
+                                         𝜃0 (1 − 𝜃0 )                           𝜃0 (1 − 𝜃0 )
+
+By construction, we have
+                                          E[𝐴𝑆 ] = 0,              E[𝐴2𝑆 ] = 1.                            (11)
+                                          Q                        Q
+
+
+
+                                                             7
+                                                                 is as follows: For 𝑆, 𝑉 ∈ [𝑛]
+                                                                                          (︀ )︀
+The original definition of the Kikuchi matrix due(︀ to  [WAM19]                             ℓ , define the
+symmetric difference 𝑆∆𝑉 = 𝑆 ∪ 𝑉 − 𝑆 ∩ 𝑉. The 𝑛ℓ × 𝑛ℓ Kikuchi matrix is defined entry-wise as
+                                                     )︀  (︀ )︀
+
+                                              {︃
+                                      WAM        𝐴𝑆△𝑉 if |𝑆△𝑉 | = 𝑝
+                                    𝒦𝑆,𝑉 =                                                            (12)
+                                                 0         else.
+
+We analyze our algorithm in the framework of a slight modification of the Kikuchi matrix, defined on ℓ-
+tuples (that keep track of the ordering of indices) instead of ℓ-sets. This matrix was originally studied by
+Hastings [Has20] and achieves the same detection bounds as [WAM19]. We call this the “bosonic Kikuchi
+matrix”, following the description in [Has20]. The Kikuchi matrix corresponds to a symmetrized version of
+the bosonic Kikuchi matrix (cf. Appendix B of [SOKB25]); this difference allows us to greatly simplify the
+analysis of our quantum algorithm. Throughout the following sections, we take ℓ = 𝜆𝑝 for 𝜆 ∈ N.
+Definition 8. Denote 𝒯𝑛 (ℓ) the set of ℓ-tuples 𝑆 = (𝑖1 , . . . , 𝑖ℓ ) ∈ [𝑛]ℓ with no repeated entries. This set has
+cardinality |𝒯𝑛 (ℓ)| = 𝑛!/(𝑛 − ℓ)!.
+Definition 9. Let 𝑆 = (𝑖1 , . . . , 𝑖ℓ ), 𝑉 = (𝑗1 , . . . , 𝑗ℓ ) ∈ 𝒯𝑛 (ℓ) and define
+
+                                                𝑑 = 2 · |{𝑎 ∈ [ℓ] : 𝑖𝑎 ̸= 𝑗𝑎 }|
+
+to count the number of disagreements. We denote by 𝑆 ⊖ 𝑉 the 𝑑-tuple that first lists the disagreeing entries
+of 𝑆 (in increasing index order) followed by those of 𝑉 (same order).
+Definition 10 (Bosonic Kikuchi matrix). For even 𝑝 ≥ 2, let 𝑇 be a symmetric 𝑝-tensor indexed by
+(𝜇1 , . . . , 𝜇𝑝 ) ∈ [𝑛]𝑝 . The ℓ-th order bosonic Kikuchi matrix 𝒦 = 𝒦(𝑇 ) is defined on 𝒯𝑛 (ℓ) entry-wise by
+                                             {︃
+                                               𝑇𝜇1 ,...,𝜇𝑝 if (𝜇1 , . . . , 𝜇𝑝 ) = 𝑆 ⊖ 𝑉,
+                                     𝒦𝑆,𝑉 =                                                                    (13)
+                                               0           otherwise.
+
+    The dimension of the bosonic Kikuchi matrix differs from the dimension of the standard Kikuchi matrix
+eq. (12) only by a factor of ℓ!, which is negligible compare to the overall dimension 𝑂(𝑛ℓ ). Throughout this
+work, we assume our parameters satisfy conditions
+                             𝜖                                         √
+              𝑛−𝑝/4 ≳ √︀              ≳ 𝑛1/2−𝑝/2 , 𝜃0 ≳ 𝑛1−𝑝 , ℓ = 𝑜( 𝑛), ℓ = 𝜔(1), 𝑝 even               (14)
+                         𝜃0 (1 − 𝜃0 )
+where ≳ indicates asymptotic inequalities for sufficiently large 𝑛. The first condition simply states that
+the problem is neither in the information-theoretically impossible regime, nor in the computationally trivial
+regime; combined with the second condition, it also implies that 𝜖/𝜃0 ≤ 1. The following theorem, proven in
+Section A, establishes that the largest eigenvalue of 𝒦 distinguishes a hypergraph with community structure
+from one without.
+Theorem 11. Consider the 𝑝-marginal HSBM(𝑛, 𝑘, 𝜃0 , 𝜀) with 𝑝 even. Let ℓ ∈ [𝑝/2, 𝑛 − 𝑝/2], 𝑘 ≥ 2, and
+𝜖, 𝜃0 in accordance with (14). Then for all
+                                                      √
+                                          𝜖          3 6 1/2−𝑝/4 −𝑝/4 √︀
+                              𝛽 := √︀              ≥      ℓ     𝑛        log(𝑛),                   (15)
+                                      𝜃0 (1 − 𝜃0 )   𝐶𝑘,𝑝
+
+where 𝐶𝑘,𝑝 is a constant that depends only on 𝑝 and 𝑘, the ℓ-th order bosonic Kikuchi matrix 𝒦 satisfies
+                                [︂             ]︂    [︂               ]︂
+                                            2                      4
+                            Pr 𝜆max (𝒦) ≥ 𝜏 ∨ Pr 𝜆max (𝒦) ≤ 𝜏 = 𝑜(1),                                  (16)
+                              Q             3      P               3
+
+where 𝜏 = 12 𝐶𝑘,𝑝 𝛽𝑛𝑝/2 ℓ𝑝/2 . Hence, estimating the largest eigenvalue of the Kikuchi matrix solves hypergraph
+community detection.
+Remark 12 (SNR-computation tradeoff). For 𝑝 > 2, the detection threshold smoothly interpolates be-
+tween the computational threshold 𝛽 = Ω̃(𝑛−𝑝/4 ) at ℓ = 𝑂(1) and the information-theoretic threshold
+𝛽 = Ω̃(𝑛(1−𝑝)/2 ) at ℓ = 𝑂(𝑛).
+
+
+                                                               8
+Remark 13 (Cost of Kikuchi algorithm). Generically, since 𝒦 is a matrix of dimension 𝑂(𝑛ℓ ), the Kikuchi
+method corresponds to a classical algorithm that costs time and space 𝑂(𝑛  ˜ ℓ ). In comparison, our quantum
+                   ˜                     ˜   𝑝
+algorithm will use 𝑂(ℓ log 𝑛) qubits and 𝑂(ℓ𝑛 ) classical bits, as well as achieving a quartic speedup in time.
+Remark 14 (Threshold choice). The multiplicative factor of 2 between the random and planted threshold
+in Theorem 11 is chosen arbitrarily for ease of exposition; in practice, any factor 1 + Ω(1/ poly(𝑛)) suffices,
+resulting in a slightly smaller choice of ℓ classically and quantumly.
+
+
+4    Lower bounds against low coordinate degree functions
+Here, we show that the Kikuchi algorithm is classically optimal for a family of models including the 𝑝-
+marginal HSBM under standard conjectures in average-case hardness (Theorem 19). Our lower bounds will
+address a larger class of models that share the form of the 𝑝-marginal HSBM definition but with looser
+conditions on 𝑓 .
+    Due to the difficulty of showing lower bounds against all possible classical algorithms, the evidence in
+planted / average-case settings is typically restricted to ruling out a large class of classical algorithms. One
+common class is low-degree polynomial (LDP) algorithms: these solve a detection problem by computing a
+low-degree polynomial of the input data 𝑥 whose whose value is different under the planted 𝑥 ∼ P and the
+null 𝑥 ∼ Q distributions. LDP lower bounds are typically shown through the low-degree likelihood ratio.
+    Recently, techniques for lower bounds against low-degree polynomial algorithms have been generalized to
+a larger class of classical algorithms: low coordinate degree functions (LCDF) [Kun25]. While LDP are linear
+combinations of low-degree monomials, LCDF are linear combinations of arbitrary functions of entries in a
+small number of coordinates. We review the definitions of LCDF, strong separation, and strong detection.
+
+Definition 15 (Strong separation). Consider a sequence of pairs of probability measures P𝑛 , Q𝑛 over mea-
+surable spaces Ω𝑛 . We say that functions 𝑓𝑛 : Ω𝑛 → R achieve strong separation if
+                                                   (︃                              )︃
+                                                      √︂              √︁
+                      E 𝑓𝑛 (𝑌 ) − E 𝑓𝑛 (𝑌 ) = 𝜔          Var 𝑓𝑛 (𝑌 ) + Var 𝑓𝑛 (𝑌 )                   (17)
+                      𝑌 ∼P𝑛          𝑌 ∼Q𝑛                    𝑌 ∼Q𝑛        𝑌 ∼P𝑛
+
+
+as 𝑛 → ∞.
+Definition 16 (Strong detection). Consider a sequence of probability measures P𝑛 , Q𝑛 over Ω𝑛 . We say
+that functions 𝑟𝑛 : Ω𝑛 → {0, 1} achieve strong detection if
+
+                                 lim P𝑛 [𝑟𝑛 (𝑦) = 0] = lim Q𝑛 [𝑟𝑛 (𝑦) = 1] = 0,                            (18)
+                                𝑛→∞                       𝑛→∞
+
+that is, if the sequence of hypothesis tests 𝑟𝑛 have both Type I and Type II error probabilities tending to
+zero.
+    Strong separation has an operational implication in hypothesis testing: given a strongly separating
+family of functions, one obtains hypothesis tests with 𝑜(1) Type I and II errors. The converse is also
+true; hence, strong separation by a family of functions is equivalent to strong detection. We also note that,
+as discussed in [Wei25], the task of detection rather than refutation is typically best lower bounded by ruling
+out algorithms that are low (coordinate) degree rather than SoS; for high-dimensional statistical problems,
+such as ours, either approach is expected to perform equally well.
+    Our proofs address the family of functions given by LCDF. For a product measure Q on Ω𝑁 (such as in
+our 𝑝-marginal HSBM, Definition 2), we write 𝑦𝑇 ∈ Ω𝑇 for the restriction of 𝑦 to the coordinates in 𝑇 ⊆ [𝑁 ].
+We define subspaces of 𝐿2 (Q):
+
+                                𝑉𝑇 = {𝑓 ∈ 𝐿2 (Q) : 𝑓 (𝑦) depends only on 𝑦𝑇 }                              (19)
+                                         ∑︁
+                               𝑉≤𝐷 =             𝑉𝑇 .                                                      (20)
+                                       𝑇 ⊆[𝑁 ] : |𝑇 |≤𝐷
+
+The space 𝑉≤𝐷 is the space of low degree coordinate functions, formalized as follows.
+
+
+                                                          9
+Definition 17 (Coordinate degree). For 𝑓 ∈ 𝐿2 (Q), the coordinate degree of 𝑓 is
+
+                                      cdeg(𝑓 ) = min{𝐷 : 𝑓 ∈ 𝑉≤𝐷 }.                                     (21)
+
+Remark 18. When Ω ⊆ R, functions of coordinate degree at most 𝐷 include polynomials of degree at most
+𝐷.
+
+    We can now state our LCDF lower bound for 𝑝-marginal HSBM formally; it is proven in Section B.
+Theorem 19 (Lower bound on hypergraph community detection). Let P𝑛 and Q𝑛 be the planted and
+null distributions of a 𝑝-marginal HSBM(𝑛, 𝑘, 𝜃0 , 𝜀) on 𝑛 vertices with 𝑝 > 2. No sequence of functions of
+coordinate degree at most ℓ can strongly separate Q𝑛 from P𝑛 for
+                                                𝜖
+                                  𝛽 := √︀                  < 𝐶𝑘,𝑝 ℓ1/2−𝑝/4 𝑛−𝑝/4                        (22)
+                                            𝜃0 (1 − 𝜃0 )
+
+for some constant 𝐶𝑘,𝑝 independent of 𝑛.
+
+√︀ Theorems 11 and 19 together establish that the Kikuchi method is optimal, up to the logarithmic factor
+  log(𝑛) which is negligible whenever ℓ ≫ log(𝑛). We note that this logarithmic gap between the lower and
+upper bounds is a common artifact introduced by the Matrix-Chernoff bound appearing in the analysis of
+the Kikuchi method, and also appears in previous work [WAM19, Has20, SOKB25]. Just like these prior
+works, we conjecture that the logarithmic gap can be closed by a tighter analysis, such as the one recently
+carried out for Tensor PCA [KX25] (cf. Remark 1).
+
+
+5     Quantum algorithm for 𝑝-marginal HSBM
+5.1    Quantum algorithm
+Our quantum algorithm for community detection is a quantized version of the Kikuchi method; hence, much
+of the required technical work is achieved by showing the theorems claimed in the previous section. Just like
+the classical algorithm, it distinguishes a hypergraph with community structure from a random hypergraph
+by estimating the largest eigenvalue of the ℓth order Kikuchi matrix for a suitable choice of ℓ. However,
+our quantum algorithm does so using 𝑂(𝑛  ˜ ℓ/4 · poly(𝑛)) quantum gates and only 𝑂(ℓ
+                                                                                  ˜ log(𝑛)) qubits. On the
+contrary, estimating this eigenvalue classically, say, using the Power Method, requires time at least Ω(𝑛ℓ ).
+(Note that simply writing down one vector in the dimension of 𝒦ℓ takes Ω(𝑛ℓ ) time and space.) Hence
+our quantum algorithm constitutes a (nearly) quartic speedup in time as well as superpolynomial savings in
+space over the best know classical algorithm.
+
+                                       Quantized Kikuchi method
+
+
+Input: A 𝑝-marginal HSBM(𝑛, 𝑘, 𝜃0 , 𝜀) instance Y.
+Preprocessing: As in the classical Kikuchi algorithm, choose a sufficiently large ℓ and a threshold 𝜏 in
+accordance with a classical “Kikuchi Theorem” at SNR 𝛽, such as Theorem 11.
+Quantum algorithm: Encode the following in Amplitude Amplification and repeat 𝑂(𝑛ℓ/4 ) times:
+
+ • Prepare ℓ/𝑝 unentangled copies of a “small” guiding state |𝜑⟩. Symmetrize the resulting state to obtain
+   a guiding state |Φ⟩.
+ • Perform Quantum Phase Estimation with the sparse Hamiltonian 𝐾ℓ on the initial state |Φ⟩.
+ • Measure the eigenvalue register and record whether an eigenvalue above the threshold 𝜏 was sampled.
+
+Output: If during any of the repetitions, an eigenvalue above 𝜏 was found, return “Planted”. Otherwise,
+return “Random”.
+
+
+
+                                                           10
+    The quartic quantum speedup is a combination of two quadratic speedups; one is standard and due to
+Amplitude Amplification [BHMT00]. The other is due to the construction of an efficient guiding state that
+has improved overlap with the leading eigenspace of the Kikuchi matrix in the planted case. We now discuss
+this guiding state in some detail.
+    Recall that the Kikuchi method is spectral: ‖𝒦‖ exceeds 𝜏 when an instance comes from the planted
+distribution and falls beneath it when the instance comes from the null distribution. A natural state that
+certifies this spectral norm via the variational lower bound ‖𝒦‖ ≥ ⟨𝑣| 𝒦 |𝑣⟩ is (tensor products of) the state
+                                                        (︂         (︂ )︂)︂
+                                                                     [𝑛]
+                                     |𝑣⟩𝑆 ∝ 𝑓 (𝑥𝑆 ),       for 𝑆 ∈         .                              (23)
+                                                                      𝑝
+For details, see Definition 29. However, preparing this state requires knowledge of the community labels
+𝑥. With only the hypergraph available, we cannot prepare |𝑣⟩ as a guiding state. To get around this
+issue, recall that the hyperedge on set 𝑆 of a 𝑝-marginal HSBM is placed if 𝑌𝑆 = 1 for random variable
+𝑌𝑆 ∼ Bern(𝜃0 + 𝜖𝑓 (𝑥)). Hence, preparing a state proportional to
+                                                 |𝑢⟩𝑆 ∝ 𝑌𝑆 − 𝜃0                                              (24)
+serves as an approximation to |𝑣⟩. This motivates our guiding state, which we define formally in Definition 49.
+Informally, we first show the following result, a formal version of which is given in Lemma 54.
+Lemma 20 (Guiding state overlap with certificate state, informal). Let |𝑢⟩ , |𝑣⟩ be the unnormalized certifi-
+cate state and guiding states of Definitions 29 and 49. Then
+                                   [︂
+                                       ⟨𝑢|𝑣⟩      (︁                )︁]︂
+                               PrP           ≤𝑂 ˜ 𝑛−ℓ/4 (ℓ!)1/2𝑝−1/4 = 𝑜(1).                           (25)
+                                      ‖𝑢‖‖𝑣‖
+Remark 21. When ℓ = 𝑜(𝑛𝜀 ) for any 𝜀 > 0, Lemma 20 shows that guiding state has sufficient overlap to
+achieve a quartic quantum speedup up to logarithmic factors.
+    A crucial difficulty for all existing quantum Kikuchi algorithms is to show that the leading eigenspace of
+the Kikuchi matrix (which can be interpreted as a “noisy version” of the certificates) retains its good overlap
+with the guiding state. Although there is no clear reason to expect that this perturbation significantly
+degrades the overlap, proving the rigorously is technically challenging. Similar obstacles were faced (and
+overcome) by [Has20] and [SOKB25]. The work of [Has20] uses a somewhat intricate strategy to deal with
+it, drawing from special properties of Gaussian random variables and low-degree polynomials (e.g., the
+Carbery–Wright theorem on anticoncentration). On the other hand, [SOKB25] first enforces independence
+between the guiding state and the Kikuchi matrix by building them out of separate batches of the input,
+and subsequently use a second moment method. We overcome this obstacle using a similar overall strategy
+as this second approach. The result is formally stated in Theorem 50, and shows that the improved overlap
+is maintained up to factors that are negligible compared to the overall scaling of 𝑛𝑂(ℓ) .
+    Our main result applies this guiding state to obtain a quartic quantum speedup for the 𝑝-marginal HSBM
+problem over the best known classical algorithm via the guided Hamiltonian problem. It applies in the same
+setting as the classical Kikuchi algorithm described in Section 3. We show how to efficiently prepare the
+guiding state |˜𝑢⟩ by preparing a tensor product of “small guiding states” and subsequently projecting into
+a collision-free subspace (cf. Section C.5). By running quantum phase estimation starting from the guiding
+state, our quantum algorithm prepares a high-energy eigenstate and measures its energy; repeating this step
+ ˜ ℓ/4 ) times (combined with amplitude amplification) solves strong detection on the hypergraph stochastic
+𝑂(𝑛
+block model. The cost of phase estimation depends on the sparsity of the Kikuchi matrix and the cost of
+preparing the sparse oracles; since both of these are at most 𝑛𝑝/2 (see Section 5.2), we obtain the following
+key result, which we prove in Section C.4.
+Theorem 22. Let 𝑝 > 2 be even and 𝑘 ≥ 2. Let 𝑌 ∼ HSBM(𝑘, 𝑛, 𝜀, 𝜃0 ) be a 𝑝-marginal HSBM instance in
+accordance with eq. (14). Let ℓ ∈ [𝑝/2, 𝑛 − 𝑝/2] be chosen such that the classical Kikuchi √︀  method specified by
+Theorem 11 solves the community detection problem for 𝑌 in time 𝑂(𝑛         ˜ ℓ ) at SNR 𝛽 = 𝜀/ 𝜃0 (1 − 𝜃0 ). Then
+the quantum algorithm solves the same problem at the same SNR using
+                                   (︁                                              )︁
+                                𝑂˜ 𝑛ℓ/4 · 𝑛𝑝 · ℓ 4ℓ − 2𝑝
+                                                       ℓ
+                                                         · log(𝑛)
+                                                                  ℓ/2𝑝
+                                                                       · exp(𝑂(ℓ))
+
+
+                                                       11
+               ˜ log(𝑛)) qubits, and classical space 𝑂(ℓ𝑛
+quantum gates, 𝑂(ℓ                                   ˜ 𝑝 ).
+
+Remark 23. For constant or slowly growing ℓ (specifically, ℓ = 𝑜(𝑛𝜀 ) for any 𝜀 > 0) this gives a (nearly)
+quartic speedup in time and a superpolynomial reduction in space. For general parameters satisfying eq. (14),
+the speedup
+       √     interpolates between quartic and super-quadratic. For example, at 𝑝 = 4 and the maximal value
+of ℓ ≲ 𝑛, the degree of the speedup approaches 16 5 , which is still super-cubic.
+
+
+5.2    Quantum space advantage
+We end with final remarks on the space advantage of the    quantum
+                                                                 )︀ Kikuchi algorithm, which is already well
+established in [Has20] and [SL23]. Our model has 𝑂(𝜃0 + 𝜖) 𝑛𝑝 ∼ (𝜃0 + 𝜖)𝑛𝑝 hyperedges. The sparsity of
+                                                              (︀
+
+the Kikuchi method is at most 𝑂(𝑛𝑝/2 . Hence, implementing the sparse oracles (Theorem 71 in [SOKB25])
+uses 𝑂(𝑛𝑝 ℓ log 𝑛) gates and 𝑂(ℓ log 𝑛) qubits; the overall number of qubits is ˜
+                                                                                𝑂(ℓ log 𝑛). If we account for
+the classical space requirement of storing the input (𝑂(𝑛𝑝 )) this is a superpolynomial space advantage, as
+claimed throughout this paper. If we only count the quantum space requirements of working qubits required
+by our algorithm, this is an exponential improvement over the classical space requirement of the classical
+Kikuchi method.
+
+
+6     Conclusion
+Our work identifies a new application for the classical Kikuchi algorithm and shows that the quantized algo-
+rithm maintains a quartic speedup. This suggests that the speedup identified in the original Kikuchi quantum
+algorithm of [Has20] is preserved in a larger class of inference problems with a statistical-computational gap.
+We remark on several related questions our work raises with regards to this larger class of problems.
+    • Odd order of hypergraph. Our result holds for hypergraphs with even order. It has been long understood
+      that the analysis of the Kikuchi method for even order is simpler than odd order [WAM19, GKM22],
+      but we expect the quantum speedup to be preserved for HSBMs with odd order.
+    • Applications beyond community detection. Although we analyze the particular setting of community
+      detection, we note that the quantum algorithm we describe may be generically applicable in ran-
+      dom hypergraph settings. Given that marginal order provides a sufficient condition for a statistical-
+      computational gap, a natural conjecture is that the Kikuchi quantum speedup holds for all such gen-
+      eralized SBMs.
+    • Recovery of community labels. Beyond detection, practical applications are often interested in re-
+      covering the community structure. In the quantum Kikuchi algorithm for Tensor PCA, the ground
+      state contains sufficient information to recover the planted spike via state tomography and a rounding
+      procedure. We leave open the analogous question of recovering community labels here.
+
+
+References

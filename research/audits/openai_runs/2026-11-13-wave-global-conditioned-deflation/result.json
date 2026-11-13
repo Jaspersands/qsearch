@@ -1,7 +1,8 @@
 {
-  "billing_status": "unknown",
+  "billing_status": "usage_reported",
   "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
   "effort": "max",
+  "error": null,
   "files": [
     {
       "path": "research/audits/api_inputs/2026-11-13-wave-cluster-completion/wave-global-conditioned-deflation.md",
@@ -16,6 +17,8 @@
       "sha256": "a75744103ce1cbd5c13e865f211c60bf93ee2af94aa78653a6f0797b8b0bec03"
     }
   ],
+  "finished_at": "2026-11-12T22:20:47.463524+00:00",
+  "incomplete_details": null,
   "max_budget_usd": "9",
   "max_tokens": 128000,
   "model": "gpt-6-astra",
@@ -29,5 +32,18 @@
   },
   "response_id": "resp_02beea82be8dcf0f016af63800e3f087d09268da4cd91aa9d6",
   "started_at": "2026-11-12T22:04:46.590398+00:00",
-  "status": "running"
+  "status": "completed",
+  "usage": {
+    "input_tokens": 4494,
+    "input_tokens_details": {
+      "cache_write_tokens": 4491,
+      "cached_tokens": 0
+    },
+    "output_tokens": 34160,
+    "output_tokens_details": {
+      "reasoning_tokens": 31078
+    },
+    "total_tokens": 38654
+  },
+  "usage_cost_estimate_usd": "1.75294"
 }

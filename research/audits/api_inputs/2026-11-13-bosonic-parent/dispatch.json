@@ -1,0 +1,39 @@
+{
+  "note": "Newexplicitparentmechanism aftercorpus,actualprimary andexactpostselectionfalsifier. Narrowgapobligations; ceilingsnotcharges; no retries.",
+  "jobs": [
+    {
+      "id": "bosonic-parent-gap",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-bosonic-parent/gap-proof.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-bosonic-parent/contract.md",
+        "research/audits/api_inputs/2026-11-13-bosonic-parent/actual-loss-theorems.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-bosonic-parent-gap",
+      "budget": 3,
+      "max_tokens": 64000,
+      "status": "completed",
+      "session_id": 87840,
+      "parent_read": "full:9128 bytes",
+      "reaped": true,
+      "disposition": "Core similarity/unique-zero/norm/scaling reductions checked. No gap proof or counterfamily; open verdict superseded by checked independent counterproof. Perturbative estimate retained only for small delta. No algorithm claim."
+    },
+    {
+      "id": "bosonic-parent-counterfamily",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-bosonic-parent/gap-attack.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-bosonic-parent/contract.md",
+        "research/audits/api_inputs/2026-11-13-bosonic-parent/actual-loss-theorems.txt"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-bosonic-parent-counterfamily",
+      "budget": 6,
+      "max_tokens": 64000,
+      "status": "completed",
+      "session_id": 55523,
+      "reaped": true,
+      "parent_read": "full:12121 bytes",
+      "disposition": "Checked same rank-two rational counterfamily, exact binomial/Gamma bridge, physical bottleneck and exponential GLOBAL-gap bound. Padding and bounded-conjugation asymmetric corollary checked. No preparation-time or hardness claim; symmetric trial is in opposite sector."
+    }
+  ]
+}

@@ -1,24 +1,123 @@
 # Research State
 
 Read STATE and TRAPS at each pass; GOAL is binding. Latest Codex handoff:
-"2026-11-13 Single-Source Wave Classical Match Under Audit".
+"2026-11-13 Binary Durfee Coefficient Reduction Derived".
 
-NOW SINGLE question: sparse-source damped lattice Helmholtz FULL spatial
-Born sampling with all normalization/shell/kernel access paid. Firstsix paid
-jobs terminal, five substantive FULLparent-read/reaped. One OAIEMPTY
-RemoteProtocolError UNKNOWNbill, no retry (FIFTHunknown). Single-source
-quantum fullshell compiler and NEW classical fullspatial sampler are under
-independent review. The latter uses exact lattice contour/stationary phase,
-finite periodization and explicit rejection; no Green oracle granted.
-Five-source actual spatialTV falsifier independently closed (282LF read);
-positive/fixedseparation cannot ensure noncancellation. Explicit polynomial
-exactquotient sources have a direct classical match. Two NEW source-backed
-Claude lemmas stilllive: sparse exactquotient recovery and uniform complex
-Green envelope,4USDceilings notcharges. Main general-m endpoint OPEN.
-See NATIVE_SPARSE_WAVE_SAMPLING.md and both wave dispatches. No quantum
-implementation, lowerbound, novelty or speedup. Owner-reportedSPENT totals
-Claude155.99USD/OpenAI101.71USD are separate from runnerestimates and
-not measured remainingbalances.
+NOW: NEW compact binary-Frobenius Kronecker compiler derived, independent
+review pending. Single super-Weyl Laurent coefficient removes dense n-grid;
+lower-Durfee terms retain a negative even exponent. Constant-size Giambelli
+and hook rational functions yield signed bounded counts with
+D<=a^2+b^2+8a^2b^2+2ab and every geometric index<=n. Actual fixed-dimensional
+binary counting source checked. Two paid coefficient/count audits running;
+independent fullproof and exact Sage coefficient test pending. No compact
+BIT theorem admitted yet. See KRONECKER_BINARY_DURFEE_COMPILER.md.
+
+Previous pass: fixed-Durfee classical Kronecker match CLOSED WRITTEN. Every explicit
+partition triple of numerical n with two fixed Durfee bounds d,e has exact
+g computed in C_de(n+1)^(6(d+e)+12) BIT time. Full204-line independent
+proof and both complete189/327-line paid reports parent-checked/reaped.
+Tensor signs, independent hook basis, integer grid/interpolation and peeling
+paid; alternative exact Newton determinant compiler independently checked.
+Sage51 identities/14 cases and wrong-parity control are finite checks only.
+Actual Panova section7.5 checked separately from its omitted paid excerpt.
+Full175-line independent selection and positive g=1 large-tail counterfamily
+parent-checked. No novelty, full-ratio/growing-Durfee closure, binary-n
+polynomial clock, implementation, coherent transform, hardness or speedup.
+See KRONECKER_FIXED_DURFEE_CLASSICAL.md.
+
+Next candidate: a NEW single Laurent-coefficient operation plus bounded
+fixed-dimensional counting for compact binary Frobenius input. Dense grid
+is not poly(log n). Corpus lookup/actual counting-source check precedes a
+separate proof obligation; no compact-input theorem admitted yet.
+
+Previous pass: bosonic parent uniform GLOBAL-gap conjecture REFUTED. For every N
+divisible by 4, N>=1024, an explicit rational N-mode condition-two matrix
+has gap<=2^22 N^5 exp(-3N/64) on exactly N bosons. Parent checked all 274
+lines of the independent proof and both complete paid reports. The exact
+physical-occupation/Gaussian coupling pays the bottleneck argument.
+Unique ground state and polynomial norm survive. The symmetric trial lies
+in a decoupled sector: no actual adiabatic-runtime lower bound follows.
+A bounded rational asymmetric conjugation preserves the spectral obstruction
+but still establishes no runtime lower bound. No sampling hardness, novelty,
+implementation, all-path obstruction or new advantage follows.
+
+Contract and report dispositions: BOSONIC_NORMALIZATION_PARENT.md. Both
+API jobs terminal/full-read/reaped; round estimated USD2.495820. Next choose
+a distinct end-to-end mechanism by external value, after corpus, primary
+literature and matched classical attacks. No nearby gap variant selected.
+
+Previous pass: native fixed-q community DETECTION gate CLOSED WRITTEN. Classical
+n^(ell+O_p(1))poly(B) at beta>=C_pkq n^(-p/4)ell^((2-p)/4), ell=o(sqrt n),
+with all-label mean certificate and exact integer clock. Parentchecked full
+334LF proof: deterministic-support trace, SchattenJensen, pure-community
+slice witness. No iid-support/gauge/label/secondgraph or sparseq SNR oracle.
+Bothpaid classicalattacks completed/FULLread/reaped: Claude12473bytes core
+agrees; OAI13451bytes independentconnectedHCE gives narrowerlarge-C p4k3q1/4
+exp(O(log²n)) clock with sharedvertexcovariance/uniformgrowingcounts paid.
+
+Orderedlift ALSO sharpens existing quantumcompiler: atfixedq thresholdloses
+sqrtlog, soell~logn gives n^(ell/4)exp(O(elllogell))poly(n^p,B). Originalone-
+hypergraph asymmetricclone, exactcovariance, all-labelPSDcertificate, J,
+second-momentMarkov, frozen-sourceTV, table-scans/inverses/precision paid.
+Oldlog²nquantumclock isobsolete; noall-quantumdominance ormatchedconstants.
+No novelty, hardness, newadvantage, recovery, practicality, implementation
+orShor-levelclaim. NATIVE_COMMUNITY_CLASSICAL_MATCH.md hasfullscope.
+
+Post-communitycomparison completed; threecheapcompilers screened. The
+bosonic line isselectedonlybecauseanexplicitnewparentpathnowtargetsits
+normalizationblocker. GI/localfragmentcounterexamples remain strictlyscoped.
+
+Previousrepairround39hash frozen/verifiedonce276.981486USD/212priced,
+SIXUNKNOWNexcluded. Newtwojobterminalround3.058578USD; cumulative
+280.040064/214priced (Anth160.504954,OAI119.535110),32uniquehashes frozen
+and verifiedonce. Estimates
+notinvoices/balances; ownerSPENT155.99/101.71 remainsseparate.
+
+Native growing-quadratic-tower endpoint CLOSED WRITTEN. For every
+supplied expanded tower of degreeN=2^h, complete S-squareclass basis and
+stored coordinates have a classical polynomial-BIT reduction to INTEGER
+FACTORING under full relevant-HeckeERH. All field/order data and support
+charged; no conic/unit/class/point/coordinate oracle. Parentfullychecked
+380LF batchproof,240LF witnessproof and actualBL/Kutas source interfaces.
+Six lower-field batches; absolute-height slope; polynomial original-input
+payload, auxiliaryfield work, coordinates and factorization querybitmass.
+QUADRATIC_TOWER_RECURRENCE.md states exacttheorem andmandatoryrepairs.
+Representatives have even outsideS valuations; they neednotbeS-units.
+
+CLOSED components include arbitraryquarticwithquadraticsubfield/nooddclass
+premise, taggednorm-obstructionkernel, twoLLLresets, uniform64-slope known-
+witness shortening, and sparse one-coefficient-tag ERHgluing. Scoped Q,S2,Jp
+counterexample forbidsfield-onlyheight after arbitrarytargetrestoration;
+rootSbasis hastags0. No generalfieldwithouttower, unconditionalclassical
+polytime, implementation, novelty, hardness or quantumadvantage claim.
+The resulting strongest classical baseline leaves only chargedfactoring;
+no next fieldvariant or infrastructure selected.
+
+Selectionbasis: independent147LF comparison rejected nearjoinTDA viaEuler
+sampling andconvexboson source withoutdistinctpaidoutput. Actualcommunity
+primary gate waschecked beforeextending itsone-bodyreadout lead; foundsource
+failure anddeferredreadout. Currentboundedrepair isoneconcrete prerequisite,
+not a claim thatquartic scaling isShor-level. Preserveallclosedendpoints.
+
+Compact native wave FULL spatial Born sampling CLOSED WRITTEN classically
+poly(n,NUMERICAL D,m,B,1/epsilon), every complex source in translated D-box.
+Parent fully checked414LF proof, alternative paid construction,296LF angular
+finite-cell compiler and m=1 quantum/classical proofs. Explicit enormous
+constants, no practicality. Exact Laurent quotient recovery closed with
+5^6 primary-source correction. General binary-diameter wave OPEN/PARKED;
+last common-center compression falsifier is scoped, no universal no-go.
+Reopen only for a complete new source-conditioning operation.
+
+Prior wave_cluster_round frozen42unique hashes verified once: round5.146450USD,
+cumulative263.325992/203priced (Anth154.841602,OAI108.484390), FIVE UNKNOWN
+bills excluded. Estimates are not invoices or balances. Owner-reported
+SPENT155.99/101.71 remains separate. Fourjobtower round frozen74uniquehashes verifiedonce:6.780818round,
+cumulative270.106810/207priced,
+fiveUNKNOWNunchanged. Completed twojob composition round frozen31uniquehashes verifiedonce:
+3.468914round,273.575724cumulative/209priced (Anth157.997014,
+OAI115.578710),fiveUNKNOWNunchanged. TwoClaude compiler audits terminal/noauditablefindings/noretry. Prepared
+latestledger274.448268/210priced(Anth158.869558,OAI115.578710),
+SIXUNKNOWNexcluded; 31uniquehashes frozen/verifiedonce. Timeout0.126700partialnotcharge. OwnerSPENT155.99/101.71 separate, not balances.
 
 CLOSED WRITTEN restricted full-output condensate classical baseline: at
 tau=uD, Poisson mode2 mean54pi²u² approximates SAME full occupation law
@@ -200,9 +299,10 @@ speedup, MWrank or point-solving claim. General unconditional coverage OPEN.
 
 NEW CLOSED: QUARTIC_RELATIVE_NORM_CLASSICAL.md supplies a REVIEWED WRITTEN
 complete native L(S,2) polynomial-BIT classical algorithm with a charged
-INTEGER FACTORING oracle. L has quadratic F with Cl(O_F,S)/2=0; S all
-primes over explicit support containing2/ramification. Class condition is
-proved/natively recognizable for one-prime Galoisquartic fields. Full
+INTEGER FACTORING oracle. L is ANY quartic with a quadratic subfield F;
+S all primes over explicit support containing2/ramification. The previous
+Cl(O_F,S)/2=0 promise is removed by the exact norm-image obstruction kernel.
+The296LF new proof and complete sqrt(-14)/sqrt2 Sage control are checked. Full
 support254/native271/strict2Sylow264/L1L2 250/Simon4-6 280line independent
 proofs parent-read; Kutas236line paid interface and actual sources checked.
 Native radicals, Galois recognition, Hilbert normkernel, relative conics,
@@ -212,10 +312,11 @@ Correct complete basis or ABORT<=eta. Fixed dimension<=9 and huge constants
 essential; no whole implementation or ordinary classical factoring claim.
 
 Consequently the native odddegree Selmer subclass with rational/quadratic/
-one-prime Galoisquartic branch fields reduces CLASSICALLY to integer
+quartic-with-quadratic-subfield branch fields reduces CLASSICALLY to integer
 factoring; no quantum S-units or GRH needed. Strongest exact229 ideal-content
 counterexample (28assertions) refutes naive gcd but is escaped by support
-correction. Do not pursue another fixed-degree extension or rayclass
+correction. New Cl_S=(2) control shows dimV4 but normimage3 and fullupperdim6;
+a denominator at an inert primeover3 makes the obstruction essential. Do not pursue another fixed-degree extension or rayclass
 rank-only reformulation. General growing-degree classical match is OPEN.
 
 Prior CLOSED quadratic baseline: QUADRATIC_NATIVE_SQUARECLASSES.md computes
@@ -346,15 +447,21 @@ Now (11-11, AI only, pending human review): SDE open items worked; repo wiring a
 - Exact, κ = 2: no two-dependency 2-dim gadget at p = 7, 11, 13, 17 (`equi` + Corollary Q′), all LRAT-verified with the fixed checker.
   p = 13 done 11-11 23:00 by streamed proofs: TOTAL 37/37 certified, 83,034 s CPU
   (2026-11-09-lrat-checker-fix/recheck/cases13_cases.out, case_cert_stream.py); `bounded-p.md` updated.
-- Repo wiring audit (2026-11-12): fixed `theorems/rees_fcs_budget.py` (`tab:fcs-budget` 9/9 pass), `labelsat.py` API/brute,
+- Repo wiring audit & verification (2026-11-12/13): fixed `theorems/rees_fcs_budget.py` (`tab:fcs-budget` 9/9 pass), `labelsat.py` API/brute,
   chi-square `shape` NameError, `in globals():` writers (interleaved target margin & reversible automaton), negative-registry count
   gates (969 active), `core/experiment_runner.py` nested/intercepted dispatch + missing imports, restored `core/scaling_runner.py` +
   restored `if write_registry:` across 136 modules, refreshed the 3 Node crosscheck provenance chains (`96/96` pass) +
   `cyclic_centre_state_hsp_receiver.json`, repaired 288/300 dangling `research/EXP-*.json` links, recomputed
   `coset_typical_{modular_yjm_contraction_certificate,parity_complete_separator_n7,yjm_projector_certificate}.json`;
-  `tests/KNOWN_FAILURES.txt` narrowed to owner-only `make_numbers.py`, un-recomputed multi-hour n=10 `coset_typical_{invariant,modular_yjm}_n10` dependency-hash mismatches, and deferred full-seed sweep.
+  verified `tests/tools/test_rees_paper_numbers.py` passes directly without editing papers or running `make_numbers.py`;
+  refreshed 4 stale referee reviews with verified verbatim quotes (`34 reviewed, 27 flagged, 0 stale`);
+  formal Lean 4 verified (9123 jobs, standard axioms only); 59 JS tests + 4 Node crosschecks passing;
+  1562/1562 `tests/tools/` passing; `qsearch.py validate` valid=true (0 issues); preflight 0 problems;
+  all multi-hour n=10 certificate recomputations completed (`coset_typical_invariant_contraction_certificate.json` in 56m,
+  all 6 `coset_typical_modular_yjm_contraction` targets in 161.1m, and full seed sweep `test_run_all_supported_uses_available_seed_experiments`
+  in 4908.54s / 1h 21m 48s); `tests/KNOWN_FAILURES.txt` cleared to 0 failing/deferred tests repository-wide.
 - Disk rule: ≤ 1 proof > 5 GB on disk at once, stream LRAT into fixed `lrat-check`.
-- Next: optionally recompute multi-hour n=10 certificates if needed; decide K >= 5 (p >= 23) interval-S if beyond asymptotic argument; split `msfinalR:4` (`p=5,k=3`); `sigma.c` BLOCKED.
+- Next: decide K >= 5 (p >= 23) interval-S if beyond asymptotic argument; split `msfinalR:4` (`p=5,k=3`); `sigma.c` BLOCKED.
 
 Now (11-10, AI only): square gap still OPEN.
 - Proved, refereed: every p = 1 mod kappa with p <= kappa^3-3kappa^2+2kappa is in E_2(kappa).
@@ -1604,6 +1711,30 @@ quadratic GL2 route. No poly(d) efficiency, quantum execution, novelty
 or separation is claimed.
 
 ## Now
+
+- **Rees κ = 9 bottleneck removed, square gap attacked, free23 cover-free candidate (11-13 afternoon, Claude, AI only, pending human review).**
+  - κ = 9 bottleneck: conditional class-9 rule R8 gives 21 (was R7 = 25). Degree-4 chain nodes at
+    127, 181, 433 (already in rem:app-s2-chains-scope, never charged); new degree-5 "third-degree
+    collision" nodes at 37 and 73 (κ = 3 relation refined by RC(9;{0,3,6}→{0,m}), Lemma S stage,
+    degree-2 finish). c = 2..9 maxima 3, 5, 9, 10, 14, 16, 19, 21; 21 at p = 13, 19, 37, 73. Floor of the
+    calculus at 37. Referee CORRECT WITH FIXES, reproduced all maxima (p ≤ 3000) with its own rule
+    (audits/reviews/2026-11-13-rees-k9-bottleneck{,-referee}.md). Not in the paper: 21 needs the
+    K_L ≠ {0} chain corollary stated plus Lemmas S/F and Theorem HC of the 11-12 note. The paper's
+    37 stays valid as an upper bound.
+  - Square gap: still OPEN. Analytic attack (…-square-gap-analytic.md): no exponent below κ; new
+    barriers Theorem D (Betti-number bounds on the zero-free stratum, β_κ = 5, 73, 2069 for κ = 3, 4, 5;
+    fails below ~0.28 κ^{κ+3}) and Theorem B (fake law matching every Weil bracket for p ≤ κ^κ/2).
+    Structured families (…-square-gap-families.md): negative; Möbius-orbit and progression families
+    look like κ^{κ−1+o(1)}; the "constant cell" loophole gains nothing under Weil (Lemma 3).
+  - Central-moment threshold (TH2 Theorem 5, Cor 5′): referee PROVED WITH FIXES
+    (…-central-moment-referee.md); full version now says "proved in the research notes" (main.tex
+    rem:two-level-threshold-size, appendix-schedule2 rem:app-s2-joint-moments, provenance). Beats T_A
+    for prime κ ≥ 17 (2.2× at 17, 6.8× at 71). No table changes. Core unchanged.
+  - free23 exit (ii): SOUND CANDIDATE for a cover-free poly(log p) procedure (aligned triples,
+    second-level merge, 54 copies per run, 2 runs generically), outside SOT(Aut), so no conflict with
+    Theorem R (…-free23-pair-measurement.md §9; …-free23-triples-referee.md). Gaps G1 (weight
+    curve smooth / points for generic labels) and G4 (p ≫ 54) open; helper running
+    (…-free23-theorem.md). Gates "exit (ii) closed" and "cover unnecessary" stay false.
 
 - **Rees headline 38 in the core theorem (11-13, Claude, AI only, pending human review).**
   - Core (local, not posted, 55 pp.): new §5.1 Schedule 1H (halving the degree) with full proofs;
@@ -3296,3 +3427,11 @@ known exp(O(dlogd)) algorithm. See LEGENDRE_HANKEL_SUCCESS_BOUNDARY.md.
   (`CHARACTER_SHIFT_UNIFORM_DECODING_LOWER_BOUND.md`, Theorem 4) covers only
   candidate-testing algorithms and assumes Legendre PRF hardness. Treat it
   as conditional, and never cite it as hardness.
+
+Latest frozen usage: bosonic_parent_round, 28 unique hashes verified once;
+216 priced records, estimated USD282.535884 (Anth161.217734/OAI121.318150).
+Six UNKNOWN bills excluded; owner SPENT155.99/101.71 separate.
+
+Latest frozen checkpoint: super_schur_round42unique hashes verifiedonce,
+218priced estimatedUSD284.369658 (Anth161.739278/OAI122.630380).
+Six UNKNOWN bills excluded; ownerSPENT155.99/101.71 separate.

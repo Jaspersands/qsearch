@@ -1,3 +1,228 @@
+## 2026-11-13 Full Repository Wiring, Multi-Hour n=10 Recomputes, and 0-Failure Audit Pass
+
+- Maintain clean registry and certificate states; do not edit certificates by hand or forge dependency hashes (TRAPS #14).
+- Ensure all restored `if write_registry:` blocks in computation modules remain preserved during future edits to keep artifacts synchronized.
+- When adding new seed experiments, ensure both the dispatch handler in `core/experiment_runner.py` and `supported_experiment_ids()` are updated and covered in unit tests.
+- Maintain `tests/KNOWN_FAILURES.txt` at 0 entries.
+
+## 2026-11-13 Binary Durfee Coefficient Reduction Derived
+
+- Preserve explicit binary Frobenius input, fixed dimensions, formal chamber
+  and parity signs. Do not relabel old numerical-n control as new clock.
+- Run only the new exact coefficient falsifier. At terminal milestone,
+  record all report dispositions, freeze sources/proof/control once.
+  No quantum implementation, lattice backend installation or broad tests.
+
+## 2026-11-13 Fixed Durfee Kronecker Classical Match Closed
+
+- Freeze the two terminal super-Schur reports/inputs/dispositions, stable
+  204-line proof, 175-line selection, exact Sage control, primary sources
+  and labelled topic/STATE snapshots; verify hashes once. Preserve six
+  unknown bills and owner-spent anchors separately.
+- No full implementation, broad tests, Git or quantum code. A binary-input
+  extension requires a separately checked coefficient/counting theorem.
+
+## 2026-11-13 Rees κ = 9 Bottleneck 25 → 21, Square Gap Barriers, free23 Cover-Free Candidate (AI only)
+
+- If the owner wants 21 in the paper: state the K_L ≠ {0} form of thm:app-s2-chain as a corollary
+  (referee §1: needs α_0+β_0 ∈ P_D at every step before the last), move Lemmas S/F and Theorem HC
+  from the 11-12 note into appendix-schedule2, and add the κ = 9 chain degrees to
+  rem:app-s2-chains-scope. Proposed only; nothing edited.
+- R8 is applied only where R5 ≥ 5, so non-binding values and the c < 9 rows are upper bounds;
+  a full re-optimisation over all primes ≤ 30000 is a cheap rerun of exponents_r8.py.
+- free23 simulation: rerun end_to_end.py with independent seeds per trial (referee issue 2).
+- Three-level joint search at (73, 9) timed out at 1500 s; it cannot move the maximum.
+
+## 2026-11-13 Fixed Durfee Exact Classical Compiler Derived
+
+- Preserve exact fixed-d,e/numerical-n theorem and all false claim gates.
+  The source paragraph omission is documented; do not mutate submitted
+  paid contexts or turn those reports into a priority audit.
+- At terminal milestone, include the stable 204-line proof, exact Sage
+  control, primary PDFs/text/locators, report dispositions and labelled
+  topic/STATE snapshots in one hash freeze. No broad tests or quantum code.
+
+## 2026-11-13 Fixed Durfee Kronecker Classical Candidate
+
+- Preserve exact unary-n/fixed-Durfee/ordinary-Kronecker contract and source
+  sign conventions. No quantum code or broad validation.
+- After terminal reviews, freeze source/proof/control/report hashes once;
+  record every finding disposition, truncation and unknown bill. Do not
+  promote finite Sage agreement or an agent label to an algorithm.
+
+## 2026-11-13 Bosonic Parent Global Gap Refuted
+
+- Preserve the exact native N-boson/N-mode scope and GLOBAL-gap-only claim.
+  Do not label the dynamics slow or sampling hard. No quantum code, finite
+  sweep, broad tests or Git actions are requested.
+- Freeze the terminal bosonic-parent API round with both reports, prompts,
+  actual Brod source, stable 274-line audit, and labelled topic/STATE
+  snapshots. Count only final estimates; keep six unknown bills excluded
+  and the owner-reported SPENT amounts separate. Verify hashes once.
+
+## 2026-11-13 Bosonic Parent Exponential Counterfamily Derived
+
+Awaitstablecounterproof andterminaltwoAPIbundles. No numericgapbenchmark or
+quantumimplementationneededifanalyticboundcloses. Preserveactualsource and
+explicitrationalfamily; nofinitecontrolmaypromoteall-Ntheorem. Reconcile
+costsonceatterminalmilestone, prior280.040064/214priced,SIXUNKNOWNunchanged.
+
+## 2026-11-13 Bosonic Normalization Parent Gap Selected
+
+Preserve actualBrodPDF/text/source and171LF comparison; noimplementation or
+broadsuite. Two bosonicparent APIjobsrunning; retainterminalusage/report
+withoutretry and reconcileONLY atnextcleanmilestone. Priorcommunity32hash
+freeze unchanged. Independentcontrol allowedonlyforstatedgapfalsifier; no
+finitegapfit maypromoteuniformtheorem oralgorithm. Ownerbilling anchorsstay
+separatefromestimates and SIX UNKNOWN remainexcluded.
+
+## 2026-11-13 Native Community Log-Free Detection Closed
+
+DONE community_baseline_round frozen32uniquehashes/verifiedonce: two completed terminal API
+bundles anddispositions, actualsharpKikuchi/HCE sources, stable334LF proof,
+labelled native-classical-match, source-repair andSTATE snapshots. Previous
+repairround39hash frozen, do not repin. PreserveSIXUNKNOWN; ownerSPENTseparate.
+No algorithmimplementation, broadtests, quantumbackend, Git orregistry
+claimpromotion queued. Awaitnewscientificselection, notnearbyvariants.
+
+## 2026-11-13 Native Community Classical Challenger Derived
+
+No implementation queued while trace extension is unresolved. Preserve
+actualsharp-Kikuchi and HCE sources, sanitized narrow packets, and terminal
+reports when they arrive. At next terminal theorem milestone reconcile costs
+once against276.981486/212priced,SIXUNKNOWN; do not repin prior39hashround.
+No broader validation, Git, public messages, or quantum backend.
+
+## 2026-11-13 Native Community Source Repair Closed
+
+Freeze community_source_repair_round from prepared usage once: terminal two
+bundles/dispositions, actual community/Brennan sources, exact falsifiers,
+stable208LF source-gap,375LF certificate,341LF clone notes, plus labelled
+final topic/STATE snapshots. Preserve SIX UNKNOWN and owner-spent anchors.
+New baseline-attack jobs are OUTSIDE this round. No broad suite, code/backend,
+Git, public message or automatic registry claim promotion is queued.
+
+## 2026-11-13 Community Conditional Covariance Repair Proved
+
+Preserve terminal covariance report and disposition with original packet.
+At the two-job terminal milestone reconcile saved costs once with prior
+274.448268USD/210 priced, SIX UNKNOWN excluded. Freeze stable source,
+proof and labelled topic/STATE snapshots once. No broad suite, quantum
+implementation, Git or automatic registry claim promotion is queued.
+
+## 2026-11-13 Community Guiding Source Proof Gaps Confirmed
+
+At newsource-repair milestone retain actualcommunity/Brennan primaryPDFs,
+sanitizedpackets, stable208LF proof, exactSympycontrol andterminalAPIbundles.
+No broadtests, quantumbackend orregistry promotion. Keep sourcegap separate
+fromalgorithmfalsification; nofieldnotesrepin. Towercompiler31hashfreezeDONE;
+latest274.448268/210priced,SIXUNKNOWN; twonewjobs excludeduntilterminal.
+
+## 2026-11-13 Native Quadratic Tower Factoring Reduction Closed
+
+Freeze compiler-audit round once frompreparedusage; include stable380LF
+batchproof,240LF+wordingclarification witnessproof, BLsource/review,
+147LF selectionnote, terminaltwoClaude bundles/dispositions andlabelled
+currenttopic/STATE snapshots. No livepathhashes oroldledgerrepin. Preserve
+SIXUNKNOWN, exclude timeout0.126700partialcounter; ownerSPENT separate.
+No solverimplementation, quantumbackend, broadsuite orGit is queued.
+
+## 2026-11-13 Existing Conic Witness Height Reset Closed
+
+At compiler milestone retain stable witnessproof and maximal-order source
+review plusactual BuchmannLenstraPDF/text/source. Preserve rationaloutput
+and fullradical(orderdisc), includingevenexponents. No fullimplementation,
+newtests, existingledgerrepin or broadsuite. OneClaude jobstillrunning;
+coordinateaudit truncatedintro only, fullyread/reaped, no findings/retry.
+
+## 2026-11-13 Native Tower Compiler Under Adversarial Review
+
+DONE composition twojob round frozen31uniquehashes verifiedonce; no repin.
+At next proof milestone retain stable compiler audits/actual maximal-order
+source and newtwoClaude bundles; exclude stillrunning jobs and livepaths.
+Use /opt/anaconda3/bin/python. No broad tests, fullsolver, runner changes,
+Git or theorem promotion. Five UNKNOWN bills and ownerSPENT stay distinct.
+
+## 2026-11-13 Tagged Tower Reduction Paid Through Coordinates
+
+Freeze priorfourjob tower_recurrence_round usingpreparedusage andlabelled
+currenttopic/quartic snapshots, stable277/296/270/243/332/232/94LF proofs,
+exactcontrols andactualsources/bundles. Exclude newnativecomposition jobs
+and156LF sparsegluingproof until their milestone. Oneuniquehashverification.
+FiveUNKNOWNbills remainexcluded; no oldledgerrepin or broadtests.
+
+## 2026-11-13 Residual Ideal Support Reset Closed
+
+Retain243LF stable divisor proof withprevious270LF height proof atfourjob
+proof milestone. Usageprepared6.780818round/270.106810cumulative207priced;
+fiveUNKNOWNexcluded. Two newlivejobs excluded. Hashfreeze awaitsfinal
+coordinateproof parentread; no repeated suite, tests or oldledger repin.
+
+## 2026-11-13 ERH Small Prime Gluing Closed
+
+Four-job tower_recurrence round terminal/read/reaped; usage preparation
+assigned, freeze only after stable new proofs are parent-read. Includeactual
+Wesolowski PDF/text/source and232LF source review, preservefiveUNKNOWNbills.
+Two new tower-native-composition jobs excluded until their own milestone.
+No broad checks, quantumbackend, runner or fullimplementation.
+
+## 2026-11-13 Quartic Odd Class Promise Removed
+
+At the tower terminal milestone retain296LF kernel proof and reproduced
+relative_obstruction_control.py/.txt. Update any downstream quartic summary
+only to EVERY quartic with quadratic subfield; arbitraryquartic/growingtower
+gates stay false. Do not edit frozen old ledgers. No fullsolver/fullsuite.
+
+## 2026-11-13 Expanded Squareclasses Admit Small Representatives
+
+At the terminal tower proof milestone retain270LF stable proof, original
+LLL PDF and four inspected renders, Mehlhorn root source, and weighted-LLL
+Sage/JSON control. Do not infer a clock from finite controls or rerun them
+without changes. Four paid bundles remain outside prior frozen ledgers.
+
+## 2026-11-13 Quadratic Tower Recurrence Selected
+
+Retain three exact API bundles and terminal status/usage at the next proof
+milestone; no retries and no copying estimates into owner balance fields.
+Use /opt/anaconda3/bin/python. Preserve five historical UNKNOWN bills.
+Run no broad suite or registry refresh. New Sage weighted-LLL control is
+finite evidence only; no quantum backend or runner work is queued.
+
+## 2026-11-13 Compact Sparse Wave Classically Matched
+
+DONE: terminal3job wave_cluster_round frozen with42uniquehashes verifiedonce,
+labelledtopicsnapshot,296LFangularproof,414LFcompactproof andactualsources. 
+Usepreparedusage, preserveFIVEUNKNOWNbills; nofullsuite orrerunearlier83hash.
+No implementation, newrunner, classicalsweep ornearbywavevariant.
+
+## 2026-11-13 Compact Angular Sampler Closed, Global Compression Refuted
+
+Clusterround: globalOAIcompleted/read/reaped; angularClaudeEMPTYtruncated/
+reaped; compactOAIstilllive. Preservebundlesandnofailure/emptyretry.
+Onlyreconcileatthreejobterminalproofmilestone; prior83hashcheckpoint
+andFIVEUNKNOWNbillsunchanged. No quantumimplementation ornewscan.
+
+## 2026-11-13 Full System Wiring, Certificate Recomputes, and Adversarial Verification
+
+- Verified `test_rees_numbers_tex_is_up_to_date` passes without editing papers or running `make_numbers.py`; removed from `tests/KNOWN_FAILURES.txt`.
+- Refreshed 4 stale referee reviews (`JACOBI_KNOWN_NORM_REDUCTION`, `JACOBI_SURFACE_RECONSTRUCTION`, `NATIVE_RLWE_QUATERNION_KERNEL_AUDIT`, `OUTER_CODED_CHIRP_PROBE`) with verbatim quotes and updated content SHAs; `referee status` reports 0 stale, queue re-rendered.
+- Background certificate recomputations in-flight under `nice -n 19`: `task-1700` (`coset_typical_invariant_contraction_certificate.json`, ~56m) and `task-1728` (`coset_typical_modular_yjm_contraction` across 6 target partitions, ~2.5h).
+- Full formal verification (`lake build --wfail` 9123 jobs, standard axioms only), 59 JS tests, 4 Node crosschecks, compileall, qsearch validate (0 issues), and preflight (0 problems) verified passing.
+
+## 2026-11-13 Compact Wave Full-Field Construction Under Review
+
+Prior83hashcheckpoint isfrozen; neverrepin it. Threeclusterjobs stayoutside
+thatledger. Preserveparentproposalasunderreview untilbothanalyticerror
+andfullfiniteBITclockverified; no tests/code tosubstitute forproof.
+
+## 2026-11-13 Single-Source Wave Matched and Exact Deflation Closed
+
+Freeze stableeightjob usage, bundles, actualsources andindependentproofs
+once undercontrols/sparse_wave_round; snapshot the evolvingtopic rather
+than hashing its livepath. Keep FIVEUNKNOWN bills andno retries. Three
+newclustercompletionjobs excludeduntilterminal. No broadtests, scans,
+newrunner orquantumcode. Preserve concurrentReesentries.
+
 ## 2026-11-13 Single-Source Wave Classical Match Under Audit
 
 Firstsix jobs terminal/read/reaped; two sourcelemmas remainlive. At clean

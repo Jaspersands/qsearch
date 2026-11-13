@@ -1,0 +1,19 @@
+p37 a=1 uniform  forced=False: 9/10 verified; exits {'stage-onesided': 7, 'finish': 2, 'ASSERT:class outside K_t': 1}
+p37 a=1 uniform  forced=True : 6/10 verified; exits {'finish': 6, 'ASSERT:class outside K_t': 4}
+p37 a=1 repeat   forced=False: 9/10 verified; exits {'stage-onesided': 8, 'ASSERT:class outside K_t': 1, 'finish': 1}
+p37 a=1 repeat   forced=True : 7/10 verified; exits {'ASSERT:class outside K_t': 3, 'finish': 7}
+p37 a=1 lowrank  forced=False: 9/10 verified; exits {'ASSERT:class outside K_t': 1, 'stage-onesided': 7, 'finish': 2}
+p37 a=1 lowrank  forced=True : 9/10 verified; exits {'finish': 9, 'ASSERT:class outside K_t': 1}
+p37 a=2 uniform  forced=False: 7/10 verified; exits {'ASSERT:class outside K_t': 3, 'stage-onesided': 7}
+p37 a=2 uniform  forced=True : 2/10 verified; exits {'ASSERT:class outside K_t': 8, 'finish': 2}
+p37 a=2 repeat   forced=False: 6/10 verified; exits {'finish': 2, 'ASSERT:class outside K_t': 4, 'stage-onesided': 4}
+p37 a=2 repeat   forced=True : 4/10 verified; exits {'ASSERT:class outside K_t': 6, 'finish': 4}
+p37 a=2 lowrank  forced=False: 3/10 verified; exits {'ASSERT:class outside K_t': 7, 'stage-onesided': 3}
+p37 a=2 lowrank  forced=True : 1/10 verified; exits {'ASSERT:class outside K_t': 9, 'finish': 1}
+p37 a=3 uniform  forced=False: 1/10 verified; exits {'ASSERT:class outside K_t': 9, 'stage-onesided': 1}
+p37 a=3 uniform  forced=True : 1/10 verified; exits {'ASSERT:class outside K_t': 9, 'finish': 1}
+p37 a=3 repeat   forced=False: 1/10 verified; exits {'stage-onesided': 1, 'ASSERT:class outside K_t': 9}
+p37 a=3 repeat   forced=True : 0/10 verified; exits {'ASSERT:class outside K_t': 10}
+p37 a=3 lowrank  forced=False: 0/10 verified; exits {'ASSERT:class outside K_t': 10}
+p37 a=3 lowrank  forced=True : 0/10 verified; exits {'ASSERT:class outside K_t': 10}
+TOTAL 75/180   (negative control perturb: expect failures)

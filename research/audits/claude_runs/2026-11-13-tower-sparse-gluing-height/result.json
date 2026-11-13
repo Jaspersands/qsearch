@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 5358,
+      "path": "research/audits/api_inputs/2026-11-13-tower-native-composition/contract.md",
+      "sha256": "858e0aec2945b6a85c93887e43a5b88d631615a92e84cbcc510d613487c00ccd",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 7163,
+      "path": "research/audits/api_inputs/2026-11-13-tower-native-composition/wesolowski-primary.txt",
+      "sha256": "77cd75dc2a406b2c522d514838da80eb418517ebfd4ad84fbbf167f39dd306d7",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 6321,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T23:16:30.760811+00:00",
+  "input_token_allowance": 6577,
+  "max_budget_usd": 2.0,
+  "max_tokens": 32768,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.681668,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-tower-native-composition/tower-sparse-gluing-height.md",
+    "sha256": "b26a7e3957768c8079353ad00e5204f3d1baf4925bf87da985a5426c324edb04",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261112T231042.316831Z-fb74be2e",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 6321,
+    "output_tokens": 32768
+  },
+  "usage_cost_estimate_usd": 0.680644
+}

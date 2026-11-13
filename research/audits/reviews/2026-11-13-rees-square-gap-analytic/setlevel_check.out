@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-rees-square-gap-analytic/setlevel_check.py", line 99, in <module>
+    if sys.argv[1] == "merge": merge()
+                               ~~~~~^^
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-rees-square-gap-analytic/setlevel_check.py", line 31, in merge
+    et = [eta(k, K, p) if k < p else np.inf for k in range(amax + 1)]
+          ~~~^^^^^^^^^
+  File "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-rees-square-gap-analytic/setlevel_check.py", line 22, in eta
+    def eta(k, K, p): K = float(K); return K ** k * E(k, K, p) / (p - k)
+                                           ~~^^~~
+OverflowError: (34, 'Result too large')
+k=3 p=7: theta=P(n_0>0)=0.1633 (<= 1/2 needed), k^k/2=13.5
+   size profiles checked 18, all-column profiles 8, violations 0
+k=3 p=13: theta=P(n_0>0)=0.3787 (<= 1/2 needed), k^k/2=13.5
+   size profiles checked 60, all-column profiles 44, violations 0
+k=5 p=11: theta=P(n_0>0)=0.0022 (<= 1/2 needed), k^k/2=1562.5
+   size profiles checked 185, all-column profiles 6, violations 0
+k=5 p=31: theta=P(n_0>0)=0.0084 (<= 1/2 needed), k^k/2=1562.5
+   size profiles checked 455, all-column profiles 6, violations 0
+merge: 35704881 (k,p,a,b) cases; min relative margin upper 1.210e-04, lower 1.210e-04 (>= 0 means the inequality holds)

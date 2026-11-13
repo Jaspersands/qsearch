@@ -1,7 +1,8 @@
 {
-  "billing_status": "unknown",
+  "billing_status": "usage_reported",
   "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
   "effort": "max",
+  "error": null,
   "files": [
     {
       "path": "research/audits/api_inputs/2026-11-13-wave-cluster-completion/wave-compact-source-sampler.md",
@@ -20,6 +21,8 @@
       "sha256": "0e4995bc2101004c16454d15243185512f85776244ec6db3ffdeda7fe1c4bd5a"
     }
   ],
+  "finished_at": "2026-11-12T22:22:17.047510+00:00",
+  "incomplete_details": null,
   "max_budget_usd": "9",
   "max_tokens": 128000,
   "model": "gpt-6-astra",
@@ -33,5 +36,18 @@
   },
   "response_id": "resp_0aceef03526973d8016af638011c3087d0a801e6da0ea9717d",
   "started_at": "2026-11-12T22:04:46.591193+00:00",
-  "status": "running"
+  "status": "completed",
+  "usage": {
+    "input_tokens": 9695,
+    "input_tokens_details": {
+      "cache_write_tokens": 9692,
+      "cached_tokens": 0
+    },
+    "output_tokens": 39818,
+    "output_tokens_details": {
+      "reasoning_tokens": 32166
+    },
+    "total_tokens": 49513
+  },
+  "usage_cost_estimate_usd": "2.08785"
 }

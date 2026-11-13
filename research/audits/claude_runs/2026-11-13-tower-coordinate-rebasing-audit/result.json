@@ -1,0 +1,56 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 11844,
+      "path": "research/audits/api_inputs/2026-11-13-tower-compiler-audit/compiler-sections-2-4.md",
+      "sha256": "5d21a6e45c45c8c2678fba77a48391557aeb1a6702ed5b1485f4f64cb7c3d90e",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 10461,
+      "path": "research/audits/api_inputs/2026-11-13-tower-compiler-audit/compiler-sections-5-8.md",
+      "sha256": "64ae804aab7dd5e2596cd8c5dba63485c0ab4d795f4714c68bda578d8ab2cb5b",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 19303,
+      "path": "research/audits/reviews/2026-11-13-tagged-tower-conditional-composition.md",
+      "sha256": "a84c632f43eefd7d6fcaa4a3fe664ee622401eb34e9a89a8f0d2681979667f1d",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 18136,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-12T23:51:39.577941+00:00",
+  "input_token_allowance": 18499,
+  "max_budget_usd": 2.0,
+  "max_tokens": 40000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.873996,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-tower-compiler-audit/coordinate-attack.md",
+    "sha256": "10fb27e669fcdd958ba0c186d58195095c54e7c97444e701fe7ae2a0592dba9a",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261112T234447.811152Z-4a9db86f",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 18136,
+    "output_tokens": 40000
+  },
+  "usage_cost_estimate_usd": 0.872544
+}

@@ -1,0 +1,277 @@
+{
+  "captured_at_utc": "2026-11-13T01:09:51.925934+00:00",
+  "claim_gates": {
+    "all_quantum_dominance_claim": false,
+    "bookkeeping_itself_proves_theorem": false,
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "implementation_claim": false,
+    "novelty_claim": false,
+    "quantum_advantage_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 2210,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-baseline-attack/dispatch.json",
+    "sha256": "1a47f80855f4fe7ab98b2cd4b23a9c727a00f067cbd534dae9cd95a46c141cc9"
+  },
+  "dispatch_mutation_scope": "Parent final terminal/read/reaped metadata retained; no manifest/raw-result edits by this task.",
+  "exclusions": [
+    {
+      "reason": "Preserved exactly, excluded from known runner estimates.",
+      "scope": "Six inherited UNKNOWN bills and all observed partial counters"
+    },
+    {
+      "reason": "Outside this two-job milestone; specified topic/STATE snapshots only.",
+      "scope": "Live post-community selection file/new work and original evolving topic/STATE/HANDOFF/MECHANICAL"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 2112,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-baseline-attack/contract.md",
+      "sha256": "4387f73121e9c48c569f4bba48b83d2bfc9455fbf62e097e79c1e0c84006755e"
+    },
+    {
+      "bytes": 2210,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-baseline-attack/dispatch.json",
+      "sha256": "1a47f80855f4fe7ab98b2cd4b23a9c727a00f067cbd534dae9cd95a46c141cc9"
+    },
+    {
+      "bytes": 66024,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-baseline-attack/hce-primary.txt",
+      "sha256": "2ace9f8df8a20e19c8871ed7981ab669945e8cfb26a8e76604c40de2c723f8ba"
+    },
+    {
+      "bytes": 1222,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-baseline-attack/hce.md",
+      "sha256": "5bf47b0f2ea6387e8ed45dd83688c4d8642f72bc867acfe416d56e20093b330a"
+    },
+    {
+      "bytes": 74662,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-baseline-attack/sharp-primary.txt",
+      "sha256": "6e2909cff47ccf2bfb78d29998eafa6da124942ddb61af3d359cfba10896e3a8"
+    },
+    {
+      "bytes": 1399,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-community-baseline-attack/sharp.md",
+      "sha256": "3b57a457b33d163ce88e1151759f7ce56c962d9e61a86b3bc27fe56c809d80fa"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 16529,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_source_repair_round/checkpoint.json",
+    "sha256": "69236d0ee420094f7011977dc347edfcab4e87a80ac1b23d1f13215b5c82dae5"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 19155,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_source_repair_round/usage.json",
+    "sha256": "08c87ceb6e8ee062594c2f7cc700a0b06c65728d54d8145b8d9bc9f3f1416a15"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 32
+  },
+  "labelled_snapshots": [
+    {
+      "bytes": 13976,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/NATIVE_COMMUNITY_CLASSICAL_MATCH.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_baseline_round/native_community_classical_match-snapshot.md",
+      "sha256": "56bad74c98c945f2675a2f0530d134e080696588c70fdae7981a0dce659d1042",
+      "snapshot_label": "Exact byte snapshot captured for this milestone; evolving original path not hashed."
+    },
+    {
+      "bytes": 17782,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/NATIVE_COMMUNITY_SOURCE_REPAIR.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_baseline_round/native_community_source_repair-snapshot.md",
+      "sha256": "5a97fb8604bdb777c83499d1a69bf79a02d6393c36777dce66b3d1278c9e1d39",
+      "snapshot_label": "Exact byte snapshot captured for this milestone; evolving original path not hashed."
+    },
+    {
+      "bytes": 278850,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/STATE.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_baseline_round/state-snapshot.md",
+      "sha256": "cee31f9eaefc5cca2aaee2e421cab9b99607767a4fa0b6f03a927a0411a1c730",
+      "snapshot_label": "Exact byte snapshot captured for this milestone; evolving original path not hashed."
+    }
+  ],
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 735955,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-baselines/sharp_kikuchi.pdf",
+      "sha256": "c0259ef3371cba94e4223ab463d85df6dab51daeced01c4343e7c35d157547ea"
+    },
+    {
+      "bytes": 239156,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-baselines/sharp_kikuchi.txt",
+      "sha256": "b050a9b9a0b443e28223ea5509d20ed0154f22ee810695ff36b6aa3a07f4e13b"
+    },
+    {
+      "bytes": 124,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-baselines/sharp_kikuchi.source.json",
+      "sha256": "3362c025781c4d5b8fc5f70510a2ee5b16c124b3f626b220750bdf98cbf244e8"
+    },
+    {
+      "bytes": 1499406,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-baselines/cycle_enumeration.pdf",
+      "sha256": "5cb27ef08d478915a057e4918ae74e53047528e917f9aba20fc2497e7b788fed"
+    },
+    {
+      "bytes": 245872,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-baselines/cycle_enumeration.txt",
+      "sha256": "8274bd6967e84554c67c61a38b35b6a57fb0bb0ea70f95afdf564eeade9cedbc"
+    },
+    {
+      "bytes": 125,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-community-baselines/cycle_enumeration.source.json",
+      "sha256": "349347519f619e94773b9076b55d182e2bb1304dd59f2c89bfeb33d49ec82df0"
+    }
+  ],
+  "prior_hash_policy": "Only prior usage/checkpoint continuity references; prior ledgers/pins unchanged, no historical run/hash rescan or repinning.",
+  "scope": "Frozen community-source-repair ledger plus ONLY two completed community baseline-attack requests; terminal packets/bundles/dispositions, actual baseline primary sources, stable334-LF classical-match review and labelled topic/STATE snapshots.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-13T01:09:51.925934+00:00",
+    "labelled_snapshots": [
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_baseline_round/native_community_classical_match-snapshot.md",
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_baseline_round/native_community_source_repair-snapshot.md",
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_baseline_round/state-snapshot.md"
+    ],
+    "originals_not_hashed": [
+      "/Users/jaspersands/Developer/qsearch/research/NATIVE_COMMUNITY_CLASSICAL_MATCH.md",
+      "/Users/jaspersands/Developer/qsearch/research/NATIVE_COMMUNITY_SOURCE_REPAIR.md",
+      "/Users/jaspersands/Developer/qsearch/research/STATE.md"
+    ],
+    "parent_confirmed_stable_and_fully_read": true
+  },
+  "stable_independent_review_artifact": {
+    "bytes": 17259,
+    "parent_confirmed_stable_and_fully_read": true,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-community-native-classical-match.md",
+    "physical_LF_count": 334,
+    "sha256": "bdf4a931c3d1471c04cd0205df62fbe24b2073c7d986c912907551f658e70a23"
+  },
+  "status": "TERMINAL_COMMUNITY_BASELINE_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 2112,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-sharp-classical/context/000.txt",
+      "sha256": "4387f73121e9c48c569f4bba48b83d2bfc9455fbf62e097e79c1e0c84006755e"
+    },
+    {
+      "bytes": 74662,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-sharp-classical/context/001.txt",
+      "sha256": "6e2909cff47ccf2bfb78d29998eafa6da124942ddb61af3d359cfba10896e3a8"
+    },
+    {
+      "bytes": 1399,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-sharp-classical/prompt.txt",
+      "sha256": "3b57a457b33d163ce88e1151759f7ce56c962d9e61a86b3bc27fe56c809d80fa"
+    },
+    {
+      "bytes": 84669,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-sharp-classical/request.json",
+      "sha256": "48a0b445583dc7e30373a3bd133960948c37835fe8fa95f1e0ee4c26c5a51f24"
+    },
+    {
+      "bytes": 12473,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-sharp-classical/response.md",
+      "sha256": "75fcdca42a652f6e40bb7a7c544901b0305c83d80645e4b974da1b22171da9b1"
+    },
+    {
+      "bytes": 1659,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-sharp-classical/result.json",
+      "sha256": "7a88f6e6e3dd0c9ab43b300d0a6ce4233eef1109da4dbf296dcee79da1811981"
+    },
+    {
+      "bytes": 1222,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-cycle-classical/context-00.txt",
+      "sha256": "5bf47b0f2ea6387e8ed45dd83688c4d8642f72bc867acfe416d56e20093b330a"
+    },
+    {
+      "bytes": 2112,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-cycle-classical/context-01.txt",
+      "sha256": "4387f73121e9c48c569f4bba48b83d2bfc9455fbf62e097e79c1e0c84006755e"
+    },
+    {
+      "bytes": 66024,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-cycle-classical/context-02.txt",
+      "sha256": "2ace9f8df8a20e19c8871ed7981ab669945e8cfb26a8e76604c40de2c723f8ba"
+    },
+    {
+      "bytes": 553195,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-cycle-classical/provider-response.json",
+      "sha256": "2b75398f64be3b5cf524aa52584bcf3d49b2526b8c12cfa0c0da8a320686bd67"
+    },
+    {
+      "bytes": 74087,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-cycle-classical/request.json",
+      "sha256": "3779d16138d314720df91bcdf0494c170ad02313d841432c0a858853dc88dc18"
+    },
+    {
+      "bytes": 13451,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-cycle-classical/response.md",
+      "sha256": "e99e3979b4925a16eb4dd0d863f56fcf8dea92ac7c7dcbd876f13680c266a575"
+    },
+    {
+      "bytes": 1610,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-cycle-classical/result.json",
+      "sha256": "334a288aed508f8eeb7943d4a6f22b73bd0d65c540fd3dff55bfeadb449ed3c0"
+    }
+  ],
+  "two_terminal_results_and_responses": [
+    {
+      "obligation": "community-sharp-classical",
+      "parent_read_disposition": "full:12473 bytes",
+      "parent_scientific_disposition": "Parent checked direct deterministic-support trace counting and Schatten moment symmetrization. Supports log-free classical native bound. Specific finite-n Rayleigh constants not adopted; independent all-label pure-community certificate replaces them. Old quantum log\u00b2n clock dominated, but same trace lemma sharpens quantum compiler, so no all-quantum dominance claim.",
+      "response": {
+        "bytes": 12473,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-sharp-classical/response.md",
+        "sha256": "75fcdca42a652f6e40bb7a7c544901b0305c83d80645e4b974da1b22171da9b1"
+      },
+      "result": {
+        "bytes": 1659,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-community-sharp-classical/result.json",
+        "sha256": "7a88f6e6e3dd0c9ab43b300d0a6ce4233eef1109da4dbf296dcee79da1811981"
+      },
+      "session_id": 46257,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "usage_cost_estimate_usd": "1.094708"
+    },
+    {
+      "obligation": "community-cycle-classical",
+      "parent_read_disposition": "full:13451 bytes",
+      "parent_scientific_disposition": "Checked triangle fourth-moment positive circuit contraction, exact connected degree-two cover count, uniform growing-order overlap count including shared vertices, variance constants and integer clock. Accept p4 k3 q1/4 even l<=ln(n)/8 and beta\u00b2n\u00b2l>=2^15 scope. Old quantum clock dominated; no dominance over trace-sharpened quantum compiler or arbitrary-C/all-label extension.",
+      "response": {
+        "bytes": 13451,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-cycle-classical/response.md",
+        "sha256": "e99e3979b4925a16eb4dd0d863f56fcf8dea92ac7c7dcbd876f13680c266a575"
+      },
+      "result": {
+        "bytes": 1610,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-community-cycle-classical/result.json",
+        "sha256": "334a288aed508f8eeb7943d4a6f22b73bd0d65c540fd3dff55bfeadb449ed3c0"
+      },
+      "session_id": 28636,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "usage_cost_estimate_usd": "1.963870"
+    }
+  ],
+  "unique_hashed_artifact_count": 32,
+  "usage_snapshot": {
+    "bytes": 18618,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/community_baseline_round/usage.json",
+    "sha256": "ace53f29e690fbd85ac8db178b70e0d1390af380cbcc4ee3ad03e14502608ff4"
+  }
+}

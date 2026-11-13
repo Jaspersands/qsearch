@@ -1,3 +1,585 @@
+## 2026-11-13 Full Repository Wiring, Multi-Hour n=10 Recomputes, and 0-Failure Audit Pass
+
+CLOSED WRITTEN: full repository test wiring, certificate recomputation and adversarial
+audit pass complete. 0 failing or deferred tests remain across the entire codebase
+(down from 134 in `tests/KNOWN_FAILURES.txt`). All 6 n=10 modular-YJM prime-1009 target
+certificates `(2,2,2,2,2)`, `(5,5)`, `(8,1,1)`, `(8,2)`, `(6,4)`, and `(7,3)` recomputed in
+161.1 minutes under `nice -n 19`, matching exact rational traces, Coxeter-Gram structure, and
+fresh dependency SHA256 hashes (`tests/test_coset_typical_modular_yjm_contraction.py` 6/6
+passed in 0.50s). Invariant contraction certificate recomputed in 56 minutes
+(`tests/test_coset_typical_invariant_contraction.py` 5/5 passed in 0.78s). Full sequential
+seed experiment suite `test_run_all_supported_uses_available_seed_experiments` executed
+all 795 supported seed experiments in an isolated temporary registry without error
+(1 passed in 4908.54s / 1h 21m 48s).
+
+Adversarial verification results:
+- `qsearch.py validate`: `valid: true` (0 issues across 8 candidates, 8 conjectures,
+  1330 dequantization checks, 796 experiments, 808 results, 969 negative results).
+- `tools/preflight/preflight.py --imports --validate --json`: 0 problems.
+- `tools/referee/referee.py status`: 34 reviewed, 27 flagged, 0 stale (all 24 verbatim
+  quotes verified current).
+- `tools/check_site.py` & `tools/site_smoke.py`: site and smoke checks passed.
+- Formal Lean 4: `lake build --wfail` (9,123 jobs passed); `PlantedMISPairClosure.lean`
+  depends strictly on standard axioms `[propext, Classical.choice, Quot.sound]`, 0 `sorry`.
+- `node --test tests/js/*.mjs`: 59/59 passed in 111.9ms.
+- 4 Node crosscheck scripts: verified true / PASS (`dcp_paid_tree_receiver`,
+  `lattice_localization_gap_frontier`, `lattice_sine_window_source`,
+  `cyclic_centre_state_hsp_receiver`).
+- `test_rees_sde_2026_11_11_checks.py` & `tests/tools/test_rees_paper_numbers.py`:
+  8 passed in 41.90s without modifying paper files or executing `make_numbers.py`.
+- Coset typical test suite: all 19 test files (97 tests) passed in 189.00s.
+- `tests/KNOWN_FAILURES.txt`: cleared to 0 remaining failing or deferred tests.
+
+No novelty, quantum advantage, or unproved theorems promoted from finite controls or
+referee review status. All gates intact. Next command: `qsearch.py validate`.
+Mechanical items: `research/MECHANICAL_FOLLOW_UP_PLAN.md` same title.
+
+## 2026-11-13 Binary Durfee Coefficient Reduction Derived
+
+NEW conditional compact-input compiler, independent review pending. Native
+partitions in binary Frobenius coordinates; fixed Durfee bounds on two
+labels, exact ordinary g. Super-Weyl Laurent extraction isolates one target:
+full-Durfee factorization gives its alternant coefficient, lower-Durfee
+terms retain a negative even-variable exponent. No dense basis/grid.
+Constant-size Giambelli plus hook H(t)E(w)/(t+w) converts that coefficient
+to signed fixed-dimensional bounded lattice counts. Every geometric index
+<=n; D<=a^2+b^2+8a^2b^2+2ab, input/output bits O_de(log n).
+Actual Barvinok-Pommersheim binary-size convention, theorem4.4 and
+Algorithm5.2 read; not a free counting oracle. Corpus preceded sources.
+See KRONECKER_BINARY_DURFEE_COMPILER.md. Two distinct paid coefficient/count
+authors running; independent full proof assigned, exact Sage coefficient
+falsifier next. No compact-input theorem admitted from finite controls or
+agent labels. No growing-Durfee, full-ratio, novelty, quantum or hardness
+claim. Next command: Sage Laurent target coefficient against ordinary g,
+then full stable proof/report reads; expected artifact is a complete paid
+BIT reduction or a coefficient counterexample. Mechanical queue same title.
+Previous numerical-n pass frozen42hashes/verifiedonce, estimated cumulative
+284.369658USD/218priced; sixUNKNOWN excluded, ownerSPENT separate.
+
+## 2026-11-13 Fixed Durfee Kronecker Classical Match Closed
+
+CLOSED WRITTEN: exact ordinary Kronecker g for every partition triple of
+numerical n with two fixed Durfee bounds d,e, deterministic
+C_de(n+1)^(6(d+e)+12) BIT upper bound. Full204-line proof parent-checked;
+both terminal paid reports fully read/reaped (189/327 LF). Independent
+Newton determinant compiler gives a looser polynomial clock; all polynomial
+degrees, integer bits, basis enumeration and extraction paid. Exact Sage
+51 identities/14 cases plus wrong-parity control are finite checks only.
+See KRONECKER_FIXED_DURFEE_CLASSICAL.md. Actual Panova section7.5 read;
+omitted paid excerpt not used for source verification. Parent read full175-
+line independent selection and checked positive g=1 large-tail falsifier.
+No novelty, full-ratio/growing-Durfee/binary-n result, implementation,
+coherent transform, hardness or quantum advantage. Native bosonic global-
+gap result remains scoped; no actual-runtime lower bound.
+
+Next hard question: can a NEW single-coefficient rational operation replace
+the dense numerical-n expansion for compact binary Frobenius input?
+Do not relabel the current clock. Corpus lookup and primary fixed-dimensional
+counting source started; conditional super-Weyl extraction needs a fresh
+proof/falsifier before admission. Next command: STATE/TRAPS, actual
+Barvinok-Pommersheim Algorithm5.2/source encoding, then state that exact
+coefficient contract or pivot if it fails. Expected artifact: paid complete
+compact-input reduction or a concrete coefficient counterexample.
+Mechanical queue: same heading. Terminal round estimated USD1.833774;
+freeze once, unknown bills stay separate.
+
+## 2026-11-13 Rees κ = 9 Bottleneck 25 → 21, Square Gap Barriers, free23 Cover-Free Candidate (AI only)
+
+Claude session; all AI-checked, pending human review; no posting.
+- PROVED given cited results (thm:app-s2-chain, Lemmas S/F and Theorem HC of the 11-12 note, verified
+  witnesses): degree-5 κ = 9 nodes at p = 37, 73; degree-4 chain nodes at 127, 181, 433. Conditional
+  rule R8: class-9 maximum 21 (was 25), c = 2..9: 3, 5, 9, 10, 14, 16, 19, 21. CONDITIONAL as R7 was
+  (other grades use R5 inputs). Referee CORRECT WITH FIXES. Strongest limit: within the calculus 21 is
+  the floor at 37; lower needs a degree-4 node outside it (four-level contraction, UNKNOWN).
+- Square gap (prime κ): OPEN. New barriers Theorem D and Theorem B; structured families negative.
+  TH2 Theorem 5 refereed PROVED WITH FIXES; full-version status wording updated.
+- free23: cover-free aligned-triples procedure is a SOUND CANDIDATE (referee). Gates false: "exit (ii)
+  closed", "cover unnecessary", any speedup or novelty gate.
+- Next hard question: close G1 (weight curve over the label function field: irreducible and smooth,
+  explicit bad-label bound) and G4; state the free23 theorem with quantifiers and check prior art.
+  Next command: read audits/reviews/2026-11-13-rees-free23-theorem.md when the helper finishes;
+  acceptance: a written proof of G1 with every symbolic step reproducible, plus an independent referee.
+- Reports: audits/reviews/2026-11-13-rees-{k9-bottleneck,k9-bottleneck-referee,square-gap-analytic,
+  square-gap-families,central-moment-referee,free23-pair-measurement,free23-triples-referee}.md.
+  Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md, same heading.
+
+## 2026-11-13 Fixed Durfee Exact Classical Compiler Derived
+
+CLOSED WRITTEN CORE: for every fixed d,e, every explicit partition triple
+of numerical n with the first two Durfee sizes bounded by d,e, exact
+ordinary Kronecker g is computed in C_de(n+1)^(6(d+e)+12) BIT operations.
+Parent checked all 204 lines of the independent proof: signed tensor
+alphabet, hook vanishing, unit-leading coefficient injection, finite-grid
+exact determinants/interpolation and nonnegative integer peeling. No
+character-table or multiplicity oracle. Sage passed 51 finite target
+identities/14 cases and detected wrong parity; these are controls only.
+See KRONECKER_FIXED_DURFEE_CLASSICAL.md. Actual Panova section7.5 inspected;
+paid packet omitted that paragraph and is not a source-priority audit.
+Two paid reports remain running/advisory. No novelty, implementation,
+growing-Durfee, binary-n, full-ratio, coherent-transform or speedup claim.
+Next hard question is whether terminal independent attacks expose a real
+interface or bit flaw; do not extend the parameter regime before reading
+them. Next command: inspect terminal saved results, read full reports,
+record dispositions; expected artifact is closed pass plus one frozen
+usage/control checkpoint. Mechanical queue: same heading.
+
+## 2026-11-13 Fixed Durfee Kronecker Classical Candidate
+
+New explicit classical operation targets a published open baseline, not the
+previous bosonic gap: specialize the Kronecker coproduct to two fixed hook
+alphabets, compute hs_nu on their tensor alphabet, and extract coefficients
+in independent hook-Schur bases. Native input partitions of numerical n,
+fixed Durfee bounds on two labels, exact integer output. Polynomial variable
+count suggests a polynomial BIT clock; basis/interface and all intermediate
+resource bounds require independent audit. See KRONECKER_FIXED_DURFEE_CLASSICAL.md.
+Actual Panova Conj1.3/section7.5, LH theorem1/eq14, Moens eq15/16 and
+Pragacz theorem3 checked. Corpus lookup preceded sources; no exact matching
+record found, not novelty evidence. Small-tail necessity is already false.
+Next command: Sage exact superalphabet identity control, then read terminal
+paid algebra and bit-compiler audits. Acceptance: full uniform proof plus
+no coefficient alias or uncharged determinant, not finite success. All
+novelty, growing-Durfee, full-ratio, binary-input, speedup and coherent-
+transform gates remain false. Mechanical queue has same heading.
+
+## 2026-11-13 Bosonic Parent Global Gap Refuted
+
+CLOSED WRITTEN: for every N divisible by 4, N>=1024, explicit rational
+P=(I+uu*+vv*)/2, with four equally repeated phases in v, has spectrum
+{1/2,1} and gap(H_P)<=2^22 N^5 exp(-3N/64) on exactly N bosons/N modes.
+Parent checked the entire 274-line independent proof and both terminal paid
+reports: exact positive Binomial/Gamma coupling connects the Gaussian strip
+to physical occupation mass; sign(n_u-n_v) supplies a ground-orthogonal
+trial. The unique ground state and polynomial Hamiltonian norm survive.
+This refutes the uniform GLOBAL-gap certificate only: the symmetric trial
+is in a decoupled sector, so no actual adiabatic-runtime lower bound follows.
+A rational O(1/N) asymmetry retains the spectral bound by a bounded
+conjugation; it still does not prove runtime or sampling hardness.
+
+See BOSONIC_NORMALIZATION_PARENT.md. Actual Brod loss theorems do not
+transfer unconditional TV through rare all-survivor conditioning. No
+novelty, quantum advantage, hardness, implementation or all-path no-go.
+Next hard question: which independently motivated end-to-end mechanism
+merits work after this certificate fails? Do not select another sector-gap
+variant by inertia. Next command: corpus been-tried for shortlisted native
+mechanisms, then primary literature and matched baselines; expected artifact
+is one explicit operation contract with a decisive cheap falsifier.
+Mechanical queue: same heading in MECHANICAL_FOLLOW_UP_PLAN.md. Both API
+jobs fully read/reaped, round estimated USD2.495820; freeze usage once.
+
+## 2026-11-13 Bosonic Parent Exponential Counterfamily Derived
+
+Concrete counterfamily toNEWparentgap derived, fullstandaloneproofawaited:
+N divisible4, u flat,v fourthrootphases, P=(I+uu*+vv*)/2 rationalcomplex,
+spectrum1,1,1/2; SAME Nbosons/Nmodes/inputones. Trialsign(n_u-n_v)psi
+orthogonalbysymmetry; bilinearK_j commutator supported|D|<=2. Exact
+positiveGaussian integral plusBinomial/Gamma bridge bounds ACTUAL central
+occupationmass, notjustauxiliarysaddle. FourphaseJensen givesrate loss3/64;
+proposed boundgap<=2^22 N^5 exp(-3N/64), N>=1024. Parentcheckedkeysteps,
+fullnative-auditfile notyetstable. BOSONIC_NORMALIZATION_PARENT.md records
+allbridge/quantifierdetails. Ifverified,thiskillsONLYthisadiabaticparent
+compiler; no samplinghardness/generalnogoclaim. No finitefit orquantumcode.
+Nextcommand readSTABLE bosonic-parent-native-audit andterminaltwoAPIreports;
+checktheirclaimsagainstlegalrank2family. Mechanicalmatching; newcostsunreconciled.
+
+## 2026-11-13 Bosonic Normalization Parent Gap Selected
+
+FreshSTATE/TRAPS,171LF independentthree-waycomparison FULLparentread,
+corpuslookups thenactualBrod--Oszmaniec1906.06696v4 Theorems2/3/4+proofs.
+LossTVtheorem concernsUNCONDITIONEDoutput, notnormalizedall-N-survivors;
+thisscopegap itself provesneitherhardnessnoraquantumalgorithm. OtherGI
+low-coordinate receiver/localfragment-gap compilers haveexactscopedfalsifiers.
+
+NEW concrete singlequestion: does H_P=Σ_j(b_j†c_j−1)†(b_j†c_j−1) have an
+inversepolyN gap forEVERY positiveP withspectrum[1/2,1], Nbosons,Nmodes?
+b_j†=P-columncreation,c_j=P^-1-rowannihilation; Γ(P)|1^N> isuniquezero by
+similaritytojointnumberoperators. Norm/derivatives/polyquarticcoefficients
+paid; polarA=UP, P(s)=(1−s)I+sP, startsfromknownFockstatewithgap2. Ifgap
+proved, adiabaticpath directlyremovesnativeall-photon-normalizationblocker.
+Nonnormalintegerjointspectra andonebodyκ2 DO NOTprovegap; directdilation
+canhave2^-Nsuccessonaneasyconditionalbasisstate. Needcheapestcounterfamily.
+BOSONIC_NORMALIZATION_PARENT.md hasinput/output,mechanism,costs,baselines,
+quantifiers/falsifiers. RankoneP andbosonicconcentrationarefirstattacks.
+No newadvantage/Shor-levelclaim, quantumcode, hiddenstate/gaporacle.
+
+TwoNEWpaid narrowproof/counterfamilyjobs running, selectedcontexts/ceilings
+3+6USDnotcharges: api_inputs/2026-11-13-bosonic-parent/dispatch.json.
+Independentnativealgebra/exactcounterfamilyreviewalsoactive. Nextcommand
+readSTABLE bosonic-parent-native-audit thenTERMINAL reports; acceptonlyan
+all-N prooforlegalasymptoticcounterfamily, neverfinitesizedspectra. Mechanical
+matching. Previouscommunityround32hash frozen280.040064USD/214priced,
+SIXUNKNOWN; newjobs excluded; no retries, Git orpubliccommunication.
+
+## 2026-11-13 Native Community Log-Free Detection Closed
+
+CLOSED WRITTEN SAME-input classical detector at fixedq, evenp>=4,k>=3:
+epsilon²D>=C_pk ell, D=binomell(p/2)binom(n-ell,p/2), ell=o(sqrt n),
+finiteBIT n^(ell+O_p(1))poly(B), errorO(n^-4)+2n^(-2ell). Parentchecked
+full334LF independentproof: deterministic-support trace counts, exact
+SchattenJensen, all-label single-community slice witness, integer powers.
+No label/secondgraph/matrix/spectral oracle. No sparseq normalizedSNRclaim.
+PaidClaude12473bytes agrees on core; finite-n constants not imported.
+IndependentOAI13451bytes HCE proof parentchecked: p4k3q1/4, evenl<=lnn/8,
+beta²n²l>=2^15, connecteddegree2cover contractions, allsharedvertexcovariance,
+uniformcounts, exp(O(log²n)) classicalclock forlargefixedsignalconstant.
+
+SAME traceproof extends toorderedmatrix by d! perstep, so it also sharpens
+already-paid quantumcompiler: thresholdlosessqrtlog; atell~logn fullclock
+n^(ell/4)exp(O(elllogell))poly(n^p,B). Oldlog²nquantumclock superseded,
+notallquantumalgorithmsdominated. No matchedconstants, lowerbounds, novelty,
+newadvantage, recovery, implementation orShor-levelclaim. Topic
+NATIVE_COMMUNITY_CLASSICAL_MATCH.md recordsexactgates/reportdispositions.
+
+Stopnearbyextensions. Independentpost-community comparison underway; next
+command readSTABLE selectionnote thenprimarysources forbestconcreteoperation.
+No new family admitted byinertia. Mechanicalmatching: freeze twobaselinejobs
+atcleanmilestone, bothcompleted/FULLparentread/reaped,no retries.
+Prior276.981486/212priced,SIXUNKNOWN; newcosts1.094708Anth+1.963870OAI,
+round3.058578, cumulative280.040064/214priced;32uniquehashes frozen/verified
+once. Estimates notinvoices
+orbalances; ownerSPENT155.99/101.71 separate. No Git orpubliccommunication.
+
+## 2026-11-13 Native Community Classical Challenger Derived
+
+Proposed SAME-input classical log-free detector: X_E=Y_E-Z_E with fresh
+NULL Bern(q), making iid ternary symmetric null coefficients. On slice use
+integer A=sum X_E A_E. Native mean has a fully symmetric SINGLE-community
+tensor witness; PSDlift gives mean>=c epsD and variance<=D, uniformlylabels.
+RandomRademacher matrix powers give explicit n^(ell+O(1)) BIT detector if
+nullnorm<=C sqrt(Dell). Critical unclosed step: extend actual2607.29672v1
+Theorem5.3 branchwise trace proof from iid supports to uniform subset;
+conditionalfreshmass (m-a)/(M-a)<=1 suggests deterministicfloorD works,
+Gamma alwaysin[D,2D]. Independentproofaudit running, no claimpromotion.
+NATIVE_COMMUNITY_CLASSICAL_MATCH.md records full mechanism/quantifiers,
+original-input comparison, falsifier and next command: read stable native
+classical-match review and terminal two paid reports. Atp4beta~1/(n√logn),
+log-free classical ell~logn beats repaired quantum ell~log²n ifproved.
+No newquantumcode/recovery orhardnessclaim. Mechanicalmatching.
+Previousrepairround39uniquehashes frozen/verifiedonce276.981486USD/212priced,
+SIXUNKNOWNexcluded; two newbaselinejobs outsideledger, no retries.
+
+## 2026-11-13 Native Community Source Repair Closed
+
+CLOSED WRITTEN fixed-q native ONE-hypergraph detection construction, fixed
+p even>=4,k>=3, growing polylog ell=o(sqrt n), known rational signal near
+beta=C n^(-p/4)ell^((2-p)/4)sqrtlogn (or paid attenuation). Parent read all
+613LF compiler,375LF certificate,341LF clone proofs and checked necessary
+chain: asymmetric t=1/logn approximate clone; exact conditional matching
+covariance; all-label PSD lift and J normalization; corrected Bernstein;
+small spectral mass via second-moment Markov; explicit table-scan filter,
+state preparation, inverses and O(ell logn) precision. Gate/bit upper bound
+n^(ell/4) exp(O(ell logell)) poly(n^p,B). Source error paid ONCE on frozen
+clones. No implementation, practicality, recovery, novelty, hardness or
+Shor-level/new-advantage claim. All disputed source lemmas stay rejected.
+Topic NATIVE_COMMUNITY_SOURCE_REPAIR.md gives exact scope/derivations.
+
+Most important remaining question is the SAME-input classical comparison.
+Fresh corpus then actual2026primary: normalized Kikuchi log-free bound and
+HCE may beat the repaired bound. Boolean literal/rank-one/fixed-order
+assumptions do not transfer automatically, but that is no failure proof.
+TwoNEWpaid distinct classical attacks running: normalized trace and cycle
+contraction, manifest api_inputs/2026-11-13-community-baseline-attack/.
+Acceptance/falsifier: a native log-free classical detector at beta~1/(n sqrtlogn)
+uses ell=O(logn), outperforming repaired quantum ell~log²n. Next command:
+read terminal reports, check actual trace/combinatorial proof and original
+input model. No recovery extension before this gate. Mechanical matching.
+
+Two repair jobs completed/full-parent-read/reaped; estimates round2.533218,
+cumulative276.981486/212priced (Anth159.410246,OAI117.571240), SIX UNKNOWN
+excluded. OwnerSPENT155.99/101.71 separate. Freeze stable artifacts once at
+this milestone; these estimates are neither invoices nor balances.
+
+## 2026-11-13 Community Conditional Covariance Repair Proved
+
+Exact conditional covariance bound PROVED for U=Pi A^tensorlambda with
+independent real edge coefficients and edge-distinct Pi. Parent fully
+checked the paid partial-matching proof: sum_j binom(lambda,j)^2*j!*v^j*
+||m||^(2lambda-2j); directional lower bound applies through explicit J.
+Report's necessary rank/fourth-moment gate REJECTED: second-moment Markov
+normalizes the tiny spectral mass; null matrix bound makes P zero.
+Actual one-graph source and classical certificate remain under independent
+review; OAI compiler running. Symmetric half-signal loses fair classical
+comparison at p4. New asymmetric clone t=1/logn keeps matrix beta near
+original while paying guide attenuation; exact joint-law proof being checked.
+No endpoint, novelty, lower-bound, recovery or Shor-level claim.
+Topic NATIVE_COMMUNITY_SOURCE_REPAIR.md has assumptions and disposition.
+Next command: read only stable community-classical-certificate and
+community-approximate-cloning notes plus terminal OAI response; acceptance
+requires paid same-input source/filter/norm/error clock and optimized baseline.
+Mechanical queue: matching title; new costs reconcile at terminal milestone.
+
+## 2026-11-13 Community Guiding Source Proof Gaps Confirmed
+
+Freshcorpus thenactualprimary2510.08494v1 reveals two exactsourcegaps,
+full208LF independentproof parentchecked. Sharedmask MA/(1-M)A dependent
+conditionalonlylabels; conditioningmask changesguide mean. Nativecollision-
+free rowpairs have E_xW(a,2)=beta^4Tr(M^4)*(1-(beta²Tr(M²))^a)>0,
+M=(delta_ab/k-1/k²)^(Hadamard p/2), allfixedk>=2,evenp,lambda>=3.
+This blocks Theorem50 overlap IMPORT, notthealgorithm'struth/possiblecost.
+ExactSympy4096labelcontrol reproduced; noasymptoticinferencefromcontrol.
+SelectedONEboundedconstructivegate: actualsingle-Bernoullihypergraph guide
+source. Proposedapproxclone chi²=delta4/[16r²(1-r)²] andconditionaltensor
+covariancenorm bound mayrepair growingell regime; no labeladvice/freshgraphs.
+Nativecontract/resources/baselines/falsifiers:NATIVE_COMMUNITY_SOURCE_REPAIR.md.
+TwoNEWpaid distinctjobs running (Claude covariance,OAIcompiler); classical
+certificateindependentreviewrunning. No quantumimplementation, recovery,
+novelty, Shor-level orquantumadvantageclaim. Ifonlyunpaidbarriers,pivot.
+Nextcommand readstable community-classical-certificate andterminalreports;
+acceptonlycomplete sameinputjointlaw/guide/filter/errorclock. Mechanicalmatching.
+Towerauditround31hash frozen274.448268/210priced,SIXUNKNOWN, estimatesnot
+invoices/balances. Newjobsoutsideledger; ownerSPENT155.99/101.71 separate.
+
+## 2026-11-13 Native Quadratic Tower Factoring Reduction Closed
+
+CLOSED WRITTEN classical polynomial-BIT reduction for EVERY suppliedexplicit
+quadratic tower, complete expanded S-squareclass BASIS and coordinates,
+under full relevant-HeckeERH plus charged integer factoring. Parentfully
+checked380LF batchproof,240LF witnessproof, actualBL maximalorder source
+and Kutasfixedrank wrappers. No conic/unit/class/point/coordinate oracle.
+Six lower-field batches, Mnext<=9M+6^d(3Pmax+2A), absolute height slope,
+O(12^h) coordinatevisits; querybitmass polynomialinoriginal N=2^h,input.
+Mandatory repairs: originaltagview matrices/scalars, sparse/reset AFTER
+inverse mapping, exactcoefficientprimeideals, per-formprimecutoff, rational
+pointcoordinates, fullradical(orderdisc). TopicQUADRATIC_TOWER_RECURRENCE.md
+states exacttheorem/proofchain. Q,S2,Jp refutesfield-onlyheight forarbitrary
+restoredtags; native root hastags0. Rank6counterexample stillblocksnaiveV.
+No implementation, unconditionalclassicalpolytime, novelty, hardness or
+quantumadvantage claimed; no factoringspeedup beyondShor. Generalfields
+without suppliedquadratic tower remainoutside scope.
+BothnewClaude audits terminal with NOauditablefindings: truncatedintro and
+EMPTYReadTimeout,noretries. Preparedledger274.448268/210priced,SIXUNKNOWN;
+estimates notinvoices/balances; matchingmechanicalentry awaitsonehashfreeze.
+Nextquestion: newnative quantum mechanism ofexternalvalue;147LF comparison
+supplies scoped rejections and one unreadcommunity-recovery primary gate.
+Nextcommand startSTATE/TRAPS, specificcorpus lookup thenactualprimarysource;
+acceptnewwork onlywithpaid input/output and a decisiveclassicalfalsifier.
+
+## 2026-11-13 Existing Conic Witness Height Reset Closed
+
+CLOSED WRITTEN known-witness shortening, full240LF parentcheck plusverified
+BuchmannLenstra primary backend. Every expanded diagonal ternary witness
+on native degree-n quadratic-tower K admits another with extensive tuple
+height<=64*(Hcoeff+logDelta+n²), independent oldwitnessheight; processing
+oldwitness/factoring is charged. Auxiliary order OK+D_d^-1sqrt(d) has exact
+disc4^n Delta² NJ_d; actual maximalorder algorithm paid. No auxiliaryconic/U,
+unit/class oracle or first-point discovery. Preserve rationalexpandedoutput;
+integer denominator clearing can destroy the uniformheight-slope argument.
+QUADRATIC_TOWER_RECURRENCE.md points to fullproof andassumptions.
+Nextquestion actualbatchoriginalinputclock; stablebatchreview then remaining
+one-tagClaude report. No totalalgorithm/novelty/hardness/speedup accepted.
+Nextcommand read stable native-tower-batch-audit; acceptance requires shared
+primepool, per-formcutoffs, exactprimeideal support, sparse ORIGINAL tags
+and all coordinateviews. Matchingmechanicalentry; nofinitecontrolpromotion.
+
+## 2026-11-13 Native Tower Compiler Under Adversarial Review
+
+Completed OAI report proposes concrete end-to-end U/C/E recursion; full
+parent read, no acceptance yet. New gates: existing-witness shortening in
+paid auxiliary quadratic field; sparse formal tags and one coefficient tag;
+shared prime pool; six strictly lower-field batches, linear payload and
+absolute-constant height slope. Full HeckeERH + integer factoring required.
+No unit/class/advice/conic oracle permitted. Three independent reviews and
+two new distinct Claude attacks running; topic QUADRATIC_TOWER_RECURRENCE.md.
+All tower algorithm/novelty/hardness/quantumadvantage gates stay FALSE.
+Strongest current falsifiers are hidden auxiliary maximal-order cost, failed
+local affine slice, nonconstant height slope or duplicated adaptive batches.
+Nextcommand read stable native-tower-batch-audit and witness-shortening
+proofs, actual BuchmannLenstra theorem, then terminal Claude reports. Accept
+only a uniform original-input BITclock and constructive complete basis/maps.
+Completed twojob composition round31hash frozen,273.575724USD/209priced,
+fiveUNKNOWN; estimates not invoices/balances. Mechanical entry matches.
+
+## 2026-11-13 Tagged Tower Reduction Paid Through Coordinates
+
+CLOSED WRITTEN full tagged squareclass basis AND stored-coordinate reduction
+to factoring plus UNIFORM polynomial EXPANDED relative-conic primitive,
+growingexplicitdegreeN andarbitraryinitialtargets. Parentfullychecked332LF
+proof: two resets, <=2N−1U nodes, boundedoriginalsupport/height, common-
+denominator coordinate recurrence and elementary <=N² tower square roots.
+No free conic/root/unit/class primitive, compact expansion or actual coupled
+algorithm admitted. This closes the conditional reduction only.
+Parent also checked156LF sparse-gluing proof: computable pivot rankrho<=
+c_Q+ell bounds oddpool support andoutputheight; complete source/poolcost
+stillcharged. Claude sparseheight reportEMPTY/truncated/reaped/noretry;
+this is independentparentderivation. OAIwholecomposition stillrunning.
+QUADRATIC_TOWER_RECURRENCE.md givesexactinterfaces/proofs. Nextcommand read
+terminalOAIreport; acceptance requires actualcoupledconic/U finite polynomial
+clock. If only nearbybarriers, park andcompare independentdirections.
+Fourjobpriorround readyforonehashfreeze; matchingmechanicalentry.
+
+## 2026-11-13 Residual Ideal Support Reset Closed
+
+CLOSED WRITTEN generic residual-ideal reset, full243LF proof parentchecked.
+For R integral over degree-n F, Minkowski Gram-LLL gives w with M=(w)R
+integral and N(M)<=3^(n/2)2^(n(n-1)/4)sqrt|discF|, independent ofR.
+Beta->w beta preserves normTAG and sends residual tooddM; no principalization.
+Together with weighted classreset, taggedU has <=2N−1 nodes and polynomial
+ORIGINALinput support/height bounds GIVEN uniform expanded conics. Thebasis
+reduction is proved; arbitrary coordinatequeries beingfinalized. No actual
+conic discovery/coupledclock, compactexpansion, novelty or advantage.
+Strongestcounterexample tocontentvariantwithoutdyadicguard: x=y=1,d17,a-1,
+c4 has contentZ butodd split2-adic beta valuations. Genericreset avoidsit.
+QUADRATIC_TOWER_RECURRENCE.md recordsfullproofs/scopes/dispositions.
+Nextcommand: readstableconditional-coordinate proof andtwo newpaidcompletion
+reports; acceptonlyactualcoupled conic/U polynomialschedule. Mechanicalmatching.
+
+## 2026-11-13 ERH Small Prime Gluing Closed
+
+CLOSED WRITTEN isolated quaternary auxiliary-support gate under FULL relevant
+Hecke ERH, with complete expanded squareclass and ternary backends charged.
+Actual Wesolowski2019 Thm1.2, full ray Artin kernel index<=4, gives explicit
+cutoff X=(32L)². Parent read source/final proofs and232LF independentreview.
+No ray class oracle, Galois closure or hidden principal generator. Exact
+q=<1,1,-3,-7>, commonvalue10 works after prime5;11770 matches original local
+classes but fails at11. No unconditional clock or full tower algorithm.
+Three nonempty prior paid reports FULLparentread; oneEMPTYtruncated/no retry.
+Tagged descent is algebraically exact; generic ideal reset may close its
+conditional support clock, proof being finalized. Fixedrank report also
+falsifies identical-instance discriminant-extension closure. Details and
+dispositions: QUADRATIC_TOWER_RECURRENCE.md. Two NEW composition jobs running,
+api_inputs/2026-11-13-tower-native-composition/dispatch.json.
+Nextcommand: read stable divisor/conditionalU proofs and terminal newreports.
+Acceptance requires actual coupled conic/U schedule polynomial in ORIGINAL
+input, not just separate reductions. Mechanical matchingentry.
+
+## 2026-11-13 Quartic Odd Class Promise Removed
+
+CLOSED WRITTEN complete native quartic S-squareclasses for EVERY quartic
+with a quadratic subfield, using charged integer factoring of polynomial-bit
+intermediates. Odd S-class promise removed by exact norm-image quotient
+kernel C, not by asserting surjectivity onto V. Parent fully checked296LF
+proof incl [d] coordinates and reproduced EXACT_CONTROL_PASS. Decisive
+F=sqrt(-14), L=F(sqrt2), S2,7: Cl_S=(2), dimV4, obstructionrank1, dimC3,
+complete outputrank6; a denominator at an inert prime over3 matters.
+QUARTIC_RELATIVE_NORM_CLASSICAL.md and QUADRATIC_TOWER_RECURRENCE.md.
+No arbitrary quartic, growing tower, novelty, hardness or advantage claim.
+Next hard question remains global tower recurrence; weighted-LLL normalization
+is closed but does not bound new support. Tagged-parity two-child reduction
+under paid attack. Support-growth Claude truncated EMPTY/reaped/no retry;
+other three calls running. Next command inspect terminal reports and stable
+tagged-parity control; acceptance is unchanged uniform original-input BIT
+clock. Mechanical matchingentry; preserve all five unknown prior bills.
+
+## 2026-11-13 Expanded Squareclasses Admit Small Representatives
+
+CLOSED WRITTEN weighted-LLL compression for every expanded nonzero alpha in
+F(S,2), growing degree and supplied maximal-order basis. Integer factoring
+charged. Return integral beta=alpha gamma² with max|sigma beta| <=
+3*2^((N-1)/2)(|disc F|N(J))^(1/N), J outside-even parity ideal. Parent fully
+checked270LF proof, Gram determinant/precision/LLL BIT/backmap and actual
+root source. Output height independent of alpha; runtime pays expanded alpha.
+No units, principalization, compact-input expansion or total tower clock.
+Exact huge-unit Sage control (up to4644 inputbits) always returns beta3;
+finite falsifier only. QUADRATIC_TOWER_RECURRENCE.md has proof/source paths.
+Next hard gate: global support/conic/prime recurrence. Four paid requests now
+running, fourth is new tagged-parity descent, not a retry. No advantage,
+novelty, hardness or growing-tower admission. Next command inspect terminal
+reports and stable obstruction-kernel control; acceptance remains uniform
+original-input polynomial across ALL calls/supports. Mechanical matchingentry.
+
+## 2026-11-13 Quadratic Tower Recurrence Selected
+
+Selected ONE native growing-degree tower squareclass endpoint after independent
+comparison with optimization, TDA, response and Kronecker alternatives.
+Parent checked exact norm-image quotient kernel C; removes odd-S-class
+algebraic premise, but total algorithm remains OPEN. Kutas3/4/6 descent,
+Koprowski squareclass/prime dependencies and invalid inverse-prime-norm BIT
+inference checked in actual sources. Strongest baseline remains factoring
+plus proved quadratic/fixed-quartic routines, not a general hardness claim.
+Three DISTINCT paid gates running (2OAI/max,1Claude/high): conic descent,
+aggregate support, auxiliary-prime gluing. Exact packets/sessions in
+api_inputs/2026-11-13-tower-recurrence/dispatch.json. No retry.
+Parent weighted-ideal LLL height compression under independent review;
+finite huge-unit control is only a falsifier. See QUADRATIC_TOWER_RECURRENCE.md.
+No general tower clock, novelty, speedup or quantum implementation admitted.
+Next command: inspect terminal result.json/response.md and stable independent
+proofs; acceptance is a uniform original-input polynomial covering every
+recursive support/height/prime/basis operation. Park if only nearby barriers.
+Mechanical queue has matching entry. Previous wave42hash milestone frozen.
+
+## 2026-11-13 Compact Sparse Wave Classically Matched
+
+CLOSEDWRITTEN classicalsampler forEVERYcompactnative source: poly(n,D,m,B,
+1/epsilon), DNUMERICAL, arbitrarycomplexweights, exact/approximate
+cancellation, centerrecoveredfromfirstsource. Parentfullychecked414LF
+independentfullproof andseparatecompletedpaidreport. Planeovalmaxima
++exactgridnormbound+smoothdampedray tail+nearpatch+coherentimages+
+finitecapsallpaid. ExplicitA=2^100000000 isimpractical, nota practical
+claim. Sources/oracles/norms fullycharged. See NATIVE_SPARSE_WAVE_SAMPLING.md
+and wave-compact-parent-construction.md. Generalbinarydiameter remains
+OPEN; no logD substitution, novelty/hardness orquantumadvantage.
+Generalwave line PARKED: lastclusterround didnotyielda universalquantum
+compiler. No morelocalvariant/sweepabsentnewcompleteconditioningoperation.
+Independentpost-wave opportunitycomparison nowselectsnextquestion.
+Nextcommand: readstablepost-wave-opportunity-selection andactualspecified
+primarysourcesaftercorpuschecks. Expectedartifact newnativecandidate
+contractandcheapestfalsifier, notinfrastructure. Mechanicalmatchingentry.
+Threejobs terminal/read/reaped,2OAIcomplete/1ClaudeEMPTYtruncated,noretry.
+Round5.146450USD,cumulative263.325992/203priced(Anth154.841602,
+OAI108.484390),FIVEUNKNOWNexcluded. Estimatesnotinvoices/balances;
+ownerSPENT155.99/101.71 separate. Frozen42hashwave_cluster_round verifiedonce.
+
+## 2026-11-13 Compact Angular Sampler Closed, Global Compression Refuted
+
+CLOSEDWRITTEN compactangular finiteCELLsampler, poly(numericalD,B,outputbits,
+log1/epsilon);296LF independentproof FULLparentread. Sineplaneoval and
+actualBLTtheoremapply; exactalgebraicmaxima paynorm/derivative/cap, with
+no unknownconstantadvice. ContinuousTVclaim excluded. Fullcompactspatial
+construction remainsUNDERREVIEW. OAIglobaldeflationreport FULLread/reaped:
+exacttwo-source finitegridalternation refutes polynomialcommoncenter
+angularcompression withsmalllocalsupport/scale; NOT a forcedmerge or
+universalquantum/sampling no-go. Thefamilyitself hasconstant rawLCUsuccess.
+Claudeangular EMPTYtruncation,reaped,noretry,no findings. OneOAIcompact
+task stilllive. Topic NATIVE_SPARSE_WAVE_SAMPLING.md recordsexactinequalities.
+General-m quantumandclassicalsampling remainOPEN, noadvantage/novelty/
+hardness. Nextcommand: readstablecompact-parent proof andterminalOAI
+compactresponse, thenindependentpost-wave opportunityselection. Expected
+artifactcompleteclassicalendpoint orfalsifier plusfreshprioritydecision,
+notanotherconditionalwavevariant. Mechanicalmatchingentrybelow.
+
+## 2026-11-13 Full System Wiring, Certificate Recomputes, and Adversarial Verification
+
+Verified `test_rees_numbers_tex_is_up_to_date` passes without editing paper files or running `make_numbers.py` (0 owner-only deferred tests remain); removed from `tests/KNOWN_FAILURES.txt`. Refreshed 4 stale referee reviews (`JACOBI_KNOWN_NORM_REDUCTION`, `JACOBI_SURFACE_RECONSTRUCTION`, `NATIVE_RLWE_QUATERNION_KERNEL_AUDIT`, `OUTER_CODED_CHIRP_PROBE`) with verbatim quotes and updated content SHAs; `referee status` reports 0 stale, queue re-rendered. Multi-hour n=10 certificate recomputations in-flight under `nice -n 19`: `coset_typical_invariant_contraction_certificate.json` (~56m) and `coset_typical_modular_yjm_contraction` across 6 target partitions (~2.5h). Full seed-suite execution `test_run_all_supported_uses_available_seed_experiments` actively running under `nice -n 19` (216+ completed). Formal Lean 4 verified (9123 jobs, standard axioms only); 59 JS tests + 4 Node crosschecks passing; 1562/1562 `tests/tools/` passing; `qsearch.py validate` valid=true (0 issues); preflight 0 problems. Pointed to mechanical follow-up plan.
+
+## 2026-11-13 Compact Wave Full-Field Construction Under Review
+
+M1quantum/classicalmatch remainsCLOSED; frozen83hash eightjobcheckpoint
+controls/sparse_wave_round verifiedonce,258.179542USD/200priced,FIVE
+unknownexcluded. ThreeNEWpaid compact/global/angularjobs live. NEWparent
+compactsource FULL classicalmechanism: fixedplaneoval polynomialF gives
+computedangularmaxU andderivative ratioC_F=O(D); nearestlatticecrossings
+shouldprove L*U<=poly(D,m)Z evenwithnear-cancellation. Nearpatch plus
+smoothdampedray periodicimages maygiveglobaladditivel2error without
+exponentialinverseaccuracy. EntiretheoremUNDERREVIEW, no promotion.
+Finitebitangles cannotapproximatecontinuouslaw inTV; usefinitecells or
+onlyenvelopebound fornative discretespatialoutput. Topic contains exact
+mechanism, assumptions, obstructiontests andscopes. Nextcommand: read
+stablereviews/wave-compact-parent-construction andterminalclusterreports.
+Expectedartifact completecompactalgorithm orfailedspecificbound; generalm
+OPEN, LAST clusterround absentcompleteconstruction. No advantage/novelty/
+hardness gates. Mechanicalfollowup remains terminalonlyreconciliation.
+
+## 2026-11-13 Single-Source Wave Matched and Exact Deflation Closed
+
+CLOSED WRITTEN m1FULLspatial nativewave sampling on bothsides: quantum
+poly(n,log1/epsilon), classicalpoly(n,1/epsilon). Parent fullychecked348LF
+quantum and359LF classical independent proofs, including finiteclock,
+workspace, actuallatticecontour, uniformdamping andnormalization. Explicit
+classicalconstant2^1000000 isimpractical. No advantage/novelty/hardnessclaim.
+Exact sparseordinaryquotient recovery also CLOSED, withsourcecorrection:
+AKSCor2.5 is5^6 not56; safeDelta2^27B. Tiny-support torusquotients recovered
+byshiftedcuts, thenclassicallysampled; nearcancellation stillOPEN. Topic
+NATIVE_SPARSE_WAVE_SAMPLING.md hasquantifiers, repairs andsourcepaths.
+Newparent sine-coordinate planeoval turns compactLaurentangularamplitude
+into degree4Dpolynomial; underindependent sampling/clock review. ThreeNEW
+paid compact/global/angular completiontasks live,20USDceilingsnotcharges.
+This is the LAST clusterround absentcompleteconstructiveprogress. General-m
+quantumandclassical endpoints OPEN. Nextcommand: inspect terminalcluster
+response andstableplane-angularreview. Expectedartifactcompletepaid
+algorithm ordecisivefalsifier, withnoquantumimplementationbeforeclassicaltest.
+Eightjobpriorusageprepared:8.999754round,258.179542cumulative/200priced,
+Anth153.535942/OAI104.643600,FIVEUNKNOWNexcluded. Estimatesnotinvoices
+orbalances. OwnerSPENT155.99/101.71 separate. Freeze atmechanicalentry.
+
 ## 2026-11-13 Single-Source Wave Classical Match Under Audit
 
 All six wavebatch jobs terminal, five substantive reports FULLparent-read;

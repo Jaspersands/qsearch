@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-13-bosonic-parent/gap-attack.md",
+      "sha256": "ec18de288d14d1c4d990dfbab3f466cda9559ab7002cfbb243987e1640b4a120"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-bosonic-parent/contract.md",
+      "sha256": "ba93cf79eab4118988851830883c90a451a6e140bf33e90a5c2ecae8e9e2c6ab"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-bosonic-parent/actual-loss-theorems.txt",
+      "sha256": "9fe0ff32bfe99c631bb6250a632c0229f8356933bb7be8a8bf4b021b88139912"
+    }
+  ],
+  "finished_at": "2026-11-13T01:39:15.946834+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "6",
+  "max_tokens": 64000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "3.39889",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_050dec9ccde9ae27016af6671479f087d1af2496f01128d624",
+  "started_at": "2026-11-13T01:25:38.807403+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 3979,
+    "input_tokens_details": {
+      "cache_write_tokens": 3976,
+      "cached_tokens": 0
+    },
+    "output_tokens": 34865,
+    "output_tokens_details": {
+      "reasoning_tokens": 30818
+    },
+    "total_tokens": 38844
+  },
+  "usage_cost_estimate_usd": "1.78304"
+}

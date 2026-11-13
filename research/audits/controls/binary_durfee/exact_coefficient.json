@@ -1,0 +1,11205 @@
+{
+  "assertions": "504 exact coefficient/reference equalities;504 integral coefficient assertions; exact count receipts for each n",
+  "cas_interpreter": "/opt/anaconda3/envs/qsearch-cas/bin/python",
+  "elapsed_seconds": 0.4934483750257641,
+  "exact_arithmetic": "QQ polynomial coefficients and integer Laurent exponents",
+  "formula": "[x^alpha y^beta u^gamma v^delta] hs_nu(xu,yv|xv,yu) Delta(x)Delta(y)Delta(u)Delta(v)/(prod(x_i+y_j)prod(u_i+v_j)), expanded even-leading",
+  "geometric_cap": "r=0..n for each inverse factor, further limited by monotone exponent target bounds",
+  "helper_provenance": {
+    "old_suite_executed": false,
+    "only_definitions_executed": [
+      "complete",
+      "schur"
+    ],
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur/exact_identity.py",
+    "sha256": "4c3f9accc637a434d2907d7c074a6781a3da0c99448a3954f4cb4185b7acf8cf"
+  },
+  "lex_variable_order": "x,y,u,v",
+  "no_counterexample_found": true,
+  "per_n": [
+    {
+      "durfee_regime_counts": {
+        "1,1": 1
+      },
+      "elapsed_seconds": 0.058291375171393156,
+      "lambda_mu_partitions": 1,
+      "n": 1,
+      "nonzero_values": 1,
+      "partitions": 1,
+      "triples": 1,
+      "zero_values": 0
+    },
+    {
+      "durfee_regime_counts": {
+        "1,1": 8
+      },
+      "elapsed_seconds": 0.0018474999815225601,
+      "lambda_mu_partitions": 2,
+      "n": 2,
+      "nonzero_values": 4,
+      "partitions": 2,
+      "triples": 8,
+      "zero_values": 4
+    },
+    {
+      "durfee_regime_counts": {
+        "1,1": 27
+      },
+      "elapsed_seconds": 0.034174834145233035,
+      "lambda_mu_partitions": 3,
+      "n": 3,
+      "nonzero_values": 11,
+      "partitions": 3,
+      "triples": 27,
+      "zero_values": 16
+    },
+    {
+      "durfee_regime_counts": {
+        "1,1": 80,
+        "1,2": 20,
+        "2,1": 20,
+        "2,2": 5
+      },
+      "elapsed_seconds": 0.053920666920021176,
+      "lambda_mu_partitions": 5,
+      "n": 4,
+      "nonzero_values": 43,
+      "partitions": 5,
+      "triples": 125,
+      "zero_values": 82
+    },
+    {
+      "durfee_regime_counts": {
+        "1,1": 175,
+        "1,2": 70,
+        "2,1": 70,
+        "2,2": 28
+      },
+      "elapsed_seconds": 0.3450904169585556,
+      "lambda_mu_partitions": 7,
+      "n": 5,
+      "nonzero_values": 143,
+      "partitions": 7,
+      "triples": 343,
+      "zero_values": 200
+    }
+  ],
+  "process_exit_code": 0,
+  "reference": "SF[lambda].kronecker_product(SF[mu]).coefficient(nu)",
+  "repo": "/Users/jaspersands/Developer/qsearch",
+  "rows": [
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1
+      ],
+      "mu": [
+        1
+      ],
+      "n": 1,
+      "nu": [
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2
+      ],
+      "mu": [
+        2
+      ],
+      "n": 2,
+      "nu": [
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2
+      ],
+      "mu": [
+        2
+      ],
+      "n": 2,
+      "nu": [
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2
+      ],
+      "mu": [
+        1,
+        1
+      ],
+      "n": 2,
+      "nu": [
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2
+      ],
+      "mu": [
+        1,
+        1
+      ],
+      "n": 2,
+      "nu": [
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1
+      ],
+      "mu": [
+        2
+      ],
+      "n": 2,
+      "nu": [
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1
+      ],
+      "mu": [
+        2
+      ],
+      "n": 2,
+      "nu": [
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1
+      ],
+      "n": 2,
+      "nu": [
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1
+      ],
+      "n": 2,
+      "nu": [
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3
+      ],
+      "mu": [
+        3
+      ],
+      "n": 3,
+      "nu": [
+        3
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3
+      ],
+      "mu": [
+        3
+      ],
+      "n": 3,
+      "nu": [
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3
+      ],
+      "mu": [
+        3
+      ],
+      "n": 3,
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3
+      ],
+      "mu": [
+        2,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        3
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3
+      ],
+      "mu": [
+        2,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3
+      ],
+      "mu": [
+        2,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3
+      ],
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        3
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3
+      ],
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3
+      ],
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1
+      ],
+      "mu": [
+        3
+      ],
+      "n": 3,
+      "nu": [
+        3
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1
+      ],
+      "mu": [
+        3
+      ],
+      "n": 3,
+      "nu": [
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1
+      ],
+      "mu": [
+        3
+      ],
+      "n": 3,
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        3
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        3
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3
+      ],
+      "n": 3,
+      "nu": [
+        3
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3
+      ],
+      "n": 3,
+      "nu": [
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3
+      ],
+      "n": 3,
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        3
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        3
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "nu": [
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        4
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        3,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        2,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 4,
+      "nu": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        5
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        4,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 2,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 2
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        2
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 2,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 2
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 2,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 2
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 2,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 2
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 2,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 2
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        3,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 2,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 2
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 2,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        2,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        5
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        4,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        2
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 2,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        2,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 1,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        5
+      ],
+      "reference": 1
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        4,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        2
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        3,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        2,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    },
+    {
+      "coefficient": 0,
+      "d": 1,
+      "e": 1,
+      "equal": true,
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 5,
+      "nu": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference": 0
+    }
+  ],
+  "scope": "Finite exact falsifier only: ALL triples of partitions n=1..5, actual Durfee(lambda),Durfee(mu)<=2. No scalable algorithm, asymptotic theorem, Barvinok implementation, or numerical approximation inferred.",
+  "stats": {
+    "coefficient_seconds": 0.07671767333522439,
+    "denominator_factor_applications": 1543,
+    "max_geometric_index_observed": 4,
+    "max_numerator_monomials": 5696,
+    "max_pruned_dictionary_states": 93,
+    "numerator_cache_hits": 450,
+    "numerator_cache_misses": 54,
+    "numerator_seconds": 0.3136183333117515,
+    "reference_products": 88,
+    "reference_seconds": 0.09548450238071382,
+    "skipped_nu": 0
+  },
+  "status": "PASS",
+  "tested_triples": 504
+}

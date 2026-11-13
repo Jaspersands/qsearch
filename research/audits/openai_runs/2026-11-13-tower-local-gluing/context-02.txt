@@ -1,0 +1,365 @@
+Source https://arxiv.org/pdf/2111.08569v2
+Local research/audits/sources/global_isotropy/vectors.txt
+Text SHA256 efba43b02947e5f9eef76d81cd7b23107a31e24b9d44e50ef6297e042383cac3
+
+--- original LF 130-171 ---
+contains all Archimedean places. In particular, every ﬁnite set of places of a global
+function ﬁeld is a Hasse set. With a quadratic form q = ha1 , . . . , an i we associate a
+Hasse set, denoted P(q), consisting of:
+      • all Archimedean places and all dyadic primes (provided that K is a number
+         ﬁeld),
+      • all these primes p such that ordp ai is odd for at least one i ≤ n.
+Let S be a Hasse set, an element a ∈ K × is said to be S-singular if ordp a is even
+for every prime p, not in S. It is called an S-unit if ordp a = 0 for every p ∈     / S.
+The group of all S-singular elements is denoted ES , and the group of all S-units by
+US . Observe that K ×2 is a subgroup of ES , hence we may consider the quotient
+group ES := ES/K ×2 of S-singular square classes. It is a subgroup of the square
+class group K ×/K ×2 of K. Moreover, we will denote US := US/US ∩ K ×2 the group of
+S-units modulo squares. It can be treated as a subgroup of ES . Observe that ES
+is an elementary 2-group. Hence, it is an F2 -linear space.
+
+                          3. Algorithmic prerequisites
+   The algorithms presented in this paper depend on the number of already existing
+tools. First of all, we need routines for solving systems of linear equations (basically
+over F2 ) and for basic arithmetic in a global ﬁeld (see, e.g., [10]). As far as more
+advanced tools are concerned, we need:
+   (1) Factorization of ideals in global ﬁelds (see, e.g., [10, 17]).
+   (2) Solution to a norm equation of a form NL/K (x) = b, where b ∈ K × and
+L/K is a ﬁnite ﬁeld extension. As was mentioned in the introduction, this problem
+is discussed in [11, 14, 15, 16, 27, 37].
+   (3) Construction of a basis (over F2 ) of the group ES of S-singular square classes.
+The author is aware of three existing methods. One is described in [21]. Another
+one is outlined in the Magma manual [7]. In this method, one constructs a set T
+containing S, such that the T -class number is odd. Then, it is known that the
+4                               PRZEMYSŁAW KOPROWSKI
+
+
+groups ET and UT coincide. Hence, the sought group ES can be constructed as a
+subspace of UT . A third method, due to A. Czogała, was recently described in [22].
+
+                                     4. Algorithms
+    In this section, we present the main results of the paper, namely the algorithms
+for constructing an isotropic vector of a given quadratic form. Our general strategy
+is as follows. For forms of dimensions 2 or 3, the corresponding vector is constructed
+directly. On the other hand, for higher dimensional forms, we will reduce the
+problem to the one for forms of lower dimension. Hence, we will recursively push
+it down the ladder till we reach ternary forms. Unfortunately, the strategy diﬀers
+signiﬁcantly from one dimension to the other. Consequently, we present dedicated
+
+--- original LF 196-275 ---
+the norm equation.
+4.2. Dimension 4. We shall now deal with quaternary forms. This case requires
+some preparations. Fix an isotropic quaternary quadratic form q = ha1 , a2 , a3 , a4 i
+over K. Without loss of generality we can assume that no 3-dimensional subform
+hai , aj , ak i of q (for some 1 ≤ i ≤ j ≤ l ≤ 4) is isotropic. Split the form into two sub-
+forms q1 := ha1 , a2 i and q2 := ha3 , a4 i. Let us begin with the following elementary
+observation determining our strategy for constructing an isotropic vector.
+Observation 4.1. The form q is isotropic if and only if there is an element b ∈ K ×
+such that the forms q̃1 := h−bi ⊥ q1 and q̃2 := hbi ⊥ q2 are both isotropic. Moreover,
+if u = (u1 , u2 , u3 ) is an isotropic vector for q̃1 and w = (w1 , w2 , w3 ) is an isotropic
+vector for q̃2 , then v := (u2/u1 , u3/u1 , w2/w1 , w3/w1 ) is an isotropic vector for q.
+   Consequently, our goal is to ﬁnd a method for constructing an element b as
+above. We shall ﬁnd it among representatives of S-singular square classes for a
+certain Hasse set S. Let S∞ = {r1 , . . . , rr } be the set (possibly empty) of all these
+                      ISOTROPIC VECTORS OVER GLOBAL FIELDS                               5
+
+
+real places r of K where either sgnr a1 = sgnr a2 (hence q1 is anisotropic at r) or
+sgnr a3 = sgnr a4 (hence q2 is anisotropic at r).
+Lemma 4.2. For every r ∈ S∞ the forms q̃1 and q̃2 are isotropic at r if and only if
+                       (
+                        sgnr a1 ,   if q1 ⊗ Kr is anisotropic,
+(♠)           sgnr b =
+                        − sgnr a3 , otherwise.
+Proof. First, suppose that q1 is anisotropic at r. For q̃1 ⊗ Kr to be isotropic, we
+must have sgnr (−b) 6= sgnr a1 . On the other hand, if q1 ⊗Kr is isotropic, it is q2 ⊗Kr
+that is anisotropic. Now, for q̃2 ⊗ Kr to be isotropic we must have sgnr b 6= sgnr a3 .
+   Conversely, suppose that condition (♠) holds. If q1 ⊗ Kr is anisotropic, then it is
+clear that h−bi ⊥ q1 is isotropic at r. We must show that q̃2 ⊗ Kr is also isotropic.
+If already the form q2 ⊗ Kr is isotropic, then so is q̃2 ⊗ Kr . Hence, suppose that
+q2 ⊗ Kr y is anisotropic. The form q is isotropic by assumption. In particular, it is
+isotropic at r. Therefore, all four coeﬃcients cannot have the same sign. It follows
+that
+                    sgnr b = sgnr a1 = sgnr a2 6= sgnr a3 = sgnr a4
+and so q̃2 ⊗ Kr is isotropic as expected. When q1 ⊗ Kr is isotropic, we need only
+to show that q̃2 is isotropic at r. This fact, however, follows immediately from the
+second part of condition (♠).                                                          
+   The next lemma is an analog of Lemma 4.2 but for ﬁnite primes.
+Lemma 4.3. For every finite prime p:
+  (1) The form q̃1 is locally isotropic at p if and only if (a1 , a2 )p = (−a1 a2 , b)p .
+  (2) The form q̃2 is locally isotropic at p if and only if (−a3 , −a4 )p = (−a3 a4 , b)p .
+Proof. It suﬃces to prove just one of the two assertions. The other one is fully anal-
+ogous. Now, [25, Proposition V.3.22] asserts that a ternary form q̃1 is isotropic over
+a local ﬁeld Kp if and only if its Hasse invariant equals (−1, − det q̃1 )p . Therefore,
+the isotropy of q̃1 ⊗ Kp is equivalent to the condition
+                 sp (q̃1 ) = (−b, a1 )p (−b, a2 )p (a1 , a2 )p = (−1, a1 a2 b)p .
+The Hilbert symbol is symmetric and multiplicative with respect to each of its
+arguments. Thus, the above condition can be rewritten in the form (a1 , a2 )p =
+(−a1 a2 , b)p .                                                               
+   It follows from the Local-Global Principle (see, e.g., [25, Section VI.3]) that q̃1
+and q̃2 are isotropic (over K) if and only if the conditions of Lemmas 4.2 and 4.3
+hold for all places of K. Now, for complex places, real places not in S∞ and ﬁnite
+primes that do not divide any of the elements a1 , . . . , a4 , b, these two conditions
+are trivially satisﬁed. Thus, we have only ﬁnitely many places to deal with. Fix a
+Hasse set S containing P(q) and such that b is S-singular. Let B = {κ1 , . . . , κk }
+be a basis of ES treated as a linear space over F2 . Write the square class of b as a
+linear combination of elements from B:
+                               b ≡ κξ11 · · · κξkk   (mod K ×2 ),
+for some ξ1 , . . . , ξk ∈ {0, 1}. We will now deﬁne three vectors u, v, w and corre-
+sponding matrices A, B, C over F2 . To this end, we proceed as follows.
+   For every real place ri ∈ S∞ let ui ∈ {0, 1} be such that (−1)ui = sgnri a1 , when
+q1 ⊗ Kri is anisotropic, and (−1)ui = − sgnri a3 , when q1 ⊗ Kri is isotropic and so
+6                                 PRZEMYSŁAW KOPROWSKI
+
+
+q2 ⊗ Kri is anisotropic. Further, take αij ∈ {0, 1} such that (−1)αij = sgnri κj .
+Deﬁne A = (αij ) to be a r × k matrix with rows indexed by places in S∞ and
+columns by elements of B. Finally, let u = (ui ) be a column vector indexed by real
+places in S∞ .
+   Analogously, for every ﬁnite prime pi ∈ S, let vi , wi ∈ {0, 1} be such that
+                 (−1)vi = (a1 , a2 )pi       and         (−1)wi = (−a3 , −a4 )pi .
+Let βij , γij ∈ {0, 1} be such that
+               (−1)βij = (−a1 a2 , κj )pi         and (−1)γij = (−a3 a4 , κj )pi .
+Deﬁne the matrices B := (βij ), C = (γij ) with rows indexed by ﬁnite primes in S
+and columns by elements of the basis B. Likewise deﬁne column vectors v := (vi )
+and w := (wi ).
+Lemma 4.4. Use the notation introduced above. The coordinates ξ1 , . . . , ξk ∈ F2
+of b with respect to the basis B of ES form a solution to the following system of
+F2 -linear equations
+                                 x            
+
+--- original LF 360-425 ---
+Algorithm 1. Given an isotropic quadratic form q = ha1 , a2 , a3 , a4 i of dimension 4
+over a global field K, this algorithm outputs a vector v ∈ K 4 such that q(v) = 0.
+8                                     PRZEMYSŁAW KOPROWSKI
+
+
+    (1) If there are indices 1 ≤ i < j < k ≤ 4 such that hai , aj , ak i is isotropic,
+        then construct its isotropic vector v ∈ K 3 . Output v with zero inserted at
+        the omitted spot and quit.
+    (2) Initialize S := P(q), and denote q1 := ha1 , a2 i and q2 := ha3 , a4 i.
+    (3) Let S∞ := {r1 , . . . , rr } ⊂ S be the set of all the real places of K at which at
+        least one of the forms q1 , q2 is anisotropic:
+                        
+                 S∞ := r | sgnr a1 = sgnr a2 or sgnr a3 = sgnr a4 .
+    (4) Let u = (ui ) be the (column) vector defined by the formula
+                            (
+                              sgnri a1   if q1 ⊗ Kri is anisotropic
+                 (−1)ui =
+                              − sgnri a3 otherwise.
+    (5) Repeat the following steps:
+        (a) Construct a basis B = {κ1 , . . . , κk } of ES .
+        (b) Construct a (column) vector v = (vi ) determined by the condition
+                                        (−1)vi = (a1 , a2 )pi .
+         (c) Construct a (column) vector w = (wi ) given by the formula
+                                      (−1)wi = (−a3 , −a4 )pi .
+         (d) Construct a matrix A = (αij ) defined by the condition
+                                         (−1)αij = sgnri κj .
+         (e) Construct a matrix B = (βij ) determined by the formula
+                                      (−1)βij = (−a1 a2 , κj )pi .
+         (f ) Construct a matrix C = (γij ) given by the condition
+                                      (−1)γij = (−a3 a4 , κj )pi .
+         (g) Form system (♣), by concatenating matrices A, B, C and vectors u,
+             v, w. Check if it is solvable.
+         (h) If it is, denote a solution by (ξ1 , . . . , ξk ) and exit the loop.
+         (i) Otherwise, if system (♣) has no solution, find a new prime q ∈       / S.
+             Append it to S and reiterate the loop.
+    (6) Set
+             b := κξ11 · · · κξkk ,      q̂1 := h−b, a1 , a2 i,      q̂2 := hb, a3 , a4 i.
+    (7) Find isotropic vectors of ternary forms q̂1 and q̂2 . Denote them u and w,
+        respectively.
+    (8) Output v := (u2/u1 , u3/u1 , w2/w1 , w3/w1 ).
+Remark 1. If one uses an incremental algorithm for constructing a basis of a
+group ES of S-singular square classes (as described, e.g., in [21]), then it is not
+necessary to compute the basis B in step (5a) from scratch every time. Instead,
+one may just update the basis computed in the previous iteration of the loop.
+Remark 2. In the proof of Proposition 4.5, we used [28, Lemma 2.1] to prove the
+existence of a point q such that system (♣) is solvable in ES∪{q} . The proof of
+this lemma relies on the Chebotarev Density Theorem to show that the set of such
+points is not empty. In particular, this set have a positive density. It means that
+the corresponding primes q are (in a certain sense) relatively common.
+                      ISOTROPIC VECTORS OVER GLOBAL FIELDS                                 9
+
+
+Remark 3. In order to rigorously prove that after ﬁnitely many iterations, we will
+come across a prime q satisfying assertions of Proposition 4.5, we should exhaus-
+tively iterate over all the primes. If K is a number ﬁeld, we may, for example, start
+with a prime number p = 3 and loop over all the primes of K dividing p. Then
+take p = 5 and again loop over all the primes of K over p, and so on. A similar
+exhaustive search can be applied to global function ﬁelds, as well. In practice, a
+much more eﬃcient solution is just to pick q at random, using the fact that the set
+of such primes has a positive density (see the previous remark). Thus, depending
+on the selected strategy for ﬁnding primes in step (5i) the above algorithm can be
+viewed either as a deterministic or a randomized one.
+   We comment on the complexity of Algorithm 1 in Appendix A.
+
+4.3. Dimension 5 and above. We shall now deal with forms of dimensions 5
+and higher. Such forms are necessarily locally isotropic at all ﬁnite primes. The
+
+--- original LF 626-674 ---
+   We can ﬁnally turn our attention to forms of dimension 6 and higher. Algorithm 4
+presented below is very similar to Algorithm 2. The only diﬀerence is that now, we
+may completely ignore ﬁnite primes. The form q∗ constructed by the algorithm has
+dimension d − 1 ≥ 5. Therefore, it is trivially isotropic at all the non-archimedean
+completions of K. In particular, the next algorithm is relevant only for formally real
+number ﬁelds. For non-real ﬁelds (either number ﬁelds or global function ﬁelds), it
+suﬃces to take any 5-dimensional subform of q. It will automatically be isotropic.
+Algorithm 4. Let q = ha1 , . . . , ad i be an isotropic form of dimension d ≥ 6 over
+a global field K. This algorithm outputs a vector v ∈ K d such that q(v) = 0.
+    (1) If the (d − 1)-dimensional form qi , obtained from q by omitting ai for some
+         index i ≤ d, is isotropic, then construct its isotropic vector w. Expand w to
+         a d-dimensional vector v, by inserting 0 at i-th coordinate. Output v and
+         quit.
+    (2) Denote q1 := ha1 , . . . , ad−2 i.
+    (3) Let S∞ the set of all the real places r of K, at which q1 is locally anisotropic
+         (i.e., a1 , . . . , ad−2 have the same sign in the completion Kr ).
+    (4) For every r ∈ S∞ :
+          (a) If sgnr ad−2 6= sgnr ad−1 , then find (see Observation 4.7 ) a positive
+               integer sr such that sgnr (ad−1 s2r + ad ) = sgnr ad−1 and set tr := 1.
+          (b) Otherwise, set sr := 1 and find a positive integer tr satisfying the
+               condition sgnr (ad−1 + ad t2r ) = sgnr ad .
+          (c) Set
+                             n1       |ad−1 s2r + ad t2r |r      |ad−1 s2r + ad t2r |r o
+             εr := min ,                                      ,                            .
+                               2 2 · |ad−1 |r · (1 + 2|sr |r ) 2 · |ad |r · (1 + 2|tr |r )
+    (5) Using weak approximation find some s, t ∈ K × such that
+                        |s − sr |r < εr     and      |t − tr |r < εr
+        for all real places r of K.
+    (6) Set q∗ := ha1 , . . . , ad−2 , ad−1 s2 + ad t2 i. Find an isotropic vector w =
+        (w1 , . . . , wd−1 ) of q∗ .
+    (7) Output v = (w1 , . . . , wd−2 , swd−1 , twd−1 ).
+Remark 4. Observe that the elements s and t constructed in step (6) of Algorithm 2
+and step (5) of Algorithm 4 are nonzero, since the corresponding sr ’s and tr ’s are
+nonzero integers and |s − sr |r , |t − tr |r < 1/2. This fact guarantees that the form q∗
+is non-degenerate.
+Remark 5. Algorithms 2–4 rely on ﬁnding an element c represented by a binary
+subform of q and such that q1 ⊥ hci is isotropic. All three algorithms construct the
+binary form from the last two coeﬃcients of q. The only reason for such an arbitrary
+partitioning of the list of coeﬃcients is the clarity of presentation. Obviously, we
+can take any binary subform hai , aj i of q instead. The form q1 is then given by the
+14                               PRZEMYSŁAW KOPROWSKI
+
+
+remaining (d − 2) coeﬃcients. It opens a way for some possible optimizations that
+may reduce the size of resulting elements s and t. One natural strategy is to select
+the indices i and j in a way that minimizes the number of real places at which q1
+is anisotropic.
+Acknowledgments. The author wishes to thank Radan Kučera for helpful com-
+ments on an early version of this paper and the anonymous reviewer for suggesting
+
+--- original LF 789-903 ---
+[43] Joachim von zur Gathen and Jürgen Gerhard. Modern computer algebra. Cambridge Univer-
+     sity Press, Cambridge, third edition, 2013.
+
+
+                   Appendix A. Complexity of Algorithm 1
+   A detailed complexity analysis of algorithms presented in this paper seems to
+be very diﬃcult, and deﬁnitely exceeds the competence of the author. One of the
+reasons is that to the best of our knowledge not all of the external subroutines, we
+rely on, oﬀer such a rigorous complexity analysis. In this appendix we provide a
+crude estimate for the time complexity of Algorithm 1.
+   Let K be a global ﬁeld represented either in the form K = Q(θ), if K is a
+number ﬁeld, or K = Fpk (x, θ), if it is a function ﬁeld. Denote the monic minimal
+polynomial of θ by f and let d be the degree of f . An element of K can be expressed
+as a linear combination of successive powers of θ, say a = a0 + a1 θ + · · · + ad−1θd−1 .
+Deﬁne the size of a to be the sum of bit-sizes of a0 , . . . , ad−1 . For a quadratic form q
+over K, deﬁne its size as a sum of sizes of its coeﬃcients.
+   In order to construct the set P(q) in step (2) of the algorithm, one has to factor
+the principal ideals generated by K-integral representatives of square classes of
+coeﬃcients of q. If K is a number ﬁeld, this problem can be reduced in polynomial
+time to the problem of factoring integers (see, e.g., [11, §2.3.5]). The best known
+algorithms for the latter task are sub-exponential in size of the input. GNFS (see,
+e.g., [6], [26]) has complexity
+                      √         Ln (1/3, (64/9)1/3 ), while ECM (see, e.g., [29], [19]) has
+complexity Lp (1/2, 2), where p is the smallest prime dividing the integer to be
+factored. Now, the computation of a norm increases the size of the input by the
+factor |K : Q| and so the complexity of step (2) for number ﬁelds is sub-exponential
+in the size of the form and the degree of the ﬁeld.
+   If K is a global function ﬁeld, a ﬁnite extension of Fpk (x), then the problem
+of factoring the ideals can be analogously reduced to factoring polynomials over
+a ﬁnite ﬁeld. The later problem is well-known to be polynomial-time in the size
+of the input (see, e.g., [43, Section 14.8]) Hence, for function ﬁelds step (2) has
+polynomial time in size of the input and the degree d.
+   Now, steps (3–4) are meaningful only for formally real ﬁelds (hence, necessarily
+number ﬁelds). They boil down to performing a real root isolation of polynomials
+with rational coeﬃcients. This can be done in polynomial time with respect to the
+degree |K : Q| and the logarithm of the root distance. For details we refer the
+reader to [1, Section 10.2] (see also [2, Section 3]).
+   As expected, it is the analysis of the loop in step (5) which is most involving.
+The construction in step (5a) of the basis B from scratch during the ﬁrst execution
+of the loop can be reduced in polynomial time (with respect to the size of S)
+to the problem of computing the S-unit group. For a general number ﬁeld, the
+author is not aware of any algorithm for a latter task that would oﬀer a complexity
+better than exponential in the size of S and the bit-size of the discriminant of K.
+Related sub-exponential algorithms (see, e.g., [3]) rely on some heuristics. On the
+other hand, as explained in Remark 1, in subsequent iterations of the loop, after
+expanding S, the basis B can be updated incrementally in time polynomial with
+respect to the size of S and the class number of K. The corresponding algorithm for
+function ﬁelds is described in [21]. It is likely that one can use a similar incremental
+algorithm also for number ﬁelds. However, to the best of our knowledge no such
+algorithm has ever been published.
+                     ISOTROPIC VECTORS OVER GLOBAL FIELDS                           17
+
+
+   Computations of Hilbert symbols in steps (5b, 5c) and (5e, 5f) can be done us-
+ing Voight’s algorithm (see [42]) which works in the polynomial time. The previous
+comments on the complexity of steps (3–4) apply also to step (5d). All the re-
+maining steps of the loop use only linear algebra over F2 , and so they run in the
+polynomial time with respect to the size of S ∪ S∞ .
+   It remains to estimate the needed number of iterations of loop (5). Denote by Q
+the set of all these primes q for which system (♣) has a solution in EP(q)∪{q} . As
+explained in Remark 2 after Algorithm 1, the set Q has a positive density. In fact,
+if one repeats all the steps of the proof of [28, Lemma 2.1], keeping track of the
+index of the used congruence subgroup, one can actually show that this density is
+bounded from below by
+                                   Y
+                                        (N p)−1−ordp 4 ,
+                              p∈P(q)∪{p0 }
+
+where p0 is some ﬁxed (arbitrarily chosen) prime not in P(q).
+   As mentioned in Remark 3, Algorithm 1 can be viewed either as a randomized or
+a deterministic one. In the former case, the average number of iterations of loop (5)
+is bounded by the inverse of the above product. Consequently, it is polynomial in
+the degree of the ﬁeld and the size of coeﬃcients. Summarizing, if Algorithm 1 is
+treated as a randomized one, then loop (5) has an exponential time but only due
+to the ﬁrst execution of step (5a). If the ﬁrst construction of the basis B is moved
+to the initialization phase before the loop (which would simplify the complexity
+analysis, but obscure the presentation of the algorithm), then step (5) would execute
+in a randomized polynomial time.
+   Alternatively, we may treat Algorithm 1 as a deterministic one, exhaustively
+iterating over the primes of K. Although it may be tempting to base our analysis
+in this setting on an eﬀective version of the Chebotarev Density Theorem (see, e.g.,
+[33] and the citations wherein), it is not an optimal strategy. The reason is that
+we are not interested in the number of primes in Q, whose norms sit in a given
+interval. What we need is to estimate how quickly we will ﬁnd the ﬁrst prime
+(with respect to the order in which we scan them) sitting in Q. This is sometimes
+referred to as the “ﬁrst prime problem”. It is known to work in polynomial time
+with respect to the discriminant of K by [24] (see also [20] and citations within).
+Consequently, step (5) runs in the deterministic polynomial time with respect to
+the the degree of K, its discriminant and size of the coeﬃcients, provided that
+the ﬁrst construction of the basis B is moved to the initialization phase (see the
+comments of the end of the previous paragraph).
+   Finally, let us look at step (7). Here, we need to ﬁnd isotropic vectors of two
+ternary forms. As explained in Section 4.1, this problem is equivalent to solving
+two norm equations. Algorithms devoted to this task has been recalled in the
+introduction. For number ﬁelds, Simon’s algorithm [37] seems to be the most
+popular one. (It can be also adapted to function ﬁelds.) The author is not aware
+of any complete rigorous complexity analysis of Simon’s algorithm. It is claimed
+(without proof) in [4] that over cyclotomic ﬁelds a solution of the norm equation
+can be computed in probabilistic polynomial time with respect to the bit-size of the
+input, provided that the factorization of the input is known. The latter condition
+can be safely assumed in our case since the set S is given and we are interested only
+in solutions modulo squares. Yet still, this claim refers only to cyclotomic ﬁelds.
+Conversely, in [31] there is a complete complexity analysis of a stripped down version
+18                           PRZEMYSŁAW KOPROWSKI
+
+
+of Simon’s algorithm, showing that the computation time is polynomial with respect
+to the size of the representation for the system of fundamental units of the unit
+group of the upper ﬁeld, which in turn is exponential with respect to the bit-size of
+the coeﬃcients (and also the degree of the extension, but in our case it is always 2).
+On the other hand, for global function ﬁelds, Leem, Jacobson and Scheidler (see
+[27]) presented recently a new algorithm (in fact two new algorithms) for solving
+norm equations. Their algorithm works in polynomial time with respect to the size
+of the underlying ﬁnite ﬁeld and the bit-size of coeﬃcients, and in sub-exponential
+time with respect to the genus of the ﬁeld. (It is also exponential with respect to

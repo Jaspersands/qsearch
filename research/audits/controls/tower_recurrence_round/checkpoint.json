@@ -1,0 +1,559 @@
+{
+  "captured_at_utc": "2026-11-12T23:27:52.871470+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "finite_control_proves_general_theorem": false,
+    "hardness_claim": false,
+    "implementation_claim": false,
+    "novelty_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "total_tower_algorithm_claim": false,
+    "unconditional_polynomial_clock_claim": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_control_artifacts": [
+    {
+      "bytes": 1956,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence/relative_obstruction_control.py",
+      "sha256": "60fb44c9ff64b7ae0132c0fced5bd4536a27a84f5cbf97dcd92a5fcaf6575af4"
+    },
+    {
+      "bytes": 19,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence/relative_obstruction_control.txt",
+      "sha256": "b4f2b1393de28e89bae28fc7bfa9c57bb494a6690c42923aea8de55334df5779"
+    },
+    {
+      "bytes": 878,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence/weighted_lll_control.sage",
+      "sha256": "5e3f67d5f0a52702358ce32bdd0b073d36dae8aaafbc98e40d84e4ba1bb0acd2"
+    },
+    {
+      "bytes": 716,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence/weighted_lll_control.json",
+      "sha256": "0f965574d2631594243080df0359f30599599709243d9fdefd34f95821e357a5"
+    },
+    {
+      "bytes": 8564,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence/tagged_parity_control.py",
+      "sha256": "1c17a326faf6efb5292600b9414dc482c979fd613416b0837e36be073fd4b06e"
+    },
+    {
+      "bytes": 5617,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence/tagged_parity_control.json",
+      "sha256": "7250f8278940abfbb29758847513b8cf731ae5962f6e0127905a59073dad2db9"
+    }
+  ],
+  "control_note": "Existing scripts/results only; no tests or CAS controls rerun.",
+  "dispatch": {
+    "bytes": 2866,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-recurrence/dispatch.json",
+    "sha256": "bea12c74c768517aeffc1c8bf3f8dd12f6f5fdbfeb0b58098777bba3a7b80e1b"
+  },
+  "dispatch_mutation_scope": "No dispatch edits during this preparation/freeze; parent terminal/read/reaped metadata retained.",
+  "exclusions": [
+    {
+      "reason": "Preserved exactly from frozen wave-cluster ledger and excluded from known usage.",
+      "scope": "Five inherited UNKNOWN bills and observed partial counters"
+    },
+    {
+      "reason": "Not part of these four original requests; incidental mention inside labelled topic snapshots does not include their usage or claim acceptance.",
+      "scope": "Two newer tower-native-composition requests/usage/bundles and new 156-LF sparse-gluing proof"
+    },
+    {
+      "reason": "Outside this checkpoint; topics included solely via explicitly labelled snapshots.",
+      "scope": "Live STATE/HANDOFF/MECHANICAL and original topic paths"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 3655,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-recurrence/contract.md",
+      "sha256": "399e4d029ec1a675abd97e3ba86bb4c2307d44ee5d1d4cda4294ec936d842a99"
+    },
+    {
+      "bytes": 2866,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-recurrence/dispatch.json",
+      "sha256": "bea12c74c768517aeffc1c8bf3f8dd12f6f5fdbfeb0b58098777bba3a7b80e1b"
+    },
+    {
+      "bytes": 25251,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-recurrence/koprowski-primary.txt",
+      "sha256": "70313f46deef3ac660fbbeea67af091d1edf6dbd9d0bf455917e769474a3296f"
+    },
+    {
+      "bytes": 17571,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-recurrence/kutas-primary.txt",
+      "sha256": "7f28e90082460aabea1992b11e955be6e823fe50de7b064bb94fb1aceb536995"
+    },
+    {
+      "bytes": 1064,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-recurrence/tower-fixed-rank-descent.md",
+      "sha256": "9e06195633aacd35dfb77c70768e88b76893ac7de1d9bf3716fcfde5460bd4f0"
+    },
+    {
+      "bytes": 1064,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-recurrence/tower-local-gluing.md",
+      "sha256": "7d107ab7b06fa6a39ac7e73ef22d2f79d650033a6fdfcd8ae65a4d5439d220af"
+    },
+    {
+      "bytes": 3241,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-recurrence/tower-parity-constrained-descent.md",
+      "sha256": "fd7d55e200cc9a1ecc097b28dd5ae425ee57a55eeb9aa2d32028f7a787f4dcf7"
+    },
+    {
+      "bytes": 999,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-recurrence/tower-support-growth.md",
+      "sha256": "6152cb0bf89c1c49fd1c8c1552dbaf52afd9cd76c1b3e4a8409ffa6d900c7f24"
+    }
+  ],
+  "four_terminal_results_and_responses": [
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "tower-fixed-rank-descent",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 18982,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/response.md",
+        "sha256": "332b1c503294feef026c58b3428300e9a0ded8270c6940dfff0689e12cf4b226"
+      },
+      "result": {
+        "bytes": 1761,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/result.json",
+        "sha256": "00d17d7211e0c36327665aef732d5ef89c9d194ddb942fc177cf27a67ae5df30"
+      },
+      "session_id": 56747,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.187100"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "tower-support-growth",
+      "parent_read_disposition": "EMPTY; no findings",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-support-growth/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "result": {
+        "bytes": 1903,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-support-growth/result.json",
+        "sha256": "3b96ed98eafebdcf6ba79596152bd78e175c282221f947c21af0659dc4cc225b"
+      },
+      "session_id": 87069,
+      "session_reaped_per_parent": true,
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "usage_cost_estimate_usd": "1.346344"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "tower-local-gluing",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 14038,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/response.md",
+        "sha256": "b2377215fdfa7aecd99af7db3f7e9fab9997f29cfffcab6bbf1161b94c017afd"
+      },
+      "result": {
+        "bytes": 1762,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/result.json",
+        "sha256": "f48513008bc6ac25e97c2a72e611bf8f3af2bc14108268a531ce4b72b2371444"
+      },
+      "session_id": 28270,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.118950"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "tower-parity-constrained-descent",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 14557,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/response.md",
+        "sha256": "6a167d746c56fb8c47c41c596fb7124dece613e17501c54dfbdf159fb1a9ce4d"
+      },
+      "result": {
+        "bytes": 1415,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/result.json",
+        "sha256": "efea714d19e054cfca17ebc079278e26ef97c477efb7dbfc5173b68359f4fc04"
+      },
+      "session_id": 53500,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "usage_cost_estimate_usd": "1.128424"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 16833,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/wave_cluster_round/checkpoint.json",
+    "sha256": "2235d9e1804f69829c987b12e9e02de701b6f3f50b2606bca7a830f28b0c69b0"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 17657,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/wave_cluster_round/usage.json",
+    "sha256": "5610e5664b58c68fed704792947b372b0ed2be5445d071be80cb49d0474ef20c"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 74
+  },
+  "labelled_topic_snapshots": [
+    {
+      "bytes": 18364,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/QUADRATIC_TOWER_RECURRENCE.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence_round/quadratic_tower_recurrence-snapshot.md",
+      "sha256": "f055fa227052d3e18573edcdb9f7a905ed608a11c9b5de8167921266a6de2f3a",
+      "snapshot_label": "Exact byte snapshot captured for this milestone; may mention later jobs without including their bundles/usage. Original evolving topic not hashed."
+    },
+    {
+      "bytes": 12173,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/QUARTIC_RELATIVE_NORM_CLASSICAL.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence_round/quartic_relative_norm_classical-snapshot.md",
+      "sha256": "6f76613687b09d791dc30826baad916d3f5350545fea9b847a660e67cd6288b6",
+      "snapshot_label": "Exact byte snapshot captured for this milestone; may mention later jobs without including their bundles/usage. Original evolving topic not hashed."
+    }
+  ],
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 851813,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/lll1982.pdf",
+      "sha256": "dabefb8bcfb5dbb8b36a43745081f8ab6f18aadc85b1e252fd7c85abefc5f704"
+    },
+    {
+      "bytes": 20,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/lll1982.txt",
+      "sha256": "d5387627a5266472bfb0b90d754c9d2c18ed6046796ddb3ed7dc3564f83b101f"
+    },
+    {
+      "bytes": 114074,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/lll-p3.png",
+      "sha256": "4c39c03843a8c660f871cb8be6db7ba941ec528b8aed575a7dab2d77f94a5950"
+    },
+    {
+      "bytes": 98965,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/lll-p7.png",
+      "sha256": "f93f61513b0a789f18cb2376f874351e4941888e0bb15ee2e853732594b58c28"
+    },
+    {
+      "bytes": 146338,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/lll-p8.png",
+      "sha256": "894451dce027a0f56d9ac04cfdc65210d6d2837377ea590a5b31ab112d1297e8"
+    },
+    {
+      "bytes": 140703,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/lll-p9.png",
+      "sha256": "628f82dbb731b2148afd0c8de09a32baddabc85e0499fa402650107b151a9158"
+    },
+    {
+      "bytes": 192,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/source.json",
+      "sha256": "3b421ecb1c6434787786e406649336593275cdfefb31ad9b91da90cf274f00e2"
+    },
+    {
+      "bytes": 2479060,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/wesolowski_subgroups.pdf",
+      "sha256": "aff286ecea40450669597076bb13f960ea55c80217f74110c49226635065de7e"
+    },
+    {
+      "bytes": 70241,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/wesolowski_subgroups.txt",
+      "sha256": "f7d8aad6e76f6c5f1bdf63dcfdf56ed52ac8c5441abbfff158917bc7b8bcb02b"
+    },
+    {
+      "bytes": 144,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/wesolowski_subgroups.source.json",
+      "sha256": "ae88e3b1849136855ca1eba252e0340f0b291bc8c15a9a83f5a7229ad545942e"
+    },
+    {
+      "bytes": 178624,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/kutas_quadratic_conics.pdf",
+      "sha256": "0e7f6904c02bc61f4b431f9b18eeb1c99ea1b9ba90dde5faa03b19ee4c87d6d7"
+    },
+    {
+      "bytes": 40537,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/kutas_quadratic_conics.txt",
+      "sha256": "967e9c5df58127679097453fc3d7606436e3057ff2781e204a404b5af90757c4"
+    },
+    {
+      "bytes": 128,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/selmer_classical_two/kutas_quadratic_conics.source.json",
+      "sha256": "7c61a571cdbf54764e549315ca2b9b7ba7a2ee03790a439c332d4f83753d7f75"
+    },
+    {
+      "bytes": 407703,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/global_isotropy/vectors.pdf",
+      "sha256": "615705d94db6efa9a681ed4b71a1f4394c6a76e7527256856142ae27c9b2c238"
+    },
+    {
+      "bytes": 88446,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/global_isotropy/vectors.txt",
+      "sha256": "efba43b02947e5f9eef76d81cd7b23107a31e24b9d44e50ef6297e042383cac3"
+    },
+    {
+      "bytes": 1199,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/global_isotropy/source.json",
+      "sha256": "b76e2adda5ce3a7217bb912c78d302d5e3b9549ef121bcadfd51b4d8a781274d"
+    },
+    {
+      "bytes": 375233,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_torus_arch/mehlhorn_sagraloff_wang.pdf",
+      "sha256": "31e795da8e059eff24fcaec431d012719a39d37026cf3ce30fe47c8dbb5ec515"
+    },
+    {
+      "bytes": 152506,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_torus_arch/mehlhorn_sagraloff_wang.txt",
+      "sha256": "b9f7723fbfa913442aeec5c9533d4ccf708907aed046acf7eb0f21996e08a44f"
+    },
+    {
+      "bytes": 444,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/sparse_torus_arch/source.json",
+      "sha256": "9e459a6ffd19e8badec0cea4599a03fce6e46bff7b99a918c05cba83312c61bd"
+    }
+  ],
+  "prior_hash_policy": "Prior wave-cluster ledgers and historical artifact pins remain unchanged; only prior usage/checkpoint continuity files referenced, no historical run rescan or repinning.",
+  "scope": "Frozen wave-cluster baseline plus ONLY four terminal tower-recurrence requests; their immutable paid packets/bundles, explicitly stable proofs/controls, specified primary sources, and labelled current topic snapshots. No historical rescan.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-12T23:27:52.871470+00:00",
+    "labelled_topic_snapshots": [
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence_round/quadratic_tower_recurrence-snapshot.md",
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence_round/quartic_relative_norm_classical-snapshot.md"
+    ],
+    "parent_confirmed_stable_and_fully_read": true,
+    "topic_originals_not_hashed": [
+      "/Users/jaspersands/Developer/qsearch/research/QUADRATIC_TOWER_RECURRENCE.md",
+      "/Users/jaspersands/Developer/qsearch/research/QUARTIC_RELATIVE_NORM_CLASSICAL.md"
+    ]
+  },
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 17179,
+      "inclusion_authority": "Explicit stable parent-read list",
+      "parent_descriptor_LF_count": 277,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-post-wave-opportunity-selection.md",
+      "physical_LF_count": 277,
+      "sha256": "9f554fd66f53b652bd9ce5ee441ce468eb56d6bde81596bfc51c767177b35a2c"
+    },
+    {
+      "bytes": 15033,
+      "inclusion_authority": "Explicit stable parent-read list",
+      "parent_descriptor_LF_count": 296,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-relative-squareclass-obstruction-kernel.md",
+      "physical_LF_count": 296,
+      "sha256": "ed8268a2beb67f473898bb3636aff721cf60d5d00ace80418a34a5ff129a3735"
+    },
+    {
+      "bytes": 15149,
+      "inclusion_authority": "Explicit stable parent-read list",
+      "parent_descriptor_LF_count": 270,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-squareclass-weighted-lll-compression.md",
+      "physical_LF_count": 270,
+      "sha256": "41d1853be3ecc994126d925afc9d3ea1c299daa4014f8dba42f25772e72d053d"
+    },
+    {
+      "bytes": 14356,
+      "inclusion_authority": "Explicit stable parent-read list",
+      "parent_descriptor_LF_count": 243,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-conic-content-support-normalization.md",
+      "physical_LF_count": 243,
+      "sha256": "80a4b8016e32ec088f83d516dfa7910eb78e009a822352e7366f1df08d06a7b0"
+    },
+    {
+      "bytes": 19303,
+      "inclusion_authority": "Explicit stable parent-read list",
+      "parent_descriptor_LF_count": 332,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-tagged-tower-conditional-composition.md",
+      "physical_LF_count": 332,
+      "sha256": "a84c632f43eefd7d6fcaa4a3fe664ee622401eb34e9a89a8f0d2681979667f1d"
+    },
+    {
+      "bytes": 10718,
+      "inclusion_authority": "Explicit stable parent-read list",
+      "parent_descriptor_LF_count": 232,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-tower-gluing-source-check.md",
+      "physical_LF_count": 232,
+      "sha256": "99cad5cbe388b1d9bd8abb2c2d472199a35d7a7350000cffc0e64c00a75547e9"
+    },
+    {
+      "bytes": 3978,
+      "inclusion_authority": "Explicit stable parent-read list",
+      "parent_descriptor_LF_count": 94,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/tagged-parity-control.md",
+      "physical_LF_count": 94,
+      "sha256": "e6ee0991267987aca01265dd2b9d6b24bd309b5ba11f7cecd46a74296f7d5112"
+    },
+    {
+      "bytes": 19365,
+      "inclusion_authority": "Referenced local-squareclass backend explicitly requested",
+      "parent_descriptor_LF_count": null,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-native-local-squareclass-backend.md",
+      "physical_LF_count": 384,
+      "sha256": "f6f9380d869a1f9f3a57f266be3c36034747d23327033ea144332002dc5e98b4"
+    }
+  ],
+  "status": "TERMINAL_TOWER_RECURRENCE_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1064,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/context-00.txt",
+      "sha256": "9e06195633aacd35dfb77c70768e88b76893ac7de1d9bf3716fcfde5460bd4f0"
+    },
+    {
+      "bytes": 3655,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/context-01.txt",
+      "sha256": "399e4d029ec1a675abd97e3ba86bb4c2307d44ee5d1d4cda4294ec936d842a99"
+    },
+    {
+      "bytes": 17571,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/context-02.txt",
+      "sha256": "7f28e90082460aabea1992b11e955be6e823fe50de7b064bb94fb1aceb536995"
+    },
+    {
+      "bytes": 11077,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/context-03.txt",
+      "sha256": "35b0b6fae129a5d66c298bdb32d4d8c854d026c93e0388d40f7ad5767fa0097d"
+    },
+    {
+      "bytes": 657296,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/provider-response.json",
+      "sha256": "8f0f066ec95d12dd48358609b806c93908bba42c35da66538316521ffedaed80"
+    },
+    {
+      "bytes": 35523,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/request.json",
+      "sha256": "3e8fadd1e432c81a42553d3c1ecf51dc2f12026d9abdfd743815f5d868a07d0e"
+    },
+    {
+      "bytes": 18982,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/response.md",
+      "sha256": "332b1c503294feef026c58b3428300e9a0ded8270c6940dfff0689e12cf4b226"
+    },
+    {
+      "bytes": 1761,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/result.json",
+      "sha256": "00d17d7211e0c36327665aef732d5ef89c9d194ddb942fc177cf27a67ae5df30"
+    },
+    {
+      "bytes": 3655,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-support-growth/context/000.txt",
+      "sha256": "399e4d029ec1a675abd97e3ba86bb4c2307d44ee5d1d4cda4294ec936d842a99"
+    },
+    {
+      "bytes": 25251,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-support-growth/context/001.txt",
+      "sha256": "70313f46deef3ac660fbbeea67af091d1edf6dbd9d0bf455917e769474a3296f"
+    },
+    {
+      "bytes": 11077,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-support-growth/context/002.txt",
+      "sha256": "35b0b6fae129a5d66c298bdb32d4d8c854d026c93e0388d40f7ad5767fa0097d"
+    },
+    {
+      "bytes": 999,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-support-growth/prompt.txt",
+      "sha256": "6152cb0bf89c1c49fd1c8c1552dbaf52afd9cd76c1b3e4a8409ffa6d900c7f24"
+    },
+    {
+      "bytes": 44374,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-support-growth/request.json",
+      "sha256": "7d06d3c6e4d8188c27318d94da8c6f47f69d5aaff8b995c6e59f0b989d6b113b"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-support-growth/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1903,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-support-growth/result.json",
+      "sha256": "3b96ed98eafebdcf6ba79596152bd78e175c282221f947c21af0659dc4cc225b"
+    },
+    {
+      "bytes": 1064,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/context-00.txt",
+      "sha256": "7d107ab7b06fa6a39ac7e73ef22d2f79d650033a6fdfcd8ae65a4d5439d220af"
+    },
+    {
+      "bytes": 3655,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/context-01.txt",
+      "sha256": "399e4d029ec1a675abd97e3ba86bb4c2307d44ee5d1d4cda4294ec936d842a99"
+    },
+    {
+      "bytes": 25251,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/context-02.txt",
+      "sha256": "70313f46deef3ac660fbbeea67af091d1edf6dbd9d0bf455917e769474a3296f"
+    },
+    {
+      "bytes": 11077,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/context-03.txt",
+      "sha256": "35b0b6fae129a5d66c298bdb32d4d8c854d026c93e0388d40f7ad5767fa0097d"
+    },
+    {
+      "bytes": 666550,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/provider-response.json",
+      "sha256": "46ed6e2406ed67713ed66f6e5a9fcce5d40c0de02051aba0cfd921aee4bd8415"
+    },
+    {
+      "bytes": 43837,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/request.json",
+      "sha256": "268c5baa50215e3e8c2cb766760bf8b148c94bf5405d1fd865bf869463079747"
+    },
+    {
+      "bytes": 14038,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/response.md",
+      "sha256": "b2377215fdfa7aecd99af7db3f7e9fab9997f29cfffcab6bbf1161b94c017afd"
+    },
+    {
+      "bytes": 1762,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-local-gluing/result.json",
+      "sha256": "f48513008bc6ac25e97c2a72e611bf8f3af2bc14108268a531ce4b72b2371444"
+    },
+    {
+      "bytes": 3655,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/context/000.txt",
+      "sha256": "399e4d029ec1a675abd97e3ba86bb4c2307d44ee5d1d4cda4294ec936d842a99"
+    },
+    {
+      "bytes": 3241,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/prompt.txt",
+      "sha256": "fd7d55e200cc9a1ecc097b28dd5ae425ee57a55eeb9aa2d32028f7a787f4dcf7"
+    },
+    {
+      "bytes": 8020,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/request.json",
+      "sha256": "6822136c1524fdf1749c5eb8968dd82b3565d69281fe08118678b1a348259097"
+    },
+    {
+      "bytes": 14557,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/response.md",
+      "sha256": "6a167d746c56fb8c47c41c596fb7124dece613e17501c54dfbdf159fb1a9ce4d"
+    },
+    {
+      "bytes": 1415,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/result.json",
+      "sha256": "efea714d19e054cfca17ebc079278e26ef97c477efb7dbfc5173b68359f4fc04"
+    }
+  ],
+  "unique_hashed_artifact_count": 74,
+  "usage_snapshot": {
+    "bytes": 19689,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence_round/usage.json",
+    "sha256": "81cc6c5dd8316d5156db5e0810037ce504426c27c28251e249459d36e07e9b16"
+  }
+}

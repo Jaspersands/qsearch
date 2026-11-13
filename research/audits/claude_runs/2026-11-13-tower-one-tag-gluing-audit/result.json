@@ -1,0 +1,58 @@
+{
+  "billing_status": "unknown",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 11844,
+      "path": "research/audits/api_inputs/2026-11-13-tower-compiler-audit/compiler-sections-2-4.md",
+      "sha256": "5d21a6e45c45c8c2678fba77a48391557aeb1a6702ed5b1485f4f64cb7c3d90e",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 7163,
+      "path": "research/audits/api_inputs/2026-11-13-tower-native-composition/wesolowski-primary.txt",
+      "sha256": "77cd75dc2a406b2c522d514838da80eb418517ebfd4ad84fbbf167f39dd306d7",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 8259,
+      "path": "research/audits/reviews/2026-11-13-sparse-gluing-support.md",
+      "sha256": "aa2c65f9be96aee6257db2ae43d285fd9b2bd8404a632688d2712363f0c16a75",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 12660,
+  "effort": "high",
+  "failure_stage": "generation",
+  "failure_type": "ReadTimeout",
+  "finished_at": "2026-11-12T23:59:51.925492+00:00",
+  "input_token_allowance": 12916,
+  "max_budget_usd": 3.0,
+  "max_tokens": 40000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 2.12916,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-tower-compiler-audit/gluing-attack.md",
+    "sha256": "82afd5eb8e09930958d1b72242f3bb455951022e1f22ee9939a24e40ac5c3863",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "retry_note": "The request may have been billed. Check the provider before any manual retry.",
+  "role": "adversarial",
+  "run_id": "20261112T234447.810730Z-c082a46e",
+  "status": "failed",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 12660,
+    "output_tokens": 2
+  },
+  "usage_cost_estimate_usd": 0.1267,
+  "usage_is_partial": true
+}

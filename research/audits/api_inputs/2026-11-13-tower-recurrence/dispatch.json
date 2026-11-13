@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-13",
+  "note": "Three distinct proof gates for one growing-tower endpoint; no retry. Local ceilings not charges. OpenAI initial local import failed before request construction or API access; fixed module search path and submitted once. Fourth task is a new parent parity-constrained descent operation, not a repeat of generic support recurrence.",
+  "jobs": [
+    {
+      "id": "tower-fixed-rank-descent",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-tower-recurrence/tower-fixed-rank-descent.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-tower-recurrence/contract.md",
+        "research/audits/api_inputs/2026-11-13-tower-recurrence/kutas-primary.txt",
+        "research/QUARTIC_RELATIVE_NORM_CLASSICAL.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent",
+      "status": "completed",
+      "budget": 7,
+      "session_id": 56747,
+      "parent_read": "full",
+      "session_reaped": true
+    },
+    {
+      "id": "tower-support-growth",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-tower-recurrence/tower-support-growth.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-tower-recurrence/contract.md",
+        "research/audits/api_inputs/2026-11-13-tower-recurrence/koprowski-primary.txt",
+        "research/QUARTIC_RELATIVE_NORM_CLASSICAL.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-tower-support-growth",
+      "status": "truncated",
+      "budget": 3,
+      "session_id": 87069,
+      "parent_read": "EMPTY; no findings",
+      "session_reaped": true,
+      "note": "No retry."
+    },
+    {
+      "id": "tower-local-gluing",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-tower-recurrence/tower-local-gluing.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-tower-recurrence/contract.md",
+        "research/audits/api_inputs/2026-11-13-tower-recurrence/koprowski-primary.txt",
+        "research/QUARTIC_RELATIVE_NORM_CLASSICAL.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-tower-local-gluing",
+      "status": "completed",
+      "budget": 7,
+      "session_id": 28270,
+      "parent_read": "full",
+      "session_reaped": true
+    },
+    {
+      "id": "tower-parity-constrained-descent",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-tower-recurrence/tower-parity-constrained-descent.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-tower-recurrence/contract.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent",
+      "status": "completed",
+      "budget": 3,
+      "session_id": 53500,
+      "parent_read": "full",
+      "session_reaped": true
+    }
+  ]
+}

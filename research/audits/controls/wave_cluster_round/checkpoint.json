@@ -1,0 +1,346 @@
+{
+  "captured_at_utc": "2026-11-12T22:36:54.531469+00:00",
+  "claim_gates": {
+    "agent_labels_promote_theorems": false,
+    "bookkeeping_only": true,
+    "finite_control_proves_general_theorem": false,
+    "hardness_claim": false,
+    "new_algorithm_claim": false,
+    "novelty_claim": false,
+    "quantum_execution_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "separation_claim": false,
+    "speedup_claim": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 2883,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-cluster-completion/dispatch.json",
+    "sha256": "3c7a8f6d0fd4393d6ba45a1301c4e078a972270f0ecafd4cbe7415947e543778"
+  },
+  "dispatch_mutation_scope": "No dispatch edits during usage preparation or this freeze; parent final terminal/read/reaped metadata retained.",
+  "exclusions": [
+    {
+      "reason": "Preserved exactly from frozen sparse-wave ledger and excluded from known usage.",
+      "scope": "Five inherited UNKNOWN bills and observed partial counters"
+    },
+    {
+      "reason": "Outside this three-job milestone. Only a labelled snapshot of the current topic is hashed.",
+      "scope": "Live post-wave-selection file, evolving topic original, STATE/HANDOFF/MECHANICAL and newer work"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 13981,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-cluster-completion/cluster-primary.txt",
+      "sha256": "a75744103ce1cbd5c13e865f211c60bf93ee2af94aa78653a6f0797b8b0bec03"
+    },
+    {
+      "bytes": 4173,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-cluster-completion/contract.md",
+      "sha256": "b6e0ea270d1088c144bb9d736f75e135bc4b991bcea4715262fcff3616abdca1"
+    },
+    {
+      "bytes": 2883,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-cluster-completion/dispatch.json",
+      "sha256": "3c7a8f6d0fd4393d6ba45a1301c4e078a972270f0ecafd4cbe7415947e543778"
+    },
+    {
+      "bytes": 16721,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-cluster-completion/green-primary.txt",
+      "sha256": "42028d32df2d16e77cb3f6ea003b25ea366abf16cf79d6f6481b729d82c54166"
+    },
+    {
+      "bytes": 9206,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-cluster-completion/markov-primary.txt",
+      "sha256": "0e4995bc2101004c16454d15243185512f85776244ec6db3ffdeda7fe1c4bd5a"
+    },
+    {
+      "bytes": 1934,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-cluster-completion/wave-compact-source-sampler.md",
+      "sha256": "53c355999c8b90a5d20cc482e19cfdb7d9e3a14ff3b862d91274323a314bec6c"
+    },
+    {
+      "bytes": 1936,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-cluster-completion/wave-global-conditioned-deflation.md",
+      "sha256": "18d98669314a653560d4f9fd2b7cba60edaf14618d5c45a98454d2e834e499a8"
+    },
+    {
+      "bytes": 1825,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-wave-cluster-completion/wave-rational-angular-sampler.md",
+      "sha256": "b648371211a40aaa1733548380e290b059faba44dfb09ce1d160edb70eada4cb"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 31514,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/sparse_wave_round/checkpoint.json",
+    "sha256": "738d2c7cf13a7b91e85f96f386156ebba190cea5b6ad194d848b7d7980ae062b"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 26087,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/sparse_wave_round/usage.json",
+    "sha256": "7c33db895958d06ddbd96c2ff74b1e33f2d9f2f10808487df5e8cc5dd31a77ea"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 42
+  },
+  "labelled_topic_snapshot": {
+    "bytes": 29505,
+    "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/NATIVE_SPARSE_WAVE_SAMPLING.md",
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/wave_cluster_round/topic-snapshot.md",
+    "sha256": "b934051d187a8b6dcae07c124196268124dfb7ef13667777bc12d7648c8b5d73",
+    "snapshot_label": "Exact byte snapshot of NATIVE_SPARSE_WAVE_SAMPLING.md captured for this milestone; original evolving topic note not hashed."
+  },
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 195361,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/tangential_markov.pdf",
+      "sha256": "a6141446dc3f357e06940615be0ae59f617f58208de8beb8add8468fecda248a"
+    },
+    {
+      "bytes": 25074,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/tangential_markov.txt",
+      "sha256": "0f2043e85d09316e93ee8389fbbb4574d26377948158882e71836d2f824bca75"
+    },
+    {
+      "bytes": 176,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/tangential_markov-source.json",
+      "sha256": "8df57aca1535f826bd60386cfaa592561a90d770bd06a97c9cf9aa4d4b4a2643"
+    },
+    {
+      "bytes": 549598,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/uncertainty2017.pdf",
+      "sha256": "35bbc0d75b775cffe0d2ff79b20dba917c64d3968b2948cc78f46bac0534316c"
+    },
+    {
+      "bytes": 161192,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/uncertainty2017.txt",
+      "sha256": "d82ca33eb954d799885115764dac103ee3fad92c01fe599edc2e08dd30935d75"
+    },
+    {
+      "bytes": 248,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/new_native_wave/uncertainty2017-source.json",
+      "sha256": "bc2041ab25ad054d5a49e579996b71965e9fc18cbaa82d9b85bad0e944109ec7"
+    }
+  ],
+  "prior_hash_policy": "Prior sparse-wave ledgers and historical artifact pins remain unchanged; prior usage/checkpoint continuity files only, no historical runs rescanned or repinned.",
+  "scope": "Frozen sparse-wave baseline plus ONLY three terminal wave-cluster-completion requests; immutable paid packets/bundles, explicitly stable independent proofs, specified primary sources, and labelled current topic snapshot. No historical rescan.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-12T22:36:54.531469+00:00",
+    "parent_confirmed_stable_and_fully_read": true,
+    "topic_original_not_hashed": "/Users/jaspersands/Developer/qsearch/research/NATIVE_SPARSE_WAVE_SAMPLING.md",
+    "topic_snapshot": "/Users/jaspersands/Developer/qsearch/research/audits/controls/wave_cluster_round/topic-snapshot.md"
+  },
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 19928,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 414,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-wave-compact-parent-construction.md",
+      "physical_LF_count": 414,
+      "sha256": "43035d1e7d0b4132b0867bce371facbbc775ebb6250a52e7f9dbf2f40d36687f"
+    },
+    {
+      "bytes": 13741,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 296,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-wave-plane-angular-independent.md",
+      "physical_LF_count": 295,
+      "sha256": "6ed28e64ec488e7046a989253239a3c5d496f3c990d1b1a24fdb1a2ab686c27b"
+    },
+    {
+      "bytes": 16545,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 359,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-wave-single-green-classical-independent.md",
+      "physical_LF_count": 359,
+      "sha256": "3d8df8f7fba2d28d4326289bbbb024dc2742185dabaf9f979c8562ecd951a2d7"
+    }
+  ],
+  "status": "TERMINAL_WAVE_CLUSTER_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1934,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/context-00.txt",
+      "sha256": "53c355999c8b90a5d20cc482e19cfdb7d9e3a14ff3b862d91274323a314bec6c"
+    },
+    {
+      "bytes": 4173,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/context-01.txt",
+      "sha256": "b6e0ea270d1088c144bb9d736f75e135bc4b991bcea4715262fcff3616abdca1"
+    },
+    {
+      "bytes": 16721,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/context-02.txt",
+      "sha256": "42028d32df2d16e77cb3f6ea003b25ea366abf16cf79d6f6481b729d82c54166"
+    },
+    {
+      "bytes": 9206,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/context-03.txt",
+      "sha256": "0e4995bc2101004c16454d15243185512f85776244ec6db3ffdeda7fe1c4bd5a"
+    },
+    {
+      "bytes": 588599,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/provider-response.json",
+      "sha256": "1539e4122d4177ff8d8f5325430930788b79e15d6f1791a8530157e9e24c0145"
+    },
+    {
+      "bytes": 36893,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/request.json",
+      "sha256": "047ed4a7d9f69e12a793bd190e34e267cc36561c580bb371879fbc16298c6f0b"
+    },
+    {
+      "bytes": 26098,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/response.md",
+      "sha256": "e2975929d9f21a0feb05a4ae08602dbb3306a76b16a4a393aceb1c9429fa6054"
+    },
+    {
+      "bytes": 1824,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/result.json",
+      "sha256": "db1460e70f8a22c885581b734736f526205dcfc09fce58b48ac4e677feb8c941"
+    },
+    {
+      "bytes": 1936,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-global-conditioned-deflation/context-00.txt",
+      "sha256": "18d98669314a653560d4f9fd2b7cba60edaf14618d5c45a98454d2e834e499a8"
+    },
+    {
+      "bytes": 4173,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-global-conditioned-deflation/context-01.txt",
+      "sha256": "b6e0ea270d1088c144bb9d736f75e135bc4b991bcea4715262fcff3616abdca1"
+    },
+    {
+      "bytes": 13981,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-global-conditioned-deflation/context-02.txt",
+      "sha256": "a75744103ce1cbd5c13e865f211c60bf93ee2af94aa78653a6f0797b8b0bec03"
+    },
+    {
+      "bytes": 574519,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-global-conditioned-deflation/provider-response.json",
+      "sha256": "6fc2710d819d2067511ecb962afe28efcb3ddef9c5240ec80de1c7d9ba875481"
+    },
+    {
+      "bytes": 22166,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-global-conditioned-deflation/request.json",
+      "sha256": "f98eed7bb88683e8cef67be8c53bbcd326893da69bb6e7cec30281ce9861f465"
+    },
+    {
+      "bytes": 11172,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-global-conditioned-deflation/response.md",
+      "sha256": "1bbf49966179bad2c53266ed199349860b3da90e0c3b5db0963b2b43bd192481"
+    },
+    {
+      "bytes": 1636,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-global-conditioned-deflation/result.json",
+      "sha256": "4d44bb7d9a507216e0520ab5c94698d583addedc3358e50545a3c0313e094a70"
+    },
+    {
+      "bytes": 4173,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-rational-angular-sampler/context/000.txt",
+      "sha256": "b6e0ea270d1088c144bb9d736f75e135bc4b991bcea4715262fcff3616abdca1"
+    },
+    {
+      "bytes": 9206,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-rational-angular-sampler/context/001.txt",
+      "sha256": "0e4995bc2101004c16454d15243185512f85776244ec6db3ffdeda7fe1c4bd5a"
+    },
+    {
+      "bytes": 1825,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-rational-angular-sampler/prompt.txt",
+      "sha256": "b648371211a40aaa1733548380e290b059faba44dfb09ce1d160edb70eada4cb"
+    },
+    {
+      "bytes": 17148,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-rational-angular-sampler/request.json",
+      "sha256": "9b9d8b146aa743db007c48952a1d638f72fc9dbe51f98c0f2a1c1c481e875580"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-rational-angular-sampler/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1707,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-rational-angular-sampler/result.json",
+      "sha256": "50a760a463304d8bdadbddfffa973c7e12fb56b66d680a591a7f0dac21ac90ea"
+    }
+  ],
+  "three_terminal_results_and_responses": [
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-compact-source-sampler",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 26098,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/response.md",
+        "sha256": "e2975929d9f21a0feb05a4ae08602dbb3306a76b16a4a393aceb1c9429fa6054"
+      },
+      "result": {
+        "bytes": 1824,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-compact-source-sampler/result.json",
+        "sha256": "db1460e70f8a22c885581b734736f526205dcfc09fce58b48ac4e677feb8c941"
+      },
+      "session_id": 18423,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.087850"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-global-conditioned-deflation",
+      "parent_read_disposition": "full",
+      "response": {
+        "bytes": 11172,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-global-conditioned-deflation/response.md",
+        "sha256": "1bbf49966179bad2c53266ed199349860b3da90e0c3b5db0963b2b43bd192481"
+      },
+      "result": {
+        "bytes": 1636,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-global-conditioned-deflation/result.json",
+        "sha256": "4d44bb7d9a507216e0520ab5c94698d583addedc3358e50545a3c0313e094a70"
+      },
+      "session_id": 35231,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "1.752940"
+    },
+    {
+      "known_nonpartial_estimate": true,
+      "obligation": "wave-rational-angular-sampler",
+      "parent_read_disposition": "EMPTY; no findings",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-rational-angular-sampler/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "result": {
+        "bytes": 1707,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-wave-rational-angular-sampler/result.json",
+        "sha256": "50a760a463304d8bdadbddfffa973c7e12fb56b66d680a591a7f0dac21ac90ea"
+      },
+      "session_id": 11652,
+      "session_reaped_per_parent": true,
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "usage_cost_estimate_usd": "1.305660"
+    }
+  ],
+  "unique_hashed_artifact_count": 42,
+  "usage_snapshot": {
+    "bytes": 17657,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/wave_cluster_round/usage.json",
+    "sha256": "5610e5664b58c68fed704792947b372b0ed2be5445d071be80cb49d0474ef20c"
+  }
+}

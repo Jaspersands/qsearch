@@ -1,0 +1,217 @@
+{
+  "captured_at_utc": "2026-11-12T23:45:13.056834+00:00",
+  "claim_gates": {
+    "bookkeeping_only": true,
+    "hardness_claim": false,
+    "novelty_claim": false,
+    "paid_positive_algorithm_verified": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "speedup_claim": false,
+    "total_tower_algorithm_claim": false,
+    "unconditional_polynomial_clock_claim": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 1808,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-native-composition/dispatch.json",
+    "sha256": "bfa0367c66d90ed81bf9dfd3c3dc0a1448dcf5e428e89696f8ac52995be874d5"
+  },
+  "dispatch_mutation_scope": "Updated terminal status and parent-read/session-reaped metadata only; saved raw results unchanged.",
+  "exclusions": [
+    {
+      "reason": "Preserved unchanged and excluded.",
+      "scope": "Five inherited UNKNOWN bills and partial counters"
+    },
+    {
+      "reason": "Not part of these two paid requests. Topic snapshots labelled; Buchmann-Lenstra source check belongs to a separate review.",
+      "scope": "New audits, live STATE/HANDOFF/MECHANICAL and original topic paths; maximal-order source obligation not yet available at freeze"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 5358,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-native-composition/contract.md",
+      "sha256": "858e0aec2945b6a85c93887e43a5b88d631615a92e84cbcc510d613487c00ccd"
+    },
+    {
+      "bytes": 1808,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-native-composition/dispatch.json",
+      "sha256": "bfa0367c66d90ed81bf9dfd3c3dc0a1448dcf5e428e89696f8ac52995be874d5"
+    },
+    {
+      "bytes": 892,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-native-composition/tower-batched-native-compiler.md",
+      "sha256": "c068dfe4250e5c0bab49d7d016770a51b805d84ca85b4ec5f0f8a411ad94109e"
+    },
+    {
+      "bytes": 1040,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-native-composition/tower-sparse-gluing-height.md",
+      "sha256": "b26a7e3957768c8079353ad00e5204f3d1baf4925bf87da985a5426c324edb04"
+    },
+    {
+      "bytes": 7163,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-tower-native-composition/wesolowski-primary.txt",
+      "sha256": "77cd75dc2a406b2c522d514838da80eb418517ebfd4ad84fbbf167f39dd306d7"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 26979,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence_round/checkpoint.json",
+    "sha256": "f8bf81fbd7d1815ddb0cb65fadfeab6884d4ce9c5b417e731c3ac18e737f3d8c"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 19689,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_recurrence_round/usage.json",
+    "sha256": "81cc6c5dd8316d5156db5e0810037ce504426c27c28251e249459d36e07e9b16"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 31
+  },
+  "labelled_topic_snapshots": [
+    {
+      "bytes": 18364,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/QUADRATIC_TOWER_RECURRENCE.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_native_composition_round/quadratic_tower_recurrence-snapshot.md",
+      "sha256": "f055fa227052d3e18573edcdb9f7a905ed608a11c9b5de8167921266a6de2f3a",
+      "snapshot_label": "Exact byte snapshot; original live topic path not hashed. Later requests mentioned here have no usage/bundle inclusion."
+    },
+    {
+      "bytes": 12173,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/QUARTIC_RELATIVE_NORM_CLASSICAL.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_native_composition_round/quartic_relative_norm_classical-snapshot.md",
+      "sha256": "6f76613687b09d791dc30826baad916d3f5350545fea9b847a660e67cd6288b6",
+      "snapshot_label": "Exact byte snapshot; original live topic path not hashed. Later requests mentioned here have no usage/bundle inclusion."
+    }
+  ],
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 2479060,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/wesolowski_subgroups.pdf",
+      "sha256": "aff286ecea40450669597076bb13f960ea55c80217f74110c49226635065de7e"
+    },
+    {
+      "bytes": 70241,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/wesolowski_subgroups.txt",
+      "sha256": "f7d8aad6e76f6c5f1bdf63dcfdf56ed52ac8c5441abbfff158917bc7b8bcb02b"
+    },
+    {
+      "bytes": 144,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-tower-recurrence/wesolowski_subgroups.source.json",
+      "sha256": "ae88e3b1849136855ca1eba252e0340f0b291bc8c15a9a83f5a7229ad545942e"
+    }
+  ],
+  "prior_hash_policy": "Prior ledger/checkpoint continuity references only; no historical run rescan, repinning or edits.",
+  "referenced_paid_report_context_artifacts": [
+    {
+      "bytes": 18982,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-fixed-rank-descent/response.md",
+      "sha256": "332b1c503294feef026c58b3428300e9a0ded8270c6940dfff0689e12cf4b226"
+    },
+    {
+      "bytes": 14557,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-parity-constrained-descent/response.md",
+      "sha256": "6a167d746c56fb8c47c41c596fb7124dece613e17501c54dfbdf159fb1a9ce4d"
+    }
+  ],
+  "scope": "Frozen tower-recurrence baseline plus ONLY two terminal tower-native-composition jobs, their immutable packets/bundles, stable 156-LF sparse-gluing review and labelled topic snapshots. Positive paid algorithm claim UNVERIFIED.",
+  "stable_sparse_gluing_review": {
+    "bytes": 8259,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-sparse-gluing-support.md",
+    "physical_LF_count": 156,
+    "sha256": "aa2c65f9be96aee6257db2ae43d285fd9b2bd8404a632688d2712363f0c16a75"
+  },
+  "status": "TERMINAL_TOWER_NATIVE_COMPOSITION_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 892,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-batched-native-compiler/context-00.txt",
+      "sha256": "c068dfe4250e5c0bab49d7d016770a51b805d84ca85b4ec5f0f8a411ad94109e"
+    },
+    {
+      "bytes": 5358,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-batched-native-compiler/context-01.txt",
+      "sha256": "858e0aec2945b6a85c93887e43a5b88d631615a92e84cbcc510d613487c00ccd"
+    },
+    {
+      "bytes": 7163,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-batched-native-compiler/context-02.txt",
+      "sha256": "77cd75dc2a406b2c522d514838da80eb418517ebfd4ad84fbbf167f39dd306d7"
+    },
+    {
+      "bytes": 18982,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-batched-native-compiler/context-03.txt",
+      "sha256": "332b1c503294feef026c58b3428300e9a0ded8270c6940dfff0689e12cf4b226"
+    },
+    {
+      "bytes": 14557,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-batched-native-compiler/context-04.txt",
+      "sha256": "6a167d746c56fb8c47c41c596fb7124dece613e17501c54dfbdf159fb1a9ce4d"
+    },
+    {
+      "bytes": 852517,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-batched-native-compiler/provider-response.json",
+      "sha256": "0fff096588bc2de09213237a6896c751c4234b22a562771393481c0a8ab0dec2"
+    },
+    {
+      "bytes": 51655,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-batched-native-compiler/request.json",
+      "sha256": "4bfee597d24656d08a93dee5850fab70bf68d76a396b77ed3bceb6d9d9e09079"
+    },
+    {
+      "bytes": 27547,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-batched-native-compiler/response.md",
+      "sha256": "0502855a67a9733a04daf6deb535e56ff5c5bc011bd06bdc4ab779542e501bab"
+    },
+    {
+      "bytes": 2026,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-tower-batched-native-compiler/result.json",
+      "sha256": "8ae2298442dd06f06d205fa45226db124f0c8d8d937f03b59e2c556a49ebc845"
+    },
+    {
+      "bytes": 5358,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-sparse-gluing-height/context/000.txt",
+      "sha256": "858e0aec2945b6a85c93887e43a5b88d631615a92e84cbcc510d613487c00ccd"
+    },
+    {
+      "bytes": 7163,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-sparse-gluing-height/context/001.txt",
+      "sha256": "77cd75dc2a406b2c522d514838da80eb418517ebfd4ad84fbbf167f39dd306d7"
+    },
+    {
+      "bytes": 1040,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-sparse-gluing-height/prompt.txt",
+      "sha256": "b26a7e3957768c8079353ad00e5204f3d1baf4925bf87da985a5426c324edb04"
+    },
+    {
+      "bytes": 15331,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-sparse-gluing-height/request.json",
+      "sha256": "f3622c997c9efa86a189ed44a42a9029465d17673d15dcb512a80b4ca741ecaa"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-sparse-gluing-height/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1715,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-sparse-gluing-height/result.json",
+      "sha256": "450c87fddb7b61a862d0bb5d082c74de722258ec75d7de28505791ed13916723"
+    }
+  ],
+  "unique_hashed_artifact_count": 31,
+  "usage_snapshot": {
+    "bytes": 15722,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/tower_native_composition_round/usage.json",
+    "sha256": "c1004aa36a4dc51acc3a80e2c9ced3386901e66694e7815600b1b2492f57a8b9"
+  }
+}
