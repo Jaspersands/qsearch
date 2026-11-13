@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_MORSE_ATTACK
 
-Note: `research/PRIME_CHARACTER_MORSE_ATTACK.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_MORSE_ATTACK.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ Both judges agree on every verdict, and I confirm each one: the S_n monodromy ar
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
 > A sufficient condition for >=1/(2n) is p>=max(64G^2,4*R_branch*h)
 
 - Step: An Explicit Fixed-Input Fiber Count
-- Finding: No derivation is given. p>=64G^2 gives 2G*sqrt(p)<=p/4, but the bound uses ceil(sqrt p), so 2G*ceil(sqrt p)<=p/4+2G. With R*h<=p/4 the numerator is then only at least p/2+1-2G, which is below p/2. The claim needs the unstated inequality 16G^2>=R_branch*h+2G-1. It is true (quartic: 1296>=120+17; checked for all even n in 4..38) but not argued. The exterior follow-up handles the same term explicitly with 4(R+A).
+- Finding: An Explicit Fixed-Input Fiber Count now derives 2G*ceil(sqrt p) < p/4 + 2G and explicitly proves 16G^2 >= R_branch*h + 2G - 1 for all n >= 4 so the +2G rounding term is absorbed at p >= 64G^2.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

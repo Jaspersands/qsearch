@@ -18,10 +18,11 @@ quadratic-source erasure problem without making native search classically easy?
 
 The mechanism is not conjugate-copy polarization: it proposes ONE chirp per
 coordinate, retains the original square constraints, and uses outer coding.
-The direct full-field Reed--Solomon realization fails the search-advantage
-test: a deterministic classical construction below solves EVERY target in
-the entire proposed useful rate range, and beyond. Retain the local primitive
-and counteralgorithm; do not build a large quantum compiler for this family.
+The direct full-field Reed--Solomon realization (N=p-1) fails the
+zero-allowed search-advantage test: a review-pending deterministic classical
+construction below solves EVERY target in the proposed useful rate range
+r/N<1/4 and for all 1<=r<N/2 (failing at the r=N/2 boundary). Retain the local
+primitive and counteralgorithm; do not build a large quantum compiler for this family.
 
 The [quadratic-DQI manuscript](https://arxiv.org/html/2510.08061v2) explicitly
 withdraws its state-preparation theorem because its per-register step has
@@ -200,7 +201,8 @@ and SIX complete native witness records: (L,r)=(30,6),
 (126,24),(1020,240),(1020,509),(100,24),(800,190). The last two use unchanged
 proper subsets; their omitted points are forced to zero, not silently dropped.
 Every original equation is independently replayed. Local physical unitarity
-error is at most2.23e-16 and predicted probability error at most3.34e-16.
+error is at most2.23e-16 and predicted diagonal probability error at most
+4.44e-16 (normalized output error at most6.66e-16).
 The strict JSON report binds its producer/dependencies. The initial local/
 classical pass had14 tests within an82-test connected regression passing25.98s.
 The coherence extension below adds focused tests; its final verification is

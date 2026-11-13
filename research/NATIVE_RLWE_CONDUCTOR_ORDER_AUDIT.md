@@ -1,4 +1,4 @@
-# Native RLWE: Exact Metric, Nonprincipal Quaternion Ideal
+# Native RLWE: Exact Metric, Nonprincipal Quaternion Ideal (for M != 0 mod q, Review Pending)
 
 2026-10-05. LOCAL DERIVATION / REVIEW PENDING. No independent theorem review,
 novelty, speedup, quantum generator, or security claim. This is a deliberate

@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_OPI
 
-Note: `research/PRIME_CHARACTER_OPI.md`. Reviewed 2026-10-23 by codex-audit-correction-2026-10-23-r3. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_OPI.md`. Reviewed 2026-11-14 by codex-audit-correction-2026-10-23-r3. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -24,20 +24,20 @@ The power-completion and strict zero-avoidance derivations check out: F^(1/r) tr
 - Finding: c in {0..M} avoids at most M forbidden values -R(a_i) since M<p; (R+c)^r-R^r has degree <=(r-1)D=b. Artifact: all ten strict controls report NATIVE_COMPLETION_WITNESS with full score (the r=4 strict sibling uses K25=b+1).
 - Conceded by the note's own self-check: no
 
-### 3. gap
+### 3. holds
 
-> K39 and general fixed-input/asymptotic solvability remain open
+> K39, the saved high-rate mixed controls N31,K16 seed71 (30/31), r=3 N63,K46 mixed (55/63 and 56/63), r=4 N32,K24 mixed (28/32 and 27/32), and general fixed-input/asymptotic solvability remain open
 
 - Step: Header / Live Controls summary
-- Finding: The open-case list names only K39, but other saved high-rate mixed sources are also not perfect in the artifact. N31,K16 mixed seed71 is best 30/31 (r=2, R+rho=16/31+1/2>1, so in the published perfect-search regime). The r=3 N63,K46 mixed sources are 55/63 and 56/63 (R+rho~1.06>1), and the r=4 N32,K24 mixed sources are 28/32 and 27/32. The superseding norm attack covers only N127,K77. The Live Controls paragraph also reports only the r=3/r=4 global controls ('also perfect') and omits these mixed scores.
+- Finding: Both the header and Live Controls now explicitly list N31,K16 mixed seed71 (30/31) and the r=3 (55/63, 56/63) and r=4 (28/32, 27/32) mixed controls alongside K39.
 - Conceded by the note's own self-check: no
 
-### 4. gap
+### 4. holds
 
-> all25 native polynomials fail perfect strict satisfaction
+> with the common square coset (orientation 0, beta=1), all25 native polynomials fail perfect strict satisfaction
 
 - Step: Tight degree paragraph (p5,N4,K2,r2, shifts (0,0,0,1))
-- Finding: The coset orientation is not stated, and the claim depends on it. Exhaustive check: with the common square coset (orientation 0, the one tests/test_prime_character_opi.py uses), 0/25 polynomials are perfect. With the common nonsquare coset beta=2, the constant Q=3 gives residuals (3,3,3,2), all nonzero nonsquares, so 1/25 is perfect at K2. The counterexample needs 'square coset' added.
+- Finding: The p=5, N=4, K=2 counterexample paragraph now explicitly specifies the common square coset.
 - Conceded by the note's own self-check: no
 
 ### 5. holds

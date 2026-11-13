@@ -14,16 +14,21 @@ JOURNALS = {"AGENT_HANDOFF.md", "MECHANICAL_FOLLOW_UP_PLAN.md"}
 _STATUS_PATTERNS = [
     ("quarantined", re.compile(r"\bquarantin", re.I)),
     ("superseded", re.compile(r"\bsuperseded\b", re.I)),
-    ("retracted", re.compile(r"\b(retracted|withdrawn)\b", re.I)),
+    ("retracted", re.compile(r"\b(retracted|withdrawn|overriding\s+correction)\b", re.I)),
     ("rejected", re.compile(r"\brejected\b", re.I)),
     ("review-pending", re.compile(r"\breview[ -]pending\b", re.I)),
-    ("proved", re.compile(r"\bproved\b", re.I)),
+    (
+        "proved",
+        re.compile(
+            r"(\*\*status[:\*\s]*[^\n]*\bproved\b|status\s*:\s*[^\n]*\bproved\b|\bPROVED\b)",
+        ),
+    ),
     ("audited", re.compile(r"\baudit(ed)?\b", re.I)),
 ]
 
 
 def note_status(lines: list[str]) -> str:
-    head = " ".join(line for line in lines[:8] if not line.startswith("# "))
+    head = "\n".join(line for line in lines[:20] if not line.startswith("# "))
     for label, pattern in _STATUS_PATTERNS:
         if pattern.search(head):
             return label

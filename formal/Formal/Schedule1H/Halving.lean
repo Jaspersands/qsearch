@@ -79,7 +79,7 @@ first `arity` columns (zeros elsewhere); a plan calls `H_{κ/2}` at arity
 `A = arity (κ/2) a` inside each stage. -/
 def H (prep : (κ : ℕ) → Prep K κ) (ch : ℕ → ℕ → Cand) (κ a n : ℕ)
     (col : Fin n → Fin a → K) : Fin n → K :=
-  if h : κ ≤ 1 then
+  if _h : κ ≤ 1 then
     padRun (N := a + 1) (fun c => (QSearch.ReesSdeSolver.kernelVec a (a + 1) c).get) col
   else
     match ch κ a with
@@ -117,15 +117,15 @@ theorem H_spec (prep : (κ : ℕ) → Prep K κ) (ch : ℕ → ℕ → Cand) :
   by_cases h1 : κ ≤ 1
   · have hκ1 : κ = 1 := by omega
     subst hκ1
-    rw [arity, dif_pos h1] at hn
-    rw [H, dif_pos h1]
+    rw [arity, dite_eq_left h1] at hn
+    rw [H, dite_eq_left h1]
     refine padRun_spec (by norm_num) _ col hn ?_
     obtain ⟨hne, hsum⟩ := QSearch.ReesSdeSolver.kernelVec_spec a (a + 1)
       (fun j => col (Fin.castLE hn j)) (Nat.lt_succ_self a)
     exact ⟨hne, by simpa using hsum⟩
   · have hκ2 : 2 ≤ κ := by omega
-    rw [arity, dif_neg h1] at hn
-    rw [H, dif_neg h1]
+    rw [arity, dite_eq_right h1] at hn
+    rw [H, dite_eq_right h1]
     have hc0 := hok κ a dvd_rfl hκ2
     revert hn hc0
     cases ch κ a with

@@ -1,6 +1,6 @@
 # Referee review: DCP_INTERLEAVED_TREE_MERGE_SYNDROME_PRUNING_AUDIT
 
-Note: `research/DCP_INTERLEAVED_TREE_MERGE_SYNDROME_PRUNING_AUDIT.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/DCP_INTERLEAVED_TREE_MERGE_SYNDROME_PRUNING_AUDIT.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,17 +8,17 @@ Both judges agreed that P_acc=1-2p+3p^2/2, the visibility-gain factorisation, th
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> (coincidence pruning strictly purifies the phase error)
+> (conditional classical coincidence pruning strictly purifies the retained classical latent-error posterior under assumed exact equality access, not a physical phase-qubit channel)
 
 - Step: Theorem 1 heading and item 2, first bullet
-- Finding: The sign statement is algebraically correct: the numerator p(1-p)(2-3p)(1-cos(2pi/q))/2 is positive for 0<p<2/3. It is, however, a statement about the conditional posterior of classical latent errors under assumed exact equality access. The status block says no phase-qubit equality instrument exists and that this is not quantum purification, and Section 3 says these are not a derived error channel on phase qubits. Calling p*=2/3 a 'Purification Threshold' and the result purification of 'the phase error' drops that condition from the theorem statement.
+- Finding: Theorem 1 and its purification threshold now explicitly state that the recurrence models conditional classical coincidence pruning of a classical latent-error posterior under assumed exact equality access, not a physical phase-qubit channel, and cite the saved artifact path.
 - Conceded by the note's own self-check: yes
 
 ### 2. holds
 
-> Post-selecting two independent copies $e_1, e_2 \stackrel{\text{i.i.d.}}{\sim} K_\eta$ on exact coincidence $e_1 = e_2$ succeeds with probability
+> Post-selecting two independent copies $e_1, e_2 \stackrel{\text{i.i.d.}}{\sim} K_\eta$ on assumed exact coincidence $e_1 = e_2$ succeeds with probability
 
 - Step: Theorem 1, item 1
 - Finding: For q>=3 the points +1 and -1 are distinct, so sum K^2=(1-p)^2+2(p/2)^2=1-2p+3p^2/2. The gain (1-c)p(P-p/2)/P with P-p/2=(1-p)(2-3p)/2 reproduces item 2. At p=1/4 this gives 19/32, matching the producer artifact. Both judges agree.

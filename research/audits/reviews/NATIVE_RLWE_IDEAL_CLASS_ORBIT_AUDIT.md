@@ -1,6 +1,6 @@
 # Referee review: NATIVE_RLWE_IDEAL_CLASS_ORBIT_AUDIT
 
-Note: `research/NATIVE_RLWE_IDEAL_CLASS_ORBIT_AUDIT.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/NATIVE_RLWE_IDEAL_CLASS_ORBIT_AUDIT.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ The classification holds: saturation makes alpha a unit of O_0, the cited signat
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> Native Quaternion Ideal Classes: Public Dihedral Orbits
+> Native Quaternion Ideal Classes on the Generic Unit Source: Public Dihedral Orbits (Review Pending)
 
 - Step: Title (headline scope)
-- Finding: The title presents native quaternion ideal classes in general as public dihedral orbits. The classification in Sections 1-3 holds only on the generic source (M a unit and beta=1+M*bar(M) a unit mod q), with q prime 3 mod 8 and d>=4 a power of two, and it rests on the review-pending saturation step and the cited unit-signature theorem. Native ratios outside that source, such as the x-1 unit ratios with norm -1 and nonunit M, are not classified. The title needs the generic-source restriction.
+- Finding: The title now restricts the public dihedral orbit classification to the generic unit source and marks it review pending.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

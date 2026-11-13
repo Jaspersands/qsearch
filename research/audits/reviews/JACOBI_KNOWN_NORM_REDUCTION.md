@@ -1,6 +1,6 @@
 # Referee review: JACOBI_KNOWN_NORM_REDUCTION
 
-Note: `research/JACOBI_KNOWN_NORM_REDUCTION.md`. Reviewed 2026-11-13 by claude-subagent-refresh-2026-11-13. Overall: **needs-work**.
+Note: `research/JACOBI_KNOWN_NORM_REDUCTION.md`. Reviewed 2026-11-14 by claude-subagent-refresh-2026-11-13. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,20 +8,20 @@ Both judges rated the note needs-work on scope only: judge A flagged the bold De
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> Known Relative Norm Removes The Prime-Conductor Quantum Opening
+> Known Relative Norm Removes The Prime-Conductor Quantum Opening (Local Application Review Pending)
 
 - Step: Title
-- Finding: The title states the removal unconditionally. The status line and Next Research Action make it 'subject to independent review of the application', and the Lenstra-Silverberg recovery algorithm was not executed (artifact: classical_known_norm_recovery_executed=false, independent_or_formal_review_completed=false).
+- Finding: The title now explicitly marks the prime-conductor opening removal as Local Application Review Pending.
 - Conceded by the note's own self-check: yes
 
-### 2. gap
+### 2. holds
 
-> this published theorem plus the Jacobi identities and primary congruence gives classical polynomial-time exact surface counting
+> conditional on independent review of the local reduction to Theorem 1.3 (and noting that the imported Lenstra-Silverberg generator-recovery algorithm is not executed here), for odd prime conductor and the stated public split-root input, this published theorem plus the Jacobi identities and primary congruence gives classical polynomial-time exact surface counting
 
 - Step: Question And Decision (bold Decision)
-- Finding: Read alone, the Decision asserts the classical algorithm outright; it drops the note's own conditions that the local reduction to Theorem 1.3 is review pending and that the imported recovery algorithm was never run. Its complexity scope 'in ell and log p' matches the body, so no promise is missing there.
+- Finding: The Decision now explicitly states that the conclusion is conditional on independent review of the local reduction to Theorem 1.3 and that the imported Lenstra-Silverberg recovery algorithm is not executed here.
 - Conceded by the note's own self-check: yes
 
 ### 3. holds

@@ -194,8 +194,11 @@ sampling impossibility or an automatic negative quantum result.
 ## Research Decision And Next Decisive Gate
 
 The coherent erasure stage is now implemented and its phase/workspace
-composition is checked. It is no longer an unspecified Gaussian solve.
-It supplies neither exact cyclic sampling nor a new algorithmic speedup.
+composition is checked on the finite `5`-wire, `3`-check cyclic control `M5`
+(`12` qubits, two orders and two `c` values, using explicit herald tables that
+can be exponential in general, while the `128`-`512` wire socket inputs are
+topology/rank plans only). It is no longer an unspecified Gaussian solve on
+`M5`. It supplies neither exact cyclic sampling nor a new algorithmic speedup.
 
 Do NOT extend this by measurement-order/seed/depth scans or larger controlled
 tables. Two research gates actually matter:

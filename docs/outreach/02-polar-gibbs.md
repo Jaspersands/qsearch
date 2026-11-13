@@ -34,10 +34,13 @@ syndrome s.
   conditional law given the syndrome at most doubles this on average. Each m_i is the
   root fidelity of the reversed synthesized classical-quantum bit channel. We claim no
   new duality theorem here: this is an instance of known channel/code duality (Renes;
-  the BSC/PSC treatment of Rengaswamy and Pfister). Our local derivation of the identity
-  for this setting is checked numerically only at the smallest lengths and is marked
-  review pending. If it holds, a polar Gibbs proposal justified by a vanishing sum of
-  these fidelities also gives this classical average-sign sampler.
+  the BSC/PSC treatment of Rengaswamy and Pfister). Our follow-up note
+  (`research/DQI_POLAR_SAME_CODE_GIBBS.md`) derives the joint conditional gauge-bijection
+  bound and same-code polar duality analytically from Korada--Urbanke Lemma 2 and Renes
+  Section 3.2/Corollary 2, while the earlier conditional-sampler note checked the identity
+  numerically at the smallest lengths and remains marked review pending. If it holds, a
+  polar Gibbs proposal justified by a vanishing sum of these fidelities also gives this
+  classical average-sign sampler.
 - **A certified design without a source table, conditional on review-pending steps.**
   Upper bounds on every m_i come from exact integer channel combination on a nonuniform
   overlap mesh with 96-bit dyadic herald masses, with every rounding chosen to degrade.

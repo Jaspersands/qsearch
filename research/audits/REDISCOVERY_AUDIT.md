@@ -1,7 +1,7 @@
 # Rediscovery Audit
 
-Generated 2026-10-19 by `tools/audit/rediscovery.py`; do not edit by hand.
-Scope: the 976 records in `research/registry/negative_results.json`, grouped into
+Generated 2026-11-14 by `tools/audit/rediscovery.py`; do not edit by hand.
+Scope: the 966 records in `research/registry/negative_results.json`, grouped into
 60 clusters by shared reasoning. A judge searched arXiv for each cluster's barrier
 and labelled it. Labels pass from the members it read to the rest of the cluster only when at least
 half of the read members kept the cluster label and one of them shares the record's track.
@@ -11,13 +11,13 @@ half of the read members kept the cluster label and one of them shares the recor
 
 | Label | Records | Share of judged | Read by a judge | Share of read | Meaning |
 |---|---|---|---|---|---|
-| published | 275 | 28% | 138 | 38% | A retrieved abstract states the same barrier for the same problem setting; the records add at most instances. |
-| adjacent | 436 | 45% | 169 | 46% | The technique or barrier is known, but in a different setting, or the literature only implies it. |
+| published | 274 | 28% | 137 | 38% | A retrieved abstract states the same barrier for the same problem setting; the records add at most instances. |
+| adjacent | 434 | 45% | 168 | 46% | The technique or barrier is known, but in a different setting, or the literature only implies it. |
 | not-found | 2 | 0% | 2 | 1% | No retrieved abstract states the barrier after a reasonable search. |
-| unclear | 263 | 27% | 57 | 16% | The cluster is too heterogeneous or its records too terse to judge. |
+| unclear | 256 | 27% | 57 | 16% | The cluster is too heterogeneous or its records too terse to judge. |
 
-Basis: 366 records were read by a judge; 541 inherited their cluster's label; 69 were withheld and count as unclear, because the judge overrode the cluster label for most of the members it read or no read member shares their track.
-Of the 713 records with a label other than unclear, 275 (39%) are published.
+Basis: 364 records were read by a judge; 540 inherited their cluster's label; 62 were withheld and count as unclear, because the judge overrode the cluster label for most of the members it read or no read member shares their track.
+Of the 710 records with a label other than unclear, 274 (39%) are published.
 
 ## By track
 
@@ -26,18 +26,18 @@ Published (read) counts only the records a judge read.
 | Track | Records | Published | Adjacent | Not found | Unclear | Published (read) |
 |---|---|---|---|---|---|---|
 | Code equivalence | 457 | 34% | 30% | 0% | 36% | 83 of 185 |
-| Coset observables / nonabelian HSP | 255 | 44% | 44% | 0% | 12% | 48 of 90 |
-| Dihedral coset / hidden shift | 154 | 1% | 71% | 1% | 28% | 1 of 58 |
+| Coset observables / nonabelian HSP | 248 | 44% | 45% | 0% | 10% | 47 of 88 |
+| Dihedral coset / hidden shift | 153 | 1% | 71% | 1% | 28% | 1 of 58 |
 | Legacy toy oracles | 53 | 0% | 100% | 0% | 0% | 0 of 6 |
 | Query lower bounds | 22 | 5% | 86% | 0% | 9% | 1 of 12 |
 | Other | 17 | 6% | 29% | 0% | 65% | 1 of 6 |
 | Applied-QC barriers from the literature | 10 | 40% | 0% | 0% | 60% | 4 of 7 |
-| Lattices | 7 | 0% | 29% | 0% | 71% | 0 of 2 |
+| Lattices | 5 | 0% | 40% | 0% | 60% | 0 of 2 |
 | DQI / OPI / prime characters | 1 | 0% | 0% | 0% | 100% | 0 of 0 |
 
 ## Ground truth
 
-10 records restate textbook barriers and were chosen before judging. 7 of them came back published.
+10 records restate textbook barriers and were chosen before judging. 6 of them came back published.
 
 | Record | Known reference | Label | Verified citation |
 |---|---|---|---|
@@ -50,12 +50,12 @@ Published (read) counts only the records a judge read.
 | `NEG-QUANTUM-MACHINE-LEARNING-KERNEL-CONCENTRATION-BARRIER` | Exponential concentration in quantum kernel methods (Thanasilp, Wang, Cerezo, Holmes 2022). | published | 2208.11060 Exponential concentration in quantum kernel methods |
 | `NEG-QUANTUM-SUPREMACY-RCS-ANTICONCENTRATION-BARRIER` | Polynomial-time classical simulation of noisy random circuit sampling (Aharonov, Gao, Landau, Liu, Vazirani 2022). | published | 2211.03999 A polynomial-time classical algorithm for noisy random circuit samplin |
 | `NEG-STRONGLY-COSPECTRAL-QUANTUM-WALK-BLINDNESS` | Quantum walks fail to distinguish strongly regular graphs (Smith 2010; Gamble et al. 2010). | published | quant-ph/0501056 The Symmetric Group Defies Strong Fourier Sampling: Part I |
-| `NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER` | Limits of Fourier sampling over S_n for graph isomorphism (Moore, Russell, Schulman 2005; Hallgren et al. 2006). | published | quant-ph/0501056 The Symmetric Group Defies Strong Fourier Sampling: Part I |
+| `NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER` | Limits of Fourier sampling over S_n for graph isomorphism (Moore, Russell, Schulman 2005; Hallgren et al. 2006). | missing |  |
 
 Records that cite an arXiv id themselves (ids were hidden from the judge):
 
-- `NEG-COSET-TYPICAL-FIXED-SOURCE-CATALOG-COVERAGE` cites 2605.25995: retrieved by search yes, cited by the judge yes, label adjacent.
-- `NEG-DCP-QUERY-SFT-ACCESS-TRANSFER` cites 1607.01842: retrieved by search yes, cited by the judge yes, label adjacent.
+- `NEG-COSET-TYPICAL-FIXED-SOURCE-CATALOG-COVERAGE` cites 2605.25995: retrieved by search no, cited by the judge yes, label adjacent.
+- `NEG-DCP-QUERY-SFT-ACCESS-TRANSFER` cites 1607.01842: retrieved by search no, cited by the judge yes, label adjacent.
 
 ## Spot check
 

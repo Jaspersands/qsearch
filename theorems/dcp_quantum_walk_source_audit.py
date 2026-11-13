@@ -317,7 +317,11 @@ def run_quantum_walk_source_audit(
         source={
             "id": SOURCE_ID,
             "url": SOURCE_URL,
-            "local_root": str(source_root),
+            "local_root": (
+                str(source_root.relative_to(PROJECT_ROOT))
+                if source_root.is_relative_to(PROJECT_ROOT)
+                else str(source_root)
+            ),
             "audit_method": "regex conformance checks over cached primary-source LaTeX",
         },
         source_claims=claims,

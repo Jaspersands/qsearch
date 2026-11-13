@@ -351,6 +351,7 @@ variable {ι τ β : Type*} [Fintype ι] [Fintype τ] [DecidableEq τ] [Fintype 
 def Tset (κ : ℕ) (c : τ → K) : Set K :=
   {x | ∃ y : τ → K, (∀ k, y k ∈ Pow κ ∨ y k = 0) ∧ y ≠ 0 ∧ ∑ k, y k * c k = x}
 
+omit [DecidableEq τ] in
 /-- `T(c)` through roots: `x ∈ T(c)` iff `x = ∑ ρ_k ^ κ c_k` for a nonzero root vector `ρ`. -/
 theorem mem_Tset_iff {κ : ℕ} (hκ : 0 < κ) (c : τ → K) (x : K) :
     x ∈ Tset κ c ↔ ∃ ρ : τ → K, ρ ≠ 0 ∧ ∑ k, ρ k ^ κ * c k = x := by
@@ -427,6 +428,7 @@ theorem finishF0_spec {κ : ℕ} (hκ : 0 < κ) (col : ι → V) (c : τ → K) 
 /-- Support of a root vector (the indices where it is nonzero). -/
 def rootSupport {ι' : Type*} [Fintype ι'] (r : ι' → K) : Set ι' := {i | r i ≠ 0}
 
+omit [AddCommGroup V] [Module K V] [Fintype ι] [Fintype τ] [DecidableEq τ] in
 /-- (F0) support claim: the solution is supported in the support of `o`. -/
 theorem finishF0_support (o : Obj ι τ V K) (ρ : τ → K) (i : ι) (hi : finishF0 o ρ i ≠ 0) :
     o.part i ≠ none := by
@@ -458,6 +460,7 @@ theorem finishF1_spec [DecidableEq K] {κ : ℕ} (hκ : 0 < κ) (col : β × ι 
     have := h b
     exact (hfin _ hb').1 (by simpa [hb'] using this)
 
+omit [AddCommGroup V] [Module K V] [Fintype ι] [Fintype τ] [DecidableEq τ] [Fintype β] in
 /-- (F1) support claim: the solution is supported in the union of the supports. -/
 theorem finishF1_support [DecidableEq K] (o : β → Obj ι τ V K) (fin : K → τ → K) (η : β → K)
     (p : β × ι) (hp : finishF1 o fin η p ≠ 0) : (o p.1).part p.2 ≠ none := by

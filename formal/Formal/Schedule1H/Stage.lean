@@ -157,12 +157,14 @@ theorem exists_root_of_pow_eq_one {κ h : ℕ} (hκh : κ * h = Fintype.card K -
   refine ⟨((g ^ k : Kˣ) : K), ?_⟩
   rw [← Units.val_pow_eq_pow_val, ← pow_mul, mul_comm, hm, Units.val_mk0]
 
+omit [DecidableEq K] in
 /-- The converse: a nonzero `κ`-th power satisfies `x ^ h = 1`. -/
 theorem pow_eq_one_of_root {κ h : ℕ} (hκh : κ * h = Fintype.card K - 1) {r : K}
     (hr : r ≠ 0) : (r ^ κ) ^ h = 1 := by
   rw [← pow_mul, hκh]
   exact FiniteField.pow_card_sub_one_eq_one r hr
 
+omit [DecidableEq K] in
 /-- For `x = r^D ≠ 0` with `2 D h = |K| - 1`: `x ^ h = 1` or `x ^ h = -1`
 (the paper's "for `x ∈ P_D`, `x^h = ±1`"). -/
 theorem pow_h_eq_one_or_neg_one {D h : ℕ} (hDh : 2 * D * h = Fintype.card K - 1) {r : K}
@@ -180,7 +182,7 @@ noncomputable def rootOf (κ : ℕ) (x : K) : K :=
 
 theorem rootOf_pow {κ : ℕ} {x : K} (h : ∃ r : K, r ^ κ = x) : rootOf κ x ^ κ = x := by
   unfold rootOf
-  rw [dif_pos h]
+  rw [dite_eq_left h]
   exact Classical.choose_spec h
 
 /-- The paper's coset test: `x ∈ P` iff `x ^ h = 1`. -/
@@ -204,6 +206,7 @@ theorem ff_stageOK {D h : ℕ} (hD : 0 < D) (hDh : 2 * D * h = Fintype.card K - 
       rw [div_pow, h1, hq, div_self (neg_ne_zero.mpr one_ne_zero)]
     exact rootOf_pow (exists_root_of_pow_eq_one hDh hh (div_ne_zero (pow_ne_zero _ hr) hq0) h2)
 
+omit [DecidableEq K] in
 /-- **Existence of `q`** (paper: "`q = θ^D` for a quadratic nonresidue `θ`"): in odd
 characteristic, with `2 D h = |K| - 1`, some `q` has `q ^ h = -1`. -/
 theorem exists_q (hK : ringChar K ≠ 2) {D h : ℕ} (hDh : 2 * D * h = Fintype.card K - 1) :

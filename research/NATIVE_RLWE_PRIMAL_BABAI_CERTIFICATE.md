@@ -1,4 +1,4 @@
-# Native Ring-LWE: Direct Classical Decoding At The Lower Modulus
+# Native Ring-LWE: Direct Classical Decoding Certificates On Two Seeded d=64 Labels At The Lower Modulus (Review Pending)
 
 Date: 2026-10-05. LOCAL DERIVATION / REVIEW PENDING.
 

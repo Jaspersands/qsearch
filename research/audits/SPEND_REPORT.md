@@ -1,6 +1,6 @@
 # Spend Report
 
-Generated 2026-10-18 (UTC) by `tools/spend/report.py` from `research/audits/spend_ledger.jsonl`; do not edit by hand.
+Generated 2026-11-13 (UTC) by `tools/spend/report.py` from `research/audits/spend_ledger.jsonl`; do not edit by hand.
 Days are UTC calendar days. See `tools/spend/README.md` for what each source can and cannot tell you.
 
 ## Headline

@@ -126,6 +126,7 @@ theorem firstSol_none {A : ℕ} {X Y : Type*} {f : Fin A → X ⊕ Y} (h : first
 def extendSol {A : ℕ} {ι : Type*} (b : Fin A) (r : ι → K) : Fin A × ι → K :=
   fun p => if p.1 = b then r p.2 else 0
 
+omit [DecidableEq K] in
 theorem extendSol_spec {κ A : ℕ} (hκ : 0 < κ) {ι : Type*} [Fintype ι] (b : Fin A)
     (col : Fin A × ι → V) (r : ι → K) (h : IsRootSol κ (fun i => col (b, i)) r) :
     IsRootSol κ col (extendSol b r) := by
@@ -249,6 +250,7 @@ def onFin {ι : Type*} {N a : ℕ} (eq : ι ≃ Fin N) (alg : (ι → Fin a → 
     (col : Fin N → Fin a → K) : Fin N → K :=
   alg (col ∘ eq) ∘ eq.symm
 
+omit [DecidableEq K] in
 theorem onFin_spec {ι : Type*} [Fintype ι] {κ N a : ℕ} (eq : ι ≃ Fin N)
     (alg : (ι → Fin a → K) → ι → K) (halg : ∀ col, IsRootSol κ col (alg col))
     (col : Fin N → Fin a → K) : IsRootSol κ col (onFin eq alg col) :=
@@ -285,6 +287,7 @@ structure ISOut {G a : ℕ} (κ : ℕ) (v : Fin G → Fin a → K) where
 def ISOut.rs {G a κ : ℕ} {v : Fin G → Fin a → K} (o : ISOut κ v) : (Fin G → K) × (Fin G → K) :=
   (fun b => if b ∈ o.I then o.γ b else 0, fun b => if b ∈ o.J then o.γ b else 0)
 
+omit [DecidableEq K] in
 /-- An Ivanyos–Santha output is a step answer with `e = 1`. -/
 theorem ISOut.stepSpec {G a κ : ℕ} (hκ : 0 < κ) {v : Fin G → Fin a → K} (o : ISOut κ v) :
     StepSpec κ 1 v o.rs.1 o.rs.2 := by
@@ -312,6 +315,7 @@ def roundsBlock (κ : ℕ) {a : ℕ}
   planF0 κ isRun (Nat.clog 2 t)
     (fun k => if h : (typEquiv _ k).val < t then z ⟨_, h⟩ else 0) col
 
+omit [DecidableEq K] in
 /-- The zero sum placed on the first `t` of the `2^L` representations. -/
 theorem zeroSum_lift {κ t : ℕ} (hκ : 0 < κ) (z : Fin t → K) (hz0 : z ≠ 0)
     (hz : ∑ i, z i ^ κ = 0) (L : ℕ) (hL : t ≤ 2 ^ L) :

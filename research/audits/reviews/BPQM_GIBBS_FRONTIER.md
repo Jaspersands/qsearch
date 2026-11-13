@@ -1,6 +1,6 @@
 # Referee review: BPQM_GIBBS_FRONTIER
 
-Note: `research/BPQM_GIBBS_FRONTIER.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/BPQM_GIBBS_FRONTIER.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,20 +8,20 @@ The local mathematics checks: the heralded parity mean overlap is exactly E[max(
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> It supplies a specified decoder family, public input, rigorous local test and known sampling reduction
+> It supplies a specified decoder family, public input, rigorous local test and known sampling reduction (where the degradation enclosure is review pending, the extrinsic-tree contraction is certified beyond the rank ceiling only at `(d_v,d_c)=(3,6), c=13/20, G=128` while `c=4/5` is `UNKNOWN`, and the complete coherent block decoder is not implemented)
 
 - Step: Scientific Question and Portfolio Decision
-- Finding: Headline scope (both judges). The 'rigorous local test' rests on a degradation argument the note says 'remains review pending'; it certifies a beyond-ceiling tree condition only at (dv,dc)=(3,6), c=13/20, G=128 (c=4/5 is UNKNOWN); and the 'specified decoder family' is not implemented ('the code implements neither complete theorem's decoder', 'complete coherent circuit and finite-block error ledger remain unimplemented'). The sentence drops all three conditions.
+- Finding: The summary now explicitly states the review-pending degradation enclosure, the single certified beyond-rank point (dv,dc)=(3,6), c=13/20, G=128 (with c=4/5 UNKNOWN), and that the complete coherent block decoder is not implemented.
 - Conceded by the note's own self-check: yes
 
-### 2. gap
+### 2. holds
 
-> give an asymptotic block-decoding result for random regular LDPC ensembles inside the BPQM tree success region
+> verifying whether the extrinsic-tree mean-overlap certificate here satisfies every hypothesis of Mandal et al. Theorem 30 and Zhou et al. Theorem 2.4 remains an unverified external-theorem bridge
 
 - Step: Problem and Known Mechanism / Exact Binary Tree Calculation
-- Finding: Missing step (judge A only; judge B silent). The note never states the 'tree success region' hypothesis of Theorem 30 nor shows that its certificate (extrinsic-tree mean overlap with lambda=A*F_L<1, hence symbol error <= F/2 -> 0) meets it; the note itself says the count is for the extrinsic tree, 'not a complete block decoder' with a full-degree root. The chain certificate -> block decoder -> Gibbs sampling via Zhou et al. Theorem 2.4 is asserted, not checked. Kept as gap; the self-check's failure mode 1 concedes the external theorem's scope is unverified.
+- Finding: Problem and Known Mechanism now explicitly records that connecting the extrinsic-tree mean-overlap certificate to every hypothesis of Mandal et al. Theorem 30 and Zhou et al. Theorem 2.4 remains an unverified external-theorem bridge.
 - Conceded by the note's own self-check: yes
 
 ### 3. holds

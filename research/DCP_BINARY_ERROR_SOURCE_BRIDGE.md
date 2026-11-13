@@ -9,8 +9,10 @@ to exploit it is missing, and two simple conversion shortcuts are falsified.
 
 ## Literature Update
 
-[Kothari et al., arXiv:2609.40321v1](https://arxiv.org/html/2609.40321v1),
-submitted September30,2026, proves a fixed-prime binary-error decoding tradeoff
+> **CITATION AUDIT NOTE (2026-11-14)**: The `arXiv:2609.40321v1` ("Kothari et al., submitted September 30, 2026") identifier below is an unverified/placeholder campaign citation and is **not** relied upon for any theorem or active reduction in this repository. Only the self-contained zero-sum-to-random-target marker reduction and the finite Fourier/Hensel controls verified in `theorems/dcp_binary_error_source_bridge.py` are used.
+
+[Kothari et al., arXiv:2609.40321v1 (unverified campaign citation)](https://arxiv.org/html/2609.40321v1),
+submitted September30,2026, discusses a fixed-prime binary-error decoding tradeoff
 (Theorem1.7) and a quantum ternary subset-sum tradeoff (Theorem1.3).
 At m=epsilon*n^2, fixed epsilon>0, the quantum algorithm is polynomial.
 This is a potential, not proved, exponential classical separation.
@@ -18,7 +20,7 @@ Section1.3's improved classical constant0.1022 has no complete algorithm
 description or formal proof in that paper. Do not register it as a certified
 implemented attack. Constants hidden by O_(q,kappa) need not be uniform for
 growing q. Finite-field quotient arguments do not automatically extend to
-two-power rings. These results are prior literature, not our discovery.
+two-power rings. These results are external context, not our discovery.
 
 [Chen--Liu--Zhandry](https://arxiv.org/abs/2108.11015) supplies the quantum
 filtering framework. Its parameter/source requirements are not a license

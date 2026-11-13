@@ -1,4 +1,4 @@
-# A Fast Interleaved Decoder Does Not Preserve This DQI Objective
+# Interleaved Separate-Readout DQI Probe: Working Classical Decoder, Failed Separate-Row Quantum Readout At N=127, K=39
 
 2026-10-18. Scoped constructive hypothesis test. LOCAL APPLICATION REVIEW
 PENDING. No general interleaving impossibility, novelty or speedup claim.
@@ -22,7 +22,10 @@ quantum repair FAILS to preserve the single-polynomial score. Under the local
 bound, selecting among five original output rows reaches110/127 with probability
 at most1.863e-8, versus the correct single-copy conditional floor0.314586.
 The extra rows retain which-support information. The joint product correlation
-is enhanced, but each original polynomial is nearly uniformly distributed.
+is enhanced, but at `p=2^61-1, N=127, K=39, ell=32` under the review-pending
+rank-heralded bound each original polynomial is nearly uniformly distributed
+(row TV `<= 3.726e-9`, while the small `p=7, 11` controls have density-error
+bounds `1/6` and `1/10`).
 
 Cut this plain shared-support/separate-readout replacement from the current
 algorithm plan. Retain the verified classical decoder as a reusable primitive.

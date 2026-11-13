@@ -84,12 +84,14 @@ noncomputable def Apaper (qf : ℕ → K) (κ a : ℕ) : ℕ :=
 termination_by κ
 decreasing_by omega
 
+omit [DecidableEq K] in
 /-- **Theorem `thm:halving`(i), inequality.** -/
 theorem Apaper_le_rounds (qf : ℕ → K) {κ : ℕ} (hκ : 2 ≤ κ) (a : ℕ) :
     Apaper qf κ a ≤ Garity κ a ^ Nat.clog 2 (tMin K κ) := by
-  rw [Apaper, dif_neg (by omega)]
+  rw [Apaper, dite_eq_right (by omega)]
   exact Nat.sInf_le (Set.mem_insert _ _)
 
+omit [DecidableEq K] in
 /-- `A_κ(a)` is attained: either by candidate (a) or by an admissible plan. -/
 theorem Apaper_mem (qf : ℕ → K) {κ : ℕ} (hκ : 2 ≤ κ) (a : ℕ) :
     Apaper qf κ a = Garity κ a ^ Nat.clog 2 (tMin K κ) ∨
@@ -98,7 +100,7 @@ theorem Apaper_mem (qf : ℕ → K) {κ : ℕ} (hκ : 2 ≤ κ) (a : ℕ) :
   have h : Apaper qf κ a ∈ insert (Garity κ a ^ Nat.clog 2 (tMin K κ))
       {n | ∃ s f1, Even κ ∧ Admissible κ (qf κ) s f1 ∧ n = Apaper qf (κ / 2) a ^ s * nF f1 a} := by
     have he := Apaper.eq_1 qf κ a
-    rw [dif_neg (by omega)] at he
+    rw [dite_eq_right (by omega)] at he
     rw [he]
     exact Nat.sInf_mem ⟨_, Set.mem_insert _ _⟩
   rcases h with h | h
@@ -118,6 +120,7 @@ noncomputable def paperChoice (qf : ℕ → K) (κ a : ℕ) : Cand :=
     else .plan (Nat.find h) true
   else .rounds
 
+omit [DecidableEq K] in
 theorem paperChoice_spec (qf : ℕ → K) {κ : ℕ} (hκ : 2 ≤ κ) (a : ℕ) :
     (paperChoice qf κ a = .rounds ∧ Apaper qf κ a = Garity κ a ^ Nat.clog 2 (tMin K κ)) ∨
       ∃ s f1, paperChoice qf κ a = .plan s f1 ∧ Even κ ∧ Admissible κ (qf κ) s f1 ∧
@@ -127,7 +130,7 @@ theorem paperChoice_spec (qf : ℕ → K) {κ : ℕ} (hκ : 2 ≤ κ) (a : ℕ) 
   · left
     refine ⟨?_, hr⟩
     unfold paperChoice
-    rw [if_pos hr]
+    rw [ite_eq_left hr]
   · right
     have hp := (Apaper_mem qf hκ a).resolve_left hr
     have hs := Nat.find_spec hp
@@ -135,10 +138,10 @@ theorem paperChoice_spec (qf : ℕ → K) {κ : ℕ} (hκ : 2 ≤ κ) (a : ℕ) 
         Apaper qf κ a = Apaper qf (κ / 2) a ^ (Nat.find hp) * nF false a
     · refine ⟨Nat.find hp, false, ?_, h0⟩
       unfold paperChoice
-      rw [if_neg hr, dif_pos hp, if_pos h0]
+      rw [ite_eq_right hr, dite_eq_left hp, ite_eq_left h0]
     · refine ⟨Nat.find hp, true, ?_, ?_⟩
       · unfold paperChoice
-        rw [if_neg hr, dif_pos hp, if_neg h0]
+        rw [ite_eq_right hr, dite_eq_left hp, ite_eq_right h0]
       · obtain ⟨f1, hf1⟩ := hs
         cases f1 with
         | false => exact absurd hf1 h0
@@ -149,7 +152,7 @@ open Classical in
 noncomputable def paperPrep (qf : ℕ → K) (κ : ℕ) : Prep K κ where
   t := tMin K κ
   z := if h : tMin K κ ∈ ZeroSums K κ then Classical.choose h else 0
-  isRun a v := if h : Nonempty (ISOut κ v) then (Classical.choice h).rs else (0, 0)
+  isRun _a v := if h : Nonempty (ISOut κ v) then (Classical.choice h).rs else (0, 0)
   q := qf κ
   cls := powTest ((Fintype.card K - 1) / κ)
   rt := rootOf κ
@@ -163,7 +166,7 @@ theorem paperPrep_z (qf : ℕ → K) {κ : ℕ} (hκ : 0 < κ) :
   classical
   have hmem := tMin_mem (K := K) hκ
   have : (paperPrep qf κ).z = Classical.choose hmem := by
-    simp only [paperPrep]; rw [dif_pos hmem]
+    simp only [paperPrep]; rw [dite_eq_left hmem]
   rw [this]
   exact Classical.choose_spec hmem
 
@@ -171,7 +174,7 @@ theorem paperPrep_isRun (qf : ℕ → K) {κ a : ℕ} (v : Fin (Garity κ a) →
     (hne : Nonempty (ISOut κ v)) : ∃ o : ISOut κ v, (paperPrep qf κ).isRun a v = o.rs := by
   classical
   refine ⟨Classical.choice hne, ?_⟩
-  simp only [paperPrep]; rw [dif_pos hne]
+  simp only [paperPrep]; rw [dite_eq_left hne]
 
 theorem paperPrep_f0 (qf : ℕ → K) {κ s : ℕ}
     (hex : ∃ ρ : Typ s → K, ρ ≠ 0 ∧ ∑ k, ρ k ^ κ * cTyp (-(qf κ)⁻¹) s k = 0) :
@@ -179,7 +182,7 @@ theorem paperPrep_f0 (qf : ℕ → K) {κ s : ℕ}
       ∑ k, (paperPrep qf κ).f0 s k ^ κ * cTyp (-(qf κ)⁻¹) s k = 0 := by
   classical
   have : (paperPrep qf κ).f0 s = Classical.choose hex := by
-    simp only [paperPrep]; rw [dif_pos hex]
+    simp only [paperPrep]; rw [dite_eq_left hex]
   rw [this]
   exact Classical.choose_spec hex
 
@@ -189,7 +192,7 @@ theorem paperPrep_f1 (qf : ℕ → K) {κ s : ℕ} {x : K}
       ∑ k, (paperPrep qf κ).f1 s x k ^ κ * cTyp (-(qf κ)⁻¹) s k = x := by
   classical
   have : (paperPrep qf κ).f1 s x = Classical.choose hex := by
-    simp only [paperPrep]; rw [dif_pos hex]
+    simp only [paperPrep]; rw [dite_eq_left hex]
   rw [this]
   exact Classical.choose_spec hex
 
@@ -201,8 +204,8 @@ theorem paper_arity_eq (qf : ℕ → K) :
   | _ κ ih =>
   intro a
   by_cases h1 : κ ≤ 1
-  · rw [arity, dif_pos h1, Apaper, dif_pos h1]
-  · rw [arity, dif_neg h1]
+  · rw [arity, dite_eq_left h1, Apaper, dite_eq_left h1]
+  · rw [arity, dite_eq_right h1]
     rcases paperChoice_spec qf (by omega : 2 ≤ κ) a with ⟨hc, he⟩ | ⟨s, f1, hc, _, _, he⟩
     · rw [hc, he]; rfl
     · rw [hc, he]

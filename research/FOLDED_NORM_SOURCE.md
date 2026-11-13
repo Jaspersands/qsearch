@@ -1,4 +1,4 @@
-# Folded Norm Source: Phases, Scalar Rank And Matched Attacks
+# Folded Norm Source: Phases, Scalar Rank And Same-Input Attacks
 
 2026-10-19. Executed local source tests, known classical decoder, explicit
 classical attacks and local finite readout derivation. Independent mathematical
@@ -188,14 +188,16 @@ blocks with original F_p coefficients, then try accepted block-exchange repairs.
 All failed proposals remain. The square-value sampler is NOT asserted uniform
 on the accepted set. Fixed public shifts/signs are never rerolled.
 
-| Blocks | Scalar K | Source Radius | Classical Best | Exact-Decoder Mean Floor | Pruning-Paid Per-Attempt Mean Floor |
-| --- | --- | --- | --- | --- | --- |
-|25|310|6|21|21.132867|21.132864|
-|65|806|15|53|56.698728|56.698412|
-|127|1550|30|99|113.302668|113.278983|
+| Blocks | Scalar K | Source Radius | Basic Fit/Repair Best | Norm-Pencil Best | Exact-Decoder Mean Floor | Pruning-Paid Per-Attempt Mean Floor |
+| --- | --- | --- | --- | --- | --- | --- |
+|25|310|6|21|25|21.132867|21.132864|
+|65|806|15|53|57|56.698728|56.698412|
+|127|1550|30|99|104|113.302668|113.278983|
 
-Each classical record uses32 complete-block fits plus64 repair proposals,
-with original field/norm/Horner witness checks. Quantum floors assume the
+Each basic fit/repair record uses32 complete-block fits plus64 repair proposals,
+and the norm-pencil attack below adds four 2048-parameter retained-value lines
+(solving the 25-block input at 25/25 and reaching 57/65 on the 65-block input,
+above its 56.698728 floor), with original field/norm/Horner witness checks. Quantum floors assume the
 specified exact-source/reversible-decoder composition, NOT executed quantum
 gates. This table is NOT a runtime comparison, hardness evidence or quantum
 advantage certificate. A successful word and a quantum mean lower bound are

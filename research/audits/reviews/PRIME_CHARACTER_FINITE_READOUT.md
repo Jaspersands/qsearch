@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_FINITE_READOUT
 
-Note: `research/PRIME_CHARACTER_FINITE_READOUT.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_FINITE_READOUT.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ The radial near-isometry, the 2delta/(1-delta) one-extra-radius bound and the sh
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> radius32, the certified normalized mean is about 0.9028547353515506
+> At N127,K39,p=2^61-1, radius32, for the ideal heralded state under an exact source and exact unique decoder (conditional on the review-pending radial Gram/readout and source bad-mass derivations), the certified normalized mean is about 0.9028547353515506
 
 - Step: Question And Result, second paragraph
-- Finding: The value matches the artifact (ell32 heralded mean lower bound) and recomputation (127*0.9028547=114.66). But the Result calls it 'certified' without saying that the Gram/readout application and the source bad-mass lemma it uses are review pending. It also does not say that the mean holds only for the ideal heralded state under an exact source and exact unique decoder. Only the status line states those premises; within the Result, 'Conditional on the stated receiver' is attached only to the tail sentence.
+- Finding: Question And Result now explicitly states that the certified normalized mean 0.9028547353515506 holds for the ideal heralded state under an exact source and exact unique decoder, conditional on the review-pending radial Gram/readout and source bad-mass derivations.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

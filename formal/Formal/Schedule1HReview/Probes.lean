@@ -81,16 +81,19 @@ theorem halving_correct_weil_noIS (hK : ringChar K ≠ 2) {κ : ℕ} (hκ : 0 < 
       IsKSolver κ (Apaper qf κ) (H (paperPrep qf) (paperChoice qf) κ) :=
   halving_correct_weil hK hκ hκQ (fun _ _ h2 _ v => isOut_nonempty (by omega) v) hW
 
+omit [Fintype K] [DecidableEq K] in
 /-- Non-triviality: a solver of arity `0` is impossible (no nonzero `r : Fin 0 → K`). -/
 theorem not_solver_arity_zero (κ : ℕ) (run : (a n : ℕ) → (Fin n → Fin a → K) → Fin n → K) :
     ¬ IsKSolver κ (fun _ => 0) run := by
   intro h
   exact (h 0 0 (fun i => i.elim0) le_rfl).1 (funext fun i => i.elim0)
 
+omit [Fintype K] [DecidableEq K] in
 /-- `IsRootSol` rejects the zero vector. -/
 theorem zero_not_rootSol (κ : ℕ) {n a : ℕ} (col : Fin n → Fin a → K) :
     ¬ IsRootSol κ col (0 : Fin n → K) := fun h => h.1 rfl
 
+omit [Fintype K] [DecidableEq K] in
 /-- Non-triviality: at `κ ≥ 1`, arity `1` is impossible (one column `λ ≠ 0`). -/
 theorem not_solver_arity_one {κ : ℕ} (hκ : 0 < κ)
     (run : (a n : ℕ) → (Fin n → Fin a → K) → Fin n → K) :
@@ -120,7 +123,7 @@ theorem cwRun_solver {κ : ℕ} (hκ : 0 < κ) : IsKSolver κ (fun a => κ * a +
   have hn' : κ * a + 1 ≤ n := hn
   have h : κ * a < n ∧ 0 < κ := ⟨by omega, hκ⟩
   unfold cwRun
-  rw [dif_pos h]
+  rw [dite_eq_left h]
   exact Classical.choose_spec (QSearch.ReesSdeWitness.exists_witness (K := K) h.2 h.1 col)
 
 end General

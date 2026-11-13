@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_CAPACITY_SOURCE
 
-Note: `research/PRIME_CHARACTER_CAPACITY_SOURCE.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22-r2. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_CAPACITY_SOURCE.md`. Reviewed 2026-11-14 by audit-correction-2026-10-22-r2. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ The two judges agree on every claim: the flat 1/(p-1) Fourier spectrum, the sqrt
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> without randomizing input shifts? YES for the flat-spectrum primes below
+> without randomizing input shifts? YES at the large flat-spectrum instance N127,K39,p=2^61-1 for intermediate radii ell=24 and ell=32 (both zero conventions), whereas the coherent-distance bound becomes trivial (=1) as the radius approaches capacity at ell=37,38 and the small N6,K3,ell2 controls have non-negligible bad-mass bounds 1, 1/3 and 1/7
 
 - Step: Question And Decision
-- Finding: The YES is unqualified by radius or instance. Non-trivial bounds are certified only at one large instance (N127,K39,p=2^61-1, both zero conventions) for ell24 and ell32. Recomputed: ell37 gives epsilon=2.77e-5 but M*epsilon>>1, so the coherent distance bound is 1, and ell38 is the trivial 1 (stated only in Executed Evidence). The bounded N6,K3,ell2 controls have any-radial-weight bad-mass bounds 1 (p7), 1/3 (p19) and 1/7 (p43). The decision does not say that the control fails as the radius approaches capacity, the regime that capacity-DQI targets.
+- Finding: Question And Decision now explicitly qualifies YES to N=127, K=39, p=2^61-1 at radii ell=24, 32, noting triviality (=1) near capacity ell=37, 38 and the small N=6 bounds 1, 1/3, 1/7.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

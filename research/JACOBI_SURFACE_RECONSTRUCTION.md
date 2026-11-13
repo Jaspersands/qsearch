@@ -13,11 +13,13 @@ This does not promote the old LLL implementation to full norm recovery.
 **Superseding classical comparison:** the [known-norm reduction](JACOBI_KNOWN_NORM_REDUCTION.md)
 identifies a published deterministic polynomial-time classical recovery
 theorem that applies to the public ideal AND known relative norm. Under the
-stated Jacobi/primary identities this removes the prime-conductor asymptotic
-quantum opening, without needing a uniform LLL success theorem. Its actual
-theorem inputs are constructed and checked; the imported recovery algorithm
-is not implemented here. This page retains the original experiment and real
-LLL results, not a current claim that quantum PIP is needed.
+stated Jacobi/primary identities (and conditional on independent review of the
+local reduction to Lenstra-Silverberg Theorem 1.3 in
+`research/JACOBI_KNOWN_NORM_REDUCTION.md`) this removes the prime-conductor
+asymptotic quantum opening, without needing a uniform LLL success theorem. Its
+actual theorem inputs are constructed and checked; the imported recovery
+algorithm is not implemented here. This page retains the original experiment
+and real LLL results, not a current claim that quantum PIP is needed.
 
 ## Research Decision
 

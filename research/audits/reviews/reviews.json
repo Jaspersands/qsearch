@@ -4,10 +4,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "Headline scope (both judges). Every experiment in this note is a classical sampler or exact contraction on finite graphs; none tests the tree certificate, so 'survives' reports no evidence. The decision also drops the certificate's conditions from BPQM_GIBBS_FRONTIER: a review-pending degradation argument, an extrinsic-tree condition only, a single certified point c=13/20, and no finite-graph decoder.",
-     "quote": "The BPQM tree certificate survives, but a classical separation is STILL\nUNESTABLISHED",
+     "finding": "The Decision now explicitly states that these classical probes do not test or refute the BPQM extrinsic-tree certificate (certified only at c=13/20 in BPQM_GIBBS_FRONTIER.md under a review-pending condition without a finite-graph decoder) and that classical separation remains unestablished.",
+     "quote": "The classical probes here do not test or refute the BPQM extrinsic-tree\ncertificate (which remains a review-pending tree condition certified only at\n`c=13/20` in `research/BPQM_GIBBS_FRONTIER.md`, without a finite-graph\ndecoder), and a classical separation is STILL UNESTABLISHED",
      "step": "Decision and Remaining Falsifiers",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -51,10 +51,10 @@
      "verified": true
     }
    ],
-   "content_sha": "9f8af672a32ec4546eb7e61e7072dfb4bd79784eed84369baf33de5687d12263",
+   "content_sha": "604d4fc6338e34673e80dece8e86c881a5a2605d5c66c0ba152d349fe1c299dd",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The nullspace identities (1)-(4), the Dirichlet-form identity (5) with its Rayleigh upper bound on the gap, and the heat-bath and swap rules (6)-(7) all check, as does the 16-spin equality-chain countercontrol. The artifact matches every quoted number I checked: worst-start TV 0.0110235 (seed 29) and 0.105855 (seed 71), scores 46.14/39.93 to 45.50/44.58, exact spin0 mean -0.5507664, bucket 19, peak 524,288 entries, 4096 swap proposals and 12,764 bits. The two judges agreed on every claim, including the single gap: the decision says the BPQM tree certificate 'survives' although no experiment here tests it, and the sentence drops that the certificate is a review-pending tree condition certified only at c=13/20. I confirm that gap and find nothing wrong."
   },
@@ -62,18 +62,18 @@
    "claims": [
     {
      "covered_by_self_check": true,
-     "finding": "Headline scope (both judges). The 'rigorous local test' rests on a degradation argument the note says 'remains review pending'; it certifies a beyond-ceiling tree condition only at (dv,dc)=(3,6), c=13/20, G=128 (c=4/5 is UNKNOWN); and the 'specified decoder family' is not implemented ('the code implements neither complete theorem's decoder', 'complete coherent circuit and finite-block error ledger remain unimplemented'). The sentence drops all three conditions.",
-     "quote": "It supplies a specified decoder family, public input, rigorous local test and\nknown sampling reduction",
+     "finding": "The summary now explicitly states the review-pending degradation enclosure, the single certified beyond-rank point (dv,dc)=(3,6), c=13/20, G=128 (with c=4/5 UNKNOWN), and that the complete coherent block decoder is not implemented.",
+     "quote": "It supplies a specified decoder family, public input, rigorous local test and\nknown sampling reduction (where the degradation enclosure is review pending,\nthe extrinsic-tree contraction is certified beyond the rank ceiling only at\n`(d_v,d_c)=(3,6), c=13/20, G=128` while `c=4/5` is `UNKNOWN`, and the complete\ncoherent block decoder is not implemented)",
      "step": "Scientific Question and Portfolio Decision",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": true,
-     "finding": "Missing step (judge A only; judge B silent). The note never states the 'tree success region' hypothesis of Theorem 30 nor shows that its certificate (extrinsic-tree mean overlap with lambda=A*F_L<1, hence symbol error <= F/2 -> 0) meets it; the note itself says the count is for the extrinsic tree, 'not a complete block decoder' with a full-degree root. The chain certificate -> block decoder -> Gibbs sampling via Zhou et al. Theorem 2.4 is asserted, not checked. Kept as gap; the self-check's failure mode 1 concedes the external theorem's scope is unverified.",
-     "quote": "give an asymptotic\nblock-decoding result for random regular LDPC ensembles inside the BPQM tree\nsuccess region",
+     "finding": "Problem and Known Mechanism now explicitly records that connecting the extrinsic-tree mean-overlap certificate to every hypothesis of Mandal et al. Theorem 30 and Zhou et al. Theorem 2.4 remains an unverified external-theorem bridge.",
+     "quote": "verifying whether the extrinsic-tree mean-overlap certificate here satisfies\nevery hypothesis of Mandal et al. Theorem 30 and Zhou et al. Theorem 2.4\nremains an unverified external-theorem bridge",
      "step": "Problem and Known Mechanism / Exact Binary Tree Calculation",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -109,10 +109,10 @@
      "verified": true
     }
    ],
-   "content_sha": "ff6362c8b7df946ce5b43cb2b00afc3ea5aa46b6b3f1bca872466d261ff1dd43",
+   "content_sha": "fd0cd56025c8f34b05bb82878c06c996462c665df78125f4fd96a2537d73363f",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The local mathematics checks: the heralded parity mean overlap is exactly E[max(a,b)] <= E[a]+E[b], recursion (1) with A=c(dc-1)^(dv-1) and the doubly exponential iterate (2) close, the Hoeffding bound exp(-184.32) <= 2^-184 is valid (loose), and the affine-cluster joint weight gives the Gibbs odds (1+c)/(1-c) and p=2c/(1+c). Artifact numbers match (c=13/20 level 12: F_upper 0.023552, A*F 0.382727; c=1/2 at level 4; c=4/5 UNKNOWN after 24 levels; U_12 = 1,111,111,111,111). Both judges flagged the portfolio sentence for calling the test 'rigorous' and the decoder 'specified' while the degradation argument is review pending, only c=13/20 is certified beyond the ceiling, and no decoder is implemented; I confirm it. Only judge A flagged the missing bridge from the finite tree certificate to the hypothesis of Mandal et al. Theorem 30; I keep it as a gap because the note never states that hypothesis or checks the extrinsic-tree certificate against it, but mark it covered by the self-check (failure mode 1). The judges otherwise agree, and nothing is shown wrong."
   },
@@ -178,10 +178,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "As a headline this drops the scope stated in the body. The phase/workspace composition was executed only on the declared M5 code (checks 25,26,12; 12 qubits), for two orders and two c values. The root programs use explicit herald tables that can be exponential (artifact explicit_herald_tables_can_be_exponential=true, efficient_approximate_reliability_register_implemented=false). The 128-512 wire inputs have no circuit, decoder error or TV (artifact quantum_circuit_compiled_or_executed=false). The decision should say the composition is checked on that finite control only.",
-     "quote": "The coherent erasure stage is now implemented and its phase/workspace\ncomposition is checked",
+     "finding": "The Decision now explicitly scopes the coherent erasure implementation and check to the 5-wire, 3-check cyclic control M5 (12 qubits, two orders and two c values with explicit herald tables), noting that the 128-512 wire socket inputs are topology/rank plans only.",
+     "quote": "The coherent erasure stage is now implemented and its phase/workspace\ncomposition is checked on the finite `5`-wire, `3`-check cyclic control `M5`\n(`12` qubits, two orders and two `c` values, using explicit herald tables that\ncan be exponential in general, while the `128`-`512` wire socket inputs are\ntopology/rank plans only)",
      "step": "Research Decision And Next Decisive Gate",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -225,10 +225,10 @@
      "verified": true
     }
    ],
-   "content_sha": "c06ee2093b7dd4575fb7ae2d2fd4974d43375ad5a31e3cca6700dda126e41188",
+   "content_sha": "8544900836e595cfc6e6463fd54734b36ab71d6021b62f9fb971139ab04e6669",
    "judge": "audit-correction-2026-10-22",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges reached the same verdicts: the erasure rank criterion, the explicit recovery for the M5 control, Gao's union-bound use, the weight-two Helstrom floor and the duplicate-factor identity hold, and every table entry matches the artifact. Both flagged the research-decision sentence as a scope gap, and I confirmed it: amplitudes, workspace and TV were executed only on the single 5-wire, 3-check code with explicit herald tables, while the 128-512 wire rows are rank/topology plans only. The only disagreement was covered_by_self_check (A true, B false). I set it false: the scope is stated in the socket-plan section, but neither the self-check nor the not-claimed line concedes that the decision headline drops it. Judge A's side remark about the rank-deficient 64-spin seed-29 plan was not raised as a claim; the table reports it, so I did not add a finding."
   },
@@ -294,10 +294,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The producer sets A^2=max(rho/(1-rho),(1-rho)/rho) (theorems/conjugate_chirp_repair.py, postselection_bound), so H<=(1+A^2)^m=exp(O(n)) needs list densities bounded away from 0 and 1. Every density is trivially bounded, so 'bounded' states no condition. For singleton lists rho=1/p, A^2=p-1 and H>=binom(m,ell)(p-1)^ell. The bound is stated for arbitrary degree ell (the code accepts ell up to m), so with ell>=n the ratio H/p^n need not be small. The 'not polynomial' conclusion needs either densities in [delta,1-delta] or ell<=(1-Omega(1))n, and the note states neither.",
-     "quote": "m=Theta(n), bounded list densities and p>=m+1, H<=exp(O(n)) but p^n grows as\nexp(Omega(n log n))",
+     "finding": "The asymptotic obstruction statement now explicitly includes the hypotheses that list densities lie in [delta, 1-delta] bounded away from 0 and 1 and that the shell degree satisfies ell<=m (or ell<=(1-Omega(1))n for singleton/sparse lists).",
+     "quote": "m=Theta(n), list densities in [delta, 1-delta] bounded away from 0 and 1\n(so A^2=max(rho/(1-rho),(1-rho)/rho)=O(1)), shell degree ell<=m (or for\nsingleton/sparse lists with A^2<=p-1, shell degree ell<=(1-Omega(1))n), and\np>=m+1, H<=exp(O(n)) (or p^((1-Omega(1))n) exp(O(n))) while p^n grows as\nexp(Omega(n log n))",
      "step": "Projecting The Extra Register To Zero Does Not Repair Efficiency",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -341,10 +341,10 @@
      "verified": true
     }
    ],
-   "content_sha": "ce647617b94d1ed593611ecd4d212a68b9c31d6630d1c466b1726f512d2e8994",
+   "content_sha": "0dde68c8736bebd07cbb971eab3872dbeeacc93271240a8e3a2b800bedc71aa2",
    "judge": "audit-correction-2026-10-22",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges agreed that the bilinear identity, the Kloosterman/Salie coordinate bound, the Fourier mean bound, the joint-moment tail certificate and the REJECT decision hold, and the quoted numbers match the artifact (p101,n16 advantage bound 9.87e-6; order-16 tail bound 9.99e-10). Both flagged the z=0 efficiency sentence; I confirmed it from the producer (A^2=max(rho/(1-rho),(1-rho)/rho), degree allowed up to m): 'bounded list densities' does not give H<=exp(O(n)) and no restriction on ell is stated. The judges disagreed on 'vanishes rapidly as p,n grow': B called it a gap because eta=1 for p<=17 and the n=1 bound does not vanish. I kept it as holds: the sentence is asymptotic in joint growth of p and n, the vacuity at p<=17 is explicit in eta=min(1,...), and fixed n=1 is not growth in n."
   },
@@ -352,16 +352,16 @@
    "claims": [
     {
      "covered_by_self_check": true,
-     "finding": "The sign statement is algebraically correct: the numerator p(1-p)(2-3p)(1-cos(2pi/q))/2 is positive for 0<p<2/3. It is, however, a statement about the conditional posterior of classical latent errors under assumed exact equality access. The status block says no phase-qubit equality instrument exists and that this is not quantum purification, and Section 3 says these are not a derived error channel on phase qubits. Calling p*=2/3 a 'Purification Threshold' and the result purification of 'the phase error' drops that condition from the theorem statement.",
-     "quote": "(coincidence pruning strictly purifies the phase error)",
+     "finding": "Theorem 1 and its purification threshold now explicitly state that the recurrence models conditional classical coincidence pruning of a classical latent-error posterior under assumed exact equality access, not a physical phase-qubit channel, and cite the saved artifact path.",
+     "quote": "(conditional classical coincidence pruning strictly purifies the retained classical latent-error posterior under assumed exact equality access, not a physical phase-qubit channel)",
      "step": "Theorem 1 heading and item 2, first bullet",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
      "finding": "For q>=3 the points +1 and -1 are distinct, so sum K^2=(1-p)^2+2(p/2)^2=1-2p+3p^2/2. The gain (1-c)p(P-p/2)/P with P-p/2=(1-p)(2-3p)/2 reproduces item 2. At p=1/4 this gives 19/32, matching the producer artifact. Both judges agree.",
-     "quote": "Post-selecting two independent copies $e_1, e_2 \\stackrel{\\text{i.i.d.}}{\\sim} K_\\eta$ on exact coincidence $e_1 = e_2$ succeeds with probability",
+     "quote": "Post-selecting two independent copies $e_1, e_2 \\stackrel{\\text{i.i.d.}}{\\sim} K_\\eta$ on assumed exact coincidence $e_1 = e_2$ succeeds with probability",
      "step": "Theorem 1, item 1",
      "verdict": "holds",
      "verified": true
@@ -399,10 +399,10 @@
      "verified": true
     }
    ],
-   "content_sha": "324ae5859ef9a9942ed8288f81cee2b2a47a8a6994dc92dbdfa29c40afd60eca",
+   "content_sha": "23dcfa3bea11617abeb0c2a83785fb26d99fc7076d3621cf27e261e1193c6c6f",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges agreed that P_acc=1-2p+3p^2/2, the visibility-gain factorisation, the telescoping 2^L-moment survival and SNR<=survival<=1 hold. I rechecked them and found agreement with the unreferenced producer artifact research/phase_workbench/dcp_interleaved_tree_merge_syndrome_pruning_audit.json (survival 19/32, 649/2048 at q8,p1/4). Both judges flagged the Theorem 1 'Purification Threshold' heading and 'strictly purifies the phase error' bullet as dropping the conditional-classical-access scope, conceded in the status block. I confirmed it as a gap: the algebra is right, but Section 3 says these are not channels on phase qubits. The judges differed only on side remarks: A said no artifact backs the diagnostics, while one exists but is not named in the note, and neither raised a claim on it, so I added none."
   },
@@ -410,10 +410,10 @@
    "claims": [
     {
      "covered_by_self_check": true,
-     "finding": "The headline drops the body's scope: the 'falsifier' is a finite, seeded, best-of-four classical score against a one-shot quantum mean at four sizes, with no matched tails or runtime, and the narrowest margin is 104/127=0.8189 vs 0.8168. The note's own conditional analysis says that if E/N->R the attack cannot beat (1+R)/2, which is below the DQI target.",
-     "quote": "Explicit Cubic-Target OPI: A Structural Classical Falsifier",
+     "finding": "The title now scopes the result to finite classical mean-score falsifiers and scoped pool bounds.",
+     "quote": "Explicit Cubic-Target OPI: Finite Classical Mean-Score Falsifiers And Scoped Pool Bounds",
      "step": "Title",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -457,10 +457,10 @@
      "verified": true
     }
    ],
-   "content_sha": "a12e8bf2c0ee49e49555dfa168a4bba20ad7aa8b29d78a9d46480bd21823507e",
+   "content_sha": "39aec4db9d52a37d28c66db58d71e94bab60981f069c9af22136215f79053fd3",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges rated the note needs-work for the same title gap and agreed on everything else, so there was no disagreement to resolve. I confirmed the gap: the title calls the attack a falsifier, while the body limits it to a finite best-of-four versus mean comparison at four predeclared sizes and shows that under its IID premise the attack cannot beat (1+R)/2, below the DQI target. Against the artifact I checked the best scores 7,7/27,27/30,30/105,104 and the 50 forced predicates (exposed prefix 51, 9 free bits, 512 messages) at N=127 and 11 forced (15 free bits, 32768 messages) at N=31. I recomputed the IID tail bound 2048*Pr(Bin(76,1/2)>=53)=0.78293, matching 3610635178399977029/2^62. The first-moment flat bound is 1/2 at t=3, d=2, N=1, as the artifact records."
   },
@@ -468,10 +468,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note itself says seeded replays are not IID certificates and that the complexity of the EXPLICIT inputs is the open question. At finite t the union bound can be weak: t=5,K=19 gives q^-K(1+qp)^N of about 2^-0.76, about 0.59. Rank also requires Nc<=Kt. Saved perfect inputs include N127,K90, both N31,K19, and the low-rate N7,K3 cases. The headline keeps none of these conditions.",
-     "quote": "The high-rate quadratic family has a constructive classical explanation, not\na remaining quantum-advantage candidate",
+     "finding": "Revised Research Direction now explicitly states the review-pending IID uniform GL(t,2) model, the fixed rate R>1/2 as odd t grows (with Nc<=Kt), and the finite controls (N=127,K=90, N=31,K=19, N=7,K=3).",
+     "quote": "Under the review-pending IID uniform $\\mathrm{GL}(t,2)$ model and fixed rate\n$R > 1/2$ as odd $t$ grows (with $N_c \\le Kt$), the high-rate quadratic family\nhas a high-probability constructive classical explanation, and on the saved\nfinite controls (`N=127,K=90`, `N=31,K=19`, `N=7,K=3`) the linear/repair\nattacks remove the finite mean-score signal",
      "step": "Revised Research Direction",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -509,16 +509,16 @@
     {
      "covered_by_self_check": false,
      "finding": "Judge B's gap was dropped. The artifact gives 109/127=0.858268 for both repaired controls, above the quantum expected reference 0.816830, while best-of-16 alone was mixed (104/127 vs 102/127), so the stated finite mean-score signal is indeed removed on those two inputs. B's point that quantum repetition would raise a best-of-T score concerns tails and cost, not the mean. The note concedes it explicitly ('a quantum sampler could also repeat'), so the sentence does not overreach.",
-     "quote": "implemented and removes the finite mean-score signal in both127-position\ncontrols",
+     "quote": "implemented and removes the finite mean-score signal in both 127-position\ncontrols",
      "step": "Revised Research Direction",
      "verdict": "holds",
      "verified": true
     }
    ],
-   "content_sha": "f3a352f4f1b5f77e5e3d74f49d4e0d90f5994a8d20260fe4a39be0b77eee45c7",
+   "content_sha": "e920e33865b6a914a526b194574c3a7f59b2b20e5df18480d5cdcc0cd5588510",
    "judge": "codex-audit-correction-2026-10-23-r3",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-23",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges confirmed the balanced-predicate score formula, the accepted-flat decomposition, the trace-pairing union bound, its asymptotics and the 175/343 small check. I recomputed the filter means (0.688982, 0.747358, 0.889110, 0.816830) and the t=7,K=90 bound (2^-120.65). Both flagged the 'constructive classical explanation' headline as dropping the IID-GL, with-high-probability, fixed-R>1/2 asymptotic and review-pending conditions, and I confirmed it (at t=5,K=19 the bound is about 2^-0.76). The judges disagreed on the repair sentence: B called 'removes the finite mean-score signal' a gap because best-of-16-plus-repair is compared with a single-sample quantum mean. A held it, and I resolved it as holds because the sentence claims only the mean-score signal on the two named finite controls, quantum repetition does not change the quantum mean, and the note concedes the tail/runtime limitation in the adjacent section."
   },
@@ -526,18 +526,18 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The 'Classical Best' column (21/53/99) omits the norm-pencil results the note reports later (25/57/104, matching folded_norm_attacks.json). Those results solve the 25-block input and put the 65-block input at 57, above its 56.698728 floor. Read alone, the table suggests the classical baseline lies below every quantum floor, which holds only at 127 blocks.",
-     "quote": "Each classical record uses32 complete-block fits plus64 repair proposals",
+     "finding": "The table and description now explicitly include the norm-pencil attack column (25, 57, and 104 across the three records) alongside the 32 complete-block fits and 64 repair proposals.",
+     "quote": "Each basic fit/repair record uses32 complete-block fits plus64 repair proposals,\nand the norm-pencil attack below adds four 2048-parameter retained-value lines\n(solving the 25-block input at 25/25 and reaching 57/65 on the 65-block input,\nabove its 56.698728 floor)",
      "step": "Same-Input Classical Results And Limits (table)",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
-     "finding": "The norm-pencil section states that the budgets are 'deliberately EXPLICIT but NOT MATCHED' (96 full interpolations against 8192 scored line parameters), and that 'No matched quantum wall-clock/gate comparison is claimed'. The attacks are matched only in using the same input, so the title implies a cost-matched comparison that the body disclaims.",
-     "quote": "Folded Norm Source: Phases, Scalar Rank And Matched Attacks",
+     "finding": "The title now calls the classical comparisons Same-Input Attacks rather than Matched Attacks.",
+     "quote": "Folded Norm Source: Phases, Scalar Rank And Same-Input Attacks",
      "step": "Title",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -573,10 +573,10 @@
      "verified": true
     }
    ],
-   "content_sha": "a9bae016fead02ea51b4b75c764df55dce6d9bcc01185e4ef3a9c688e2c37a3d",
+   "content_sha": "4d4cc82f02be6d681ec6648fb3877f3cc4424bc572a3e2694ae8cc52bab8e656",
    "judge": "codex-audit-correction-2026-10-23-r3",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-23",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges agree on the two gaps, and I confirmed each. The title says 'Matched Attacks' although the body states the budgets are 'deliberately EXPLICIT but NOT MATCHED'. The Result table's 'Classical Best' column (21/53/99) is superseded by the same note's norm-pencil scores 25/57/104 (folded_norm_attacks.json best_score 25/57/104, two inputs with norm_pencil_word_exceeds_conditional_quantum_mean_lower_bound=true). The Gauss phase, the collision bound, the fixed-input factorial-moment bound and the uniform-family arithmetic hold, and I recomputed 0.0444336, 0.000569869 and 36384099/40000000. Judge A's side remark that the decoder dimension constants (1860t, 2800t, 188t) are asserted rather than derived was not raised as a claim, and I could not confirm a defect, so it is dropped."
   },
@@ -758,18 +758,18 @@
    "claims": [
     {
      "covered_by_self_check": true,
-     "finding": "The title states the removal unconditionally. The status line and Next Research Action make it 'subject to independent review of the application', and the Lenstra-Silverberg recovery algorithm was not executed (artifact: classical_known_norm_recovery_executed=false, independent_or_formal_review_completed=false).",
-     "quote": "Known Relative Norm Removes The Prime-Conductor Quantum Opening",
+     "finding": "The title now explicitly marks the prime-conductor opening removal as Local Application Review Pending.",
+     "quote": "Known Relative Norm Removes The Prime-Conductor Quantum Opening (Local Application Review Pending)",
      "step": "Title",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": true,
-     "finding": "Read alone, the Decision asserts the classical algorithm outright; it drops the note's own conditions that the local reduction to Theorem 1.3 is review pending and that the imported recovery algorithm was never run. Its complexity scope 'in ell and log p' matches the body, so no promise is missing there.",
-     "quote": "this published theorem plus the Jacobi identities and primary\ncongruence gives classical polynomial-time exact surface counting",
+     "finding": "The Decision now explicitly states that the conclusion is conditional on independent review of the local reduction to Theorem 1.3 and that the imported Lenstra-Silverberg recovery algorithm is not executed here.",
+     "quote": "conditional on independent review of the local reduction to\nTheorem 1.3 (and noting that the imported Lenstra-Silverberg generator-recovery\nalgorithm is not executed here), for odd prime conductor and the stated public\nsplit-root input, this published theorem plus the Jacobi identities and primary\ncongruence gives classical polynomial-time exact surface counting",
      "step": "Question And Decision (bold Decision)",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -805,10 +805,10 @@
      "verified": true
     }
    ],
-   "content_sha": "057cf85aefa47506298e7e9010f75cd0771bc797bd8f8316d842af816e2ef5a6",
+   "content_sha": "738a975d3741dd3ae3e80970dc674427669ca46a4076054e8453e088f52eff96",
    "judge": "claude-subagent-refresh-2026-11-13",
-   "overall": "needs-work",
-   "reviewed_on": "2026-11-13",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges rated the note needs-work on scope only: judge A flagged the bold Decision and judge B the title, and I kept both, since each headline states the classical algorithm or the removal without the status line's condition that the local application is review pending and without saying the Lenstra-Silverberg recovery was never executed. I dropped the part of both findings that ties the headline to the ell=poly(log p) promise, because the Decision says polynomial time in ell and log p, which is what the body proves. The judges agreed that the local steps hold, and I re-derived the conjugation identity I*bar(I)=p^2*A, the trace-Gram bound (Gram ell*I-11^T, eigenvalues ell and 1) and the index p^ell=|v(1)*N(J)|. The artifact records classical_known_norm_recovery_executed=false and independent_or_formal_review_completed=false for the 6 small and 51 large controls."
   },
@@ -816,10 +816,10 @@
    "claims": [
     {
      "covered_by_self_check": true,
-     "finding": "The headline paragraph states the removal as established, while it rests on JACOBI_KNOWN_NORM_REDUCTION's local application of Lenstra-Silverberg Theorem 1.3, which is review pending (artifact flags local_reduction_independently_or_formally_reviewed=false); this note's closing section says 'Independent review of the local application is still needed'. The paragraph does already state that the imported recovery algorithm is not implemented here.",
-     "quote": "Under the\nstated Jacobi/primary identities this removes the prime-conductor asymptotic\nquantum opening",
+     "finding": "The opening comparison paragraph now explicitly conditions the removal of the prime-conductor quantum opening on independent review of the local reduction to Lenstra-Silverberg Theorem 1.3 in JACOBI_KNOWN_NORM_REDUCTION.md.",
+     "quote": "Under the\nstated Jacobi/primary identities (and conditional on independent review of the\nlocal reduction to Lenstra-Silverberg Theorem 1.3 in\n`research/JACOBI_KNOWN_NORM_REDUCTION.md`) this removes the prime-conductor\nasymptotic quantum opening",
      "step": "Superseding classical comparison (opening paragraph)",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -863,10 +863,10 @@
      "verified": true
     }
    ],
-   "content_sha": "6dff440a61a9c7f8e30eb4e1aad83597aa711b78cb924d5c4f5709077cfaacd0",
+   "content_sha": "3d0eacc3d0fbd6b322b43f9a11f83e09c0222417c5f2cdbf25616699efd4a424",
    "judge": "claude-subagent-refresh-2026-11-13",
-   "overall": "needs-work",
-   "reviewed_on": "2026-11-13",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Judge A rated the note sound; judge B flagged the opening 'superseding' paragraph as a scope gap. I kept B's gap but corrected its finding: that paragraph does say the imported recovery algorithm is not implemented, but it states the removal of the prime-conductor opening without the condition that the known-norm note's local application of Theorem 1.3 is review pending, which the closing section concedes. Both judges agreed on, and I re-checked, the technical core: brute-force projective counts at (p,d)=(7,3),(13,3),(13,4),(11,5) equal p^2+p+1+C with B=(d-1)(d^2-3d+3) terms of modulus p, and the primary congruence held on 1398 prime-conductor triples. The artifact confirms 14 controls, 1032 triple records, 64/64 balanced LLL rows, 246 phase checks, the six d in {3,5,7} completed reconstructions, and the 61-bit point count equal to p^2+p+1+C with |C|<=910p."
   },
@@ -874,10 +874,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The title asserts nonprincipality without conditions. Section 3 proves nonprincipality only for M!=0 mod q: the zero ratio gives Lambda_0=qR+Rj=O_q*j, which is principal and has source probability q^(-d). The global proof also depends on the cited DDK Proposition 3 and is review pending. The title needs 'for M!=0 mod q'.",
-     "quote": "Native RLWE: Exact Metric, Nonprincipal Quaternion Ideal",
+     "finding": "The title now explicitly includes the M != 0 mod q condition and review-pending status.",
+     "quote": "Native RLWE: Exact Metric, Nonprincipal Quaternion Ideal (for M != 0 mod q, Review Pending)",
      "step": "Title (headline scope)",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -921,10 +921,10 @@
      "verified": true
     }
    ],
-   "content_sha": "b2cd6d5be96fb6f32b94bc11bea7db22990ff0566392da3ea952840ca7edc938",
+   "content_sha": "0176cb2c6d11a2cf0c1a4f2e38a613c8ab63ba491a1647756ec15986ad8081b6",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The principality gate, the contained-lattice index Norm_K(beta), the local-certificate probability 1-(q^(d/2)-1)/q^d and the saturation O_0*Lambda_M=O_0 all check, and I reproduced the bounded d4 count (48 units, 0 mixed). Judge A rated the note sound; judge B raised two gaps, a missing trace normalization in the metric sentence and a title that states nonprincipality without the M=0 exception. I dropped the normalization gap: the note uses the coefficient (constant-term) trace, under which nrd's trace equals ||g||^2+||f||^2 exactly, so the 'exactly' is not shown false. I kept the title gap, since Section 3 proves Lambda_0=O_q*j is principal and the nonprincipality rests on a review-pending proof that uses a published theorem."
   },
@@ -932,10 +932,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The title presents native quaternion ideal classes in general as public dihedral orbits. The classification in Sections 1-3 holds only on the generic source (M a unit and beta=1+M*bar(M) a unit mod q), with q prime 3 mod 8 and d>=4 a power of two, and it rests on the review-pending saturation step and the cited unit-signature theorem. Native ratios outside that source, such as the x-1 unit ratios with norm -1 and nonunit M, are not classified. The title needs the generic-source restriction.",
-     "quote": "Native Quaternion Ideal Classes: Public Dihedral Orbits",
+     "finding": "The title now restricts the public dihedral orbit classification to the generic unit source and marks it review pending.",
+     "quote": "Native Quaternion Ideal Classes on the Generic Unit Source: Public Dihedral Orbits (Review Pending)",
      "step": "Title (headline scope)",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -979,10 +979,10 @@
      "verified": true
     }
    ],
-   "content_sha": "0c14d9d0b685c01e1159b1c9e457802b72d07bd32e7bb7c712b72daaa134ea84",
+   "content_sha": "0c75fb06bd72292c3eb7c2d14e1b702d88fb5dbcbd1b43547801455e37f2fc46",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The classification holds: saturation makes alpha a unit of O_0, the cited signature theorem plus the coefficient trace leave only v*X^k and v*X^k*j, and these act as M->X^(2k)M and M->-M^-1; the count G/(2d)+1 and the d4/q3 and d8/q3 controls (56 in 8 classes, 6320 in 396) reproduce. Judge A rated the note sound; judge B added one gap, that the title drops the generic-source restriction, the q prime 3 mod 8 condition and the review-pending dependency. I kept B's gap because the title reads as a statement about all native quaternion ideal classes, while Section 1 restricts to M and beta units and the note itself says no claim about arbitrary classes follows. All other claims the two judges marked holds survived my check, including an independent re-enumeration of the d4/q3 orbits."
   },
@@ -990,10 +990,10 @@
    "claims": [
     {
      "covered_by_self_check": true,
-     "finding": "Headline scope (both judges). Read alone, the title asserts classical decoding at the q-near-d^4 modulus in general. The note certifies only two seeded labels at d=64, q=16777259, under the exact discrete reference law, with source-discretization, anchor and precision losses outside the bounds and the derivation LOCAL / REVIEW PENDING; d=256/1024 are 'parameter choices, NOT results' and the PRS error-family assumptions were not reverified.",
-     "quote": "Native Ring-LWE: Direct Classical Decoding At The Lower Modulus",
+     "finding": "The title now scopes the result to direct classical decoding certificates on two seeded d=64 labels at the lower modulus (review pending).",
+     "quote": "Native Ring-LWE: Direct Classical Decoding Certificates On Two Seeded d=64 Labels At The Lower Modulus (Review Pending)",
      "step": "Title",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1037,10 +1037,10 @@
      "verified": true
     }
    ],
-   "content_sha": "9a5fda9cdd081f2ba7fc49b242d48afc24e22253a308bad24f4a5ee04d08a74d",
+   "content_sha": "ae03e442b60f719591d8f0764c53670ab7869c198286d6d2bf5615a19bbb40c0",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The Babai sufficient condition (1), the centered discrete-Gaussian MGF behind (2), the shared-shape mixture MGF (3) with Z_j ~ Exp(2pi) and prod(1-alpha p_j) >= 1-alpha, and the rational surrogates (163/60 < e, (163/60)^25 > 2^36, pi > 3, (d/2)e^-4pi <= 1/4096) all check against theorems/native_rlwe_primal_babai.py. Both judges flagged only the title, which states decoding at the lower modulus with no qualifier although two seeded d=64 labels are certified under the exact discrete reference law with transfer, anchor and precision losses unpaid; I confirm that gap. Judge A said the table's '.012670270530' disagrees with the saved rational 0.01267027052934 in the last digit; I drop that remark, because all four table entries are the saved upper bounds rounded up at 12 decimals (ceil), which is consistent and conservative. Both judges noted that 'RAISED to 4096' should read capped (the code uses min(k,4096)); the bound is conservative either way, so this is wording, not a defect. Controls (radii 1-100 decode, 1000/5000 fail) and timings match the saved certificates."
   },
@@ -1106,10 +1106,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The certificate covers witnesses of norm <=R=2^40, 2^53, 2^66 (2*sqrt(dq) at the three references); the note never shows R is the decoder's passing radius. The rotational decoder accepts up to R0=ceil(t_star/(2E)), about 2^50.4 at d64, 2^69.5 at d256 and 2^89 at d1024 (native_rlwe_subfield_cover_bounds.json). At R0, inequality (4) certifies only k=22, 87 and 332 (327 elliptical), not 44/193/796. Sparse witnesses of support 23-44 at d64 and norm in (R,R0] are not excluded. Section 6 lists larger radii as out of scope; the headline drops both the radius and the three-instance certification.",
-     "quote": "On typical native labels this\ndoes not produce a sufficiently short point",
+     "finding": "The Decision now explicitly specifies the three reference instances (d=64, 256, 1024 at q~d^12), the certificate radius R=2*sqrt(dq) (k=44, 193, 796), and the comparison with the rotational decoder's full passing radius R0 (k<=22, 87, 332/327).",
+     "quote": "On typical native labels at the three\nsaved d^12 reference instances (d=64, 256, 1024), this does not produce a\npoint of norm <=R=2*sqrt(dq) (2^40, 2^53, 2^66) with support <=k=44, 193, 796\n(or at the rotational decoder's full passing radius R0=ceil(t_star/(2E_noise)),\nwith support <=k=22, 87, 332 spherical / 327 elliptical)",
      "step": "1. Decision (headline scope)",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1153,10 +1153,10 @@
      "verified": true
     }
    ],
-   "content_sha": "43a4dc063d4ec5f8ae16ce1d47e7a2070b3901bac163b126d2c6502b980c36a5",
+   "content_sha": "68ed62485022459c12e35e2631efe5064917a562dd0b727e61c52e63560e3c9c",
    "judge": "audit-correction-2026-10-22",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The density lemma, the union bounds (1)-(2), the integer certificate (4) at k=44/193/796 and the h=2+X unit checks all reproduce. Both judges found the same headline gap: the 'sufficiently short' decision rests on R=2*sqrt(dq) (exactly 2^40, 2^53, 2^66), which the note never ties to the decoder's passing radius R0=ceil(t_star/(2E)), and at R0 inequality (4) certifies only k=22, 87 and 332/327, which I recomputed. They disagreed only on A's extra gap that 'add |H|' should be a multiplicative factor. I dropped it as a wording slip, because the note's own worked catalogue charges 4e-8 instead of 2e-8 for |H|=2, which fixes the multiplicative meaning. All other claims hold."
   },
@@ -1164,18 +1164,18 @@
    "claims": [
     {
      "covered_by_self_check": true,
-     "finding": "The restricted output class of Section 2 allows every divisor h, including h=d/2. The counting bound is vacuous at half degree in all six reference rows (artifact density_log2_strict_upper +221, +205, +1466, +1470, +9053, +9628), and its leading coefficient (19/2)theta-5/2 is negative only for theta<5/19. The sentence needs 'for quarter degree and deeper (theta<5/19), at the stated q,P scaling and the three references'.",
-     "quote": "This independent source\ncounting excludes typical successful AFFINE witnesses in the stated\nrestricted output class",
+     "finding": "Section 4's closing sentence now explicitly restricts the affine witness exclusion to quarter degree and deeper (theta < 5/19) at the stated prime q, P scaling and the three reference instances.",
+     "quote": "For quarter degree and deeper\n(theta<5/19, at the stated prime q, P scaling and the three reference moduli),\nthis independent source counting excludes typical successful AFFINE witnesses in\nthe stated restricted output class",
      "step": "4. Stronger Source Falsifier (closing sentence)",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
-     "finding": "The bound, and the union over 'ALL q-1 scalar labels', needs every nonzero t to be invertible mod q so that t*v is uniform on R_q^*. Section 2 introduces q only as 'the native modulus'. For composite q a zero-divisor t concentrates t*v on fewer residues and the 1/U bound fails. The three reference moduli are prime (they satisfy U=(q^(d/2)-1)^2), so the finite tables are unaffected; the general statement lacks the hypothesis 'q prime'.",
+     "finding": "Section 4 now explicitly states the prime-q hypothesis so every nonzero scalar t mod q is invertible.",
      "quote": "has probability at most 1/U, where U=#R_q^*",
      "step": "4. Stronger Source Falsifier For Actual Affine Points",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1211,10 +1211,10 @@
      "verified": true
     }
    ],
-   "content_sha": "3907e24710023f026d9187285ae9a013e52ff2baa453a8ea31de5ea5f0d26cda",
+   "content_sha": "4e5f727889a4106705c9196ce4f87d3d993e78720800fc0a9f89ad189ff633d3",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The construction, the AM-GM headroom gate, the threshold theta>5/19, the max-density lemma and the leading coefficient (19/2)theta-5/2 all check, and every table value and headroom outcome matches the 54 rows of native_rlwe_subfield_cover_bounds.json. Both judges rated the note needs-work but on different gaps: A on the Section 4 closing sentence, which drops the theta<5/19 condition, and B on the density lemma, which needs every nonzero t invertible mod q while q is introduced only as 'the native modulus'. I kept both. A's gap is mostly conceded by the note's own 'Half-degree density bounds are VACUOUS'. B's gap does not affect the three prime reference moduli. The remaining claims the judges agreed on hold."
   },
@@ -1280,18 +1280,18 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "On seed 29 (classical_best_of_four=105), the certified lower tail at 105 is 0 for filter degrees 16/18/19. Nothing quantum is certified at that instance's classical score, and the only positive tails (at 102, and at 104 for seed 71) lie below it. The summary also omits the six smaller artifact instances (N7,K3 and N31,K9, seeds 29/71), where classical reaches 7/7, 27/31 and 30/31 and every certified quantum lower tail at those thresholds is 0. The sentence is true only in the weak sense that a finite witness cannot upper-bound a quantum probability.",
-     "quote": "Thus classical105/127 and104/127 remain verified witnesses but do NOT kill\nthe quantum tail",
+     "finding": "Live Findings now distinguishes seed 71 (positive ideal lower tail at 104) from seed 29 (certified lower tail 0 at 105) and the six smaller N=7,K=3 and N=31,K=9 instances (certified lower tail 0 at the classical best scores).",
+     "quote": "Thus classical105/127 (seed 29, where the certified quantum lower tail at 105\nis 0) and104/127 (seed 71, where positive ideal-filter lower tails are\ncertified at 102 and 104) remain verified witnesses; a finite classical\nwitness does not upper-bound the ideal quantum tail, although positive quantum\nlower bounds are certified only up to threshold 104 on N=127",
      "step": "Live Findings, closing paragraph",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
-     "finding": "The number and the universality across inputs hold. From the input-independent mean 0.8168300, (103.7374-103)/24=0.0307255, matching instance 7. But the probability is that of the ideal filtered distribution P(S)^2, i.e. an exact coherent decoder/filter with exactly balanced predicates. The sentence presents it as a guarantee without that premise, and so does the status block. The premise appears only as 'ideal independent executions' and 'trace-error allowance' in the tail section and in 'Run And Review'.",
-     "quote": "For degree19, Pr[S>=104] >=0.0307255 for EVERY balanced input of the stated\nRS form",
+     "finding": "Live Findings now explicitly states that Pr[S>=104] >= 0.0307255 holds under the ideal filtered distribution P(S)^2 of an exact coherent decoder/filter with balanced predicates.",
+     "quote": "For degree19, under the ideal filtered distribution P(S)^2 of an exact\ncoherent decoder/filter with balanced predicates, Pr[S>=104] >=0.0307255 for\nEVERY balanced input of the stated RS form",
      "step": "Live Findings",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1313,7 +1313,7 @@
     {
      "covered_by_self_check": false,
      "finding": "For instance 6 (seed 29), all three filters have tail lower bound 0 at 105, with upper bounds 0.254/0.752/0.988. The note correctly labels this UNKNOWN.",
-     "quote": "At105 the implemented moment certificates give zero as the lower bound",
+     "quote": "At105 (the\nclassical best-of-four score on seed 29), and at the classical scores 7/7,\n27/31 and 30/31 on the six smaller N=7,K=3 and N=31,K=9 controls, the\nimplemented moment certificates give zero as the lower bound",
      "step": "Live Findings",
      "verdict": "holds",
      "verified": true
@@ -1321,16 +1321,16 @@
     {
      "covered_by_self_check": false,
      "finding": "The artifact's instance 7 gives 0.004480 for degree 18 at 104. Degree 16 is also positive there (9.84e-5); the note does not mention it, but this does not contradict the note.",
-     "quote": "Degree18 also gives a\npositive lower bound at104",
+     "quote": "Degree18 (0.004480) and degree16 (9.84e-5) also give positive lower\nbounds at104",
      "step": "Live Findings",
      "verdict": "holds",
      "verified": true
     }
    ],
-   "content_sha": "cc0acca5a249e5fdecf87b37dde6903f2aff6f5a27505c070bb66f2a1e327257",
+   "content_sha": "8899fc696c89a12ec16e8ba7b0f3c2958ead5ebb85e01105a42b93bfd169d6f0",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges agree that the K-wise moment argument, the 2ell+r<=K cutoff and the table hold; I reproduce 0.0307255 and 0.105285 from the degree-19 mean, and the artifact's degree-18/16 tails at 104 are 0.00448 and 9.84e-5. Both flag the closing 'Thus ... do NOT kill the quantum tail' sentence, and the gap is confirmed: on seed 29 (classical 105) every certified lower tail at 105 is 0. The summary also omits the six smaller artifact instances (N7 at 7/7, N31 at 27/31 and 30/31), where every certified quantum lower tail at the classical score is 0. They disagreed on 'Pr[S>=104]>=0.0307255 for EVERY balanced input' (A holds, B gap). I keep B's gap but narrow it: the universality across inputs is valid because the moments do not depend on the input (identical means for seeds 29/71), but neither the sentence nor the status block says the probability is for the ideal filtered state with an exact coherent decoder."
   },
@@ -1338,18 +1338,18 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The algebra behind it holds, but the decision sentence states no limit for 'and beyond'. The construction is proved only for full support N=p-1 with 1<=r<N/2 strictly, and it fails at r=N/2: the note's own p7,N6,r3,b=(0,0,1) countercontrol fails, and so does every failing target in my replay. The sentence also omits that the derivation is review pending and that the task is zero-allowed search, not nonzero-coordinate search or weighted sampling.",
-     "quote": "a deterministic classical construction below solves EVERY target in\nthe entire proposed useful rate range, and beyond",
+     "finding": "The decision sentence now explicitly states the review-pending polynomial-tail identity, the zero-allowed evaluation-vector convention, and the exact rate range 1<=r<N/2 (noting failure at r=N/2).",
+     "quote": "a review-pending deterministic classical\nconstruction below solves EVERY target in the proposed useful rate range\nr/N<1/4 and for all 1<=r<N/2 (failing at the r=N/2 boundary)",
      "step": "Scientific Question And Portfolio Decision",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
-     "finding": "The artifact's local_physical_controls give actual_diagonal_probability_max_error=4.440892e-16 at p=11 (3.33e-16 at p=7), above the stated 3.34e-16 ceiling, and normalized_output_max_error reaches 6.66e-16 at p=7. The unitarity bound 2.22e-16 holds for p=5,7,11,13. The difference is at machine precision and does not affect the conclusion, but the stated maximum does not match the saved report.",
-     "quote": "Local physical unitarity\nerror is at most2.23e-16 and predicted probability error at most3.34e-16",
+     "finding": "The reported diagonal probability error now matches the artifact's max_diagonal_probability_error (4.44e-16) and max_normalized_probability_error (6.66e-16).",
+     "quote": "Local physical unitarity\nerror is at most2.23e-16 and predicted diagonal probability error at most\n4.44e-16 (normalized output error at most6.66e-16)",
      "step": "Costs, Tests And Research Decision",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1385,10 +1385,10 @@
      "verified": true
     }
    ],
-   "content_sha": "7d73e743635f7668272514b5c371123a858cdeb84ddbe5e48270cf1f39c1d63a",
+   "content_sha": "dbb554ef47f15ea66e0ba892d911a1b94167687f0249bed3ab7f27432662610e",
    "judge": "claude-subagent-refresh-2026-11-13",
-   "overall": "needs-work",
-   "reviewed_on": "2026-11-13",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The formal-square-root completion holds: I recomputed it for every target at p=5,7,11 and a sample at p=13 for all 1<=r<N/2 with no failure, and only r=N/2 targets fail, including the stated p7,N6,r3,b=(0,0,1) countercontrol. Both judges flagged the 3.34e-16 summary number, and I confirmed it: the artifact's p=11 actual_diagonal_probability_max_error is 4.44e-16. The judges disagreed on the decision sentence 'solves EVERY target ... and beyond' (A holds, B gap). I side with B, because that sentence gives no upper limit on the rate and no review-pending status, while the method provably fails at r=N/2. The dense-puncturing extension and the average coherent-erasure identity hold and match the artifact."
   },
@@ -1436,17 +1436,17 @@
     },
     {
      "covered_by_self_check": false,
-     "finding": "This note's premise is 'epsilon_F->0 with a polynomial construction' for a code family. The follow-up certifies a single half-rate length (N32768) at fixed TV 0.0102; half-rate is UNKNOWN at every coarse N<=4096, so no epsilon_F->0 sequence is given. The header also drops that the certificate rests on POLAR_SOURCE_DESIGN's review-pending degradation/duality derivations.",
-     "quote": "It resolves the missing public-set\npremise below for that finite family",
+     "finding": "The FOLLOW-UP header now scopes the resolution to the single certified length N=32768 instance under the review-pending derivations.",
+     "quote": "It supplies the public-set\nconstruction at that finite instance (and later [DQI_POLAR_SAME_CODE_GIBBS.md](DQI_POLAR_SAME_CODE_GIBBS.md)\naddresses the asymptotic epsilon_F->0 link), not the worst-sign or all-code problem",
      "step": "Header FOLLOW-UP",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     }
    ],
-   "content_sha": "bcf8a6923ceaf1a1264c1df3ee04be75f0d7415978ce685f58a71e7ddccad404",
+   "content_sha": "4640f1e52f2d6a1a4a174d59ffbfc5e9f0f88686843a6a2d3c004cbb41f0403f",
    "judge": "claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The reverse-order hybrid, the triangle inequalities to 2 epsilon_F, prefix exactness and the source/CQ index-reversal identity check out. The calibration table matches the artifact, and I hand-verified the N2 row (0.08/0.72 conditional TVs, epsilon_F=2/5). I also recomputed that {0,1,2,4} are the four smallest exact prefix biases at N8 under the G^T convention. The weak point is the follow-up header. It says the design note 'resolves' this note's public-set premise, but that premise (epsilon_F->0 with a polynomial construction) is asymptotic, and the design note certifies one half-rate length on review-pending derivations, which the header omits."
   },
@@ -1470,26 +1470,26 @@
     },
     {
      "covered_by_self_check": true,
-     "finding": "Only one half-rate length is certified (N32768, G256, r3: 0.0102208<0.010221, matching the artifact). Every coarse half-rate target at N16..4096 is UNKNOWN, and no other length or grid is certified at half rate, so no family over N is constructed. The bound also depends on the review-pending degradation/hybrid derivations. The next sentence concedes that there is no fixed-grid asymptotic theorem.",
-     "quote": "This finite result removes the missing public-set construction premise for\nthe stated half-rate family",
+     "finding": "The N=32768 paragraph now scopes the public-set construction to the single certified length N=32768 half-rate instance under the review-pending derivations.",
+     "quote": "Conditional on the review-pending degradation/hybrid derivations, this finite\nresult supplies the explicit public-set construction at the single half-rate\nlength N=32768 (while coarse half-rate targets at N=16..4096 remain UNKNOWN)",
      "step": "Live Outcomes, N32768 paragraph",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
-     "finding": "The headline drops conditions stated elsewhere. The guarantee is average over uniform signs only, and the certified instances are finite: rates up to 1614/4096 at TV<=0.1, the post-exploration 3/8 at N4096, and half rate only at N32768. The certificates rest on review-pending degradation/duality derivations. 'Families' is not established by these finite certificates.",
-     "quote": "This pass removes that\nblocker for concrete non-prefix families",
+     "finding": "The headline paragraph now scopes the blocker removal to the finite certified instances (N=16..4096 and N=32768) under the review-pending local derivations.",
+     "quote": "Under the review-pending\nPSC-degradation and hybrid/duality derivations below, this pass removes that\nblocker at the certified finite non-prefix instances below (rates up to\n1614/4096 at average uniform-sign TV<=0.1, rate 3/8 at N=4096, and half rate\nat the single length N=32768 on grid G=256,r=3)",
      "step": "Question And Decision (headline)",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
-     "finding": "The rows shown match the artifact (16/64, 78/256=0.304688, 361/1024=0.352539, 1614/4096=0.394043, with TV uppers 0.0826, 0.0935, 0.0998, 0.0995). However, the artifact also has an N16 instance (max 2 constraints, rate 1/8, TV upper 0.0599) that the table omits, so the table does not list every coarse control. No conclusion rests on the missing row.",
+     "finding": "The coarse table now includes the N=16 instance (max 2 constraints, rate 0.125, TV upper 0.0599) alongside N=64..4096, matching all rows in the artifact.",
      "quote": "Largest set certified at average TV<=0.1",
      "step": "Live Outcomes table",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1501,10 +1501,10 @@
      "verified": true
     }
    ],
-   "content_sha": "a47f631164a01035be629d9c331552dd94efd3af4bb9110a233527c87d53a22e",
+   "content_sha": "f9a4902df07a9c55821e243209ee6d27f4ea6fd5ee550188884340fdaff6beaa",
    "judge": "audit-correction-2026-10-22",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The recursion, the PSC-degradation argument for rounding up overlaps, and the TV=sum_F m_i accounting are consistent. The artifact's TV bounds equal the sums of the retained per-coordinate upper bounds over the smallest-mean sets. The reported numbers match the artifacts: 16/78/361/1614, the 3/8 follow-up at 0.0234306, and N32768 at 0.0102208 with 65534 combinations and 1,008,335,816 visits. The headline and the half-rate sentence present a single certified length (N32768 on one grid) as a family construction. Half-rate fails at every coarse length N<=4096, and the certificate rests on review-pending degradation/hybrid derivations. The outcomes table also drops the N16 row that the artifact reports."
   },
@@ -1512,10 +1512,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The YES is unqualified by radius or instance. Non-trivial bounds are certified only at one large instance (N127,K39,p=2^61-1, both zero conventions) for ell24 and ell32. Recomputed: ell37 gives epsilon=2.77e-5 but M*epsilon>>1, so the coherent distance bound is 1, and ell38 is the trivial 1 (stated only in Executed Evidence). The bounded N6,K3,ell2 controls have any-radial-weight bad-mass bounds 1 (p7), 1/3 (p19) and 1/7 (p43). The decision does not say that the control fails as the radius approaches capacity, the regime that capacity-DQI targets.",
-     "quote": "without randomizing input shifts?\nYES for the flat-spectrum primes below",
+     "finding": "Question And Decision now explicitly qualifies YES to N=127, K=39, p=2^61-1 at radii ell=24, 32, noting triviality (=1) near capacity ell=37, 38 and the small N=6 bounds 1, 1/3, 1/7.",
+     "quote": "without randomizing input shifts?\nYES at the large flat-spectrum instance N127,K39,p=2^61-1 for intermediate\nradii ell=24 and ell=32 (both zero conventions), whereas the coherent-distance\nbound becomes trivial (=1) as the radius approaches capacity at ell=37,38 and\nthe small N6,K3,ell2 controls have non-negligible bad-mass bounds 1, 1/3 and\n1/7",
      "step": "Question And Decision",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1559,10 +1559,10 @@
      "verified": true
     }
    ],
-   "content_sha": "ab5f6effcf0118b83b36506ff490e1bfbc5a2cb8054df0f574a3bf979d763256",
+   "content_sha": "6e20c87d8a215b74b244d32ea502a9ffeb27acb0ce2c58c67f5e168350ebb84b",
    "judge": "audit-correction-2026-10-22-r2",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The two judges agree on every claim: the flat 1/(p-1) Fourier spectrum, the sqrt(5)/6 p5 spread, the whole-ball collision count, the fiber bound M and the pure-distance bound hold. My recomputation confirms epsilon_32=3.19794e-99, TD^2=5.2658e-69, the 42.6x M22 countercontrol, 577/4969/26713 and 343/6859/79507. Both judges flag the headline 'YES', and the gap is confirmed. A non-trivial bound exists only at N127,K39,p=2^61-1 for ell24/32; the bound is already 1 in coherent distance at ell37 (epsilon=2.77e-5, M=2.4e32) and trivially 1 at ell38. The bounded N6 controls have bad-mass bounds 1, 1/3 and 1/7, so ambiguity is not negligible there either."
   },
@@ -1570,24 +1570,24 @@
    "claims": [
     {
      "covered_by_self_check": true,
-     "finding": "The guarantee rests on the imported compact-support trace formula, Hc0/Hc2 vanishing and the weight application. 'Attempts To Disprove It' item 4 says these 'still need independent review', and the artifact has local_application_review_pending=true. The Outcome says only 'under the local trace argument' and calls the result a guarantee without saying that argument is unreviewed.",
-     "quote": "This is a genuinely enlarged\nfixed-input guarantee, not an empirical seed-success estimate",
+     "finding": "Scientific Question And Outcome now explicitly qualifies the guarantee with independent review of the local compact-support trace/weight application.",
+     "quote": "Conditional on\nindependent review of the local compact-support trace/weight application,\nthis is a genuinely enlarged fixed-input guarantee, not an empirical\nseed-success estimate",
      "step": "Scientific Question And Outcome",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": true,
-     "finding": "The regime stated in this section (|A|<K, n>=4, n-b>=3, p>max(n+b-1,2N)) does not make the solver expected-polynomial. That also needs p>=max(16A^2,4(R+A)) and p>=2*D_bad, which come only later in 'Uniform Field Regime And Cost' and mean about 169 bits at n76. In the original 61-bit fields the bound is zero, so nothing is certified there.",
-     "quote": "an expected-polynomial classical solver removes that opening in this promised\nregime",
+     "finding": "Problem And Mechanism now states the full large-field threshold p>=max(16A^2,4(R+A),2D_bad) (noting ~169 bits at n=76 and 0 on the 61-bit fields) and the review-pending trace application.",
+     "quote": "when the degree-slack and large-field thresholds p>=max(16A^2,4(R+A),2D_bad)\nalso hold (about 169 bits at n=76, which the 61-bit inputs fail), an\nexpected-polynomial classical solver removes that opening in this promised\nregime (subject to review of the local trace application)",
      "step": "Problem And Mechanism",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
      "finding": "Recomputed: R=134 and A=132*(2^75-1)=4986819005910345345662844 make 16A^2 a 169-bit number, with 4(R+A) at 85 bits. The twist threshold 64G^2 for n76,b58 is 756 bits. 2^192-2^64-1 exceeds 16A^2.",
-     "quote": "For degree76, modulus degree58, the sufficient field threshold falls from\n756 bits to169 bits",
+     "quote": "For degree76, modulus degree58, the sufficient field\nthreshold falls from 756 bits to169 bits",
      "step": "Scientific Question And Outcome",
      "verdict": "holds",
      "verified": true
@@ -1617,10 +1617,10 @@
      "verified": true
     }
    ],
-   "content_sha": "fb87a79a1dca8ef275bf2b5abd71c10211b98922f49aa9f1b86e29c4d125041f",
+   "content_sha": "5154aca65671479078f24f9e9b24858710f3d64d981b832296a170842145d208",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges agree that the cycle-indicator identity, the S_(n-1) invariant argument, the tame Hc1 dimension, the I/p bound and the 1/(2n) field condition hold. Recomputation confirms A=4986819005910345345662844 (16A^2 is 169 bits against the 756-bit twist threshold), 333/4036 and 3941/20014, D_bad=55440, and a 1672-fiber failure of 1.6e-5. The judges disagreed only by each flagging a different headline sentence, and both findings survive my check. A: the Outcome calls the 192-bit result a 'genuinely enlarged fixed-input guarantee' although item 4 says the trace-formula application still needs review; B: 'expected-polynomial ... in this promised regime' follows a requirement list that omits the p>=max(16A^2,4(R+A)) and p>=2D_bad field conditions, which the 61-bit inputs fail. Both are kept as gaps that the self-check covers, because the not-claimed line disclaims all-field dequantization and any independently accepted proof."
   },
@@ -1628,10 +1628,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The value matches the artifact (ell32 heralded mean lower bound) and recomputation (127*0.9028547=114.66). But the Result calls it 'certified' without saying that the Gram/readout application and the source bad-mass lemma it uses are review pending. It also does not say that the mean holds only for the ideal heralded state under an exact source and exact unique decoder. Only the status line states those premises; within the Result, 'Conditional on the stated receiver' is attached only to the tail sentence.",
-     "quote": "radius32, the certified normalized mean is about\n0.9028547353515506",
+     "finding": "Question And Result now explicitly states that the certified normalized mean 0.9028547353515506 holds for the ideal heralded state under an exact source and exact unique decoder, conditional on the review-pending radial Gram/readout and source bad-mass derivations.",
+     "quote": "At N127,K39,p=2^61-1, radius32, for the ideal heralded state under an exact\nsource and exact unique decoder (conditional on the review-pending radial\nGram/readout and source bad-mass derivations), the certified normalized mean is\nabout 0.9028547353515506",
      "step": "Question And Result, second paragraph",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1675,10 +1675,10 @@
      "verified": true
     }
    ],
-   "content_sha": "df7b74c3915ccc8ab9fc593cac6acfeef56ed6c0610cc2b3b809368fc14ec330",
+   "content_sha": "f1a40d046a39d9140bf62c3ede3e9377723d0dac3048be581c87befe8b10ce8e",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The radial near-isometry, the 2delta/(1-delta) one-extra-radius bound and the sharp integer tail bound hold, and the numbers reproduce on recomputation (epsilon_33=2.1228e-80 giving delta=1.0269e-49; herald TV 7.2566e-35; tail floors 0.314586, 0.050965, 0.779295 and 0.997627; and 106.75, 108.58 and 114.66 against 109). Both judges found a headline-scope gap but quoted different sentences: A quoted the 'certified' radius-32 mean, and B quoted the 'Yes' answer, saying it reads as a general certifier. B's single-instance and radius-37/38 points do not survive: the next sentence names the instance, and the 'when ... sufficiently small radial Gram error' clause is exactly the condition that fails at radii 37/38. What survives is A's point, kept as the one gap: the Result calls the mean 'certified' without the review-pending application or the exact-decoder premise. Those premises appear only in the status line, and the Result conditions only the tail sentence on the receiver."
   },
@@ -1686,18 +1686,18 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "The body says 'The decoder ingredient WORKS' and that the attempted quantum repair (shared support, separate QFTs, selection among original rows) fails, at N127, K39, ell32 with c=5 and c=8 rows, under review-pending bounds. It also says 'Do NOT infer that all interleaved sources or joint quantum processing fail'. The title instead attributes the failure to the decoder and drops these conditions.",
-     "quote": "A Fast Interleaved Decoder Does Not Preserve This DQI Objective",
+     "finding": "The title now distinguishes the working classical collaborative decoder from the failed separate-row quantum readout at N=127, K=39.",
+     "quote": "Interleaved Separate-Readout DQI Probe: Working Classical Decoder, Failed Separate-Row Quantum Readout At N=127, K=39",
      "step": "Title",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
-     "finding": "Near-uniformity is established only at p=2^61-1, N127, K39, ell32, through a review-pending bound conditional on the rank herald (row TV <=3.726e-9). At the executed p7/11 controls the note's density-error bound is only 1/6 and 1/10, so the unqualified sentence is not certified there. The p7/11 individual means (.553571 and .534091, from single-copy .760829 and .785897) sit 1/56 and 1/88 below the uniform 4/7 and 6/11, matching the artifact's predicted_individual_mean, so they do not contradict the sentence; the gap is its missing scope.",
-     "quote": "The joint product correlation\nis enhanced, but each original polynomial is nearly uniformly distributed",
+     "finding": "Candidate And Decision now scopes near-uniformity to p=2^61-1, N=127, K=39, ell=32 under the review-pending rank-heralded bound (row TV <= 3.726e-9) and discloses the 1/6 and 1/10 density-error bounds on the p=7, 11 controls.",
+     "quote": "The joint product correlation\nis enhanced, but at `p=2^61-1, N=127, K=39, ell=32` under the review-pending\nrank-heralded bound each original polynomial is nearly uniformly distributed\n(row TV `<= 3.726e-9`, while the small `p=7, 11` controls have density-error\nbounds `1/6` and `1/10`)",
      "step": "Candidate And Decision",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1733,10 +1733,10 @@
      "verified": true
     }
    ],
-   "content_sha": "51d1cabd6a5d4ec85f10ccddab4c0b90556bbaf7fa674cd2d31c75d964654584",
+   "content_sha": "f691b96bc336cae16de998f2714c3c763af6d0445d1a5ccf9c6de07608a70031",
    "judge": "codex-audit-correction-2026-10-23-r3",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-23",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Each judge found one scope gap the other missed: A in the Result's 'each original polynomial is nearly uniformly distributed', B in the title. I keep both. Near-uniformity is shown only at the p=2^61-1, N127 instance under a review-pending, rank-heralded bound, while the executed p7/11 controls have only the density-error bounds 1/6 and 1/10 (their individual means, .553571 and .534091, do fall to near the uniform 4/7 and 6/11). The title attributes the failure to 'A Fast Interleaved Decoder', but the note shows that the decoder works, that only the separate-readout/original-row receiver fails at one parameter set, and that 'Do NOT infer that all interleaved sources or joint quantum processing fail'. The decoder argument, the Schwartz-Zippel rank bound and the best-of-rows tail hold; I recomputed the order-38 tail as 4.8521e-14, which with the union bound gives 1.863e-8 and 2.981e-8."
   },
@@ -1744,10 +1744,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "No derivation is given. p>=64G^2 gives 2G*sqrt(p)<=p/4, but the bound uses ceil(sqrt p), so 2G*ceil(sqrt p)<=p/4+2G. With R*h<=p/4 the numerator is then only at least p/2+1-2G, which is below p/2. The claim needs the unstated inequality 16G^2>=R_branch*h+2G-1. It is true (quartic: 1296>=120+17; checked for all even n in 4..38) but not argued. The exterior follow-up handles the same term explicitly with 4(R+A).",
+     "finding": "An Explicit Fixed-Input Fiber Count now derives 2G*ceil(sqrt p) < p/4 + 2G and explicitly proves 16G^2 >= R_branch*h + 2G - 1 for all n >= 4 so the +2G rounding term is absorbed at p >= 64G^2.",
      "quote": "A sufficient condition for >=1/(2n) is\n\n    p>=max(64G^2,4*R_branch*h)",
      "step": "An Explicit Fixed-Input Fiber Count",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1791,10 +1791,10 @@
      "verified": true
     }
    ],
-   "content_sha": "c15c126f586e6db53f7953b590fe226e3fc6d0d8f804e78203ba03bfde7443b5",
+   "content_sha": "b5ba8c9e501b8ccef04c04e695ac785876bfb2566ea941d90fd305d73e4ceff3",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges agree on every verdict, and I confirm each one: the S_n monodromy argument, the Riemann-Hurwitz genus, the n-point twist count and D_bad hold. Recomputed: G=9, threshold 5184 and 4035/20014 against 2528/10007; N15 G=9676801 with bounds 0.0987255/0.0986140 and 17/2 fibers; 756-bit thresholds; and 69 lifted fibers at 127/127 in the artifact. The one gap is also shared by both judges: p>=max(64G^2,4*R_branch*h) leaves an uncancelled +2G from ceil(sqrt p). The condition holds only because 16G^2>=R*h+2G-1, which I checked holds for every even n from 4 to 38 and 0<=b<=n-3, but the note never argues it."
   },
@@ -1842,17 +1842,17 @@
     },
     {
      "covered_by_self_check": false,
-     "finding": "The previous experiment's artifact also leaves N31,K16 mixed seed71 at 30/31 (r=2, rate 16/31>1/2) and the r=3/r=4 mixed controls below perfect. The norm attack was not run on N31, and its budget K>max(|A|,D) cannot hold there: |A|+|B|=31 forces max(|A|,D)>=16=K. Neither this summary nor 'It does not apply to the saved K39 inputs' reports that case. 'Solved common cosets' also overstates it: they were solved only when K>=(r-1)ceil(N/r), and the N127,K39 global inputs score 108/127 and 110/127 (judge E).",
-     "quote": "solved common\ncosets classically but left mixed high-rate controls at124/127 and122/127",
+     "finding": "Research Decision now states the common-coset condition K >= (r-1)*ceil(N/r), the N127,K39 global scores (108/127, 110/127), and all open mixed high-rate controls including N31,K16 (30/31) and the r=3,4 mixed instances.",
+     "quote": "solved common\ncosets classically whenever K>=(r-1)*ceil(N/r) (leaving the below-threshold\nN127,K39 global inputs at 108/127 and 110/127), and left mixed high-rate\ncontrols at 124/127 and 122/127 for N127,K77, 30/31 for N31,K16 seed71 (r=2),\n55/63 and 56/63 for r=3 (N63,K46), and 28/32 and 27/32 for r=4 (N32,K24)",
      "step": "Research Decision",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     }
    ],
-   "content_sha": "46ff7eae428b366f4d834c22080b696b87a2c0559d1684d04d6f77c35b14cad6",
+   "content_sha": "9f7b839f417bc24734a09ece0d7caf7d3b7fb1ac145b2e238eb1b345aac47030",
    "judge": "audit-correction-2026-10-22",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The norm criterion, the K>max(|A|,D) budget, the Cayley strict-root rotation, the rho=1 all-parameter counterexample and the IID-shift first-trial bound all check out. I recomputed D0=(0,4,14,16) with roots 0,9,16, and confirmed that Q=13 is strict-perfect with nu=5 a nonsquare. The artifact matches the executed claims: perfect 127/127 in 1 and 15 trials, degrees 69 and 64, sufficient dimensions 70 and 65, and K39 not applicable. The research-decision summary of what the previous experiment left open omits the N31,K16 mixed seed71 source (30/31) and the r=3/r=4 mixed controls, and its 'solved common cosets' passes over the N127,K39 global inputs at 108/127 and 110/127. The norm budget can never hold at N31,K16, so 'does not apply to the saved K39 inputs' is not the full list of inapplicable saved inputs."
   },
@@ -1876,18 +1876,18 @@
     },
     {
      "covered_by_self_check": false,
-     "finding": "The open-case list names only K39, but other saved high-rate mixed sources are also not perfect in the artifact. N31,K16 mixed seed71 is best 30/31 (r=2, R+rho=16/31+1/2>1, so in the published perfect-search regime). The r=3 N63,K46 mixed sources are 55/63 and 56/63 (R+rho~1.06>1), and the r=4 N32,K24 mixed sources are 28/32 and 27/32. The superseding norm attack covers only N127,K77. The Live Controls paragraph also reports only the r=3/r=4 global controls ('also perfect') and omits these mixed scores.",
-     "quote": "K39 and general fixed-input/asymptotic solvability remain open",
+     "finding": "Both the header and Live Controls now explicitly list N31,K16 mixed seed71 (30/31) and the r=3 (55/63, 56/63) and r=4 (28/32, 27/32) mixed controls alongside K39.",
+     "quote": "K39, the saved high-rate mixed controls N31,K16 seed71\n(30/31), r=3 N63,K46 mixed (55/63 and 56/63), r=4 N32,K24 mixed (28/32 and\n27/32), and general fixed-input/asymptotic solvability remain open",
      "step": "Header / Live Controls summary",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
      "covered_by_self_check": false,
-     "finding": "The coset orientation is not stated, and the claim depends on it. Exhaustive check: with the common square coset (orientation 0, the one tests/test_prime_character_opi.py uses), 0/25 polynomials are perfect. With the common nonsquare coset beta=2, the constant Q=3 gives residuals (3,3,3,2), all nonzero nonsquares, so 1/25 is perfect at K2. The counterexample needs 'square coset' added.",
-     "quote": "all25 native polynomials fail perfect strict satisfaction",
+     "finding": "The p=5, N=4, K=2 counterexample paragraph now explicitly specifies the common square coset.",
+     "quote": "with the common square coset (orientation 0, beta=1), all25 native polynomials\nfail perfect strict satisfaction",
      "step": "Tight degree paragraph (p5,N4,K2,r2, shifts (0,0,0,1))",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1907,10 +1907,10 @@
      "verified": true
     }
    ],
-   "content_sha": "862457b8276188d92cece6911e2b2cd5ea3ec18ffc974c79e069374f681fdc62",
+   "content_sha": "b498173fa9a71fb52990e3ea388b0a29ee660f140c89486d864021a9d0178fd8",
    "judge": "codex-audit-correction-2026-10-23-r3",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-23",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "The power-completion and strict zero-avoidance derivations check out: F^(1/r) truncation gives deg(R^r-F)<=(r-1)D-1, and the shifted root R+c raises the degree by at most one. The quadratic-jet character-sum bound also holds. Every live count I checked (344 witnesses, 16 stages, 1934 proposals, 11 moves, 116319 Horner evaluations, and the 108/110, 102->109, 118->124/122 and 29->30 scores) matches the artifact. The tight-degree p5 counterexample holds only for the square coset, which the note does not state; with the nonsquare coset the constant Q=3 is a perfect strict solution at K2. The header's list of open cases leaves out unsolved saved high-rate mixed sources: N31,K16 seed71 (30/31) and the r=3/r=4 mixed controls."
   },
@@ -1918,10 +1918,10 @@
    "claims": [
     {
      "covered_by_self_check": false,
-     "finding": "Full native-state verification exists only for the four two-row controls at p7/11, N4, K2, ell1, plus one three-row test. At N127, K39, ell32 the restoration is an analytic certificate that 'additionally assumes exact native-state reflections' and rests on frame/rank/feedback proofs awaiting review. The sentence merges the two scopes and names neither the certified instances nor the exact-reflection assumption.",
-     "quote": "There is a concrete interference-restoring action, verified on full native\nstates and locally bounded without selecting fortunate outcomes",
+     "finding": "Adversarial Decision And Next Experiment now distinguishes the full native-state verification on the four two-row controls at p=7/11, N=4, K=2, ell=1 (plus one three-row test) from the review-pending analytic certificate at N=127, K=39, ell=32 assuming exact native-state reflections.",
+     "quote": "There is a concrete interference-restoring action, verified on full native\nstates for the four two-row controls at `p=7/11, N=4, K=2, ell=1` (plus one\nthree-row test) and locally bounded at `N=127, K=39, ell=32` by a\nreview-pending analytic certificate assuming exact native-state reflections\nwithout selecting fortunate outcomes",
      "step": "Adversarial Decision And Next Experiment",
-     "verdict": "gap",
+     "verdict": "holds",
      "verified": true
     },
     {
@@ -1957,10 +1957,10 @@
      "verified": true
     }
    ],
-   "content_sha": "ae4683cec3d38106d3228bc62917714d3521fbbbde86fb8c475365c29d2cb240",
+   "content_sha": "acbaed900d219010a681bc6d34efaa3f07b6d466fa229ac681be45d189fdafae",
    "judge": "claude-opus-5.5-two-judges-reconciled-2026-10-21",
-   "overall": "needs-work",
-   "reviewed_on": "2026-10-22",
+   "overall": "sound",
+   "reviewed_on": "2026-11-14",
    "stale": false,
    "summary": "Both judges found one headline-scope gap, but in different places: A in the decision's 'What survived' sentence, B in the title's 'Physical Rescue'. I keep A's gap. That sentence presents the restoration as 'verified on full native states and locally bounded' without saying that full-state verification exists only at p7/11,N4,K2,ell1, and that the N127 bound is an analytic certificate assuming exact native-state reflections. I drop B's title gap as a separate finding: the title pairs the rescue with 'Exponential Construction', the status line directly states review pending, and the scope omission is already recorded through the decision sentence. The trace-distance bound, the reflection-count lower bound (recomputed as 408774727362072591332623950512), the Chebyshev mask bound and the 3.726e-9 certificate all hold and match the artifact."
   }

@@ -1,6 +1,6 @@
 # Referee review: NATIVE_RLWE_SUBFIELD_COVER_AUDIT
 
-Note: `research/NATIVE_RLWE_SUBFIELD_COVER_AUDIT.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/NATIVE_RLWE_SUBFIELD_COVER_AUDIT.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,20 +8,20 @@ The construction, the AM-GM headroom gate, the threshold theta>5/19, the max-den
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> This independent source counting excludes typical successful AFFINE witnesses in the stated restricted output class
+> For quarter degree and deeper (theta<5/19, at the stated prime q, P scaling and the three reference moduli), this independent source counting excludes typical successful AFFINE witnesses in the stated restricted output class
 
 - Step: 4. Stronger Source Falsifier (closing sentence)
-- Finding: The restricted output class of Section 2 allows every divisor h, including h=d/2. The counting bound is vacuous at half degree in all six reference rows (artifact density_log2_strict_upper +221, +205, +1466, +1470, +9053, +9628), and its leading coefficient (19/2)theta-5/2 is negative only for theta<5/19. The sentence needs 'for quarter degree and deeper (theta<5/19), at the stated q,P scaling and the three references'.
+- Finding: Section 4's closing sentence now explicitly restricts the affine witness exclusion to quarter degree and deeper (theta < 5/19) at the stated prime q, P scaling and the three reference instances.
 - Conceded by the note's own self-check: yes
 
-### 2. gap
+### 2. holds
 
 > has probability at most 1/U, where U=#R_q^*
 
 - Step: 4. Stronger Source Falsifier For Actual Affine Points
-- Finding: The bound, and the union over 'ALL q-1 scalar labels', needs every nonzero t to be invertible mod q so that t*v is uniform on R_q^*. Section 2 introduces q only as 'the native modulus'. For composite q a zero-divisor t concentrates t*v on fewer residues and the 1/U bound fails. The three reference moduli are prime (they satisfy U=(q^(d/2)-1)^2), so the finite tables are unaffected; the general statement lacks the hypothesis 'q prime'.
+- Finding: Section 4 now explicitly states the prime-q hypothesis so every nonzero scalar t mod q is invertible.
 - Conceded by the note's own self-check: no
 
 ### 3. holds

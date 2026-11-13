@@ -15,7 +15,8 @@ const crypto = require('crypto');
 
 const REPORT_PATH = path.resolve(__dirname, '../reductions/native_history_erasure_dequantization.json');
 const DERIVATION_PATH = path.resolve(__dirname, '../NATIVE_HISTORY_ERASURE_DEQUANTIZATION.md');
-const REGISTRY_PATH = path.resolve(__dirname, '../registry/negative_results.json');
+const ACTIVE_REGISTRY_PATH = path.resolve(__dirname, '../registry/negative_results.json');
+const QUARANTINED_REGISTRY_PATH = path.resolve(__dirname, '../registry/quarantined_campaign_negatives.json');
 
 function runCrossCheck() {
     console.log("=== Running Native Phase Bank History Erasure & Dequantization Cross-Check ===");
@@ -41,8 +42,10 @@ function runCrossCheck() {
     }
 
     // 1. Report integrity and derivation hash
-    assertCheck("Report status is NATIVE_HISTORY_ERASURE_DEQUANTIZATION_PROVED",
-        report.status === "NATIVE_HISTORY_ERASURE_DEQUANTIZATION_PROVED");
+    assertCheck("Report status is UNIVERSAL_HISTORY_ERASURE_NO_GO_RETRACTED",
+        report.status === "UNIVERSAL_HISTORY_ERASURE_NO_GO_RETRACTED");
+    assertCheck("Proof status is EXACT_SCOPED_COUNTERCONTROLS_NOT_GENERAL_ALGORITHM_OR_HARDNESS_PROOF",
+        report.proof_status === "EXACT_SCOPED_COUNTERCONTROLS_NOT_GENERAL_ALGORITHM_OR_HARDNESS_PROOF");
 
     if (fs.existsSync(DERIVATION_PATH)) {
         const derivationContent = fs.readFileSync(DERIVATION_PATH);
@@ -50,11 +53,14 @@ function runCrossCheck() {
         assertCheck("Derivation SHA256 matches actual markdown file", report.derivation_sha256 === expectedSha);
     }
 
-    // 2. Theorems proved verification
-    assertCheck("Theorems proved list has 4 theorems", report.theorems_proved && report.theorems_proved.length === 4);
-    report.theorems_proved.forEach((t) => {
-        assertCheck(`Theorem verified: ${t.name}`, t.verified === true);
-    });
+    // 2. Scoped identities and countercontrols verification
+    assertCheck("Scoped identities list has 2 verified identities",
+        Array.isArray(report.scoped_identities) && report.scoped_identities.length === 2 &&
+        report.scoped_identities.every((t) => t.verified === true));
+    assertCheck("Exact countercontrols present",
+        report.exact_countercontrols &&
+        Array.isArray(report.exact_countercontrols.phase_and_joint_readout_controls) &&
+        report.exact_countercontrols.phase_and_joint_readout_controls.length === 2);
 
     // 3. Finite instance verifications
     const instances = report.finite_instance_verifications;
@@ -65,12 +71,14 @@ function runCrossCheck() {
             inst.max_off_diagonal_coherence === 0.0 && inst.coherence_vanishes_identically === true);
         assertCheck(`Instance ${idx}: density matrix trace is 1.0`,
             Math.abs(inst.density_matrix_trace - 1.0) < 1e-12);
-        assertCheck(`Instance ${idx}: trace distance to classical BKW sampling is exactly 0.0`,
-            inst.trace_distance_to_classical_bkw === 0.0 && inst.dequantization_verified === true);
+        assertCheck(`Instance ${idx}: trace distance to classical BKW sampling is < 1e-12`,
+            inst.trace_distance_to_classical_bkw < 1e-12 && inst.dequantization_verified === true);
         assertCheck(`Instance ${idx}: all paths satisfy Cauchy-Schwarz inequality`,
             inst.all_paths_satisfy_cauchy_schwarz === true);
         assertCheck(`Instance ${idx}: min L2 norm (${inst.min_l2_norm_at_max_exposure}) >= bound (${inst.cauchy_schwarz_l2_bound})`,
             inst.noise_inflation_lower_bound_satisfied === true);
+        assertCheck(`Instance ${idx}: arbitrary interleaved receiver or joint readout not covered`,
+            inst.arbitrary_interleaved_receiver_or_joint_readout_covered === false);
     });
 
     // 4. Scaling profiles verification
@@ -87,26 +95,27 @@ function runCrossCheck() {
         assertCheck(`Profile ${idx}: secret trits = ${n * n}`, p.secret_trits === n * n);
         assertCheck(`Profile ${idx}: min noise inflation factor >= ${n}`, p.min_noise_inflation_factor >= n);
         assertCheck(`Profile ${idx}: max noise inflation factor >= ${n * n}`, p.max_noise_inflation_factor >= n * n);
-        assertCheck(`Profile ${idx}: un-erased state is classically dequantized`, p.un_erased_state_is_classically_dequantized === true);
-
-        if (n >= 4) {
-            assertCheck(`Profile ${idx}: ISIS gap requires GapSVP oracle for n=${n}`, p.history_erasure_requires_gapsvp_oracle === true);
-            assertCheck(`Profile ${idx}: log2 ISIS gap >= 2.0`, p.log2_isis_gap >= 2.0);
-        }
+        assertCheck(`Profile ${idx}: arbitrary receiver not dequantized`, p.arbitrary_receiver_dequantized === false);
+        assertCheck(`Profile ${idx}: hardness reduction not verified`, p.hardness_reduction_verified === false);
     });
 
     // 5. Gating flags
     assertCheck("Speedup claim disallowed", report.speedup_claim_allowed === false);
     assertCheck("Accepted speedup candidate is false", report.accepted_speedup_candidate === false);
 
-    // 6. Registry verification
-    if (fs.existsSync(REGISTRY_PATH)) {
-        const registry = JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf8'));
-        const regEntry = registry.find(e => e.id === "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER");
-        assertCheck("Negative result registered in registry", regEntry !== undefined);
-        if (regEntry) {
-            assertCheck("Negative result references correct artifact",
-                regEntry.source === "research/reductions/native_history_erasure_dequantization.json");
+    // 6. Quarantine registry verification
+    if (fs.existsSync(ACTIVE_REGISTRY_PATH)) {
+        const activeRegistry = JSON.parse(fs.readFileSync(ACTIVE_REGISTRY_PATH, 'utf8'));
+        const activeEntry = activeRegistry.find(e => e.id === "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER");
+        assertCheck("Overbroad negative result removed from active registry", activeEntry === undefined);
+    }
+    if (fs.existsSync(QUARANTINED_REGISTRY_PATH)) {
+        const quarantinedRegistry = JSON.parse(fs.readFileSync(QUARANTINED_REGISTRY_PATH, 'utf8'));
+        const quarEntry = quarantinedRegistry.find(e => e.id === "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER");
+        assertCheck("Negative result recorded in quarantined_campaign_negatives.json", quarEntry !== undefined);
+        if (quarEntry) {
+            assertCheck("Quarantined record status is QUARANTINED_OVERBROAD_NO_GO",
+                quarEntry.status === "QUARANTINED_OVERBROAD_NO_GO");
         }
     }
 

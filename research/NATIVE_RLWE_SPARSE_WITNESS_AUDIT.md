@@ -12,10 +12,14 @@ all witness finders. A better/reduced basis remains outside that restriction.
 
 The one-witness target invites a tempting algebraic shortcut: set one
 coefficient block to zero or sparse, and solve the other by modular
-inversion while tuning the scalar label. On typical native labels this
-does not produce a sufficiently short point. A union bound covers EVERY
-allowed sparse vector and EVERY nonzero scalar, so adaptively choosing
-them does not evade this particular obstruction.
+inversion while tuning the scalar label. On typical native labels at the three
+saved d^12 reference instances (d=64, 256, 1024), this does not produce a
+point of norm <=R=2*sqrt(dq) (2^40, 2^53, 2^66) with support <=k=44, 193, 796
+(or at the rotational decoder's full passing radius R0=ceil(t_star/(2E_noise)),
+with support <=k=22, 87, 332 spherical / 327 elliptical). A union bound covers
+EVERY allowed sparse vector and EVERY nonzero scalar within those radii and
+support bounds, so adaptively choosing them does not evade this particular
+obstruction.
 
 This rules out a large original-coefficient sparse-output search class,
 including unlimited computation within it, on all but a small fraction

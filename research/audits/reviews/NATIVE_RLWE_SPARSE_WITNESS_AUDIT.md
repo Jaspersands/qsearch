@@ -1,6 +1,6 @@
 # Referee review: NATIVE_RLWE_SPARSE_WITNESS_AUDIT
 
-Note: `research/NATIVE_RLWE_SPARSE_WITNESS_AUDIT.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
+Note: `research/NATIVE_RLWE_SPARSE_WITNESS_AUDIT.md`. Reviewed 2026-11-14 by audit-correction-2026-10-22. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ The density lemma, the union bounds (1)-(2), the integer certificate (4) at k=44
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> On typical native labels this does not produce a sufficiently short point
+> On typical native labels at the three saved d^12 reference instances (d=64, 256, 1024), this does not produce a point of norm <=R=2*sqrt(dq) (2^40, 2^53, 2^66) with support <=k=44, 193, 796 (or at the rotational decoder's full passing radius R0=ceil(t_star/(2E_noise)), with support <=k=22, 87, 332 spherical / 327 elliptical)
 
 - Step: 1. Decision (headline scope)
-- Finding: The certificate covers witnesses of norm <=R=2^40, 2^53, 2^66 (2*sqrt(dq) at the three references); the note never shows R is the decoder's passing radius. The rotational decoder accepts up to R0=ceil(t_star/(2E)), about 2^50.4 at d64, 2^69.5 at d256 and 2^89 at d1024 (native_rlwe_subfield_cover_bounds.json). At R0, inequality (4) certifies only k=22, 87 and 332 (327 elliptical), not 44/193/796. Sparse witnesses of support 23-44 at d64 and norm in (R,R0] are not excluded. Section 6 lists larger radii as out of scope; the headline drops both the radius and the three-instance certification.
+- Finding: The Decision now explicitly specifies the three reference instances (d=64, 256, 1024 at q~d^12), the certificate radius R=2*sqrt(dq) (k=44, 193, 796), and the comparison with the rotational decoder's full passing radius R0 (k<=22, 87, 332/327).
 - Conceded by the note's own self-check: no
 
 ### 2. holds

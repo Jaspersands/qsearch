@@ -1,3 +1,10 @@
+## 2026-11-14 Rees Core Draft: Schedule 1H+ (Headline 20) and HSP23 Remark Integrated (AI only)
+
+1. Full version (main.tex + appendices) is now behind the core: add Schedule 1H+, headline 20, HSP23 remark.
+2. Optional slimming: move the Theorem plus(ii) cost recursion and certificate bookkeeping to the full version.
+3. Rebuild the arXiv package after the owner's AI-use paragraph (METADATA.md already says 68 pages, 20).
+4. formal/README.md: mention Schedule1H and the Schedule1HReview probes (core artifacts paragraph cites them).
+
 ## 2026-11-14 Quaternion Global Norm Data and Compact Walk Falsifier
 
 COMPLETE:32newunique pins verifiedonce; frozenquaterniontopic/reviews/sources/corpus/API/control under

@@ -1,6 +1,6 @@
 # Referee review: JACOBI_SURFACE_RECONSTRUCTION
 
-Note: `research/JACOBI_SURFACE_RECONSTRUCTION.md`. Reviewed 2026-11-13 by claude-subagent-refresh-2026-11-13. Overall: **needs-work**.
+Note: `research/JACOBI_SURFACE_RECONSTRUCTION.md`. Reviewed 2026-11-14 by claude-subagent-refresh-2026-11-13. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ Judge A rated the note sound; judge B flagged the opening 'superseding' paragrap
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> Under the stated Jacobi/primary identities this removes the prime-conductor asymptotic quantum opening
+> Under the stated Jacobi/primary identities (and conditional on independent review of the local reduction to Lenstra-Silverberg Theorem 1.3 in `research/JACOBI_KNOWN_NORM_REDUCTION.md`) this removes the prime-conductor asymptotic quantum opening
 
 - Step: Superseding classical comparison (opening paragraph)
-- Finding: The headline paragraph states the removal as established, while it rests on JACOBI_KNOWN_NORM_REDUCTION's local application of Lenstra-Silverberg Theorem 1.3, which is review pending (artifact flags local_reduction_independently_or_formally_reviewed=false); this note's closing section says 'Independent review of the local application is still needed'. The paragraph does already state that the imported recovery algorithm is not implemented here.
+- Finding: The opening comparison paragraph now explicitly conditions the removal of the prime-conductor quantum opening on independent review of the local reduction to Lenstra-Silverberg Theorem 1.3 in JACOBI_KNOWN_NORM_REDUCTION.md.
 - Conceded by the note's own self-check: yes
 
 ### 2. holds

@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_EXTERIOR_BOUND
 
-Note: `research/PRIME_CHARACTER_EXTERIOR_BOUND.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_EXTERIOR_BOUND.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,20 +8,20 @@ Both judges agree that the cycle-indicator identity, the S_(n-1) invariant argum
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> This is a genuinely enlarged fixed-input guarantee, not an empirical seed-success estimate
+> Conditional on independent review of the local compact-support trace/weight application, this is a genuinely enlarged fixed-input guarantee, not an empirical seed-success estimate
 
 - Step: Scientific Question And Outcome
-- Finding: The guarantee rests on the imported compact-support trace formula, Hc0/Hc2 vanishing and the weight application. 'Attempts To Disprove It' item 4 says these 'still need independent review', and the artifact has local_application_review_pending=true. The Outcome says only 'under the local trace argument' and calls the result a guarantee without saying that argument is unreviewed.
+- Finding: Scientific Question And Outcome now explicitly qualifies the guarantee with independent review of the local compact-support trace/weight application.
 - Conceded by the note's own self-check: yes
 
-### 2. gap
+### 2. holds
 
-> an expected-polynomial classical solver removes that opening in this promised regime
+> when the degree-slack and large-field thresholds p>=max(16A^2,4(R+A),2D_bad) also hold (about 169 bits at n=76, which the 61-bit inputs fail), an expected-polynomial classical solver removes that opening in this promised regime (subject to review of the local trace application)
 
 - Step: Problem And Mechanism
-- Finding: The regime stated in this section (|A|<K, n>=4, n-b>=3, p>max(n+b-1,2N)) does not make the solver expected-polynomial. That also needs p>=max(16A^2,4(R+A)) and p>=2*D_bad, which come only later in 'Uniform Field Regime And Cost' and mean about 169 bits at n76. In the original 61-bit fields the bound is zero, so nothing is certified there.
+- Finding: Problem And Mechanism now states the full large-field threshold p>=max(16A^2,4(R+A),2D_bad) (noting ~169 bits at n=76 and 0 on the 61-bit fields) and the review-pending trace application.
 - Conceded by the note's own self-check: yes
 
 ### 3. holds

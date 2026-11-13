@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_INTERLEAVED_PROBE
 
-Note: `research/PRIME_CHARACTER_INTERLEAVED_PROBE.md`. Reviewed 2026-10-23 by codex-audit-correction-2026-10-23-r3. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_INTERLEAVED_PROBE.md`. Reviewed 2026-11-14 by codex-audit-correction-2026-10-23-r3. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,20 +8,20 @@ Each judge found one scope gap the other missed: A in the Result's 'each origina
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> A Fast Interleaved Decoder Does Not Preserve This DQI Objective
+> Interleaved Separate-Readout DQI Probe: Working Classical Decoder, Failed Separate-Row Quantum Readout At N=127, K=39
 
 - Step: Title
-- Finding: The body says 'The decoder ingredient WORKS' and that the attempted quantum repair (shared support, separate QFTs, selection among original rows) fails, at N127, K39, ell32 with c=5 and c=8 rows, under review-pending bounds. It also says 'Do NOT infer that all interleaved sources or joint quantum processing fail'. The title instead attributes the failure to the decoder and drops these conditions.
+- Finding: The title now distinguishes the working classical collaborative decoder from the failed separate-row quantum readout at N=127, K=39.
 - Conceded by the note's own self-check: no
 
-### 2. gap
+### 2. holds
 
-> The joint product correlation is enhanced, but each original polynomial is nearly uniformly distributed
+> The joint product correlation is enhanced, but at `p=2^61-1, N=127, K=39, ell=32` under the review-pending rank-heralded bound each original polynomial is nearly uniformly distributed (row TV `<= 3.726e-9`, while the small `p=7, 11` controls have density-error bounds `1/6` and `1/10`)
 
 - Step: Candidate And Decision
-- Finding: Near-uniformity is established only at p=2^61-1, N127, K39, ell32, through a review-pending bound conditional on the rank herald (row TV <=3.726e-9). At the executed p7/11 controls the note's density-error bound is only 1/6 and 1/10, so the unqualified sentence is not certified there. The p7/11 individual means (.553571 and .534091, from single-copy .760829 and .785897) sit 1/56 and 1/88 below the uniform 4/7 and 6/11, matching the artifact's predicted_individual_mean, so they do not contradict the sentence; the gap is its missing scope.
+- Finding: Candidate And Decision now scopes near-uniformity to p=2^61-1, N=127, K=39, ell=32 under the review-pending rank-heralded bound (row TV <= 3.726e-9) and discloses the 1/6 and 1/10 density-error bounds on the p=7, 11 controls.
 - Conceded by the note's own self-check: no
 
 ### 3. holds

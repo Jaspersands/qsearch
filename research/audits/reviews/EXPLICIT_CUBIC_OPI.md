@@ -1,6 +1,6 @@
 # Referee review: EXPLICIT_CUBIC_OPI
 
-Note: `research/EXPLICIT_CUBIC_OPI.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/EXPLICIT_CUBIC_OPI.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ Both judges rated the note needs-work for the same title gap and agreed on every
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> Explicit Cubic-Target OPI: A Structural Classical Falsifier
+> Explicit Cubic-Target OPI: Finite Classical Mean-Score Falsifiers And Scoped Pool Bounds
 
 - Step: Title
-- Finding: The headline drops the body's scope: the 'falsifier' is a finite, seeded, best-of-four classical score against a one-shot quantum mean at four sizes, with no matched tails or runtime, and the narrowest margin is 104/127=0.8189 vs 0.8168. The note's own conditional analysis says that if E/N->R the attack cannot beat (1+R)/2, which is below the DQI target.
+- Finding: The title now scopes the result to finite classical mean-score falsifiers and scoped pool bounds.
 - Conceded by the note's own self-check: yes
 
 ### 2. holds

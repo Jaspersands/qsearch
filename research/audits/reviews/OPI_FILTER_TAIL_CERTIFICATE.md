@@ -1,6 +1,6 @@
 # Referee review: OPI_FILTER_TAIL_CERTIFICATE
 
-Note: `research/OPI_FILTER_TAIL_CERTIFICATE.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/OPI_FILTER_TAIL_CERTIFICATE.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,20 +8,20 @@ Both judges agree that the K-wise moment argument, the 2ell+r<=K cutoff and the 
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> Thus classical105/127 and104/127 remain verified witnesses but do NOT kill the quantum tail
+> Thus classical105/127 (seed 29, where the certified quantum lower tail at 105 is 0) and104/127 (seed 71, where positive ideal-filter lower tails are certified at 102 and 104) remain verified witnesses; a finite classical witness does not upper-bound the ideal quantum tail, although positive quantum lower bounds are certified only up to threshold 104 on N=127
 
 - Step: Live Findings, closing paragraph
-- Finding: On seed 29 (classical_best_of_four=105), the certified lower tail at 105 is 0 for filter degrees 16/18/19. Nothing quantum is certified at that instance's classical score, and the only positive tails (at 102, and at 104 for seed 71) lie below it. The summary also omits the six smaller artifact instances (N7,K3 and N31,K9, seeds 29/71), where classical reaches 7/7, 27/31 and 30/31 and every certified quantum lower tail at those thresholds is 0. The sentence is true only in the weak sense that a finite witness cannot upper-bound a quantum probability.
+- Finding: Live Findings now distinguishes seed 71 (positive ideal lower tail at 104) from seed 29 (certified lower tail 0 at 105) and the six smaller N=7,K=3 and N=31,K=9 instances (certified lower tail 0 at the classical best scores).
 - Conceded by the note's own self-check: no
 
-### 2. gap
+### 2. holds
 
-> For degree19, Pr[S>=104] >=0.0307255 for EVERY balanced input of the stated RS form
+> For degree19, under the ideal filtered distribution P(S)^2 of an exact coherent decoder/filter with balanced predicates, Pr[S>=104] >=0.0307255 for EVERY balanced input of the stated RS form
 
 - Step: Live Findings
-- Finding: The number and the universality across inputs hold. From the input-independent mean 0.8168300, (103.7374-103)/24=0.0307255, matching instance 7. But the probability is that of the ideal filtered distribution P(S)^2, i.e. an exact coherent decoder/filter with exactly balanced predicates. The sentence presents it as a guarantee without that premise, and so does the status block. The premise appears only as 'ideal independent executions' and 'trace-error allowance' in the tail section and in 'Run And Review'.
+- Finding: Live Findings now explicitly states that Pr[S>=104] >= 0.0307255 holds under the ideal filtered distribution P(S)^2 of an exact coherent decoder/filter with balanced predicates.
 - Conceded by the note's own self-check: no
 
 ### 3. holds
@@ -42,7 +42,7 @@ Both judges agree that the K-wise moment argument, the 2ell+r<=K cutoff and the 
 
 ### 5. holds
 
-> At105 the implemented moment certificates give zero as the lower bound
+> At105 (the classical best-of-four score on seed 29), and at the classical scores 7/7, 27/31 and 30/31 on the six smaller N=7,K=3 and N=31,K=9 controls, the implemented moment certificates give zero as the lower bound
 
 - Step: Live Findings
 - Finding: For instance 6 (seed 29), all three filters have tail lower bound 0 at 105, with upper bounds 0.254/0.752/0.988. The note correctly labels this UNKNOWN.
@@ -50,7 +50,7 @@ Both judges agree that the K-wise moment argument, the 2ell+r<=K cutoff and the 
 
 ### 6. holds
 
-> Degree18 also gives a positive lower bound at104
+> Degree18 (0.004480) and degree16 (9.84e-5) also give positive lower bounds at104
 
 - Step: Live Findings
 - Finding: The artifact's instance 7 gives 0.004480 for degree 18 at 104. Degree 16 is also positive there (9.84e-5); the note does not mention it, but this does not contradict the note.

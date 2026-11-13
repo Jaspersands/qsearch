@@ -1,13 +1,15 @@
 # Dihedral Coset State Chirp Aliasing Barrier & Non-Linear Phase Spectral Flatness Law
 
-**Status:** PROVED / INDEPENDENTLY CROSS-CHECKED / REGISTRY SYNCHRONIZED  
+**Status:** REVIEW-PENDING / SCOPED TO SINGLE-COPY QFT & UNSTRUCTURED DE-CHIRPING ORACLE (UNIVERSAL MULTI-COPY SIEVING EXCLUSION WITHDRAWN)  
 **Domain:** Dihedral Hidden Subgroup Problem (DHSP), Dihedral Coset States, Algebraic Phase Families, Quadratic Gauss Sums, Bombieri-Weil Bounds, Gowers $U_3$ Norm, Quantum Query Complexity (BBBV)  
 **Negative Result ID:** `NEG-DIHEDRAL-COSET-CHIRP-ALIASING-SPECTRAL-FLATNESS-BARRIER`  
-**Theorem Module:** [`theorems/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.py`](file:///Users/jaspersands/Desktop/quantum%20algorithm%20search/theorems/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.py)  
-**Artifact Report:** [`research/classical_baselines/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.json`](file:///Users/jaspersands/Desktop/quantum%20algorithm%20search/research/classical_baselines/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.json)  
-**Independent Cross-Check:** [`research/certificates/dihedral_coset_chirp_aliasing_spectral_flatness_barrier_crosscheck.js`](file:///Users/jaspersands/Desktop/quantum%20algorithm%20search/research/certificates/dihedral_coset_chirp_aliasing_spectral_flatness_barrier_crosscheck.js)  
-**Test Suite:** [`tests/test_dihedral_coset_chirp_aliasing_spectral_flatness_barrier.py`](file:///Users/jaspersands/Desktop/quantum%20algorithm%20search/tests/test_dihedral_coset_chirp_aliasing_spectral_flatness_barrier.py)  
+**Theorem Module:** [`theorems/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.py`](../theorems/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.py)  
+**Artifact Report:** [`research/classical_baselines/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.json`](classical_baselines/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.json)  
+**Independent Cross-Check:** [`research/certificates/dihedral_coset_chirp_aliasing_spectral_flatness_barrier_crosscheck.js`](certificates/dihedral_coset_chirp_aliasing_spectral_flatness_barrier_crosscheck.js)  
+**Test Suite:** [`tests/test_dihedral_coset_chirp_aliasing_spectral_flatness_barrier.py`](../tests/test_dihedral_coset_chirp_aliasing_spectral_flatness_barrier.py)  
 **CLI Command:** `python3 qsearch.py dihedral-coset-chirp-aliasing-spectral-flatness-barrier`
+
+> **OVERRIDING SCOPE CORRECTION (2026-11-14)**: The single-copy quadratic Gauss sum flatness identity ($|\hat{F}(k)|^2 = 1/p$ for degree-3 phases), the Bombieri-Weil single-copy Fourier bound ($P(k) \le (d-2)^2/p$), and the BBBV lower bound for unstructured trial de-chirping are exact. However, the universal multi-copy sieve exclusion in Claim 4 (tracing out $v = x_1 + x_2$ without conditioning on measured difference registers) and the claim that no multi-copy or algebraic-difference quantum receiver can recover higher-degree phase shifts are **withdrawn**: measuring or conditioning on difference coordinates $u = x_1 - x_2$ converts the cubic cross-phase into a known-multiplier linear character in $v$ (compare Roetteler's quadratic/polynomial hidden-shift reductions and `CONJUGATE_CHIRP_REPAIR.md`).
 
 ---
 

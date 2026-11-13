@@ -12,7 +12,9 @@ fixed-instance success theorem. An explicit strict input solved by Q13
 falsifies uniform success of the first monic pencil; varying the square
 leading coefficient repairs that instance. Existing scores/proposals below
 remain the original producer's historical results, not the strongest current
-high-rate baseline. K39 and general fixed-input/asymptotic solvability remain open.
+high-rate baseline. K39, the saved high-rate mixed controls N31,K16 seed71
+(30/31), r=3 N63,K46 mixed (55/63 and 56/63), r=4 N32,K24 mixed (28/32 and
+27/32), and general fixed-input/asymptotic solvability remain open.
 
 ## Scientific Question And Portfolio Choice
 
@@ -127,8 +129,10 @@ uses `Q(a_i)=t_i+beta_i`, not the invalid strict zero-residual shortcut.
 The general jet/conic attack is explicitly disabled on strict inputs: at
 zero offset and an opposite coset there may be NO valid nonzero local root.
 
-Tight degree deserves a separate statement. At p5,N4,K2,r2, shifts(0,0,0,1),
-all25 native polynomials fail perfect strict satisfaction. At K3 the new
+Tight degree deserves a separate statement. At p5,N4,K2,r2, shifts(0,0,0,1)
+with the common square coset (orientation 0, beta=1), all25 native polynomials
+fail perfect strict satisfaction (whereas with the common nonsquare coset
+beta=2, the constant Q=3 is a perfect strict solution at K2). At K3 the new
 construction succeeds. This finite exhaustive counterexample prevents
 silently dropping the extra degree or calling an algorithmic non-applicability
 result an unsatisfiability proof on other instances.
@@ -183,8 +187,9 @@ scores are118/118. The adaptive pass below improves the mixed witnesses.
 Earlier fixed-leading jet trials scored120/118; releasing an extra leading
 coefficient changes the seeded proposals and need not monotonically improve
 best-of-eight. This is not an optimized benchmark or hardness indication.
-At N31,K16 mixed scores improve31/29 to31/30; global inputs are perfect. Common-coset
-r=3,N63,K46 and r=4,N32,K24 controls are also perfect.
+At N31,K16 mixed scores improve31/29 to31/30 (leaving seed71 at 30/31); global
+inputs are perfect. Common-coset r=3,N63,K46 and r=4,N32,K24 controls are also
+perfect, while their mixed controls reach 55/63, 56/63 (r=3) and 28/32, 27/32 (r=4).
 
 Missing a perfect mixed witness on one finite input does not imply classical
 hardness. Finding a perfect one does not dequantize an asymptotic family.

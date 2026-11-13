@@ -1,6 +1,6 @@
 # Referee review: NATIVE_RLWE_CONDUCTOR_ORDER_AUDIT
 
-Note: `research/NATIVE_RLWE_CONDUCTOR_ORDER_AUDIT.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/NATIVE_RLWE_CONDUCTOR_ORDER_AUDIT.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ The principality gate, the contained-lattice index Norm_K(beta), the local-certi
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> Native RLWE: Exact Metric, Nonprincipal Quaternion Ideal
+> Native RLWE: Exact Metric, Nonprincipal Quaternion Ideal (for M != 0 mod q, Review Pending)
 
 - Step: Title (headline scope)
-- Finding: The title asserts nonprincipality without conditions. Section 3 proves nonprincipality only for M!=0 mod q: the zero ratio gives Lambda_0=qR+Rj=O_q*j, which is principal and has source probability q^(-d). The global proof also depends on the cited DDK Proposition 3 and is review pending. The title needs 'for M!=0 mod q'.
+- Finding: The title now explicitly includes the M != 0 mod q condition and review-pending status.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

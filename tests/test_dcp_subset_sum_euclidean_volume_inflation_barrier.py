@@ -7,6 +7,7 @@ import pytest
 
 from theorems.dcp_subset_sum_euclidean_volume_inflation_barrier import (
     NEGATIVE_RESULT_ID,
+    QUARANTINED_REGISTRY,
     REPORT,
     REGISTRY,
     audit_finite_density_one_geometry,
@@ -28,7 +29,7 @@ def test_ball_volume_log2_and_stirling_convergence():
 
 
 def test_expected_lattice_points_exponential_growth():
-    """Verify that expected integer lattice points in ball B_n(sqrt(n)) grows as 2^{Omega(n)}."""
+    """Verify that continuous heuristic volume/det ratio in ball B_n(sqrt(n)) grows as 2^{Omega(n)}."""
     sizes = [16, 20, 30, 40, 50]
     for n in sizes:
         log2_pts = compute_expected_lattice_points_log2(n, math.sqrt(n), float(n))
@@ -43,7 +44,7 @@ def test_expected_lattice_points_exponential_growth():
 
 
 def test_finite_audit_16_geometry():
-    """Verify that binary witness lies 4 times outside unique BDD decoding radius."""
+    """Verify uncentered heuristic radius ratio calculation at n=16."""
     res = audit_finite_density_one_geometry(n=16)
     assert res["witness_outside_bdd_radius"] is True
     assert res["witness_norm_to_bdd_radius_ratio"] > 4.0
@@ -51,7 +52,7 @@ def test_finite_audit_16_geometry():
 
 
 def test_scaling_profiles_exponential_undercoverage():
-    """Verify that polynomial list decoders L = n^3 achieve only 2^{-Omega(n)} coverage for n >= 16."""
+    """Verify uncentered continuous volume ratio scaling profiles for n >= 16."""
     sizes = [16, 24, 30, 40, 50, 64, 100]
     for n in sizes:
         res = evaluate_density_one_scaling(n)
@@ -65,24 +66,30 @@ def test_scaling_profiles_exponential_undercoverage():
 
 
 def test_report_structure_and_claim_gate():
-    """Verify that build_report disallows speedup claims and satisfies all obligations."""
+    """Verify that build_report disallows speedup claims and records the 2026-11-06 retraction."""
     report = build_report()
-    assert report["status"] == "DCP_SUBSET_SUM_EUCLIDEAN_VOLUME_INFLATION_BARRIER_PROVED"
+    assert report["status"] == "UNIVERSAL_SUBSET_SUM_VOLUME_BARRIER_RETRACTED_BALL_VOLUME_FORMULA_ONLY"
     assert report["claim_gate"]["speedup_claim_allowed"] is False
     assert report["claim_gate"]["euclidean_ball_volume_inflation_proved"] is True
-    assert report["claim_gate"]["expected_lattice_point_exponential_multiplicity_proved"] is True
-    assert report["claim_gate"]["bdd_radius_collapse_proved"] is True
-    assert report["claim_gate"]["polynomial_list_exponential_undercoverage_proved"] is True
-    assert report["claim_gate"]["universal_subset_sum_lattice_trilemma_proved"] is True
+    assert report["claim_gate"]["expected_lattice_point_exponential_multiplicity_proved"] is False
+    assert report["claim_gate"]["bdd_radius_collapse_proved"] is False
+    assert report["claim_gate"]["polynomial_list_exponential_undercoverage_proved"] is False
+    assert report["claim_gate"]["universal_subset_sum_lattice_trilemma_proved"] is False
+    assert report["claim_gate"]["universal_exclusion_retracted_2026_11_06"] is True
     assert report["headline_metrics"]["speedup_claim_allowed"] is False
 
 
-def test_negative_result_registered():
-    """Verify that NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER is recorded in registry."""
+def test_negative_result_quarantined():
+    """Verify that NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER is quarantined and not active."""
     assert REGISTRY.exists()
     with open(REGISTRY, "r", encoding="utf-8") as f:
         registry = json.load(f)
-    match = next((item for item in registry if item.get("id") == NEGATIVE_RESULT_ID), None)
-    assert match is not None, f"Negative result {NEGATIVE_RESULT_ID} missing from registry"
-    assert match["evidence"]["speedup_claim_allowed"] is False
-    assert "DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER" in match["applies_to"]
+    assert all(item.get("id") != NEGATIVE_RESULT_ID for item in registry)
+
+    assert QUARANTINED_REGISTRY.exists()
+    with open(QUARANTINED_REGISTRY, "r", encoding="utf-8") as f:
+        quarantined = json.load(f)
+    match = next((item for item in quarantined if item.get("id") == NEGATIVE_RESULT_ID), None)
+    assert match is not None, f"Negative result {NEGATIVE_RESULT_ID} missing from quarantined registry"
+    assert match["status"] == "QUARANTINED_OVERBROAD_NO_GO"
+    assert match["review"] == "research/DCP_HALF_CENTER_DGS_ADMISSION.md"

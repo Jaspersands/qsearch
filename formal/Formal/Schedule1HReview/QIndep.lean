@@ -28,7 +28,7 @@ theorem cTyp_mul (e m : K) : ∀ (j : ℕ) (k : Typ j), cTyp (e * m) j k = cTyp 
       rw [cTyp_mul e m j k, pow_succ]; ring
 
 /-- `T(c)` is unchanged when each entry is multiplied by a nonzero `κ`-th power. -/
-theorem Tset_scale {τ : Type*} [Fintype τ] [DecidableEq τ] {κ : ℕ} (hκ : 0 < κ)
+theorem Tset_scale {τ : Type*} [Fintype τ] {κ : ℕ} (hκ : 0 < κ)
     (c : τ → K) (π : τ → K) (hπ : ∀ k, π k ≠ 0) :
     Tset κ (fun k => c k * π k ^ κ) = Tset κ c := by
   ext x
@@ -94,11 +94,11 @@ theorem Apaper_indep (qf qf' : ℕ → K) :
   | _ κ ih =>
   intro hκ hκQ hq hq' a
   by_cases h1 : κ ≤ 1
-  · rw [Apaper.eq_1 qf' κ a, Apaper.eq_1 qf κ a, dif_pos h1, dif_pos h1]
-  · rw [Apaper.eq_1 qf' κ a, Apaper.eq_1 qf κ a, dif_neg h1, dif_neg h1]
+  · rw [Apaper.eq_1 qf' κ a, Apaper.eq_1 qf κ a, dite_eq_left h1, dite_eq_left h1]
+  · rw [Apaper.eq_1 qf' κ a, Apaper.eq_1 qf κ a, dite_eq_right h1, dite_eq_right h1]
     congr 1
     ext n
-    simp only [Set.mem_insert_iff, Set.mem_setOf_eq]
+    simp only [Set.mem_insert_iff, Set.mem_ofPred_eq]
     apply or_congr_right
     constructor
     · rintro ⟨s, f1, hev, hadm, rfl⟩

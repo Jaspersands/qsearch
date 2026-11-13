@@ -656,5 +656,111 @@
     "review": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md",
     "reviewed_on": "2026-10-30",
     "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER",
+        "DCP-SUBSET-SUM-AFFINE-BDD-GEOMETRY",
+        "DCP-BABAI-DEVIATION-DEPTH-BARRIER"
+      ],
+      "claim": "Euclidean lattice reduction, BDD algorithms, or nearest-plane list decoders can achieve polynomial-time or inverse-polynomial coverage for density-one modular subset sum.",
+      "evidence": {
+        "artifact": "research/classical_baselines/dcp_subset_sum_euclidean_volume_inflation_barrier.json",
+        "bdd_radius_ratio": "||e||_2 / lambda_1(L) = sqrt(2 pi e) / 2 = 2.066 > 0.5, placing the witness far outside unique BDD radius",
+        "euclidean_ball_volume": "Vol(B_n(sqrt(n))) = (2 pi e)^{n/2} / sqrt(pi n) = 2^{2.047 n - 0.5 log2(pi n)}",
+        "expected_point_multiplicity": "N_points = Vol(B_n(sqrt(n))) / 2^n = (2.066)^n / sqrt(pi n) = 2^{1.047 n - 0.5 log2(pi n)} = 2^{Omega(n)}",
+        "list_undercoverage": "P_coverage <= poly(n) / 2^{1.047 n} = 2^{-Omega(n)} for any polynomial-size list",
+        "speedup_claim_allowed": false
+      },
+      "id": "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER",
+      "lesson": "Euclidean lattice reduction fundamentally fails at density one due to Euclidean volume inflation. At density d=1 (D = 2^n), the Euclidean ball of radius sqrt(n) containing the true binary witness has volume 2^{2.047 n}, enclosing an exponential sea of 2^{1.047 n} integer lattice points. Because Euclidean algorithms optimize geometric distance without coordinate bounds, they preferentially output non-binary points of equal or smaller Euclidean norm. The true binary witness lies 4 times outside the BDD unique decoding radius, forcing any list decoder to inspect 2^{Omega(n)} candidates, rendering all Euclidean lattice approaches exponentially ineffective.",
+      "reason_invalid": "For all density-one modular subset-sum instances (modulus D approx 2^n), the Euclidean ball of radius sqrt(n) contains Vol / 2^n = 2^{1.047 n - 0.5 log2(pi n)} = 2^{Omega(n)} integer lattice points by the Gaussian volume heuristic. The true binary witness has norm sqrt(n), which is a factor of 4.13 larger than the BDD unique decoding radius lambda_1 / 2 approx 0.242 sqrt(n). Euclidean lattice algorithms (LLL, BKZ, Babai) optimize unconstrained Euclidean distance and preferentially output non-binary points. Any polynomial-size list decoder has coverage bounded by poly(n) * 2^{-1.047 n} = 2^{-Omega(n)}, completely falsifying the hypothesis that lattice algorithms can solve density-one modular subset sum in polynomial time.",
+      "source": "research/classical_baselines/dcp_subset_sum_euclidean_volume_inflation_barrier.json"
+    },
+    "original_sha256": "17caf11376c66dd0a2d055e758a236e53120954e1f644260b25c7aea18f08e65",
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Correct centering retains coordinate parity (signed difference lattice 2L with determinant 2^n D/g); dropping parity modulo 2D can introduce spurious non-binary solutions.",
+      "In the parity-preserving affine coset, every integer vector is at least sqrt(n)/2 from the half-integer midpoint, with equality exactly for binary vectors; non-binary vectors cannot be closer than a feasible Boolean witness.",
+      "At density one, exact mean closest-list cardinality is 1 for IID coefficients and independent uniform target (2 - 2^-n for uniformly planted target); continuous volume/determinant is not a counting theorem for this ensemble.",
+      "Dividing a polynomial list size by the continuous volume heuristic does not establish a universal list-decoding upper bound."
+    ],
+    "review": "research/DCP_HALF_CENTER_DGS_ADMISSION.md",
+    "reviewed_on": "2026-11-06",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+        "LIE-TYPE-MATRIX-HSP",
+        "SYMPLECTIC-PARABOLIC-HSP",
+        "ISOTROPIC-PARABOLIC-SPECTRUM"
+      ],
+      "claim": "Quantum algorithms can achieve an exponential speedup for finding unknown isotropic parabolic subgroups P_U in Sp(2n, F_q) over classical algorithms.",
+      "evidence": {
+        "gelfand_pair_collapse": "Rank 3 commutant, [B_i, B_j] = 0, irrep dims [1, 5, 9], 0.000 bits mutual info",
+        "heisenberg_unipotent_order": "|U_1| = q^{2n-1}, abelian in char 2 vs Heisenberg class 2 in char >= 3",
+        "polynomial_dequantization": "k <= O(log n) solvable in poly(n, log q) classical time",
+        "query_complexity_bound": "Q <= 4(2n - k)(q^k + 1) = O(n q^k)",
+        "speedup_claim_allowed": false,
+        "transvection_equivalence": "T_u in P_U <=> u in U^perp for all 1 <= k <= n"
+      },
+      "id": "NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND",
+      "lesson": "Isotropic parabolic HSP in Sp(2n, F_q) cannot yield an exponential quantum speedup. For all low-dimensional isotropic subspaces (k <= O(log n)), the problem is classically dequantized in polynomial time via the General Isotropic Transvection Lemma (T_u in P_U <=> u in U^perp) in O(n q^k) queries. Weak Fourier sampling is spherical-extinguished (0 mutual information), and multi-copy collective state tomography is obstructed by the commutant algebra.",
+      "reason_invalid": "For every k-dimensional isotropic subspace U in F_q^{2n} (1 <= k <= n) and every non-zero vector u, the symplectic transvection T_u belongs to P_U if and only if u in U^perp. This algebraic equivalence allows an explicit classical randomized algorithm to reconstruct U in expected O(n q^k) queries and O(n^3) classical time. For all k <= O(log n) (including the Heisenberg parabolic k=1), the classical query and time complexities are strictly polynomial poly(n, log q), completely dequantizing the problem. For intermediate k, the complexity is subexponential 2^{O(sqrt(N_input))}. Additionally, for k=1 the unipotent radical is abelian in characteristic 2 and class 2 Heisenberg in odd characteristic, and (Sp(2n, F_2), P_1) is a symmetric Gel'fand pair yielding 0.000 bits of single-copy weak Fourier mutual information.",
+      "source": "research/ISOTROPIC_PARABOLIC_HSP_SPECTRUM_DEQUANTIZATION.md"
+    },
+    "original_sha256": "091e19546560a434283acf94be345781c34218dfceaf04b359a7a03f7f16a6b2",
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "The O(n q^k) symplectic transvection query bound is polynomial in n and log(q) only when q^k <= poly(n, log q), i.e., k <= C log_q(n), not for all k <= O(log n) at arbitrary growing field size q (even at k=1 when q is superpolynomial in n).",
+      "The blanket polynomial dequantization and uniform subexponential conversion claims across arbitrary field sizes q are withdrawn."
+    ],
+    "review": "research/PARABOLIC_CUT_LIST_CORRECTION.md",
+    "reviewed_on": "2026-10-23",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-SINGER-CYCLE-TORAL-HSP-BARRIER",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+        "LIE-TYPE-MATRIX-HSP",
+        "NON-SPLIT-TORAL-HSP",
+        "SINGER-CYCLE-OBSTRUCTION",
+        "DELIGNE-LUSZTIG-COMMUTANT-BARRIER"
+      ],
+      "claim": "Quantum algorithms can efficiently find unknown non-split maximal tori (Singer cycles) in GL(n, F_q) in polynomial time.",
+      "evidence": {
+        "classical_query_lower_bound": "Omega(q^{n(n-1)/4}) = 2^{Omega(n^2 log q)}",
+        "deligne_lusztig_commutant_dim": "dim(C_M) >= n^M, gate lower bound 2^{Omega(n^2 log n)}",
+        "gelfand_pair_collapse": "(GL(2, F_3), T) rank 3 with irreps [1, 2, 3], 0.000 bits mutual info",
+        "singer_cycle_subgroup_count": "N_Singer = (1/n) q^{n(n-1)/2} prod_{j=1}^{n-1} (q^j - 1) = 2^{Theta(n^2 log q)}",
+        "speedup_claim_allowed": false,
+        "transvection_emptiness": "T cap Transvections = empty (T acts irreducibly on F_q^n)"
+      },
+      "id": "NEG-SINGER-CYCLE-TORAL-HSP-BARRIER",
+      "lesson": "Non-split maximal tori (Singer cycles) in GL(n, F_q) constitute an impenetrable barrier for both classical and quantum algorithms. Because T acts irreducibly on F_q^n, it contains zero transvections, zero unipotent elements, and stabilizes no non-trivial subspaces. Classical collision algorithms require 2^{Omega(n^2 log q)} queries. Single-copy weak Fourier sampling suffers complete spherical extinction (0.000 bits mutual information) across cuspidal Deligne-Lusztig representations of exponential dimension 2^{Theta(n^2 log q)}. Multi-copy collective tomography requires diagonalizing a commutant of dimension >= n^M, enforcing a quantum gate lower bound of 2^{Omega(n^2 log n)}.",
+      "reason_invalid": "Every element g in T \\ F_q* I has an irreducible characteristic polynomial of degree n over F_q with no eigenvalues in F_q. Consequently, T contains no transvections or unipotent matrices (T cap Transvections = empty). Classical structured probes cannot produce collisions, enforcing an unconditional query lower bound of Omega(sqrt(|GL|/|T|)) = 2^{Omega(n^2 log q)}. Weak Fourier sampling over GL(n, F_q) projects onto cuspidal Deligne-Lusztig representations R_T^G(theta) with probability d_theta / |G/T|, which is identically independent of T (0.000 bits of mutual information). Multi-copy measurements on M copies require diagonalizing a commutant algebra of dimension >= n^M, which for M = Omega(n^2) copies needed to identify T among N_Singer = 2^{Theta(n^2 log q)} candidates requires at least 2^{Omega(n^2 log n)} quantum gates.",
+      "source": "research/SINGER_CYCLE_TORAL_HSP_OBSTRUCTION_DELIGNE_LUSZTIG_BARRIER.md"
+    },
+    "original_sha256": "73eabf16a1b0328bb0c34ef16773bb47c95f311b24e18a6598fe5f81e555dfe2",
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "For GL_n(F_p) with odd p, standard mixed Singer coset-copy complexity is Theta(n) at fixed error by Hayashi-Kawachi-Kobayashi (arXiv:quant-ph/0604174 Theorems 2.3/2.5), refuting the claimed Omega(n^2) copy requirement.",
+      "Dimension of the commutant algebra does not establish a universal 2^{Omega(n^2 log n)} quantum gate lower bound.",
+      "Irreducibility of the full Singer subgroup action does not imply irreducibility of every nonscalar element for composite n (e.g., n=4 subfield elements preserve proper subspaces).",
+      "For odd p, g and c*g with nonidentity c in F_p^* collide for every hidden Singer subgroup, refuting the stated universal pair-collision bound."
+    ],
+    "review": "research/HIDDEN_FIELD_CHARACTER_ADMISSION.md",
+    "reviewed_on": "2026-11-06",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   }
 ]

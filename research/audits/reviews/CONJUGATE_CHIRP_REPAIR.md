@@ -1,6 +1,6 @@
 # Referee review: CONJUGATE_CHIRP_REPAIR
 
-Note: `research/CONJUGATE_CHIRP_REPAIR.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
+Note: `research/CONJUGATE_CHIRP_REPAIR.md`. Reviewed 2026-11-14 by audit-correction-2026-10-22. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ Both judges agreed that the bilinear identity, the Kloosterman/Salie coordinate 
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> m=Theta(n), bounded list densities and p>=m+1, H<=exp(O(n)) but p^n grows as exp(Omega(n log n))
+> m=Theta(n), list densities in [delta, 1-delta] bounded away from 0 and 1 (so A^2=max(rho/(1-rho),(1-rho)/rho)=O(1)), shell degree ell<=m (or for singleton/sparse lists with A^2<=p-1, shell degree ell<=(1-Omega(1))n), and p>=m+1, H<=exp(O(n)) (or p^((1-Omega(1))n) exp(O(n))) while p^n grows as exp(Omega(n log n))
 
 - Step: Projecting The Extra Register To Zero Does Not Repair Efficiency
-- Finding: The producer sets A^2=max(rho/(1-rho),(1-rho)/rho) (theorems/conjugate_chirp_repair.py, postselection_bound), so H<=(1+A^2)^m=exp(O(n)) needs list densities bounded away from 0 and 1. Every density is trivially bounded, so 'bounded' states no condition. For singleton lists rho=1/p, A^2=p-1 and H>=binom(m,ell)(p-1)^ell. The bound is stated for arbitrary degree ell (the code accepts ell up to m), so with ell>=n the ratio H/p^n need not be small. The 'not polynomial' conclusion needs either densities in [delta,1-delta] or ell<=(1-Omega(1))n, and the note states neither.
+- Finding: The asymptotic obstruction statement now explicitly includes the hypotheses that list densities lie in [delta, 1-delta] bounded away from 0 and 1 and that the shell degree satisfies ell<=m (or ell<=(1-Omega(1))n for singleton/sparse lists).
 - Conceded by the note's own self-check: no
 
 ### 2. holds

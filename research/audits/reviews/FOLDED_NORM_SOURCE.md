@@ -1,6 +1,6 @@
 # Referee review: FOLDED_NORM_SOURCE
 
-Note: `research/FOLDED_NORM_SOURCE.md`. Reviewed 2026-10-23 by codex-audit-correction-2026-10-23-r3. Overall: **needs-work**.
+Note: `research/FOLDED_NORM_SOURCE.md`. Reviewed 2026-11-14 by codex-audit-correction-2026-10-23-r3. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,20 +8,20 @@ Both judges agree on the two gaps, and I confirmed each. The title says 'Matched
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> Each classical record uses32 complete-block fits plus64 repair proposals
+> Each basic fit/repair record uses32 complete-block fits plus64 repair proposals, and the norm-pencil attack below adds four 2048-parameter retained-value lines (solving the 25-block input at 25/25 and reaching 57/65 on the 65-block input, above its 56.698728 floor)
 
 - Step: Same-Input Classical Results And Limits (table)
-- Finding: The 'Classical Best' column (21/53/99) omits the norm-pencil results the note reports later (25/57/104, matching folded_norm_attacks.json). Those results solve the 25-block input and put the 65-block input at 57, above its 56.698728 floor. Read alone, the table suggests the classical baseline lies below every quantum floor, which holds only at 127 blocks.
+- Finding: The table and description now explicitly include the norm-pencil attack column (25, 57, and 104 across the three records) alongside the 32 complete-block fits and 64 repair proposals.
 - Conceded by the note's own self-check: no
 
-### 2. gap
+### 2. holds
 
-> Folded Norm Source: Phases, Scalar Rank And Matched Attacks
+> Folded Norm Source: Phases, Scalar Rank And Same-Input Attacks
 
 - Step: Title
-- Finding: The norm-pencil section states that the budgets are 'deliberately EXPLICIT but NOT MATCHED' (96 full interpolations against 8192 scored line parameters), and that 'No matched quantum wall-clock/gate comparison is claimed'. The attacks are matched only in using the same input, so the title implies a cost-matched comparison that the body disclaims.
+- Finding: The title now calls the classical comparisons Same-Input Attacks rather than Matched Attacks.
 - Conceded by the note's own self-check: no
 
 ### 3. holds

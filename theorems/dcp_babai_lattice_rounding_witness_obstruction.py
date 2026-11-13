@@ -473,6 +473,8 @@ def build_dcp_babai_lattice_rounding_witness_obstruction_report(
             "theorem2_half_integer_dichotomy_passed": bool(all_t2),
             "theorem3_babai_filter_swap_formula_passed": bool(all_t3),
             "all_theorems_passed": bool(all_passed),
+            "all_scoped_identities_passed": bool(all_passed),
+            "universal_obstruction_theorems_passed": False,
             "universal_overflow_claim": "RETRACTED_BY_STRUCTURED_COUNTEREXAMPLE",
             "general_decay_bound_proved": False,
             "verification_scope": "finite_identity_controls_and_local_derivations_review_pending",

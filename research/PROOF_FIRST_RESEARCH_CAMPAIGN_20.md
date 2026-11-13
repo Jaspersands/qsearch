@@ -2,8 +2,10 @@
 
 **Campaign Identifier**: `CAMPAIGN-PROOF-FIRST-20-INVESTIGATIONS`  
 **Date**: 2026-10-11  
-**Status**: COMPLETED & RIGOROUSLY PROVED  
+**Status**: RETRACTED OVERBROAD CAMPAIGN CLAIMS / LOCAL FINITE IDENTITIES ONLY (`review-pending`)  
 **Core Invariant**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
+
+> **OVERRIDING CORRECTION (2026-11-14)**: The universal `PROVED` labels across Investigations 1–20 are **withdrawn** as overbroad campaign barriers. Only the exact finite-dimensional matrix/commutant identities and classical baseline evaluations remain valid; universal exclusions of non-abelian HSP, code equivalence, or multi-copy phase sieving outside the explicitly modeled access/oracle models are retracted (for example, Investigation 2's $2^{\Omega(\sqrt{\log N})}$ pool bound applies only to the unstructured single-step birthday pool, not Kuperberg's $2^{O(\sqrt{\log N})}$-query multi-stage collimation sieve; Investigation 13's Kronecker multiplicity lower bound applies only to generic unstructured Racah basis compilation, not structured Nilpotent/Rees HSP reductions).
 
 ---
 

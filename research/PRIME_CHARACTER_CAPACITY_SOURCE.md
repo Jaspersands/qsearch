@@ -8,9 +8,13 @@ executed large quantum decoder is claimed.
 
 For the explicit low-rate prime-character model, can we control source-error
 ambiguity beyond half the minimum distance without randomizing input shifts?
-YES for the flat-spectrum primes below. But negligible ambiguity is NOT an
-efficient decoder. The full capacity-decoding paper has been inspected past
-its abstract, and its finite/running-time qualifications matter severely.
+YES at the large flat-spectrum instance N127,K39,p=2^61-1 for intermediate
+radii ell=24 and ell=32 (both zero conventions), whereas the coherent-distance
+bound becomes trivial (=1) as the radius approaches capacity at ell=37,38 and
+the small N6,K3,ell2 controls have non-negligible bad-mass bounds 1, 1/3 and
+1/7. Moreover, negligible ambiguity is NOT an efficient decoder. The full
+capacity-decoding paper has been inspected past its abstract, and its
+finite/running-time qualifications matter severely.
 
 The concrete route is known DQI: generate sparse Fourier errors, compute a
 public RS syndrome, coherently erase uniquely decodable errors, then perform

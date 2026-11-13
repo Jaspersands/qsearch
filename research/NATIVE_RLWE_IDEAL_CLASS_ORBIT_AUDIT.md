@@ -1,4 +1,4 @@
-# Native Quaternion Ideal Classes: Public Dihedral Orbits
+# Native Quaternion Ideal Classes on the Generic Unit Source: Public Dihedral Orbits (Review Pending)
 
 2026-10-05. LOCAL DERIVATION / REVIEW PENDING. No independent theorem review,
 novelty, short-element algorithm, quantum speedup, or cryptographic claim.

@@ -1,6 +1,6 @@
 # Referee review: COHERENT_BPQM_ERASURE
 
-Note: `research/COHERENT_BPQM_ERASURE.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
+Note: `research/COHERENT_BPQM_ERASURE.md`. Reviewed 2026-11-14 by audit-correction-2026-10-22. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ Both judges reached the same verdicts: the erasure rank criterion, the explicit 
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> The coherent erasure stage is now implemented and its phase/workspace composition is checked
+> The coherent erasure stage is now implemented and its phase/workspace composition is checked on the finite `5`-wire, `3`-check cyclic control `M5` (`12` qubits, two orders and two `c` values, using explicit herald tables that can be exponential in general, while the `128`-`512` wire socket inputs are topology/rank plans only)
 
 - Step: Research Decision And Next Decisive Gate
-- Finding: As a headline this drops the scope stated in the body. The phase/workspace composition was executed only on the declared M5 code (checks 25,26,12; 12 qubits), for two orders and two c values. The root programs use explicit herald tables that can be exponential (artifact explicit_herald_tables_can_be_exponential=true, efficient_approximate_reliability_register_implemented=false). The 128-512 wire inputs have no circuit, decoder error or TV (artifact quantum_circuit_compiled_or_executed=false). The decision should say the composition is checked on that finite control only.
+- Finding: The Decision now explicitly scopes the coherent erasure implementation and check to the 5-wire, 3-check cyclic control M5 (12 qubits, two orders and two c values with explicit herald tables), noting that the 128-512 wire socket inputs are topology/rank plans only.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

@@ -1,4 +1,4 @@
-# Explicit Cubic-Target OPI: A Structural Classical Falsifier
+# Explicit Cubic-Target OPI: Finite Classical Mean-Score Falsifiers And Scoped Pool Bounds
 
 2026-10-17. Local derivations, review pending. No new quantum algorithm,
 hardness proof, oracle problem or admitted speedup candidate.

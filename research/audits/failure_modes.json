@@ -17,13 +17,13 @@
    "unclear": 9
   },
   "coset_observables": {
-   "classical_competitor": 70,
+   "classical_competitor": 68,
    "finite_size": 23,
    "hidden_advice": 2,
-   "no_signal": 44,
+   "no_signal": 41,
    "overbroad": 21,
    "proof_gap": 34,
-   "readout": 47,
+   "readout": 45,
    "resource_blowup": 9,
    "state_prep": 5
   },
@@ -35,18 +35,16 @@
    "overbroad": 14,
    "proof_gap": 20,
    "readout": 8,
-   "resource_blowup": 28,
+   "resource_blowup": 27,
    "state_prep": 18
   },
   "dqi_opi": {
    "proof_gap": 1
   },
   "lattice": {
-   "classical_competitor": 1,
    "finite_size": 3,
    "no_signal": 1,
-   "proof_gap": 1,
-   "resource_blowup": 1
+   "proof_gap": 1
   },
   "other": {
    "classical_competitor": 1,
@@ -67,19 +65,19 @@
   }
  },
  "counts": {
-  "classical_competitor": 311,
+  "classical_competitor": 308,
   "finite_size": 66,
   "hidden_advice": 62,
-  "no_signal": 116,
+  "no_signal": 113,
   "overbroad": 73,
   "proof_gap": 149,
-  "readout": 95,
-  "resource_blowup": 65,
+  "readout": 93,
+  "resource_blowup": 63,
   "state_prep": 30,
   "unclear": 9
  },
  "generated_by": "tools/audit/failure_modes.py",
- "generated_on": "2026-10-19",
+ "generated_on": "2026-11-14",
  "judge_meta": {
   "labels": {
    "imported": "2026-10-19",
@@ -93,7 +91,7 @@
   }
  },
  "label_sources": {
-  "judge": 976
+  "judge": 966
  },
  "modes": {
   "classical_competitor": "A classical algorithm, invariant or canonicalization solves the instance, separates the pair, or matches the quantum route.",
@@ -6171,23 +6169,6 @@
   },
   {
    "first_seen": "2026-10-12",
-   "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
-   "label_source": "judge",
-   "mode": "resource_blowup",
-   "period": "2026-10",
-   "quote": "which is NP-hard under randomized reductions and takes 2^{Omega(r)} = 2^{Omega(n)} operations.",
-   "rule_cues": [
-    "resource_blowup:2^{O"
-   ],
-   "rule_mode": "resource_blowup",
-   "secondary": [
-    "overbroad"
-   ],
-   "templated": false,
-   "track": "lattice"
-  },
-  {
-   "first_seen": "2026-10-12",
    "id": "NEG-BARREN-PLATEAUS-VARIATIONAL-QUANTUM-HORIZON",
    "label_source": "judge",
    "mode": "readout",
@@ -6230,29 +6211,6 @@
    "track": "applied_barriers"
   },
   {
-   "first_seen": "2026-10-11",
-   "id": "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER",
-   "label_source": "judge",
-   "mode": "classical_competitor",
-   "period": "2026-10",
-   "quote": "By Luks' polynomial-time algorithm for bounded valence (JCSS 1982), Graph Isomorphism on these graphs is solved in O(N^4)",
-   "rule_cues": [
-    "classical_competitor:Weisfeiler",
-    "classical_competitor:classical Graph Isomorphism algorithm",
-    "classical_competitor:classical baseline",
-    "classical_competitor:polynomial-time algorithm",
-    "no_signal:vanishing",
-    "readout:collective measurement"
-   ],
-   "rule_mode": "readout",
-   "secondary": [
-    "no_signal",
-    "readout"
-   ],
-   "templated": false,
-   "track": "coset_observables"
-  },
-  {
    "first_seen": "2026-10-12",
    "id": "NEG-CFI-QUANTUM-WALK-LUKS-SUBSUMPTION",
    "label_source": "judge",
@@ -6285,6 +6243,8 @@
     "classical_competitor:classical decod",
     "classical_competitor:classical polynomial-time decoding algorithm",
     "hidden_advice:advice",
+    "proof_gap:conjectur",
+    "proof_gap:is not proved",
     "resource_blowup:2^{O"
    ],
    "rule_mode": "hidden_advice",
@@ -8852,26 +8812,6 @@
    "track": "coset_observables"
   },
   {
-   "first_seen": "2026-10-11",
-   "id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
-   "label_source": "judge",
-   "mode": "no_signal",
-   "period": "2026-10",
-   "quote": "all observables in the commutant End_{S_n}(V^k) have identically zero mutual information",
-   "rule_cues": [
-    "no_signal:zero information",
-    "no_signal:zero mutual",
-    "readout:measurements",
-    "resource_blowup:factorial"
-   ],
-   "rule_mode": "no_signal",
-   "secondary": [
-    "resource_blowup"
-   ],
-   "templated": false,
-   "track": "coset_observables"
-  },
-  {
    "first_seen": "2026-07-18",
    "id": "NEG-COSET-NINE-STABLE-SHAPES-AS-COHERENT-RACAH-TRANSFORM",
    "label_source": "judge",
@@ -11374,26 +11314,6 @@
    "track": "dcp"
   },
   {
-   "first_seen": "2026-10-11",
-   "id": "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER",
-   "label_source": "judge",
-   "mode": "resource_blowup",
-   "period": "2026-10",
-   "quote": "Any polynomial-size list decoder has coverage bounded by poly(n) * 2^{-1.047 n} = 2^{-Omega(n)}",
-   "rule_cues": [
-    "classical_competitor:LLL",
-    "classical_competitor:nearest-plane",
-    "finite_size:n = 2",
-    "proof_gap:heuristic",
-    "proof_gap:without coordinate bound",
-    "resource_blowup:2^n"
-   ],
-   "rule_mode": "resource_blowup",
-   "secondary": [],
-   "templated": false,
-   "track": "dcp"
-  },
-  {
    "first_seen": "2026-07-15",
    "id": "NEG-DCP-SUBSET-SUM-FINITE-BABAI-CELLS-NOT-SOURCE-BDD-THEOREM",
    "label_source": "judge",
@@ -11825,27 +11745,6 @@
    "track": "coset_observables"
   },
   {
-   "first_seen": "2026-10-11",
-   "id": "NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND",
-   "label_source": "judge",
-   "mode": "classical_competitor",
-   "period": "2026-10",
-   "quote": "allows an explicit classical randomized algorithm to reconstruct U in expected O(n q^k) queries",
-   "rule_cues": [
-    "classical_competitor:classical algorithm",
-    "classical_competitor:classical randomized algorithm",
-    "classical_competitor:dequantiz",
-    "readout:multi-copy",
-    "resource_blowup:2^{O"
-   ],
-   "rule_mode": "classical_competitor",
-   "secondary": [
-    "no_signal"
-   ],
-   "templated": false,
-   "track": "coset_observables"
-  },
-  {
    "first_seen": "2026-10-12",
    "id": "NEG-LINEAR-CODE-EQUIVALENCE-WREATH-BARRIER",
    "label_source": "judge",
@@ -11955,26 +11854,6 @@
    ],
    "templated": false,
    "track": "coset_observables"
-  },
-  {
-   "first_seen": "2026-10-10",
-   "id": "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER",
-   "label_source": "judge",
-   "mode": "classical_competitor",
-   "period": "2026-10",
-   "quote": "dequantizes to classical BKW sampling with noise inflated by at least n",
-   "rule_cues": [
-    "classical_competitor:classical lattice baseline",
-    "classical_competitor:dequantiz",
-    "hidden_advice:oracle"
-   ],
-   "rule_mode": "classical_competitor",
-   "secondary": [
-    "hidden_advice",
-    "no_signal"
-   ],
-   "templated": false,
-   "track": "lattice"
   },
   {
    "first_seen": "2026-10-06",
@@ -14231,8 +14110,12 @@
    "mode": "unclear",
    "period": "2026-09",
    "quote": "Falsified or refined by exact theorem evaluation.",
-   "rule_cues": [],
-   "rule_mode": "unclear",
+   "rule_cues": [
+    "finite_size:finite",
+    "finite_size:finite control",
+    "readout:measurement"
+   ],
+   "rule_mode": "finite_size",
    "secondary": [],
    "templated": true,
    "track": "code_equivalence"
@@ -14773,26 +14656,6 @@
    "track": "code_equivalence"
   },
   {
-   "first_seen": "2026-10-11",
-   "id": "NEG-SINGER-CYCLE-TORAL-HSP-BARRIER",
-   "label_source": "judge",
-   "mode": "no_signal",
-   "period": "2026-10",
-   "quote": "which is identically independent of T (0.000 bits of mutual information).",
-   "rule_cues": [
-    "classical_competitor:classical and quantum algorithm",
-    "readout:Multi-copy",
-    "readout:measurements",
-    "resource_blowup:2^{O"
-   ],
-   "rule_mode": "resource_blowup",
-   "secondary": [
-    "readout"
-   ],
-   "templated": false,
-   "track": "coset_observables"
-  },
-  {
    "first_seen": "2026-10-12",
    "id": "NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER",
    "label_source": "judge",
@@ -14832,47 +14695,6 @@
    "track": "coset_observables"
   },
   {
-   "first_seen": "2026-10-12",
-   "id": "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION",
-   "label_source": "judge",
-   "mode": "readout",
-   "period": "2026-10",
-   "quote": "Diagonalizing this commutant requires evaluating Racah recoupling symbols, which is #P-hard in general",
-   "rule_cues": [
-    "finite_size:finite",
-    "readout:measurements",
-    "readout:multi-copy"
-   ],
-   "rule_mode": "readout",
-   "secondary": [
-    "no_signal"
-   ],
-   "templated": false,
-   "track": "coset_observables"
-  },
-  {
-   "first_seen": "2026-10-12",
-   "id": "NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER",
-   "label_source": "judge",
-   "mode": "readout",
-   "period": "2026-10",
-   "quote": "requiring at least 2^{Omega(n^2 log^2 n)} quantum gates",
-   "rule_cues": [
-    "no_signal:vanishing",
-    "readout:Multi-copy",
-    "readout:POVM",
-    "readout:collective measurement",
-    "readout:copies",
-    "readout:measurement"
-   ],
-   "rule_mode": "readout",
-   "secondary": [
-    "no_signal"
-   ],
-   "templated": false,
-   "track": "coset_observables"
-  },
-  {
    "first_seen": "2026-10-11",
    "id": "NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND",
    "label_source": "judge",
@@ -14891,25 +14713,6 @@
     "no_signal",
     "readout"
    ],
-   "templated": false,
-   "track": "coset_observables"
-  },
-  {
-   "first_seen": "2026-10-10",
-   "id": "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE",
-   "label_source": "judge",
-   "mode": "no_signal",
-   "period": "2026-10",
-   "quote": "the mutual information provided by k = O(1) mixed coset copies is at most O(k^2 / n) bits",
-   "rule_cues": [
-    "no_signal:Holevo",
-    "readout:POVM",
-    "readout:copies",
-    "resource_blowup:(n!)",
-    "resource_blowup:n!"
-   ],
-   "rule_mode": "resource_blowup",
-   "secondary": [],
    "templated": false,
    "track": "coset_observables"
   },
@@ -16724,13 +16527,13 @@
  "rule_agreement": {
   "confusion": {
    "classical_competitor": {
-    "classical_competitor": 264,
+    "classical_competitor": 262,
     "finite_size": 2,
     "hidden_advice": 3,
     "no_signal": 1,
     "overbroad": 1,
     "proof_gap": 10,
-    "readout": 21,
+    "readout": 20,
     "state_prep": 1,
     "unclear": 8
    },
@@ -16755,11 +16558,11 @@
     "classical_competitor": 10,
     "finite_size": 14,
     "hidden_advice": 1,
-    "no_signal": 20,
+    "no_signal": 19,
     "overbroad": 1,
     "proof_gap": 4,
     "readout": 30,
-    "resource_blowup": 8,
+    "resource_blowup": 6,
     "state_prep": 1,
     "unclear": 27
    },
@@ -16791,7 +16594,7 @@
     "no_signal": 5,
     "overbroad": 1,
     "proof_gap": 1,
-    "readout": 47,
+    "readout": 45,
     "resource_blowup": 8,
     "unclear": 7
    },
@@ -16802,7 +16605,7 @@
     "no_signal": 2,
     "proof_gap": 6,
     "readout": 4,
-    "resource_blowup": 24,
+    "resource_blowup": 22,
     "state_prep": 2,
     "unclear": 12
    },
@@ -16817,22 +16620,22 @@
     "unclear": 5
    },
    "unclear": {
-    "finite_size": 2,
+    "finite_size": 3,
     "proof_gap": 3,
-    "unclear": 4
+    "unclear": 3
    }
   },
-  "kappa": 0.3955,
-  "lenient": 0.5758,
-  "n": 976,
+  "kappa": 0.3915,
+  "lenient": 0.5725,
+  "n": 966,
   "per_mode": {
    "classical_competitor": {
-    "precision": 0.8713,
-    "recall": 0.8489,
-    "support": 311
+    "precision": 0.8704,
+    "recall": 0.8506,
+    "support": 308
    },
    "finite_size": {
-    "precision": 0.2338,
+    "precision": 0.2323,
     "recall": 0.5455,
     "support": 66
    },
@@ -16842,9 +16645,9 @@
     "support": 62
    },
    "no_signal": {
-    "precision": 0.5405,
-    "recall": 0.1724,
-    "support": 116
+    "precision": 0.5278,
+    "recall": 0.1681,
+    "support": 113
    },
    "overbroad": {
     "precision": 0.2,
@@ -16857,14 +16660,14 @@
     "support": 149
    },
    "readout": {
-    "precision": 0.3431,
-    "recall": 0.4947,
-    "support": 95
+    "precision": 0.3358,
+    "recall": 0.4839,
+    "support": 93
    },
    "resource_blowup": {
-    "precision": 0.4068,
-    "recall": 0.3692,
-    "support": 65
+    "precision": 0.4,
+    "recall": 0.3492,
+    "support": 63
    },
    "state_prep": {
     "precision": 0.1111,
@@ -16872,12 +16675,12 @@
     "support": 30
    },
    "unclear": {
-    "precision": 0.0312,
-    "recall": 0.4444,
+    "precision": 0.0236,
+    "recall": 0.3333,
     "support": 9
    }
   },
-  "strict": 0.4857
+  "strict": 0.4824
  },
  "second_opinion": {
   "confusion": {
@@ -16913,7 +16716,7 @@
    },
    "resource_blowup": {
     "readout": 3,
-    "resource_blowup": 9,
+    "resource_blowup": 8,
     "state_prep": 3
    },
    "state_prep": {
@@ -16921,9 +16724,9 @@
     "state_prep": 6
    }
   },
-  "kappa": 0.8134,
-  "lenient": 0.9067,
-  "n": 150,
+  "kappa": 0.812,
+  "lenient": 0.906,
+  "n": 149,
   "per_mode": {
    "classical_competitor": {
     "precision": 1.0,
@@ -16961,9 +16764,9 @@
     "support": 15
    },
    "resource_blowup": {
-    "precision": 0.9,
-    "recall": 0.6,
-    "support": 15
+    "precision": 0.8889,
+    "recall": 0.5714,
+    "support": 14
    },
    "state_prep": {
     "precision": 0.5455,
@@ -16976,10 +16779,10 @@
     "support": 0
    }
   },
-  "records": 214,
-  "strict": 0.84
+  "records": 213,
+  "strict": 0.8389
  },
- "total": 976,
+ "total": 966,
  "trend": {
   "2026-07": {
    "classical_competitor": 254,
@@ -17014,10 +16817,10 @@
    "unclear": 2
   },
   "2026-10": {
-   "classical_competitor": 17,
-   "no_signal": 13,
-   "readout": 7,
-   "resource_blowup": 4,
+   "classical_competitor": 14,
+   "no_signal": 10,
+   "readout": 5,
+   "resource_blowup": 2,
    "state_prep": 2
   }
  }

@@ -1,6 +1,6 @@
 # Referee review: EXPLICIT_QUADRATIC_OPI
 
-Note: `research/EXPLICIT_QUADRATIC_OPI.md`. Reviewed 2026-10-23 by codex-audit-correction-2026-10-23-r3. Overall: **needs-work**.
+Note: `research/EXPLICIT_QUADRATIC_OPI.md`. Reviewed 2026-11-14 by codex-audit-correction-2026-10-23-r3. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ Both judges confirmed the balanced-predicate score formula, the accepted-flat de
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> The high-rate quadratic family has a constructive classical explanation, not a remaining quantum-advantage candidate
+> Under the review-pending IID uniform $\mathrm{GL}(t,2)$ model and fixed rate $R > 1/2$ as odd $t$ grows (with $N_c \le Kt$), the high-rate quadratic family has a high-probability constructive classical explanation, and on the saved finite controls (`N=127,K=90`, `N=31,K=19`, `N=7,K=3`) the linear/repair attacks remove the finite mean-score signal
 
 - Step: Revised Research Direction
-- Finding: The supporting perfect-solution argument holds only with high probability for independent uniform T_i in GL(t,2), only asymptotically for fixed R>1/2 as t grows, and is review pending. The note itself says seeded replays are not IID certificates and that the complexity of the EXPLICIT inputs is the open question. At finite t the union bound can be weak: t=5,K=19 gives q^-K(1+qp)^N of about 2^-0.76, about 0.59. Rank also requires Nc<=Kt. Saved perfect inputs include N127,K90, both N31,K19, and the low-rate N7,K3 cases. The headline keeps none of these conditions.
+- Finding: Revised Research Direction now explicitly states the review-pending IID uniform GL(t,2) model, the fixed rate R>1/2 as odd t grows (with Nc<=Kt), and the finite controls (N=127,K=90, N=31,K=19, N=7,K=3).
 - Conceded by the note's own self-check: no
 
 ### 2. holds
@@ -50,7 +50,7 @@ Both judges confirmed the balanced-predicate score formula, the accepted-flat de
 
 ### 6. holds
 
-> implemented and removes the finite mean-score signal in both127-position controls
+> implemented and removes the finite mean-score signal in both 127-position controls
 
 - Step: Revised Research Direction
 - Finding: Judge B's gap was dropped. The artifact gives 109/127=0.858268 for both repaired controls, above the quantum expected reference 0.816830, while best-of-16 alone was mixed (104/127 vs 102/127), so the stated finite mean-score signal is indeed removed on those two inputs. B's point that quantum repetition would raise a best-of-T score concerns tails and cost, not the mean. The note concedes it explicitly ('a quantum sampler could also repeat'), so the sentence does not overreach.

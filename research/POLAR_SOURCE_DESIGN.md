@@ -8,8 +8,11 @@ No novel quantum algorithm, all-code no-go or matched runtime advantage.
 
 The preceding [polar sampler](POLAR_CONDITIONAL_SAMPLER.md) left an explicit
 blocker: its average-case error criterion did not construct an appropriate
-public code without an exponential source table. This pass removes that
-blocker for concrete non-prefix families.
+public code without an exponential source table. Under the review-pending
+PSC-degradation and hybrid/duality derivations below, this pass removes that
+blocker at the certified finite non-prefix instances below (rates up to
+1614/4096 at average uniform-sign TV<=0.1, rate 3/8 at N=4096, and half rate
+at the single length N=32768 on grid G=256,r=3).
 
 The signs model is not optional bookkeeping. [Zhou et al., Theorem 2.4 and
 Theorem 3.1](https://arxiv.org/html/2609.40345v1#S2) use uniform random clause
@@ -137,6 +140,7 @@ At c=13/20, p=7/40, coarse G=64,r=4,b=96:
 
 | N | Largest set certified at average TV<=0.1 | Rate |
 | --- | --- | --- |
+| 16 | 2 | 0.125 |
 | 64 | 16 | 0.25 |
 | 256 | 78 | 0.304688 |
 | 1024 | 361 | 0.352539 |
@@ -162,9 +166,11 @@ average uniform-sign Gibbs TV
 It uses 65,534 channel combinations and 1,008,335,816 active support-pair
 visits. The expensive setup is disclosed, not treated as free advice. The
 initial exploratory run was repeated to save the full reproducible artifact.
-This finite result removes the missing public-set construction premise for
-the stated half-rate family. It does NOT prove a fixed-grid asymptotic
-convergence theorem, a general Gibbs sampler, or an all-sign result.
+Conditional on the review-pending degradation/hybrid derivations, this finite
+result supplies the explicit public-set construction at the single half-rate
+length N=32768 (while coarse half-rate targets at N=16..4096 remain UNKNOWN).
+It does NOT prove a fixed-grid asymptotic convergence theorem, a growing-N
+half-rate family construction, a general Gibbs sampler, or an all-sign result.
 
 An actual N1024,361-constraint non-prefix Gibbs sample is executed and its
 native kernel checks are verified. The reference accepts lengths through

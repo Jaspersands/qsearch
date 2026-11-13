@@ -130,12 +130,13 @@ for (const n of [20, 30, 40, 50, 64, 100]) {
 const reportPath = path.resolve(__dirname, '../classical_baselines/dcp_subset_sum_euclidean_volume_inflation_barrier.json');
 if (fs.existsSync(reportPath)) {
   const rep = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
-  assert(rep.status === "DCP_SUBSET_SUM_EUCLIDEAN_VOLUME_INFLATION_BARRIER_PROVED", "Report status verified");
+  assert(rep.status === "UNIVERSAL_SUBSET_SUM_VOLUME_BARRIER_RETRACTED_BALL_VOLUME_FORMULA_ONLY", "Report retracted status verified");
   assert(rep.claim_gate.speedup_claim_allowed === false, "Speedup claim is false");
-  assert(rep.claim_gate.euclidean_ball_volume_inflation_proved === true, "Volume inflation proved");
-  assert(rep.claim_gate.expected_lattice_point_exponential_multiplicity_proved === true, "Point multiplicity proved");
-  assert(rep.claim_gate.bdd_radius_collapse_proved === true, "BDD radius collapse proved");
-  assert(rep.claim_gate.universal_subset_sum_lattice_trilemma_proved === true, "Trilemma proved");
+  assert(rep.claim_gate.euclidean_ball_volume_inflation_proved === true, "Volume inflation formula proved");
+  assert(rep.claim_gate.expected_lattice_point_exponential_multiplicity_proved === false, "Universal point multiplicity barrier retracted");
+  assert(rep.claim_gate.bdd_radius_collapse_proved === false, "Universal BDD radius collapse barrier retracted");
+  assert(rep.claim_gate.universal_subset_sum_lattice_trilemma_proved === false, "Universal trilemma retracted");
+  assert(rep.claim_gate.universal_exclusion_retracted_2026_11_06 === true, "2026-11-06 retraction recorded");
 }
 
 console.log(`\nALL ${passCount} / ${passCount + failCount} CHECKS PASSED PERFECTLY!`);

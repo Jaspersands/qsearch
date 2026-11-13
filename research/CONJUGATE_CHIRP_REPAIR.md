@@ -196,7 +196,10 @@ Cauchy gives
 The charged z=0 probability is at most H/p^n. The good-r normalization
 cancels because at z0 only the corresponding good x remain. All six native
 probabilities are checked against this rational bound. In fixed-rate regimes
-m=Theta(n), bounded list densities and p>=m+1, H<=exp(O(n)) but p^n grows as
+m=Theta(n), list densities in [delta, 1-delta] bounded away from 0 and 1
+(so A^2=max(rho/(1-rho),(1-rho)/rho)=O(1)), shell degree ell<=m (or for
+singleton/sparse lists with A^2<=p-1, shell degree ell<=(1-Omega(1))n), and
+p>=m+1, H<=exp(O(n)) (or p^((1-Omega(1))n) exp(O(n))) while p^n grows as
 exp(Omega(n log n)). Straight repetitions are therefore not polynomial for
 this repair. The exact general-degree bound does NOT assume a compiled
 higher-weight decoder. It is not a lower bound on other state preparations.

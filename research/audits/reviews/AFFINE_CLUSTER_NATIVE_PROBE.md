@@ -1,6 +1,6 @@
 # Referee review: AFFINE_CLUSTER_NATIVE_PROBE
 
-Note: `research/AFFINE_CLUSTER_NATIVE_PROBE.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/AFFINE_CLUSTER_NATIVE_PROBE.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ The nullspace identities (1)-(4), the Dirichlet-form identity (5) with its Rayle
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> The BPQM tree certificate survives, but a classical separation is STILL UNESTABLISHED
+> The classical probes here do not test or refute the BPQM extrinsic-tree certificate (which remains a review-pending tree condition certified only at `c=13/20` in `research/BPQM_GIBBS_FRONTIER.md`, without a finite-graph decoder), and a classical separation is STILL UNESTABLISHED
 
 - Step: Decision and Remaining Falsifiers
-- Finding: Headline scope (both judges). Every experiment in this note is a classical sampler or exact contraction on finite graphs; none tests the tree certificate, so 'survives' reports no evidence. The decision also drops the certificate's conditions from BPQM_GIBBS_FRONTIER: a review-pending degradation argument, an extrinsic-tree condition only, a single certified point c=13/20, and no finite-graph decoder.
+- Finding: The Decision now explicitly states that these classical probes do not test or refute the BPQM extrinsic-tree certificate (certified only at c=13/20 in BPQM_GIBBS_FRONTIER.md under a review-pending condition without a finite-graph decoder) and that classical separation remains unestablished.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

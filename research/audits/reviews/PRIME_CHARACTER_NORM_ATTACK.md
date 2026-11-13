@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_NORM_ATTACK
 
-Note: `research/PRIME_CHARACTER_NORM_ATTACK.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_NORM_ATTACK.md`. Reviewed 2026-11-14 by audit-correction-2026-10-22. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -48,10 +48,10 @@ The norm criterion, the K>max(|A|,D) budget, the Cayley strict-root rotation, th
 - Finding: Conditioned on the A shifts and lambda, rho, the B residuals (plus the auxiliary value) are uniform, and interpolation is a bijection. Irreducibles of even degree are norms with no roots, so success is >=I_p(D)/p^D, about 1/D (D=58 and 64 for the saved patterns, matching norm_target_degree in the artifact). The 1/(2N) claim follows since the budget forces D<K<=N.
 - Conceded by the note's own self-check: no
 
-### 6. gap
+### 6. holds
 
-> solved common cosets classically but left mixed high-rate controls at124/127 and122/127
+> solved common cosets classically whenever K>=(r-1)*ceil(N/r) (leaving the below-threshold N127,K39 global inputs at 108/127 and 110/127), and left mixed high-rate controls at 124/127 and 122/127 for N127,K77, 30/31 for N31,K16 seed71 (r=2), 55/63 and 56/63 for r=3 (N63,K46), and 28/32 and 27/32 for r=4 (N32,K24)
 
 - Step: Research Decision
-- Finding: The previous experiment's artifact also leaves N31,K16 mixed seed71 at 30/31 (r=2, rate 16/31>1/2) and the r=3/r=4 mixed controls below perfect. The norm attack was not run on N31, and its budget K>max(|A|,D) cannot hold there: |A|+|B|=31 forces max(|A|,D)>=16=K. Neither this summary nor 'It does not apply to the saved K39 inputs' reports that case. 'Solved common cosets' also overstates it: they were solved only when K>=(r-1)ceil(N/r), and the N127,K39 global inputs score 108/127 and 110/127 (judge E).
+- Finding: Research Decision now states the common-coset condition K >= (r-1)*ceil(N/r), the N127,K39 global scores (108/127, 110/127), and all open mixed high-rate controls including N31,K16 (30/31) and the r=3,4 mixed instances.
 - Conceded by the note's own self-check: no

@@ -11,9 +11,11 @@ not just closeness to an unanalyzed ideal state? Yes, when an EXTRA observable
 radius gives a sufficiently small radial Gram error. Source normalization
 alone is insufficient, and the new certifier retains a counterexample.
 
-At N127,K39,p=2^61-1, radius32, the certified normalized mean is about
-0.9028547353515506, or114.66255 accepted positions. Conditional on the stated
-receiver, one attempt has probability at least0.314586 of reaching110/127,
+At N127,K39,p=2^61-1, radius32, for the ideal heralded state under an exact
+source and exact unique decoder (conditional on the review-pending radial
+Gram/readout and source bad-mass derivations), the certified normalized mean is
+about 0.9028547353515506, or114.66255 accepted positions. Conditional on the
+stated receiver, one attempt has probability at least0.314586 of reaching110/127,
 and0.050965 of reaching115/127. No binomial full-score law is assumed.
 
 The saved same-input classical witness has109/127, but no matched runtime

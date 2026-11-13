@@ -1,6 +1,6 @@
 # Referee review: OUTER_CODED_CHIRP_PROBE
 
-Note: `research/OUTER_CODED_CHIRP_PROBE.md`. Reviewed 2026-11-13 by claude-subagent-refresh-2026-11-13. Overall: **needs-work**.
+Note: `research/OUTER_CODED_CHIRP_PROBE.md`. Reviewed 2026-11-14 by claude-subagent-refresh-2026-11-13. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,20 +8,20 @@ The formal-square-root completion holds: I recomputed it for every target at p=5
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> a deterministic classical construction below solves EVERY target in the entire proposed useful rate range, and beyond
+> a review-pending deterministic classical construction below solves EVERY target in the proposed useful rate range r/N<1/4 and for all 1<=r<N/2 (failing at the r=N/2 boundary)
 
 - Step: Scientific Question And Portfolio Decision
-- Finding: The algebra behind it holds, but the decision sentence states no limit for 'and beyond'. The construction is proved only for full support N=p-1 with 1<=r<N/2 strictly, and it fails at r=N/2: the note's own p7,N6,r3,b=(0,0,1) countercontrol fails, and so does every failing target in my replay. The sentence also omits that the derivation is review pending and that the task is zero-allowed search, not nonzero-coordinate search or weighted sampling.
+- Finding: The decision sentence now explicitly states the review-pending polynomial-tail identity, the zero-allowed evaluation-vector convention, and the exact rate range 1<=r<N/2 (noting failure at r=N/2).
 - Conceded by the note's own self-check: no
 
-### 2. gap
+### 2. holds
 
-> Local physical unitarity error is at most2.23e-16 and predicted probability error at most3.34e-16
+> Local physical unitarity error is at most2.23e-16 and predicted diagonal probability error at most 4.44e-16 (normalized output error at most6.66e-16)
 
 - Step: Costs, Tests And Research Decision
-- Finding: The artifact's local_physical_controls give actual_diagonal_probability_max_error=4.440892e-16 at p=11 (3.33e-16 at p=7), above the stated 3.34e-16 ceiling, and normalized_output_max_error reaches 6.66e-16 at p=7. The unitarity bound 2.22e-16 holds for p=5,7,11,13. The difference is at machine precision and does not affect the conclusion, but the stated maximum does not match the saved report.
+- Finding: The reported diagonal probability error now matches the artifact's max_diagonal_probability_error (4.44e-16) and max_normalized_probability_error (6.66e-16).
 - Conceded by the note's own self-check: no
 
 ### 3. holds

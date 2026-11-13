@@ -127,8 +127,10 @@ independently uniform in the whole ring. Set
 v=C_a1^-T e0, M=C_a1^-T C_a2^T.
 ```
 
-Then v is uniform on units and independent of M. For EVERY fixed integer
-pair (x,y) and nonzero scalar t, conditional on M,
+Then v is uniform on units and independent of M. When the native modulus q is
+prime (as at all three saved reference moduli), every nonzero scalar t mod q is
+invertible, so for EVERY fixed integer pair (x,y) and nonzero scalar t,
+conditional on M,
 
 ```
 x+M y=t v (mod q)
@@ -189,9 +191,10 @@ log B_h_point <= [(19/2)theta-5/2] d log d
                 -(5/2)(1+theta) d log log d+O(d).
 ```
 
-At theta=1/4 its first coefficient is -1/8. This independent source
-counting excludes typical successful AFFINE witnesses in the stated
-restricted output class, not only its worst-case cover certificate.
+At theta=1/4 its first coefficient is -1/8. For quarter degree and deeper
+(theta<5/19, at the stated prime q, P scaling and the three reference moduli),
+this independent source counting excludes typical successful AFFINE witnesses in
+the stated restricted output class, not only its worst-case cover certificate.
 
 ## 5. Attempted Refutations And Scope
 

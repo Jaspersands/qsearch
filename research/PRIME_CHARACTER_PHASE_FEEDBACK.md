@@ -175,7 +175,10 @@ At p=2^61-1,N127,K39,ell32, c5/8, local exact-rational certificates give:
 
 What survived: auxiliary measurement need NOT irreversibly lose the score.
 There is a concrete interference-restoring action, verified on full native
-states and locally bounded without selecting fortunate outcomes.
+states for the four two-row controls at `p=7/11, N=4, K=2, ell=1` (plus one
+three-row test) and locally bounded at `N=127, K=39, ell=32` by a
+review-pending analytic certificate assuming exact native-state reflections
+without selecting fortunate outcomes.
 
 What failed as an efficient algorithm: replacing that action by a cheap public
 sign calculation, a nonunitary simultaneous projector sum, or the explicit

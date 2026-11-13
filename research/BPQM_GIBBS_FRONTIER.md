@@ -10,8 +10,12 @@ Can an explicit coherent LDPC decoder support natural Gibbs sampling beyond
 classical samplers, rather than merely outperform one weak decoder? This
 independent route is more constructive than another conditional DCP interface.
 It supplies a specified decoder family, public input, rigorous local test and
-known sampling reduction. Its largest unresolved issue is the matched classical
-sampling frontier and finite-block composition, not a missing oracle.
+known sampling reduction (where the degradation enclosure is review pending,
+the extrinsic-tree contraction is certified beyond the rank ceiling only at
+`(d_v,d_c)=(3,6), c=13/20, G=128` while `c=4/5` is `UNKNOWN`, and the complete
+coherent block decoder is not implemented). Its largest unresolved issue is the
+matched classical sampling frontier and finite-block composition, not a missing
+oracle.
 
 The repository already has product/block USD and positive affine-erasure
 samplers in PARITY_BLOCK_USD_PRANGE.md and LINEAR_ERASURE_PRANGE_DUALITY.md.
@@ -45,7 +49,10 @@ success region. [Zhou et al.](https://arxiv.org/abs/2609.40345), Theorem2.4,
 relate quantum decoding to Gibbs sampling for uniform random signs. Here the
 binary channel overlap is c=tanh(beta); the coherent flip probability is
 gamma=(1-sqrt(1-c^2))/2. These source assumptions and asymptotic statements
-remain explicit; the code implements neither complete theorem's decoder.
+remain explicit; the code implements neither complete theorem's decoder, and
+verifying whether the extrinsic-tree mean-overlap certificate here satisfies
+every hypothesis of Mandal et al. Theorem 30 and Zhou et al. Theorem 2.4
+remains an unverified external-theorem bridge.
 
 [Piveteau and Renes](https://arxiv.org/abs/2109.08170) distinguish an efficient
 message-passing implementation from an exponentially sized global-control

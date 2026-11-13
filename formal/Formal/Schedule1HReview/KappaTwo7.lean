@@ -62,12 +62,12 @@ theorem not_adm10 : ¬ Admissible 2 (qf7 2) 1 false := by
     (by rw [card7]) (q := 3) (by decide) h0
 
 theorem Apaper_one (qf : ℕ → ZMod 7) (a : ℕ) : Apaper qf 1 a = a + 1 := by
-  rw [Apaper, dif_pos le_rfl]
+  rw [Apaper, dite_eq_left le_rfl]
 
 /-- **The paper's `A_2(a) = (a+1)^2` at `p = 7`** (Remark `rem:kappa-two`). -/
 theorem Apaper_two7 (a : ℕ) : Apaper qf7 2 a = (a + 1) ^ 2 := by
   have hset := Apaper.eq_1 qf7 2 a
-  rw [dif_neg (by norm_num)] at hset
+  rw [dite_eq_right (by norm_num)] at hset
   rw [hset]
   apply le_antisymm
   · apply Nat.sInf_le
@@ -133,8 +133,8 @@ theorem paperChoice_two7 (a : ℕ) : paperChoice qf7 2 a = .plan 1 true := by
       have := hadm.1
       omega
   unfold paperChoice
-  rw [if_neg hne, dif_pos hex]
-  rw [if_neg]
+  rw [ite_eq_right hne, dite_eq_left hex]
+  rw [ite_eq_right]
   · rw [hfind]
   · rintro ⟨_, hadm, _⟩
     rw [hfind] at hadm

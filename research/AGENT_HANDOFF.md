@@ -1,3 +1,23 @@
+## 2026-11-14 Rees Core Draft: Schedule 1H+ (Headline 20) and HSP23 Remark Integrated (AI only)
+
+Claude session; local paper edit only (core is gitignored); not posted; all AI-checked, pending human review.
+- Core main-core.tex (68 pp., 0 undefined refs, 0 overfull): new subsection sec:plus (Schedule 1H+,
+  inlined), 56 edits moving the headline to \ReesClassNinePlusExp = 20 (hand-added in core/numbers.tex);
+  class-3 example Q_q = 4320 ≈ 2^12.08; tab:query-crossover class-9 row kept as a 1H upper bound;
+  thm:is-import kept as a hypothesis (removal at c ≤ 9 only "suggested"). Remark rem:free23 (HSP23)
+  replaces the DRAFT F23 paragraph; it is labelled "not a result of this paper".
+- Referee of the merged text (audits/reviews/2026-11-14-rees-core-plus-referee.md): CORRECT WITH FIXES;
+  own implementation from the text gives 38 (off) and 3,5,9,10,14,16,18,20 (on), all 75,391 certificates
+  and the five ℓ-tables check. Fixes F2–F12 applied (F2 material: equal consecutive moduli allowed; strict
+  moduli give 23). A foreign 09:02 splice in main-core.tex was gone by 09:06; of three leftover edits one
+  (an undefined \ref and an unchecked general (a+1)(a+2)/2 claim) was reverted, two kept.
+- Gates unchanged. Backups: audits/reviews/2026-11-09-rees-paper-pass-prep/backup-pre-schedule1hplus-2026-11-14/.
+- Next hard question: owner decisions (adopt draft; AI-use paragraph; endorser). Then drop thm:is-import at
+  c ≤ 9 (write-up + referee) and sync the full version. Next command: draft the import-free statement for
+  c ≤ 9; acceptance: referee CORRECT and recompute of 20 with candidate (a) forbidden.
+- Drafts: audits/reviews/2026-11-14-rees-{schedule1hplus-draft,hsp23-draft}.md. Mechanical items:
+  MECHANICAL_FOLLOW_UP_PLAN.md, same heading.
+
 ## 2026-11-14 Quaternion Global Norm Data and Compact Walk Falsifier
 
 Reviewed WRITTEN fixed-polynomial-S globalnormdata for every expanded

@@ -1,9 +1,11 @@
 # Asymptotic Babai Deviation Depth & Coordinate Dispersion Barrier
 
-**Status**: PROVED / CERTIFIED / CROSS-CHECKED  
+**Status**: REVIEW-PENDING / SCOPED TO IID RADEMACHER & GAUSSIAN-APPROXIMATION MODEL  
 **Date**: 2026-10-10  
 **Domain**: Dihedral Hidden Subgroup Problem (DCP), Density-One Modular Subset-Sum, LLL Lattice Geometry, Affine Nearest-Plane Decoding  
 **Registration**: `NEG-DCP-BABAI-DEVIATION-DEPTH-EXPONENTIAL-BARRIER`
+
+> **SCOPE QUALIFICATION (2026-11-14)**: The second-moment identity ($\mathbb{E}[c_i] = 0$, $\text{Var}(c_i) = 1/\|b_i^*\|^2$, $\text{Cov}(c_i, c_j) = 0$ under uniform IID $e \in \{-1, +1\}^m$) and the finite empirical calibrations ($n \in [20, 36]$) are exact. The Gaussian erfc deviation law and the Hoeffding exponential list-coverage bound treat the Gram-Schmidt indicators $\mathbb{I}(|c_i| > 1/2)$ and sequential Babai carries as independent Rademacher projections in a fixed basis; they are heuristic/model-scoped rather than a basis-independent unconditional lower bound.
 
 ---
 

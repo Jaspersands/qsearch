@@ -126,6 +126,14 @@ conservative and exactly computable. A sufficient condition for >=1/(2n) is
 
     p>=max(64G^2,4*R_branch*h).
 
+Indeed, p>=64G^2 gives sqrt(p)>=8G, so 2G*ceil(sqrt(p))<2G*(sqrt(p)+1)<=p/4+2G.
+Since n>=4 and s=n-b>=3, we have d>=n-1>=3, h=n!>=24, and
+2G-2=h*(d-2-2/s)>=(5/3)*h>=40, so G>=21 (or G=9 in the minimal quartic b=0
+case where d=3, s=4, h=24, R_branch=4). In all admissible cases (even n>=4,
+0<=b<=n-3), G>=h/3 and 16G^2>=R_branch*h+2G-1, so p>=64G^2 automatically
+implies p/4>=R_branch*h+2G-1, absorbing the +2G ceiling term and leaving
+p+1-2G*ceil(sqrt(p))-R_branch*h >= p/2.
+
 This is a bound for a VERIFIED fixed f/g and fixed input shifts. It is not
 the preceding IID-source population bound and uses no source-randomness claim.
 Fresh uniform fiber coins can now legitimately be amplified conditional on

@@ -77,19 +77,27 @@ At N=127,K=39:
 | 18 | 3 | 0.808256 | >=0.178033 |
 | 19 | 1 | 0.816830 | >=0.105285 |
 
-For degree19, Pr[S>=104] >=0.0307255 for EVERY balanced input of the stated
-RS form, including the two compact cubic instances. Degree18 also gives a
-positive lower bound at104. These are not empirically measured probabilities.
-At105 the implemented moment certificates give zero as the lower bound:
-UNKNOWN, not zero actual success. Upper bounds remain broad. The lower-degree
-filter's better certified102 tail is not proof that its actual tail is better;
-the degree19 moment relaxation has less information.
+For degree19, under the ideal filtered distribution P(S)^2 of an exact
+coherent decoder/filter with balanced predicates, Pr[S>=104] >=0.0307255 for
+EVERY balanced input of the stated RS form, including the two compact cubic
+instances. Degree18 (0.004480) and degree16 (9.84e-5) also give positive lower
+bounds at104. These are not empirically measured probabilities. At105 (the
+classical best-of-four score on seed 29), and at the classical scores 7/7,
+27/31 and 30/31 on the six smaller N=7,K=3 and N=31,K=9 controls, the
+implemented moment certificates give zero as the lower bound: UNKNOWN, not
+zero actual success. Upper bounds remain broad. The lower-degree filter's
+better certified102 tail is not proof that its actual tail is better; the
+degree19 moment relaxation has less information.
 
-Thus classical105/127 and104/127 remain verified witnesses but do NOT kill
-the quantum tail. Conversely, a universal known-algorithm tail guarantee does
-not make the explicit input family classically hard, nor supply a new algorithm.
-The relevant unresolved comparison is success at a shared threshold under a
-charged full-work budget, with stronger adaptive classical attacks retained.
+Thus classical105/127 (seed 29, where the certified quantum lower tail at 105
+is 0) and104/127 (seed 71, where positive ideal-filter lower tails are
+certified at 102 and 104) remain verified witnesses; a finite classical
+witness does not upper-bound the ideal quantum tail, although positive quantum
+lower bounds are certified only up to threshold 104 on N=127. Conversely, a
+universal known-algorithm tail guarantee does not make the explicit input
+family classically hard, nor supply a new algorithm. The relevant unresolved
+comparison is success at a shared threshold under a charged full-work budget,
+with stronger adaptive classical attacks retained.
 
 ## Run And Review
 

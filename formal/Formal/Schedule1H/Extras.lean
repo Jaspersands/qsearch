@@ -27,7 +27,7 @@ variable {K : Type*} [Field K]
 
 section TRecursion
 
-variable {τ : Type*} [Fintype τ] [DecidableEq τ]
+variable {τ : Type*} [Fintype τ]
 
 /-- `T_0 = T((1)) = P`. -/
 theorem Tset_unit {κ : ℕ} (hκ : 0 < κ) : Tset κ (fun _ : Unit => (1 : K)) = Pow κ := by
@@ -91,7 +91,7 @@ end TRecursion
 
 section KappaTwo
 
-variable [Fintype K] [DecidableEq K]
+variable [Fintype K]
 
 /-- **Remark `rem:kappa-two`, last claim**: `0 ∉ T_1 = T((1, ε))`, `ε = -q⁻¹`, so the
 plan `(1, F0)` is never admissible. Hypotheses: odd characteristic, `κ h = |K| - 1`,
@@ -144,7 +144,7 @@ theorem cor_hcd_i {κ D : ℕ} {cls : K → Bool} {rt : K → K}
     (hst : StageOK κ D (-1) cls rt) (N : ℕ → ℕ)
     (Hrun : (a n : ℕ) → (Fin n → Fin a → K) → Fin n → K) (hH : IsKSolver D N Hrun)
     {t : ℕ} (z : Fin t → K) (hz0 : z ≠ 0) (hz : ∑ i, z i ^ κ = 0) :
-    IsKSolver κ (fun a => N a ^ Nat.clog 2 t) (fun a n col =>
+    IsKSolver κ (fun a => N a ^ Nat.clog 2 t) (fun a _n col =>
       padRun (onFin (levEquiv (N a) (Nat.clog 2 t))
         (planF0 κ (stageRun D (-1) cls rt (Hrun a (N a))) (Nat.clog 2 t)
           (fun k => if h : (typEquiv _ k).val < t then z ⟨_, h⟩ else 0))) col) := by

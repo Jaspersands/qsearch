@@ -28,8 +28,8 @@ K_\eta(0) \;=\; 1 - p, \qquad K_\eta(+1) \;=\; K_\eta(-1) \;=\; \frac{p}{2}, \qq
 $$
 with baseline fundamental Fourier visibility $\lambda_1(p) = (1 - p) + p\cos(2\pi/q)$.
 
-**Theorem 1 (Single-Step Coincidence Renormalization and $p^* = 2/3$ Purification Threshold).**
-1. Post-selecting two independent copies $e_1, e_2 \stackrel{\text{i.i.d.}}{\sim} K_\eta$ on exact coincidence $e_1 = e_2$ succeeds with probability
+**Theorem 1 (Single-Step Conditional Classical Latent-Error Coincidence Renormalization and $p^* = 2/3$ Purification Threshold).**
+1. Post-selecting two independent copies $e_1, e_2 \stackrel{\text{i.i.d.}}{\sim} K_\eta$ on assumed exact coincidence $e_1 = e_2$ succeeds with probability
    $$
    P_{\text{acc}}^{(1)}(p) \;=\; \sum_{e \in \mathbb{Z}_q} K_\eta(e)^2 \;=\; (1 - p)^2 + \frac{p^2}{2} \;=\; 1 - 2p + \frac{3}{2}p^2,
    $$
@@ -42,9 +42,10 @@ with baseline fundamental Fourier visibility $\lambda_1(p) = (1 - p) + p\cos(2\p
    \lambda_1^{(1)}(p) - \lambda_1(p) \;=\; \frac{p(1 - p)(2 - 3p)\bigl(1 - \cos(2\pi / q)\bigr)}{2\bigl((1 - p)^2 + p^2 / 2\bigr)}.
    $$
    Consequently:
-   - For $0 < p < 2/3$, $\lambda_1^{(1)}(p) > \lambda_1(p)$ (coincidence pruning strictly purifies the phase error).
+   - For $0 < p < 2/3$, $\lambda_1^{(1)}(p) > \lambda_1(p)$ (conditional classical coincidence pruning strictly purifies the retained classical latent-error posterior under assumed exact equality access, not a physical phase-qubit channel).
    - At $p^* = 2/3$, $K_\eta(0) = K_\eta(\pm 1) = 1/3$ is flat on $\{-1, 0, +1\}$, so $K^{(1)} = K_\eta$ and $\lambda_1^{(1)}(2/3) = \lambda_1(2/3)$.
    - For $2/3 < p < 1$, $\lambda_1^{(1)}(p) < \lambda_1(p)$ (coincidence pruning amplifies the $\pm 1$ side-lobes and degrades visibility).
+   - Numerical control grid: `research/phase_workbench/dcp_interleaved_tree_merge_syndrome_pruning_audit.json`.
 
 ## 3. Theorem 2 — Exact Telescoping $2^L$-Moment Identity for Depth-$L$ Tree Survival
 

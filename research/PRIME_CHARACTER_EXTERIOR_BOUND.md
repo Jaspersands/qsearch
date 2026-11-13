@@ -6,12 +6,14 @@ all-field dequantization or independently accepted proof is claimed.
 ## Scientific Question And Outcome
 
 Can the verified Morse norm solver avoid a factorial-genus error when
-counting irreducible fibers? YES under the local trace argument below.
-For degree76, modulus degree58, the sufficient field threshold falls from
-756 bits to169 bits. The same fixed shifts/orientations in a declared
-192-bit prime field now give a strict perfect127/127 witness after24 fibers.
-The old twist bound is zero in that field. This is a genuinely enlarged
-fixed-input guarantee, not an empirical seed-success estimate.
+counting irreducible fibers? YES under the review-pending local trace
+argument below. For degree76, modulus degree58, the sufficient field
+threshold falls from 756 bits to169 bits. The same fixed shifts/orientations
+in a declared 192-bit prime field now give a strict perfect127/127 witness
+after24 fibers. The old twist bound is zero in that field. Conditional on
+independent review of the local compact-support trace/weight application,
+this is a genuinely enlarged fixed-input guarantee, not an empirical
+seed-success estimate.
 
 The original61-bit large source still has ZERO lower bound under both
 methods. A lift to a different field does not solve or give a probability
@@ -24,7 +26,9 @@ Use the explicit prime-field quadratic-coset OPI model in
 public shifts, two orientations, verified nonsquare, degree<K, optional
 strict exclusion of zero. The stored implementation uses points1,...,N.
 Choose majority group A, minority B of size b, even n=2*floor((K-1)/2).
-Require |A|<K, n>=4, n-b>=3 and p>max(n+b-1,2N).
+Require |A|<K, n>=4, n-b>=3 and p>max(n+b-1,2N), together with the large-field
+thresholds p>=max(16A^2,4(R+A)) and p>=2D_bad stated in 'Uniform Field Regime
+And Cost' below.
 
 Reuse the public unit-residue arithmetic progression and two-parameter
 Morse perturbation. CHECK coprimality, simple poles, simple critical points
@@ -36,8 +40,11 @@ Nothing changes in the norm construction, source model or final verifier.
 
 The classical baseline is the existing norm/twist solver. The prospective
 quantum opening was efficient perfect intersection on these explicit lists;
-an expected-polynomial classical solver removes that opening in this promised
-regime. This does NOT address arbitrary oracle lists or low-rate instances.
+when the degree-slack and large-field thresholds p>=max(16A^2,4(R+A),2D_bad)
+also hold (about 169 bits at n=76, which the 61-bit inputs fail), an
+expected-polynomial classical solver removes that opening in this promised
+regime (subject to review of the local trace application). This does NOT
+address arbitrary oracle lists, 61-bit fields or low-rate instances.
 
 ## Exact Cycle Indicator
 

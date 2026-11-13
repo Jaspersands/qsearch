@@ -13,10 +13,15 @@ large examples or prove a general theorem for the smaller pencil below.
 ## Research Decision
 
 The [previous prime-field experiment](PRIME_CHARACTER_OPI.md) solved common
-cosets classically but left mixed high-rate controls at124/127 and122/127.
+cosets classically whenever K>=(r-1)*ceil(N/r) (leaving the below-threshold
+N127,K39 global inputs at 108/127 and 110/127), and left mixed high-rate
+controls at 124/127 and 122/127 for N127,K77, 30/31 for N31,K16 seed71 (r=2),
+55/63 and 56/63 for r=3 (N63,K46), and 28/32 and 27/32 for r=4 (N32,K24).
 The new attack solves BOTH saved N127,K77 mixed inputs perfectly, including
 strict nonzero variants, without changing their public shifts/orientations.
-It does not apply to the saved K39 inputs under its degree budget.
+It does not apply to the saved K39 inputs or to N31,K16 (where |A|+|B|=31
+forces max(|A|,D)>=16=K) under its degree budget K>max(|A|,D), nor to the
+r>=3 controls.
 
 There is also a useful mathematical result independent of those examples:
 one trial has inverse-polynomial perfect-solution probability over an IID

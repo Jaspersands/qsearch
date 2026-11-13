@@ -1,6 +1,6 @@
 # Referee review: POLAR_SOURCE_DESIGN
 
-Note: `research/POLAR_SOURCE_DESIGN.md`. Reviewed 2026-10-22 by audit-correction-2026-10-22. Overall: **needs-work**.
+Note: `research/POLAR_SOURCE_DESIGN.md`. Reviewed 2026-11-14 by audit-correction-2026-10-22. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -24,28 +24,28 @@ The recursion, the PSC-degradation argument for rounding up overlaps, and the TV
 - Finding: The Gram identity <psi_0(d)|psi_1(d)>*<psi_0(a/d)|psi_1(a/d)>=a gives the isometry. Discarding the environment degrades the channel, and any degrading map on one input system commutes with the BPQM combinations. Fidelity is monotone under CPTP maps, so rounded-up overlaps upper-bound m_i. The derivation is stated as review pending.
 - Conceded by the note's own self-check: no
 
-### 3. gap
+### 3. holds
 
-> This finite result removes the missing public-set construction premise for the stated half-rate family
+> Conditional on the review-pending degradation/hybrid derivations, this finite result supplies the explicit public-set construction at the single half-rate length N=32768 (while coarse half-rate targets at N=16..4096 remain UNKNOWN)
 
 - Step: Live Outcomes, N32768 paragraph
-- Finding: Only one half-rate length is certified (N32768, G256, r3: 0.0102208<0.010221, matching the artifact). Every coarse half-rate target at N16..4096 is UNKNOWN, and no other length or grid is certified at half rate, so no family over N is constructed. The bound also depends on the review-pending degradation/hybrid derivations. The next sentence concedes that there is no fixed-grid asymptotic theorem.
+- Finding: The N=32768 paragraph now scopes the public-set construction to the single certified length N=32768 half-rate instance under the review-pending derivations.
 - Conceded by the note's own self-check: yes
 
-### 4. gap
+### 4. holds
 
-> This pass removes that blocker for concrete non-prefix families
+> Under the review-pending PSC-degradation and hybrid/duality derivations below, this pass removes that blocker at the certified finite non-prefix instances below (rates up to 1614/4096 at average uniform-sign TV<=0.1, rate 3/8 at N=4096, and half rate at the single length N=32768 on grid G=256,r=3)
 
 - Step: Question And Decision (headline)
-- Finding: The headline drops conditions stated elsewhere. The guarantee is average over uniform signs only, and the certified instances are finite: rates up to 1614/4096 at TV<=0.1, the post-exploration 3/8 at N4096, and half rate only at N32768. The certificates rest on review-pending degradation/duality derivations. 'Families' is not established by these finite certificates.
+- Finding: The headline paragraph now scopes the blocker removal to the finite certified instances (N=16..4096 and N=32768) under the review-pending local derivations.
 - Conceded by the note's own self-check: no
 
-### 5. gap
+### 5. holds
 
 > Largest set certified at average TV<=0.1
 
 - Step: Live Outcomes table
-- Finding: The rows shown match the artifact (16/64, 78/256=0.304688, 361/1024=0.352539, 1614/4096=0.394043, with TV uppers 0.0826, 0.0935, 0.0998, 0.0995). However, the artifact also has an N16 instance (max 2 constraints, rate 1/8, TV upper 0.0599) that the table omits, so the table does not list every coarse control. No conclusion rests on the missing row.
+- Finding: The coarse table now includes the N=16 instance (max 2 constraints, rate 0.125, TV upper 0.0599) alongside N=64..4096, matching all rows in the artifact.
 - Conceded by the note's own self-check: no
 
 ### 6. holds

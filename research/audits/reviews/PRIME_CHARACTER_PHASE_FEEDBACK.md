@@ -1,6 +1,6 @@
 # Referee review: PRIME_CHARACTER_PHASE_FEEDBACK
 
-Note: `research/PRIME_CHARACTER_PHASE_FEEDBACK.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/PRIME_CHARACTER_PHASE_FEEDBACK.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ Both judges found one headline-scope gap, but in different places: A in the deci
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> There is a concrete interference-restoring action, verified on full native states and locally bounded without selecting fortunate outcomes
+> There is a concrete interference-restoring action, verified on full native states for the four two-row controls at `p=7/11, N=4, K=2, ell=1` (plus one three-row test) and locally bounded at `N=127, K=39, ell=32` by a review-pending analytic certificate assuming exact native-state reflections without selecting fortunate outcomes
 
 - Step: Adversarial Decision And Next Experiment
-- Finding: Full native-state verification exists only for the four two-row controls at p7/11, N4, K2, ell1, plus one three-row test. At N127, K39, ell32 the restoration is an analytic certificate that 'additionally assumes exact native-state reflections' and rests on frame/rank/feedback proofs awaiting review. The sentence merges the two scopes and names neither the certified instances nor the exact-reflection assumption.
+- Finding: Adversarial Decision And Next Experiment now distinguishes the full native-state verification on the four two-row controls at p=7/11, N=4, K=2, ell=1 (plus one three-row test) from the review-pending analytic certificate at N=127, K=39, ell=32 assuming exact native-state reflections.
 - Conceded by the note's own self-check: no
 
 ### 2. holds

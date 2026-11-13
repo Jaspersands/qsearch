@@ -1,8 +1,8 @@
 {
  "basis": {
-  "propagated": 541,
-  "shown": 366,
-  "withheld": 69
+  "propagated": 540,
+  "shown": 364,
+  "withheld": 62
  },
  "by_track": {
   "applied_barriers": {
@@ -15,13 +15,13 @@
    "unclear": 165
   },
   "coset_observables": {
-   "adjacent": 113,
+   "adjacent": 112,
    "not-found": 1,
-   "published": 111,
-   "unclear": 30
+   "published": 110,
+   "unclear": 25
   },
   "dcp": {
-   "adjacent": 109,
+   "adjacent": 108,
    "not-found": 1,
    "published": 1,
    "unclear": 43
@@ -31,7 +31,7 @@
   },
   "lattice": {
    "adjacent": 2,
-   "unclear": 5
+   "unclear": 3
   },
   "other": {
    "adjacent": 5,
@@ -58,9 +58,9 @@
    "unclear": 39
   },
   "coset_observables": {
-   "adjacent": 35,
+   "adjacent": 34,
    "not-found": 1,
-   "published": 48,
+   "published": 47,
    "unclear": 6
   },
   "dcp": {
@@ -95,9 +95,7 @@
    ],
    "id": "NEG-COSET-TYPICAL-FIXED-SOURCE-CATALOG-COVERAGE",
    "label": "adjacent",
-   "retrieved": [
-    "2605.25995"
-   ]
+   "retrieved": []
   },
   {
    "cited_by_judge": [
@@ -108,9 +106,7 @@
    ],
    "id": "NEG-DCP-QUERY-SFT-ACCESS-TRANSFER",
    "label": "adjacent",
-   "retrieved": [
-    "1607.01842"
-   ]
+   "retrieved": []
   }
  ],
  "clusters": [
@@ -707,7 +703,7 @@
    ],
    "tracks": {
     "code_equivalence": 2,
-    "coset_observables": 18,
+    "coset_observables": 11,
     "dcp": 2
    }
   },
@@ -1728,7 +1724,7 @@
    ],
    "tracks": {
     "code_equivalence": 1,
-    "dcp": 12,
+    "dcp": 11,
     "lattice": 1
    }
   },
@@ -2892,16 +2888,16 @@
   }
  ],
  "counts": {
-  "adjacent": 436,
+  "adjacent": 434,
   "not-found": 2,
-  "published": 275,
-  "unclear": 263
+  "published": 274,
+  "unclear": 256
  },
  "generated_by": "tools/audit/rediscovery.py",
- "generated_on": "2026-10-19",
+ "generated_on": "2026-11-14",
  "ground_truth": {
   "n": 10,
-  "published": 7,
+  "published": 6,
   "rows": [
    {
     "citations": [
@@ -3041,36 +3037,14 @@
     "reference": "Quantum walks fail to distinguish strongly regular graphs (Smith 2010; Gamble et al. 2010)."
    },
    {
-    "citations": [
-     {
-      "arxiv_id": "quant-ph/0501056",
-      "doc_id": null,
-      "quote": "the hidden subgroup problem over the symmetric group cannot be efficiently solved by strong Fourier sampling, even if one may perform an arbitrary POVM on the coset state",
-      "title": "The Symmetric Group Defies Strong Fourier Sampling: Part I",
-      "verified": true
-     },
-     {
-      "arxiv_id": "quant-ph/0511148",
-      "doc_id": null,
-      "quote": "entangled quantum measurements on at least \u03a9(n log n) coset states are necessary to get useful information for the case of graph isomorphism",
-      "title": "Limitations of Quantum Coset States for Graph Isomorphism",
-      "verified": true
-     },
-     {
-      "arxiv_id": "1008.2390",
-      "doc_id": null,
-      "quote": "the natural case of the Hidden Subgroup Problem to which the McEliece cryptosystem reduces cannot be solved by strong Fourier sampling, or by any measurement of a coset state",
-      "title": "The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks",
-      "verified": true
-     }
-    ],
+    "citations": [],
     "id": "NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER",
-    "label": "published",
+    "label": "missing",
     "reference": "Limits of Fourier sampling over S_n for graph isomorphism (Moore, Russell, Schulman 2005; Hallgren et al. 2006)."
    }
   ]
  },
- "judged": 976,
+ "judged": 966,
  "labels": {
   "adjacent": "The technique or barrier is known, but in a different setting, or the literature only implies it.",
   "not-found": "No retrieved abstract states the barrier after a reasonable search.",
@@ -3078,10 +3052,10 @@
   "unclear": "The cluster is too heterogeneous or its records too terse to judge."
  },
  "read": {
-  "adjacent": 169,
-  "n": 366,
+  "adjacent": 168,
+  "n": 364,
   "not-found": 2,
-  "published": 138,
+  "published": 137,
   "unclear": 57
  },
  "records": [
@@ -6110,15 +6084,6 @@
    "track": "coset_observables"
   },
   {
-   "basis": "withheld",
-   "cited_ids": [],
-   "cluster": "C13",
-   "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
-   "label": "unclear",
-   "similarity": 0.3769,
-   "track": "lattice"
-  },
-  {
    "basis": "shown",
    "cited_ids": [],
    "cluster": "C14",
@@ -6135,15 +6100,6 @@
    "label": "unclear",
    "similarity": 0.4202,
    "track": "applied_barriers"
-  },
-  {
-   "basis": "withheld",
-   "cited_ids": [],
-   "cluster": "C13",
-   "id": "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER",
-   "label": "unclear",
-   "similarity": 0.4786,
-   "track": "coset_observables"
   },
   {
    "basis": "withheld",
@@ -7577,15 +7533,6 @@
    "track": "coset_observables"
   },
   {
-   "basis": "withheld",
-   "cited_ids": [],
-   "cluster": "C13",
-   "id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
-   "label": "unclear",
-   "similarity": 0.3986,
-   "track": "coset_observables"
-  },
-  {
    "basis": "propagated",
    "cited_ids": [],
    "cluster": "C06",
@@ -8940,15 +8887,6 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
-   "cited_ids": [],
-   "cluster": "C36",
-   "id": "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER",
-   "label": "adjacent",
-   "similarity": 0.4107,
-   "track": "dcp"
-  },
-  {
    "basis": "shown",
    "cited_ids": [],
    "cluster": "C36",
@@ -9192,15 +9130,6 @@
    "track": "coset_observables"
   },
   {
-   "basis": "withheld",
-   "cited_ids": [],
-   "cluster": "C13",
-   "id": "NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND",
-   "label": "unclear",
-   "similarity": 0.4932,
-   "track": "coset_observables"
-  },
-  {
    "basis": "shown",
    "cited_ids": [],
    "cluster": "C13",
@@ -9262,15 +9191,6 @@
    "label": "published",
    "similarity": 0.4497,
    "track": "coset_observables"
-  },
-  {
-   "basis": "withheld",
-   "cited_ids": [],
-   "cluster": "C14",
-   "id": "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER",
-   "label": "unclear",
-   "similarity": 0.3132,
-   "track": "lattice"
   },
   {
    "basis": "withheld",
@@ -10812,15 +10732,6 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "shown",
-   "cited_ids": [],
-   "cluster": "C13",
-   "id": "NEG-SINGER-CYCLE-TORAL-HSP-BARRIER",
-   "label": "adjacent",
-   "similarity": 0.5264,
-   "track": "coset_observables"
-  },
-  {
    "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
@@ -10839,39 +10750,12 @@
    "track": "coset_observables"
   },
   {
-   "basis": "withheld",
-   "cited_ids": [],
-   "cluster": "C13",
-   "id": "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION",
-   "label": "unclear",
-   "similarity": 0.4955,
-   "track": "coset_observables"
-  },
-  {
-   "basis": "shown",
-   "cited_ids": [],
-   "cluster": "C13",
-   "id": "NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER",
-   "label": "published",
-   "similarity": 0.5778,
-   "track": "coset_observables"
-  },
-  {
    "basis": "shown",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND",
    "label": "adjacent",
    "similarity": 0.5343,
-   "track": "coset_observables"
-  },
-  {
-   "basis": "withheld",
-   "cited_ids": [],
-   "cluster": "C13",
-   "id": "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE",
-   "label": "unclear",
-   "similarity": 0.3717,
    "track": "coset_observables"
   },
   {
@@ -12084,9 +11968,9 @@
    },
    "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE": {
     "agree": true,
-    "basis": "withheld",
-    "cluster": "C13",
-    "label": "unclear",
+    "basis": "none",
+    "cluster": null,
+    "label": null,
     "note": "label=published; The barrier (O(1) coset copies carry negligible information about the hidden permutation, so Omega(n log n) entangled copies are needed) is stated by Hallgren-Roetteler-Sen and Moore-Russell-Schulman for the S_n wr Z_2 / GI setting. The Holevo/Fano bound only adds a specific estimate.",
     "seen_label": "published",
     "stale": true
@@ -12143,5 +12027,5 @@
    "n": 3
   }
  },
- "total": 976
+ "total": 966
 }

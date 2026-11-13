@@ -1,4 +1,4 @@
-# Known Relative Norm Removes The Prime-Conductor Quantum Opening
+# Known Relative Norm Removes The Prime-Conductor Quantum Opening (Local Application Review Pending)
 
 **2026-11-06 scope refresh:** the repeated-character composite-conductor
 phase problem is now covered by Tal's September classical algorithm,
@@ -32,8 +32,10 @@ the principal-ideal class. The factorization in Algorithm 18.1 is of a
 constructed integer with bounded small prime factors, not a free generic
 integer-factorization oracle.
 
-**Decision:** for odd prime conductor and the stated public split-root
-input, this published theorem plus the Jacobi identities and primary
+**Decision:** conditional on independent review of the local reduction to
+Theorem 1.3 (and noting that the imported Lenstra-Silverberg generator-recovery
+algorithm is not executed here), for odd prime conductor and the stated public
+split-root input, this published theorem plus the Jacobi identities and primary
 congruence gives classical polynomial-time exact surface counting in
 ell and log p. The proposed asymptotic quantum advantage is therefore not
 a credible target under those premises. Do not continue this route by

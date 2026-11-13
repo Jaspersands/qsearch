@@ -5,9 +5,12 @@ bound and convention-specific entropy derivation require review. No new
 quantum algorithm or general dequantization theorem is claimed.
 
 FOLLOW-UP: [certified source design](POLAR_SOURCE_DESIGN.md) now constructs
-an explicit non-prefix half-rate set without the exponential source table,
-with average-sign TV<=0.010221 at N32768. It resolves the missing public-set
-premise below for that finite family, not the worst-sign or all-code problem.
+an explicit non-prefix half-rate set at the single length N32768 (on grid
+G256, r3, while coarse half-rate targets at N16..4096 remain UNKNOWN) without
+the exponential source table, with average-sign TV<=0.010221 under its
+review-pending degradation/duality derivations. It supplies the public-set
+construction at that finite instance (and later [DQI_POLAR_SAME_CODE_GIBBS.md](DQI_POLAR_SAME_CODE_GIBBS.md)
+addresses the asymptotic epsilon_F->0 link), not the worst-sign or all-code problem.
 
 ## Why This Direction Was Selected
 

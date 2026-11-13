@@ -45,6 +45,7 @@ if theorems_dir not in sys.path:
 DERIVATION = ROOT / "research/DCP_SUBSET_SUM_EUCLIDEAN_VOLUME_INFLATION_BARRIER.md"
 REPORT = ROOT / "research/classical_baselines/dcp_subset_sum_euclidean_volume_inflation_barrier.json"
 REGISTRY = ROOT / "research/registry/negative_results.json"
+QUARANTINED_REGISTRY = ROOT / "research/registry/quarantined_campaign_negatives.json"
 
 NEGATIVE_RESULT_ID = "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER"
 
@@ -63,7 +64,7 @@ def compute_ball_volume_log2(n: int, radius: float) -> float:
 
 
 def compute_expected_lattice_points_log2(n: int, radius: float, modulus_bits: float) -> float:
-    """Compute base-2 logarithm of expected lattice points in B_n(R) for lattice with det(L) = 2^{modulus_bits}."""
+    """Compute base-2 logarithm of heuristic continuous volume/det ratio in B_n(R) for det(L) = 2^{modulus_bits}."""
     log2_vol = compute_ball_volume_log2(n, radius)
     return float(log2_vol - modulus_bits)
 
@@ -83,7 +84,7 @@ def audit_finite_density_one_geometry(n: int = 16, seed: int = 42) -> Dict[str, 
     witness_norm = radius
     radius_ratio = witness_norm / bdd_radius
 
-    # List size needed for 50% coverage
+    # List size needed for 50% coverage under uncentered heuristic
     log2_list_for_half_coverage = max(0.0, log2_points - 1.0)
 
     return {
@@ -114,7 +115,7 @@ def evaluate_density_one_scaling(n: int) -> Dict[str, Any]:
     # Theoretical asymptotic formula: (2.0664)^n / sqrt(pi n)
     theoretical_log2 = n * math.log2(2.0664) - 0.5 * math.log2(math.pi * n)
 
-    # Max coverage of a polynomial list L = n^3
+    # Max coverage of a polynomial list L = n^3 under uncentered continuous heuristic
     poly_list_size_log2 = 3.0 * math.log2(float(n))
     log2_coverage_poly_list = poly_list_size_log2 - log2_points
 
@@ -134,7 +135,7 @@ def evaluate_density_one_scaling(n: int) -> Dict[str, Any]:
 
 
 def build_report() -> Dict[str, Any]:
-    """Build comprehensive verification artifact report."""
+    """Build verification artifact report reflecting the 2026-11-06 universal exclusion retraction."""
     sha256 = hashlib.sha256(DERIVATION.read_bytes()).hexdigest() if DERIVATION.exists() else "UNCOMMITTED"
 
     finite_audit_16 = audit_finite_density_one_geometry(n=16)
@@ -157,95 +158,54 @@ def build_report() -> Dict[str, Any]:
 
     claim_gate = {
         "euclidean_ball_volume_inflation_proved": True,
-        "expected_lattice_point_exponential_multiplicity_proved": True,
-        "bdd_radius_collapse_proved": finite_audit_16["witness_outside_bdd_radius"],
-        "polynomial_list_exponential_undercoverage_proved": all(
-            p["exponentially_undercovered"] for p in scaling_profiles if p["dimension_n"] >= 16
-        ),
-        "universal_subset_sum_lattice_trilemma_proved": True,
+        "expected_lattice_point_exponential_multiplicity_proved": False,
+        "bdd_radius_collapse_proved": False,
+        "polynomial_list_exponential_undercoverage_proved": False,
+        "universal_subset_sum_lattice_trilemma_proved": False,
+        "universal_exclusion_retracted_2026_11_06": True,
         "speedup_claim_allowed": False,
     }
 
     theorem_contract = {
         "euclidean_volume_inflation": (
-            "The volume of the n-dimensional Euclidean ball of radius R = sqrt(n) containing the true binary witness "
-            "scales asymptotically as Vol(B_n(sqrt(n))) = (2 pi e)^{n/2} / sqrt(pi n) = 2^{2.0471 n - 0.5 log2(pi n)}."
+            "The volume of the n-dimensional Euclidean ball of radius R = sqrt(n) scales asymptotically as "
+            "Vol(B_n(sqrt(n))) = (2 pi e)^{n/2} / sqrt(pi n) = 2^{2.0471 n - 0.5 log2(pi n)}."
         ),
-        "density_one_point_multiplicity": (
-            "At density d = 1.0 (modulus D = 2^n), the expected number of integer lattice points inside B_n(sqrt(n)) is "
-            "N_points = Vol(B_n(sqrt(n))) / 2^n = (2.0664)^n / sqrt(pi n) = 2^{1.0471 n - 0.5 log2(pi n)} = 2^{Omega(n)}."
-        ),
-        "bdd_radius_collapse": (
-            "By the Gaussian heuristic, the BDD unique decoding radius is R_BDD = lambda_1 / 2 approx 0.242 sqrt(n). "
-            "The true binary witness has norm ||e||_2 = sqrt(n) approx 4.13 R_BDD, placing it far outside the unique BDD decoding ball."
-        ),
-        "list_undercoverage": (
-            "Any nearest-plane or sphere-decoding list decoder exploring a polynomial list of size L = poly(n) achieves "
-            "coverage bounded by P_coverage <= poly(n) / 2^{1.047 n} = 2^{-Omega(n)}, factorially/exponentially suppressing "
-            "all Euclidean lattice approaches."
+        "correction_2026_11_06": (
+            "Universal lattice/BDD/list-decoding exclusion withdrawn (see research/DCP_HALF_CENTER_DGS_ADMISSION.md): "
+            "correct half-integer centering retains coordinate parity (signed difference lattice 2L with determinant 2^n D/g), "
+            "where every integer vector is at least sqrt(n)/2 from the midpoint (equality exactly on binary vectors) "
+            "and exact mean closest-list cardinality is 1 for IID coefficients + uniform target (2 - 2^-n for planted)."
         ),
     }
 
     return {
         "created_at": "2026-10-11T00:00:00+00:00",
-        "status": "DCP_SUBSET_SUM_EUCLIDEAN_VOLUME_INFLATION_BARRIER_PROVED",
+        "corrected_at": "2026-11-06T00:00:00+00:00",
+        "status": "UNIVERSAL_SUBSET_SUM_VOLUME_BARRIER_RETRACTED_BALL_VOLUME_FORMULA_ONLY",
         "derivation_sha256": sha256,
+        "correction_note": "research/DCP_HALF_CENTER_DGS_ADMISSION.md",
         "theorem_contract": theorem_contract,
         "headline_metrics": headline_metrics,
         "claim_gate": claim_gate,
         "finite_audit_16": finite_audit_16,
         "scaling_profiles": scaling_profiles,
-        "falsifiers_triggered": [NEGATIVE_RESULT_ID],
+        "quarantined_negative_id": NEGATIVE_RESULT_ID,
+        "falsifiers_triggered": [],
         "summary": (
-            "Proved the Density-One Modular Subset-Sum Euclidean Volume Inflation & BDD Multiplicity Barrier. "
-            "Demonstrated that at density d=1.0, the Euclidean ball of radius sqrt(n) containing the binary witness has volume "
-            "2^{2.047 n}, enclosing an exponential sea of 2^{1.047 n} integer lattice points. "
-            "Proved that the binary witness lies 4 times outside the BDD unique decoding radius (ratio approx 4.13), causing "
-            "Euclidean reduction algorithms to preferentially output non-binary vectors of smaller Euclidean norm. "
-            "Proved that polynomial-size list decoders achieve only 2^{-Omega(n)} coverage, completely precluding classical or "
-            "quantum lattice speedups for density-one modular subset sum without coordinate bounds. "
-            "Formally registered NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER."
+            "Retains the exact Euclidean ball volume formula Vol(B_n(sqrt(n))) = pi^(n/2) n^(n/2) / Gamma(n/2 + 1), "
+            "while recording the 2026-11-06 retraction of the universal density-one lattice/BDD/list-decoding exclusion "
+            "(see research/DCP_HALF_CENTER_DGS_ADMISSION.md). In the parity-preserving half-integer centered coset, "
+            "binary witnesses minimize distance sqrt(n)/2 and exact mean closest-list cardinality is O(1). "
+            "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER is quarantined in "
+            "research/registry/quarantined_campaign_negatives.json."
         ),
     }
 
 
 def register_negative_result() -> None:
-    """Register negative result into research/registry/negative_results.json."""
-    if not REGISTRY.exists():
-        return
-    with open(REGISTRY, "r", encoding="utf-8") as f:
-        registry = json.load(f)
-
-    for entry in registry:
-        if entry.get("id") == NEGATIVE_RESULT_ID:
-            print(f"Negative result {NEGATIVE_RESULT_ID} already registered.")
-            return
-
-    new_entry = {
-        "id": NEGATIVE_RESULT_ID,
-        "applies_to": [
-            "DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER",
-            "DCP-SUBSET-SUM-AFFINE-BDD-GEOMETRY",
-            "DCP-BABAI-DEVIATION-DEPTH-BARRIER",
-        ],
-        "claim": "Euclidean lattice reduction, BDD algorithms, or nearest-plane list decoders can achieve polynomial-time or inverse-polynomial coverage for density-one modular subset sum.",
-        "evidence": {
-            "artifact": "research/classical_baselines/dcp_subset_sum_euclidean_volume_inflation_barrier.json",
-            "euclidean_ball_volume": "Vol(B_n(sqrt(n))) = (2 pi e)^{n/2} / sqrt(pi n) = 2^{2.047 n - 0.5 log2(pi n)}",
-            "expected_point_multiplicity": "N_points = Vol(B_n(sqrt(n))) / 2^n = (2.066)^n / sqrt(pi n) = 2^{1.047 n - 0.5 log2(pi n)} = 2^{Omega(n)}",
-            "bdd_radius_ratio": "||e||_2 / lambda_1(L) = sqrt(2 pi e) / 2 = 2.066 > 0.5, placing the witness far outside unique BDD radius",
-            "list_undercoverage": "P_coverage <= poly(n) / 2^{1.047 n} = 2^{-Omega(n)} for any polynomial-size list",
-            "speedup_claim_allowed": False,
-        },
-        "lesson": "Euclidean lattice reduction fundamentally fails at density one due to Euclidean volume inflation. At density d=1 (D = 2^n), the Euclidean ball of radius sqrt(n) containing the true binary witness has volume 2^{2.047 n}, enclosing an exponential sea of 2^{1.047 n} integer lattice points. Because Euclidean algorithms optimize geometric distance without coordinate bounds, they preferentially output non-binary points of equal or smaller Euclidean norm. The true binary witness lies 4 times outside the BDD unique decoding radius, forcing any list decoder to inspect 2^{Omega(n)} candidates, rendering all Euclidean lattice approaches exponentially ineffective.",
-        "reason_invalid": "For all density-one modular subset-sum instances (modulus D approx 2^n), the Euclidean ball of radius sqrt(n) contains Vol / 2^n = 2^{1.047 n - 0.5 log2(pi n)} = 2^{Omega(n)} integer lattice points by the Gaussian volume heuristic. The true binary witness has norm sqrt(n), which is a factor of 4.13 larger than the BDD unique decoding radius lambda_1 / 2 approx 0.242 sqrt(n). Euclidean lattice algorithms (LLL, BKZ, Babai) optimize unconstrained Euclidean distance and preferentially output non-binary points. Any polynomial-size list decoder has coverage bounded by poly(n) * 2^{-1.047 n} = 2^{-Omega(n)}, completely falsifying the hypothesis that lattice algorithms can solve density-one modular subset sum in polynomial time.",
-        "source": "research/classical_baselines/dcp_subset_sum_euclidean_volume_inflation_barrier.json",
-    }
-
-    registry.append(new_entry)
-    with open(REGISTRY, "w", encoding="utf-8") as f:
-        json.dump(registry, f, indent=2)
-    print(f"Registered negative result {NEGATIVE_RESULT_ID} into {REGISTRY} (Total: {len(registry)})")
+    """No-op: NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER is quarantined."""
+    print(f"Negative result {NEGATIVE_RESULT_ID} is quarantined in {QUARANTINED_REGISTRY}; skipping active registration.")
 
 
 def main() -> None:

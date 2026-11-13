@@ -2114,6 +2114,10 @@ or separation is claimed.
   checkpoint and SIMULTANEOUS_NORM_SUPPORT.md. General joint solving is open.
 
 
+- **Rees core draft now has headline 20 and the HSP23 remark (11-14, Claude, local, not posted).** core 68 pp.,
+  sec:plus + rem:free23; merged-text referee CORRECT WITH FIXES, all applied (audits/reviews/2026-11-14-rees-
+  core-plus-referee.md). Full version not yet synced. Owner: adopt or revert (backups in
+  audits/reviews/2026-11-09-rees-paper-pass-prep/backup-pre-schedule1hplus-2026-11-14/).
 - **Rees headline 38 → 20 proved (refereed); free23 HSP cover-free for all H; Lean 1H (11-13 night, Claude, AI only, pending human review).**
   - Schedule 1H+ (audits/reviews/2026-11-13-rees-headline-below-38{,-v2}.md, fragment.tex / fragment-v2.tex):
     class-9 E = 21 PROVED WITH FIXES given Weil + Rabin + exact computation (…-headline-21-referee.md),

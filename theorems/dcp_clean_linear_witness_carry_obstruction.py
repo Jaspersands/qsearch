@@ -590,6 +590,8 @@ def build_dcp_clean_linear_witness_carry_obstruction_report(
             "theorem2_f2_rref_carry_parity_vanishing_passed": bool(all_t2),
             "theorem3_disjoint_kernel_linearization_passed": bool(all_t3),
             "all_theorems_passed": bool(all_passed),
+            "all_scoped_identities_passed": bool(all_passed),
+            "universal_obstruction_theorems_passed": False,
             "max_hensel_swap_advantage": 0.0,
             "disjoint_kernel_source_average_decay_proved": False,
             "old_full_group_iid_bound": "RETRACTED_EFFECTIVE_LABELS_ARE_EVEN",

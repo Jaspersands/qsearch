@@ -1,6 +1,6 @@
 # Referee review: POLAR_CONDITIONAL_SAMPLER
 
-Note: `research/POLAR_CONDITIONAL_SAMPLER.md`. Reviewed 2026-10-22 by claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d. Overall: **needs-work**.
+Note: `research/POLAR_CONDITIONAL_SAMPLER.md`. Reviewed 2026-11-14 by claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -48,10 +48,10 @@ The reverse-order hybrid, the triangle inequalities to 2 epsilon_F, prefix exact
 - Finding: For F=[[1,0],[1,1]], F^T=RFR, which extends to tensor powers. The artifact N2/N4 lists are exact reversals (e.g. N4 Holevo [0.2400,0.7018,0.7573,0.9769] vs entropies [0.9769,0.7573,0.7018,0.2400]), with errors ~1e-16. Numerics, as conceded.
 - Conceded by the note's own self-check: no
 
-### 6. gap
+### 6. holds
 
-> It resolves the missing public-set premise below for that finite family
+> It supplies the public-set construction at that finite instance (and later [DQI_POLAR_SAME_CODE_GIBBS.md](DQI_POLAR_SAME_CODE_GIBBS.md) addresses the asymptotic epsilon_F->0 link), not the worst-sign or all-code problem
 
 - Step: Header FOLLOW-UP
-- Finding: This note's premise is 'epsilon_F->0 with a polynomial construction' for a code family. The follow-up certifies a single half-rate length (N32768) at fixed TV 0.0102; half-rate is UNKNOWN at every coarse N<=4096, so no epsilon_F->0 sequence is given. The header also drops that the certificate rests on POLAR_SOURCE_DESIGN's review-pending degradation/duality derivations.
+- Finding: The FOLLOW-UP header now scopes the resolution to the single certified length N=32768 instance under the review-pending derivations.
 - Conceded by the note's own self-check: no

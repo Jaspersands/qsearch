@@ -173,10 +173,13 @@ asymptotic dequantization of BPQM.
 
 ## Decision and Remaining Falsifiers
 
-The BPQM tree certificate survives, but a classical separation is STILL
-UNESTABLISHED. No graph used here is presented as a quantum success. Do not
-convert short-run sticking, differing energies or factor-cap failures into
-classical hardness. Do not start another parameter sweep by inertia.
+The classical probes here do not test or refute the BPQM extrinsic-tree
+certificate (which remains a review-pending tree condition certified only at
+`c=13/20` in `research/BPQM_GIBBS_FRONTIER.md`, without a finite-graph
+decoder), and a classical separation is STILL UNESTABLISHED. No graph used here
+is presented as a quantum success. Do not convert short-run sticking, differing
+energies or factor-cap failures into classical hardness. Do not start another
+parameter sweep by inertia.
 
 Next high-value work is finite-block, phase-correct quantum decoder/reduction
 composition or a genuinely structural classical mixing argument, with stronger

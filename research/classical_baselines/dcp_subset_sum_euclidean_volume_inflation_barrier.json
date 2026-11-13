@@ -1,12 +1,12 @@
 {
   "created_at": "2026-10-11T00:00:00+00:00",
-  "status": "DCP_SUBSET_SUM_EUCLIDEAN_VOLUME_INFLATION_BARRIER_PROVED",
-  "derivation_sha256": "e0503ea2b6238e06c98fdd8dab929d3c07296d9df7f04e562ed28675aa7432f3",
+  "corrected_at": "2026-11-06T00:00:00+00:00",
+  "status": "UNIVERSAL_SUBSET_SUM_VOLUME_BARRIER_RETRACTED_BALL_VOLUME_FORMULA_ONLY",
+  "derivation_sha256": "11f41c5e27dad18aa5290207d92fb5985a73ea37b8f0180e98e1c9d1e1ec0b3c",
+  "correction_note": "research/DCP_HALF_CENTER_DGS_ADMISSION.md",
   "theorem_contract": {
-    "euclidean_volume_inflation": "The volume of the n-dimensional Euclidean ball of radius R = sqrt(n) containing the true binary witness scales asymptotically as Vol(B_n(sqrt(n))) = (2 pi e)^{n/2} / sqrt(pi n) = 2^{2.0471 n - 0.5 log2(pi n)}.",
-    "density_one_point_multiplicity": "At density d = 1.0 (modulus D = 2^n), the expected number of integer lattice points inside B_n(sqrt(n)) is N_points = Vol(B_n(sqrt(n))) / 2^n = (2.0664)^n / sqrt(pi n) = 2^{1.0471 n - 0.5 log2(pi n)} = 2^{Omega(n)}.",
-    "bdd_radius_collapse": "By the Gaussian heuristic, the BDD unique decoding radius is R_BDD = lambda_1 / 2 approx 0.242 sqrt(n). The true binary witness has norm ||e||_2 = sqrt(n) approx 4.13 R_BDD, placing it far outside the unique BDD decoding ball.",
-    "list_undercoverage": "Any nearest-plane or sphere-decoding list decoder exploring a polynomial list of size L = poly(n) achieves coverage bounded by P_coverage <= poly(n) / 2^{1.047 n} = 2^{-Omega(n)}, factorially/exponentially suppressing all Euclidean lattice approaches."
+    "euclidean_volume_inflation": "The volume of the n-dimensional Euclidean ball of radius R = sqrt(n) scales asymptotically as Vol(B_n(sqrt(n))) = (2 pi e)^{n/2} / sqrt(pi n) = 2^{2.0471 n - 0.5 log2(pi n)}.",
+    "correction_2026_11_06": "Universal lattice/BDD/list-decoding exclusion withdrawn (see research/DCP_HALF_CENTER_DGS_ADMISSION.md): correct half-integer centering retains coordinate parity (signed difference lattice 2L with determinant 2^n D/g), where every integer vector is at least sqrt(n)/2 from the midpoint (equality exactly on binary vectors) and exact mean closest-list cardinality is 1 for IID coefficients + uniform target (2 - 2^-n for planted)."
   },
   "headline_metrics": {
     "log2_expected_points_at_n16": 13.9128,
@@ -20,10 +20,11 @@
   },
   "claim_gate": {
     "euclidean_ball_volume_inflation_proved": true,
-    "expected_lattice_point_exponential_multiplicity_proved": true,
-    "bdd_radius_collapse_proved": true,
-    "polynomial_list_exponential_undercoverage_proved": true,
-    "universal_subset_sum_lattice_trilemma_proved": true,
+    "expected_lattice_point_exponential_multiplicity_proved": false,
+    "bdd_radius_collapse_proved": false,
+    "polynomial_list_exponential_undercoverage_proved": false,
+    "universal_subset_sum_lattice_trilemma_proved": false,
+    "universal_exclusion_retracted_2026_11_06": true,
     "speedup_claim_allowed": false
   },
   "finite_audit_16": {
@@ -171,8 +172,7 @@
       "bdd_radius_ratio": 4.1327
     }
   ],
-  "falsifiers_triggered": [
-    "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER"
-  ],
-  "summary": "Proved the Density-One Modular Subset-Sum Euclidean Volume Inflation & BDD Multiplicity Barrier. Demonstrated that at density d=1.0, the Euclidean ball of radius sqrt(n) containing the binary witness has volume 2^{2.047 n}, enclosing an exponential sea of 2^{1.047 n} integer lattice points. Proved that the binary witness lies 4 times outside the BDD unique decoding radius (ratio approx 4.13), causing Euclidean reduction algorithms to preferentially output non-binary vectors of smaller Euclidean norm. Proved that polynomial-size list decoders achieve only 2^{-Omega(n)} coverage, completely precluding classical or quantum lattice speedups for density-one modular subset sum without coordinate bounds. Formally registered NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER."
+  "quarantined_negative_id": "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER",
+  "falsifiers_triggered": [],
+  "summary": "Retains the exact Euclidean ball volume formula Vol(B_n(sqrt(n))) = pi^(n/2) n^(n/2) / Gamma(n/2 + 1), while recording the 2026-11-06 retraction of the universal density-one lattice/BDD/list-decoding exclusion (see research/DCP_HALF_CENTER_DGS_ADMISSION.md). In the parity-preserving half-integer centered coset, binary witnesses minimize distance sqrt(n)/2 and exact mean closest-list cardinality is O(1). NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER is quarantined in research/registry/quarantined_campaign_negatives.json."
 }

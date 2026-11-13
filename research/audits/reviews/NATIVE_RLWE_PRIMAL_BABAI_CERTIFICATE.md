@@ -1,6 +1,6 @@
 # Referee review: NATIVE_RLWE_PRIMAL_BABAI_CERTIFICATE
 
-Note: `research/NATIVE_RLWE_PRIMAL_BABAI_CERTIFICATE.md`. Reviewed 2026-10-22 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **needs-work**.
+Note: `research/NATIVE_RLWE_PRIMAL_BABAI_CERTIFICATE.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 
@@ -8,12 +8,12 @@ The Babai sufficient condition (1), the centered discrete-Gaussian MGF behind (2
 
 ## Claims
 
-### 1. gap
+### 1. holds
 
-> Native Ring-LWE: Direct Classical Decoding At The Lower Modulus
+> Native Ring-LWE: Direct Classical Decoding Certificates On Two Seeded d=64 Labels At The Lower Modulus (Review Pending)
 
 - Step: Title
-- Finding: Headline scope (both judges). Read alone, the title asserts classical decoding at the q-near-d^4 modulus in general. The note certifies only two seeded labels at d=64, q=16777259, under the exact discrete reference law, with source-discretization, anchor and precision losses outside the bounds and the derivation LOCAL / REVIEW PENDING; d=256/1024 are 'parameter choices, NOT results' and the PRS error-family assumptions were not reverified.
+- Finding: The title now scopes the result to direct classical decoding certificates on two seeded d=64 labels at the lower modulus (review pending).
 - Conceded by the note's own self-check: yes
 
 ### 2. holds

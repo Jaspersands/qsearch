@@ -209,7 +209,7 @@ with $Z_J$ the normalizing constant over the kernel. This is the signed parity-I
 \[
 \mathbb{E}_J\, \TV \;\le\; \sum_{i \in F} m_i, \qquad m_i = \mathbb{E}\,\lvert P(U_i = 0 \mid U_{<i}) - P(U_i = 1 \mid U_{<i}) \rvert .
 \]
-Each $m_i$ equals the unsquared root fidelity of the reversed synthesized classical-quantum bit channel, an instance of channel/code duality~\cite{Renes2017,RengaswamyPfister2021}; this identity is a local derivation, checked numerically only at the smallest lengths and marked review pending. Hence any polar Gibbs proposal justified by a vanishing sum of these root fidelities also supplies this classical average-sign sampler. The average is essential: on a length-$\CalN$ calibration with $p=\CalNoise$, the uniform-syndrome average error is $\CalAvg$ but the worst syndrome has error $\CalWorst$.
+Each $m_i$ equals the unsquared root fidelity of the reversed synthesized classical-quantum bit channel, an instance of channel/code duality~\cite{Renes2017,RengaswamyPfister2021}; this identity and the joint conditional gauge-bijection bound are derived analytically in the same-code follow-up note (\texttt{DQI\_POLAR\_SAME\_CODE\_GIBBS.md}), while the earlier conditional-sampler note checked the identity numerically at the smallest lengths and remains marked review pending. Hence any polar Gibbs proposal justified by a vanishing sum of these root fidelities also supplies this classical average-sign sampler. The average is essential: on a length-$\CalN$ calibration with $p=\CalNoise$, the uniform-syndrome average error is $\CalAvg$ but the worst syndrome has error $\CalWorst$.
 
 To make the competitor constructive, the project certifies upper bounds on every $m_i$ without a source table. Overlaps are kept on the nonuniform mesh $(j/G)^{r}$, $j=0,\ldots,G$, with dyadic herald masses of $\PolarMassBits$-bit precision. Each channel combination is computed exactly in integers, overlaps are rounded up and masses down, and discarded mass is sent to an uninformative flag. The source note argues that the posterior-magnitude recursion is a combination of flagged pure-state channels and that each of these roundings is a physical degradation of such a channel, under which root fidelity cannot decrease; the computed means are then upper bounds on the $m_i$. Both steps are local derivations marked review pending, so every certified bound below is conditional on them. The frozen set is chosen as the coordinates with the smallest certified bounds. Bounded-alphabet polar construction has substantial prior art~\cite{TalVardy2011}, and SC source shaping builds on source polarization~\cite{Arikan2010Source,HondaYamamoto2013}.
 
@@ -222,6 +222,7 @@ To make the competitor constructive, the project certifies upper bounds on every
 \toprule
 $N$ & Mesh $(G, r)$ & Largest set within $\PolarTarget$ & Its rate & Half-rate bound \\
 \midrule
+\CoarseNZ & (\CoarseGrid, \CoarsePower) & \CoarseFZ & \CoarseRateZ & \CoarseHalfZ{} (trivial) \\
 \CoarseNA & (\CoarseGrid, \CoarsePower) & \CoarseFA & \CoarseRateA & \CoarseHalfA{} (trivial) \\
 \CoarseNB & (\CoarseGrid, \CoarsePower) & \CoarseFB & \CoarseRateB & \CoarseHalfB{} (trivial) \\
 \CoarseNC & (\CoarseGrid, \CoarsePower) & \CoarseFC & \CoarseRateC & \CoarseHalfC{} (trivial) \\

@@ -193,9 +193,12 @@ into evidence of quantum advantage or generic classical difficulty.
 
 ## Revised Research Direction
 
-The high-rate quadratic family has a constructive classical explanation, not
-a remaining quantum-advantage candidate. The proposed lower-rate repair is now
-implemented and removes the finite mean-score signal in both127-position
+Under the review-pending IID uniform $\mathrm{GL}(t,2)$ model and fixed rate
+$R > 1/2$ as odd $t$ grows (with $N_c \le Kt$), the high-rate quadratic family
+has a high-probability constructive classical explanation, and on the saved
+finite controls (`N=127,K=90`, `N=31,K=19`, `N=7,K=3`) the linear/repair
+attacks remove the finite mean-score signal. The proposed lower-rate repair is
+now implemented and removes the finite mean-score signal in both 127-position
 controls. Do not repeat the repair as a missing task, or extend blind size,
 seed or restart scans on the strength of the earlier weaker baseline.
 
