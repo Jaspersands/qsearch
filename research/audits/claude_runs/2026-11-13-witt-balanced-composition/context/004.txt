@@ -1,0 +1,75 @@
+But for these primes we have α1 ∈ Kp×2 , hence h−αi ∼   = h−α2 i. This means
+that qa ⊥ h−αi is locally isotropic at every place of K. Consequently it is
+isotropic over K by the local-global principle. It follows that
+                                            
+                            dima q ⊥ h−αi ≤ 2
+and this proves the correctness of the algorithm.                                    
+
+5.3. Anisotropic dimensions one and two. Once we managed to re-
+duce the anisotropic dimension to two, it is time to explicitly construct an
+anisotropic part of a given form. This task is achieved by the following
+algorithm.
+Algorithm 8. Given a quadratic form q = ha1 , . . . , an i of an anisotropic
+dimension 2, with coefficients in a number field K, this algorithm constructs
+an anisotropic part qa of q.
+   (1) If the Witt index w(q) of q is not divisible by 4, then replace q by
+       q ⊥ w′ × h−1, 1i, where w′ + w(q) ≡ 0 (mod 4).
+   (2) Compute the discriminant d := disc q.
+   (3) Set S := P(q)∪{d1 , . . . , dl }, where d1 , . . . , dl are all the dyadic primes
+       of K.
+   (4) Let σ1 , . . . , σr : K ֌ R be the real embeddings of K such that σi (d)
+       is negative.
+   (5) Repeat the following steps:
+        (a) Construct a basis {β1 , . . . , βm } of the group ES of S-singular
+            elements modulo squares.
+        (b) For every real embedding σi with i ≤ r, set
+                                   (
+                                    1 if sgn σi (q) = −2,
+                             vi :=
+                                    0 if sgn σi (q) = 2.
+
+10                      P. KOPROWSKI AND B. ROTHKEGEL
+
+
+          (c) Let S = {p1 , . . . , ps }. For i ≤ s, set
+                                       (
+                                         1 if spi q = −1,
+                             wi :=
+                                         0 if spi q = 1.
+              Here spi q is the Hasse invariant of q ⊗ Kpi .
+          (d) Construct a matrix A = (aij ) with r rows (indexed by the real
+              embeddings σ1 , . . . , σr ) and m columns (indexed by the elements
+              of the basis of ES computed in step (5a)), setting
+                                      (
+                                        1 if σi (βj ) < 0,
+                            aij :=
+                                        0 if σi (βj ) > 0.
+          (e) Construct a matrix B = (bij ) with s rows (indexed by the primes
+              p1 , . . . , ps in S) and m columns, setting
+                                      (
+                                       1 if (βj , d)pi = −1,
+                               bij :=
+                                       0 if (βj , d)pi = 1.
+              Here (βj , d)pi is the pi -adic Hilbert symbol.
+          (f) If the following system of F2 -linear equations
+                                                    v1
+                                                       
+                                        ... 
+                                       ε1            
+                               A      ..   vr 
+                                                       
+(♣)                                 · . =
+                               B                  w1 
+                                                        
+                                         εm       . 
+                                                  .. 
+                                                    ws
+              has a solution, then set
+                                           m
+                                                 βiεi
+                                           Y
+                                    α :=
+                                           i=1
+              and exit the loop.
+          (g) Otherwise find a new non-archimedean place q ∈
+                                                           / S, append it

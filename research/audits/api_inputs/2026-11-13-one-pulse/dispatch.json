@@ -1,0 +1,21 @@
+{
+  "scientific_question": "Native coherent one-pulse Kerr count CDF classical compiler",
+  "prior_checkpoint": "balanced_witt_round",
+  "jobs": [
+    {
+      "provider": "openai",
+      "bundle": "research/audits/openai_runs/2026-11-13-kerr-cdf-construction",
+      "session_id": 68363,
+      "ceiling_usd": 4,
+      "status": "running"
+    },
+    {
+      "provider": "claude",
+      "bundle": "research/audits/claude_runs/2026-11-13-kerr-uniform-attack",
+      "session_id": 38276,
+      "ceiling_usd": 3,
+      "status": "running"
+    }
+  ],
+  "warning": "Local ceilings not charges or billing caps; no retries."
+}

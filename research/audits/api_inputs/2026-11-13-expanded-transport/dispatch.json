@@ -1,0 +1,37 @@
+{
+  "note": "Two distinct new construction obligations after exponent-residue norm decompactification; no retry of prior empty/refused attempts. Ceilings not charges/balances. Reports advisory.",
+  "jobs": [
+    {
+      "id": "expanded-norm-transport",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-expanded-transport/global-attack.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-expanded-transport/native-construction.md",
+        "research/audits/api_inputs/2026-11-13-expanded-transport/source-contracts.md",
+        "research/audits/api_inputs/2026-11-13-expanded-transport/compact-norm-contract.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-expanded-norm-transport",
+      "max_tokens": 64000,
+      "effort": "max",
+      "budget": 3,
+      "session_id": 54607,
+      "status": "running"
+    },
+    {
+      "id": "ternary-local-offset",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-expanded-transport/local-offset-construction.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-expanded-transport/native-construction.md",
+        "research/audits/api_inputs/2026-11-13-expanded-transport/source-contracts.md",
+        "research/audits/api_inputs/2026-11-13-expanded-transport/local-prior-interface.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-ternary-local-offset",
+      "max_tokens": 64000,
+      "effort": "max",
+      "budget": 4,
+      "session_id": 37995,
+      "status": "running"
+    }
+  ]
+}

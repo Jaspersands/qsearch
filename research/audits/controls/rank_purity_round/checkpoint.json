@@ -1,0 +1,266 @@
+{
+  "captured_at_utc": "2026-11-13T08:06:24.565975+00:00",
+  "claim_gates": {
+    "V3_admitted": false,
+    "bookkeeping_itself_proves_general_bound": false,
+    "bookkeeping_only": true,
+    "empty_report_supplies_findings": false,
+    "full_tomography_or_extent_bridge_claim": false,
+    "general_rank_polynomial_purity_bound_closed": false,
+    "hardness_claim": false,
+    "implementation_claim": false,
+    "novelty_claim": false,
+    "quantum_advantage_claim": false,
+    "rank_two_result_proves_general_k": false,
+    "remaining_balance_computed": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_actual_billing": false
+  },
+  "dispatch": {
+    "bytes": 1158,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-rank-purity/dispatch.json",
+    "sha256": "d5eea7503d9c4daf3fbac213e8067cb4c26be9cc246e401c2477d59ce8c27266"
+  },
+  "dispatch_mutation_scope": "Parent terminal/reaped metadata retained; no manifest/raw-result edits. Final stable disposition review supersedes earlier pending manifest wording.",
+  "exclusions": [
+    {
+      "reason": "Preserved exactly and excluded.",
+      "scope": "Seven inherited UNKNOWN bills and observed partial counters"
+    },
+    {
+      "reason": "Outside this two-job rank milestone. Parent-supplied state-final used instead of changing STATE; no new source copy, old source rescan, recovery pin or test.",
+      "scope": "Live STATE/HANDOFF/MECHANICAL, new community-recovery/Mao artifacts and source PDFs"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 1241,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-rank-purity/claude-attack.md",
+      "sha256": "7812d11b8874ab896656d9e8c9a01f08610c11dfd8876bbfe621ff4c32fce3f3"
+    },
+    {
+      "bytes": 4701,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-rank-purity/contract.md",
+      "sha256": "32bfec3a559e88c730e8145dbb3c03bd863de74272b1a3b78629d0e6c57d1138"
+    },
+    {
+      "bytes": 1158,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-rank-purity/dispatch.json",
+      "sha256": "d5eea7503d9c4daf3fbac213e8067cb4c26be9cc246e401c2477d59ce8c27266"
+    },
+    {
+      "bytes": 1358,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-rank-purity/openai-construct.md",
+      "sha256": "e8bc89e8a8cacd2e2cb176effdecb8a9e853e1194499b7427a79881d27d5da72"
+    },
+    {
+      "bytes": 17845,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-rank-purity/source-excerpts.md",
+      "sha256": "ced252b8956064147b2f82fe60f3e479e114a532c737a6887517f3e767532e25"
+    },
+    {
+      "bytes": 294027,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-rank-purity/state-final.md",
+      "sha256": "6cf85d2249daf90c559186009b10d94ffe7a54873d98a63f68b20c5fcfa029f4"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 16759,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/folded_product_round/checkpoint.json",
+    "sha256": "ea23ba3c200ef46a6a2a645aab2b7ad0c86c754bfc7a8f209579991c5cadf011"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 20590,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/folded_product_round/usage.json",
+    "sha256": "955c1bac89668c359367c428f3fb43b6fb23c0ef356ddffdfcbfd65a94afa12b"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 28
+  },
+  "labelled_snapshots": [
+    {
+      "bytes": 10279,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/rank_purity_round/stabilizer_rank_pauli_purity-snapshot.md",
+      "sha256": "b49f76207c0a931c7d54b08ac4cfa5f9a2cd9b16030f2a772c47542c97c3a7af",
+      "snapshot_label": "Stable rank topic snapshot",
+      "source_original_path": "/Users/jaspersands/Developer/qsearch/research/STABILIZER_RANK_PAULI_PURITY.md"
+    },
+    {
+      "bytes": 294027,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/rank_purity_round/state-final-snapshot.md",
+      "sha256": "6cf85d2249daf90c559186009b10d94ffe7a54873d98a63f68b20c5fcfa029f4",
+      "snapshot_label": "Parent-supplied final STATE snapshot, explicitly used instead of changing live STATE",
+      "source_original_path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-rank-purity/state-final.md"
+    }
+  ],
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "prior_hash_policy": "Immediate prior usage/checkpoint continuity references only; prior snapshots/pins unchanged. No historical source/run/hash sweep or repinning.",
+  "scope": "Frozen folded-product ledger plus ONLY two terminal rank-purity requests, paid packets/bundles, stable selection/endpoint/rank-two-addendum/final-disposition reviews and labelled stable rank topic/parent-supplied state-final snapshots.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-13T08:06:24.565975+00:00",
+    "labelled_snapshots": [
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/rank_purity_round/stabilizer_rank_pauli_purity-snapshot.md",
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/rank_purity_round/state-final-snapshot.md"
+    ],
+    "live_STATE_not_read_or_hashed": true,
+    "parent_confirmed_stable_and_fully_read": true,
+    "snapshot_state_title": "2026-11-13 Rank Purity Parked After General Bound Stalled",
+    "state_snapshot_authority": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-rank-purity/state-final.md"
+  },
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 11038,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 179,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-post-folded-selection.md",
+      "physical_LF_count": 178,
+      "sha256": "ee98bb712b28ee5060aa14dd035850af004ae802219a88cf23fc9d0538911275"
+    },
+    {
+      "bytes": 7207,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 140,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-rank-purity-endpoint.md",
+      "physical_LF_count": 140,
+      "sha256": "42f501488715b44b03c9a3a5259b8c1530f383d50bdb652640fcac559997e042"
+    },
+    {
+      "bytes": 8728,
+      "includes_final_short_addendum": true,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": null,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-rank-two-purity.md",
+      "physical_LF_count": 212,
+      "sha256": "6d297fbf1900011a2587abcb653ccf3db3c1b1c75b7af7388ffa77bedf7a73fa"
+    },
+    {
+      "bytes": 3944,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 84,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-purity-paid-disposition.md",
+      "physical_LF_count": 84,
+      "sha256": "f350f7e4f693348073edd40a8f5581f90055b12612402d45c230f3d00db863a9"
+    }
+  ],
+  "status": "TERMINAL_RANK_PURITY_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 4701,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-rank-purity-attack/context/000.txt",
+      "sha256": "32bfec3a559e88c730e8145dbb3c03bd863de74272b1a3b78629d0e6c57d1138"
+    },
+    {
+      "bytes": 17845,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-rank-purity-attack/context/001.txt",
+      "sha256": "ced252b8956064147b2f82fe60f3e479e114a532c737a6887517f3e767532e25"
+    },
+    {
+      "bytes": 1241,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-rank-purity-attack/prompt.txt",
+      "sha256": "7812d11b8874ab896656d9e8c9a01f08610c11dfd8876bbfe621ff4c32fce3f3"
+    },
+    {
+      "bytes": 27247,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-rank-purity-attack/request.json",
+      "sha256": "6364cfdea400b8a8727642802824f4b4b745a506fba026c3f28e1d9523f31564"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-rank-purity-attack/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1659,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-rank-purity-attack/result.json",
+      "sha256": "ade97f4fd355c8a1b5bbea5b4aa0b2ba379811afac45e02ea13a697cdfd87569"
+    },
+    {
+      "bytes": 1358,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-rank-purity-construct/context-00.txt",
+      "sha256": "e8bc89e8a8cacd2e2cb176effdecb8a9e853e1194499b7427a79881d27d5da72"
+    },
+    {
+      "bytes": 4701,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-rank-purity-construct/context-01.txt",
+      "sha256": "32bfec3a559e88c730e8145dbb3c03bd863de74272b1a3b78629d0e6c57d1138"
+    },
+    {
+      "bytes": 17845,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-rank-purity-construct/context-02.txt",
+      "sha256": "ced252b8956064147b2f82fe60f3e479e114a532c737a6887517f3e767532e25"
+    },
+    {
+      "bytes": 485288,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-rank-purity-construct/provider-response.json",
+      "sha256": "d1d787d0cd9c8f932e30e3811e6c52874540aeca8827d7f5e902c3b1d7061182"
+    },
+    {
+      "bytes": 26910,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-rank-purity-construct/request.json",
+      "sha256": "597f7e89584b875bc63b6a837dfafc06ef8b893b1dca31846dc585b661df8b6a"
+    },
+    {
+      "bytes": 11216,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-rank-purity-construct/response.md",
+      "sha256": "3fea9e7d936570c0de3f03bf3545331d49bc4ad2d7a66b7451b18c53d5cf7956"
+    },
+    {
+      "bytes": 1582,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-rank-purity-construct/result.json",
+      "sha256": "e5d71493eb80dd5ad07fdab93058cf904a632f569585e638e9e65e4752c97c01"
+    }
+  ],
+  "two_terminal_results_and_responses": [
+    {
+      "obligation": "rank-purity-attack",
+      "parent_fully_read_nonempty_report": false,
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-rank-purity-attack/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "result": {
+        "bytes": 1659,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-rank-purity-attack/result.json",
+        "sha256": "ade97f4fd355c8a1b5bbea5b4aa0b2ba379811afac45e02ea13a697cdfd87569"
+      },
+      "session_id": 12681,
+      "session_reaped_per_parent": true,
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "usage_cost_estimate_usd": "1.319040"
+    },
+    {
+      "obligation": "rank-purity-construct",
+      "parent_fully_read_nonempty_report": true,
+      "response": {
+        "bytes": 11216,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-rank-purity-construct/response.md",
+        "sha256": "3fea9e7d936570c0de3f03bf3545331d49bc4ad2d7a66b7451b18c53d5cf7956"
+      },
+      "result": {
+        "bytes": 1582,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-rank-purity-construct/result.json",
+        "sha256": "e5d71493eb80dd5ad07fdab93058cf904a632f569585e638e9e65e4752c97c01"
+      },
+      "session_id": 85642,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "1.671910"
+    }
+  ],
+  "unique_hashed_artifact_count": 28,
+  "usage_snapshot": {
+    "bytes": 19686,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/rank_purity_round/usage.json",
+    "sha256": "47d4c60456daeb27220bf275c037d95a783d193c960fd1bedff4fb0b66ad5088"
+  }
+}

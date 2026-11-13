@@ -1,5 +1,5 @@
 {
-  "billing_status": "unknown",
+  "billing_status": "usage_reported",
   "budget_check": "passed",
   "context": [
     {
@@ -30,6 +30,8 @@
   "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
   "counted_input_tokens": 10029,
   "effort": "max",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-13T03:42:39.652908+00:00",
   "input_token_allowance": 10285,
   "max_budget_usd": 3.0,
   "max_tokens": 64000,
@@ -48,6 +50,13 @@
   },
   "role": "adversarial",
   "run_id": "20261113T033309.002260Z-951a18f9",
-  "status": "in_flight",
-  "usage": {}
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 10029,
+    "output_tokens": 64000
+  },
+  "usage_cost_estimate_usd": 1.320116
 }

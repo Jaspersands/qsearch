@@ -518,3 +518,83 @@ These are owner-reported SPENT totals, not measured remainingbalances. Keep
 runnerestimates separately. Ongoing faster researchspend remainsauthorized;
 no unrelatedservice/Git action. Current wavebatch has a newOAIunknownbill,
 RemoteProtocolError andEMPTYreport, not retried; FIFTHunknown nowretained.
+
+Expanded-norm terminal usage milestone13November: two reports fully parent-read/reaped,
+Claude truncatedNONEMPTY and OpenAIcompleted, no retry. Frozen46hash
+controls/expanded_norm_round: roundAnth1.311132/OpenAI1.868280,total3.179412USD;
+cumulativeAnth166.579414/OpenAI129.264960,total295.844374USD/227priced.
+SIX UNKNOWN bills and all observed partial counters remain excluded. Runner
+estimates are not invoices or balances; owner-reported actualSPENT155.99/101.71
+remains separate. Prior ledgers/pins unchanged; live post-transport selection
+excluded. Scientific dispositions remain in parent-owned topic/STATE.
+
+Balanced-Witt terminal usage milestone13November: OAI completed/full651LF
+parent-read/reaped and ClaudeEMPTYtruncated/reaped/no findings/no retry.
+Frozen50hash controls/balanced_witt_round: roundAnth1.322232/OpenAI2.666350,
+total3.988582USD; cumulativeAnth167.901646/OpenAI131.931310,total299.832956USD/
+229priced. SIX UNKNOWN bills and all partial counters remain excluded.
+Runner estimates are not invoices/balances; owneractualSPENT155.99/101.71
+remains separate. Prior ledgers/pins unchanged; unfinished post-witt selection
+excluded. Scientific scope remains in parent-owned topic/STATE.
+
+One-pulse terminal usage milestone13November: both original paid reports
+EMPTY/reaped/no findings/no retry. ClaudeMaxTokens final estimate1.346368USD
+counted; OpenAIReadError billUNKNOWN, no reported partial counter, never zero.
+Frozen40hash controls/one_pulse_cdf_round: cumulative knownAnth169.248014/
+OpenAI131.931310,total301.179324USD/230priced. SEVEN UNKNOWN bills and all
+observed partial counters excluded. Runner estimates are not invoices/balances;
+owneractualSPENT155.99/101.71 separate. New balanced candidate remains unproved
+in labelled snapshots; unfinished kernel/endpoints/live files excluded.
+Prior ledgers/pins unchanged.
+
+Balanced-Kerr terminal usage milestone13November: two completed/nonempty
+reports fully parent-read/reaped, no retry. Frozen26hash
+controls/balanced_kerr_round: roundAnth0.620804/OpenAI1.255670,total1.876474USD;
+cumulativeAnth169.868818/OpenAI133.186980,total303.055798USD/232priced.
+SEVEN UNKNOWN bills and partial counters excluded unchanged; runner estimates
+not invoices/balances. OwneractualSPENT155.99/101.71 separate. Parent stable
+repaired sampler/proof chain and labelled snapshots included; live
+post-balanced-selection/folded sources excluded, inherited source pins untouched.
+
+Folded-product terminal usage milestone13November: both completed/nonempty
+reports fully parent-read/reaped; initial local PDF-control-character
+rejections occurred BEFORE API access, not paid retries. Frozen38hash
+controls/folded_product_round: roundAnth0.768200/OpenAI1.567230,total2.335430USD;
+cumulativeAnth170.637018/OpenAI134.754210,total305.391228USD/234priced.
+SEVEN UNKNOWN bills/partial counters excluded unchanged; runner estimates
+not invoices/balances. OwneractualSPENT155.99/101.71 separate. Stable CT
+corollary/topic/STATE snapshots included; live selection/purity screens excluded.
+Existing exact convention control not rerun; prior pins unchanged.
+
+Rank-purity terminal usage milestone13November: ClaudeEMPTYtruncated/reaped/
+no evidence/no retry; OAIcompleted/full323LF parent-read/reaped. Frozen28hash
+controls/rank_purity_round: roundAnth1.319040/OpenAI1.671910,total2.990950USD;
+cumulativeAnth171.956058/OpenAI136.426120,total308.382178USD/236priced.
+SEVEN UNKNOWN bills/partial counters excluded unchanged. Runner estimates not
+invoices/balances; owneractualSPENT155.99/101.71 separate. Stable final rank
+disposition/addendum and labelled state-final snapshot included; general bound
+OPEN/PARKED. Live STATE and new recovery artifacts excluded; prior pins unchanged.
+
+Community-recovery terminal usage milestone13November: both completed/full
+parent-read/reaped; OAI722LF report. Frozen37hash controls/community_recovery_round:
+roundAnth0.576940/OpenAI1.693960,total2.270900USD; cumulativeAnth172.532998/
+OpenAI138.120080,total310.653078USD/238priced. SEVEN UNKNOWN bills/partial
+counters excluded unchanged; estimates not invoices/balances. Owneractual
+SPENT155.99/101.71 separate. Corrected mass/validation/rounding/tomography/
+retention proof chain and supplied state-final/topic-final snapshots frozen;
+live post-recovery selection excluded. No old pins changed or tests rerun.
+
+
+Owner update, 13 November 2026: OpenAI is OUT OF CREDITS; no further paid OpenAI requests. Anthropic has USD20.59 remaining, dedicated to research and to be used. This is an owner-reported balance anchor, not a measured runner balance. The current Gram-defect Claude call was already in flight. Its distinct OpenAI bit-clock call ended with APIError/empty report and UNKNOWN billing, not retried. Preserve that unknown, do not infer an invoice from the exhausted-credit report. Future paid work uses only Anthropic for concrete constructive/decisive scientific obligations.
+
+Gram-defect terminal usage milestone13November: both paid reportsEMPTY/
+reapedexit1/no evidence/no retry. ClaudeMaxTokens final estimate0.988120USD
+counted; OAIAPIError billUNKNOWN, no partial counter reported, never zero.
+Frozen47hash controls/gram_defect_round: cumulative knownAnth173.521118/
+OpenAI138.120080,total311.641198USD/239priced; EIGHT UNKNOWN bills and all
+observed partial counters excluded. Runner estimates are not invoices/balances.
+Historical ownerSPENT155.99/101.71 separate. LATEST owner credit update:
+OpenAI exhausted, NO FURTHER PAID OPENAI CALLS; owner-reported Anthropic
+20.59USD remains, separate from runner estimates/no inferred subtraction.
+Final supplied snapshots/sources/control frozen, no test rerun; live
+post-gram-selection and oldpins untouched.

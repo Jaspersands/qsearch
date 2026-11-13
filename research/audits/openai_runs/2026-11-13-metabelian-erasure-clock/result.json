@@ -1,7 +1,8 @@
 {
-  "billing_status": "unknown",
+  "billing_status": "usage_reported",
   "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
   "effort": "max",
+  "error": null,
   "files": [
     {
       "path": "research/audits/api_inputs/2026-11-13-metabelian-native/erasure-clock-construction.md",
@@ -24,6 +25,8 @@
       "sha256": "40a76b589c9d179edf5e5e2f2ea0774847be86d4e6beeb07fbb891a99f1fe7b2"
     }
   ],
+  "finished_at": "2026-11-13T03:49:19.894880+00:00",
+  "incomplete_details": null,
   "max_budget_usd": "4",
   "max_tokens": 64000,
   "model": "gpt-6-astra",
@@ -37,5 +40,18 @@
   },
   "response_id": "resp_046517f7fc5fc9ca016af684f6a33887d1ac98b6a9010ca688",
   "started_at": "2026-11-13T03:33:09.003595+00:00",
-  "status": "running"
+  "status": "completed",
+  "usage": {
+    "input_tokens": 6278,
+    "input_tokens_details": {
+      "cache_write_tokens": 6275,
+      "cached_tokens": 0
+    },
+    "output_tokens": 37551,
+    "output_tokens_details": {
+      "reasoning_tokens": 33150
+    },
+    "total_tokens": 43829
+  },
+  "usage_cost_estimate_usd": "1.94033"
 }

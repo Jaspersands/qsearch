@@ -1,0 +1,190 @@
+Actual Hiary Annals2011 source excerpt; source URL https://annals.math.princeton.edu/wp-content/uploads/annals-v174-n2-p03-p.pdf. Parent read these passages. Missing pages are not implied theorems.
+
+PHYSICAL LINES 60-100
+in some settings, it is useful to be able to compute these sums efficiently and
+accurately. We soon describe two such settings, both of which originate in
+number theory.
+     The simplest examples of the exponential sums (1.1) occur when f (x) is of
+degree one, where we obtain the geometric series and its derivatives for which
+“closed-form” formulae are available. The first nontrivial example occurs when
+f (x) is a quadratic polynomial. In this case, the exponential sum (1.1) can be
+written as a linear combination of exponential sums of the form
+                                    K
+                                  1 X
+(1.2)           F (K, j; a, b) := j    k j exp(2πiak + 2πibk 2 ) .
+                                 K k=0
+
+     Suppose the integer j is not too large. Then in this article, using ideas
+rooted in analysis, we prove the sum F (K, j; a, b) can be numerically computed
+to within ± ε, for any positive ε < e−1 , in poly-log time in K/ε. The linear
+and quadratic arguments a and b are any numbers in [0, 1), and j is any integer
+that satisfies 0 ≤ j ≤ O(log(K/ε)κ0 ), where κ0 is any fixed constant.
+     More precisely, we obtain the following upper bound on the number of
+elementary arithmetic operations (additions, multiplications, evaluations of
+the logarithm of a positive number, or evaluations of the complex exponential)
+on numbers of O((j + 1) log(K/ε)) bits that our theta algorithm uses.
+     Theorem 1.1. There are absolute constants κ1 , κ2 , A1 , A2 , and A3 ,
+such that for any positive ε < e−1 , any integer K > 0, any integer j ≥ 0, any
+a, b ∈ [0, 1), and with ν := ν(K, j, ε) = (j + 1) log(K/ε), the value of the func-
+tion F (K, j; a, b) can be computed to within ± A1 ν κ1 ε using ≤ A2 ν κ2 arith-
+metic operations on numbers of ≤ A3 ν 2 bits.
+     We remark that a bit complexity bound follows routinely from the arith-
+metic operations bound in Theorem 1.1. This is because all the numbers that
+occur in our algorithm have ≤ A3 ν(K, j, ε)2 bits. We do not try to obtain
+numerical values for the constants κ1 and κ2 in Theorem 1.1. With some
+optimization, they probably can be taken around 3. Also, in a practical ver-
+sion of the algorithm, the arithmetic can be performed using substantially
+fewer than A3 ν 2 bits, and we will likely be able to replace ν(K, j, ε) with
+j + log(K/ε). If we take ε = K −d in the statement of the theorem, then
+ν(K, j, ε) = (d + 1)(j + 1) log K. So the running time of the algorithm becomes
+≤ A2 (d + 1)κ2 (j + 1)κ2 (log K)κ2 operations. For d and j bounded by any fixed
+power of log K, this running time is poly-log in K.
+
+           A METHOD TO COMPUTE THE TRUNCATED THETA FUNCTION                            861
+
+
+PHYSICAL LINES 395-465
+where qa,b,K , a∗a,b , and b∗b are the same as in (1.15), and
+                                                 j
+                                                 X
+(1.17)                        w̃l,j,a,b,K :=            zs wl,s,a,b,K .
+                                                  s=l
+In Section 3, we show that the coefficients w̃l,j,a,b,K do not grow too rapidly with
+each iteration. Specifically, we show that the maximum modulus of w̃l,j,a,b,K
+
+           A METHOD TO COMPUTE THE TRUNCATED THETA FUNCTION                       867
+
+
+over all iterations of the algorithm is O(8j K 2 ), provided the initial coefficients
+zl satisfy max0≤l≤j |zl | = O(1) say, which is often the case. This bound is
+rather generous, but it is sharp enough for purposes of our error analysis,
+and for bounding the number of bits needed by the algorithm to perform its
+arithmetic operations.
+     The presentation is organized as follows. In Section 3, we describe the
+typical van der Corput iteration. In Section 4, we provide a pseudo-code for
+the algorithm. In Section 5, it is shown how to compute the related sums
+                                     K
+                                     X 1
+(1.18)            G(K, j; a, b) :=            exp(2πiak + 2πibk 2 ) ,
+                                     k=1
+                                         kj
+
+with a similar complexity and accuracy to F (K, j; a, b). This is done mainly
+for use in the separate paper [Hia08]. Finally, in Section 6, we give proofs
+of various lemmas employed in the previous sections. Section Section 6 in-
+cludes Lemmas 6.6 and 6.7, which are also intended for use in the separate
+paper [Hia08]. These two lemmas give a complete account of how the theta
+algorithm behaves, in the case j = 0, under small perturbations in the linear
+argument a.
+
+                                     2. Notation
+     We let bxc denote the largest integer less than or equal to x , dxe denote
+smallest integer greater than or equal to x, {x} denote x − bxc, log x denote
+loge x, and exp(x) as well as ex stand for the exponential function (they are
+used interchangeably). We define 00 := 1 whenever it occurs (e.g. in a bino-
+mial expansion). For easy reference, we list contours frequently used in later
+sections:
+         C0 := {t | 0 ≤ t < K} ,               C1 := {K + it | 0 ≤ t < K} ,
+                                 √
+         C2 := {eπi/4 t | 0 ≤ t < 2K} ,        C3 = {−it | 0 ≤ t < ∞} ,
+         C4 = {K − it | 0 ≤ t < ∞} ,           C5 := {eπi/4 t | − ∞ < t < 0} ,
+                          √                                             √
+         C6 := {eπi/4 t | 2K ≤ t < ∞} ,        C7 := {e−πi/4 t | 0 ≤ t < 2K} ,
+         C8 := C2 ∪ C5 ∪ C6 ,                  C9 := {t | 0 ≤ t < ∞} .
+Next, define the functions
+                        1
+                             Z
+(2.1) IC (K, j; a, b) :=     tj exp(2πiat + 2πibt2 ) dt ,
+                       Kj C
+                        1
+                          Z K        Ä                ä 1 − exp (−2πM t)
+    J(K, j; M, a, b) := j     tj exp −2πat − 2πibt2                      dt .
+                       K 0                                exp(2πt) − 1
+It is convenient to define I˜C (K, j; a, b) := IC (K, j; ia, −b) because it will occur
+often. Notice I˜C (K, j; a, b) = e−πi/2 Ieπi/2 C (K, j; a, b), so it is essentially a
+
+868                                    G. A. HIARY
+
+
+rotation by π/2. We also define
+      p := p(a) = dae ,                        ω1 := ω1 (a) = dae − a ,
+      q := q(a, b, K) = ba + 2bKc ,            ω := ω(a, b, K) = {a + 2bK} ,
+      p1 := p1 (a, b, K) = q(a, b, K) − p(a) , ν(K, l, ε) := (l + 1) log(K/ε) .
+      For any j ≥ 0 and ε ∈ (0, e−1 ), we say K is large enough if it is satis-
+fies the lower bound K > Λ(K, j, ε), where Λ(K, j, ε) := 1000ν(K, j, ε)6 , and
+ν(K, j, ε) := (j + 1) log(K/ε). For example, if K is large enough, then among
+other consequences, e−K < (ε/K)1000(j+1) . Finally, in the remainder of the
+paper, any implicit asymptotic constants are absolute, and are applicable as
+
+PHYSICAL LINES 1130-1200
+m > 0. To normalize the arguments a and b properly, we use the following
+lemma:
+     Lemma 4.1. For any integer K ≥ 0, any integer j ≥ 0, and any a, b ∈ C,
+the function F (K, j; a, b) satisfies the identities
+         F (K, j; a, b) = F (K, j; a + 1, b) = F (K, j; a, b + 1)
+(4.1)
+                        = F (K, j; a ± 1/2, b ± 1/2) = F (K, j; a ∓ 1/2, b ± 1/2) .
+     Proof. This follows from the fact exp(2πi(z + 1)) = exp(2πiz), and the
+fact (k 2 ± k)/2 ∈ Z for any k ∈ Z.                                      
+
+     As a direct application of the identities in Lemma 4.1, we obtain a simple
+procedure such that starting with any real pair (a, b) it produces a normalized
+pair (a0 , b0 ) ∈ [0, 1) × [0, 1/4] satisfying
+(4.2)
+   F (K, j; a, b) = F (K, j; a0 , b0 ) ,     or F (K, j; a, b) = F (K, j; a0 , b0 ) .
+
+           A METHOD TO COMPUTE THE TRUNCATED THETA FUNCTION                                         879
+
+
+Notice that the pair (a0 , b0 ) is independent of K and j. The normalization
+procedure is used in the pseudo-code below to compute jl=0 zl F (K, l; a, b). As
+                                                        P
+
+before, we let ν(K, j, ε) := (j + 1) log(K/ε), and Λ(K, j, ε) := 1000ν(K, j, ε)6 .
+  • INPUT: Numbers a, b ∈ [0, 1), an integer K > 0, a positive number ε ∈
+    (0, e−1 ), an integer j ≥ 0, and an array of numbers zl , l = 0, . . . , j, with
+    |zl | ≤ 1 say.
+
+  • OUTPUT: A complex number S that equals jl=0 zl F (K, l; a, b) to within
+                                                                  P
+
+    ± A1 ν(K, j, ε)κ1 ε, where A1 and κ1 are the absolute constants in Theo-
+    rem 1.1.
+
+  • INITIALIZE: Set S = 0, flag = 0, and counter = 0. It suffices to per-
+    form arithmetic using A3 ν(K, j, ε)2 bit numbers where A3 is the absolute
+    constant in Theorem 1.1.
+(1) Normalize (a, b) ← (a0 , b0 ) using the identities in Lemma 4.1. This costs a
+    constant number of operations on numbers of A3 ν(K, j, ε)2 bits. If conju-
+    gation is needed to normalize (a, b), set flag ← 1 and zl ← zl .
+
+(2) Let p = da0 e, and q = ba0 + 2b0 Kc. These numbers can be calculated
+    using a constant number of operations on numbers of A3 ν(K, j, ε)2 bits.
+
+(3) If K < Λ(K, j, ε) (a boundary case), evaluate the sum jl=0 zl F (K, l; a, b)
+                                                                                P
+
+    directly. This can be done using ≤ Ã1 (j + 1)Λ(K, j, ε) operations on
+    number of A3 ν(K, j, ε)2 bits, where Ã1 is an absolute constant. Store the
+    result in R[counter]. If flag = 1, set R[counter] ← R[counter]. Go to (9).
+
+(4) If q ≤ p (a boundary case), apply the Euler-Maclaurin technique of Sec-
+    tion 3.2 to evaluate the sum to within ± ε̃ where ε̃ := 8−j K −2 ε. This costs
+    ≤ Ã2 ν(K, j, ε̃)κ̃4 operations on numbers of A3 ν(K, j, ε)2 bits, where Ã2
+    and κ̃4 are absolute constants. (Notice ν(K, j, ε̃) ≤ 4(j + 1)ν(K, j, ε), and
+    so Ã3 ν(K, j, ε̃)κ̃4 ≤ 4κ̃4 Ã3 ν(K, j, ε)2κ̃4 .) Store the result in R[counter]. If
+    flag = 1, set R[counter] ← R[counter]. Go to (9).
+
+(5) Apply the algorithm iteration for the case p < q. This step requires the
+                                                           a0
+    calculation of the quantities q := ba0 + 2b0 Kc, a∗ := 2b 0
+                                                                , and b∗ := − 4b10 ,
+    all of which can be calculated using a constant number of operations. We
+    obtain
+         j                            j                                        j
+                                            w̃l,j,a,b,K F (q, l; a∗ , b∗ ) +
+         X                            X                                        X
+                zl F (K, l; a, b) =                                                  RK,l,j,a,b ,
+          l=0                         l=0                                      l=0
+                            Pj                                             Pj
+    where w̃l,j,a,b,K := s=l zs wl,s,a,b,K . The remainder l=0 RK,l,j,a,b is com-

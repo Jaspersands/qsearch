@@ -1,0 +1,98 @@
+                                          that a form q is called isotropic, if there is a non-zero vector v such that
+                                          q(v) = 0. In geometric terms, this means that v is self-orthogonal with
+                                          respect to q. The celebrated Witt decomposition theorem (see e.g., [28,
+                                          Chapter 12]) says that every non-degenerate quadratic form q is isometric
+                                          to an orthogonal sum
+                                                                        qa ⊥ w × h1, −1i,
+                                          for some anisotropic form qa , called an anisotropic part of q, and some w ≥ 0,
+                                          called the Witt index of q. The anisotropic part of q is determined uniquely
+                                          up to isometry. Its dimension is called the anisotropic dimension of q and
+                                          denoted dima (q), hereafter.
+                                             From the computational point of view, given a non-degenerate quadratic
+                                          form q, the following four problems arise immediately:
+                                              (1) determine whether q is isotropic or not;
+                                              (2) compute the anisotropic dimension of q;
+                                              (3) construct its anisotropic part;
+                                              (4) if q is isotropic, find an isotropic vector.
+                                          The problems above are listed in increasing order of difficulty. Indeed, if one
+                                          can solve (2), then it suffices to compare dim q with dima q to solve (1). If
+                                          one can construct an anisotropic part qa of q, then dima q = dim qa . Finally,
+                                          if one can solve (4), then one may find on anisotropic part of q removing
+                                          successive hyperbolic planes till only an anisotropic form is left.
+                                             It is not at all surprising that most effort have been focused on forms over
+                                          the rational. For such forms solutions to problem (4) have a long history
+                                          dating back to Lagrange. Efficient algorithms for this task were devised by
+                                          Cremona and Rusin in [13], Simon in [27] and Castel in [9]. More recently,
+                                          Quertier in [25] presented a method for finding a vector such is simultane-
+                                          ously isotropic with respect to two forms (of dimension at least 13) with
+                                          rational coefficients. For forms over R(x) task (1) was solved by the first
+                                          author in [21], while the task (3), and consequently also (4), was proved to
+                                          be unsolvable in general. Nonetheless, for forms of dimension 3 there is a
+                                                                                   1
+
+2                      P. KOPROWSKI AND B. ROTHKEGEL
+
+
+solution even to problem (4), which is due to Schicho (see [26]). To some
+extend it resembles Lagrange approach for forms over Q. Schicho’s method
+was subsequently generalized by van Hoeij and Cremona [29] to forms with
+coefficients in multivariate rational function fields over either a finite field or
+the rationals. For forms with coefficients in real algebraic fields, tasks (1)
+and (2) are solved in [18]. Algorithmic solutions to (1) and (2) for forms
+over number fields are given in [20]. Analogous algorithms for global func-
+tion fields have been recently invented by Darkey-Mensah (see [14]). Also
+recently, a solution to task (3) has been found in [15] by the present authors
+and Darkey-Mensah. The goal of this paper is to present an algorithm that
+solves problem (3) over an arbitrary number field. For forms of anisotropic
+dimension 2, the proposed algorithm is a generalization of the algorithm in
+[15]. For forms of anisotropic dimension 3 or more (except anisotropic di-
+mension 4 over non-real fields) the algorithms presented in this paper are
+completely new. All the described algorithms were implemented in Magma
+package CQF [19].
+   This paper is organized as follows. In Section 2 we establish the nota-
+tion used throughout the paper and recall most of the relevant terminology.
+The two subsequent sections describe some auxiliary algorithms used in the
+main part. Section 3 presents an algorithm for constructing the group of S-
+singular elements (modulo squares) of a number field. Next, in Section 4 we
+discuss methods for finding elements that have prescribed signs with respect
+to different orderings of the field. The main result of this paper is the algo-
+rithm for constructing an anisotropic part of a given form. It is described
+in Section 5, which is divided into three subsections, dealing with different
+anisotropic dimensions. Finally, in Section 6 we show an explicit example of
+how the algorithm works in practice.
+   Our algorithm for constructing an anisotropic part of a quadratic form
+depends on a number of auxiliary procedures. We assume that, beside the
+basic linear algebra routines, we have at our disposal the following tools from
+the arsenal of the computational algebraic number theory:
+
+     • An algorithm that checks if an ideal is principal, and if so finds its
+       generator (see e.g., [11, Section 6.5.5]).
+     • Factorization of an ideal into prime ideals. There is a vast bibliogra-
+       phy concerning this problem, see e.g., [12, Algorithm 2.3.22] or [17,
+       §2.2]. In fact we will need only to factorize principal ideals.
+     • A method for isolating real roots of a polynomial. There are probably
+       hundreds of known techniques that can be used here. See for example
+       [1, 2, 3].
+     • Closely connected to the previous point, are algorithms for enumer-
+       ating all the real embeddings of a number field, see e.g., [4, §3.1].
+     • A method for computing the S-class group for some finite set S, see
+       for example [12, Algorithm 7.4.6] and [10, 5, 6]
+     • A related problem is the construction of the group of S-units, see
+       e.g. [12, Algorithm 7.4.8] or [10].
+     • Computation of the anisotropic dimension (or equivalently of the
+       Witt index) of a quadratic form. This is described in [20, Algo-
+       rithm 9].
+
+   THE ANISOTROPIC PART OF A QUADRATIC FORM OVER A NUMBER FIELD                  3
+
+
+      • An algorithm for computing Hilbert symbol is given in [30, Algo-
+         rithm 6.6].
+All these algorithm are implemented in existing computer algebra systems,
+like for instance Magma [7] (see also [16]).
+
+                                 2. Notation
+   Throughout this paper we use the following notation conventions. K al-
+ways denotes a number field, that is a finite extension of Q. The set of
+all places (classes of valuations) of K is denoted ΩK . We use fraktur let-
+ters p, q, r, . . . for non-archimedean places of K. If p is such a place, then

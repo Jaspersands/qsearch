@@ -1,0 +1,68 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 4470,
+      "path": "research/audits/api_inputs/2026-11-13-balanced-witt/candidate.md",
+      "sha256": "b93aa6b36d768cd51205ba7e3d6dcbd91bef913df0077389a8b271edddadaf3c",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 6373,
+      "path": "research/audits/api_inputs/2026-11-13-balanced-witt/expanded-norm.md",
+      "sha256": "e44a3a02d030462eee3d5bf8b5f810d1c8d045ed1ff8d2a9d11e18a2cce8f3b4",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 4866,
+      "path": "research/audits/api_inputs/2026-11-13-balanced-witt/fukshansky-excerpt.txt",
+      "sha256": "64c6fa3daad9ad83648bb77b96cd4dc908c58c7afaaff44dd15ca68ac99d1f23",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 7410,
+      "path": "research/audits/api_inputs/2026-11-13-balanced-witt/koprowski-assumptions.txt",
+      "sha256": "1fe1f20ba39930996feb7c29a2fb397b556697c435b4d384954358f393d3f735",
+      "snapshot": "context/003.txt"
+    },
+    {
+      "bytes": 4035,
+      "path": "research/audits/api_inputs/2026-11-13-balanced-witt/koprowski-algorithm8.txt",
+      "sha256": "a1691989f3795ad23745636aed2c245dfe5debc50a4083454ac1009baaa8b9a8",
+      "snapshot": "context/004.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 10558,
+  "effort": "max",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-13T05:01:34.282078+00:00",
+  "input_token_allowance": 10814,
+  "max_budget_usd": 3.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.323256,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-balanced-witt/balanced-attack.md",
+    "sha256": "7d7d799e8cfdc01c41af7643cfb1fb6d1f8a0402d73c286c1afaceb9581ded71",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261113T045105.773490Z-a6115e0a",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 10558,
+    "output_tokens": 64000
+  },
+  "usage_cost_estimate_usd": 1.322232
+}

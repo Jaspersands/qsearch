@@ -1,0 +1,218 @@
+# Balanced central-window Krawtchouk kernel: effective absolute bound
+
+13 November 2026. Independent direct proof from the coefficient contour.
+STATE/TRAPS read; no API, network, Git, tests, archives, or paid reports used.
+No WKB or uniform-asymptotic theorem is imported. This proves the kernel and
+its bulk error consequence, not the separately required endpoint/sampling code.
+
+## 1. Statement, convention, and all parities
+
+Let K>=1 and n,r be integers in [0,K], and define the real orthogonal matrix
+
+    V[r,n]=2^(-K/2)*sqrt(r!*(K-r)!/(n!*(K-n)!))
+              *[z^r](1+z)^n*(1-z)^(K-n).                         (1)
+
+Put m=n-K/2 (integer OR half-integer), s=K-r, k=min(r,s), and
+
+    phi_r=2*atan(sqrt(r/s)),  A_r=sqrt(2/pi)*(r*s)^(-1/4).
+
+For every real T>=1, if |m|<=sqrt(K*T) and
+
+    k>=2^10*(1+T)^2,
+
+then the following completely effective ABSOLUTE bound holds:
+
+    |V[r,K/2+m]-A_r*cos(m*phi_r-pi*r/2)|
+         <=2^16*A_r*(1+T)^2/sqrt(k).                              (2)
+
+In particular no relative error is asserted at a cosine zero. There is no
+additional parity restriction, limiting ratio r/K, or parameter hidden in C.
+The condition already implies a sufficient polynomial lower bound on K.
+
+For the literal native B(theta)=exp(theta*(a^dagger*b-b^dagger*a)), with
+|n,K-n> and r counting mode a, its balanced matrix is
+
+    B(pi/4)[r,n]=(-1)^(r+n)*V[r,n].
+
+This follows by transforming a^dagger to (a^dagger-b^dagger)/sqrt(2) and
+b^dagger to (a^dagger+b^dagger)/sqrt(2). In the two-balanced-gate native
+circuit, the two factors multiply to the single output-row sign (-1)^(K+r),
+which does not affect any count probability, for ANY diagonal Kerr phase.
+
+It suffices to prove (2) for r<=K/2. The exact reciprocal identity for the
+polynomial in (1) gives
+
+    V[K-r,n]=(-1)^(K-n)*V[r,n].
+
+Also phi_(K-r)=pi-phi_r, and
+cos(m*phi_(K-r)-pi*(K-r)/2)=(-1)^(K-n)*cos(m*phi_r-pi*r/2).
+Thus reflection proves the other half, including odd K, with the same bound.
+
+## 2. Exact upper-half contour and its global modulus
+
+Henceforth r<=K/2, s=K-r, and set
+
+    rho=sqrt(r/s), D=r*s/K, h=2*sqrt(r*s)/K,
+    delta=m/sqrt(r*s), u=2*m/K, psi=m*phi_r-pi*r/2.
+
+The hypotheses imply D>=r/2>=1, |delta|<=1/16, |u|<=1/2,
+and T^2/K<=1. In particular n,K-n>=K/4>0.
+On the upper half of |z|=rho put z=i*rho*exp(i*x), -pi/2<=x<=pi/2.
+After removing the constant (1+rho^2)^(K/2)*exp(i*psi), let J be the
+integral of the remaining integrand. Since the polynomial is real, its
+lower-half integral is the conjugate upper-half integral. Exactly,
+
+    [z^r](1+z)^n*(1-z)^(K-n)
+      =rho^(-r)*(1+rho^2)^(K/2)/pi *Re(exp(i*psi)*J).               (3)
+
+For |x|<=1/4, choose analytic logarithms continuous from x=0. The remaining
+integrand is exp(H(x)), where H(0)=0 and
+
+    H(x)=K/2*log((1+rho^2*exp(2*i*x))/(1+rho^2))-i*r*x
+       +m*(log((1+i*rho*exp(i*x))/(1-i*rho*exp(i*x)))-i*phi_r).
+
+Outside this short arc, J is defined by the ORIGINAL polynomial integrand;
+no fractional-power continuation around a zero is assumed.
+Its exact log modulus on the whole upper semicircle is
+
+    Re H(x)=F(-h*sin x),
+    F(v)=K/4*log(1-v^2)+m*atanh(v).                              (4)
+
+Equation (4) means the log modulus of that original integrand where a global
+log was not chosen. At possible zero endpoints it is read by continuity.
+The maximum of F on (-1,1) is at v=u. Direct differentiation/integration gives
+
+    F'(v)=-(K/2)*(v-u)/(1-v^2),
+    F(v)<=F(u)-(K/4)*(v-u)^2.                                   (5)
+
+Both orientations v<u and v>u give (5); it is not a sign-ambiguous concavity
+claim. Since u=h*delta, (5) becomes
+
+    Re H(x)<=F(u)-D*(sin x+delta)^2.                             (6)
+
+The elementary power series of log(1+-u), for |u|<=1/2, gives
+
+    F(u)=K/4*((1+u)log(1+u)+(1-u)log(1-u)),
+    0<=F(u)-m^2/K<=m^4/K^3<=T^2/K<=1.                          (7)
+
+For example the terms after u^2 in the bracket are at most
+u^4/[6*(1-u^2)], proving the stated constant. This exact entropy bound is
+what prevents an exp(C*T) factor in the contour estimate.
+
+## 3. Local comparison with a shifted Gaussian; all constants
+
+Let
+
+    G(x)=-D*x^2-m*h*x=-D*(x+delta)^2+m^2/K,
+    J0=int_R exp(G(x)) dx=sqrt(pi/D)*exp(m^2/K).
+
+Writing zeta=rho^2*exp(2*i*x), the third derivative of the first line of H
+is -4*i*K*zeta*(1-zeta)/(1+zeta)^3. On |x|<=1/4,
+|1+zeta|>=(1+rho^2)/2, so this derivative is bounded by 32D.
+For L(x)=log((1+i*rho*exp(i*x))/(1-i*rho*exp(i*x))),
+L'(0)=-h and
+
+    L''(x)=-2*i*rho*exp(i*x)*(1-rho^2*exp(2*i*x))
+                         /(1+rho^2*exp(2*i*x))^2,
+    |L''(x)|<=4h.
+
+Taylor's theorem with integral remainder therefore proves
+
+    |H(x)-G(x)|<=6D*|x|^3+2*|m|*h*x^2.                         (8)
+
+There is no exponentially growing error-of-an-exponential estimate: use
+
+    |exp(H)-exp(G)|<=|H-G|*(exp(Re H)+exp(G)),                   (9)
+
+which follows by integrating along the straight segment between H and G.
+Let x_*=-arcsin(delta), so |x_*|<=2|delta|<=1/8. On |x|<=1/4,
+the mean-value theorem gives |sin x+delta|>=|x-x_*|/2. Equations (6),(7) imply
+
+    exp(Re H)<=3*exp(m^2/K)*exp(-(D/4)*(x-x_*)^2).              (10)
+
+The normalized absolute moments of exp(-z^2) of orders 2 and 3 are <=1.
+Using |a+b|^p<=2^(p-1)(|a|^p+|b|^p), integration of the two Gaussians
+in (9), divided by J0, consequently gives
+
+    int |x|^3*(exp(Re H)+exp(G))/J0 <=196*(|delta|^3+D^(-3/2)),
+    int x^2*(exp(Re H)+exp(G))/J0 <=50*(delta^2+D^(-1)),
+
+where these integrals are over the SHORT arc; extending the bounding
+Gaussians to the real line only increases them. From (8), local relative
+error is at most
+
+    1376D*|delta|^3+200|delta|+1176/sqrt(D)
+      <=2^12*(1+T)^2/sqrt(D),                                 (11)
+
+because D*delta^2=m^2/K<=T.
+
+For the remaining exact contour, |x|>=1/4 implies
+|sin x+delta|>=sin(1/4)-1/16>=1/8. Its relative contribution is at most
+6*sqrt(D)*exp(-D/64), by (6),(7) and arc length <=pi.
+For the removed Gaussian tails, |x+delta|>=3/16, giving relative contribution
+<=2*exp(-D/64). Their sum is <=512/sqrt(D), since
+D*exp(-D/64)<=64. Combining with (11) proves
+
+    |J-J0|/J0 <=2^13*(1+T)^2/sqrt(D)
+               <=2^14*(1+T)^2/sqrt(r).                        (12)
+
+This bounds the entire complex integral, not its magnitude alone. It thus
+pays the phase in the cosine and remains valid at every destructive zero.
+
+## 4. Factorial normalization cancels the shifted-Gaussian growth
+
+Multiplying the leading term of (3) by the normalization in (1) gives
+P*cos(psi), where
+
+    P=2^(-K/2)*sqrt(r!*s!/(n!*(K-n)!))
+        *rho^(-r)*(1+rho^2)^(K/2)*exp(m^2/K)/sqrt(pi*D).
+
+Use the elementary Stirling remainder
+log(j!)=(j+1/2)log j-j+(1/2)log(2*pi)+e_j, 0<e_j<1/(12j).
+Direct cancellation, without taking K/2 to be an integer, yields
+
+    log(P/A_r)=m^2/K-F(u)-(1/4)log(1-u^2)+E,
+    E=(e_r+e_s-e_n-e_(K-n))/2, |E|<=1/(4r).                    (13)
+
+Since -(1/4)log(1-u^2)<=4T/(3K), (7) implies
+|log(P/A_r)|<=2*(1+T)^2/r. Our assumed lower bound on r therefore gives
+
+    P/A_r<=2,  |P/A_r-1|<=4*(1+T)^2/r.
+
+Using (12) in (3) now proves (2), since 2*2^14+4<2^16.
+All factorials here have INTEGER arguments, including when K is odd.
+As a check on normalization, at m=0 and even r,K one has exactly
+V[r,K/2]^2=2^(-K)*binom(r,r/2)*binom(K-r,(K-r)/2); odd r gives zero.
+This identity is not used to infer any unproved asymptotic regime.
+
+## 5. Uniform bulk l2 consequence for the balanced native input
+
+Let b_n=2^(-K/2)*sqrt(binom(K,n)) and attach ANY unit phases to these
+coefficients, including every binary rational Kerr phase. Truncate to
+|m|<=sqrt(K*T), and on Y<=r<=K-Y replace V by the cosine kernel in (2).
+Assume Y>=2^10*(1+T)^2. If K<2Y, the bulk is empty; no estimate is needed.
+
+One convenient exact estimate is ||b||_1^2<=9*sqrt(K). Indeed Hoeffding gives
+Pr(|X|>=t)<=2*exp(-2t^2/K), X=Bin(K,1/2)-K/2, so E exp(X^2/K)<=3.
+Weighted Cauchy then bounds ||b||_1^2 by
+3*sum_(m in Z-K/2) exp(-m^2/K)<=3*(1+sqrt(pi*K))<=9*sqrt(K).
+Truncation cannot increase this l1 norm, and the discarded squared l2 norm
+is <=2*exp(-2T). These estimates also cover the half-integer lattice.
+
+Writing C=2^16, the squared bulk error FROM THE KERNEL REPLACEMENT alone is
+
+    <=||b||_1^2*C^2*(1+T)^4*sum_(r=Y)^(K-Y) A_r^2/min(r,K-r)
+    <=64*C^2*(1+T)^4/sqrt(Y).                                 (14)
+
+For the last inequality use A_r^2/r<=1/(sqrt(K)*r^(3/2)) on r<=K/2,
+reflect, and sum j^(-3/2)<=3/sqrt(Y). Including the input truncation gives
+the safe total squared bulk error <=128*C^2*(1+T)^4/sqrt(Y)+4*exp(-2T).
+Thus a polynomial endpoint threshold Y and logarithmic T pay arbitrary
+requested bulk state error, independently of K and the Kerr denominator.
+
+No endpoint MASS bound is asserted: endpoints can carry essentially all the
+native probability at a revival. They must be computed/handled separately,
+as in the parent's proposed joint-parity construction. This proof supplies
+only the central-window kernel gate and its absolute, all-parity error ledger;
+the endpoint evaluator, phase-to-count cell error, and normalized full sampler
+remain separate composition obligations.

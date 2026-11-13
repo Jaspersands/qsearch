@@ -1,0 +1,24 @@
+// Char-0 smoothness of the Lemma W weight curve for one integer label configuration
+// (same configuration and equations as ../2026-11-13-rees-free23-theorem/smooth_QQ.sage).
+// Modular Groebner bases (modStd); the curve is smooth iff the singular locus of its affine cone is {0}.
+LIB "modstd.lib";
+option(redSB);
+ring R = 0,(u(1..6)),dp;
+poly e1 = 0*u(1)^3 + 300*u(2)^3 - 696*u(3)^3 + 9054*u(4)^3 - 750*u(5)^3 - 28632*u(6)^3;
+poly e2 = -6*u(1)^3 + 270*u(2)^3 + 3408*u(3)^3 - 7674*u(4)^3 + 750*u(5)^3 + 59376*u(6)^3;
+poly e3 = 2*u(1)^2 + 66*u(2)^2 + 510*u(3)^2 + 66*u(4)^2 + 50*u(5)^2 + 2384*u(6)^2;
+poly e4 = 6*u(1)^2 + 72*u(2)^2 - 12*u(3)^2 + 1594*u(4)^2 + 200*u(5)^2 - 522*u(6)^2;
+ideal I = e1,e2,e3,e4;
+ideal G = modStd(I);
+"dim cone:"; dim(G);
+matrix J = jacob(I);
+ideal S = I + minor(J,4);
+int t0 = timer;
+ideal GS = modStd(S);
+"dim singular cone over QQ:"; dim(GS);
+"singular-locus radical contains (u):";
+int ok = 1; int k;
+for (k=1; k<=6; k++) { if (size(reduce(u(k)^60, GS)) != 0) { ok = 0; } }
+ok;
+"seconds:"; timer - t0;
+quit;

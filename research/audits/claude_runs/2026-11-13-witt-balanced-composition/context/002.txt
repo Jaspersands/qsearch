@@ -1,0 +1,85 @@
+of its nullspace. Also notice that Gr(X) can be identified with x1 ∧ ... ∧ xJ ,
+where ∧ stands for the wedge product, viewed under the cannonical lexicographic
+                    N
+embedding into K ( J ) . Therefore we can also write
+                                H(V ) = H(x1 ∧ ... ∧ xJ ).
+This definition is legitimate, since it does not depend on the choice of the basis for
+V : let y 1 , ..., y J be another basis for V over K, then there exists C ∈ GLN (K)
+such that y i = Cxi for each 1 ≤ i ≤ J, and so
+          H(y 1 ∧ ... ∧ y J )    = H(Cx1 ∧ ... ∧ CxJ )
+                                                    
+                                      Y
+                                 =       | det(C)|v  H(x1 ∧ ... ∧ xJ )
+                                       v∈M (K)
+
+                                 = H(x1 ∧ ... ∧ xJ ),
+by the product formula. We are now ready to state our main results. First is an
+effective version of Witt’s decomposition Theorem 1.1.
+Theorem 1.3. Let F be a symmetric bilinear form on K N . Let Z ⊆ K N be a
+subspace of dimension L, 2 ≤ L ≤ N , and Witt index M ≥ 1. Let F have rank r
+on Z, 1 ≤ r ≤ L. There exists an orthogonal decomposition of the bilinear space
+(Z, F ) of the form (1) with
+(9)                        H(Z ⊥ ) ≤ CK (r)r H(F )r/2 H(Z),
+and
+                                            n     L+2M
+                                                          o (M +1)(M
+                                                                 2
+                                                                     +2)
+
+(10)      max{H(Hi ), H(V )} ≤ AK (N, L, M ) H(F ) 4 H(Z)                ,
+
+       ON EFFECTIVE WITT DECOMPOSITION AND CARTAN-DIEUDONNÉ THEOREM                     5
+
+
+for each 1 ≤ i ≤ M , where
+                                                       M +5L  M (M8 +3)
+                                        2 L
+                           2M +1
+                                                  1/d
+(11)     AK (N, L, M ) = 2       CK (L)     N |DK |                        .
+
+  Next is an effective version of Cartan-Dieudonné Theorem 1.2.
+Theorem 1.4. Let (Z, F ) be a regular symmetric bilinear space over K with Z ⊆
+K N of dimension L, 1 ≤ L ≤ N , N ≥ 2. Let σ ∈ O(Z, F ). Then either σ is the
+identity, or there exist an integer 1 ≤ l ≤ 2L − 1 and reflections τ1 , ..., τl ∈ O(Z, F )
+such that
+(12)                                        σ = τ 1 ◦ · · · ◦ τl ,
+and for each 1 ≤ i ≤ l,
+                       (                                                     )5L−1
+                                              1
+                                                    L22       L     L
+                                  2
+(13)           H(τi ) ≤         2N |DK |      2d           H(F ) H(Z) H(σ)
+                                                               3     2               .
+
+
+   This paper is structured as follows. In section 2 we discuss a related problem
+of producing an orthogonal basis of small height for a bilinear space. This can
+actually be viewed as a version of Siegel’s Lemma for a bilinear space, and provides
+a decomposition of a bilinear space into an orthogonal sum of one-dimensional
+subspaces of small height - a result of independent interest. In section 3 we recall
+some basic lemmas on the properties of bilinear spaces, review a result of Vaaler on
+a maximal totally isotropic subspace of a bilinear space of small height, and prove
+an effective decomposition lemma for a bilinear space into a singular and regular
+components of small height. In section 4 we prove Theorem 1.3. In section 5
+we develop some notation and preliminary lemmas on the effective structure of the
+isometry group. In particular, we prove two simple lemmas of independent interest:
+one on the existence of a small-height isometry of a bilinear space, and the other
+on the bound for the height of the invariant subspace of an isometry. We use these
+lemmas in section 6 to prove Theorem 1.4.
+
+
+                    2. Siegel’s Lemma for a bilinear space
+   In this section we prove a certain analogue of Siegel’s Lemma for a bilinear space.
+First we recall the Bombieri-Vaaler formulation of a general Siegel’s Lemma.
+Theorem 2.1 ([1]). Let U be a J-dimensional subspace of K N , J < N . Then
+there exists a basis x1 , ..., xJ ∈ K N for U such that
+                   J
+                   Y                  J
+                                      Y             n           oJ/2
+(14)                     H(xi ) ≤           h(xi ) ≤ N |DK |1/d      H(U ).
+                   i=1                i=1
+
+We will also need the following simple technical lemmas.
+Lemma 2.2. Let U1 and U2 be subspaces of K N . Then
+                                 H(U1 ∩ U2 ) ≤ H(U1 )H(U2 ).

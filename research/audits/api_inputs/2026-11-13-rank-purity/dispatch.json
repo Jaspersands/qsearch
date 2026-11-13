@@ -1,0 +1,30 @@
+{
+  "scientific_question": "Uniform stabilizer-rank versus Pauli-purity polynomial signal",
+  "prior_checkpoint": "folded_product_round",
+  "jobs": [
+    {
+      "provider": "claude",
+      "bundle": "research/audits/claude_runs/2026-11-13-rank-purity-attack",
+      "session_id": 12681,
+      "ceiling_usd": 3,
+      "status": "truncated_empty",
+      "obligation": "Explicit cancellation counterfamily",
+      "usage_cost_estimate_usd": "1.319040",
+      "reaped": true,
+      "disposition": "No returned evidence; not retried"
+    },
+    {
+      "provider": "openai",
+      "bundle": "research/audits/openai_runs/2026-11-13-rank-purity-construct",
+      "session_id": 85642,
+      "ceiling_usd": 5,
+      "status": "completed",
+      "obligation": "Uniform positive Pauli moment certificate",
+      "usage_cost_estimate_usd": "1.671910",
+      "reaped": true,
+      "parent_full_read": true,
+      "disposition": "No unrestricted bound; exact phase/visibility claims under brief audit; V3 remains unproved"
+    }
+  ],
+  "warning": "Local ceilings not charges or billing caps. No retries. Owner actual spent155.99/101.71 separate from runner estimates."
+}

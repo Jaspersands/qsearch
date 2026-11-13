@@ -1,3 +1,276 @@
+## 2026-11-13 Arbitrary Gram Full TV Sampler Closed
+
+Freeze NEW unique evidence once into audits/controls/gram_defect_round from community_recovery_round. Include5 sources(pdf/txt/metadata), exactcontrolscript/result, stable219LF prefixproof and130LF literaturereview, topic-final/state-final snapshots, APIpackets and two terminalbundles. Claudeestimate0.988120; OpenAIAPIErrorUNKNOWN; EIGHTUNKNOWNtotal. Exclude ongoing post-gram selection. Do not scan oldpins, rerun broadtests, implementvariants, changebounds or inferbalance. Afterfreeze append workflow and reporthashcount. Native always-legal TV law has no ABORTeta parameter.
+
+## 2026-11-13 Arbitrary Gram Boson Sampler Under Audit
+
+No implementation expansion now. Preserve controls/gram_defect and sources/2026-11-13-gram-defect. After stable theorem/dispositions, freeze only NEW unique evidence at one milestone from community_recovery_round. Do not rescan old pins or rerun broad tests. Next command: `/opt/anaconda3/bin/python tools/corpus/cli.py been-tried "arbitrary Gram distinguishability" --no-refresh` only if a new scientific variant is actually proposed; expected corpus leads, never a verdict. Law and bit proof remain Codex questions.
+
+## 2026-11-13 Native Community Quantum Weak Recovery Closed
+
+STABLE: freeze community_recovery_round from rank_purity_round, including
+corrected mass, validation, rounding, tomography, retention, classical-scope
+and post-purity-selection reviews, two completed paid bundles/packets,
+new MaoPDF/text/metadata, final labelled topic/STATE snapshots. Verify NEW
+unique hashes once, no old rescan. Totals expected310.653078/238priced;
+7UNKNOWN/owneractual separate. Exclude live post-recovery selection.
+No new implementation, simulation, or broad test expansion warranted.
+
+## 2026-11-13 Native Recovery Quantum Readout Closed
+
+Preserve177LF tomography proof, including product-copy and valid-index
+interfaces; no numerical/tomography implementation. Await stable retention
+and parent final composition before recovery milestone freeze.
+
+## 2026-11-13 Native Community Classical Weak Recovery Closed
+
+Both current API bundles terminal/fullread/reaped. Preserve immutable
+packets and superseding original-Y/centered-coin dispositions. No three-way
+implementation or tests. Await quantum-retention proof/final parent stable
+signal before community-recovery freeze from rank_purity_round. Preserve
+7UNKNOWN and owneractual separate; do not rescan old pins.
+
+## 2026-11-13 Native Recovery Mass And Validation Gates Closed
+
+Preserve corrected mass proof (conservative >= witness, not equality),
+original-Y validation and Claude completed bundle/disposition. Do not alter
+old frozen certificate or rebuild source infrastructure. OAI7540 and finite
+rounding proof pending; freeze only after final parent stable signal.
+
+## 2026-11-13 Uniform Native Validation Removes Third Clone
+
+Do not build a third-clone validation path. Preserve immutable dispatched
+packets and record subsequent uniform-original-Y simplification separately.
+Rank round already frozen28uniquehashes once; no repeated checks. Await
+17167/7540 terminal/full read/reap and final stable recovery proof signal.
+
+## 2026-11-13 Native Community Recovery Operation Selected
+
+Preserve actual Mao source/text/metadata and new native recovery note.
+No additional tests or implementation yet. Prior rank freeze uses its
+labelled state-final.md, not live STATE or these new recovery artifacts.
+Await all-label mass and source/validation proofs before any compiler work.
+
+## 2026-11-13 Rank Purity Parked After General Bound Stalled
+
+After final brief paid-disposition review is stable, freeze rank_purity_round
+from folded_product_round: two terminal API bundles/packets, exact rank-two
+and endpoint reviews, topic/STATE snapshots. Preserve EMPTY as no evidence,
+7UNKNOWN excluded, owneractualSPENT155.99/101.71 separate. Expected round
+2.990950 and cumulative308.382178/236priced, Anth171.956058/OAI136.426120.
+No old hash rescan, numerical sweep, or quantum implementation.
+
+## 2026-11-13 Rank Two Fourth Power Falsifier Exhausted
+
+Preserve full rank-two review and its simpler Bernstein addendum. No rank-
+three sweep or quantum implementation. Await paid12681/85642 terminal/full
+read/reap plus parent stable signal before new usage/evidence freeze.
+
+## 2026-11-13 Purity Gate Equals Polynomial Rank Fidelity
+
+Keep rank-purity source excerpts and explicit no-advice contract immutable
+for paid12681/85642. Await terminal/full read and parent stable signal
+before usage freeze from folded_product_round; preserve7UNKNOWN separately.
+No tests or implementation beyond the exact arithmetic check are required.
+
+## 2026-11-13 Cubic Rank Purity Bound Refuted
+
+Preserve new explicit API packets, exact rank-two identity and tensor proof.
+Do not add quantum implementation or numerical sweeps. Reconcile the new
+round only after terminal reports are fully checked; use folded_product_round
+as prior frozen checkpoint (38 unique hashes already verified). Keep seven
+UNKNOWN bills excluded and owner actual spend separate. No old hash rescan.
+
+## 2026-11-13 Folded Product Sparse Readouts Classically Matched
+
+FinalSTABLE signal: freeze folded_product_round proof276LF, completedtwoAPI
+bundles/packets, nativecomparison197LF, actualBravyiPDF/text/metadata and
+retainedVDNtext/sourcepointer, exactcontrolscript/result, labelledtopic/STATE.
+Verifynewhashesonce; no oldrescan, livepost-foldedselection ornewresearchpins.
+Preserve7UNKNOWN/ownerSPENTseparate; no newtests/implementation needed.
+
+## 2026-11-13 Folded Product Born And Amplitude Compilers Closed
+
+After finalCTcorollary note, freeze ONLY completed foldedproductround from
+balanced_kerr_round: full276LF proof, actualBravyiPDF/text/metadata, exact
+control script/result, full311/302LFpaidbundles andexplicitpackets, labelled
+topic/STATE snapshots. Preserve7UNKNOWN/ownerSPENTseparate. No furthertests
+or implementation justified; do notrescanoldpins orinclude livepostselection.
+
+## 2026-11-13 Folded Coherent Pfaffian Amplitudes Derived
+
+Keep fullClaude311LF report plus source-specificrejection in topic. Preserve
+actualBravyiEq2 and exactcontrol. No newtests; awaitindependentreview and
+OAI79565 terminal/fullread/reap beforefreeze. Coherentamplitudeformat must
+retain rationalturnphi, lastspec order andUNNORMALIZED z1 pairing.
+
+## 2026-11-13 Folded Gaussian Prefix Arithmetic Derived
+
+Preserve exactconvention script/result;90775exit0 supersedes harness-only
+84395 .copy error. No furtherfinitecases needed. Fullanalyticclaim pending
+independentreview andtwoAPIterminal/fullread/reap; freezeonlyatcleanmilestone
+frombalanced_kerr_round with7UNKNOWN/ownerSPENT retainedseparately.
+
+## 2026-11-13 Folded Product Gaussian Sampling Candidate Selected
+
+Preserve one exactGaussianconventioncontrol and actualBravyiPDF/text/metadata.
+Do not expandnativefoldedcontrols alreadyclosed. No quantumimplementation or
+newbackend untilfullproof. Await84395control and58521/79565paid terminal/fullread/
+reap; freezeonlynewround frombalanced_kerr_round afterparentstablesignal.
+SevenUNKNOWN and ownerSPENT remainseparate; no paidretry/oldhashrescan.
+
+## 2026-11-13 Balanced One Pulse Kerr Classical Sampler Closed
+
+Freeze balanced_kerr_round from one_pulse_cdf_round using stable repaired
+parent sampler, full225LF independentreview, kernel/endpoints, bothpaid
+reports/packets and labelledtopic/STATE snapshots. SevenUNKNOWNexcluded,
+ownerSPENT separate. Verifynewuniquehashes ONCE, no historicalrescan. No
+newtests/backend/quantumimplementation justified bythisanalyticclosure.
+Exclude livepost-balancedselection and newfoldedsources. Preserve oddK
+characteristic-signTV1 falsifier in any futureimplementation contract.
+
+## 2026-11-13 Balanced Kerr Kernel And Endpoint Proofs Checked
+
+Preserve stable218LF kernel/201LF endpoint proofs; sampler draft and review
+remainlive. No new finite tests or implementation needed. After two newpaid
+jobs are terminal/fullread/reaped and parentreviewdone, freeze ONLYnewround
+from one_pulse_cdf_round, with labelledtopic/STATE snapshots. Preserve7UNKNOWN
+and owneractualSPENT155.99/101.71 separately. Do not retry or rescan oldhashes.
+
+## 2026-11-13 Balanced Kerr Output Dependent Construction Specified
+
+Freeze completed generalCDF analytic round once from balanced_witt_round,
+after labelled snapshots: exact38prefixcontrols,201LFselection, parentGaussian
+proof+138LFreview,221LFtheta/transferreview, actualHiary/Dai-WongPDFs/text/
+metadata, twoEMPTYterminalbundles andoriginalpackets. OAIReadError BILLING
+UNKNOWN is seventh; Claude knownestimate1.346368 only. Exclude unfinished
+balancedkernel/endpoints and allchanginglivepaths. No retry, no sourceclaim
+or fullnativealgorithm fromsublemmas. Newbalancedproof work needs no testsyet.
+
+## 2026-11-13 Gaussian Chirp And Theta Transfer Bound Reviewed
+
+Preserve138LF Gaussian and221LF theta/transfer proofs plus parent topic
+source/error dispositions. No further finite tests. Genericphase-only lower
+bound is scoped; do not label nativeKerr classicallyhard or fullclassically
+solved. Awaitterminal68363/38276 fullread/reap before nextusagefreeze from
+balanced_witt_round. Newbalancedkernel idea is not yet a theorem or runnable
+backend; no mechanical implementation before its fullcontract is proved.
+
+## 2026-11-13 Gaussian Chirp Reduction And Krawtchouk Source Boundary
+
+Retain actual Fudan Dai-WongPDF/text/source metadata and parent Gaussian
+reduction. Paidpacket snapshots retain earlier unavailable-source statement;
+do not edit historical contexts or dispatch receipts. No new tests for exact
+symbolicTaylor reduction. Wait for two localproof reviews and terminalAPI
+68363/38276 before freeze from balanced_witt_round. No paidretry, newbackend,
+sourceclaim fromabstract or fullnative sampler from a weighted-sum lemma.
+
+## 2026-11-13 Native Kerr Parity And CDF Stress Family Derived
+
+Keep the symbolic allK parity/CDF identity in ONE_PULSE_KERR_CDF.md; no
+additional finite sweep needed. Existing exact38prefix control completed.
+API68363/38276 still pending; no usagefreeze or retry until terminal/fullread.
+The phase-density proposal must retain amplitude cross terms. A fixed-error
+CDF or passing small cases must not become a TV sampler claim.
+
+## 2026-11-13 Native One Pulse Kerr CDF Compiler Selected
+
+Preserve four explicit context snapshots, two task prompts and dispatch.
+API68363/38276 must be terminal, full nonempty reports read/dispositioned and
+processes reaped before a new usagefreeze from balanced_witt_round. No retry
+or cumulative usage update from in-flight counters. Exact prefix test checks
+finite algebra only; do not infer a CDF compiler. DONE38prefix/2016offdiag/
+276diag exact controls after G-conjugacy normalization cancellation. Prior
+coercion failure and terminated slow radical run retained. Do not rerun. No quantumbackend, broadsweep or oldpin edits.
+
+## 2026-11-13 Balanced Expanded Witt Native Endpoint Reviewed
+
+DONE: balanced_witt_round frozen50 uniquehashes verifiedonce; do not repeat.
+Frozen from expanded_norm_round. Includes both
+terminal bundles, explicit packets/dispatch,337LF affine/250LF tree proofs,
+197LF selection, current CRT script/result and actual source PDFs/text/metadata.
+Take labelled topic and STATE snapshots only; do not pin changing live paths
+or the unfinished post-witt-selection. Both processes reaped; full nonempty
+paid report dispositions are in topic. Round3.988582, cumulative299.832956 /
+229priced, Anth167.901646/OpenAI131.931310; six UNKNOWN excluded, actualowner
+SPENT155.99/101.71 separate. Verify each new pinned hash once. Usage-only
+workflow appendix permitted; no Git, retries, previous-pin edits or new tests.
+
+## 2026-11-13 Fixed Rank Witt Affine Height Compiler Reviewed
+
+Both Witt API jobs terminal/fullread where nonempty/reaped. No retry.
+Freeze once from expanded_norm_round after stable balanced-clock review and
+parent final scope: include337LF affine proof, full651LF paid report, balanced
+proof, controls, primary sources, packets and labelled topic/STATE snapshots.
+Round estimate3.988582; six old UNKNOWN bills excluded. Preserve absolute C8,
+front-end-only degree<=4N and separate raw-backend bit caps. No finite-control
+rerun, old-pin edits, broadtests or quantum compiler infrastructure.
+
+## 2026-11-13 Balanced Witt Conditional Native Clock Derived
+
+Exact control in audits/controls/balanced_witt/ complete once, no rerun.
+Preserve parentconditional recurrences and absoluteC requirement. NoAPI
+usagefreeze before66101/39508 terminal/fullread; nextfreeze remains from
+expanded_norm_round. No source/heightclaim promotion from the finitebatch.
+
+## 2026-11-13 Balanced Expanded Witt Height Compiler Selected
+
+No quantum compiler or new infrastructure. Preserve explicit packets and
+actual twoWitt sources. Sessions66101/39508 must be terminal/fullread and
+claimsdispositioned before nextusagefreeze from expanded_norm_round.
+First validate the symbolic absolute-slope ledger; do not replace it by
+height plots. Any exact control should check the specified local2b and
+short-gamma CRT identities, not supplied hidden witnesses as an algorithm.
+No failedcallretry, previouspin edits, sourcearchive read or broadtests.
+
+## 2026-11-13 Expanded Norm Construction And Local Seed Boundary Reviewed
+
+Both currentAPI terminal/fullread/reaped; preserve complete and truncated
+statuses separately. Freeze once from metabelian_native_round after final
+stable topic/STATE snapshots: two bundles/dispatch,173/168/178LF reviews,
+two exact scripts/results, Lenstra/First/twoBeli sources and metadata.
+Round3.179412; cumulative295.844374/227priced, Anth166.579414 and
+OpenAI129.264960. Six UNKNOWN bills excluded; owner155.99/101.71 SPENT
+separate. No failed-callretry, source-reference chase, new backend, broad
+sweep, or earlier-pin edits. Pending direction selection is not freezeable.
+
+## 2026-11-13 Expanded Rational Ternary Transport Gate Derived
+
+Fourcase norm/quaternion/ternary finite batch complete, no rerun or broad
+sweep. Preserve173LF independentproof, exactcontrol and Lenstra source.
+Wait for terminal54607/37995 reports; parent must disposition every material
+claim before nextfreeze from metabelian_native_round. No quantum/backend
+code. Localoffsettest must compute spinornorm in the common ambient space.
+
+## 2026-11-13 Expanded Norm Witness And Ternary Transport Selected
+
+No new quantum/backend infrastructure. Keep packets/manifest and retained
+Lenstra source; sessions54607/37995 must be terminal and complete reports
+parent-read before nextusagefreeze from metabelian_native_round. No failed
+requestretry. Exact control should test exponentresidues/negativeexponents
+and scalarroot correction, then reusep17neighbor for any localoffsetformula.
+No finite-to-theorem or compact-circuit/integrality promotion.
+
+## 2026-11-13 Native Fixed-Class Metabelian HSP Composition Closed
+
+Freeze two terminalbundles, dispatch, full177/160/90LF independentproofs,
+actualsource PDFs/text/metadata and labelledtopic/STATEsnapshots once from
+simultaneous_norm_round. Round3.260446, cumulative292.664962/225priced;
+Anth165.268282/OpenAI127.396680, sixUNKNOWNexcluded; ownerSPENTseparate.
+No failed-callretry, broadtests, numericalquantumcompiler or Reescoreedits.
+Preserve oracle/state-only distinction, sourceguards and allfalseclaim gates.
+Mechanical backend work is optional and must not replace a fresh scientific
+selection. No earlier frozenpin changes.
+
+## 2026-11-13 Native Metabelian HSP Completion Join Derived
+
+Both API sessions terminal/reaped, paid report330LF fully read. Do not
+retry Claude EMPTY or build quantum machinery. After stable narrow
+precision review is parent read, freeze terminal bundles, dispatch, source
+proofs177/160LF, precision review, actual sources and labelled topic/STATE
+snapshots once from simultaneous_norm_round. Record discarded oracle-label
+guard and all false claim gates. No archive reread, broadsuite or Rees edits.
+
 ## 2026-11-13 Native Metabelian HSP Source Interface Checked
 
 Do not rerun broadtests/formalbuilds or modify anotheractor's Rees notes.

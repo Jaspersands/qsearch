@@ -1,0 +1,67 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 7400,
+      "path": "research/audits/api_inputs/2026-11-13-folded-product/native-operation.md",
+      "sha256": "8de25b89e21c49734566b81711b7ef61a4e210fc9f7faccde232688556707535",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 3102,
+      "path": "research/audits/api_inputs/2026-11-13-folded-product/finite-bit-obligation.md",
+      "sha256": "cf11f820781034ac1994d2862ebd0388e6bf712125d1f2cc2672d79c6da91099",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 15707,
+      "path": "research/FOLDED_CHAIN_COHERENT_TRANSFORM.md",
+      "sha256": "212717c8b61e41d03bb7d5ebcc68945ea726edb866fc2fd1799205763a74fe42",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 13730,
+      "path": "research/audits/api_inputs/2026-11-13-folded-product/bravyi-excerpt.txt",
+      "sha256": "c0db0c175bb091ca3c3ab727811c655a1b9dd2f605bdc6c8d8729f79f7d043ad",
+      "snapshot": "context/003.txt"
+    },
+    {
+      "bytes": 4106,
+      "path": "research/audits/api_inputs/2026-11-13-folded-product/folded-scope.txt",
+      "sha256": "6ef5ecd2ac2c9fdfe7924361360c68bd62c3765d289b9742a253712a7d6c8a2e",
+      "snapshot": "context/004.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 16265,
+  "effort": "high",
+  "finished_at": "2026-11-13T06:55:04.316087+00:00",
+  "input_token_allowance": 16591,
+  "max_budget_usd": 3.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.346364,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-folded-product/claude-native-attack.md",
+    "sha256": "bd3cbe3f242e5cefd1b2192275ac538054af57b3b673a609f2b7ac9d125e5bc1",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261113T064918.349212Z-1f515ddb",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 16265,
+    "output_tokens": 35157
+  },
+  "usage_cost_estimate_usd": 0.7682
+}

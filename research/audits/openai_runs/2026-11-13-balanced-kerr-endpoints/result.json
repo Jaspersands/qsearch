@@ -1,0 +1,57 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-13-balanced-kerr/endpoint-attack.md",
+      "sha256": "8c27c8163345621ea2f49e590839c1dfbd3ccc02e4906707cc258469f7be92e2"
+    },
+    {
+      "path": "research/audits/reviews/2026-11-13-balanced-kerr-endpoints.md",
+      "sha256": "5ba6e5b0dffbcf148a7dee2dd8f56e0d7fbc58cd311d571601f31aec3e57c3b6"
+    },
+    {
+      "path": "research/audits/reviews/2026-11-13-gaussian-chirp-review.md",
+      "sha256": "c9c50d3cd23670dae70102c8108a9abd521738e2992597e0bce8d83a25bab320"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-one-pulse/hiary-excerpt.txt",
+      "sha256": "1547b07bef433ce979ee711605d266884d704800b0a6333431ae1b9611ac62c7"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-one-pulse/prior-native-baselines.md",
+      "sha256": "94244b79386e92d4c2ee96824ddaaf231d14b5b87e5d15b34016361be8949370"
+    }
+  ],
+  "finished_at": "2026-11-13T06:31:38.364793+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "4",
+  "max_tokens": 64000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "3.61715",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_0f1fb1ab36be1495016af6ac9abbd087d1831767a5465eff33",
+  "started_at": "2026-11-13T06:22:17.126614+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 10827,
+    "input_tokens_details": {
+      "cache_write_tokens": 10824,
+      "cached_tokens": 0
+    },
+    "output_tokens": 22948,
+    "output_tokens_details": {
+      "reasoning_tokens": 18851
+    },
+    "total_tokens": 33775
+  },
+  "usage_cost_estimate_usd": "1.25567"
+}

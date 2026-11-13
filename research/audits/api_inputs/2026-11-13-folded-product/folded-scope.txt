@@ -1,0 +1,54 @@
+Actual source: https://arxiv.org/abs/2411.15132v3
+Source text SHA256: 908baa52d404852116da555f131250ce3e99f87075abfb47535f50a1feb9d448
+Primary source scope; NOT a claimed classical full-output sampler.
+
+--- LF 1432-1454 ---
+quantum algorithm.
+     For example, we can act with UD on eigenstates of the XXZ model. This way we can prepare
+eigenstates of the so-called “hard-rod deformed XXZ models” (see [44]). Currently, there are no
+efficient formulas for eigenstate preparation in the XXZ chain; nevertheless, eigenstates can be
+prepared in small volumes or with a small number of magnons, and our algorithm can immediately
+give the eigenstates of the hard-rod deformed XXZ model as well.
+     Another application, somewhat independent of the previous computations, is the preparation
+of a modified version of Dicke states. The Dicke state |DM ⟩ is defined as the equal weight
+superposition of the basis states that have M excitations over a ferromagnetic vacuum. By
+applying our hard-rod deformation algorithm, specialized to zero domain walls, to the states
+|DM ⟩, we obtain “constrained Dicke states”. These states are an equal weight superposition of
+all basis states that have M excitations such that none of them are on neighbouring sites. Since
+efficient methods for preparing Dicke states are already known [76], our algorithm have access to
+constrained Dicke states as well.
+     One application of constrained Dicke sates is in the preparation of a selected zero-energy
+eigenstate of the celebrated PXP model, derived recently in [77]. This special eigenstate is built
+on an equal-weight superposition of double tensor products of constrained Dicke states. Our
+algorithms can be generalized to prepare the desired final state. This could serve as a compelling
+first example of an exactly prepared eigenstate for the PXP model.
+
+7     Discussion
+
+We now summarize our results and place them in a broader context, highlighting potential
+
+--- LF 1480-1503 ---
+of gates between distant qubits, we have considered two different architectures. First, an all-
+to-all connectivity, typical of trapped-ion and Rydberg-atom prototypes. Second, a square-
+lattice connectivity, as implemented in Google’s superconducting chips. Our simulations indicate
+that simple eigenstates, containing few magnons and domain walls, could be implemented with
+acceptable fidelity on quantum computers with two-qubit gate error below 10−3 .
+
+7.2   Potential Applications
+Hilbert space fragmentation [28, 29] has attracted much attention in recent years. The reason
+is that it describes a new type of ergodicity breakdown, hence of violation of the eigenstate
+thermalization hypothesis. Our results contribute to the possibility of studying this phenomenon
+on a digital quantum computer. For example, it would be interesting to explore the evolution and
+mixing of the fragments under perturbations that undo the fragmentation. One could use the fact
+that our algorithm allows preparing not only eigenstates, but also superpositions of eigenstates
+from different fragments. These superpositions can be easily implemented by initializing the
+physical register Rphys of the circuit in Subsection 4.3 in a superposition of reference-states |Ψ0,D ⟩.
+The resulting output could then be fed to a quantum circuit realizing the Trotterized evolution
+under the desired perturbation. The Floquet circuits respecting fragmentation described in [52]
+could serve as a starting point to construct a controlled breakdown of the fragmentation property.
+     As a further potential application, our circuits can be used both for benchmarking and for
+demonstrating quantum advantage in selected problems. The idea is to measure certain local and
+non-local correlation functions and compare them to results from classical computations. When
+compact exact results are available, experimental outcomes could serve as reliable benchmarks.
+Perhaps more interestingly, our method enables access to quantities for which no closed-form
+classical results are known, but which could now be explored experimentally on quantum devices.

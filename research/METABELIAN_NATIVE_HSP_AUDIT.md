@@ -1,13 +1,19 @@
 # Native fixed-class metabelian HSP: composition audit
 
-13November2026. New pass audits an OLDER UNREVIEWED internal candidate.
+13November2026. REVIEWED WRITTEN native fixed-class metabelian composition.
+Three independent local proofs and one substantive paid report were fully
+parent-checked. This is AI mathematical review, not human/formal verification.
+The pass began by auditing an older unreviewed internal candidate.
 Start STATE/TRAPS; joint-norm transfer architecture is parked after a
 precise factorial-degree falsifier. Independent screens did not identify a
 new conductivity contraction or nonsplit integral-tuple module operation.
 Current STATE also contains a newer free23 hard-cyclic proposal. Corpus
 been-tried/baselines and exact prior-work lookup found the broader older
 BOUNDED_CLASS_METABELIAN_HSP.md and CLASS_THREE_HSP_THEOREM_DRAFT.md.
-Audit those before funding special-case extensions. Other actors' Rees
+Audit those before funding special-case extensions. This comparison is in
+the STANDARD ORACLE model only: it does not subsume the newer state-only
+labelled-copy contract or its better copy constants. No fresh restricted
+oracle is inferred from a frozen bank. Other actors' Rees
 notes and core paper are not modified; their human-review gates remain.
 
 ## Scientific contract and existing sources
@@ -117,8 +123,169 @@ once, roundUSD2.506838, cumulative runnerestimateUSD289.404516/223priced
 Owner actualSPENT155.99/101.71 is separate; no measuredbalance. Current
 running requests are not yet charged into this frozen milestone.
 
-Next concrete test: inspect complete terminal reports against actual SDE
-hypotheses, exact originaloracle lifts and full globalhybrid. A hidden
+Historical next test (now completed): inspect terminal reports against actual
+SDE hypotheses, exact originaloracle lifts and full globalhybrid. A hidden
 support access, invalidquotient, reusedcopy, conditionalrareoutcome,
 exponentialD exponent or unboundedretry refutes the nativecomposition.
 No new quantum code, source sweep or general-class extension before that.
+
+
+## Parent conservative compiler bound (now independently checked)
+
+The actual IS2016 Theorem3 exponent was visually checked on PDF page3:
+ n > j^(j^2 log j) (E+1)^(j log j), fixedj.
+A safe integer arity is A_j(E)=(2j(E+1))^(4j^3) forj>=2; j1 usesE+1.
+For D>=1, M<=D(D+c)^c formalparameters, and
+ E_j<=D(D+c)^(c+j)<=D(D+c)^(2c).
+Thus a disjointc-stage tree has productA_j=D^O(c^5) leaves, with constants
+onlydependingonc. Publictranslation/scaling coefficient maps have polynomial
+size and field-operationcost atfixedc. This is a conservative proposed
+bound, not a practicality claim or a substitute for the solverbitclock.
+
+After erasure, rho(U,0) Fourier-samples uniformly fromUperp. At most
+D+O(log_p(c/eta)) samples perstage suffice; <=c stages. Approximatecircuit
+analysis must compare the ENTIRE capped channel to an idealchannel, including
+failurebranches andclassicalcontrol. It must not assume an approximate
+annihilatorcontainsU justbecauseitscandidatepassesmembership. Public
+normalizerquotients remaindefined evenonanincorrectestimate; allbranches
+musthavefixedcaps before a globaltrace-distancehybrid is applied.
+
+Source applicability: the existing IS semidirectresult cannot be imported
+forfree23 by inventing an abelian indexp subgroup. Everymaximalsubgroup
+containsgamma2 and a nonzero horizontalv, and [v,Z]!=0. Nor is free23
+quasi-Hamiltonian: two noncommuting orderp cyclic subgroups cannot permute,
+since their productwouldbe a group oforderp² and hence abelian. These are
+scopechecks for the actualreadtheorems, NOT a claim of exhaustivepriority.
+
+
+Additional actual source check: parent read IS2016 section3.1-3.3, including
+its full constructive SDE proof. For resource accounting use the explicit
+proof bound G(j,E)^ceil(log2(j+1)), G=j^(j(j-1)/2)(E+1)^j, rather than relying
+on rounding in the shorter displayedTheorem3 bound. The chosenA_j dominates
+this sinceceil(log2(j+1))<=j. Ifj doesnotdividep-1, gcd(j,p-1) and extended
+Euclid reduce to a smallerdegree, preservingnonzeroness. Source3.1 uses
+only primesdividingfixedj, PohligHellman inthat smoothpart, and atmost
+log2(p) strictsubgroup-enlargement restarts. ItdoesNOT requirefactoringp-1
+or an unchargedprimitiveelement/nonresidue. The source sentence callingthe
+j-smoothpart 'coprime' is inconsistentwithits own definition; use theexplicit
+smooth/prime-to-j decomposition in theproof. All these classicalrestarts
+reuse unchangedpubliccoefficientdata before any newquantummerge.
+
+
+Claude class-descent is terminal TRUNCATED/EMPTY (max_tokens), estimate
+USD1.320116; reapedexit1. There is no report, proof, verdict or claim toadopt,
+and no APIretry. The subsequent OpenAI330LF report and local160LF descent/query join are
+now terminal and fully parent-read; see completion dispositions below.
+
+
+## Completion join: source-checked polynomial clock (13 November)
+
+The full330LF terminal OpenAI report was read, reapedexit0 and dispositioned.
+Its actual cost estimate is USD1.940330. The Claude empty report remains
+no evidence. Full160LF independent descent/query audit was also parent read:
+`audits/reviews/2026-11-13-metabelian-descent-query-audit.md`. It establishes
+valid original-oracle lifts, strict class descent, finite caps on all branches,
+and the matched classical Theta(p^2) query bound for the free23 cyclic family.
+
+Use the deterministic SDE algorithm actually proved in IS sections3.1-3.3,
+with the conservative parent arity above. No randomized nonresidue routine
+is necessary. For each fixed c the finite algorithm has some uniform
+polynomial BIT bound P_c(E,A,logp), with constructive constants inherited
+from that published algorithm, including its Fact2 dependency. A numerical
+value for the polynomial exponent is NOT required for the existence theorem.
+We do not adopt the paid report's numerical exponent20 gate bound, its final
+expanded clock, or its proposed smaller arity from the abbreviated theorem
+display. No executable numerical compiler certificate has been built.
+
+Coherent finite precision is supplied by the full90LF independent audit
+`audits/reviews/2026-11-13-metabelian-precision-join.md`, parent read in full.
+Hales quant-ph/0212002v1 online Chapters4/8 correspond to retained PDF
+Chapters5/9: Algorithm3, Corollary1, Theorem10 and its proof. Its common
+bump is input-independent. Repair rounded-center endpoint overlap by using
+common interiors |t|<=floor(M/(2p))-1 and nearest-center exact decoding.
+These interiors are disjoint, with all remaining amplitudes retained as
+error, not postselected. A harmonic row/column Schur bound gives tail
+operator norm16(1+logp)/sqrtR. Parseval controls the shifted bumps by
+4Rp/M. Normalize the same bump; operator error increases by at most2
+and channel error is at most4 times the original sum. This holds with
+any entangled reference and includes ancillary discard.
+Take powers of two R>=(1024(1+logp)/delta)^2, M>=1024Rp/delta. Their bit
+lengths are O(logp+log1/delta); repetition uses logR Hadamards and
+reversible arithmetic, not R iterations. Power-of-two QFTs and exact
+integer division are polynomial in these lengths. QFT_p|0> supplies
+uniform field preparation. The special inverse-polynomial-error
+fast-depth estimate is not imported for arbitrary precision.
+
+The Dawson-Nielsen source explicitly omits arithmetic precision, so its
+expanded-word bound ALONE does not pay BIT compilation. The replacement
+is Kuperberg2306.13158v2 ACTUAL Theorems1.1/1.4, interval representation
+section3.1 and precision/runtime argument6.4. In fixed local dimension and
+a fixed inverse-closed dense computable algebraic gate set, it supplies
+polynomial BIT time and expanded word length with O(n+logn) gate bits and
+O(n) target bits for n-bit accuracy. Compile the complete local controlled
+rotation up to one global phase; never control a phase-ambiguous compiled
+single-qubit gate. Dyadic-angle entries are polynomial-bit computable.
+Allocate delta/(16J) operator error per local gate in a J-gate block.
+Retained PDFs/text/metadata: audits/sources/2026-11-13-metabelian-native/.
+
+Let E=D(D+c)^(2c), R_tree=product_(j=1)^c A_j(E), and
+T=D+ceil(log_p(8(c+1)/eta)), for D>=1. The independent audit gives
+N_f <= 2T+(c-1)T R_tree+2D+1,
+B_nodes <= max(1,c(c-1)T R_tree), and
+B_q <=8(c+1)^2 T(R_tree+1) vector-space Fourier/preparation blocks.
+Each vector block has at most D coordinates, so allocate coordinate error
+eta/(16 max(1,D) B_q). Deterministic SDE has no solver-failure event.
+Rank exhaustion totals <=eta/8. The capped global adaptive-channel hybrid
+adds <=eta/8 after harmless extra precision slack. It includes erroneous
+intersection estimates, bad subgroup restrictions and ABORT outcomes.
+It does NOT condition on tiny-probability transcripts or assert that noisy
+annihilators contain the true subgroup. All branches are defined: a passed
+initial membership test gives Khat<=H, so its normalizer quotient still
+hides (H intersect normalizer(Khat))/Khat, possibly a smaller target.
+
+The oracle must be clean deterministic XOR evaluation with b-bit labels.
+Charge b and, for a supplied implementation, N_f*T_f gates. Public BCH,
+linear algebra, exact modular arithmetic, table scans, formal maps and all
+classical records have polynomial cost. Thus the complete theoretical clock
+is poly_c(native_table_bits,D,logp,b,log(1/eta)) + N_f*T_f, with polynomial
+workspace, source count and O(D^2 logp) output. For c=1 use ordinary abelian
+HSP; D=0 is immediate. There is no numerical p or eta^-1 cost concealed.
+
+Important report correction to the controller interface: discard the
+ORIGINAL ORACLE LABELS without retaining them as conditioning records.
+Retain only public chart data, Fourier characters, shear outcomes and
+solver/controller records. Conditioning on fixed original coset labels
+breaks the mixed-state product identity (already falsified by U=0).
+No packet crosses a chart change; all trees use disjoint fresh sources.
+
+The WRITTEN native composition is now closed: source-checked polynomial
+primitive interfaces, full177/160/90LF independent audits and full330LF
+paid report were parent checked. The original-label discard guard and
+QFT/gate-source corrections are part of the algorithm, not optional notes.
+This is not implementation, numerical resource certification, practical
+performance, state-only-copy transfer, novelty, useful nonoracle application
+or Shor-level significance. All those gates remain false.
+
+
+## Final disposition and next research decision
+
+For every fixed c and every promised expanded metabelian BCH input overFp
+with p>c and arbitraryH, the written bounded-error oracle algorithm has the
+polynomial clock above. The conservative tree is D^O(c^5), not a practical
+resource estimate. Its classical random-label free23 comparator needs
+Theta(p²) queries. No additional quantum code or finite sweep is needed.
+In this ordinary-oracle model, initial K may also be learned directly from
+f restricted to exp([L,L]); the longer measured-q source proof is retained
+as a checked interface, not a required oracle-access assumption.
+
+Both API jobs terminal/reaped. Round estimatedUSD3.260446:
+Anthropic1.320116 EMPTY/no scientific evidence; OpenAI1.940330 completed.
+Owner actualSPENT155.99/101.71 remains separate from all runner estimates.
+The existing polynomial-valued oracle derivative attack and transporter
+preparation/wreath failures remain applicable exactly under their promises
+(BOUNDED_CLASS_METABELIAN_HSP.md boundaries). No new application found.
+Priority searches still do not establish novelty. Next compare independent
+external routes; reopen this line only for a substantive native application,
+new correctness falsifier, or a precise prior-art overlap, not another
+cancellation variant. Mechanical work is separately queued, not required
+to admit a practical solver.

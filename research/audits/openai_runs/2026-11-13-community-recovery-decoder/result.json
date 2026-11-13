@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
+  "effort": "max",
+  "error": null,
+  "files": [
+    {
+      "path": "research/audits/api_inputs/2026-11-13-community-recovery/openai-decoder.md",
+      "sha256": "20a1c0ffa4e478266f1a96b046bd39407259ec63c35372b116d2334f594db54e"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-community-recovery/contract.md",
+      "sha256": "ccbc4d6642bdbce36657530e1880bb64554767ba2c061256e64a036627972a05"
+    },
+    {
+      "path": "research/audits/api_inputs/2026-11-13-community-recovery/source-excerpts.md",
+      "sha256": "0f514b540926849c9b841b977a347b6c3c2dbeb86c278f0990c599a0073fd197"
+    }
+  ],
+  "finished_at": "2026-11-13T08:24:05.023489+00:00",
+  "incomplete_details": null,
+  "max_budget_usd": "4",
+  "max_tokens": 48000,
+  "model": "gpt-6-astra",
+  "preflight_estimate_usd": "2.65564",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "pricing_checked": "2026-11-12",
+  "rates_usd_per_million": {
+    "cached_input": 1,
+    "input": 10,
+    "output": 50
+  },
+  "response_id": "resp_06cc5ec264783cb2016af6c5c29f7087d186832a1a3a6b8253",
+  "started_at": "2026-11-13T08:09:36.796865+00:00",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 5666,
+    "input_tokens_details": {
+      "cache_write_tokens": 5663,
+      "cached_tokens": 0
+    },
+    "output_tokens": 32746,
+    "output_tokens_details": {
+      "reasoning_tokens": 25380
+    },
+    "total_tokens": 38412
+  },
+  "usage_cost_estimate_usd": "1.69396"
+}

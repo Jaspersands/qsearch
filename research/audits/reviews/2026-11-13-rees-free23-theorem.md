@@ -247,7 +247,11 @@ dominant over F̄_p for every odd p.
   1/p by Lang–Weil.
 * **Char 0 (`smooth_QQ.out`).** One integer configuration over QQ: C is a curve with Hilbert polynomial 36t − 72, so
   degree 36 and arithmetic genus 73, as Lemma G1 predicts. The singular-locus computation (minors of the 4×6 Jacobian)
-  did not finish within 900 s. Smoothness over QQ is therefore **NOT computed**. Nothing in G1–G4 depends on it.
+  did not finish within 900 s in the first run. **Addendum (11-13 evening):** rerun in Singular (modStd, char 0;
+  `2026-11-13-rees-long-runs/smooth_QQ.sing`, `.out`): dim of the cone 2, dim of the singular cone 0, and the
+  singular-locus radical contains the irrelevant ideal, so C is **smooth over QQ** for this configuration
+  (2347 s, 0.77 GB). Exact computation for one configuration only; it agrees with Lemma G1 and with the mod-32003 check
+  (`smooth_F32003.out`). Nothing in G1–G4 depends on it.
 * The proved constant is therefore pessimistic by about 10⁵. This explains the referee's 4/6 singular configurations
   at p = 101.
 
@@ -461,7 +465,7 @@ Separately, a reviewer should adjudicate `BOUNDED_CLASS_METABELIAN_HSP.md` again
 python structure_check.py > structure_check.out          # Lemma W vs the referee's curve_*.json, <1 s
 sage psi_dominance.sage > psi_dominance.out               # Lemma G2 Smith form, ~15 s
 sage badfrac.sage labels 400 101,401,1601,6007 > badfrac_400.out; sage badfrac.sage uniformAB 400 101,401,1601 >> badfrac_400.out   # ~4 min
-sage smooth_QQ.sage > smooth_QQ.out                       # char-0 cross-check of one configuration: dim/Hilbert poly 36t-72 only; singular locus timed out at 900 s (NOT computed)
+sage smooth_QQ.sage > smooth_QQ.out                       # char-0 cross-check of one configuration: dim/Hilbert poly 36t-72 only; singular locus timed out at 900 s; Singular rerun in 2026-11-13-rees-long-runs/smooth_QQ.out: smooth over QQ
 ./queue.sh                                                # theorem_pipeline.py at p = 11 (30 runs), 13, 17 (6 runs each); < 10 min, < 0.2 GB
 ```
 

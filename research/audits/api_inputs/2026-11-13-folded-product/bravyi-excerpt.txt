@@ -1,0 +1,153 @@
+Actual source: https://arxiv.org/pdf/quant-ph/0404180v2
+Source text SHA256: a0bc7105d212cd7e9e5516ef0542ea8fbf2e56a4c8163e944cd0bb900e7c8b10
+Physical LF ranges below; formfeeds sanitized for API.
+
+--- LF 371-420 ---
+point for a converging sequence of generalized canonical      Theorem 1.
+transformations (implementing complex rotations from          (1) An operator X ∈ C2n is Gaussian iff X is even and
+the group SO(2n, C)) and by using continuity arguments.       satisfies
+We shall present an independent proof that relies on a re-                          [Λ̂, X ⊗ X] = 0.
+markable symmetry of Gaussian states.
+                                                              (2) Any Gaussian operator X has a form
+Definition 2.
+(a) An operator X ∈ C2n with Tr(X) 6= 0 is called Gaus-                    2k
+                                                                                !     
+                                                                                             2n
+                                                                                                             
+sian iff its Grassmann representation is
+                                                                           Y             i  X
+                                                                X(θ) = C      µa exp              Mab µa µb  (26)
+                                                                          a=1
+                                                                                        2
+                                                                                                    a,b=2k+1
+                               i T
+                X(θ) = C exp     θ Mθ              (22)
+                               2                              where µa =
+                                                                           P2n
+                                                                             b=1 Tab θb for some invertible complex ma-
+for some complex number C and some 2n × 2n complex            trix T .
+antisymmetric matrix M . We shall call M a correlation          Let us first discuss several trivial consequences of the
+matrix of X.                                                  theorem. The part (1) implies that the set of Gaussian
+(b) An operator X ∈ C2n with Tr(X) = 0 is called Gaus-        operators is closed under multiplication of operators:
+sian iff
+                                                              Corollary 1. If X, Y ∈ C2n are Gaussian operators then
+                     X = lim Xm                       (23)    XY ∈ C2n is also a Gaussian operator.
+                           m→∞
+
+for some converging sequence of Gaussian operators              Since the set of Gaussian operators is closed under tak-
+Xm ∈ C2n , Tr(Xm ) 6= 0.                                      ing Hermitian conjugation, we infer that
+                                                              Corollary 2. If X is a Gaussian operator and ρ is a
+  In other words the set of Gaussian operators is a clo-
+                                                              Gaussian state such that Xρ 6= 0 then a state
+sure of a manifold specified by Eq. [22]. For example,
+Gaussian states and FLO projectors (see Eq. [14]) are                            ρ′ = XρX † / Tr(XρX † )
+Gaussian operators. As we shall see, canonical transfor-
+mations are also Gaussian operators, but some of them         is a Gaussian one.
+
+                                                                                                                            6
+
+  This is quite important result since it tells that an             Now we can easily conclude the proof. If X is a Gaus-
+arbitrary sequence of FLO operations can only produce            sian operator with Tr(X) 6= 0, we can write
+a Gaussian state, provided that the initial state was a                                                
+Gaussian one. To keep track of the state’s evolution one                                       i T
+                                                                                 X(θ) = exp      θ Mθ ,
+just needs to compute a correlation matrix of ρ′ given                                         2
+correlation matrices of ρ and X. We shall postpone a
+solution of this problem until Section VI.                       (the constant factor C is omitted) and thus
+
+--- LF 666-695 ---
+   Consider a Gaussian operator X which can be de-           Theorem 2. A Gaussian map E specified by Eq. [37,38]
+scribed by a correlation matrix M as in Eq. [22] and         is completely positive iff (i) C ≥ 0 and (ii) a matrix
+a Gaussian map E as in Eqs. [37,38]. Lemma 4 implies                                                
+that E(X) is a Gaussian operator. Applying the Gaus-                                        A B
+                                                                                 M≡
+sian integration rule Eq. [13] one can show that E(X) has                                 −B T D
+a correlation matrix
+                                    −1 T                     is real and satisfies M T M ≤ I.
+           E(M ) = B M −1 + D          B +A          (45)
+                                   −1
+                                                                Before proving the theorem we shall introduce a
+                  = B (I + M D)         M B T + A,           fermionic tensor product of linear maps ⊗f and a no-
+                                                             tion of a dual state. Let Z ∈ C4n be a monomial in the
+while a pre-exponential factor of the operator E(X) can      generators ĉ. One can always represent it as Z = Z ′ Z ′′ ,
+be found from an identity                                    where Z ′ is a monomial in ĉ1 , . . . , ĉ2n only and Z ′′ is a
+                                                             monomial in ĉ2n+1 , . . . , ĉ4n only.
+ Tr (E(X)) = C(−1)n Pf(M ) Pf(M −1 + D) Tr (X). (46)
+                                                             Definition 5. Let E1 , E2 : C2n → C2n be linear maps.
+The value of Tr (E(X)) can be found up to a factor ±1        Define a map E1 ⊗f E2 : C4n → C4n on monomials Z =
+using a regularized version of Eq. [46]:                     Z ′ Z ′′ as
+                   2                             2
+          Tr (E(X)) = C 2 det (I + M D) Tr (X) .     (47)                   (E1 ⊗f E2 )(Z) = E1 (Z ′ )E2 (Z ′′ ),
+
+The expression Eq. [45] does not make sense if (I + M D)     and extend it using linearity to the whole algebra C4n .
+is a singular operator, see a comment [15]. If this is the
+case, the Gaussian operator E(X) admits only a singular         In other words, the map E1 ⊗f E2 acts on the first half
+representation, as in Eq. [23].                              of the modes as E1 and on the second half of the modes
+   Suppose that Tr (E(X)) = Tr (X) for any operator X,       as E2 .
+that is the map E is trace preserving (TP). Then it fol-     Lemma 5. Let E be a parity preserving linear map.
+lows from Eq. [47] that a function f (M ) = det (I + M D)    Then E ⊗ Id is positive iff E ⊗f Id is positive.
+
+--- LF 845-906 ---
+case E ≡ 0, since a dual state completely specifies a linear                                      +i     θa ηa .
+map. The map sending all states to zero is obviously a                                                    a
+Gaussian one. In the former case one can apply the same                   Here the sum
+                                                                                             P′
+                                                                                              is taken over all a in the range 1, . . . , 2n
+proof as above.                                                           excluding a = 2j − 1 and a = 2j. Since a dual state com-
+                                                                          pletely specifies a linear map, it follows from Eq. [49] that
+                                                                          Ej,ǫ is a Gaussian map with an integral representation
+VIII.   FLO OPERATIONS AS GAUSSIAN MAPS
+                                                                                           1
+                                                                                             Z
+                                                                                                 exp Sj,ǫ (θ, η) + iη T µ X(µ) Dη Dµ .
+                                                                                                                          
+                                                                            Ej,ǫ (X)(θ) =
+   In this section we put forward an integral representa-                                  2
+tion for a single-mode occupation number measurement.                                                                                  (51)
+It will allow to find explicitly how do the FLO measure-                  If X is a Gaussian state with a given correlation matrix
+ments change a correlation matrix of the measured state                   then Ej,ǫ (X) is a Gaussian state whose correlation matrix
+(for each of the two outcomes).                                           is given by Eq. [45].
+   The measurement of the j-th mode is described by                          Consider as an example a measurement of the first
+orthogonal projectors â†j âj and âj â†j which correspond              mode and the outcome “the mode is empty”. Let ρ ∈ C2n
+to the outcomes “the mode is occupied” and “the mode                      be the input Gaussian state with a correlation matrix M ,
+is empty” respectively. Let us introduce linear maps
+                                                                                                                         
+                                                                                                     1        i T
+Ej,0 , Ej,1 : C2n → C2n describing the adjoint action of                                   ρ(θ) = n exp         θ Mθ .
+                                                                                                    2         2
+the two projectors:
+                                                                          Computing Gaussian integrals in Eq. [51] one gets:
+                Ej,0 (X) =       (âj â†j ) X (âj â†j ),        (50)                                    
+                                                                                                                       2n
+                                                                                                                                    
+                                                                                 †          †        p0              i X
+                Ej,1 (X) =       (â†j âj ) X (â†j âj ).               (â1 â1 )ρ(â1 â1 )(θ) = n exp iθ1 θ2 +      Lab θa θb ,
+                                                                                                     2               2
+                                                                                                                              a,b=3
+The index j runs from 1 to n, where n is the total number
+of fermionic modes. Our first goal is to find operators                                       L = (I − M K)−1 M.
+
+                                                                                                                             12
+
+Here K is an antisymmetric 2n× 2n matrix with the only                             IX.    CONCLUSION
+non-zero matrix elements K12 = −K21 = 1, that is
+
+                  Kpq = δp1 δq2 − δp2 δq1 .                         Notions of a Gaussian state and a Gaussian linear map
+                                                                 are generalized to the case of anticommuting (Grass-
+The coefficient p0 turns out to be                               mann) variables. Conditions under which a Gaussian
+                                                                 map is trace preserving and (or) completely positive are
+                     1                                           explicitly described. This formalism allows to develop the
+              p0 =     Pf(M ) Pf(K − M −1 ),
+                     2                                           Lagrangian representation for FLO, which covers both
+                                                                 unitary operations and projectors describing single-mode
+which agrees with the earlier derived formula Eq. [21] for       measurements. Using the Lagrangian representation we
+the probability to observe the mode in the empty state.          have reduced classical simulation of FLO to computation
+   In general, if a state ρ to be measured is Gaussian with      of Gaussian integrals over Grassmann variables. Explicit
+a given correlation matrix M , one can use the integral          formulas describing evolution of a quantum state under
+representation Eq. [51] and the equation Eq. [45] to find        FLO operations have been put forward.
+a correlation matrix Ej,n (M ) of the post-measurement
+state provided that the outcome was n. The probabilities
+of the two outcomes are given by Eqs. [46,47].
+   Evolution of a correlation matrix under unitary ele-
+                                                                              X.   ACKNOWLEDGMENTS
+ments of FLO (canonical transformations) is given by

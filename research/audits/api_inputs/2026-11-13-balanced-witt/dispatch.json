@@ -1,0 +1,22 @@
+{
+  "status": "dispatched",
+  "scientific_question": "Absolute-slope small-rank reduction and complete balanced expanded Witt basis",
+  "prior_checkpoint": "expanded_norm_round",
+  "jobs": [
+    {
+      "provider": "openai",
+      "bundle": "research/audits/openai_runs/2026-11-13-witt-affine-height",
+      "prompt": "research/audits/api_inputs/2026-11-13-balanced-witt/height-construction.md",
+      "ceiling_usd": 4,
+      "session_id": 66101
+    },
+    {
+      "provider": "claude",
+      "bundle": "research/audits/claude_runs/2026-11-13-witt-balanced-composition",
+      "prompt": "research/audits/api_inputs/2026-11-13-balanced-witt/balanced-attack.md",
+      "ceiling_usd": 3,
+      "session_id": 39508
+    }
+  ],
+  "warning": "Ceilings are local estimates, not billing caps. No retries."
+}

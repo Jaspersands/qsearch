@@ -1,0 +1,382 @@
+{
+  "captured_at_utc": "2026-11-13T05:27:24.531088+00:00",
+  "claim_gates": {
+    "bookkeeping_itself_proves_theorem": false,
+    "bookkeeping_only": true,
+    "empty_report_supplies_findings": false,
+    "execution_claim": false,
+    "finite_control_proves_general_theorem": false,
+    "hardness_claim": false,
+    "human_or_formal_verification_claim": false,
+    "implementation_claim": false,
+    "integral_extension_claim": false,
+    "novelty_claim": false,
+    "practicality_claim": false,
+    "quantum_separation_claim": false,
+    "real_extension_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "speedup_claim": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_control_artifacts": [
+    {
+      "bytes": 2343,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/balanced_witt/witt_crt_falsifiers.py",
+      "sha256": "ee37621bcee234cae7fce4f97c2b7bc8d17c2af5b3342a8f63ffad956cf4727e"
+    },
+    {
+      "bytes": 710,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/balanced_witt/witt_crt_result.json",
+      "sha256": "3d754a5966389f97ceff4fe80c7d6faed4b34f9d8f2d025fa36796698ee910bd"
+    }
+  ],
+  "control_note": "Existing finite CRT falsifier script/result only; no test/control rerun.",
+  "dispatch": {
+    "bytes": 799,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/dispatch.json",
+    "sha256": "ff3df0f48d6e3fbb7fb0a2330c69879fefef03f270900c4294de0ad516b78a1b"
+  },
+  "dispatch_mutation_scope": "No manifest/raw-result edits. Saved dispatched metadata retained; final result metadata and parent reaping authoritative.",
+  "exclusions": [
+    {
+      "reason": "Preserved exactly and excluded from known estimates.",
+      "scope": "Six inherited UNKNOWN bills and all observed partial counters"
+    },
+    {
+      "reason": "Outside this two-job milestone; specified labelled topic/STATE snapshots only. Shared workflow receives usage-only milestone after freeze, not a scientific/hash pin.",
+      "scope": "Unfinished post-witt-selection review, Rees/new work and original live topic/STATE/HANDOFF/MECHANICAL"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 1506,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/balanced-attack.md",
+      "sha256": "7d7d799e8cfdc01c41af7643cfb1fb6d1f8a0402d73c286c1afaceb9581ded71"
+    },
+    {
+      "bytes": 4470,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/candidate.md",
+      "sha256": "b93aa6b36d768cd51205ba7e3d6dcbd91bef913df0077389a8b271edddadaf3c"
+    },
+    {
+      "bytes": 14123,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/conic-shortening.md",
+      "sha256": "d6a4f385ca03b0eee7d93c76ddda4cbb8e7f3f75addad07dc3d2162252e6c1cb"
+    },
+    {
+      "bytes": 799,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/dispatch.json",
+      "sha256": "ff3df0f48d6e3fbb7fb0a2330c69879fefef03f270900c4294de0ad516b78a1b"
+    },
+    {
+      "bytes": 6373,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/expanded-norm.md",
+      "sha256": "e44a3a02d030462eee3d5bf8b5f810d1c8d045ed1ff8d2a9d11e18a2cce8f3b4"
+    },
+    {
+      "bytes": 4866,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/fukshansky-excerpt.txt",
+      "sha256": "64c6fa3daad9ad83648bb77b96cd4dc908c58c7afaaff44dd15ca68ac99d1f23"
+    },
+    {
+      "bytes": 1599,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/height-construction.md",
+      "sha256": "5f67610d8675f0d18fa41efab5b774443bdc8ef47496e766bb424a46d7af03ae"
+    },
+    {
+      "bytes": 20669,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/isotropy-construction.md",
+      "sha256": "8018ab7c7247847b477d97f91e95ef6cf990dc280730b6d84a5b2fe963da8929"
+    },
+    {
+      "bytes": 4035,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/koprowski-algorithm8.txt",
+      "sha256": "a1691989f3795ad23745636aed2c245dfe5debc50a4083454ac1009baaa8b9a8"
+    },
+    {
+      "bytes": 7410,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-balanced-witt/koprowski-assumptions.txt",
+      "sha256": "1fe1f20ba39930996feb7c29a2fb397b556697c435b4d384954358f393d3f735"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 17303,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/expanded_norm_round/checkpoint.json",
+    "sha256": "c3d43a1721db0cb883fdaa952ea6806825365700a1a45890718db0b3f4f24e1b"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 18136,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/expanded_norm_round/usage.json",
+    "sha256": "da608dc859f90eab47a9ac3791bf1680d502038a7d6b4f05a6e98c868ddf3366"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 50
+  },
+  "labelled_snapshots": [
+    {
+      "bytes": 17840,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/BALANCED_WITT_EXPANDED_DECOMPOSITION.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/balanced_witt_round/balanced_witt_expanded_decomposition-snapshot.md",
+      "sha256": "49452e6d672477e9e7965f4010f43922eabb80c22ed419994e63d85755ed9eb4",
+      "snapshot_label": "Exact byte snapshot for scoped written endpoint; original evolving path not hashed."
+    },
+    {
+      "bytes": 290872,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/STATE.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/balanced_witt_round/state-snapshot.md",
+      "sha256": "ef69a3948ae187d377da7b40bb8552c9e96b178d83f505372c08b32fe0b7f84e",
+      "snapshot_label": "Exact byte snapshot for scoped written endpoint; original evolving path not hashed."
+    }
+  ],
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 219856,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/cremona_vanhoeij_conics.pdf",
+      "sha256": "b75e4937c89f8704a98ff9160566edd74e356015f6bca7ed4383aba397e866c4"
+    },
+    {
+      "bytes": 31376,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/cremona_vanhoeij_conics.txt",
+      "sha256": "8a56edd1fb28efd480300b6d81a927d8d0c0c9019b0b263ba8e23bbd238e9b97"
+    },
+    {
+      "bytes": 163,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/cremona_vanhoeij_conics.source.json",
+      "sha256": "ff2bbb66c2fdd2f65886fedb7c38f11fea09b19c8a22cbc337fbef48ae286b2b"
+    },
+    {
+      "bytes": 179722,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/fukshansky_witt.pdf",
+      "sha256": "2d4912f3558ba2b9dbab197cabaf6ef8f37e843838e23135e115cdfd2e6fb2e4"
+    },
+    {
+      "bytes": 54210,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/fukshansky_witt.txt",
+      "sha256": "ed92987f9637001640cafce923fdf8835db13fb5f43a207849a8a40d43c3eb19"
+    },
+    {
+      "bytes": 171,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/fukshansky_witt.source.json",
+      "sha256": "c63a1147be650333cff87b8e1d504a80977cc3c1a52dae01199797509b1e5bdf"
+    },
+    {
+      "bytes": 253932,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/koprowski_rothkegel_anisotropic.pdf",
+      "sha256": "b84caebdb30afb633d43551b49eb96b2d27470cdd754b0c4c848c98be7eab4be"
+    },
+    {
+      "bytes": 49896,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/koprowski_rothkegel_anisotropic.txt",
+      "sha256": "7d90fda94f83f79447fda7d01b512a6ba9d15bd1bcd6a87cc7ca9035f2dbe3e4"
+    },
+    {
+      "bytes": 149,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/koprowski_rothkegel_anisotropic.source.json",
+      "sha256": "4d0f5507886a62528cea5f83fa0ad76f37a16f7d875fc5a5a590edf8fb129970"
+    },
+    {
+      "bytes": 82477,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/simon_conics.pdf",
+      "sha256": "4ff1fced9a7b83543a32db7693f57ad3d11780fb55e8b77035e3aa8140b78160"
+    },
+    {
+      "bytes": 5054,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/simon_conics.txt",
+      "sha256": "39b6e9cd4df5952192107fb48fa40902b947811760462f878066278e90a03c28"
+    },
+    {
+      "bytes": 179,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-balanced-witt/simon_conics.source.json",
+      "sha256": "c0a2ae56091de46fbfbf4171ea9a29f5fdffa9720940ba3bafbd254a2f384547"
+    }
+  ],
+  "prior_hash_policy": "Only immediate prior usage/checkpoint continuity references; no prior snapshot/pin edits, historical run/hash rescan or repinning.",
+  "scope": "Frozen expanded-norm ledger plus ONLY two terminal balanced-Witt requests; immutable paid packet/contexts/bundles, stable337/250/197-LF review chain, exact CRT control, four actual primary sources and labelled topic/STATE snapshots.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-13T05:27:24.531088+00:00",
+    "labelled_snapshots": [
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/balanced_witt_round/balanced_witt_expanded_decomposition-snapshot.md",
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/balanced_witt_round/state-snapshot.md"
+    ],
+    "originals_not_hashed": [
+      "/Users/jaspersands/Developer/qsearch/research/BALANCED_WITT_EXPANDED_DECOMPOSITION.md",
+      "/Users/jaspersands/Developer/qsearch/research/STATE.md"
+    ],
+    "parent_confirmed_stable_and_fully_read": true
+  },
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 17593,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 337,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-witt-affine-height.md",
+      "physical_LF_count": 336,
+      "sha256": "ac67656081bb14189a3c4b33760f393f765f68810d14ad0f3d1713e78c388812"
+    },
+    {
+      "bytes": 13293,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 250,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-witt-balanced-clock.md",
+      "physical_LF_count": 250,
+      "sha256": "0bb962388a6eec1bd2b2dd8ebdbe4e650e2993c5fa4de1300d0402f50350640a"
+    },
+    {
+      "bytes": 12510,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_LF_count": 197,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-post-transport-selection.md",
+      "physical_LF_count": 196,
+      "sha256": "19c4c2f4c9801e0942d8f8d06b754ef4d0566504618e5ff6a93842464af7d968"
+    }
+  ],
+  "status": "TERMINAL_BALANCED_WITT_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 1599,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/context-00.txt",
+      "sha256": "5f67610d8675f0d18fa41efab5b774443bdc8ef47496e766bb424a46d7af03ae"
+    },
+    {
+      "bytes": 4470,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/context-01.txt",
+      "sha256": "b93aa6b36d768cd51205ba7e3d6dcbd91bef913df0077389a8b271edddadaf3c"
+    },
+    {
+      "bytes": 6373,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/context-02.txt",
+      "sha256": "e44a3a02d030462eee3d5bf8b5f810d1c8d045ed1ff8d2a9d11e18a2cce8f3b4"
+    },
+    {
+      "bytes": 14123,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/context-03.txt",
+      "sha256": "d6a4f385ca03b0eee7d93c76ddda4cbb8e7f3f75addad07dc3d2162252e6c1cb"
+    },
+    {
+      "bytes": 20669,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/context-04.txt",
+      "sha256": "8018ab7c7247847b477d97f91e95ef6cf990dc280730b6d84a5b2fe963da8929"
+    },
+    {
+      "bytes": 770060,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/provider-response.json",
+      "sha256": "88760a03182d1685daf692186a609bc497375dfce1526725168339eb1207cbe5"
+    },
+    {
+      "bytes": 49067,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/request.json",
+      "sha256": "7994f5c1bf9dfb9679ad2c80080dbcdc43b3b4196a3f029e7104d5e3b93953b9"
+    },
+    {
+      "bytes": 25849,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/response.md",
+      "sha256": "b52bc1b6986566b522e4ed3240f3d06eff0b4738c6dad9e593ae4add53418910"
+    },
+    {
+      "bytes": 1968,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/result.json",
+      "sha256": "3ca3d8a4d42074c60dc9b63bdca1fe8b14d32dc04872e1dc72f2fd64cef6e780"
+    },
+    {
+      "bytes": 4470,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/context/000.txt",
+      "sha256": "b93aa6b36d768cd51205ba7e3d6dcbd91bef913df0077389a8b271edddadaf3c"
+    },
+    {
+      "bytes": 6373,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/context/001.txt",
+      "sha256": "e44a3a02d030462eee3d5bf8b5f810d1c8d045ed1ff8d2a9d11e18a2cce8f3b4"
+    },
+    {
+      "bytes": 4866,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/context/002.txt",
+      "sha256": "64c6fa3daad9ad83648bb77b96cd4dc908c58c7afaaff44dd15ca68ac99d1f23"
+    },
+    {
+      "bytes": 7410,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/context/003.txt",
+      "sha256": "1fe1f20ba39930996feb7c29a2fb397b556697c435b4d384954358f393d3f735"
+    },
+    {
+      "bytes": 4035,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/context/004.txt",
+      "sha256": "a1691989f3795ad23745636aed2c245dfe5debc50a4083454ac1009baaa8b9a8"
+    },
+    {
+      "bytes": 1506,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/prompt.txt",
+      "sha256": "7d7d799e8cfdc01c41af7643cfb1fb6d1f8a0402d73c286c1afaceb9581ded71"
+    },
+    {
+      "bytes": 31719,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/request.json",
+      "sha256": "da6343aea2be3adbdfd2dc9e6184865c41fe9694bc305dbd721b0f35357da649"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2410,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/result.json",
+      "sha256": "1bf6fd84d54ece7737024e33850a26c98073c20b6e8db032bfa1ffdfe8e68fc1"
+    }
+  ],
+  "two_terminal_results_and_responses": [
+    {
+      "obligation": "witt-affine-height",
+      "parent_fully_read_nonempty_report": true,
+      "response": {
+        "bytes": 25849,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/response.md",
+        "sha256": "b52bc1b6986566b522e4ed3240f3d06eff0b4738c6dad9e593ae4add53418910"
+      },
+      "result": {
+        "bytes": 1968,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-witt-affine-height/result.json",
+        "sha256": "3ca3d8a4d42074c60dc9b63bdca1fe8b14d32dc04872e1dc72f2fd64cef6e780"
+      },
+      "session_id": 66101,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": null,
+      "usage_cost_estimate_usd": "2.666350"
+    },
+    {
+      "obligation": "witt-balanced-composition",
+      "parent_fully_read_nonempty_report": false,
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/response.md",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "result": {
+        "bytes": 2410,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-witt-balanced-composition/result.json",
+        "sha256": "1bf6fd84d54ece7737024e33850a26c98073c20b6e8db032bfa1ffdfe8e68fc1"
+      },
+      "session_id": 39508,
+      "session_reaped_per_parent": true,
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "usage_cost_estimate_usd": "1.322232"
+    }
+  ],
+  "unique_hashed_artifact_count": 50,
+  "usage_snapshot": {
+    "bytes": 18166,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/balanced_witt_round/usage.json",
+    "sha256": "a576cacde8577cb26bf11a9ed5193fe894774ea5ee07f4a73e99da3a34c8bd14"
+  }
+}
