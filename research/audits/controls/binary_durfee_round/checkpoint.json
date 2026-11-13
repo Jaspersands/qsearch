@@ -1,0 +1,412 @@
+{
+  "captured_at_utc": "2026-11-13T02:34:15.228726+00:00",
+  "claim_gates": {
+    "bookkeeping_itself_proves_theorem": false,
+    "bookkeeping_only": true,
+    "finite_control_proves_general_theorem": false,
+    "full_ratio_claim": false,
+    "growing_Durfee_claim": false,
+    "hardness_claim": false,
+    "implementation_claim": false,
+    "lost_session_implies_unknown_bill_despite_final_usage": false,
+    "novelty_claim": false,
+    "quantum_advantage_claim": false,
+    "remaining_balance_computed": false,
+    "request_ceiling_equals_usage": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_actual_billing": false
+  },
+  "completed_control_artifacts": [
+    {
+      "bytes": 9189,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/binary_durfee/exact_coefficient.py",
+      "sha256": "f74bb56f599acb61ba2d40c713171c852e3a34f41c76731ab5ae8d1d061aac9d"
+    },
+    {
+      "bytes": 143990,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/binary_durfee/exact_coefficient.json",
+      "sha256": "51358a5292e866c69921b2004d1803b154584a4bcc6748738f7b9fb0ab5eb6b9"
+    }
+  ],
+  "control_note": "Existing parent-inspected504-triple exact control pinned; no test/control rerun.",
+  "dispatch": {
+    "bytes": 2488,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-binary-durfee/dispatch.json",
+    "sha256": "d94558d38809e3b0cf601cd9fe57d6540f482e7c9ed80613628607d40ea4300f"
+  },
+  "dispatch_mutation_scope": "No manifest/raw-result edits; only own new checkpoint files and labelled snapshots written.",
+  "exclusions": [
+    {
+      "reason": "Preserved exactly and excluded from known estimates.",
+      "scope": "Six inherited UNKNOWN bills and all observed partial counters"
+    },
+    {
+      "reason": "Outside this three-job milestone; labelled snapshots and selected explicit sources only.",
+      "scope": "Full archives, credentials, live originals of topic/STATE/HANDOFF/MECHANICAL and future selection/audits"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 8157,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-binary-durfee/actual-rosas.txt",
+      "sha256": "7bfce9990f00757b4b6dd77015ea804ea651e58cfe64399b7b1132f9cf2ee332"
+    },
+    {
+      "bytes": 14295,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-binary-durfee/actual-sources.txt",
+      "sha256": "4045ba21f050bdf627f11d562a6f5528595dffd1cb5ff199c4123cb2e908b1f0"
+    },
+    {
+      "bytes": 954,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-binary-durfee/coefficient-attack.md",
+      "sha256": "74d30741b7e00e8f37bbc74152258104714f040cc76a793adffc4c9f5e031b87"
+    },
+    {
+      "bytes": 6149,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-binary-durfee/contract.md",
+      "sha256": "8d9a0a21d131ad84de11220c7e4e200e0a6747e4de58b63abb13b19b5d860af7"
+    },
+    {
+      "bytes": 1006,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-binary-durfee/counting-compiler.md",
+      "sha256": "61aa302145822b8b5cf4cf0ab5146a43a7d6d6c04fd67f1c3f0a17c600779ca8"
+    },
+    {
+      "bytes": 2488,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-binary-durfee/dispatch.json",
+      "sha256": "d94558d38809e3b0cf601cd9fe57d6540f482e7c9ed80613628607d40ea4300f"
+    },
+    {
+      "bytes": 2675,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-binary-durfee/sergeev-compiler.md",
+      "sha256": "4ca1fbaf790615e439ba68f61d6fc67fff70ab91b2eadf235f8f53ca17d6a8de"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 17254,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur_round/checkpoint.json",
+    "sha256": "34d9500aa20995fab418b630bada7f0d7e66e61ae6e66ce2630175e38052b6c6"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 18765,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/super_schur_round/usage.json",
+    "sha256": "0fcacb3aae825a4160e14ae6f14dc9d995f0c467395665a46064f2a6178504a3"
+  },
+  "hash_verification": {
+    "method": "One fresh read/hash comparison per unique pinned path after capture.",
+    "passed": true,
+    "unique_artifacts_verified_once": 53
+  },
+  "labelled_snapshots": [
+    {
+      "bytes": 13487,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/KRONECKER_BINARY_DURFEE_COMPILER.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/binary_durfee_round/kronecker_binary_durfee_compiler-snapshot.md",
+      "sha256": "64975d80a79e06fb04e0b92341189a8f9eacc8f5da44c3f8f5d1c1fb23d493ea",
+      "snapshot_label": "Exact byte snapshot captured for this milestone; original evolving path not hashed."
+    },
+    {
+      "bytes": 284307,
+      "original_path_not_hashed": "/Users/jaspersands/Developer/qsearch/research/STATE.md",
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/binary_durfee_round/state-snapshot.md",
+      "sha256": "9dccf21b79ec0f28c3933dce961f52637cec856430fea8e2ac47599dafc01e59",
+      "snapshot_label": "Exact byte snapshot captured for this milestone; original evolving path not hashed."
+    }
+  ],
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "primary_source_artifacts": [
+    {
+      "bytes": 500196,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/panova.pdf",
+      "sha256": "e515fcdfb893225efe512397ae5b5f0eadee6b107135b89c792372dba922fe61"
+    },
+    {
+      "bytes": 94743,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/panova.txt",
+      "sha256": "f0eeb750952a974ddf5c2a54c9e9816678134058b7583f294fff571ea3248440"
+    },
+    {
+      "bytes": 149,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/panova.source.json",
+      "sha256": "49cac0324c4926a7230b8c312d7586c4f38d42d09dde93a78713e0fb0196ca51"
+    },
+    {
+      "bytes": 209204,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/moens.pdf",
+      "sha256": "f7730ad1ce8f2b3be6a16def756ca0fc01d9cff8e2daf38ea27b86273835b2f8"
+    },
+    {
+      "bytes": 33197,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/moens.txt",
+      "sha256": "497bf11a179c0780d7db2853e92fb1b9552d4d453c20b6e4f521db8bdff38fc6"
+    },
+    {
+      "bytes": 172,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/moens.source.json",
+      "sha256": "12dc55ee8c14007a9e942dd09ff6519fa49a7508630b4a470bee9001f382e5fa"
+    },
+    {
+      "bytes": 328544,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/pragacz.pdf",
+      "sha256": "de1d1bfb8e8f75f1c01cada43c91f69207e4d69a232c6e33a4ae04ff92dea8d5"
+    },
+    {
+      "bytes": 92937,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/pragacz.txt",
+      "sha256": "0bc6c82a47f120f7b7c2b37f0d18135bb2a635ce36874da10e065c5f06c5aaf9"
+    },
+    {
+      "bytes": 157,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/pragacz.source.json",
+      "sha256": "b47ab9d6cb148d431eacf2493c3591c956d088f6b24ea9d9f9aab8a0140907dc"
+    },
+    {
+      "bytes": 594573,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/giambelli.pdf",
+      "sha256": "a198e1accb5895bb12cc345b5f79db99773e3a4c99970821f95d0128019228bb"
+    },
+    {
+      "bytes": 102355,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/giambelli.txt",
+      "sha256": "9a5832216240a5eaf0b83f294c9c0511e5d8d75b3be93b96c7ef7304ce0e28c0"
+    },
+    {
+      "bytes": 147,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/giambelli.source.json",
+      "sha256": "6cb9db0e51d67c4b27c3c2e82dae3015f23c6feab052016db3664a5a0931d7c1"
+    },
+    {
+      "bytes": 862363,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/barvinok_pommersheim.pdf",
+      "sha256": "bd803c27b438e3803db0e2b8fa4194e1102daca5176a94df3852762d7f5d465d"
+    },
+    {
+      "bytes": 167301,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/barvinok_pommersheim.txt",
+      "sha256": "8f993426a41122d45c27e88925bc1de7881913725e3edf66aec70ed243073117"
+    },
+    {
+      "bytes": 173,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/barvinok_pommersheim.source.json",
+      "sha256": "cdd68a29fe8acef428961feb610399dc1f627eb967dbd8b8e11bfbd418edd807"
+    },
+    {
+      "bytes": 227097,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/rosas.pdf",
+      "sha256": "39fda94c35688e6d12b4f587ac445303a297128ca150c98a0516d52f2cc74fda"
+    },
+    {
+      "bytes": 64715,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/rosas.txt",
+      "sha256": "c95f17ba2f9f2385317cadd3dc6fb2b143567d8358c5045075902ac124485998"
+    },
+    {
+      "bytes": 149,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/2026-11-13-kronecker-ratio/rosas.source.json",
+      "sha256": "8c8b77b9048f03296bb845ae9ce038fc2d1556973df097ef4b22aa2a3f40e30e"
+    }
+  ],
+  "primary_source_selection_note": "All five source identities in actual-sources.txt plus actual Rosas source and original sidecars; source bytes/sidecars preserved, no normalization or abstract-based substitution.",
+  "prior_hash_policy": "Only immediate prior usage/checkpoint continuity references; previous snapshots and ledgers are not repinned or edited. No historical run/hash rescan.",
+  "scope": "Frozen super-Schur baseline plus ONLY three completed binary-Durfee requests, final paid packets/bundles, stable native proof, inspected exact coefficient control, relevant actual primary sources/sidecars and labelled topic/STATE snapshots.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-13T02:34:15.228726+00:00",
+    "labelled_snapshots": [
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/binary_durfee_round/kronecker_binary_durfee_compiler-snapshot.md",
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/binary_durfee_round/state-snapshot.md"
+    ],
+    "originals_not_hashed": [
+      "/Users/jaspersands/Developer/qsearch/research/KRONECKER_BINARY_DURFEE_COMPILER.md",
+      "/Users/jaspersands/Developer/qsearch/research/STATE.md"
+    ],
+    "parent_confirmed_stable_and_fully_read": true
+  },
+  "stable_independent_review_artifact": {
+    "bytes": 12042,
+    "parent_confirmed_stable_and_fully_read": true,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-binary-durfee-native-audit.md",
+    "physical_LF_count": 219,
+    "sha256": "0670b02a03b93dd3d383636a7e60521878e775cf0962ebbe662608a9f4e1679d"
+  },
+  "status": "TERMINAL_BINARY_DURFEE_USAGE_MILESTONE",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 6149,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-coefficient/context/000.txt",
+      "sha256": "8d9a0a21d131ad84de11220c7e4e200e0a6747e4de58b63abb13b19b5d860af7"
+    },
+    {
+      "bytes": 14295,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-coefficient/context/001.txt",
+      "sha256": "4045ba21f050bdf627f11d562a6f5528595dffd1cb5ff199c4123cb2e908b1f0"
+    },
+    {
+      "bytes": 954,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-coefficient/prompt.txt",
+      "sha256": "74d30741b7e00e8f37bbc74152258104714f040cc76a793adffc4c9f5e031b87"
+    },
+    {
+      "bytes": 23842,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-coefficient/request.json",
+      "sha256": "7316e1a73e59ef7d9be4c4e7536661ff737671426a471a68a42c92770c0785d0"
+    },
+    {
+      "bytes": 14021,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-coefficient/response.md",
+      "sha256": "92ca46ceef5d455ebea974cf3528439fddb65b7da5507164a2297545389523ef"
+    },
+    {
+      "bytes": 1637,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-coefficient/result.json",
+      "sha256": "b7f7b49290cd45b70a88c851a164663a1bfd08c80cb45f2e4121003663bb0565"
+    },
+    {
+      "bytes": 1006,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-binary-durfee-counting/context-00.txt",
+      "sha256": "61aa302145822b8b5cf4cf0ab5146a43a7d6d6c04fd67f1c3f0a17c600779ca8"
+    },
+    {
+      "bytes": 6149,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-binary-durfee-counting/context-01.txt",
+      "sha256": "8d9a0a21d131ad84de11220c7e4e200e0a6747e4de58b63abb13b19b5d860af7"
+    },
+    {
+      "bytes": 14295,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-binary-durfee-counting/context-02.txt",
+      "sha256": "4045ba21f050bdf627f11d562a6f5528595dffd1cb5ff199c4123cb2e908b1f0"
+    },
+    {
+      "bytes": 384140,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-binary-durfee-counting/provider-response.json",
+      "sha256": "09fe48901596afbda97395ee25dc23ea6af727ee7596ab0b6936fc34bb5ec2f3"
+    },
+    {
+      "bytes": 23443,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-binary-durfee-counting/request.json",
+      "sha256": "0173aace0747bdad4dda77397268e95d432ff4310b52bedc759d8b38a639b8bb"
+    },
+    {
+      "bytes": 13750,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-binary-durfee-counting/response.md",
+      "sha256": "4d2290da67caa099a10ba9c3d98126c46bd7d3766988dc72627b90d045acce98"
+    },
+    {
+      "bytes": 1590,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-binary-durfee-counting/result.json",
+      "sha256": "61bba4ba22d4da29210376511bb0c1ba607c68f160d1f913abd8d5f18e76166d"
+    },
+    {
+      "bytes": 6149,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-sergeev/context/000.txt",
+      "sha256": "8d9a0a21d131ad84de11220c7e4e200e0a6747e4de58b63abb13b19b5d860af7"
+    },
+    {
+      "bytes": 14295,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-sergeev/context/001.txt",
+      "sha256": "4045ba21f050bdf627f11d562a6f5528595dffd1cb5ff199c4123cb2e908b1f0"
+    },
+    {
+      "bytes": 8157,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-sergeev/context/002.txt",
+      "sha256": "7bfce9990f00757b4b6dd77015ea804ea651e58cfe64399b7b1132f9cf2ee332"
+    },
+    {
+      "bytes": 2675,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-sergeev/prompt.txt",
+      "sha256": "4ca1fbaf790615e439ba68f61d6fc67fff70ab91b2eadf235f8f53ca17d6a8de"
+    },
+    {
+      "bytes": 34871,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-sergeev/request.json",
+      "sha256": "1ec999e812ab7e475c20a03b9fa4e2b3ce2cca409a9377f87aa4c967d2d7129a"
+    },
+    {
+      "bytes": 16120,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-sergeev/response.md",
+      "sha256": "b85e52139b1e8c22d9cc97f82d767486d11901760945d54bb9c9cf42e7921df8"
+    },
+    {
+      "bytes": 1879,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-sergeev/result.json",
+      "sha256": "0bf9275e492d8d50cb6ec911768779b201d20dd3b5123a14c58533344ea72209"
+    }
+  ],
+  "three_terminal_results_and_responses": [
+    {
+      "obligation": "binary-durfee-coefficient",
+      "parent_fully_read_nonempty_report": true,
+      "response": {
+        "bytes": 14021,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-coefficient/response.md",
+        "sha256": "92ca46ceef5d455ebea974cf3528439fddb65b7da5507164a2297545389523ef"
+      },
+      "result": {
+        "bytes": 1637,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-coefficient/result.json",
+        "sha256": "b7f7b49290cd45b70a88c851a164663a1bfd08c80cb45f2e4121003663bb0565"
+      },
+      "session_accounting": {
+        "evidence": "Parent/manifest terminal session reaped.",
+        "session_id": 24012,
+        "session_reaped_per_parent": true
+      },
+      "status": "completed",
+      "usage_cost_estimate_usd": "0.533272"
+    },
+    {
+      "obligation": "binary-durfee-counting",
+      "parent_fully_read_nonempty_report": true,
+      "response": {
+        "bytes": 13750,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-binary-durfee-counting/response.md",
+        "sha256": "4d2290da67caa099a10ba9c3d98126c46bd7d3766988dc72627b90d045acce98"
+      },
+      "result": {
+        "bytes": 1590,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-binary-durfee-counting/result.json",
+        "sha256": "61bba4ba22d4da29210376511bb0c1ba607c68f160d1f913abd8d5f18e76166d"
+      },
+      "session_accounting": {
+        "evidence": "Parent/manifest terminal session reaped.",
+        "session_id": 34322,
+        "session_reaped_per_parent": true
+      },
+      "status": "completed",
+      "usage_cost_estimate_usd": "1.280660"
+    },
+    {
+      "obligation": "binary-durfee-sergeev",
+      "parent_fully_read_nonempty_report": true,
+      "response": {
+        "bytes": 16120,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-sergeev/response.md",
+        "sha256": "b85e52139b1e8c22d9cc97f82d767486d11901760945d54bb9c9cf42e7921df8"
+      },
+      "result": {
+        "bytes": 1879,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-binary-durfee-sergeev/result.json",
+        "sha256": "0bf9275e492d8d50cb6ec911768779b201d20dd3b5123a14c58533344ea72209"
+      },
+      "session_accounting": {
+        "evidence": "Saved final terminal metadata and parent-observed PID absence. Session locator lost on tool output truncation; no retry. No additional process verification performed.",
+        "launch_pid": 17411,
+        "pid_absent_after_terminal_per_parent": true,
+        "session_id": null,
+        "session_reaped_per_parent": null
+      },
+      "status": "completed",
+      "usage_cost_estimate_usd": "0.714088"
+    }
+  ],
+  "unique_hashed_artifact_count": 53,
+  "usage_snapshot": {
+    "bytes": 19758,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/binary_durfee_round/usage.json",
+    "sha256": "f835c435656172d88c55993f7cf55663d1ceb385a9c8d09ba55fbbb19b8c38c6"
+  }
+}

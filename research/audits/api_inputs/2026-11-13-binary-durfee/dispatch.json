@@ -1,5 +1,5 @@
 {
-  "note": "New compact-input operation, not reuse of numerical-n clock. Two distinct algebra and bounded-counting obligations after corpus/actual primary checks. No retries; ceilings not charges.",
+  "note": "Three distinct obligations terminal and fully parent read. Exact report dispositions in KRONECKER_BINARY_DURFEE_COMPILER.md; estimates not invoices/balances.",
   "jobs": [
     {
       "id": "binary-durfee-coefficient",
@@ -12,8 +12,11 @@
       "bundle": "research/audits/claude_runs/2026-11-13-binary-durfee-coefficient",
       "budget": 3,
       "max_tokens": 64000,
-      "status": "running",
-      "session_id": 24012
+      "status": "completed",
+      "session_id": 24012,
+      "parent_full_read": true,
+      "usage_cost_estimate_usd": "0.533272",
+      "session_reaped": true
     },
     {
       "id": "binary-durfee-counting",
@@ -26,8 +29,31 @@
       "bundle": "research/audits/openai_runs/2026-11-13-binary-durfee-counting",
       "budget": 4,
       "max_tokens": 64000,
-      "status": "running",
-      "session_id": 34322
+      "status": "completed",
+      "session_id": 34322,
+      "parent_full_read": true,
+      "usage_cost_estimate_usd": "1.28066",
+      "session_reaped": true
+    },
+    {
+      "id": "binary-durfee-sergeev",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-binary-durfee/sergeev-compiler.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-binary-durfee/contract.md",
+        "research/audits/api_inputs/2026-11-13-binary-durfee/actual-sources.txt",
+        "research/audits/api_inputs/2026-11-13-binary-durfee/actual-rosas.txt"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-binary-durfee-sergeev",
+      "budget": 3,
+      "max_tokens": 64000,
+      "status": "completed",
+      "reason": "Distinct direct binary compiler from newly inspected actual Rosas/Sergeev formula; tests tensor substitution/chamber and source mechanism scope, not duplicate acceptance.",
+      "parent_full_read": true,
+      "usage_cost_estimate_usd": "0.714088",
+      "launch_pid": 17411,
+      "process_absent_after_terminal": true,
+      "session_id_note": "Lost on tool output truncation; did not retry."
     }
   ]
 }

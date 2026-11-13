@@ -1,3 +1,150 @@
+## 2026-11-13 Native Metabelian HSP Source Interface Checked
+
+Newpass from STATE/TRAPS after jointnorm architectureparked. Corpus and
+actualprimary IS2016/Decker2013/Imran-Ivanyos2023/Morales2026 passages read.
+New free23 candidate is subsumed by an older UNREVIEWED internalmetabelian
+proposal, so auditthatfirst. METABELIAN_NATIVE_HSP_AUDIT.md statescontract.
+Parent checked full177LF independent native-source proof: fixedc,p>c,
+expandedL with abelianderived, arbitraryH and ordinaryhidingoracle. One
+proof-only degree<=c polynomial gives uniformnormalcharacters after exact
+intersectionremoval/normalizerquotient. Complete mixed unknown-support
+Krausidentity retains everybranch. Correlatedorigins/allzeroscales and
+unremovedH=N are exact falsifiers outside its validpremises.
+
+Fullalgorithm NOT admitted. Two paid maxeffort jobs running, sessions
+51521/77589, ceilings3/4USD notspend: nativeclassdescent/lifts and uniform
+finiteBIT erasureclock. Parent classical oraclebound<= (qchoose2+1)/
+[p^3(p+1)] forrandomhardcyclicfree23 alsounderreview. No novelty,useful
+nonoracleapplication,Shor-levelsignificance,growingclass or quantumexecution.
+Nextcommand: read terminal metadata/fullreports and checkactualsourcejoins;
+expectedartifact originalinput finiteclock/proof or exactcounterexample.
+Mechanicalqueue preserves frozenprior and newdispatch; no liveRees edits.
+
+## 2026-11-13 Joint Norm Transfer Architecture Closed Refuted
+
+Read SIMULTANEOUS_NORM_SUPPORT.md. Parent fully checked independent97LF
+rectangle,138LF constructive-reduction and172LF architecture proofs. For
+explicit linearly disjoint A,B with L=A tensor B a field, ordered rectangle
+local image is I^2, cokernelZ/r for every equalr-cycle; actualp5 element
+realizes a missing primitive. More generally independent S_ell fields,
+ell prime>=5, require >=ell! total signed-permutation/field source rank
+for a fixed finite homomorphic FULL-LOCAL-KERNEL resolution. For relative
+norm-one sources only sqrt(ell!) on total original E-degree is proved.
+Polynomial-size legal field/order/embedding inputs are established.
+
+Constructive scopes retained: coprime d,e joint solving reduces to two
+original-target scalar norm calls by explicit Bezout products. For normal
+L/Q, class generators of all cyclic fixedfields prove complete polynomial
+support under the charged GRH; their construction is not required. Both
+reuse complete compact S-units and exact relations; no free roots/advice.
+Strongest classical baseline is the same scalar/S-unit arithmetic pipeline.
+No global-support impossibility, target hardness, novelty, quantum advantage
+or execution is claimed. Magma's narrower support assertion remains unaudited;
+Claude's14LF refusal asserted a counterexample without proof and is rejected.
+
+Both API jobs terminal/full-read/reaped, round estimatedUSD2.506838
+(Claude0.961528,OpenAI1.545310), separate from owner actualSPENT anchors.
+Park transfer repairs; compare genuinely independent candidate operations.
+A newly available stable Rees free23 theorem/referee in STATE describes a
+hard-cyclic HSP candidate; its unverified source and prior-art assumptions
+must be checked before admission. Other screens: integer matrix tuples
+lack nonsplit integral module arithmetic; conductivity still lacks a new
+cancellation-preserving classical contraction. Neither is selected by inertia.
+
+Next command: read current STATE/TRAPS and exact free23 theorem/prior claims,
+then actual cited sources before any paid new audit or implementation.
+Expected artifact: scoped native-source/prior-art disposition or decisive
+falsifier, never an ACCEPT-label promotion. Mechanical queue below freezes
+this completed pass once; no new finite cycle scan/full suite/quantum code.
+
+## 2026-11-13 Joint Norm Rectangle Transfer Falsified In Exact Controls
+
+Both paid jobs now terminal/full-read/reaped; round estimatedUSD2.506838.
+OpenAI supplied no complete support algorithm; its stronger factorial source-
+degree barrier is under independent audit. Coprime and enlarged normal-support
+reductions also under separate review. Topic contains exact pending scope.
+
+Update: full97LF independent all-r proof parent checked; image I^2, cokernel
+Z/r for EVERY r>=2, actual p5 principal direction, scope only this operation.
+Claude terminal refusal fragment14LF fully read, unsupported counterexample/
+repair assertions rejected, estimatedUSD0.961528, reaped exit1/no retry.
+OpenAI session45496 still running. No larger scan or quantum implementation.
+
+NEW native joint-norm question: two exact norms of ONE compact element in
+linearly disjoint explicit fields, without normal-closure/support advice.
+Actual Magma SimNEQ documentation distinguishes normal support completeness
+from nonnormal inputs. Proposed degreeN^2 four-corner norm transfers preserve
+both norms but fail the cheapest INTEGRAL kernel test: exact Sage r2/r3/r4
+cokernels Z/2,Z/3,Z/4; parent inspected138LF script. Parent all-r derivation
+identifies image I^2 inside augmentation ideal I of Z[C_r], quotient Z/r;
+independent scoped audit pending. Explicit Q(sqrt2,sqrt3),p5 realizes the
+primitive missing direction with (1+sqrt6)/(1-sqrt6), both norms1. This refutes
+only ordered-rectangle support generation, not SimNEQ, solvability or quantum
+algorithms. No rational saturation or free root repair permitted. Topic:
+SIMULTANEOUS_NORM_SUPPORT.md. Claude normal-support audit and OpenAI constructive
+repair running; sessions5177/45496, ceilings3/4USD not charges. Next command:
+read stable independent all-r audit and terminal paid reports, then choose
+whether a polynomial-degree exact multiplicative repair actually exists.
+Expected artifact: paid complete support proof or precise rejection; no
+quantum implementation before the classical falsifier. Mechanical queue same title.
+
+## 2026-11-13 Stable Top-Degree Kronecker Classical Baseline Closed
+
+CLOSED WRITTEN scoped classical match: explicit numerical n, tails alpha,beta,
+gamma with |gamma|=|alpha|+|beta|=s, n>=4s, and oriented R<=n^K fixedK.
+Actual stabilization/top-degree identity gives ordinary g=LR; dimensions give
+g<=R. Full112LF independent audit parent read: BI12 integral unit-augmentation
+seed/zero certificate and Ikenmeyer polynomial-delay enumeration give exact
+poly(n,g+1) BIT, including zero, finite values, exhaustion and duplicate costs.
+No new sampler, sweep or paid confirmation. Actual source arithmetic model
+was not silently promoted to BIT. KRONECKER_STABLE_LR_BASELINE.md retains
+source/erratum boundaries. Full162LF comparison read; no new generic frame
+or operator-spreading wrapper selected. No compact-binary/full-ratio closure,
+novelty, hardness or quantum advantage. Next: independent arithmetic question
+in simultaneous norm support; preserve the already closed scalar norm solver.
+Mechanical queue: keep sources/audits and do not implement the redundant sampler.
+
+## 2026-11-13 Stable LR Sampler Subsystem Superseded By Prior Work
+
+A proposed stable top-degree near-row quantum candidate was screened before
+implementation. n>=4(|alpha|+|beta|), |gamma|=|alpha|+|beta| gives ordinary
+g=LR by actual stability and top-degree sources. Native dimension bound
+g<=R combines with Ikenmeyer small-LR enumeration O((g+1)^2 poly(ell))
+arithmetic operations. Source/bit audit pending, so no uncharged BIT theorem.
+This known baseline supersedes building the proposed insertion sampler merely
+to match R<=n^K. No sampler code, finite sweep or redundant paid review run.
+Optional exact induction-law and finite padding comparison derived from actual
+Lothaire rendered Theorem5.4.5; not a novelty/implementation claim.
+See KRONECKER_STABLE_LR_BASELINE.md. No general full-ratio closure or speedup.
+Next command: read stable narrow baseline audit and revised independent
+three-way selection. Expected artifact: scoped classical closure and a distinct
+native constructive question; acceptance requires actual source hypotheses
+and bit costs, not an agent label. Mechanical queue same title.
+
+## 2026-11-13 Compact Binary Durfee Kronecker Compiler Closed
+
+CLOSED WRITTEN: for every fixed d,e, exact ordinary g(lambda,mu,nu)
+is deterministic poly_de(L) BIT computable from binary Frobenius inputs
+of total length L with two Durfee bounds d,e. All219LF independent proof
+parent checked. Single super-Weyl coefficient kills lower-Durfee terms;
+private hook auxiliaries, a common pointed chamber and termwise k<=n
+reduce to explicit fixed-dimensional parity polytopes. Actual Barvinok--
+Pommersheim short-GF/counting algorithm pays empty/lower-dimensional input,
+exact Taylor arithmetic and output bits. No coefficient/count/advice oracle.
+504 exact Sage triples n<=5 agree; finite controls are not the proof.
+Three paid reports245/318/231LF terminal and fully checked, estimated
+USD2.528020; ledger freeze next. Direct Rosas/Sergeev source alternative
+also derived with a positive-weight O_de(n) box; broad mechanism is prior
+art, general complexity priority UNKNOWN. Topic and dispositions:
+KRONECKER_BINARY_DURFEE_COMPILER.md. No growing-Durfee/full-ratio closure,
+novelty, implementation, practicality, hardness or quantum advantage.
+Next hard question: select an end-to-end candidate by external value versus
+independent directions; no nearby variant by inertia. Next command: read
+stable post-binary independent selection, then corpus and actual primary
+sources for the chosen operation. Expected artifact: explicit native
+candidate and cheapest falsifier, or a proved rejection. Mechanical queue
+same title: freeze terminal usage/evidence once; no new routine sweep.
+
 ## 2026-11-13 Full Repository Wiring, Multi-Hour n=10 Recomputes, and 0-Failure Audit Pass
 
 CLOSED WRITTEN: full repository test wiring, certificate recomputation and adversarial
@@ -93,14 +240,17 @@ Claude session; all AI-checked, pending human review; no posting.
   the floor at 37; lower needs a degree-4 node outside it (four-level contraction, UNKNOWN).
 - Square gap (prime κ): OPEN. New barriers Theorem D and Theorem B; structured families negative.
   TH2 Theorem 5 refereed PROVED WITH FIXES; full-version status wording updated.
-- free23: cover-free aligned-triples procedure is a SOUND CANDIDATE (referee). Gates false: "exit (ii)
-  closed", "cover unnecessary", any speedup or novelty gate.
-- Next hard question: close G1 (weight curve over the label function field: irreducible and smooth,
-  explicit bad-label bound) and G4; state the free23 theorem with quantifiers and check prior art.
-  Next command: read audits/reviews/2026-11-13-rees-free23-theorem.md when the helper finishes;
-  acceptance: a written proof of G1 with every symbolic step reproducible, plus an independent referee.
+- free23 (hard cyclic H): Theorem F23, a cover-free bounded-error quantum algorithm, PROVED WITH
+  FIXES given cited theorems (exact QFT_p; approximate hybrid cited from memory). Referee found no
+  H-dependence and no frozen-normalizer error; 0 wrong outputs in exact simulation. Gates false:
+  "exit (ii) closed" for general H, "cover unnecessary", novelty, speedup.
+- Next hard question: prove the referee's observation that spoiled copies (special line = hidden line)
+  are harmless, which would drop the p ≥ 5000 threshold to a constant; decide with the owner whether
+  the core paper gets a remark on F23. Next command: write the spoiled-copy lemma and check it with
+  the referee's simulator at p = 7, 11, 13; acceptance: a proof plus 0 failures in runs with spoiled copies.
 - Reports: audits/reviews/2026-11-13-rees-{k9-bottleneck,k9-bottleneck-referee,square-gap-analytic,
-  square-gap-families,central-moment-referee,free23-pair-measurement,free23-triples-referee}.md.
+  square-gap-families,central-moment-referee,free23-pair-measurement,free23-triples-referee,
+  free23-theorem,free23-theorem-referee}.md.
   Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md, same heading.
 
 ## 2026-11-13 Fixed Durfee Exact Classical Compiler Derived

@@ -1,0 +1,39 @@
+{
+  "note": "Two distinct native completion obligations on older unreviewed proposal after actual prior-work and primary-source checks. Ceilings are not spend, no retry.",
+  "jobs": [
+    {
+      "id": "metabelian-class-descent",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-metabelian-native/class-descent-attack.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-metabelian-native/native-scope.md",
+        "research/audits/api_inputs/2026-11-13-metabelian-native/core-proposal.md",
+        "research/audits/api_inputs/2026-11-13-metabelian-native/mixed-channel.md",
+        "research/audits/api_inputs/2026-11-13-metabelian-native/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/claude_runs/2026-11-13-metabelian-class-descent",
+      "max_tokens": 64000,
+      "budget": 3,
+      "effort": "max",
+      "session_id": 51521,
+      "status": "running"
+    },
+    {
+      "id": "metabelian-erasure-clock",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-metabelian-native/erasure-clock-construction.md",
+      "contexts": [
+        "research/audits/api_inputs/2026-11-13-metabelian-native/native-scope.md",
+        "research/audits/api_inputs/2026-11-13-metabelian-native/core-proposal.md",
+        "research/audits/api_inputs/2026-11-13-metabelian-native/mixed-channel.md",
+        "research/audits/api_inputs/2026-11-13-metabelian-native/primary-excerpts.md"
+      ],
+      "bundle": "research/audits/openai_runs/2026-11-13-metabelian-erasure-clock",
+      "max_tokens": 64000,
+      "budget": 4,
+      "effort": "max",
+      "session_id": 77589,
+      "status": "running"
+    }
+  ]
+}

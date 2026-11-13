@@ -1,0 +1,32 @@
+p=13, m=144 triples per level-2 state, hidden eta=[5, 2, 11, 5, 6] (one H for the whole experiment)
+   run: supp [1, 1, 1], |B| = 7, spoiled False, eq [1, 7, 3] holds 1, mass on predicted line 1.000000
+   run: supp [11, 1, 1], |B| = 12, spoiled True, eq [4, 0, 10] holds 1, mass on predicted line 1.000000
+  attempt 0: candidate [5, 2, 11, 5, 6] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [10, 1, 1], |B| = 13, spoiled True, eq [7, 0, 11] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 1], |B| = 6, spoiled True, eq [1, 9, 5] holds 1, mass on predicted line 1.000000
+  attempt 1: candidate [5, 2, 11, 5, 6] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [9, 8, 4], |B| = 14, spoiled True, eq [5, 5, 11] holds 1, mass on predicted line 1.000000
+   run: supp [1, 14, 1], |B| = 13, spoiled True, eq [7, 0, 11] holds 1, mass on predicted line 1.000000
+  attempt 2: candidate [3, 9, 4, 3, 1] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [4, 11, 1], |B| = 14, spoiled True, eq [12, 7, 11] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 14], |B| = 14, spoiled True, eq [11, 4, 12] holds 1, mass on predicted line 1.000000
+  attempt 3: candidate [1, 3, 10, 1, 9] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [6, 1, 1], |B| = 11, spoiled False, eq [2, 10, 2] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 1], |B| = 7, spoiled False, eq [7, 5, 3] holds 1, mass on predicted line 1.000000
+  attempt 4: candidate [7, 8, 5, 7, 11] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [1, 4, 1], |B| = 10, spoiled True, eq [6, 7, 9] holds 1, mass on predicted line 1.000000
+   run: supp [8, 4, 1], |B| = 13, spoiled True, eq [0, 9, 9] holds 1, mass on predicted line 1.000000
+  attempt 5: candidate [8, 11, 2, 8, 7] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [10, 1, 1], |B| = 12, spoiled True, eq [4, 9, 6] holds 1, mass on predicted line 1.000000
+   run: supp [15, 15, 1], |B| = 14, spoiled True, eq [2, 0, 5] holds 1, mass on predicted line 1.000000
+  attempt 6: candidate [6, 5, 8, 6, 2] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [4, 1, 11], |B| = 14, spoiled True, eq [7, 9, 7] holds 1, mass on predicted line 1.000000
+   run: supp [15, 15, 1], |B| = 14, spoiled True, eq [5, 10, 3] holds 1, mass on predicted line 1.000000
+  attempt 7: candidate [9, 1, 12, 9, 3] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [1, 16, 9], |B| = 14, spoiled True, eq [4, 4, 1] holds 1, mass on predicted line 1.000000
+   run: supp [1, 8, 6], |B| = 14, spoiled True, eq [3, 3, 4] holds 1, mass on predicted line 1.000000
+  attempt 8: no output
+   run: supp [13, 1, 1], |B| = 13, spoiled True, eq [6, 10, 12] holds 1, mass on predicted line 1.000000
+   run: supp [8, 1, 1], |B| = 13, spoiled True, eq [11, 6, 1] holds 1, mass on predicted line 1.000000
+  attempt 9: candidate [3, 9, 4, 3, 1] correct True, verification pass-prob max 1.0000, passed True
+SUMMARY p=13: {'attempts': 10, 'success': 9, 'wrong_output': 0, 'no_output': 1, 'runs': 20, 'run_ok': 20, 'run_holds': 20, 'run_spoiled': 17, 'run_unspoiled_holds': 3, 'run_unspoiled': 3, 'run_spoiled_holds': 17, 'C_forced0': 0, 'prop': 1, 'verif_reject_correct': 0, 'mass_on_unspoiled_min': 0.9999999999999999}; copies {'copies': 33266, 'inadmissible_batches': 2436, 'spoiled_copies': 59, 'C0_closed_form_fail': 0, 'etac_maxprob': 1.0}; wall 1098 s

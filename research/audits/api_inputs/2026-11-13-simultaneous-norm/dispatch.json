@@ -1,0 +1,39 @@
+{
+  "note": "Two distinct new joint-norm obligations after corpus and actual primary documentation. No repeat of scalar norm solver or unknown-billing request; ceilings not charges.",
+  "jobs": [
+    {
+      "id": "normal-support-attack",
+      "provider": "claude",
+      "prompt": "research/audits/api_inputs/2026-11-13-simultaneous-norm/normal-support-attack.md",
+      "bundle": "research/audits/claude_runs/2026-11-13-normal-support-attack",
+      "budget": 3,
+      "contexts": [
+        "research/SIMULTANEOUS_NORM_SUPPORT.md",
+        "research/audits/api_inputs/2026-11-13-simultaneous-norm/primary-notes.md",
+        "research/RELATIVE_NORM_TENSOR_SUPPORT.md"
+      ],
+      "status": "incomplete_refusal",
+      "max_tokens": 64000,
+      "session_id": 5177,
+      "usage_cost_estimate_usd": 0.961528,
+      "parent_disposition": "All14lines read; counterexample/repair asserted without proofs, unsupported and not adopted. Reaped exit1, no retry."
+    },
+    {
+      "id": "joint-support-construction",
+      "provider": "openai",
+      "prompt": "research/audits/api_inputs/2026-11-13-simultaneous-norm/joint-support-construction.md",
+      "bundle": "research/audits/openai_runs/2026-11-13-joint-support-construction",
+      "budget": 4,
+      "contexts": [
+        "research/SIMULTANEOUS_NORM_SUPPORT.md",
+        "research/audits/api_inputs/2026-11-13-simultaneous-norm/primary-notes.md",
+        "research/RELATIVE_NORM_TENSOR_SUPPORT.md"
+      ],
+      "status": "completed",
+      "max_tokens": 64000,
+      "session_id": 45496,
+      "usage_cost_estimate_usd": 1.54531,
+      "parent_disposition": "All303lines read; no complete support construction. Ordered/signed transfer claims checked; factorial architecture theorem under independent audit. Process reaped exit0."
+    }
+  ]
+}

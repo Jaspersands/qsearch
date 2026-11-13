@@ -1,0 +1,8 @@
+p=5 correct  candidates: pass probability min 1.000000 mean 1.000000 max 1.000000 (1/p = 0.200000)
+p=5 inK      candidates: pass probability min -0.000000 mean 0.160000 max 1.000000 (1/p = 0.200000)
+p=5 notK     candidates: pass probability min 0.200000 mean 0.200000 max 0.200000 (1/p = 0.200000)
+p=5 brute force: 750 candidates (= p^3(p+1)), 1 correct (pass prob 1); mean pass prob of wrong ones 0.201602 (1/p = 0.200); with v = 6 copies the union bound is p^3(p+1) p^-6 = 0.0480 <= 2/p^2 = 0.0800
+nice -n 19 /opt/anaconda3/bin/python check_verify.py 5 200 1  2.58s user 0.04s system 97% cpu 2.694 total
+p=7 correct  candidates: pass probability min 1.000000 mean 1.000000 max 1.000000 (1/p = 0.142857)
+p=7 inK      candidates: pass probability min -0.000000 mean 0.130000 max 1.000000 (1/p = 0.142857)
+p=7 notK     candidates: pass probability min 0.142857 mean 0.142857 max 0.142857 (1/p = 0.142857)

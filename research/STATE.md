@@ -1,16 +1,53 @@
 # Research State
 
 Read STATE and TRAPS at each pass; GOAL is binding. Latest Codex handoff:
-"2026-11-13 Binary Durfee Coefficient Reduction Derived".
+"2026-11-13 Native Metabelian HSP Source Interface Checked".
 
-NOW: NEW compact binary-Frobenius Kronecker compiler derived, independent
-review pending. Single super-Weyl Laurent coefficient removes dense n-grid;
-lower-Durfee terms retain a negative even exponent. Constant-size Giambelli
-and hook rational functions yield signed bounded counts with
-D<=a^2+b^2+8a^2b^2+2ab and every geometric index<=n. Actual fixed-dimensional
-binary counting source checked. Two paid coefficient/count audits running;
-independent fullproof and exact Sage coefficient test pending. No compact
-BIT theorem admitted yet. See KRONECKER_BINARY_DURFEE_COMPILER.md.
+NOW: Independent native audit of older fixed-class metabelian HSP candidate,
+selected after corpus/actualprimary/prior-work checks of newer free23 note.
+ExpandedL,p>c,fixedc,arbitraryH,ordinaryhidingoracle. Full177LF independent
+source/instrument proof parent checked: one degree<=c hiddenpotential,
+uniformnormalcharacters after intersectionremoval, complete Krauslaw with
+all outcomes retained. No hiddenprojection access or postselection.
+Fullalgorithm NOT admitted: nativeclassdescent/lifts and boundedBIT/gate/
+errorclock under distinctpaid maxeffort audits,sessions51521/77589.
+See METABELIAN_NATIVE_HSP_AUDIT.md. No novelty,useful nonoracleapplication,
+Shor-levelsignificance,growingclass or quantumexecution claim.
+
+Previous jointnorm pass: full97/138/172LF proofschecked. OrderedimageI^2
+hascokernelZ/r; fixedfinite full-local-kernel field/signed-permutation
+transfers requirefactorialrank onsmall S_ell inputs, normonesources only
+sqrt(ell!) originaldegree. ArchitecturePARKED, generalnormsolvingOPEN.
+Coprime two-scalar-call reduction and normalfield enlargedGRH support
+retained. Frozen53hash milestone simultaneous_norm_round: estimated
+USD289.404516/223priced (Anth163.948166/OpenAI125.456350), sixUNKNOWN
+excluded; owneractualSPENT155.99/101.71 separate, no measuredbalance.
+
+Previous pass: stable top-degree Kronecker family classically matched.
+Actual g=LR and g<=R combine with charged published hive enumeration to give
+exact poly(n,g+1) BIT, including integral seed and zero. Full112LF independent
+proof parent checked. The proposed LR sampler is unnecessary; no code/sweep
+or paid confirmation. Full162LF independent selection rejected generic
+frame-alignment and operator-spreading wrappers. Scalar relative norms are
+already closed; local Selmer halving still lacks its prior conditioning step.
+See KRONECKER_STABLE_LR_BASELINE.md. No full-ratio or speedup claim.
+
+Previous pass: compact binary fixed-Durfee Kronecker compiler CLOSED WRITTEN.
+Every fixed d,e, all valid binary Frobenius triples with two Durfee bounds:
+exact ordinary g in deterministic poly_de(L) BIT, including output. Full219LF
+independent proof parent checked; extractor, common pointed chamber, private
+hook auxiliaries, k<=n, parity and actual Barvinok counting fully charged.
+504 exact Sage triples n<=5 agree (finite controls only). Three paid reports
+245/318/231LF terminal and fully parent checked; estimated USD2.528020.
+Direct Rosas/Sergeev alternative uses O_de(n) weight cap; broad mechanism
+is prior art, general priority UNKNOWN. No growing-Durfee/full-ratio closure,
+novelty, implementation, practicality, hardness or quantum advantage.
+Topic: KRONECKER_BINARY_DURFEE_COMPILER.md. Frozen binary_durfee_round:
+53 unique hashes verified once, cumulative estimated USD286.897678/221
+priced (Anth162.986638/OpenAI123.911040), SIX UNKNOWN excluded.
+Owner-reported SPENT155.99/101.71 is separate; no measured balance.
+Next: independent high-upside comparison, then one native candidate after
+corpus/primary checks. Do not extend a nearby variant by inertia.
 
 Previous pass: fixed-Durfee classical Kronecker match CLOSED WRITTEN. Every explicit
 partition triple of numerical n with two fixed Durfee bounds d,e has exact
@@ -24,11 +61,6 @@ Full175-line independent selection and positive g=1 large-tail counterfamily
 parent-checked. No novelty, full-ratio/growing-Durfee closure, binary-n
 polynomial clock, implementation, coherent transform, hardness or speedup.
 See KRONECKER_FIXED_DURFEE_CLASSICAL.md.
-
-Next candidate: a NEW single Laurent-coefficient operation plus bounded
-fixed-dimensional counting for compact binary Frobenius input. Dense grid
-is not poly(log n). Corpus lookup/actual counting-source check precedes a
-separate proof obligation; no compact-input theorem admitted yet.
 
 Previous pass: bosonic parent uniform GLOBAL-gap conjecture REFUTED. For every N
 divisible by 4, N>=1024, an explicit rational N-mode condition-two matrix
@@ -1712,6 +1744,16 @@ or separation is claimed.
 
 ## Now
 
+- **Codex native metabelian audit:** ideal source/instrument checked in177LF;
+  full algorithm still under paid composition/clock attacks. Exact scope
+  and no-novelty/application gates: METABELIAN_NATIVE_HSP_AUDIT.md.
+
+
+- **Codex joint-norm pass complete:** exact scoped transfer architecture refuted;
+  coprime and normal-field constructive reductions retained. See the front
+  checkpoint and SIMULTANEOUS_NORM_SUPPORT.md. General joint solving is open.
+
+
 - **Rees κ = 9 bottleneck removed, square gap attacked, free23 cover-free candidate (11-13 afternoon, Claude, AI only, pending human review).**
   - κ = 9 bottleneck: conditional class-9 rule R8 gives 21 (was R7 = 25). Degree-4 chain nodes at
     127, 181, 433 (already in rem:app-s2-chains-scope, never charged); new degree-5 "third-degree
@@ -1730,11 +1772,17 @@ or separation is claimed.
     (…-central-moment-referee.md); full version now says "proved in the research notes" (main.tex
     rem:two-level-threshold-size, appendix-schedule2 rem:app-s2-joint-moments, provenance). Beats T_A
     for prime κ ≥ 17 (2.2× at 17, 6.8× at 71). No table changes. Core unchanged.
-  - free23 exit (ii): SOUND CANDIDATE for a cover-free poly(log p) procedure (aligned triples,
-    second-level merge, 54 copies per run, 2 runs generically), outside SOT(Aut), so no conflict with
-    Theorem R (…-free23-pair-measurement.md §9; …-free23-triples-referee.md). Gaps G1 (weight
-    curve smooth / points for generic labels) and G4 (p ≫ 54) open; helper running
-    (…-free23-theorem.md). Gates "exit (ii) closed" and "cover unnecessary" stay false.
+  - free23, hard cyclic H, WITHOUT the cover: Theorem F23 (…-free23-theorem.md), refereed PROVED
+    WITH FIXES given cited theorems (…-free23-theorem-referee.md). Route A (Lemma B, zero weights,
+    m = 9g² aligned triples, block recursion, ≤ 1296 copies/run) needs no genericity, Weil or Heintz;
+    it does assume an exact QFT_p (approximate-QFT hybrid cited from memory). p ≥ 5000: success
+    ≥ 1 − 0.452^R − R/p²; brute force below. Outside SOT(Aut) (QFT over non-central abelian normal
+    N_λ), so no conflict with Theorem R; no frozen-normalizer error (no quotient by the H-dependent
+    K̂). Referee end-to-end: 0 wrong outputs at p = 7, 11, 13. Scope: hard-cyclic promise only, not
+    the HSP in free23; the paper's cover result covers all H. Paper NOT edited (owner decision: a
+    remark near core lines 228/877). Gates "cover unnecessary", novelty, speedup stay false; old
+    unreviewed drafts CLASS_THREE_HSP_THEOREM_DRAFT.md / BOUNDED_CLASS_METABELIAN_HSP.md also claim
+    cover-free class-3 routes (known frozen-normalizer error); relation UNKNOWN.
 
 - **Rees headline 38 in the core theorem (11-13, Claude, AI only, pending human review).**
   - Core (local, not posted, 55 pp.): new §5.1 Schedule 1H (halving the degree) with full proofs;
@@ -3242,6 +3290,7 @@ or separation is claimed.
 
 | Direction | Established result and scope | File |
 |---|---|---|
+| Joint number-field norms | Reviewed coprime-degree reduction to two scalar calls; normal-field enlarged complete support under GRH. Full nonnormal/shared-degree problem open. Fixed finite full-local-kernel field/signed-permutation transfers require factorial rank on explicit small inputs; no global support/hardness no-go or new advantage. | `SIMULTANEOUS_NORM_SUPPORT.md` |
 | Surface classical reconstruction and boundary repair | Reviewed ordinary compact=parabolic descent REFUTED in both source versions (Legendre2 vs0, quintic13516 vs96). Native frame, complete auxiliary module, normalization/RR, uniform heights, canonical closed encoding, finite coordinate algebra and original-prime Frobenius now proved under stated geometry. Exact boundary determinant bypasses parabolic transport. Whole native quintic composition now reviewed WRITTEN classical poly(logp,log1eta) BIT match, every prime. Enormous fixed exponents; no implementation, practicality, novelty, hardness, separation or execution. | `SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md`, `SURFACE_FINITE_ETALE_RECONSTRUCTION.md`, `SURFACE_BOUNDARY_DETERMINANT.md` |
 | Succinct periodic conductivity | Reviewed written quantum poly(B,n,1/epsilon) scalar estimator for every fixed-contrast 2D circuit material. Constructive classical heat-path estimator matches fixed precision, quasi-polynomial for inverse-polynomial precision. Joint-polynomial match OPEN; no hardness, novelty, separation or quantum execution. Two core reviews and one frozen exact control. | `PERIODIC_CONDUCTIVITY_NATIVE_ADMISSION.md` |
 | Scalar OPI root-anchor tilted filter | Reviewed exact paired classical sampler; prescribed bM=O(log(D)^-2). Arbitrary tilt with uniform identity term, polynomial M and bounded sM matched with high probability over original halfset tables; native maximum attainment paid by second moment. Flat-conditioned actual amplitude bounded, paid projected sampler only. Two frozen controls; no generic OPI no-go, hardness, novelty or separation. | `SCALAR_OPI_TILTED_WALK_ADMISSION.md` |

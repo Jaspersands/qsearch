@@ -1,3 +1,57 @@
+## 2026-11-13 Native Metabelian HSP Source Interface Checked
+
+Do not rerun broadtests/formalbuilds or modify anotheractor's Rees notes.
+Read METABELIAN_NATIVE_HSP_AUDIT.md and exactdispatch; currentpaid sessions
+51521/77589. Oncebothterminal/fullread and claimsdispositioned, freezeonce
+from simultaneous_norm_round (USD289.404516/223priced,sixUNKNOWNexcluded).
+No automaticretry. Keep classicaloracle/copyinput and ideal/approximate
+source scopes distinct. Expectedartifact boundednativecomposition or
+precisefalsifier, not an ACCEPT-label theorem.
+
+## 2026-11-13 Joint Norm Transfer Architecture Closed Refuted
+
+Freeze the two terminal bundles and dispatch;97/138/172LF stable proofs;
+exact r2/r3/r4 control; actual primary sources; closed LR proof/sources;
+labelled topic and STATE snapshots, once from binary_durfee_round.
+Round estimatedUSD2.506838; six prior UNKNOWN bills stay excluded, owner
+SPENT155.99/101.71 separate. No repeat scans or backend work. Acceptance:
+unique immutable hashes verify once, full report dispositions captured,
+no quantum/hardness/novelty promotion. Do not edit other actors' Rees notes.
+
+## 2026-11-13 Joint Norm Rectangle Transfer Falsified In Exact Controls
+
+No quantum code or larger cycle sweep. Exact r2/r3/r4 control is complete;
+retain per-point orbit convention and missing primitive vectors. Independent97LF audit is fully parent checked; Claude refusal is terminal/
+fully read/reaped. Wait for the OpenAI terminal report before freezing one
+new usage milestone from prior binary_durfee_round. Sessions5177/45496;
+never retry unknown/empty failures. Include the closed112LF LR source/BIT
+audit and actual source files at that same milestone. No sampler work.
+Next command: read terminal result.json metadata and complete reports.
+Acceptance: every material claim dispositioned; only ordered transfer is
+refuted, no norm-problem hardness/no-go or speedup inferred.
+
+## 2026-11-13 Stable LR Sampler Subsystem Superseded By Prior Work
+
+Do not build an LR sampler, run a new finite sweep, or issue a paid agreement
+call. Preserve actual source files and explicit arithmetic-versus-BIT
+boundary. After the small independent audit closes, capture its stable
+evidence at the next scientific milestone. No existing snapshots repinned.
+Next command: read KRONECKER_STABLE_LR_BASELINE.md and stable audit only;
+acceptance is exact native ratio/stability scope and all false claim gates.
+
+## 2026-11-13 Compact Binary Durfee Kronecker Compiler Closed
+
+Do not implement the theoretical compiler or launch a broad sweep. Preserve
+exact binary Frobenius/fixed-Durfee scope and all false quantum/novelty gates.
+Freeze three terminal bundles, dispatch, actual sources, full219LF proof,
+504-case control and labelled topic/STATE snapshots once at this milestone.
+Prior ledger: super_schur_round, USD284.369658/218 priced, SIX UNKNOWN
+bills excluded. New round USD2.528020; costs are estimates, not balances.
+Next command: read terminal result.json files and hash only stable artifacts;
+expected usage/checkpoint in controls/binary_durfee_round/. Acceptance: all
+three reports recorded full-read, no duplicate/unknown/partial cost counted,
+no repin of earlier snapshots. No mathematical or speedup claim promotion.
+
 ## 2026-11-13 Full Repository Wiring, Multi-Hour n=10 Recomputes, and 0-Failure Audit Pass
 
 - Maintain clean registry and certificate states; do not edit certificates by hand or forge dependency hashes (TRAPS #14).
@@ -32,6 +86,8 @@
   a full re-optimisation over all primes ≤ 30000 is a cheap rerun of exponents_r8.py.
 - free23 simulation: rerun end_to_end.py with independent seeds per trial (referee issue 2).
 - Three-level joint search at (73, 9) timed out at 1500 s; it cannot move the maximum.
+- free23-theorem folder: add the regenerated structure_check.out (referee fix 5) and correct the
+  5003 mod 3 label (fix 3) in the report; char-0 smoothness run (Route B only) timed out at 900 s.
 
 ## 2026-11-13 Fixed Durfee Exact Classical Compiler Derived
 

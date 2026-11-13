@@ -1,0 +1,53 @@
+{
+  "billing_status": "unknown",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 2070,
+      "path": "research/audits/api_inputs/2026-11-13-metabelian-native/native-scope.md",
+      "sha256": "0f1e1c7abdd66fbf1b6aed484ce7754f7a66f9561c56e87c1111750d0f255f5d",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 12631,
+      "path": "research/audits/api_inputs/2026-11-13-metabelian-native/core-proposal.md",
+      "sha256": "2f4ccdc8e90bfdccd38b991e2fd21aee086182a642d6e0294769c43a99c10cf7",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 3326,
+      "path": "research/audits/api_inputs/2026-11-13-metabelian-native/mixed-channel.md",
+      "sha256": "9b1ef73dae15601bb19605a443d7f20514dd083de76c8563be4d36953a25836c",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 6243,
+      "path": "research/audits/api_inputs/2026-11-13-metabelian-native/primary-excerpts.md",
+      "sha256": "40a76b589c9d179edf5e5e2f2ea0774847be86d4e6beeb07fbb891a99f1fe7b2",
+      "snapshot": "context/003.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 10029,
+  "effort": "max",
+  "input_token_allowance": 10285,
+  "max_budget_usd": 3.0,
+  "max_tokens": 64000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.32114,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-metabelian-native/class-descent-attack.md",
+    "sha256": "678b797a53fd7b97d7c5f01ecb48a7ee09cb75f4e6d9f429bc0d9dabd1258c00",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261113T033309.002260Z-951a18f9",
+  "status": "in_flight",
+  "usage": {}
+}

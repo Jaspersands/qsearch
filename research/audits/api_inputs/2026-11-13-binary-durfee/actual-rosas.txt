@@ -1,0 +1,140 @@
+Actual source Rosas, https://arxiv.org/pdf/math/0001084; PDF SHA256 39fda94c35688e6d12b4f587ac445303a297128ca150c98a0516d52f2cc74fda
+
+pdftotext LF37-61:
+                                                                                         X
+                                                                                              λ
+                                             (1)                               sµ ∗ sν =    γµν sλ .
+                                                                                               µ,ν
+
+                                             These coefficients can also be defined as the multiplicities of the irreducible repre-
+                                             sentations in the tensor product of two irreducible representations of the symmetric
+                                             group. A third way to define them is by the comultiplication expansion. Given
+                                             two alphabets X = {x1 , x2 , · · · } and Y = {y1 , y2 , · · · }
+                                                                                      X
+                                                                                          λ
+                                             (2)                         sλ [XY ] =      γµν sµ [X]sν [Y ],
+                                                                                         µ,ν
+
+                                             where sλ [XY ] means sλ (x1 y1 , x1 y2 , · · · , xi yj , · · · ). Remmel [9, 10] and Remmel
+                                             and Whitehead [11] have studied the Kronecker product of Schur functions cor-
+                                             responding to two two-row shapes, two hook shapes, and a hook shape and a
+                                                                                               1
+2                                  MERCEDES H. ROSAS
+
+two-row shape. We will use the comultiplication expansion (2) for the Kronecker
+coefficients, and a formula for expanding a Schur function of a difference of two
+alphabets due to Sergeev [1] to obtain similar results in a simpler way. We believe
+that the formulas obtained using this approach are elegant and reflect the symme-
+try of the Kronecker product. In the three cases we found a way to express the
+
+pdftotext LF557-622:
+                                 4. Sergeev’s formula
+  In this section we state Sergeev’s formula for a Schur function of a difference of
+two alphabets. See [1] or [7, section I.3] for proofs and comments.
+Definition 8. Let Xm = x1 + · · · + xm be a finite alphabet, and let
+                                              δm
+δm = (m − 1, m − 2, · · · , 1, 0). We define Xm      δm
+                                                 by Xm  = xm−1
+                                                           1   · · · xm−1 .
+
+Definition 9. Let i(α) denote the number of inversions of the permutation α. We
+define the alternant to be
+                              X
+                      Axm P =   (−1)i(α) P (xα(1) , · · · , xα(m) ),
+                                  α∈Sm
+
+for any polynomial P (x1 , · · · , xn ).
+
+Definition 10. Let ∆ be the operation of taking the Vandermonde determinant
+of an alphabet, i.e.,
+                                 ∆(Xm ) = det(xm−j
+                                               i   )m
+                                                    i,j=1 .
+
+
+Theorem 11 (Sergeev’s Formula). Let Xm = x1 +· · ·+xm , and Yn = y1 +· · ·+yn
+be two alphabets. Then
+                                1                 δm δn
+                                                        Y
+            sλ [Xm − Yn ] =              Axm Ayn Xm Yn    (xi − yj )
+                            ∆(Xm )∆(Yn )
+                                                              (i,j)∈λ
+                                   KRONECKER PRODUCT                                            13
+
+ The notation (i, j) ∈ λ means that the point (i, j) belongs to the diagram of λ.
+We set xi = 0 for i > m and yj = 0 for j > n.
+  We use Sergeev’s formula as a tool for making some calculations we need for the
+next two sections.
+
+  1. Let µ = (1e1 m2 ) be a hook. (We are assuming that e1 ≥ 1 and m2 ≥ 2.) Let
+     X 1 = {x1 } and X 2 = {x2 }.
+(17)                     sµ [x1 − x2 ] = (−1)e1 x1m2 −1 xe21 (x1 − x2 ).
+  2. Let ν = (ν1 , ν2 ) be a two-row partition. Let Y = {y1 , y2 }. Then
+                                         (y1 y2 )ν2 (y1ν1−ν2 +1 − y2ν1 −ν2 +1 )
+(18)                   sν [y1 + y2 ] =                                          .
+                                                        y1 − y2
+
+  3. We say that a partition λ is a double hook if (2, 2) ∈ λ and it has the form
+     λ = (1d1 2d2 n3 n4 ). In particular any two-row shape is considered to be a double
+     hook.
+       Let λ be a double hook. Let U = {u1 , u2} and V = {v1 , v2 }. Then if n4 6= 0
+     then sλ [u1 + u2 − v1 − v2 ] equals
+
+        (u1 − v1 )(u2 − v1 )(u1 − v2 )(u2 − v2 )
+(19)                                             (−1)d1 (u1 u2 )n3 −2 (v1 v2 )d2
+                  (u1 − u2 )(v1 − v2 )
+                                       × u2n4−n3 +1 − un1 4 −n3 +1 v2d1 +1 − v1d1 +1 .
+                                                                                   
+
+        On the other hand, if n4 = 0 then to compute sλ [u1 + u2 − v1 − v2 ] we should
+       write λ as (1d1 2d2 −1 2 n3 ). That is, we set d1 := d1 , d2 := d2 − 1, n3 := 2, and
+       n4 = n3 in (19).
+  4. Let λ be a hook shape, λ = (1d1 n2 ). (We are assuming that d1 ≥ 1 and
+     n2 ≥ 2.) Let U = {u1 , u2} and V = {v1 , v2 }. Then sλ [u1 + u2 − v1 − v2 ]
+     equals
+                     1          1
+(20) (−1)d1 −1                         ×
+
+pdftotext LF677-718:
+Proof. Set X = {1, x} and Y = {1, y} in the comultiplication expansion (2) to
+obtain
+                                      X
+                                         λ
+(21)            sλ [(1 − x)(1 − y)] =   γµν sµ [1 − x]sν [1 − y],
+                                            µ,ν
+                                 KRONECKER PRODUCT                                          15
+
+  We use equation (17) to replace sµ and sν in the right hand side of (21). Then
+we divide the resulting equation by (1 − x)(1 − y) to get
+                       sλ [1 − y − x + xy] X λ
+                                          =     γµν (−x)e (−y)f .
+                         (1 − x)(1 − y)     µ,ν
+
+Therefore,
+
+                        λ
+                                          sλ [1 − y − x + xy]
+                           = (−x)e (−y)f
+                            
+                       γµν                                     ,
+                                             (1 − x)(1 − y)
+when µ and ν are hook shapes.
+  Case 1. If λ is not contained in any double hook, then the point (3, 3) is in λ,
+and by Sergeev’s formula, sλ [1 − y − x + xy] equals zero.
+
+  Case 2. Let λ = (1d1 2d2 n3 n4 ) be a double hook. Set u1 = 1, u2 = xy, v1 = x,
+and v2 = y in (19). Then we divide by (1 − x)(1 − y) on both sides of the resulting
+equation to obtain
+
+       sλ [1 − y − x + xy]
+(22)                       = (−1)d1 (xy)n3 +d2 −1
+         (1 − x)(1 − y)
+                                                1 − (xy)n4 −n3 +1
+                                                                    d1 +1
+                                                                            − y d1 +1
+                                                                                     
+                                                                     x
+                           × (1 − x)(1 − y)                                             .
+                                                     1 − xy               x−y
+
+Note: If n4 = 0 then we should write λ = (1d1 2d2 −1 2 n4 ) in order to use (19).

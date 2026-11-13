@@ -1,7 +1,8 @@
 {
-  "billing_status": "unknown",
+  "billing_status": "usage_reported",
   "cost_note": "Usage estimate only; not invoice or account balance. No automatic retry.",
   "effort": "max",
+  "error": null,
   "files": [
     {
       "path": "research/audits/api_inputs/2026-11-13-binary-durfee/counting-compiler.md",
@@ -16,6 +17,8 @@
       "sha256": "4045ba21f050bdf627f11d562a6f5528595dffd1cb5ff199c4123cb2e908b1f0"
     }
   ],
+  "finished_at": "2026-11-13T02:21:13.274243+00:00",
+  "incomplete_details": null,
   "max_budget_usd": "4",
   "max_tokens": 64000,
   "model": "gpt-6-astra",
@@ -29,5 +32,18 @@
   },
   "response_id": "resp_020afbf8ec19b072016af671e1369887d1b0da7d076fb6d5d5",
   "started_at": "2026-11-13T02:11:43.658130+00:00",
-  "status": "running"
+  "status": "completed",
+  "usage": {
+    "input_tokens": 5586,
+    "input_tokens_details": {
+      "cache_write_tokens": 5583,
+      "cached_tokens": 0
+    },
+    "output_tokens": 24496,
+    "output_tokens_details": {
+      "reasoning_tokens": 20430
+    },
+    "total_tokens": 30082
+  },
+  "usage_cost_estimate_usd": "1.28066"
 }
