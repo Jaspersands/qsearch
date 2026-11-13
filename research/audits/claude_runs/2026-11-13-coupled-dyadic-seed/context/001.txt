@@ -1,0 +1,1091 @@
+                                          A new approach to classification of integral quadratic
+                                                    forms over dyadic local fields∗
+                                                                             Constantin N. Beli †
+
+
+
+
+arXiv:0903.3726v1 [math.NT] 22 Mar 2009
+                                                                               October 30, 2018
+
+
+
+                                                  In [OM] O’Meara solved the classification problem for lattices over dyadic local
+                                                  fields in terms of Jordan decompositions. In this paper we translate his result
+                                                  in terms of good BONGs. BONGs (bases of norm generators) were introduced
+                                                  in [B] as a new way of describing lattices over dyadic local fields. This result
+                                                  and the notions we introduce here are a first step towards a solution of the
+                                                  more difficult problem of representations of lattices over dyadic fields.
+
+
+
+                                          1       Introduction
+                                          Since the main result of this paper is given in terms of BONGs, which were introduced
+                                          in [B], we now give a reminder of some of the definitions and results in that paper which
+                                          we will use here.
+                                              Throughout this paper F is a dyadic local field, O the ring of integers, p the prime
+                                          ideal, O× := O \ p the group of units, e := ord 2 and π is a fixed prime element. For
+                                          a ∈ Ḟ we denote its quadratic defect by d(a) and let ∆ = 1 − 4ρ be a fixed unit with
+                                          d(∆) = 4O.
+                                              We denote by d : Ḟ /Ḟ 2 −→ N ∪ {∞} the order of the “relative quadratic defect”
+                                          d(a) = ord a−1 d(a). If a = π R ε, with ε ∈ O× , then d(a) = 0 if R is odd and d(a) =
+                                          d(ε) = ord d(ε) if R is even. Thus d(Ḟ ) = {0, 1, 3, . . . , 2e − 1, 2e, ∞}. This function
+                                          satisfies the domination principle d(ab) ≥ min{d(a), d(b)}.
+                                                                                                                                  2
+                                              If α is a positive integer then (1 + pα )Ḟ 2 = {a ∈ Ḟ | d(a) ≥ α} and (1 + pα )O× =
+                                          {a ∈ O× | d(a) ≥ α}. For convenience we set (1 + pα )Ḟ 2 := {a ∈ Ḟ | d(a) ≥ α} and
+                                                       2
+                                          (1 + pα )O× := {a ∈ O× | d(a) ≥ α} for any α ∈ R ∪ {∞}. Thus (1 + pα )Ḟ 2 = Ḟ 2 for
+                                          α > 2e and (1 + pα )Ḟ 2 = Ḟ for α ≤ 0. If d is the smallest element in d(Ḟ ) s.t. α ≤ d
+                                          then (1 + pα )Ḟ 2 = (1 + pd )Ḟ 2 .
+                                              We denote by (·, ·)p : Ḟ /Ḟ 2 × Ḟ /Ḟ 2 −→ {±1} the Hilbert symbol, which is a non-
+                                          degenerate bilinear symmetric form.
+                                              ∗
+                                               In [B1] this paper was announced under the title “BONG version of O’Meara’s 93:28 theorem. We
+                                          changed the title at the referee’s suggestion.
+                                             †
+                                               Partially supported by the Contract 2-CEx06-11-20.
+
+
+
+                                                                                          1
+                                                                               √
+     If a ∈ Ḟ , we denote by N(a) the norm group N(F ( a)/F ) = {b ∈ Ḟ | (a, b)p = 1}. If
+b ∈ Ḟ and d(a) + d(b) > 2e then (a, b)p = 1. However if α ∈                       / Ḟ 2 then there is b ∈ Ḟ with
+d(b) = 2e − d(a) s.t. (a, b)p = −1. (For d(a) odd this is just [H, Lemma 3]. If d(a) = 2e
+and b ∈ Ḟ is arbitrary with d(b) = 0 then a ∈ ∆Ḟ 2 and ord b is odd so (a, b)p = −1.
+Similarly if d(a) = 0 and d(b) = 2e we have (a, b)p = −1.) Thus (1 + pα )Ḟ 2 ⊆ N(a) iff
+α + d(a) > 2e.
+     An element x of a lattice L is called a norm generator of L if nL = Q(x)O. A
+sequence x1 , . . . , xn of vectors in F L is called a basis of norm generators (BONG) for L
+if x1 is a norm generator for L and x2 , . . . , xn is a BONG for prx⊥1 L. A BONG uniquely
+determines a lattice so, if x1 , . . . , xn is a BONG for L, we will write L =≺ x1 , . . . , xn ≻.
+If moreover Q(xi ) = ai we say that L ∼           =≺ a1 , . . . , an ≻ relative to the BONG x1 , . . . , xn .
+       ∼
+If L =≺ a1 , . . . , an ≻ then det L = a1 · · · an .
+     If x1 , ..., xn are mutually orthogonal vectors with Q(xi ) = ai , L = Ox1 ⊥ · · · ⊥ Oxn
+and V = F x1 ⊥ · · · ⊥ F xn then we sat that L ∼                          = ha1 , . . . , an i and V ∼  = [a1 , . . . , an ]
+relative to the basis x1 , . . . , xn .
+     If L is binary with nL = αO, we denote by a(L) := det L α−2 and by R(L) :=
+                                                               2
+ord volL − 2ord nL = ord a(L). a(L) ∈ Ḟ /O× is an invariant of L and it determines the
+class of L up to scaling. If L ∼     =≺ α, β ≻ then a(L) = αβ .
+                                                2
+     We denote by A = AF ⊂ Ḟ /O× the set of all possible values of a(L), where L is an
+arbitrary binary lattice. We have A = {a ∈ 14 O | a 6= 0, d(−a) ⊆ O}. If ord a = R and
+d(−a) = d, then a ∈ 14 O means R ≥ −2e, while d(−a) ⊆ O means R+d = ord d(−a) ≥ 0.
+     If a(L) = a = π R ε with d(a) = d then:
+     L is nonmodular, proper modular or improper modular iff R > 0, R = 0, resp. R < 0.
+     If R is odd then R > 0.
+                                                                                        2                   2
+     The inequality R + 2e ≥ 0 becomes equality iff a ∈ − 41 O× or a ∈ − ∆4 O× . We have
+a(L) = − 14 resp. a(L) = − ∆4 when L ∼            = π r A(0, 0) resp. π r A(2, 2ρ) for some integer r.
+                                                                                        2
+     The inequality R + d ≥ 0 becomes equality iff a ∈ − ∆4 O× .
+     A special type of BONGs is the so called “good BONGs”. If L ∼                                   =≺ a1 , . . . , an ≻
+relative to some BONG x1 , . . . , xn and ord ai = Ri we say that the BONG x1 , . . . , xn is
+good if Ri ≤ Ri+2 for any 1 ≤ i ≤ n − 2.
+     Remark The condition Ri ≤ Ri+2 for 1 ≤ i ≤ n − 2 is equivalent to the condition
+that the sequence (Ri + Ri+1 ) is increasing.
+     A set x1 , . . . , xn of orthogonal vectors with Q(xi ) = ai and ord ai = Ri is a good
+BONG for some lattice iff Ri ≤ Ri+2 for all 1 ≤ i ≤ n − 2 and ai+1 /ai ∈ A for
+all 1 ≤ i ≤ n − 1. The condition ai+1 /ai ∈ A is equivalent to Ri+1 − Ri + 2e ≥ 0
+and Ri+1 − Ri + d(−ai ai+1 ) ≥ 0. As consequences of ai+1 /ai ∈ A, if Ri+1 − Ri is
+                                                                                                  2               2
+odd then it is positive, if Ri+1 − Ri = −2e then ai+1 /ai ∈ − 41 O× or − ∆4 O× and if
+                                                                        2
+Ri+1 − Ri + d(−ai ai+1 ) = 0 then ai+1 /ai ∈ − ∆4 O× .
+     The good BONGs enjoy some properties similar to those of orthogonal bases. If
+L =≺ a1 , . . . , an ≻ relative to some good BONG x1 , . . . , xn and ord ai = Ri then L♯ ∼
+    ∼                                                                                                                  =≺
+                                                                 ♯            ♯              ♯
+a−1
+  1  , . . . , a−1
+                n  ≻  relative to the    good     BONG         x n , . . . , x1 , where    x i  =   Q(x) −1
+                                                                                                            x i .   Also if
+                                                                     ∼
+for some 1 ≤ i ≤ j ≤ n we have ≺ xi , . . . , xj ≻=≺ bi , . . . , bj ≻ relative to some other
+good BONG yi , . . . , yj then L ∼       =≺ a1 , . . . , ai−1 , bi , . . . , bj , ai+1 , . . . , an ≻ relative to the
+good BONG x1 , . . . , xi−1 , yi , . . . , yj , xi+1 , . . . , xn . There are some differences though from
+
+
+                                                             2
+ the orthogonal bases. E.g. the relation L =≺ x1 , . . . , xi ≻⊥≺ xi+1 , . . . , xn ≻ holds iff
+Ri ≤ Ri+1 .
+     The orders Ri = ord ai are independent of the choice of the good BONGs and they
+are in 1-1 correspondence with the invariants t, dim Lk , sk := sLk and nLsk , where L =
+L1 ⊥P. . . ⊥ Lt is a Jordan splitting. More precisely, if sk = prk , nLsk = puk and
+nk = l≤k dim Ll , then the sequence Rnk−1 +1 , . . . , Rnk is rk , . . . , rk if Lk is proper (i.e. if
+rk = uk ), and it is uk , 2rk − uk , . . . , uk , 2rk − uk otherwise; see [B, Lemma 4.7].
+     The good BONGs are closely connected with the maximal norm splittings. A splitting
+L = L1 ⊥ . . . ⊥ Lt is called a maximal norm splitting if sL1 ⊇ . . . ⊇ sLt and dim Li ≤ 2,
+Li is modular and nLi = nLsLi for all 1 ≤ i ≤ t. Condition nLi = nLsLi is equivalent to
+nL1 ⊇ . . . ⊇ nLt and nL♯1 ⊆ . . . ⊆ nL♯t . If we put together the BONGs of the components
+L1 , . . . , Lt of a maximal norm splitting we get a good BONG for L. Conversely any good
+BONG of a lattice can be obtained by putting together some BONGs of the components
+of some maximal norm splitting. Moreover, the splitting can be chosen s.t. all binary
+components are improper modular. An explicit algorithm for finding a maximal norm
+splitting and, hence, a good BONG of a lattice is provided in [B1, Section 7].
+
+
+2      The invariants αi
+Let L be a lattice over the dyadic field F . Let L ∼     =≺ a1 , . . . , an ≻ relative to a good
+BONG and let Ri := ord ai . Also let L = L1 ⊥ . . . ⊥ Lt be a Jordan decomposition.
+We keep the notations of [OM] sk := sLk , gk := gLsk , wk := wLsk but, in order to avoid
+confusion, we write ak for O’Meara’s ak . Also we denote rk = ord sk , uk = ord ak =
+ord nLsk , Associated to our splitting we have the Jordan chain L(1) ⊂ . . . ⊂ L(t) and the
+inverse Jordan chain L∗(1) ⊃ . . . ⊃ L∗(t) , where L(k) := L1 ⊥ . . . ⊥ Lk and L∗(k) := Lk ⊥
+. . . ⊥ Lt .
+      Since Ri ’s are invariants of L we will write Ri = Ri (L).
+
+Definition 1 For any 1 ≤ i ≤ n − 1 we define αi = αi (L) by:
+
+    αi := min({(Ri+1 − Ri )/2 + e} ∪ {Ri+1 − Rj + d(−aj aj+1 ) | 1 ≤ j ≤ i}
+                                              ∪ {Rj+1 − Ri + d(−aj aj+1 ) | i ≤ j < n}).
+
+   Apparently αi (L) defined this way depends on the choice of the good BONG. We will
+show later that, in fact, it depends only on L. For the time being we will mean αi (L)
+with respect to a given good BONG. We give now some properties of αi ’s.
+
+Lemma 2.1 If k ≤ i < l then, in the set defining αi , we can replace (Ri+1 − Ri )/2 + e
+and all the terms corresponding to indices k ≤ j < l, by αi−k+1 (≺ ak , . . . , al ≻). In
+particular, αi ≤ αi−k+1 (≺ ak , . . . , al ≻).
+
+P roof.By definition αi−k+1 (≺ ak , . . . , al ≻) = min({(Ri+1 − Ri )/2 + e} ∪ {Ri+1 − Rj +
+d(−aj aj+1 ) | k ≤ j ≤ i} ∪ {Rj+1 − Ri + d(−aj aj+1 ) | i ≤ j < l}). Hence the conclusion.
+ 
+
+
+                                                  3
+ Lemma 2.2 The sequence (Ri + αi ) is increasing and the sequence (−Ri+1 + αi ) is
+decreasing.
+
+    P roof.Let 1 ≤ i ≤ h ≤ n − 1. We have Ri + Ri+1 ≤ Rh + Rh+1 . From Definition 1
+we get Ri + αi = min({(Ri + Ri+1 )/2 + e} ∪ {Ri + Ri+1 − Rj + d(−aj aj+1 ) | 1 ≤ j ≤
+i} ∪ {Rj+1 + d(−aj aj+1 ) | i ≤ j < n}) and −Ri+1 + αi = min({−(Ri + Ri+1 )/2 + e} ∪
+{−Rj +d(−aj aj+1 ) | 1 ≤ j ≤ i}∪{Rj+1 −Ri −Ri+1 +d(−aj aj+1 ) | i ≤ j < n}). Similarly
+for Rh + αh and −Rh+1 + αh . In order to prove that Ri + αi ≤ Rh + αh we show that
+the elements in the set that has Ri + αi as its minimum are ≤ than the corresponding
+elements for Rh + αh . Same for −Ri+1 + αi ≥ −Rh+1 + αh .
+    The proof is straightforward and uses the fact that Rl +Rl+1 is an increasing sequence.
+For terms involving d(−aj aj+1 ) we consider the cases j ≤ i, i ≤ j ≤ h and h ≤ j and use
+the inequalities among Ri + Ri+1 , Rj + Rj+1 and Rh + Rh+1 that occur in each case. 
+
+
+Corollary 2.3 Suppose that 1 ≤ i ≤ j ≤ n − 1 and Ri + Ri+1 = Rj + Rj+1 . Then:
+    (i) Ri + αi = . . . = Rj + αj and −Ri+1 + αi = . . . = −Rj+1 + αj .
+    (ii) Rk = Rl for any k, l ∈ [i, j + 1] of the same parity and αk = αl for any k, l ∈ [i, j]
+of the same parity.
+    (iii) If αk = (Rk+1 − Rk )/2 + e for some i ≤ k ≤ j then αk = (Rk+1 − Rk )/2 + e for
+all i ≤ k ≤ j.
+    In the particular case when j = i + 1 we get the following statement:
+    If 1 ≤ i ≤ n−2 and Ri = Ri+2 then Ri +αi = Ri+1 +αi+1 , −Ri+1 +αi = −Ri+2 +αi+1
+and αi = (Ri+1 − Ri )/2 + e is equivalent to αi+1 = (Ri+2 − Ri+1 )/2 + e.
+
+P roof.For (i) we note that Ri + Ri+1 = (Ri + αi ) − (−Ri+1 + αi ) and Rj + Rj+1 =
+(Rj + αj ) − (−Rj+1 + αj ) and use Lemma 2.2. By using the fact that Rk + Rk+1 is an
+increasing sequence we get Ri +Ri+1 = Ri+1 +Ri+2 = . . . = Rj +Rj+1 , which is equivalent
+to (ii). Finally (iii) follows from Ri + αi = . . . = Rj + αj , Ri + Ri+1 = . . . = Rj + Rj+1
+and the fact that αk = (Rk+1 − Rk )/2 + e is equivalent to Rk + αk = (Rk + Rk+1 )/2 + e. 
+
+
+Lemma 2.4 Suppose that 1 ≤ i < n and 1 ≤ k ≤ h < l ≤ n. Then:
+   (i) If h ≤ i then all terms in the definition of αi corresponding to indices k ≤ j ≤ h
+can be replaced by Ri+1 − Rh+1 + αh−k+1 (≺ ak , . . . , al ≻). In particular, all terms with
+1 ≤ j ≤ h can be replaced by Ri+1 − Rh+1 + αh .
+   (ii) If i ≤ h then all terms in the definition of αi corresponding to indices h ≤ j < l
+can be replaced by Rh − Ri + αh−k+1(≺ ak , . . . , al ≻). In particular, all terms with
+h ≤ j < n can be replaced by Rh − Ri + αh .
+
+P roof.By Lemma 2.1 we have αh−k+1 (≺ ak , . . . , al ≻) ≥ αh .
+     (i) By Lemma 2.2 we have αi ≤ Ri+1 − Rh+1 + αh ≤ Ri+1 − Rh+1 + αh−k+1 (≺
+ak , . . . , al ≻). If k ≤ j ≤ h then αh−k+1(≺ ak , . . . , al ≻) ≤ Rh+1 − Rj + d(−aj aj+1 ) so
+Ri+1 − Rh+1 + αh−k+1 (≺ ak , . . . , al ≻) ≤ Ri+1 − Rj + d(−aj aj+1 ). Therefore if we add
+Ri+1 − Rh+1 + αh−k+1 (≺ ak , . . . , al ≻) to the set that defines αi and remove any one of
+Ri+1 − Rj + d(−aj aj+1 ) with k ≤ j ≤ h then αi does not change.
+
+                                              4
+      (ii) By Lemma 2.2 we have αi ≤ Rh − Ri + αh ≤ Rh − Ri + αh−k+1(≺ ak , . . . , al ≻). If
+h ≤ j < l then αh−k+1 (≺ ak , . . . , al ≻) ≤ Rj+1 − Rh + d(−aj aj+1 ) so Rh − Ri + αh−k+1 (≺
+ak , . . . , al ≻) ≤ Rj+1 − Ri + d(−aj aj+1 ). Thus if we add Rh − Ri + αh−k+1(≺ ak , . . . , al ≻)
+to the set that defines αi and remove any one of Rj+1 − Ri + d(−aj aj+1 ) with h ≤ j < l
+then αi does not change.
+     If we take k = 1 and l = n then αh−k+1(≺ ak , . . . , al ≻) becomes αh (≺ a1 , . . . , an ≻
+) = αh (L) = αh so we get the second claims of (i) and (ii).  
+
+
+Corollary 2.5 For any 1 ≤ i ≤ n − 1 we have:
+     (i) αi = min{(Ri+1 − Ri )/2 + e, Ri+1 − Ri + d(−ai ai+1 ), Ri+1 − Ri + αi−1 , Ri+1 − Ri +
+αi+1 }.
+     (ii) αi = min{(Ri+1 −Ri )/2+e, Ri+1 −Ri +d(−ai ai+1 ), Ri+1 −Ri +αi−1 (≺ a1 , . . . , ai ≻
+), Ri+1 − Ri + α1 (≺ ai+1 , . . . , an ≻)}.
+     (The terms that do not make sense, i.e. Ri+1 − Ri + αi−1 and Ri+1 − Ri + αi−1 (≺
+a1 , . . . , ai ≻) when i = 1, or Ri+1 − Ri + αi+1 and Ri+1 − Ri + α1 (≺ ai+1 , . . . , an ≻) when
+i = n − 1, are ignored.)
+
+    P roof.(i) By Lemma 2.4 (i) resp. (ii), in the set defining αi , Ri+1 − Ri + αi−1 can
+replace all the terms Ri+1 − Rj + d(−aj aj+1) with 1 ≤ j ≤ i − 1, while Ri+1 − Ri + αi+1
+replaces all Rj+1 − Ri + d(−aj aj+1 ) with i + 1 ≤ j < n. Therefore αi = min{(Ri+1 −
+Ri )/2 + e, Ri+1 − Ri + d(−ai ai+1 ), Ri+1 − Ri + αi−1 , Ri+1 − Ri + αi+1 }.
+    (ii) Same as (i) but this time the terms corresponding to 1 ≤ j ≤ i − 1 are replaced
+by Ri+1 − Ri + αi−1 (≺ a1 , . . . , ai ≻) and those corresponding to i + 1 ≤ j < n by
+Ri+1 − Ri + α1 (≺ ai+1 , . . . , an ≻).  
+
+
+2.6 Remark We have L♯ ∼            ♯                      ♯
+                             =≺ a1 , . . . , a♯n ≻ with ai = a−1
+                                                                                ♯
+                                                                n+1−i and Ri := ord ai =
+                                                                                           ♯
+
+−Rn+1−i . One can easily see that αi♯ := αi (L♯ ) = αn−i . Also αi ’s are invariant to scaling.
+
+Lemma 2.7 If 1 ≤ i ≤ n − 1 then:
+   (i) αi ≥ 0 with equality iff Ri+1 − Ri = −2e.
+   (ii) If Ri+1 − Ri ≥ 2e then αi = (Ri+1 − Ri )/2 + e.
+   (iii) If Ri+1 − Ri ≤ 2e then αi ≥ Ri+1 − Ri with equality iff Ri+1 − Ri = 2e or it is
+odd.
+   (iv) αi is an odd integer unless αi = (Ri+1 − Ri )/2 + e.
+
+    P roof.We use induction on n. For n = 1 our lemma is vacuous.
+    For the induction step let 1 ≤ i ≤ n − 1 and let L′ =≺ a1 , . . . , ai ≻ and L′′ =≺
+ai+1 , . . . , an ≻. By Corollary 2.5(ii) we have αi = min{(Ri+1 − Ri )/2 + e, Ri+1 − Ri +
+d(−a1 a2 ), Ri+1 − Ri + α, Ri+1 − Ri + β}, where α = αi−1 (L′ ) and β = α1 (L′′ ). (We ignore
+α and β whenever they are not defined.) By the induction hypothesis α, β satisfy (i)-(iv)
+of the lemma.
+    We have (Ri+1 − Ri )/2 + e ≥ 0 with equality iff Ri+1 − Ri = −2e and Ri+1 − Ri +
+                                                      2
+d(−ai ai+1 ) ≥ 0 with equality iff ai+1 /ai ∈ − ∆4 O× which implies Ri+1 − Ri = −2e. If
+
+
+                                                5
+ Ri+2 −Ri+1 > 2e then β = (Ri+2 −Ri+1 )/2+e > 2e so Ri+1 −Ri +β > Ri+1 −Ri +2e ≥ 0.
+Similarly with Ri+1 − Ri + α if Ri − Ri−1 > 2e. If Ri+2 − Ri+1 ≤ 2e then, by the
+induction hypothesis, β ≥ Ri+2 − Ri+1 with equality iff Ri+2 − Ri+1 is odd or it is 2e.
+Thus Ri+1 − Ri + β ≥ Ri+2 − Ri ≥ 0 with equality iff Ri = Ri+2 and Ri+2 − Ri+1 is odd
+or 2e. Suppose this happens. If Ri+2 − Ri+1 = 2e then Ri+1 − Ri = Ri+1 − Ri+2 = −2e.
+If Ri+2 − Ri+1 is odd then so is Ri+1 − Ri = Ri+1 − Ri+2 so both must be positive. But
+this is impossible. Similarly for Ri+1 − Ri + α when Ri − Ri−1 ≤ 2e. Thus we have (i).
+    If Ri+1 −Ri ≥ 2e then α, β ≥ 0 so Ri+1 −Ri +d(−a1 a2 ), Ri+1 −Ri +α, Ri+1 −Ri +β ≥
+Ri+1 − Ri ≥ (Ri+1 − Ri )/2 + e. Hence αi = (Ri+1 − Ri )/2 + e and we have (ii).
+    We prove now (iii). If Ri+1 − Ri = 2e then (ii) implies that αi = (Ri+1 − Ri )/2 +
+e = 2e = Ri+1 − Ri so we are done. If Ri+1 − Ri < 2e is odd then d(−ai ai+1 ) = 0
+and α, β ≥ 0 so αi = min{(Ri+1 − Ri )/2 + e, Ri+1 − Ri } = Ri+1 − Ri . Finally if
+Ri+1 − Ri < 2e is even then ord ai ai+1 = Ri + Ri+1 is even so d(−ai ai+1 ) > 0. Also
+Ri − Ri−1 , Ri+2 − Ri+1 ≥ Ri − Ri+1 > −2e (Ri−1 ≤ Ri+1 and Ri ≤ Ri+2 ) so by (i)
+α, β > 0. We have Ri+1 − Ri + d(−a1 a2 ), Ri+1 − Ri + α, Ri+1 − Ri + β > Ri+1 − Ri . Since
+also (Ri+1 − Ri )/2 + e > Ri+1 − Ri (we have Ri+1 − Ri < 2e) we get αi > Ri+1 − Ri .
+    We prove now (iv). If Ri+1 − Ri ≥ 2e then (ii) implies αi = (Ri+1 − Ri )/2 + e so
+(iv) is vacuous. If Ri+1 − Ri < 2e is odd then (iii) implies αi = Ri+1 − Ri so αi is
+odd. If Ri+1 − Ri < 2e is even then again ord ai ai+1 is even so d(−ai ai+1 ) > 0. Suppose
+αi < (Ri+1 − Ri )/2 + e. If αi = Ri+1 − Ri + d(−ai ai+1 ) then if d(−ai ai+1 ) is odd αi
+will also be odd so we are done. Otherwise d(−ai ai+1 ) = 2e or ∞ so αi = Ri+1 − Ri +
+d(−ai ai+1 ) ≥ Ri+1 − Ri + 2e ≥ (Ri+1 − Ri )/2 + e > αi . (We have Ri+1 − Ri + 2e ≥ 0.)
+Contradiction. If αi = Ri+1 −Ri +α then αi is odd unless α is not odd which would imply
+α = (Ri − Ri−1 )/2 + e. So αi = Ri+1 − Ri + (Ri − Ri−1 )/2 + e ≥ (Ri+1 − Ri )/2 + e >
+αi . (We have Ri+1 ≥ Ri−1 .) Contradiction. Similarly if αi = Ri+1 − Ri + β since
+Ri+1 − Ri + (Ri+2 − Ri+1 )/2 + e ≥ (Ri+1 − Ri )/2 + e > αi . (We have Ri+2 ≥ Ri .)  
+
+
+Corollary 2.8 (i) αi ∈ Z except when Ri+1 − Ri is odd and > 2e.
+  (ii) αi is < 2e, = 2e or > 2e if Ri+1 − Ri is < 2e, = 2e or > 2e accordingly.
+  (iii) αi ∈ ([0, 2e] ∩ Z) ∪ ((2e, ∞) ∩ 21 Z).
+
+P roof.(i) If Ri+1 − Ri > 2e then αi = (Ri+1 − Ri )/2 + e. If Ri+1 − Ri is even then αi ∈ Z,
+while if it is odd then αi ∈ 21 Z \ Z. Suppose now that Ri+1 − Ri ≤ 2e. If Ri+1 − Ri is
+odd then αi = Ri+1 − Ri ∈ Z. If Ri+1 − Ri is even then either αi is an odd integer or
+αi = (Ri+1 − Ri )/2 + e ∈ Z.
+   (ii) If Ri+1 − Ri < 2e then αi ≤ (Ri+1 − Ri )/2 + e < 2e. If Ri+1 − Ri = 2e then
+αi = (Ri+1 − Ri )/2 + e = 2e. If Ri+1 − Ri > 2e then αi = (Ri+1 − Ri )/2 + e > 2e.
+   (iii) We have αi ≥ 0. If αi ≤ 2e then Ri+1 − Ri ≤ 2e so αi ∈ Z. If αi > 2e then
+Ri+1 − Ri > 2e so αi = (Ri+1 − Ri )/2 + e ∈ (2e, ∞) ∩ 21 Z.  
+
+
+Corollary 2.9 In each of the following cases, αi depends only on Ri+1 − Ri :
+  (i) If Ri+1 − Ri ≥ 2e or Ri+1 − Ri ∈ {−2e, 2 − 2e, 2e − 2} then αi = (Ri+1 − Ri )/2 + e.
+  (ii) If Ri+1 − Ri is odd, then αi = min{(Ri+1 − Ri )/2 + e, Ri+1 − Ri }.
+
+                                             6
+ P roof.(i) If Ri+1 − Ri ≥ 2e then αi = (Ri+1 − Ri )/2 + e by Lemma 2.7(ii). If Ri+1 − Ri =
+−2e then αi = 0 = (Ri+1 − Ri )/2 + e. If Ri+1 − Ri = 2 − 2e then αi ∈ Z and 0 < αi ≤
+(Ri+1 −Ri )/2+e = 1 so αi = 1 = (Ri+1 −Ri )/2+e. If Ri+1 −Ri = 2e−2 then αi ∈ Z and
+2e − 2 = Ri+1 − Ri < αi ≤ (Ri+1 − Ri )/2 + e = 2e − 1 so αi = 2e − 1 = (Ri+1 − Ri )/2 + e.
+   (ii) We use Lemma 2.7(ii) and (iii). If Ri+1 − Ri > 2e then αi = (Ri+1 − Ri )/2 + e <
+Ri+1 − Ri . If Ri+1 − Ri < 2e then αi = Ri+1 − Ri < (Ri+1 − Ri )/2 + e. In both cases
+αi = min{(Ri+1 − Ri )/2 + e, Ri+1 − Ri }.  
+
+
+Lemma 2.10 Let a be a norm generator of a lattice L and let w ⊇ 2sL be a fractional
+ideal. Then w = wL iff gL = aO2 + w and we have either w = 2sL or ord a + ord w is
+odd.
+
+P roof.For the necessity see [OM, 93A]. For the sufficiency it is enough to prove that,
+given another fractional ideal w′ satisfying the hypothesis of the lemma, we have w = w′ .
+Suppose that w 6= w′ . We may assume that w ⊃ w′ . Since w ⊃ w′ ⊇ 2sL we must have
+that ord a + ord w is odd. Let w = bO. Then a + b ∈ aO2 + w = gL = aO2 + w′ . So
+a+b = aα2 +b′ for some α ∈ O and b′ ∈ w′ ⊂ w. It follows that 1+b/a = α2 +b′ /a, which
+implies that d(1 + b/a) ⊆ b′ /aO ⊂ a−1 w. On the other hand ord b/a = ord a−1 w is odd
+and, since bO = w ⊆ gL ⊆ aO and bO = w ⊃ 2sL ⊇ 4aO, we have 4O ⊂ b/aO ⊆ O.
+By [OM, 63:5] we get d(1 + b/a) = b/aO = a−1 w. Contradiction.  
+
+                                                                                                          P
+Lemma 2.11 Let J1 , . . . , Js be lattices in the same quadratic space and let J =                            Jk .
+If ak and a are norm generators for Jk and a and J, respectively, then:
+                   X                           X         X
+             gJ =     gJk + 2sJ and wJ =           wJk +    a−1 d(aak ) + 2sJ.
+                                                              P
+P roof.We have gJP      k ⊆ gJ and 2sJ ⊆ gJ so gJ ⊇               gJk + 2sJ.PFor the reverse inclusion
+note
+ P that Q(J) ⊆              Q(Jk ) + 2sJ. Thus gJ = Q(J) + 2sJ ⊆ (Q(Jk ) + 2sJk ) + 2sJ =
+    gJk + 2sJ.
+                    2
+     We have aO         ⊆ gJ and 2aO = 2nJ ⊆ 2sJ                ⊆ gJ soPgJ = aO2 + 2aO + gJ =
+ aO2 + 2aO +           gJk + 2sJ = aO2 + 2aO +                  ak O 2 +         wJk + 2sJ. But aO2 +
+                  P                                          P
+        2
+ P
+    ak O + 2aO = g(ha, a1P     , . . . , as i) (we have s(ha, a1 , . . . , as i) = n(ha, a1 , . . . , as i) = aO).
+ But w(ha, a1, . . . , as i) =      a−1 d(aak ) + 2aO.
+                                                     P (See [OM, p. 280].PWe have ad(ak /a) =
+  −1
+aP d(aak ).) So gJ = g(ha,Pa1, . . . , asP      i) + wJk + 2sJ = aO2 + a−1 d(aak ) + 2aO +
+    wJkP+ 2sJ P    = aO2 +            wJk +        a−1 d(aak ) + 2sJ. (Recall, 2aO ⊆ 2sJ.) Let
+w=        wJk + a−1 d(aak ) + 2sJ. We have gJ = aO2 + w and 2sJ ⊆ w. By Lemma
+2.10 in order to prove that w = wJ we still need to prove that w = 2sJ or ord a + ord w
+is odd. If w 6= 2sJ, i.e. w ⊃ 2sJ, then w = a−1 d(aak ) or w = wJk for some k.
+Suppose that w = wJk . We cannot have wJk = 2sJk ⊆ 2sJ. So ord ak + ord wJk is
+odd which implies that ord a + ord wJk is odd unless ord (aak ) is odd. But this would
+imply that ak O = a−1 d(aak ) ⊆ w = wJk so wJk = ak O which contradicts the fact that
+ord ak + ord wJk is odd. Finally if w = a−1 d(aak ) then ord a + ord w = ord d(aak ) is odd
+unless aak ∈ ∆Ḟ 2 . (If α ∈ Ḟ has odd order then d(α) = αO has odd order. If ord α is
+
+                                                        7
+ even then ord d(α) = ord α + d(α) ≡ d(α) (mod 2) is even iff d(α) = 2e i.e. iff α ∈ ∆Ḟ 2 .)
+But this implies that d(aak ) = 4aak O i.e. w = a−1 d(aak ) = 4ak O ⊂ 2sJ. Contradiction.
+ 
+
+
+Lemma 2.12 Suppose that nLk = nLsk , nLk+1 = nLsk+1 and ak and ak+1 are norm
+generators for Lk and Lk+1 , respectively. If uk + uk+1 is even, then
+                                                          ♯        (uk +uk+1 )/2−rk
+             fk = s−2                  −2  ∗
+                   k d(ak ak+1 ) + ak sk wL(k+1) + ak+1 wL(k) + 2p                  .
+
+P roof.We have Lsk = sk L♯(k) ⊥ L∗(k+1) and Lsk+1 = sk+1 L♯(k) ⊥ L∗(k+1) . Now Lk+1 ⊆
+L∗k+1 ⊆ Lsk+1 and Lk ⊆ sk L♯(k) ⊆ Lsk . Thus ak+1 is norm generator for L∗(k+1) and
+for Lsk+1 and ak is a norm generator for sk L♯(k) and for Lsk . Also π 2(rk+1 −rk ) ak is a norm
+generator for sk+1 L♯(k) . By Lemma 2.11 we get wk = a−1                       ♯
+                                                       k d(ak ak+1 )+w(sk L(k) )+wL(k+1) +
+                                                                                           ∗
+
+                        2   ♯                                       2(rk+1 −rk )
+2sk = a−1                           ∗                       −1
+       k d(ak ak+1 ) + sk wL(k) + wL(k+1) + 2sk and wk+1 = ak+1 d(π              ak ak+1) +
+w(sk+1 L♯(k) ) + wL∗(k+1) + 2sk+1 = a−1      2    −2               2     ♯       ∗
+                                        k+1 sk+1 sk d(ak ak+1 ) + sk+1 wL(k) + wL(k+1) + 2sk+1 .
+   By [OM, 93:26] we have s2k fk = d(ak ak+1 ) + ak+1wk + ak wk+1 + 2p(uk +uk+1 )/2+rk =
+                                           2    ♯
+d(ak ak+1 ) + a−1                                              ∗
+                k ak+1 d(ak ak+1 ) + ak+1 sk wL(k) + ak+1 wL(k+1) + 2ak+1 sk +
+          2                        2      ♯                                   (uk +uk+1 )/2+rk
+ak a−1         −2                                       ∗
+     k+1 sk+1 sk d(ak ak+1 ) + ak sk+1 wL(k) + ak wL(k+1) + 2ak sk+1 + 2p                      .
+                                      −2            −2
+     But ak O ⊇ ak+1 O and ak sk ⊆ ak+1 sk+1 ([OM, 93:25]) so uk ≤ uk+1 and uk −
+                                                           −1 2
+2rk ≥ uk+1 − 2rk+1 . Thus a−1                                        −2
+                                   k ak+1 d(ak ak+1 ), ak ak+1 sk+1 sk d(ak ak+1 ) ⊆ d(ak ak+1 ). Also
+ak s2k+1 wL♯(k) ⊆ ak+1 s2k wL♯(k) and ak+1wL∗(k+1) ⊆ ak wL∗(k+1) . Also ord ak+1 sk = uk+1 + rk ≥
+(uk + uk+1)/2 + rk (we have uk+1 ≥ uk ) and ord ak sk+1 = uk + rk+1 ≥ (uk + uk+1)/2 + rk
+(we have uk − 2rk ≥ uk+1 − 2rk+1). Hence 2ak+1sk , 2ak sk+1 ⊆ 2p(uk +uk+1 )/2+rk .
+     By removing all unnecessary terms (which are included in others) we get s2k fk =
+d(ak ak+1 ) + ak+1 s2k wL♯(k) + ak wL∗(k+1) + 2p(uk +uk+1 )/2+rk . When we divide by s2k we get the
+desired result.  
+
+      Suppose L ∼   =≺ a1 , . . . , an ≻ relative to the good BONG x1 , . . . , xn . Let L = L1 ⊥
+. . . ⊥ Lm be a maximal norm splitting with all the binary components improper s.t.
+x1 , . . . , xn is obtained by putting together the BONGs of L1 , . . . , Lm . We choose the
+Jordan decomposition L = L1 ⊥ . . . ⊥ Lt with components obtained by putting together
+the Lj ’s of the same scale (see also the proof of [B, Lemma 4.7]). So the Lj ’s with
+sLj = sk make a maximal norm splitting for Lk , those with sLj ⊆ sk a maximal norm
+splitting for L(k) and those with sLj ⊃ sk a maximal norm splitting for L∗(k+1) . By
+putting together the BONGs of the components of these maximal norm splittings we
+get good BONGs for Lk , L(k) and L∗(k+1) . It follows that Lk =≺ xnk−1 +1 , . . . , xnk ≻,
+L(k) =≺ x1 , . . . , xnk ≻ and L∗(k+1) =≺ xnk +1 , . . . , xn ≻. Also nLk = nLsk . (For any Lj
+                                                               j
+with sLj = sk we have Lj ⊆ Lk ⊆ Lsk and nLj = nLsL = nLsk .)
+
+Lemma 2.13 (i) For any nk−1 + 1 ≤ i ≤ nk we have Ri = uk if i ≡ nk−1 + 1 (mod 2)
+and Ri = 2rk − uk if i ≡ nk−1 (mod 2).
+
+
+                                                  8
+      (ii) For any nk−1 +1 ≤ i ≤ nk we have Ri = uk if i ≡ nk +1 (mod 2) and Ri = 2rk −uk
+if i ≡ nk (mod 2).
+     (iii) ±ank−1 +1 and ±π 2uk −2rk ank are norm generators for Lk and for Lsk .
+P roof.If Lk is improper then dim Lk is even so nk−1 ≡ nk (mod 2). Also the sequence
+Rnk−1 +1 , . . . , Rnk is uk , 2rk − uk , . . . , uk , 2rk − uk so we get both (i) and (ii). If Lk is
+proper then uk = rk and the sequence Rnk−1 +1 , . . . , Rnk is rk , . . . , rk . But uk = rk so
+rk = uk = 2rk − uk and again we get both (i) and (ii).
+     (iii) We have Lk ∼    =≺ ank−1 +1 , . . . , ank ≻ so ank−1 +1 is a norm generator for Lk . We
+          ♯ ∼                                                                 ♯
+have Lk =≺ ank , . . . , a−1
+                    −1                        −1
+                               nk−1 ≻ so ank is a norm generator for Lk = p
+                                                                                      −rk
+                                                                                          Lk . Therefore
+  2rk −1                                                                   2uk −4rk
+π ank is a norm generator for Lk . But ord ank = 2rk −uk so π                       ank differs from a−1
+                                                                                                      nk
+                                       2rk −1
+by the square of a unit. Since π ank is a norm generator for Lk so is π 2rk π 2uk −4rk ank =
+π 2uk −2rk ank . Since gLk is an additive group −ank−1 +1 and −π 2uk −2rk ank will also be norm
+genrators for Lk . We have Lk ⊆ Lsk and nLk = nLsk so ±ank−1 +1 and ±π 2uk −2rk ank are
+norm generators for LsLk as well.  
+
+   We want now to find relations between αi ’s and the O’Meara’s invariants wk and fk .
+In particular, this will prove that αi ’s are invariants of the lattice L i.e. they do not
+depend on the choice of the BONG of L.
+Lemma 2.14 ord wL = min{R1 + α1 , R1 + e}. (If n = 1 we ignore R1 + α1 .)
+  If moreover L1 is not unary then ord wL = R1 + α1 .
+P roof.Note that if L1 is not unary, in particular if L1 is binary, then R1 = u1 ≥ 2r1 −u1 =
+R2 so α1 ≤ (R2 − R1 )/2 + e ≤ e. Hence min{R1 + α1 , R1 + e} = R1 + α1 and so the two
+statements of the lemma are equivalent.
+    We use induction on m, the number of components in the maximal norm splitting
+we fixed for L. Suppose first that m = 1. If L = L1 is unary then wL = 2sL = 2pR1
+so ord wL1 = R1 + e, as claimed. If L = L1 is binary and so improper modular then we
+may assume that it is unimodular since the statement is invariant upon scaling. Hence
+R1 + R2 = 0 and R1 = ord nL > ord sL = 0. Now a1 ∈ Q(L) is a norm generator.
+Thus by [OM, 93:10] there is b ∈ wL s.t. L ∼        = A(a1 , b). Also if wL ⊃ 2sL = 2O
+then wL = bO. Suppose first that wL = 2O. Then b ∈ 2O so ord b ≥ e. Thus
+d(−a1 a2 ) = d(− det L) = d(1 − a1 b) ≥ ord a1 b ≥ R1 + e so R2 − R1 + d(−a1 a2 ) =
+−2R1 + d(−a1 a2 ) ≥ −R1 + e. On the other hand (R2 − R1 )/2 + e = −R1 + e so
+α1 = min{(R2 − R1 )/2 + e, R2 − R1 + d(−a1 a2 )} = −R1 + e. Thus ord wL = e = R1 + α1 .
+If wL ⊃ 2sL = 2O then wL = bO and ord a1 + ord b is odd. Also ord a1 = ord nL ≤
+ord 2sL = e and ord b = ord wL < ord 2sL = e. It follows that ord a1 b < 2e and it is
+odd. Hence d(−a1 a2 ) = d(1 − a1 b) = ord a1 b = R1 + ord b so R2 − R1 + d(−a1 a2 ) =
+−2R1 + d(−a1 a2 ) = −R1 + ord b. Also (R2 − R1 )/2 + e = −R1 + e > −R1 + ord b. It
+follows that α1 = −R1 + ord b = −R1 + ord wL. So ord wL = R1 + α1 .
+    We now prove the induction step. We have L = L1 ⊥ L′ , where L′ = L2 ⊥ . . . ⊥ Lm .
+Let now a and a′ be a norm generators for L1 and L′ . We have nL1 = nL so a is also a
+norm generator for L. By Lemma 2.11 we have wL = wL1 +wL′ +a−1 d(aa′). (a−1 d(aa) =
+0 and 2sL = 2sL1 ⊆ wL1 can be ignored.) Since ord a−1 d(aa′ ) = ord a′ + d(aa′) it follows
+that ord wL = min{ord wL1 , ord wL′ , ord a′ + d(aa′)}.
+
+                                                   9
+     If L1 is unary then R1 ≤ R2 , L1 ∼ =≺ a1 ≻ and L′ ∼  =≺ a2 , . . . , an ≻. We take a = a1 and
+                                       1
+a = −a2 . We have ord a = R2 , wL = R1 + e and ord wL′ = min{R2 + α1 (L′ ), R2 + e}.
+ ′                         ′
+
+It follows that ord wL = min{R1 + e, R2 + α1 (L′ ), R2 + e, R2 + d(−a1 a2 )}. Since R2 + e ≥
+R1 + e, it can be removed. By Corollary 2.5 (ii) we have α1 = min{(R2 − R1 )/2 + e, R2 −
+R1 + d(−a1 a2 ), R2 − R1 + α1 (L′ )}. It follows that min{R1 + α1 , R1 + e} = min{(R1 +
+R2 )/2 + e, R2 + d(−a1 a2 ), R2 + α1 (L′ ), R1 + e}. But R2 ≥ R1 so (R1 + R2 )/2 + e ≥ R1 + e.
+Thus min{R1 + α1 , R1 + e} = min{R2 + d(−a1 a2 ), R2 + α1 (L′ ), R1 + e} = ord wL.
+    If L1 is binary then R1 ≥ R2 , L1 ∼     =≺ a1 , a2 ≻ and L′ ∼  =≺ a3 , . . . , an ≻. We prove
+that ord wL = R1 + α1 . We take a = π 2u1 −2r1 a2 and a′ = −a3 . (See Lemma 2.13(iii).)
+We have wL1 = R1 + α1 (L1 ), wL′ = min{R3 + α1 (L′ ), R3 + e} and ord a′ + d(aa′) =
+R3 + d(−a2 a3 ). Thus ord wL = min{R1 + α1 (L1 ), R3 + α1 (L′ ), R3 + d(−a2 a3 ), R3 + e}.
+But e ≥ (R2 − R1 )/2 + e ≥ α1 (L′ ) so R3 + e ≥ R3 + α1 (L1 ) and so R3 + e can be
+removed. On the other hand α1 = min{α1 (L1 ), R3 − R1 + d(−a2 a3 ), R3 − R1 + α1 (L′ )}.
+(We have α1 (L1 ) = min{(R2 − R1 )/2 + e, R2 − R1 + d(−a1 a2 )} and, by Lemma 2.4(ii),
+R3 − R1 + α1 (L′ ) = R3 − R1 + α1 (≺ a3 , . . . , an ≻) can replace all Rj+1 − R1 + d(−aj aj+1 )
+with j ≥ 3.) So R1 + α1 = min{R1 + α1 (L1 ), R3 + d(−a2 a3 ), R3 + α1 (L′ )} = ord wL.  
+
+
+Lemma 2.15 If Lk is unary then wk = sk (fk−1 + fk + 2O). (The term fk−1 is ignored if
+k = 1 and fk is ignored if k = t.)
+     P roof.Since Lk is unary we have sk = ak O and uk = rk . Also wLk = 2sk .
+     We have Lsk = (⊥j<k sk s−1          j Lj ) ⊥ Lk ⊥ (⊥j>k Lj ). The first orthogonal sum is
+                  −1
+included in sk−1 sk L      sk−1
+                                , while the last one is included in Lsk+1 . Hence Lsk ⊆ Lk +
+  −1
+sk−1 sk L sk−1
+                 +L  sk+1
+                          . The reverse inclusion follows from [OM, 93:24] so Lsk = Lk +
+s−1
+  k−1 sk L
+          sk−1
+                + Lsk+1 . Now ak is a norm generator for both Lsk and Lk , π 2(rk −rk−1 ) ak−1 for
+                                                                                          2(rk −rk−1 )
+s−1
+  k−1 sk L
+          sk−1
+                 and ak+1 for Lsk+1 . By Lemma 2.11 we have wk = a−1                k d(π              ak−1 ak ) +
+  −1                                −1                                      −2                  −1
+ak d(ak ak+1 ) + wLk + w(sk−1 sk L          sk−1
+                                                 ) + wL   sk+1
+                                                                + 2sk = sk−1 sk d(ak−1 ak ) + sk d(ak ak+1) +
+       2
+s−2   s  w
+  k−1 k k−1     +  w k+1 +   2s k .  (We   ignore   a k d(a k k = 0.)
+                                                             a  )
+     If uk + uk+1 is even then by [OM, 93:26] we have s2k fk = d(ak ak+1) + ak+1wk +
+ak wk+1 + 2p(uk +uk+1)/2+rk ). This formula also holds in the case when uk + uk+1 is odd
+if we drop the last term. Indeed, in this case s2k fk = ak ak+1 O but ord ak ak+1 is odd
+so d(ak ak+1 ) = ak ak+1 O and we also have ak+1 wk , ak wk+1 ⊆ ak ak+1 O. It follows that
+                                                                                            (uk−1 +uk )/2−rk−1
+sk (fk−1 + fk + 2O) = sk (s−2                            −2                −2
+                                   k−1 d(ak−1 ak ) + sk−1 ak wk−1 + sk−1 ak−1 wk + 2p                            +
+  −2                  −2                −2                  (uk +uk+1 )/2−rk
+sk d(ak ak+1 ) + sk ak+1wk + sk ak wk+1 + 2p                                 + 2O). (If uk + uk+1 is odd we
+            (uk +uk+1 )/2−rk
+ignore 2p                    . If uk−1 + uk is odd we ignore 2p(uk−1 +uk )/2−rk−1 .) But rk = uk
+so (uk−1 + uk )/2 − rk−1 = (uk−1 − 2rk−1 + 2rk − uk )/2 ≥ 0 and (uk + uk+1)/2 − rk =
+(uk+1 − uk )/2 ≥ 0. Hence 2p(uk−1 +uk )/2−rk−1 , 2p(uk +uk+1 )/2−rk ⊆ 2O so these terms can
+                                                                                −2 2
+be ignored. Thus sk (fk−1 + fk + 2O) = s−2                                                     −2
+                                                        k−1 sk d(ak−1 ak ) + sk−1 sk wk−1 + sk−1 sk ak−1 wk +
+s−1                   −1                                            −2                −1
+  k d(ak ak+1 ) + sk ak+1 wk + wk+1 + 2sk = wk + sk−1 sk ak−1 wk + sk ak+1 wk = wk . (We
+have s−2                  −2            −2
+         k−1 sk ak−1 = sk−1 ak−1 (sk ak )
+                                              −1
+                                                   ⊆ O and s−1                 −1
+                                                                  k ak+1 = ak ak+1 O ⊆ O. )  
+
+
+
+Lemma 2.16 Let 1 ≤ i ≤ n − 1. Then:
+   (i) If nk−1 < i < nk for some 1 ≤ k ≤ t, then Ri + αi = ord wk and −Ri+1 + αi =
+ord w♯t−k .
+
+                                                       10
+    (ii) Suppose that i = nk for some 1 ≤ k ≤ t − 1. If Ri+1 − Ri is even or ≤ 2e then
+αi = ord fk ; otherwise αi = (Ri+1 − Ri )/2 + e, ord fk = Ri+1 − Ri = 2αi − 2e and both αi
+and ord fk are > 2e.
+P roof.(i) Note that Ri + Ri+1 = uk + 2rk − uk = 2rk . Thus if Ri + αi = ord wk
+                                                                ♯
+then −Ri+1 + αi = ord wk − 2rk = ord s−2        k wk = ord wt−k so it is enough to prove
+the first part of the statement. Also Rnk−1 +1 + Rnk−1 +2 = Rnk −1 + Rnk = 2rk and so
+Rnk−1 +1 + αnk−1 +1 = . . . = Rnk −1 + αnk −1 by Corollary 2.3(i). Thus it is enough to prove
+our statement for only one value of nk−1 < i < nk , say i = nk−1 + 1.
+   We use induction on t. Note that if k = 1 then ord w1 = ord wL = R1 + α1
+by Lemma 2.14 so we are done. In particular, (i) is true when t = 1. Suppose
+now that t ≥ 2. We may assume that k ≥ 2. We have Lsk = sk L♯(k−1) ⊥ L∗(k) .
+Since i = nk−1 + 1 < nk we have Ri−1 = 2rk−1 − uk−1, Ri = uk , Ri+1 = 2rk − uk ,
+L(k−1) ∼=≺ a1 , . . . , ai−1 ≻ and L∗(k) ∼=≺ ai , . . . , an ≻. Note that Ri ≥ Ri+1 . If a
+and b are norm generators for L∗(k) and sk L♯(k−1) , respectively, then nL∗(k) = pRi =
+puk = nLsk . Therefore a is also a norm generator for Lsk . By Lemma 2.11 we have
+wk = sLsk = w(sk L♯(k−1) ) + wL∗(k) + a−1 d(ab) + 2sk , which implies that ord wk =
+min{ord w(sk L♯(k−1) ), ord wL∗(k) , ord b+d(ab), rk +e}. Now Lk is not unary so ord wL∗(k) =
+Ri + α1 (L∗(k) ) by Lemma 2.14. Also L♯(k−1) ∼   =≺ a−1               −1           −1
+                                                       i−1 , . . . , a1 ≻ and ord ai−1 = −Ri−1
+so by Lemma 2.14 we have ord wL♯(k−1) = min{−Ri−1 + α1 (L♯(k−1) ), −Ri−1 + e} =
+min{−Ri−1 + αi−2 (L(k−1) ), −Ri−1 + e}. (We have α1 (L♯(k−1) ) = αi−2 (L(k−1) ) by 2.6.)
+It follows that ord w(sk L♯(k−1) ) = min{2rk − Ri−1 + αi−2 (L(k−1) ), 2rk − Ri−1 + e} =
+min{Ri + Ri+1 − Ri−1 + αi−2 (L(k−1) ), Ri + Ri+1 − Ri−1 + e}. Now a−1                   i−1 is a norm gen-
+                ♯                     2rk −1                                      ♯
+erator for L(k−1) , so b := π ai−1 is a norm generator for sk L(k−1) , and a := −ai is
+a norm generator for L(k) . We get ord b + d(ab) = 2rk − Ri−1 + d(−π 2rk a−1                         i−1 ai ) =
+Ri + Ri+1 − Ri−1 + d(−ai−1 ai ). Also rk + e = (Ri + Ri+1 )/2 + e. Thus ord wk =
+min{Ri + α1 (L∗(k) ), Ri + Ri+1 − Ri−1 + d(−aj−1 aj ), Ri + Ri+1 − Ri−1 + αi−2 (L(k−1) ), Ri +
+Ri+1 − Ri−1 + e, (Ri + Ri+1 )/2 + e}. But Ri−1 ≤ Ri+1 ≤ Ri so Ri + Ri+1 − Ri−1 + e ≥
+(Ri +Ri+1 )/2+e = Ri +(Ri+1 −Ri )/2+e ≥ Ri +α1 (L∗(k) ) so the last two terms can be re-
+moved. By Lemma 2.4(i) Ri+1 −Ri−1 +αi−2 (L(k−1) ) = Ri+1 −Ri−1 +αi−2 (≺ a1 , . . . , ai−1 ≻)
+replaces all the terms in the definition of αi with 1 ≤ j ≤ i − 2, while by Lemma 2.1
+α1 (L∗(k) ) = α1 (≺ ai , . . . , an ≻) replaces (Ri+1 − Ri )/2 + e and the terms with i ≤ j < n.
+Hence αi = min{Ri+1 −Ri−1 +αi−2 (L(k−1) ), Ri+1 −Ri−1 +d(−ai−1 ai ), α1 (L∗(k) )}. It follows
+that Ri + αi = min{Ri + Ri+1 − Ri−1 + αi−2 (L(k−1) ), Ri + Ri+1 − Ri−1 + d(−ai−1 ai ), Ri +
+α1 (L∗(k) )} = ord wk .
+    (ii) Since i = nk we have Ri = 2rk − uk , Ri+1 = uk+1, L(k) ∼                   =≺ a1 , . . . , ai ≻ and
+  ∗       ∼
+L(k+1) =≺ ai+1 , . . . , an ≻. We have Ri+1 − Ri = uk + uk+1 − 2rk so Ri+1 − Ri is
+even iff uk + uk+1 is even. If uk + uk+1 and Ri+1 − Ri are odd then fk = s−2                    k ak ak+1 so
+ord fk = uk + uk+1 − 2rk = Ri+1 − Ri . If Ri+1 − Ri < 2e then αi = Ri+1 − Ri = ord fk ,
+while if Ri+1 − Ri > 2e then αi = (Ri+1 − Ri )/2 + e. (See Lemmas 2.7(ii) and (iii).)
+    Suppose now that Ri+1 − Ri is even. By Lemma 2.12 we have fk = s−2                       k d(ak ak+1 ) +
+                                ♯        (uk +uk+1 )/2−rk                   2uk −2rk
+ak s−2
+    k  wL   ∗
+            (k+1) + a k+1 wL    (k) + 2p                  . We take a k = π          ai and  ak+1 = −ai+1 .
+(See Lemma 2.13(iii).) Thus ord d(ak ak+1) = ord (ak ak+1) + d(ak ak+1 ) = uk + uk+1 +
+
+                                                      11
+ d(−ai ai+1 ) and so ord s−2 k d(ak ak+1 ) = −2rk + uk + uk+1 + d(−ai ai+1 ) = Ri+1 − Ri +
+d(−ai ai+1 ). By Lemma 2.14 we have ord wL∗(k+1) = min{Ri+1 + α1 (L∗k+1 ), Ri+1 + e}.
+Since ord ak s−2k   = uk − 2rk = −Ri , we get ord (ak s−2          ∗
+                                                               k wL(k+1) ) = min{Ri+1 − Ri +
+α1 (L∗(k+1) ), Ri+1 − Ri + e}. We have L♯(k) ∼
+                                             =≺ a−1            −1             ♯
+                                                  i , . . . , a1 ≻, so ord wL(k) = min{−Ri +
+α1 (L♯(k) ), −Ri + e}. Since α1 (L♯(k) ) = αi−1 (L(k) ) (see 2.6) and ord ak+1 = uk+1 =
+Ri+1 we have ord (ak+1wL♯(k) ) = min{Ri+1 − Ri + αi−1 (L(k) ), Ri+1 − Ri + e}. Finally
+ord 2p(uk +uk+1)/2−rk = (uk + uk+1 )/2 − rk + e = (Ri+1 − Ri )/2 + e. Thus ord fk =
+min{(Ri+1 − Ri )/2 + e, Ri+1 − Ri + d(−ai ai+1 ), Ri+1 − Ri + αi−1 (L(k) ), Ri+1 − Ri +
+α1 (L∗(k+1) ), Ri+1 − Ri + e}. But Ri = 2rk − uk ≤ uk ≤ uk+1 = Ri+1 so Ri+1 − Ri + e ≥
+(Ri+1 − Ri )/2 + e so it can be ignored. So ord fk = min{(Ri+1 − Ri )/2 + e, Ri+1 − Ri +
+d(−ai ai+1 ), Ri+1 − Ri + αi−1 (L(k) ), Ri+1 − Ri + α1 (L∗(k+1) )}, which, by Corollary 2.5(ii),
+is equal to αi . (Recall, L(k) ∼
+                               =≺ a1 , . . . , ai ≻ and L∗(k+1) ∼
+                                                                =≺ ai+1 , . . . , an ≻.) 
+
+
+Corollary 2.17 (i) If Lk is not unary and i = nk−1 + 1 or nk − 1 then ord a−1 k wk = αi .
+                                            −1
+   (ii) If Lk is unary and i = nk then ord ak wk = min{αi−1 , αi , e}. (We ignore αi−1 if
+i = 1, and αi if i = n.)
+
+P roof.(i) In both cases when i = nk−1 + 1 or nk − 1 we have Ri = uk = ord ak . Hence
+ord wk = Ri + αi = ord ak + αi so ord a−1   k wk = αi .
+    (ii) We have sk = ak O and, by Lemma 2.15, wk = sk (fk−1 + fk + 2O) so a−1           k wk =
+fk−1 + fk + 2O. Thus ord a−1   k w k  = min{ord   f k−1 , ord f k , e} and we have to prove that
+it is equal to min{αi−1 , αi , e}. Now i − 1 = nk − 1 = nk−1 so, by Lemma 2.16(ii),
+we have either αi−1 = ord fk−1 or αi−1 , ord fk−1 > 2e. But if αi−1 , ord fk−1 > 2e > e
+then they can be ignored in min{αi−1 , αi , e} and min{ord fk−1 , ord fk , e}, respectively.
+Similarly either αi = ord fk or αi , ord fk are both > 2e > e so they can be ignored. Thus
+min{αi−1 , αi , e} = min{ord fk−1, ord fk , e}.  
+
+
+
+3     Main theorem
+In this section we state and prove the main result of this paper, the classification of
+integral lattices over dyadic local fields in terms of good BONGs. It is well known that
+this problem was first solved by O’Meara in [OM, Theorem 93:28]. Since our proof uses
+O’Meara’s result we first state Theorem 93:28.
+      Throughout this section L, K are two lattices with L ∼ =≺ a1 , . . . , an ≻ and K ∼
+                                                                                        =≺
+b1 , . . . , bn ≻ relative to good BONGs. In terms of Jordan decompositions we write
+L = L1 ⊥ . . . ⊥ Lt and K = K1 ⊥ . . . ⊥ Kt′ . Let sk = sLk , s′k = sKk , gk = gLsk ,
+                ′                       ′
+g′k = gK sk , wk = wLsk , w′k = wK sk , fk = fk (L) and f′k = fk (K). Let ak and bk be
+                                    ′
+norm generators for Lsk and K sk , respectively. We say that L and K are of the same
+fundamental type if
+
+                        t = t′ , dim Lk = dim Kk , sk = s′k , gk = g′k
+
+
+                                              12
+ for 1 ≤ k ≤ t. These conditions are equivalent to
+
+              t = t′ , dim Lk = dim Kk , sk = s′k , wk = w′k , ak ∼
+                                                                  = bk             (mod wk )
+
+for 1 ≤ k ≤ t. We now state O’Meara’s Theorem 93:28.
+
+Theorem 93:28 Let L, K be lattices with the same fundamental type such that F L ∼    =
+F K. Let L(1) ⊂ · · · ⊂ L(t) and K(1) ⊂ · · · ⊂ K(t) be Jordan chains for L and K. Then
+L∼= K if and only if the following conditions hold for 1 ≤ i ≤ t − 1
+   (i) det L(k) / det K(k) ∼
+                           = 1 (mod fk ).
+   (ii) F L(k) →−F K(k) ⊥ [ak+1] when fk ⊂ 4ak+1 w−1 k+1 .
+                                                −1
+   (iii) F L(k) →−F K(k) ⊥ [ak ] when fk ⊂ 4ak wk .
+
+    We state now our main result.
+
+Theorem 3.1 Let L, K be two lattices with F L ∼                 = F K and let L ∼ =≺ a1 , . . . , an ≻ and
+K ∼=≺ 1  b  , . . . , bn ≻  relative   to   good   BONGs.    Let R i =  Ri (L) = ord ai , Si = Ri (K) =
+ord bi , αi = αi (L) and βi = αi (K). Then L = K iff:     ∼
+   (i) Ri = Si for 1 ≤ i ≤ n
+   (ii) αi = βi for 1 ≤ i ≤ n − 1
+   (iii) d(a1 · · · ai b1 · · · bi ) ≥ αi for 1 ≤ i ≤ n − 1
+   (iv) [b1 , . . . , bi−1 ]→−[a1 , . . . , ai ] for any 1 < i < n s.t. αi−1 + αi > 2e.
+
+P roof.Condition 3.1(i) is equivalent to t = t′ , dim Lk = dim Kk , sk = s′k and nLsk = nK sk
+i.e. ak O = bk O. (See [B, Lemma 4.7].) Suppose this happens. Denote as before
+nk = dim L(k) = dim K(k) , prk = sk and puk = nLsk = ak O.
+    As in the previous section, we choose a Jordan splitting of L such that Lk ∼             =≺
+                                                                                    2uk −2rk
+ank−1 +1 , . . . , ank ≻. Hence for any 1 ≤ k ≤ n, ak can be either ±ank−1 +1 or ±π          ank .
+We choose a Jordan splitting for K with the same property.
+    Assuming that 3.1(i) holds, Lemma 2.16 and Corollary 2.17(ii) imply that 3.1(ii) is
+equivalent to wk = w′k for 1 ≤ k ≤ t and fk = f′k for 1 ≤ k ≤ t − 1.
+    From here the proof of Theorem 3.1 consists of two steps:
+    1. Assuming that 3.1(i) and (ii) hold, we prove that condition 3.1(iii) is equivalent
+to ak ∼
+      = bk (mod wk ) for any 1 ≤ k ≤ t and condition 93:28(i).
+    2. Assuming that 3.1(i)-(iii) hold, we prove that condition 3.1(iv) is equivalent to
+conditions 93:28(ii) and (iii).
+
+
+Lemma 3.2 Suppose that L, K satisfy conditions 3.1(i) and 3.1(ii). If Ri−1 = Ri+1 for
+some 1 < i < n then:
+   (i) If 3.1(iii) holds at i − 2 or i − 2 = 0 then 3.1(iii) holds at i.
+   (ii) If 3.1(iii) holds at i + 1 or i + 1 = n then 3.1(iii) holds at i − 1.
+
+P roof.(i) We have d(a1 · · · ai b1 · · · bi ) ≥ min{d(a1 · · · ai−2 b1 · · · bi−2 ), d(−ai−1 ai ), d(−bi−1 bi )}.
+(If i − 2 = 0 we ignore d(a1 · · · ai−2 b1 · · · bi−2 ).) But d(a1 · · · ai−2 b1 · · · bi−2 ) ≥ αi−2 ≥
+
+
+                                                     13
+ Ri−1 − Ri+1 + αi = αi . (We have −Ri−1 + αi−2 ≥ −Ri+1 + αi .) Also d(−ai−1 ai ) =
+Ri+1 −Ri−1 + d(−ai−1 ai ) ≥ αi . Similarly d(−bi−1 bi ) ≥ αi . Hence d(a1 · · · ai b1 · · · bi ) ≥ αi .
+   (ii) is similar. This time Ri+1 + αi+1 ≥ Ri−1 + αi−1 so d(a1 · · · ai+1 , b1 · · · bi+1 ) ≥
+αi+1 ≥ Ri−1 − Ri+1 + αi−1 = αi−1 . (If i + 1 = n then d(a1 · · · an b1 · · · bn ) = ∞ > αn−2 )
+Also d(−ai ai+1 ) = Ri+1 − Ri−1 + d(−ai ai+1 ) ≥ αi−1 and similarly d(−bi bi+1 ) ≥ αi−1 .  
+
+
+Lemma 3.3 Assuming that 3.1(i) and (ii) hold, condition 3.1(iii) is equivalent to ak ∼
+                                                                                     =
+bk (mod wk ) for any 1 ≤ k ≤ t and condition 93:28(i).
+
+P roof.We have L(k) ∼          =≺ a1 , . . . , ank ≻ and K(k) ∼   =≺ b1 , . . . , bnk ≻. Hence det L(k) =
+a1 · · · ank and det K(k) = b1 · · · bnk . Since the two determinants have the same order, R1 +
+· · ·+Rnk , the condition det L(k) / det K(k) ∼      = 1(mod fk ) is equivalent to d(a1 · · · ank b1 · · · bnk ) ≥
+ord fk . Let i = nk . We claim that d(a1 · · · ai b1 · · · bi ) ≥ ord fk is equivalent to d(a1 · · · ai b1 · · · bi ) ≥
+αi . By Lemma 2.16(ii) we have either αi = ord fk or αi , ord fk > 2e. In the first case our
+claim is obvious and in the second both d(a1 · · · ai b1 · · · bi ) ≥ ord fk and d(a1 · · · ai b1 · · · bi ) ≥
+αi are equivalent to a1 · · · ai b1 · · · bi ∈ Ḟ 2 .
+     Thus condition 3.1(iii) at indices i = nk with 1 ≤ k ≤ t − 1 is equivalent to 93:28(i).
+Assume these equivalent conditions hold. We want to prove that condition ak ∼                            = bk
+(mod wk ) at indices 1 ≤ k ≤ t s.t. Lk is not unary is equivalent to condition 3.1(iii) at
+i = nk−1 + 1, while if Lk is unary then it holds unconditionally.
+     Note that ak ∼     = bk (mod wk ) is equivalent to bk /ak ∼      = 1(mod a−1    k wk ) i.e. to d(ak bk ) =
+                        −1
+d(bk /ak ) ≥ ord ak wk . We will take ak = ank−1 +1 = ai and bk = bnk−1 +1 = bi . So our
+condition is equivalent to d(ai bi ) ≥ ord a−1       k wk , where i = nk−1 + 1.
+     If Lk is unary then ord a−1       k   w  k =  min{α i−1 , αi , e} by Corollary 2.17(ii), where i =
+nk−1 + 1 = nk . Since i−1 = nk−1 and i = nk , condition 3.1(iii) is satisfied for both. Thus
+d(a1 · · · ai−1 b1 · · · bi−1 ) ≥ αi−1 ≥ ord a−1    k wk and d(a1 · · · ai b1 · · · bi ) ≥ αi ≥ ord ak wk
+                                                                                                         −1
+
+so d(ai bi ) ≥ ord a−1     k wk . (If k = 1 so i = n0 + 1 = 1 we ignore αi−1 and we have
+d(a1 b1 ) ≥ α1 ≥ ord a−1       1 w1 . If k = t so i = nt = n we ignore αi and, since a1 · · · an =
+det F M = det F N = b1 · · · bn in Ḟ /Ḟ 2, we get d(an bn ) = d(a1 · · · an−1 b1 · · · bn−1 ) ≥
+αn−1 ≥ ord a−1                                     ∼
+                 t wt .) Thus condition ak = bk (mod wk ) is superfluous when Lk is unary.
+     Suppose now that Lk is not unary and let i = nk−1 + 1. By Corollary 2.17(i) we
+have ord a−1                                                             −1
+              k wk = αi . We will prove that d(ai bi ) ≥ ord ak wk = αi is equivalent to the
+condition 3.1(iii) at i i.e. to d(a1 · · · ai b1 · · · bi ) ≥ αi . If k = 1 so i = n0 + 1 = 1 this is
+obvious. If k > 1 so i > 1 note that −Ri + αi−1 ≥ −Ri+1 + αi and Ri = uk ≥ 2rk − uk =
+Ri+1 so αi−1 ≥ αi . We have i − 1 = nk−1 so d(a1 · · · ai−1 b1 · · · bi−1 ) ≥ αi−1 ≥ αi and so
+d(a1 bi ) ≥ αi is equivalent to d(a1 · · · ai b1 · · · bi ) ≥ αi by domination principle.
+     To complete the proof we show that 3.1(iii) is true if it is true for i = nk , where
+1 ≤ k ≤ t − 1, and for i = nk−1 + 1, where 1 ≤ k ≤ t and Lk is not unary. To do this we
+use Lemma 3.2.
+     Let 1 ≤ k ≤ t. For any nk−1 + 1 < i < nk we have Ri−1 = Ri+1 (they are both uk
+or 2rk − uk ) so by Lemma 3.2(i) if 3.1(iii) holds for i − 2 or i − 2 = 0 it will also hold
+for i. Thus, since 3.1(iii) is true for nk−1 (or nk−1 = 0 if k = 1), it will also be true
+by induction for any nk−1 + 2 ≤ i < nk with i ≡ nk−1 (mod 2). Similarly since 3.1(iii)
+is true at nk−1 + 1, it will also be true by induction for any nk−1 + 1 ≤ i < nk with
+
+                                                     14
+ i ≡ nk−1 + 1 (mod 2). Hence 3.1(iii) holds for any nk−1 < i < nk . Since 3.1(iii) also
+holds for any i = nk with 1 ≤ k ≤ t − 1 it will hold for any 1 ≤ i ≤ n − 1.  
+
+
+Lemma 3.4 If 1 < i < n and Ri−1 = Ri+1 then αi−1 + αi ≤ 2e.
+
+P roof.We have αi−1 + αi ≤ (Ri − Ri−1 )/2 + e + (Ri+1 − Ri )/2 + e = (Ri+1 − Ri−1 )/2 + 2e
+so if Ri−1 = Ri+1 then αi−1 + αi ≤ 2e.  
+
+
+Lemma 3.5 Let V, W be two quadratic spaces over F . We have:
+   (i) If dim V − dim W = 1 and H is a hyperbolic plane then W →−V iff V →−W ⊥ H.
+   (ii) If dim V = dim W and a ∈ Ḟ then W →−V ⊥ [a] iff V →−W ⊥ [a det V det W ].
+   (iii) If dim V = dim W , a, b ∈ Ḟ and (ab, det V det W )p = 1 (in particular, if d(ab) +
+d(det V det W ) > 2e) then W →−V ⊥ [a] iff W →−V ⊥ [b].
+
+P roof.This is a direct consequence of [OM, 63:21]. For (iii) we also use the fact that if
+xy = zt then [x, y] ∼
+                    = [z, t] iff z→−[x, y], which in turn is equivalent to (xz, yz)p = 1.  
+
+
+Lemma 3.6 Suppose that L, K satisfy the conditions 3.1(i)-(iii) (or, equivalently, they
+have the same fundamental type and they satisfy the condition 93:28(i)). Then:
+     (i) If fk ⊂ 4ak w−1
+                      k and both ak and bk are norm generators for L , then F L(k) →
+                                                                       sk
+                                                                                       −F K(k) ⊥
+[ak ] is equivalent to F L(k) →−F K(k) ⊥ [bk ], and also to F K(k) →−F L(k) ⊥ [bk ].
+     (ii) If fk ⊂ 4ak+1 w−1
+                          k+1 and both ak+1 and bk+1 are norm generators for L
+                                                                                     sk+1
+                                                                                          then
+F L(k) →−F K(k) ⊥ [ak+1 ] is equivalent to F L(k) →−F K(k) ⊥ [bk+1 ] and also to F K(k) →−F L(k) ⊥
+[bk+1 ].
+
+P roof.(i) fk ⊂ 4ak w−1  k  is equivalent to ord fk + ord a−1k wk > 2e. We have ak wk ⊇
+                                                                                         −1
+
+2a−1                    −1
+   k sk ⊇ 2O so ord ak wk ≤ e < ord fk . Since ak , bk are both norm generators for L
+                                                                                            sk
+                                                                                                we
+                        −1                                                          −1
+have d(ak bk ) ≥ ord ak wk . Since also d(det L(k) det K(k) ) ≥ ord fk > ord ak wk we also
+have d(ak bk det L(k) det K(k) ) ≥ ord a−1
+                                         k wk . Since d(det L(k) det K(k) ) + d(ak bk ) ≥ ord fk +
+       −1
+ord ak wk > 2e we get by Lemma 3.5(iii) that F L(k) →−F K(k) ⊥ [ak ] iff F L(k) →−F K(k) ⊥
+[bk ]. Similarly, since d(det L(k) det K(k) )+d(ak bk det L(k) det K(k) ) ≥ ord fk +ord a−1
+                                                                                          k wk >
+2e, we have F L(k) →−F K(k) ⊥ [ak ] iff F L(k) →−F K(k) ⊥ [bk det L(k) det K(k) ] which, by
+Lemma 3.5(ii), is equivalent to F K(k) →−F L(k) ⊥ [bk ].
+     (ii) Same proof from (i) but with ak , bk , wk replaced by ak+1, bk+1 , wk+1.  
+
+
+Lemma 3.7 Suppose that L, K satisfy the conditions 3.1(i) - (iii). If 1 ≤ k ≤ t − 1
+then:
+   (i) If fk ⊂ 4ak w−1
+                    k   then F L(k) →−F K(k) ⊥ [ak ] iff [b1 , . . . , bi−1 ]→−[a1 , . . . , ai ], with
+i = nk .
+   (ii) If fk ⊂ 4ak+1w−1
+                       k+1 then F L(k) →−F K(k) ⊥ [ak+1 ] iff [b1 , . . . , bi−1 ]→−[a1 , . . . , ai ],
+with i = nk + 1.
+
+
+                                                  15
+ P roof.(i) We take bk = −π 2uk −2rk bi as a norm generator for K sk , so for Lsk . (See
+Lemma 2.13(iii).) By Lemma 3.6(i) F L(k) →−F K(k) ⊥ [ak ] iff F L(k) →−F K(k) ⊥ [bk ]
+i.e. iff [a1 , . . . , ai ]→−[b1 , . . . , bi ] ⊥ [−bi ] ∼
+                                                         = [b1 , . . . , bi−1 ] ⊥ H. By Lemma 3.5(i) this is
+equivalent to [b1 , . . . , bi−1 ]→−[a1 , . . . , ai ].
+    (ii) We take bk+1 = ai as a norm generator for Lsk+1 . By Lemma 3.6(ii) F L(k) →−F K(k) ⊥
+[ak+1 ] iff F K(k) →−F L(k) ⊥ [bk+1 ] i.e. iff [b1 , . . . , bi−1 ]→−[a1 , . . . , ai−1 ] ⊥ [ai ] ∼
+                                                                                                  = [a1 , . . . , ai ].
+ 
+
+
+Lemma 3.8 (i) If i = nk > nk−1 + 1 then αi−1 + αi > 2e iff fk ⊂ ak w−1 k .
+                                                                −1
+   (ii) If i = nk + 1 < nk+1 then αi−1 + αi > 2e iff fk ⊂ ak+1wk+1 .
+   (iii) If i = nk = nk−1 + 1 then αi−1 + αi > 2e iff fk ⊂ ak w−1              −1
+                                                               k or fk−1 ⊂ ak wk .
+   (In (iii) we ignore the condition fk ⊂ ak w−1                                   −1
+                                              k if k = t and we ignore fk−1 ⊂ ak wk if
+k = 1.)
+
+P roof.(i) Condition fk ⊂ 4ak w−1                           −1
+                                   k is equivalent to ord ak wk + ord fk > 2e. By Corollary
+2.17(i) we have ord a−1 k wk = αi−1 . By Lemma 2.16(ii) we have either αi = ord fk or
+αi , ord fk > 2e. In the first case ord a−1
+                                          k wk + ord fk = αi−1 + αi and in the second both
+       −1
+ord ak wk + ord fk > 2e and αi−1 + αi > 2e hold. In both cases ord a−1     k wk + ord fk > 2e
+iff αi−1 + αi > 2e.
+     (ii) We have fk ⊂ 4ak+1 w−1               −1
+                                  k+1 iff ord ak+1 wk+1 + ord fk > 2e. By Corollary 2.17(i)
+       −1
+ord ak+1wk+1 = αi and by Lemma 2.16(ii) ord fk and αi−1 are either equal or they are
+both > 2e. Thus ord a−1   k+1 wk+1 + ord fk > 2e iff αi−1 + αi > 2e.
+     (iii) fk−1 ⊂ 4ak wk and fk ⊂ 4ak w−1
+                       −1                                                     −1
+                                          k are equivalent to ord fk−1 + ord ak wk > 2e resp.
+ord fk + ord a−1                                                 −1
+                k wk > 2e. By Corollary 2.17(ii) we have ord ak wk = min{αi−1 , αi , e} ≥ 0.
+By Lemma 2.16(ii) we have that ord fk−1 = αi−1 or ord fk−1 , αi−1 > 2e and ord fk =
+αi or ord fk , αi > 2e. Therefore fk−1 ⊂ 4ak w−1     k   and fk ⊂ 4ak w−1
+                                                                        k   are equivalent to
+αi−1 + min{αi−1 , αi , e} > 2e resp. αi + min{αi−1 , αi , e} > 2e. Obviously either of them
+implies αi−1 + αi > 2e. Conversely, suppose that αi−1 + αi > 2e. If both αi−1 and αi are
+> e then we have both αi−1 +min{αi−1 , αi , e} > 2e and αi +min{αi−1 , αi , e} > 2e. Other-
+wise we have min{αi−1 , αi , e} = min{αi−1 , αi } and so max{αi−1 , αi } + min{αi−1 , αi , e} =
+max{αi−1 , αi } + min{αi−1 , αi } = αi−1 + αi > 2e, which implies that either αi−1 +
+min{αi−1 , αi , e} > 2e or αi + min{αi−1 , αi , e} > 2e.  
+
+
+Lemma 3.9 Assuming that 3.1(i)-(iii) hold, condition 3.1(iv) is equivalent to 93:28(ii)
+and (iii).
+
+P roof.Take 1 < i < n. If nk−1 + 1 < i < nk for some 1 ≤ k ≤ t then Ri−1 = Ri+1 ,
+by Lemma 2.13, so, by Lemma 3.4, αi−1 + αi ≤ 2e, which makes 3.1(iv) vacuous at i.
+Therefore we can restrict ouselves to i = nk or nk + 1 for some 1 ≤ k ≤ t − 1. We have
+three cases:
+    1. i = nk and dim Lk > 1 i.e. i = nk > nk−1 + 1. By Lemma 3.8(i) fk ⊂ 4ak w−1                 k is
+                                                                         −1
+equivalent to αi−1 +αi > 2e. On the other hand if fk ⊂ 4ak wk then F L(k) →−F K(k) ⊥ [ak ]
+is equivalent to [b1 , . . . , bi−1 ]→−[a1 , . . . , ai ] by Lemma 3.7(i). Therefore 3.1(iv) at index i
+is equivalent to 93:28(iii) at index k.
+
+                                                        16
+       2. i = nk + 1 and dim Lk+1 > 1 i.e. i = nk + 1 < nk+1 . By Lemma 3.8(ii) fk ⊂
+4ak+1w−1     k+1 is equivalent to αi−1 + αi > 2e. On the other hand F L(k) →            −F K(k) ⊥ [ak+1] is
+equivalent to [b1 , . . . , bi−1 ]→−[a1 , . . . , ai ] by Lemma 3.16(ii). We will prove that 3.1(iv)
+at index i is equivalent to 93:28(ii) at index k.
+      3. i = nk = nk−1 + 1 for some 1 ≤ k ≤ t. In this case Lk is unary. We will prove
+that the condition 3.1(iv) at index i is equivalent to 93:28(iii) at index k and 93:28(ii)
+at index k − 1. First note that if k = t then 3.1(iv) is vacuous at i = nt = n. On the
+other hand 93:28(iii) is vacuous at index k = t. Also if ft−1 ⊂ 4at w−1               t    then, by Lemma
+3.7(ii), F L(t−1) →−F K(t−1) ⊥ [at ] is equivalent to [b1 , . . . , bn−1 ]→−[a1 , . . . , an ] (we have
+i = nt−1 + 1 = nt = n). But this follows from [a1 , . . . , an ] ∼      = [b1 , . . . , bn ]. Thus 93:28(ii)
+is superfluous at index k − 1 = t − 1. Next we note that if k = 1 then 3.1(iv) is vacuous
+at i = n0 + 1 = 1. On the other hand 93:28(ii) is vacuous at index k − 1 = 0. Also if
+f1 ⊂ 4a1−1 w1 then F L(1) →−F K(1) ⊥ [a1 ] is equivalent, by Lemma 3.7(i), to 0→−[a1 ] (we
+have i = n1 = 1). Here 0 is not the scalar zero, but the zero lattice, of dimension 0, so
+0→−[a1 ] holds trivially. Thus 93:28(iii) is superfluous at k = 1.
+      Suppose now that 1 < k < t. By Lemma 3.8(iii) we have αi−1 + αi > 2e iff fk−1 ⊂
+4ak w−1  k     or fk ⊂ 4ak w−1    k . To complete the proof we note that if fk−1 ⊂ 4ak wk
+                                                                                                    −1
+                                                                                                       then
+F L(k−1) →−F K(k−1) ⊥ [ak ] is equivalent to [b1 , . . . , bi−1 ]→−[a1 , . . . , ai ] by Lemma 3.7(ii)
+(we have i = nk−1 + 1) and if fk ⊂ 4ak w−1              k then F L(k) →−F K(k) ⊥ [ak ] is equivalent to
+[b1 , . . . , bi−1 ]→−[a1 , . . . , ai ] by Lemma 3.7(i) (we have i = nk ).  
+
+
+
+4      The 2-adic case
+In this section we will assume that F is 2-adic i.e. that e = 1.
+    In [OM, §93G] O’Meara gives a solution to the classification problem in the 2-adic case
+which only involves the Jordan invariants t, dim Lk , sk and nk := nLk . The invariants gk
+and wk are no longer necessary since they can be written as gk = nk and wk = 2sk . A
+similar phenomenon occurs when we use good BONGs instead of Jordan decompositions.
+This time the invarians αi are no longer necessary.
+
+Lemma 4.1 If e = 1 then αi = 1 if Ri+1 − Ri = 1 and αi = (Ri+1 − Ri )/2 + 1 otherwise.
+
+P roof.We have Ri+1 − Ri ≥ −2e = −2 and if Ri+1 − Ri is negative then it is even. Thus
+Ri+1 − Ri is either −2 or it is ≥ 0. If Ri+1 − Ri = −2e = −2 or Ri+1 − Ri = 2e − 2 =
+2 − 2e = 0 or if Ri+1 − Ri ≥ 2e = 2 then αi = (Ri+1 − Ri )/2 + e = (Ri+1 − Ri )/2 + 1 by
+Corollary 2.9(i). If Ri+1 − Ri = 1, which is odd and < 2e, we have αi = Ri+1 − Ri = 1
+by Lemma 2.7(iii).  
+
+    Since αi ’s are uniquely defined by the Ri ’s, condition (ii) of the main theorem is
+superfluous since it follows from (i). Also, ord a1 · · · ai = ord b1 · · · bi so ord a1 · · · ai b1 · · · bi
+is even. So if Ri+1 − Ri ≤ 1 we have d(a1 · · · ai b1 · · · bi ) ≥ 1 ≥ αi . So condition (iii) is
+supefluous if Ri+1 − Ri ≤ 1. If Ri+1 − Ri = 2 then α2 = 2, while if Ri+1 − Ri > 2 then
+αi > 2. Thus in these cases (iii) becomes a1 · · · ai b1 · · · bi ∈ Ḟ 2 ∪ ∆Ḟ 2 if Ri+1 − Ri = 2
+and a1 · · · ai b1 · · · bi ∈ Ḟ 2 if Ri+1 − Ri > 2. Finally it is easy to see that the condition
+
+                                                     17
+ αi−1 + αi > 2 from 3.1(iv) is satisfied iff Ri−1 < Ri+1 and the pair (Ri − Ri−1 , Ri+1 − Ri )
+is different from (0, 1), (1, 0), (1, 1). So we have:
+
+Theorem 4.2 Suppose that F is 2-adic, L ∼                    =≺ a1 , . . . , an ≻ and K ∼
+                                                                                        =≺ b1 , . . . , bn ≻
+relative to good BONGs, Ri = Ri (L) = ord ai , Si = Ri (K) = ord bi and F L ∼                      = F K.
+Then L ∼     = K if and only if the following conditions hold:
+     (i) Ri = Si for any 1 ≤ i ≤ n.
+     (ii) For any 1 ≤ i ≤ n − 1 we have a1 · · · ai b1 · · · bi ∈ Ḟ 2 ∪ ∆Ḟ 2 if Ri+1 − Ri = 2, and
+a1 · · · ai b1 · · · bi ∈ Ḟ 2 if Ri+1 − Ri > 2.
+     (iii) [b1 , . . . , bi−1 ]→−[a1 , . . . , ai ] for any 1 < i < n s.t. Ri−1 < Ri+1 and (Ri −
+Ri−1 , Ri+1 − Ri ) 6= (0, 1), (1, 0), (1, 1).
+
+
+5         Remarks
+1. The binary case
+   If L ∼=≺ α, β ≻ and η ∈ O× then [B, 3.12] states that L ∼      =≺ ηα, ηβ ≻ iff η ∈
+             β
+g(a(L)) = g( α ).
+                                           2
+   The function g : A −→ Sgp(O× /O× ) was introduced in [B, Definition 6]. Here
+Sgp H is the set of all subgroups of a group H. We recall the definition of g.1
+Definition If a = π R ε ∈ A and d(−a) = d then:
+                                2
+   I If R > 2e then g(a) = O× .
+   II If R ≤ 2e then:
+                          (
+                                            2
+                            (1 + pR/2+e )O×          if d > e − R/2
+                  g(a) =          R+d    ×2
+                            (1 + p )O ∩ N(−a) if d ≤ e − R/2.
+
+        The following lemma gives a more compact formula for g(a).
+                                                                                               2
+Lemma 5.1 If a ∈ A and ord a = R and d(−a) = d then g(a) = (1+pα(a) )O× ∩N(−a),
+where α(a) = min{R/2 + e, R + d}.
+
+P roof.By [B, 3.16] we have g(a) ⊆ N(−a). If η ∈ O× then η ∈ g(a) iff η ∈ N(−a) and
+                             2
+(I) If R > 2e then η ∈ O× ; (II) If R ≤ 2e then d(η) ≥ R + d, if d ≤ e − R/2, and
+d(η) ≥ R/2 + e, if d > e − R/2. (See [B, Definition 6].)
+    We have to prove that the conditions from (I) and (II) are equivalent to d(η) ≥ α(a).
+If R > 2e then R + d > 2e and R/2 + e > 2e/2 + e = 2e so α(a) > 2e. Thus d(η) ≥ α(a)
+                       2
+is equivalent to η ∈ O× . If R ≤ 2e then d ≤ e − R/2 is equivalent to R + d ≤ R/2 + e.
+Hence if d ≤ e − R/2 then α(a) = R + d and if d > e − R/2 then α(a) = R/2 + e.  
+
+    If n = 2 then from [B, 3.12] we have ≺ a1 , a2 ≻∼=≺ ηa1 , ηa2 ≻ iff η ∈ g(a2/a1 ). By
+Lemma 5.1 this is equivalent to η ∈ N(−a1 a2 ) and d(η) ≥ α(a2 /a1 ). The first condition
+is equivalent to the isometry of quadratic spaces [a1 , a2 ] ∼
+                                                             = [ηa1 , ηa2 ], while the second
+means d(η) ≥ α(a2 /a1 ) = min{(R2 − R1 )/2 + e, R2 − R1 + d(−a1 a2 )} = α1 (≺ a1 , a2 ≻),
+which is consistent with condition (iii) of the main theorem.
+    1
+        In [B, Definition 6] there are some mistakes which we corrected here.
+
+                                                     18
+  5.2 Remark Since α(a2 /a1 ) = α1 (≺ a1 , a2 ≻) we have by Lemma 5.1 g(a2 /a1 ) =
+                      2                                                   2
+(1+pα1 (≺a1 ,a2 ≻) )O× ∩N(−a1 a2 ). Equivalently, g(a(L)) = (1+pα1 (L) )O× ∩N(− det F L).
+
+2. The formula for αi
+     We will now show the heuristical method by which the invariants αi were found. We
+want to know, given that L ∼             =≺ a1 , . . . , an ≻ relative to a good BONG and 1 ≤ i ≤ n−1,
+how much the product a1 · · · ai can be altered by a change of good BONGs. That is
+if L ∼  =≺ b1 , . . . , bn ≻ relative to another good BONG we want to know how big the
+quadratic defect of (b1 · · · bi )/(a1 · · · ai ) can be. So we are looking for a lower bound
+αi = αi (L) for d(a1 · · · ai b1 · · · bi ).
+     For any η ∈ g(ai+1 /ai ) we have ≺ ai , ai+1 ≻∼                 =≺ ηai , ηai+1 ≻ so, by [B, Lemma
+                 ∼
+4.9(ii)], L =≺ a1 , . . . , ai−1 , ηai , ηai+1 , ai+2 , . . . , an ≻. By this change of BONGs a1 · · · ai
+was changed by the factor η. We have η ∈ g(ai+1 /ai ) which, by Lemma 5.1, implies
+d(η) ≥ α(ai+1 /ai ) = min{(Ri+1 − Ri )/2 + e, Ri+1 − Ri + d(−ai ai+1 )}. (See Lemma 5.1.)
+This lower bound can be further decreased if we decrease d(−ai ai+1 ). This can be done by
+changing the good BONGs of ≺ a1 , . . . , ai ≻ and ≺ ai+1 , . . . , an ≻. If ≺ a1 , . . . , ai ≻∼               =≺
+  ′           ′                                    ∼        ′        ′
+a1 , . . . , ai ≻ and ≺ ai+1 , . . . , an ≻=≺ ai+1 , . . . , an ≻ then d(−ai ai+1 ) is replaced by
+d(−a′i a′i+1 ). But d(ai+1 a′i+1 ) ≥ α1 (≺ ai+1 , . . . , an ≻). Also, by reason of determinant,
+a1 · · · ai a′1 · · · a′i ∈ Ḟ 2 so d(ai a′i ) = d(a1 · · · ai−1 a′1 · · · a′i−1 ) ≥ αi−1 (≺ a1 , . . . , ai ≻). It
+follows that d(−a′i a′i+1 ) ≥ min{d(−ai ai+1 ), αi−1 (≺ a1 , . . . , ai ≻), α1 (≺ ai+1 , . . . , an ≻)}.
+Hence the new lower bound for η is min{(Ri+1 − Ri )/2 + e, Ri+1 − Ri + d(−ai ai+1 ), Ri+1 −
+Ri + αi−1 (≺ a1 , . . . , ai ≻), Ri+1 − Ri + α1 (≺ ai+1 , . . . , an ≻)}. This leads to the recursive
+formula αi = min{(Ri+1 −Ri )/2+e, Ri+1 −Ri +d(−ai ai+1 ), Ri+1 −Ri +αi−1 (≺ a1 , . . . , ai ≻
+), Ri+1 − Ri + α1 (≺ ai+1 , . . . , an ≻)} from Corollary 2.5(ii).
+     In the case i = 1 and n ≥ 3 the formula becomes α1 = min{(R2 − R1 )/2 + e, R2 −
+R1 + d(−a1 a2 ), R2 − R1 + α1 (≺ a2 , . . . , an ≻)}. In the case i = n − 1 and n ≥ 3 we
+have αn−1 = min{(Rn − Rn−1 )/2 + e, Rn − Rn−1 + d(−an−1 an ), Rn − Rn−1 + αn−2 (≺
+a1 , . . . , an−1 ≻)}. Finally if i = 1 and n = 2 then α1 = min{(R2 − R1 )/2 + e, R2 −
+R1 + d(−a1 a2 )}. Starting with the case n = 2 it is easy to prove by induction that
+α1 = min({(R2 − R1 )/2 + e} ∪ {Rj+1 − R1 + d(−aj aj+1 ) | 1 ≤ j < n}) and αn−1 =
+min({(Rn − Rn−1 )/2 + e} ∪ {Rn − Rj + d(−aj aj+1 ) | 1 ≤ j < n}). By plugging αi−1 (≺
+a1 , . . . , ai ≻) = min({(Ri − Ri−1 )/2 + e} ∪ {Ri − Rj + d(−aj aj+1) | 1 ≤ j < i}) and
+α1 (≺ ai+1 , . . . , an ≻) = min({(Ri+2 − Ri+1 )/2 + e} ∪ {Rj+1 − Ri+1 + d(−aj aj+1 ) | i + 1 ≤
+j < n}) in the recursive formula for αi we get the formula from Definition 1. (The extra
+terms Ri+1 − Ri + (Ri − Ri−1 )/2 + e and Ri+1 − Ri + (Ri+2 − Ri+1 )/2 + e that appear
+are ≥ (Ri+1 − Ri )/2 + e so they can be removed. )
+     Of course this is only a guess and does not constitute a proof. In fact the relation
+d(a1 · · · ai b1 · · · bi ) ≥ αi is only proved this way in the particular case when b1 , . . . , bn are
+obtained from a1 , . . . , an through of succession of “binary transformations” of the type
+a1 , . . . , an −→ a1 , . . . , ηaj , ηaj+1, . . . , an with 1 ≤ j ≤ n − 1 and η ∈ g(aj+1/aj ). It is not
+hard to prove that conditions (i)-(iv) of the main theorem are necessary if b1 , . . . , bn are
+obtained this way. However, for the proof of the necessity in the general case and for the
+proof of sufficiency the use of O’Meara’s theorem is necessary.
+3. In the view of the previous remark there is the natural question that asks whether,
+given that L ∼        =≺ a1 , . . . , an ≻∼
+                                          =≺ b1 , . . . , bn ≻ relative to good BONGs, there is always a
+
+                                                       19
+ succession of binary transformations as defined above from a1 , . . . , an to b1 , . . . , bn . The
+answer to this question is YES but only if we make the assumption that F/Q2 is not
+totally ramified, i.e. that the residual field O/p has more than 2 elements.
+     If |O/p| = 2 we have the following counter-example. Let 0 < d < 2e be odd and let
+R = 2e − 2d and ε, η ∈ O× with d(ε) = d and d(η) = 2e − d. It can be proved that ≺
+1, −π R ε, εη, −π Rη ≻∼    =≺ η, −π R εη, ε, −π R ≻ but one cannot go from 1, −π R ε, εη, −π Rη
+to η, −π R εη, ε, −π R through binary transformations.
+     E.g. if F = Q2 and we take d = 1, so R = 0 and ε = η = −1, then ≺ 1, 1, 1, 1 ≻∼            =≺
+7, 7, 7, 7 ≻. However from 1, 1, 1, 1 we can go through binary transformations only to
+                                                                 2                         2
+a1 , a2 , a3 , a4 , where an even number of ai ’s belong to O× and the rest to 5O× . This
+                                          2       2
+happens because g(1) = g(5) = O× ∪ 5O× so the only binary relations involving 1 and
+5 are ≺ 1, 1 ≻∼      =≺ 5, 5 ≻ and ≺ 1, 5 ≻∼ =≺ 5, 1 ≻. Similarly from 7, 7, 7, 7 we can only go
+                                                                    2                         2
+to a1 , a2 , a3 , a4 , where an even number of ai ’s belong to 7O× and the rest to 3O× .
+
+
+References
+    [B] C. N. Beli, Integral spinor norms over dyadic local fields, J. Number Theory 102
+(2003) 125-182.
+    [B1] C.N Beli, Representations of integral quadratic forms over dyadic local fields,
+Electronic Research Announcements of the American Mathematical Society 12, 100-112,
+electronic only (2006).
+    [H] J. S. Hsia, Spinor norms of local integral rotations I, Pacific J. Math., Vol. 57
+(1975), 199 - 206.
+    [OM] O. T. O’Meara, Introduction to Quadratic Forms, Springer-Verlag, Berlin
+(1963).
+
+                  Institute of Mathematics of the Romanian Academy,
+                     P.O. Box 1-764, RO-70700 Bucharest, Romania
+                 email: raspopitu1@yahoo.com, Constantin.Beli@imar.ro
+
+
+
+
+                                                20
+ 

@@ -1,4 +1,29 @@
-## 2026-11-13 Rees Headline 38 → 21 Proved (20 Pending Referee), free23 HSP Cover-Free For All H, Lean Schedule 1H (AI only)
+## 2026-11-13 Paired DPP Classical Scope Checked
+
+Bounded actual-source classical screen: native projected-Slater probability
+Z=[x1...xs]det(sum x_j A_j), rank A_j<=2,sum A_j=I. Celis2017Cor5/10 pays
+product constraint sizes, giving3^s for growing size-two parts. Barvinok2019
+Thm1.8 supplies a SMALL-NORM quasi-polynomial normalizer comparator, not an
+unconditional native sampler. Correct real chart uses alternative COORDINATE
+rows B; the printed introduction's Gram identification fails x=2 (5 vs17).
+No theorem1.8 refutation. Both valid charts of the explicit rational4x2
+Hadamard-column input have norm1; block sums prove no automatic uniform
+rho<1 promise at any size. Exact Sage base-block coefficient/orthogonality/
+chart check completed. Topic PAIRED_PARTITION_DPP_BASELINES.md. General
+classical AND quantum native samplers remain OPEN; no hardness, novelty,
+advantage or approximate-counting lower bound follows. No paid calls here.
+Prior three-pass milestone slater_moment_round frozen37uniquehashes once:
+new estimate0.146756; cumulative318.434134/242priced,
+Anth180.314054/OAI138.120080, eight UNKNOWN excluded. Owner20.59 separate.
+This subsequent source/control screen is outside that freeze; no rescan.
+Next hard action must compare independent directions, or inspect an actually
+new classical operation. Concrete remaining source gate: fractional-log-
+concavity/principal-minor-power samplers for NON-HERMITIAN B and conditioned
+families. Next command corpus been-tried for that operation, then actual
+primary theorem; expected explicit native map or unmet premise. No generic
+paid sampler prompt or nearby normalization sweep. Mechanical queue below.
+
+## 2026-11-13 Rees Headline 38 → 20 Proved (Refereed), free23 HSP Cover-Free For All H, Lean Schedule 1H (AI only)
 
 Claude session; all AI-checked, pending human review; no posting; paper files NOT edited.
 - Headline: Schedule 1H+ (new nodes: refinement/chains Lemma R, two-class stage, class-restricted finish,
@@ -7,7 +32,8 @@ Claude session; all AI-checked, pending human review; no posting; paper files NO
   given Weil + Rabin + exact computation (proof referee) and reproduced by an independent recompute.
   Uses none of R8, Lemmas S/F/HC, IS Lemma 12. v2 adds RC(6; Z_6 → {0}) for the whole 2520 class and
   ℓ-level tables (κ = 9 degree 4 at 19, 37, 73; κ = 4, 6 degree 3 at 13): E = 20 (…,18,20), attained at
-  p ≡ 1 mod 2520 and 37, 43, 73, 127, 181, 631. 20 is NOT yet refereed (referee running).
+  p ≡ 1 mod 2520 and 37, 43, 73, 127, 181, 631. Referee PROVED WITH FIXES (no number changes;
+  independent recompute of 20 and its 266 attaining primes below 2e6; …-headline-20-referee.md).
   Side finding (two independent codes): with Tier B chains, Lemma rounds (thm:is-import) is never needed
   for κ ≤ 9 below 2e6 and maxima are unchanged; removing the import from thm:main at c ≤ 9 is UNKNOWN
   until written (list of affected core items in …-headline-21-recompute.md §7).
@@ -24,11 +50,12 @@ Claude session; all AI-checked, pending human review; no posting; paper files NO
   (Chevalley–Warning), so it rests on WeilLower only. No running time; supports neither 38 nor 53.
 - κ = 9 conditional route: 21 → 20 (R9, three-level chain step RC3 by SAT with a symmetry ansatz at 73);
   IS Lemma 12 now proved for every ℓ. Superseded as a headline by the proved 20.
-- Next hard question: does the proved 20 survive its referee; then owner decision whether the core
-  adopts Schedule 1H+ (≈ 3–4 pp.) and/or a free23 HSP23 remark. Next command: read
-  audits/reviews/2026-11-13-rees-headline-20-referee.md; acceptance: PROVED (WITH FIXES) with an
-  independent recompute of 20 and its attaining set.
-- Reports: audits/reviews/2026-11-13-rees-{headline-below-38,headline-below-38-v2,headline-21-referee,
+- Next hard question: owner decision whether the core adopts Schedule 1H+ with v2 (≈ 4 pp. plus
+  certificate artifacts; headline 38 → 20) and replaces the DRAFT F23 remark by HSP23; whether to drop
+  thm:is-import at c ≤ 9 (needs its own write-up and referee). Next command: merge fragment.tex and
+  fragment-v2.tex with all referee fixes into one LaTeX section; acceptance: a third referee of the
+  merged text, CORRECT (WITH FIXES), and an exact recompute of 20 from the merged definitions.
+- Reports: audits/reviews/2026-11-13-rees-{headline-below-38,headline-below-38-v2,headline-21-referee,headline-20-referee,
   headline-21-recompute,linear-arity,linear-arity-referee,free23-all-subgroups,free23-all-subgroups-referee,
   lean-schedule1h,lean-schedule1h-review,k9-below-21}.md. Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md,
   same heading.

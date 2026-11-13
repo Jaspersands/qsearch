@@ -1,4 +1,15 @@
-## 2026-11-13 Rees Headline 38 → 21 Proved (20 Pending Referee), free23 HSP Cover-Free For All H, Lean Schedule 1H (AI only)
+## 2026-11-13 Paired DPP Classical Scope Checked
+
+Preserve PAIRED_PARTITION_DPP_BASELINES.md, the two primary source bundles
+under sources/paired_partition_dpp, and controls/paired_dpp_chart. This source
+scope screen follows the completed37-pin slater_moment_round; retain separately
+until the next genuine milestone. No new API usage, old hash rescan, repeated
+freeze, quantum code or sweep. Any registry summary must distinguish fixed
+NUMBER of parts from size-two parts, small-norm normalizers from conditional
+samplers, and coordinate B from the erroneous literal Gram identification.
+No general sampling hardness or missing-algorithm claim from these sources.
+
+## 2026-11-13 Rees Headline 38 → 20 Proved (Refereed), free23 HSP Cover-Free For All H, Lean Schedule 1H (AI only)
 
 1. Apply headline-21 referee fixes F1–F7 and recompute fixes F1–F6 to fragment.tex (define candidate (f)
    explicitly instead of pointing at tierB.json; least primitive root as ξ; stage2 typo).
@@ -9,6 +20,9 @@
 6. Linear-arity referee fixes: §1(1e) 2a → 2a+1; Lemma W count |W|^n/p^a; BIS_p bound a(p−1)+1.
 7. free23 HSP23 fixes: state Δ_tot ≡ μτ as a polynomial identity; IS candidate form n_v·b; IS time cut-off
    for types 2, 4; left vs right cosets.
+9. headline-20 referee fixes: G1 tables store B(y) = C_y/z^y (state it in Proposition ell-tables);
+   fix ξ = least primitive root; add κ = 6 row to tab:sm-thresholds and band cost (~9e13 class tests);
+   G4 wording (reproduces 1H+, not core 1H).
 8. (73, 9) three-level kissat/cadical runs: record outcome (cannot change any maximum).
 
 ## 2026-11-13 Projected Slater Gaussian Feedback Falsified

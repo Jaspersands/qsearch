@@ -1,0 +1,23 @@
+B4_19.json: p=19 k=9 l=4 xi=2 nonzero=3456/6561 (iii)-violations=0 random-rank1-fail=0/300 non-P entries=0 C0 in P=True -> VERIFIED
+B4_37.json: p=37 k=9 l=4 xi=2 nonzero=3600/6561 (iii)-violations=0 random-rank1-fail=0/300 non-P entries=0 C0 in P=True -> VERIFIED
+B4_73.json: p=73 k=9 l=4 xi=5 nonzero=4374/6561 (iii)-violations=0 random-rank1-fail=0/300 non-P entries=0 C0 in P=True -> VERIFIED
+B3_13_4.json: p=13 k=4 l=3 xi=2 nonzero=43/64 (iii)-violations=0 random-rank1-fail=0/300 non-P entries=0 C0 in P=True -> VERIFIED
+B3_13_6.json: p=13 k=6 l=3 xi=2 nonzero=96/216 (iii)-violations=0 random-rank1-fail=0/300 non-P entries=0 C0 in P=True -> VERIFIED
+ALL VERIFIED
+negative controls:
+  B4_19.json one entry changed within P: (iii)-viol=1 rank1-fail=245/300 -> FAILED (good)
+  B4_19.json other primitive roots passing (iii): [] of 5
+  B4_37.json one entry changed within P: (iii)-viol=1 rank1-fail=261/300 -> FAILED (good)
+  B4_37.json other primitive roots passing (iii): [35] of 11
+  B4_73.json one entry changed within P: (iii)-viol=1 rank1-fail=287/300 -> FAILED (good)
+  B4_73.json other primitive roots passing (iii): [11, 62, 68] of 23
+  B3_13_4.json one entry changed within P: (iii)-viol=3 rank1-fail=232/300 -> FAILED (good)
+  B3_13_4.json other primitive roots passing (iii): [6] of 3
+  B3_13_6.json one entry changed within P: (iii)-viol=5 rank1-fail=221/300 -> FAILED (good)
+  B3_13_6.json other primitive roots passing (iii): [11] of 3
+raw-B read (C := stored values) must FAIL:
+  B4_19.json: (iii)-viol=3748 non-P=3078 -> FAILED (good)
+  B4_37.json: (iii)-viol=4001 non-P=3204 -> FAILED (good)
+  B4_73.json: (iii)-viol=4040 non-P=3888 -> FAILED (good)
+  B3_13_4.json: (iii)-viol=22 non-P=28 -> FAILED (good)
+  B3_13_6.json: (iii)-viol=120 non-P=78 -> FAILED (good)

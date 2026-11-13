@@ -1,0 +1,80 @@
+                                            Computing the p-adic Canonical Quadratic Form in Polynomial
+                                                                      Time
+                                                           Chandan Dubey                                       Thomas Holenstein
+                                                     chandan.dubey@inf.ethz.ch                          thomas.holenstein@inf.ethz.ch
+                                                                   Institut für Theoretische Informatik, ETH Zürich
+
+
+
+
+arXiv:1409.6199v1 [cs.DS] 22 Sep 2014
+                                                                                               Abstract
+                                                                                                                                  P
+                                                  An n-ary integral quadratic form is a formal expression Q(x1 , · · · , xn ) =     1≤i,j≤n aij xi xj in n-
+                                              variables x1 , · · · , xn , where aij = aji ∈ Z. We present a randomized polynomial time algorithm that
+                                              given a quadratic form Q(x1 , · · · , xn ), a prime p, and a positive integer k outputs a U ∈ GLn (Z/pk Z)
+                                              such that U transforms Q to its p-adic canonical form.
+
+
+                                        1     Introduction
+                                        Let R be a commutative ring with unity and R× be the set of units (i.e., invertible                P elements) of R. A
+                                        quadratic form over the ring R in n-formal variables x1 , · · · , xn in an expression 1≤i,j≤n aij xi xj , where
+                                        aij = aji ∈ R. A quadratic form can equivalently be represented by a symmetric matrix Qn = (aij ) such
+                                        that Q(x1 , · · · , xn ) = (x1 , · · · , xn )′ Q(x1 , · · · , xn ). The quadratic form is called integral if R = Z and the
+                                        determinant of the quadratic form Q is defined as det(Q). In this paper, we concern ourselves with integral
+                                        quadratic forms, henceforth referred only as quadratic forms.
+                                            Let p be a prime and k be a positive integer. Then, two quadratic forms Q1 , Q2 are said to be pk -equivalent
+                                                                                                                            pk
+                                        if there is a U ∈ GLn (Z/pk Z) such that U′ Q1 U ≡ Q2 mod pk (denoted Q1 ∼ Q2 ). Two quadratic forms are
+                                                                                                                    p∗
+                                        p∗ -equivalent if they are pk -equivalent for every k > 0 (denoted Q1 ∼ Q2 ). Intuitively, pk -equivalence means
+                                        that there exists an invertible linear change of variables over Z/pk Z that transforms one form to the other.
+                                                                                                          p∗
+                                            For a quadratic form Q and prime p, the set {Sn | S ∼ Q} is the set of p∗ -equivalent forms of Q (also
+                                        called p∗ -equivalence class of Q). In this paper, we are interested in defining and computing a “canonical”
+                                        quadratic form for the p∗ -equivalence class of a given quadratic form Q. In particular, we are interested in
+                                                                                                                                                              p∗
+                                        showing the existence of a function canp such that for all integral quadratic forms Q, canp (Q) ∈ {S | S ∼ Q};
+                                                                        p∗
+                                        with the property that if Q1 ∼ Q2 then canp (Q1 ) = canp (Q2 ). We also consider a related problem of coming
+                                        up with a canonicalization procedure. In particular, we want a polynomial time algorithm that given Q, p
+                                        and a positive integer k, finds U ∈ GLn (Z/pk Z) such that U′ QU ≡ canp (Q) mod pk .
+                                            It is not difficult to show the existence of a canonical form. For example, we can go over the p∗ -
+                                        equivalence class of Q and output the form which is lexicographically the smallest one. But, this form gives
+                                        us no meaningful information about Q or the p∗ -equivalence class of Q.
+                                            Gauss [Gau86] gives a complete classification of binary quadratic forms (i.e., n = 2). Mathematicians
+                                        have been more interested in coming up with a list of necessary and sufficient conditions for p∗ -equivalence
+                                        (also called equivalence over the p-adic integers Zp ). There are several competing but equivalent candidates
+                                        for the set of conditions [Cas78, O’M73, CS99, Kit99]. We choose to use the same set of conditions as
+                                        Conway-Sloane [CS99], called the p-symbol of a quadratic form.
+                                            For odd prime p, the p-canonical form is implicit in Conway-Sloane [CS99] and is also described explicitly
+                                        by Hartung [Har08, Cas78]. The canonicalization algorithm in this case is not complicated and can be claimed
+                                        to be implicit in Cassels [Cas78].
+
+                                                                                                    1
+
+   The definition of canonical form for the case of prime 2 is quite involved and needs careful analysis1
+[Jon44, CS99, Wat60]. Jones [Jon44] presents the most complete description of the 2-canonical form. His
+method is to come up with a small 2-canonical forms and then showing that every quadratic form is 2∗ -
+equivalent to one of these. Unfortunately, a few of his transformations are existential i.e., he shows that a
+transformations with certain properties exists without explicitly finding them.
+   Conway-Sloane [CS99], instead, compute a description of a quadratic form (called canonical 2-symbol)
+with the property that two quadratic forms are 2∗ -equivalent iff they have the same canonical 2-symbol.
+                                                                          2∗
+They do not provide a 2-canonical form i.e., can2 (Q) ∈ {S | S ∼ Q}.
+   The p-canonical forms are very useful in the study of quadratic forms and their equivalence, see [Sie35,
+Jon44, Jon50, Cas78, CS99, Kit99, Har08].
+
+Our Contribution. We give polynomial time p-canonicalization algorithm. In particular, we present an
+algorithm that given an integral quadratic form Q runs in time poly(n, log det(Q)) and outputs canp (Q).
+   Given an integral quadratic form Q, a positive integer k and a prime p, we also provide a randomized
+poly(n, log det(Q), log p, k) algorithm that outputs a matrix U ∈ GLn (Z/pk Z) such that U′ QU ≡ canp (Q)
+(mod pk ). This algorithm is especially useful if we want to find a transformation that maps Q1 to Q2 over
+                    pk
+Z/pk Z, where Q1 ∼ Q2 . In this case, the required transformation is U1 U−1     k         ′
+                                                                         2 mod p , where U1 Q1 U1 ≡ canp (Q1 ) ≡
+ ′             k
+U2 Q2 U2 (mod p ).
+
+
+2     Preliminaries

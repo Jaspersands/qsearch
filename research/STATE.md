@@ -1,12 +1,35 @@
 # Research State
 
 Read STATE and TRAPS at each pass; GOAL is binding. Latest Codex handoff:
-"2026-11-13 Projected Slater Gaussian Feedback Falsified".
+"2026-11-13 Paired DPP Classical Scope Checked".
 
 Ownercreditupdate: OpenAIexhausted, no furtherpaidcalls. Anthropicowner-reported20.59remainingdedicatedresearch, separatefromrunnerestimates.
 
 ## Now
 
+Paired partition-DPP classical source screen complete. Exact native bridge:
+Z=[x1...xs]det(sum x_j A_j), rankA_j<=2,sumA_j=I. Actual CelisCor5/10 has
+product3^s dependence for growing size-two parts. Actual BarvinokThm1.8 is
+a strict-small-norm quasi-polynomial NORMALIZER comparator; it does not
+supply a general conditioned sampler. Correct real chart is coordinate B,
+not Gram B; literal printed Gram identification fails scalar5vs17. Explicit
+rational4x2 isometry has norm1 in BOTH valid charts; block sums extend this
+operation falsifier to arbitrary size, with a classically easy target.
+One exact Sage control. Topic PAIRED_PARTITION_DPP_BASELINES.md. General
+classical and quantum projected-Slater samplers remain OPEN; no hardness,
+novelty, separation, implementation or approximate-counting lower bound.
+Prior same-mode Gaussian feedback architecture remains REFUTED at TV>=1008/8425.
+No paid calls this source pass. Previous slater_moment_round frozen37unique
+hashes, new estimate0.146756, cumulative318.434134/242priced;8UNKNOWNexcluded.
+OpenAI disabled; owner Anthropic20.59 anchor is separate, no balance inferred.
+Next: compare independent directions before construction. If this line
+returns, require a NEW operation; the concrete remaining classical source
+question is fractional-log-concavity/principal-minor-power sampling for
+NON-HERMITIAN coordinate B and its conditioned families. No generic retry.
+
+## Earlier completed passes (historical)
+
+Previous projected Slater feedback pass:
 Projected Slater Gaussian-feedback architecture REFUTED, reviewed written.
 Opposite-angle rational four-mode input forces TV>=1008/8425 for coarse pair
 parities, arbitrary randomized record-dependent SAME-mode Gaussian unitaries,
@@ -25,8 +48,6 @@ uniqueness promise and the literal r^(1-q) equality filter; no general no-go.
 Next concrete check: actual algorithms for partition-conditioned DPPs with
 growing size-two parts/rank-two mixed discriminants, matching input and error
 scope. No new quantum correction or generic paid sampler prompt is admitted.
-
-## Earlier completed passes (historical)
 
 Previous matroid spectrum pass:
 Native matroid TOP-spectrum CLASSICALLY MATCHED, reviewed written. For every
@@ -1955,11 +1976,12 @@ or separation is claimed.
   checkpoint and SIMULTANEOUS_NORM_SUPPORT.md. General joint solving is open.
 
 
-- **Rees headline 38 → 21 proved, 20 pending referee; free23 HSP cover-free for all H; Lean 1H (11-13 night, Claude, AI only, pending human review).**
+- **Rees headline 38 → 20 proved (refereed); free23 HSP cover-free for all H; Lean 1H (11-13 night, Claude, AI only, pending human review).**
   - Schedule 1H+ (audits/reviews/2026-11-13-rees-headline-below-38{,-v2}.md, fragment.tex / fragment-v2.tex):
     class-9 E = 21 PROVED WITH FIXES given Weil + Rabin + exact computation (…-headline-21-referee.md),
     independently recomputed (…-headline-21-recompute.md). v2: E = 20 (c = 2..9: 3,5,9,10,14,16,18,20;
-    attained at p ≡ 1 mod 2520 and 37, 43, 73, 127, 181, 631), referee RUNNING (…-headline-20-referee.md).
+    attained at p ≡ 1 mod 2520 and 37, 43, 73, 127, 181, 631), referee PROVED WITH FIXES, recomputed
+    independently (…-headline-20-referee.md).
     Paper NOT edited; core still says 38. Lemma rounds unneeded for κ ≤ 9 with Tier B (two codes): import
     removal at c ≤ 9 UNKNOWN until written.
   - free23: Theorem HSP23 (every H, p ≥ 5, cover-free, given IS Cor 8, exact QFT_p) PROVED WITH FIXES
@@ -3577,7 +3599,7 @@ or separation is claimed.
 
 | Direction | Why parked | File |
 |---|---|---|
-| Projected Slater Born sampling | General native sampler OPEN; same-mode Gaussian unitary feedback after coarse pair parities REFUTED by TV>=1008/8425 four-mode marginal bound. Includes randomized/both-record feedback and pairing; excludes ancillas/channels/further measurements/arbitrary output remapping. Equal-angle singlet control is samplable by Gaussian permutations. Full API proof checked with scope repairs; one exact covariance control. Next compare size-two partition-conditioned DPP classical algorithms. | `PROJECTED_SLATER_GAUSSIAN_FEEDFORWARD.md` |
+| Projected Slater Born sampling | General native sampler OPEN; same-mode Gaussian unitary feedback after coarse pair parities REFUTED by TV>=1008/8425 four-mode marginal bound. Includes randomized/both-record feedback and pairing; excludes ancillas/channels/further measurements/arbitrary output remapping. Equal-angle singlet control is samplable by Gaussian permutations. Full API proof checked with scope repairs; one exact covariance control. Actual fixed-partition/small-norm classical sources checked, no general match; norm1 chart counterfamily. | `PROJECTED_SLATER_GAUSSIAN_FEEDFORWARD.md`, `PAIRED_PARTITION_DPP_BASELINES.md` |
 | Native indefinite ternary integral isometry | Nov13 expanded norm/global rational transporter and factorable support WRITTEN closed under GRH. Local finite seed verifier and four-chart spinor extraction paid; coupled dyadic seed remains OPEN, full integral decision UNADMITTED. All-m cross-scale counterfamily and exact place3 neighbor offset checked. No integrality of norm postprocessor, novelty, hardness, separation or execution. | `EXPANDED_NORM_TERNARY_TRANSPORT.md`, `INDEFINITE_TERNARY_SPINOR_ADMISSION.md` |
 | Rational Gaudin determinant-prefix preparation | Direct on-shell determinant deletion refuted on a valid rational eigenstate; same-prefix single Cauchy dual also impossible. Cauchy amplitudes are paid, ALL-prefix norms are not. Any classical prefix routine also pays Born sampling and sparse readout. Two CLOSED reviews and exact classical control; Claude repair timed out EMPTY, billingUNKNOWN/no retry. No full preparation, hardness, general no-go, novelty or separation. | `RATIONAL_GAUDIN_PREFIX_ADMISSION.md` |
 | General growing-genus two-Selmer dimension | Nov13 reviewed WRITTEN quantum polynomial-BIT composition under explicit GRH for native monic squarefree odd-degree f over Z. Complete all-prime local images now paid classically; global compact class/unit arithmetic and local conditions composed. Earlier conditioning OPEN is stale. No MW rank/point, implementation, novelty, classical lower bound or speedup claim. | `GENERAL_NATIVE_SELMER_COMPOSITION.md`, `LOCAL_KUMMER_ALL_PRIMES.md` |
