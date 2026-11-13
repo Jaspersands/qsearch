@@ -1,0 +1,101 @@
+{
+  "scope": "One exact Q2(sqrt2) example and its fixed 16-state isometry graph; no all-field completeness claim",
+  "field": "pi^2=2",
+  "e": 2,
+  "f": 1,
+  "A": [
+    "1",
+    "1+pi",
+    "2*pi"
+  ],
+  "B": [
+    "1+2*pi",
+    "25+15*pi",
+    "10*pi"
+  ],
+  "generators": [
+    "pi",
+    "pi + 1",
+    "2*pi + 1",
+    "5"
+  ],
+  "hilbert_bits": [
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ]
+  ],
+  "unit_defects": {
+    "0": "infinity",
+    "2": 1,
+    "4": 3,
+    "6": 1,
+    "8": 4,
+    "10": 1,
+    "12": 3,
+    "14": 1
+  },
+  "negative_one_mask": 12,
+  "alpha": [
+    1,
+    3
+  ],
+  "hasse_difference_bits": [
+    1,
+    1,
+    0
+  ],
+  "three_word_parameters": {
+    "23_12_23": [],
+    "12_23_12": []
+  },
+  "four_word_masks": [
+    [
+      12,
+      2
+    ],
+    [
+      23,
+      4
+    ],
+    [
+      12,
+      6
+    ],
+    [
+      23,
+      12
+    ]
+  ],
+  "target_minimal_word_length": 4,
+  "fixed_graph_vertices": 16,
+  "fixed_graph_diameter": 4,
+  "fixed_graph_distance_counts": {
+    "0": 1,
+    "1": 4,
+    "2": 5,
+    "3": 4,
+    "4": 2
+  },
+  "PASS": true
+}

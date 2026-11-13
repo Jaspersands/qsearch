@@ -1,0 +1,445 @@
+{
+  "scope": "One finite exact convention check only; N4/F02/alpha1over4 and one4state heatbath. No theorem from finite controls; no sweep.",
+  "exact": true,
+  "assertions_passed": 99,
+  "polar": {
+    "N": 4,
+    "alpha": "1/4",
+    "frozen_indices": [
+      0,
+      2
+    ],
+    "row_kernel": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "G": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "J": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "joint_pairs_enumerated": 256,
+    "d_by_bit": [
+      "1/32",
+      "1/8",
+      "1/8",
+      "11/32"
+    ],
+    "d_F": "5/32",
+    "two_d_F": "5/16",
+    "full_joint_TV": "315/2176",
+    "frozen_slices": [
+      {
+        "frozen": [
+          0,
+          0
+        ],
+        "P_mass": "1/4",
+        "Q_mass": "1/4",
+        "joint_slice_TV": "315/2176"
+      },
+      {
+        "frozen": [
+          0,
+          1
+        ],
+        "P_mass": "1/4",
+        "Q_mass": "1/4",
+        "joint_slice_TV": "315/2176"
+      },
+      {
+        "frozen": [
+          1,
+          0
+        ],
+        "P_mass": "1/4",
+        "Q_mass": "1/4",
+        "joint_slice_TV": "315/2176"
+      },
+      {
+        "frozen": [
+          1,
+          1
+        ],
+        "P_mass": "1/4",
+        "Q_mass": "1/4",
+        "joint_slice_TV": "315/2176"
+      }
+    ],
+    "weighted_Y_to_uniform_TV": "9/64",
+    "actual_uniform_offset_average_conditional_coset_TV": "2/25",
+    "all_offsets": [
+      {
+        "offset": "0000",
+        "coset": [
+          "0000",
+          "0011",
+          "1100",
+          "1111"
+        ],
+        "Z_b": "25/64",
+        "conditional_coset_TV": "36/425"
+      },
+      {
+        "offset": "0001",
+        "coset": [
+          "0001",
+          "0010",
+          "1101",
+          "1110"
+        ],
+        "Z_b": "15/64",
+        "conditional_coset_TV": "0"
+      },
+      {
+        "offset": "0010",
+        "coset": [
+          "0001",
+          "0010",
+          "1101",
+          "1110"
+        ],
+        "Z_b": "15/64",
+        "conditional_coset_TV": "0"
+      },
+      {
+        "offset": "0011",
+        "coset": [
+          "0000",
+          "0011",
+          "1100",
+          "1111"
+        ],
+        "Z_b": "25/64",
+        "conditional_coset_TV": "36/425"
+      },
+      {
+        "offset": "0100",
+        "coset": [
+          "0100",
+          "0111",
+          "1000",
+          "1011"
+        ],
+        "Z_b": "15/64",
+        "conditional_coset_TV": "0"
+      },
+      {
+        "offset": "0101",
+        "coset": [
+          "0101",
+          "0110",
+          "1001",
+          "1010"
+        ],
+        "Z_b": "9/64",
+        "conditional_coset_TV": "4/17"
+      },
+      {
+        "offset": "0110",
+        "coset": [
+          "0101",
+          "0110",
+          "1001",
+          "1010"
+        ],
+        "Z_b": "9/64",
+        "conditional_coset_TV": "4/17"
+      },
+      {
+        "offset": "0111",
+        "coset": [
+          "0100",
+          "0111",
+          "1000",
+          "1011"
+        ],
+        "Z_b": "15/64",
+        "conditional_coset_TV": "0"
+      },
+      {
+        "offset": "1000",
+        "coset": [
+          "0100",
+          "0111",
+          "1000",
+          "1011"
+        ],
+        "Z_b": "15/64",
+        "conditional_coset_TV": "0"
+      },
+      {
+        "offset": "1001",
+        "coset": [
+          "0101",
+          "0110",
+          "1001",
+          "1010"
+        ],
+        "Z_b": "9/64",
+        "conditional_coset_TV": "4/17"
+      },
+      {
+        "offset": "1010",
+        "coset": [
+          "0101",
+          "0110",
+          "1001",
+          "1010"
+        ],
+        "Z_b": "9/64",
+        "conditional_coset_TV": "4/17"
+      },
+      {
+        "offset": "1011",
+        "coset": [
+          "0100",
+          "0111",
+          "1000",
+          "1011"
+        ],
+        "Z_b": "15/64",
+        "conditional_coset_TV": "0"
+      },
+      {
+        "offset": "1100",
+        "coset": [
+          "0000",
+          "0011",
+          "1100",
+          "1111"
+        ],
+        "Z_b": "25/64",
+        "conditional_coset_TV": "36/425"
+      },
+      {
+        "offset": "1101",
+        "coset": [
+          "0001",
+          "0010",
+          "1101",
+          "1110"
+        ],
+        "Z_b": "15/64",
+        "conditional_coset_TV": "0"
+      },
+      {
+        "offset": "1110",
+        "coset": [
+          "0001",
+          "0010",
+          "1101",
+          "1110"
+        ],
+        "Z_b": "15/64",
+        "conditional_coset_TV": "0"
+      },
+      {
+        "offset": "1111",
+        "coset": [
+          "0000",
+          "0011",
+          "1100",
+          "1111"
+        ],
+        "Z_b": "25/64",
+        "conditional_coset_TV": "36/425"
+      }
+    ],
+    "distinct_coset_TVs": [
+      {
+        "coset": [
+          "0000",
+          "0011",
+          "1100",
+          "1111"
+        ],
+        "TV": "36/425"
+      },
+      {
+        "coset": [
+          "0001",
+          "0010",
+          "1101",
+          "1110"
+        ],
+        "TV": "0"
+      },
+      {
+        "coset": [
+          "0100",
+          "0111",
+          "1000",
+          "1011"
+        ],
+        "TV": "0"
+      },
+      {
+        "coset": [
+          "0101",
+          "0110",
+          "1001",
+          "1010"
+        ],
+        "TV": "4/17"
+      }
+    ],
+    "G_inverse_transpose_equals_JGJ": true
+  },
+  "heatbath": {
+    "states": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "moves": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "weights": [
+      "1",
+      "1/4",
+      "1/4",
+      "1/16"
+    ],
+    "S_diagonal": [
+      "1",
+      "1/2",
+      "1/2",
+      "1/4"
+    ],
+    "L_row_generator": [
+      [
+        "-39/85",
+        "1/5",
+        "1/5",
+        "1/17"
+      ],
+      [
+        "4/5",
+        "-3/2",
+        "1/2",
+        "1/5"
+      ],
+      [
+        "4/5",
+        "1/2",
+        "-3/2",
+        "1/5"
+      ],
+      [
+        "16/17",
+        "4/5",
+        "4/5",
+        "-216/85"
+      ]
+    ],
+    "H_independent_pair_blocks": [
+      [
+        "39/85",
+        "-2/5",
+        "-2/5",
+        "-4/17"
+      ],
+      [
+        "-2/5",
+        "3/2",
+        "-1/2",
+        "-2/5"
+      ],
+      [
+        "-2/5",
+        "-1/2",
+        "3/2",
+        "-2/5"
+      ],
+      [
+        "-4/17",
+        "-2/5",
+        "-2/5",
+        "216/85"
+      ]
+    ],
+    "H_equals_S_negative_L_S_inverse": true,
+    "detailed_balance": true,
+    "symmetric_H": true,
+    "annihilates_sqrt_weights": true
+  },
+  "issues": []
+}

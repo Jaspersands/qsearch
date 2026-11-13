@@ -1,0 +1,91 @@
+# Polynomial four-word compiler for dyadic ternary BONGs
+
+2026-11-13. Parent construction, independent review pending. This gives an
+actual polynomial search for SPECIFIED four-move words, not a complete local
+isometry algorithm. The full general growing-ramification seed remains OPEN.
+The unramified end-to-end theorem is separately reviewed WRITTEN.
+
+Corpus been-tried/baselines for four binary BONG transformations were checked.
+Actual Beli classificationSection5 and thesis1.4.9 provide the permitted
+binary operations; the published connectivity remark supplies no bounded
+word theorem, and its residueF2 obstruction is rank4, notrank3. The new
+question directly targets the final local gate of native indefinite ternary
+integral-isometry decision, not a new general subsystem. Strongest classical
+baseline is this same local arithmetic plus the admitted global norm/S-unit
+reduction. Prospective quantum resource difference remains only in those
+global arithmetic backends; no novelty, hardness or speedup is asserted.
+
+## Four-move feasibility from native local data
+
+Let F/Q2 have charged e,f, and let isometric ternary good BONGs have norms
+(a1,a2,a3),(b1,b2,b3), common valuations(R1,R2,R3), R1<=R3. Work in local
+squareclasses, with V the UNIT subspace and <,> the Hilbert symbol bit. Put
+ C=-a1*a2, D=-a2*a3, m=R2-R1, n=R3-R2, x=b1/a1, z=b3/a3.
+For a normalized squareclassd let defect(d) be its relative quadratic defect,
+zero at odd valuation and infinity for a square. U_r consists of unit classes
+with defect>=r, using ceil(r), allV forr<=0, and{1} forr>2e. Define scalar
+ h(b)=min(e+m/2,m+b), k(a)=min(e+n/2,n+a),
+ H0=U_h(defect(C)), Kx=U_k(defect(D*x)).
+Rational determinant and Hasse matching give
+ <C,x>+<D,z>+<x,z>=0.
+
+Consider the word12(t),23(u),12(x/t),23(z/u). Its final tuple is
+ (a1*x,a2*x*z,a3*z), so the middle target matches after one unit-root rescaling.
+Allowed binary moves have two conditions, a defect filtration and a norm
+character. The independent norm conditions are exactly
+ <C,t>=0, <D*x,u>=<C,x>, <t,u>=<D,u>.             (1)
+The final norm condition follows from the displayed Hasse relation. No
+quartic norm equation or independent squareclass guess is being suppressed.
+
+Enumerate a=defect(D*t), b=defect(C*u). Each ranges over0,...,2e,infinity,
+so there are O(e^2) cases, not exponentially many classes. If D has odd
+valuation, onlya=0 is allowed and its defect imposes no t-condition. Otherwise
+its valuation is even, identify its unit squareclass, and impose
+ t in D*U_a, excludingD*U_(a+1) whena finite; forinfinity impose t=D.
+Apply the analogous rule toC,u,b. Infeasible parity/filtration cases vanish.
+
+For fixeda,b, the remaining filtration conditions are
+ t in H0 intersect x*U_h(b),
+ u in U_k(a) intersect z*Kx.                            (2)
+Combine(1)'s two LINEAR conditions with(2) and the exact-defect inclusions.
+They give affine subspaces T,U, each with at mostone excluded affine coset.
+If an exclusion is empty, ignore it; if it covers its domain, rejectthecase.
+Otherwise express the forbidden coset by its defining linear equations.
+Outside that coset means at leastone equation has the opposite bit. Branch
+on one such equation forT and one forU. There are O(dim(V)^2) branches; each
+has only affine subspaces and the single bilinear equation from(1).
+
+Parameterize t=t0+A alpha, u=u0+B beta. The final equation becomes
+ alpha^t M beta +l^t alpha+v^t beta+c=0 overF2.
+If c=0, the zero parameters solve it. If c=1 and a linear coefficient is1,
+set that coordinate to1 and the otherszero. Otherwise if M has a1 entry,
+set its two coordinates to1. If none applies, the polynomial is constant1
+and has no solution. This is exact deterministic polynomial linear algebra.
+Thus the specified four-word feasibility and a witness(t,u) are computable
+in polynomial BIT cost in nativeinput,e,f,precision. Also test the reversed
+orientation23/12/23/12 by symmetry. No enumerationof2^f or2^(ef) is used.
+
+## Actual coordinates and scientific boundary
+
+Each accepted word is realized by DYADIC_QUADRATIC_ORDER_NORMS.md: at most
+O(ef) recorded order-unit generators, Hilbert-fingerprint linear algebra and
+scalar unit-root correction. BONG binary-lattice reconstruction and actual
+sub-BONG replacement pay coordinates. Four moves, final square rescaling,
+original basis conversions and finite verification use polynomial guards.
+Verify X^t A X=B modulo pi^(s_B+2e+3), then use the existing lift and relative
+spinor extraction. A failed word test is UNKNOWN, not nonisometry.
+
+Cheapest classical attack already found an isometric example where both
+THREE-word orientations fail, overQ2(pi),pi^2=2: r=1+pi,s=1+2pi,
+ A=(1,r,pi^3), B=(s,5*r*s,5*pi^3).
+The four-word12(r),23(s),12(r*s),23(5*s) matches B up to unit squares.
+The independent exact source/control report is pending parentfullread; this
+example motivates a genuinely new word length, not a retry of an empty
+request for an unspecified local backend.
+
+The decisive unresolved theorem is WHETHER ONE of the two four-word tests
+always succeeds for isometric ternary goodBONGs, for everygrowing e,f. Either
+an all-input proof or an exact isometric counterexample changes the next
+scientific action. Passing finite graphs cannot prove it. If false, determine
+whether a proved constant bound or a genuinely polynomial adaptive word
+construction exists; do not infer such a bound from connectivity alone.

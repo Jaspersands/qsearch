@@ -1,0 +1,158 @@
+{
+  "captured_at_utc": "2026-11-13T14:45:51.567161+00:00",
+  "claim_gates": {
+    "advantage_claim": false,
+    "bookkeeping_only": true,
+    "finite_control_proves_general_theorem": false,
+    "generic_mean_field_no_go": false,
+    "native_PDE_lower_bound": false,
+    "new_algorithm_admitted": false,
+    "novelty_claim": false,
+    "remaining_balance_computed_from_usage": false,
+    "usage_equals_invoice_or_balance": false
+  },
+  "control_accounting_per_parent": {
+    "run_once_per_helper_report": true,
+    "session_id": null,
+    "session_note": "Helper reported terminal0; no resumable session supplied. No reaped status asserted and no control rerun.",
+    "terminal_exit_code": 0
+  },
+  "exclusions": [
+    "Live STATE/HANDOFF/MECHANICAL, future work and other actors files",
+    "Old Tal/vanDam sources, all prior evidence pins and archives"
+  ],
+  "hash_verification": {
+    "method": "One fresh byte/hash verification per unique new stable artifact. No old ledger/source hash, historical rescan, tests or post-freeze rehash.",
+    "passed": true,
+    "unique_artifacts_verified_once": 16
+  },
+  "labelled_snapshots": [
+    {
+      "bytes": 315004,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/native_operation_selection_round/state-snapshot.md",
+      "sha256": "178335d5751266468b67235e310480e079ed91bbb1d309270ef5e54ca7ac9bac",
+      "snapshot_label": "Exact labelled final finite-copy-clock/independent-operation STATE snapshot; live original not pinned",
+      "source_original_path": "/Users/jaspersands/Developer/qsearch/research/STATE.md"
+    }
+  ],
+  "new_source_and_corpus_artifacts": [
+    {
+      "bytes": 126578,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/nonlinear_mean_field_selection/lloyd.pdf",
+      "sha256": "c40baa67316bf949a7d49f9a27a349962c60ed07a5d798f8196a9a24fee209b1"
+    },
+    {
+      "bytes": 38205,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/nonlinear_mean_field_selection/lloyd.txt",
+      "sha256": "ce266d12947baf1ba7448d55aaf987053db1a18010b5ae5fa376f12d9aa63188"
+    },
+    {
+      "bytes": 148,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/nonlinear_mean_field_selection/source.json",
+      "sha256": "2df7489c1f717cd1a57ea61ab7cc316fe9f58827d8e2cf5658447ee4a87dc975"
+    },
+    {
+      "bytes": 957,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/hard_curve_selection/hard_curve_baselines.txt",
+      "sha256": "ac274fb15f2bac1f319dc3c2ccdb3d6917d5e5a9713f0141987838d9648b453b"
+    },
+    {
+      "bytes": 11288,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/hard_curve_selection/hard_curve_prior.txt",
+      "sha256": "41fc8ba099fb2af5f948d7b2c1aabb98a351806a73e2fc8ffc69151b0bab47b9"
+    },
+    {
+      "bytes": 1137,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/hard_curve_selection/isogeny_new_baselines.txt",
+      "sha256": "8f31d680f2c62a26fac0fba84ae528420f6c3b1844ac308f2732b409553ad96b"
+    },
+    {
+      "bytes": 10358,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/hard_curve_selection/isogeny_new_prior.txt",
+      "sha256": "d0181fd7e15b6886820e579cb430e86e3613ee75879bec945d9661a4381fdb3c"
+    },
+    {
+      "bytes": 287,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/hard_curve_selection/source.json",
+      "sha256": "64474d1e5abeeb2c161e67c88be83fb5f590f376f577f59d2d48427661b71d8f"
+    },
+    {
+      "bytes": 614574,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/hard_curve_selection/withdrawn_v2.pdf",
+      "sha256": "a3c1213ae78f774bf16aec5144a1c5a3b1061001a2f91253885a187f47186ebc"
+    },
+    {
+      "bytes": 108753,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/hard_curve_selection/withdrawn_v2.txt",
+      "sha256": "f07e9a21b26523516ad151a442a3edffc568c62e212e8f45d52df397b9b0e441"
+    }
+  ],
+  "owner_credit_anchor_separate": {
+    "Anthropic_remaining_usd": "20.59",
+    "OpenAI": "exhausted/disabled",
+    "note": "Owner-reported anchor, not calculated from runner estimates or used for remaining-balance inference."
+  },
+  "reused_evidence_references_not_rehashed": [
+    {
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/jacobi_classical_eccc_2026_211.txt",
+      "policy": "Reference only; old source not opened/hashed.",
+      "reference": "Tal ECCC TR26-211, as cited by arithmetic review"
+    },
+    {
+      "policy": "Retained source locator reference only; old source not opened/hashed or searched.",
+      "reference": "van_dam_seroussi_gauss_2002.txt:483\u2013523, as cited by arithmetic review"
+    }
+  ],
+  "scope": "Only new stable mean-field-copy-clock/arithmetic/secure-curve selection evidence; no new paid calls.",
+  "stable_control_artifacts": [
+    {
+      "bytes": 2741,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/mean_field_clock/check.py",
+      "sha256": "db5f1866901762c90ff89620a5f9afc666c09ddbcc0d08d81c5e1762b4c8b5cf"
+    },
+    {
+      "bytes": 1112,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/mean_field_clock/result.json",
+      "sha256": "ff544fddeabe8ed363159d0e1b2682a509eef7c704a6ec88d19c198780cce538"
+    }
+  ],
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 7574,
+      "parent_confirmed_stable_and_read": true,
+      "parent_descriptor_line_count": 141,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-14-new-arithmetic-selection.md",
+      "physical_LF_count": 141,
+      "sha256": "791b5ff0fcdee683d8f7be60eaa61612436285009ec44f7324a8742b1a6dc5dc"
+    },
+    {
+      "bytes": 10968,
+      "parent_confirmed_stable_and_read": true,
+      "parent_descriptor_line_count": 177,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-14-new-constructive-selection.md",
+      "physical_LF_count": 176,
+      "sha256": "3d0d8ce8d4b1cfbc6246ed1984b6115903333b94c7389ebab8b39629dfc6313c"
+    }
+  ],
+  "stable_topic_artifacts": [
+    {
+      "bytes": 8297,
+      "path": "/Users/jaspersands/Developer/qsearch/research/MEAN_FIELD_COPY_CLOCK_SCREEN.md",
+      "sha256": "0bd7708b6cc59aedd680ee9c4b7630a84a3418d8c739b5560450fbf4ba237105"
+    }
+  ],
+  "status": "FINAL_FROZEN",
+  "unique_hashed_artifact_count": 16,
+  "usage_inherited_by_reference": {
+    "Anthropic_usd": "190.391602",
+    "OpenAI_usd": "138.120080",
+    "checkpoint_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_phase_selection_round/checkpoint.json",
+    "known_estimate_usd": "328.511682",
+    "new_paid_calls": 0,
+    "new_paid_records": 0,
+    "priced_records": 251,
+    "reference_policy": "Frozen prior accounting inherited unchanged by reference only; no ledger created, no prior ledger hash/reverification, no redundant workflow usage paragraph.",
+    "unknown_bills_excluded": 8,
+    "usage_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_phase_selection_round/usage.json"
+  }
+}

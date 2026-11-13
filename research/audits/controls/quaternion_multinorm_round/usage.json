@@ -1,0 +1,92 @@
+{
+  "captured_at_utc": "2026-11-13T16:17:42.793517+00:00",
+  "cost_note": "Saved final nonpartial runner estimate; local ceiling not charge/invoice/balance/provider cap.",
+  "cumulative_totals": {
+    "known_terminal_nonpartial_usage_estimate_usd": "331.036546",
+    "known_terminal_nonpartial_usage_records": 254,
+    "new_unknown_bills": 0,
+    "unknown_total_bills_excluded": 8
+  },
+  "frozen_prior_usage_by_reference": {
+    "Anthropic_usd": "191.993294",
+    "OpenAI_usd": "138.120080",
+    "checkpoint_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/polar_same_code_round/checkpoint.json",
+    "known_estimate_usd": "330.113374",
+    "policy": "All prior records/exclusions/pins inherited unchanged by reference. No duplicate historical records or old evidence/hash rescan.",
+    "priced_records": 253,
+    "unknown_bills_excluded": 8,
+    "usage_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/polar_same_code_round/usage.json"
+  },
+  "local_request_ceiling_usd": "2.000000",
+  "no_duplicate_prior_records": true,
+  "owner_credit_anchor_separate": {
+    "Anthropic_remaining_usd": "20.59",
+    "OpenAI": "exhausted/disabled; no further paid calls",
+    "note": "Owner anchor separate from runner estimates/invoices/measured balances; no remaining balance computed."
+  },
+  "providers": {
+    "Anthropic": {
+      "cumulative_known_estimate_usd": "192.916466",
+      "frozen_prior_estimate_usd": "191.993294",
+      "new_estimate_usd": "0.923172",
+      "new_known_nonpartial_records": 1
+    },
+    "OpenAI": {
+      "cumulative_known_estimate_usd": "138.120080",
+      "frozen_prior_estimate_usd": "138.120080",
+      "new_estimate_usd": "0.000000",
+      "new_known_nonpartial_records": 0
+    }
+  },
+  "quaternion_multinorm_round": {
+    "by_provider_usd": {
+      "Anthropic": "0.923172",
+      "OpenAI": "0.000000"
+    },
+    "completed_nonempty_reports": 1,
+    "jobs": 1,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-quaternion-multinorm",
+        "known_nonpartial_estimate": true,
+        "no_retry": true,
+        "obligation": "quaternion-multinorm",
+        "parent_descriptor_line_count": 214,
+        "parent_fully_read": true,
+        "parent_reported_exit_code": 0,
+        "provider": "Anthropic",
+        "report_classification": "COMPLETED_NONEMPTY_ADVISORY; unsupported density frontend removed, independently checked scoped dispositions retained",
+        "response": {
+          "bytes": 15822,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-quaternion-multinorm/response.md"
+        },
+        "response_LF_count": 214,
+        "response_nonempty": true,
+        "session_id": 20599,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 21273,
+          "output_tokens": 41904
+        },
+        "usage_cost_estimate_usd": "0.923172",
+        "usage_is_partial": false
+      }
+    ],
+    "known_nonpartial_usage_records": 1,
+    "status_counts": {
+      "completed": 1
+    },
+    "terminal_jobs": 1,
+    "unknown_total_bill_records": 0,
+    "usage_estimate_usd": "0.923172"
+  },
+  "scope": "Exactly one new completed Anthropic quaternion audit; previous usage/pins inherited by reference.",
+  "status": "FINAL_FROZEN",
+  "unknown_billing_exclusions_policy": "Eight inherited UNKNOWN bills/partial counters remain excluded exactly as in referenced ledger. No missing bill interpreted zero."
+}

@@ -1,0 +1,61 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 433,
+      "path": "research/audits/api_inputs/2026-11-14-quaternion-multinorm/state_excerpt.md",
+      "sha256": "bd616868d5fcd882ac482287996a0d86a41616dc720c1141df7acc29d95672b0",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 24326,
+      "path": "research/audits/api_inputs/2026-11-14-quaternion-multinorm/sources.md",
+      "sha256": "d812b3ea94ffdb031603e329cd1c71219301d169385631f179680aef6adc61f0",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 17964,
+      "path": "research/RELATIVE_NORM_TENSOR_SUPPORT.md",
+      "sha256": "c6407b5166d160230157413a323f7ec0551bc732573b87bc5fd1ca860b99cf3d",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 5727,
+      "path": "research/audits/reviews/2026-11-14-quaternion-palette.md",
+      "sha256": "436a451dc47c5a94be77503c0badf17ecfddc69825851b33223409386d0c58d9",
+      "snapshot": "context/003.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 21273,
+  "effort": "high",
+  "finished_at": "2026-11-13T16:05:19.914524+00:00",
+  "input_token_allowance": 21699,
+  "max_budget_usd": 2.0,
+  "max_tokens": 48000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.046796,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-14-quaternion-multinorm/prompt.md",
+    "sha256": "4b80c69b7deca0118ce20684518cdd733a62ea62dca59cc695a291c46b6ebabd",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261113T155818.768330Z-58516ac7",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 21273,
+    "output_tokens": 41904
+  },
+  "usage_cost_estimate_usd": 0.923172
+}

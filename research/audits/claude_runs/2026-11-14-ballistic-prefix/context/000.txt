@@ -1,0 +1,112 @@
+# Two-color full-reversal rational scattering: classical-prefix question
+
+2026-11-14. Known quantum circuit endpoint; new baseline/source screen only.
+No new quantum algorithm, novelty, hardness or separation is admitted.
+
+## Selection and exact native model
+
+Start STATE/TRAPS; BCS occupation readout is now classically matched. The
+independent168-line selection note compares scattering, curve-zeta arithmetic
+and a uniform-trace Khovanov receiver. Curve zeta is an already used published
+primitive; the topology receiver has an elementary normalization problem and
+no new preparation operation. Neither justifies a new subsystem. Scattering
+has an actual polynomial circuit and a concrete classical-prefix question.
+Corpus been-tried then actual primary-source checks preceded this admission;
+results and PDFs are in audits/sources/ballistic_scattering_selection/.
+The corpus baseline's LLL suggestion is an irrelevant text match, not an
+applicable classical algorithm. Exact sector propagation, stochastic swaps,
+fermionic/DPP sampling, tensor contraction and Bethe determinant formulas
+are the real competitors.
+
+Native input: N distinct rational rapidities v_0>...>v_(N-1), c>0 rational,
+initial bitstring b with arbitrary extensive weight M, and accuracy epsilon.
+There are TWO colors and N qubits, not N distinct distinguishable labels.
+Output: the entire N-bit Born sample after COMPLETE all-pairs reversal.
+All rational bit lengths are charged. No roots, eigenvectors, wave packets,
+spectral gap, intermediate measurements, postselection or arbitrary gates.
+Finite physical wave-packet scattering is NOT included without a paid
+reduction. The explicit algebraic S-matrix circuit is the target here.
+
+Fix the braid/position-wire convention, resolving the selection note's open
+R versus checked-R ambiguity:
+ R(d)=(c I+i d SWAP)/(c+i d), d=v_left-v_right>0.
+This differs only by a global phase from exp(i atan(d/c) SWAP).
+The source AppendixA coefficient (-ic I+d SWAP)/(ic+d) has the same
+projective action. Track momentum labels through crossings deterministically.
+Bubble the largest remaining rapidity to the right, then repeat on the
+remaining prefix. Every unordered pair crosses once; output rapidities are
+in increasing order. Yang-Baxter gives equivalent reduced reversal words.
+
+R is exactly unitary with rational Q(i) entries and two unit-modulus
+eigenvalues 1 and (c-id)/(c+id). Preparing b, compiling N(N-1)/2 bounded
+2-qubit gates to error O(epsilon/N²), and measuring uses
+poly(N,input bits,log(1/epsilon)) gates. Tiny/large d/c costs its input bits,
+not inverse separation. This circuit is KNOWN prior machinery. Potential
+advantage of its full extensive-spin output remains unestablished.
+
+## Actual primary-source boundary
+
+Aaronson--Bouland--Kuperberg--Mehraban arxiv1610.06646, physicalLF235--298,
+Section3.3 LF612--705, AppendixA LF998--1083 and AppendixP LF2945--2956:
+rapidity-constrained exchange circuits are prior art. Their Cor3.11 concerns
+MeasRQBall, with N distinct labels, special/arbitrary input superpositions,
+intermediate demolition measurements and MULTIPLICATIVE error. It cannot be
+transferred to our two-color product input, no-intermediate-measurement,
+full-reversal TV sampling. AppendixP explicitly asks about removing the
+measurements. This is a statement about that source, not proof that the
+present exact target has remained open in all later literature.
+Their DQC1 single-amplitude theorem is not a complete Born sampler.
+
+Alagic--Bapat--Jordan arxiv1407.1361 actual equation1 LF25--31 and
+Theorems1/3/5 LF283--296,631--689: CONSTANT Yang-Baxter gates, a joint-product-
+basis monomial family, or a Clifford family. A fixed generic R(d) above does
+not satisfy the constant YBE. Moreover SWAP commutes with every Q tensor Q,
+so such joint basis conjugation leaves R(d) unchanged; it cannot make its
+nontrivial two-entry columns monomial. The fixed constant-YBE theorem does
+not directly apply. This excludes those hypotheses, not every classical
+method. Search found no verified current all-input classical sampler; no
+absence/novelty conclusion is drawn from that search.
+
+## Cheapest exact classical attacks
+
+One exact Sage Q(i) control, audits/controls/ballistic_scattering_baselines/.
+For N3,c1,v=(2,1,0), input bitmask2, word(0,1),(1,2),(0,1):
+Born probabilities on masks1,2,4 are (2/5,1/5,2/5). Independent per-crossing
+swap coins, probability d²/(c²+d²), give (3/10,3/10,2/5). TV=1/10.
+This rejects ONLY measuring/dephasing at every crossing. The entire M1
+sector is classically polynomial, so this example is not hardness evidence.
+Exact unitarity, parameter-dependent YBE and failure of the constant YBE
+were checked in the same finite control.
+
+For N4,c1,v=(3,2,1,0), input occupied sites{0,2}, the six output probabilities
+in lexicographic pairs01,02,03,12,13,23 are
+ (4/125,169/500,9/100,9/100,81/500,36/125).
+The determinant sampler built from the actual single-excitation transfer
+matrix differs by TV48/125. More strongly NO complex two-particle Slater
+state has this Born law: Plucker gives a triangle inequality among
+ sqrt(p01*p23)=12/125, sqrt(p02*p13)=117/500,
+ sqrt(p03*p12)=9/100.
+The middle exceeds the other two by6/125. This is an exact algebraic
+obstruction for ANY pure Slater orbital matrix, not only the obvious one.
+It does not rule out mixtures, conditioned non-projection DPPs, tensor
+networks, integrable probability, or general classical sampling.
+
+For fixed min(M,N-M), exact sector propagation is polynomial in N. For
+extensive M it costs binomial(N,M) storage in its literal implementation;
+that is not a lower bound. Sparse tensor/determinant/Bethe shortcuts must
+pay full conditioned-prefix probabilities and numerical conditioning.
+Passing these two scoped falsifiers does NOT create an advantage claim.
+
+## Single next hard question
+
+Can Yang-Baxter/unitarity eliminate the doubled scattering network into a
+POSITIVE polynomial-size classical state that is closed under observing
+one more output spin? An explicit recurrence for arbitrary native b and
+every positive-probability prefix would give an end-to-end classical sampler.
+Approximation may use an epsilon-budgeted bounded sampler, but cannot assume
+relative estimates of exponentially rare prefixes or uncharged roots.
+This is the only admitted constructive test, before more quantum work.
+An unbounded tensor frontier, a signed estimator without a variance bound,
+or a determinant valid only for special boundary conditions fails the gate.
+If no such operation survives a bounded independent attempt, park this
+known quantum endpoint and compare independent directions again.

@@ -1,0 +1,213 @@
+Actual primary: https://arxiv.org/pdf/0903.3726 .
+d(b) = 2e − d(a) s.t. (a, b)p = −1. (For d(a) odd this is just [H, Lemma 3]. If d(a) = 2e
+and b ∈ Ḟ is arbitrary with d(b) = 0 then a ∈ ∆Ḟ 2 and ord b is odd so (a, b)p = −1.
+Similarly if d(a) = 0 and d(b) = 2e we have (a, b)p = −1.) Thus (1 + pα )Ḟ 2 ⊆ N(a) iff
+α + d(a) > 2e.
+     An element x of a lattice L is called a norm generator of L if nL = Q(x)O. A
+sequence x1 , . . . , xn of vectors in F L is called a basis of norm generators (BONG) for L
+if x1 is a norm generator for L and x2 , . . . , xn is a BONG for prx⊥1 L. A BONG uniquely
+determines a lattice so, if x1 , . . . , xn is a BONG for L, we will write L =≺ x1 , . . . , xn ≻.
+If moreover Q(xi ) = ai we say that L ∼           =≺ a1 , . . . , an ≻ relative to the BONG x1 , . . . , xn .
+       ∼
+If L =≺ a1 , . . . , an ≻ then det L = a1 · · · an .
+     If x1 , ..., xn are mutually orthogonal vectors with Q(xi ) = ai , L = Ox1 ⊥ · · · ⊥ Oxn
+and V = F x1 ⊥ · · · ⊥ F xn then we sat that L ∼                          = ha1 , . . . , an i and V ∼  = [a1 , . . . , an ]
+relative to the basis x1 , . . . , xn .
+     If L is binary with nL = αO, we denote by a(L) := det L α−2 and by R(L) :=
+                                                               2
+ord volL − 2ord nL = ord a(L). a(L) ∈ Ḟ /O× is an invariant of L and it determines the
+class of L up to scaling. If L ∼     =≺ α, β ≻ then a(L) = αβ .
+                                                2
+     We denote by A = AF ⊂ Ḟ /O× the set of all possible values of a(L), where L is an
+arbitrary binary lattice. We have A = {a ∈ 14 O | a 6= 0, d(−a) ⊆ O}. If ord a = R and
+d(−a) = d, then a ∈ 14 O means R ≥ −2e, while d(−a) ⊆ O means R+d = ord d(−a) ≥ 0.
+     If a(L) = a = π R ε with d(a) = d then:
+     L is nonmodular, proper modular or improper modular iff R > 0, R = 0, resp. R < 0.
+     If R is odd then R > 0.
+                                                                                        2                   2
+     The inequality R + 2e ≥ 0 becomes equality iff a ∈ − 41 O× or a ∈ − ∆4 O× . We have
+a(L) = − 14 resp. a(L) = − ∆4 when L ∼            = π r A(0, 0) resp. π r A(2, 2ρ) for some integer r.
+                                                                                        2
+     The inequality R + d ≥ 0 becomes equality iff a ∈ − ∆4 O× .
+     A special type of BONGs is the so called “good BONGs”. If L ∼                                   =≺ a1 , . . . , an ≻
+relative to some BONG x1 , . . . , xn and ord ai = Ri we say that the BONG x1 , . . . , xn is
+good if Ri ≤ Ri+2 for any 1 ≤ i ≤ n − 2.
+     Remark The condition Ri ≤ Ri+2 for 1 ≤ i ≤ n − 2 is equivalent to the condition
+that the sequence (Ri + Ri+1 ) is increasing.
+     A set x1 , . . . , xn of orthogonal vectors with Q(xi ) = ai and ord ai = Ri is a good
+BONG for some lattice iff Ri ≤ Ri+2 for all 1 ≤ i ≤ n − 2 and ai+1 /ai ∈ A for
+all 1 ≤ i ≤ n − 1. The condition ai+1 /ai ∈ A is equivalent to Ri+1 − Ri + 2e ≥ 0
+and Ri+1 − Ri + d(−ai ai+1 ) ≥ 0. As consequences of ai+1 /ai ∈ A, if Ri+1 − Ri is
+                                                                                                  2               2
+odd then it is positive, if Ri+1 − Ri = −2e then ai+1 /ai ∈ − 41 O× or − ∆4 O× and if
+                                                                        2
+Ri+1 − Ri + d(−ai ai+1 ) = 0 then ai+1 /ai ∈ − ∆4 O× .
+     The good BONGs enjoy some properties similar to those of orthogonal bases. If
+L =≺ a1 , . . . , an ≻ relative to some good BONG x1 , . . . , xn and ord ai = Ri then L♯ ∼
+    ∼                                                                                                                  =≺
+                                                                 ♯            ♯              ♯
+a−1
+  1  , . . . , a−1
+                n  ≻  relative to the    good     BONG         x n , . . . , x1 , where    x i  =   Q(x) −1
+                                                                                                            x i .   Also if
+                                                                     ∼
+for some 1 ≤ i ≤ j ≤ n we have ≺ xi , . . . , xj ≻=≺ bi , . . . , bj ≻ relative to some other
+good BONG yi , . . . , yj then L ∼       =≺ a1 , . . . , ai−1 , bi , . . . , bj , ai+1 , . . . , an ≻ relative to the
+good BONG x1 , . . . , xi−1 , yi , . . . , yj , xi+1 , . . . , xn . There are some differences though from
+
+
+                                                             2
+
+the orthogonal bases. E.g. the relation L =≺ x1 , . . . , xi ≻⊥≺ xi+1 , . . . , xn ≻ holds iff
+We keep the notations of [OM] sk := sLk , gk := gLsk , wk := wLsk but, in order to avoid
+confusion, we write ak for O’Meara’s ak . Also we denote rk = ord sk , uk = ord ak =
+ord nLsk , Associated to our splitting we have the Jordan chain L(1) ⊂ . . . ⊂ L(t) and the
+inverse Jordan chain L∗(1) ⊃ . . . ⊃ L∗(t) , where L(k) := L1 ⊥ . . . ⊥ Lk and L∗(k) := Lk ⊥
+. . . ⊥ Lt .
+      Since Ri ’s are invariants of L we will write Ri = Ri (L).
+
+Definition 1 For any 1 ≤ i ≤ n − 1 we define αi = αi (L) by:
+
+    αi := min({(Ri+1 − Ri )/2 + e} ∪ {Ri+1 − Rj + d(−aj aj+1 ) | 1 ≤ j ≤ i}
+                                              ∪ {Rj+1 − Ri + d(−aj aj+1 ) | i ≤ j < n}).
+
+   Apparently αi (L) defined this way depends on the choice of the good BONG. We will
+show later that, in fact, it depends only on L. For the time being we will mean αi (L)
+with respect to a given good BONG. We give now some properties of αi ’s.
+
+Lemma 2.1 If k ≤ i < l then, in the set defining αi , we can replace (Ri+1 − Ri )/2 + e
+and all the terms corresponding to indices k ≤ j < l, by αi−k+1 (≺ ak , . . . , al ≻). In
+particular, αi ≤ αi−k+1 (≺ ak , . . . , al ≻).
+
+P roof.By definition αi−k+1 (≺ ak , . . . , al ≻) = min({(Ri+1 − Ri )/2 + e} ∪ {Ri+1 − Rj +
+d(−aj aj+1 ) | k ≤ j ≤ i} ∪ {Rj+1 − Ri + d(−aj aj+1 ) | i ≤ j < l}). Hence the conclusion.
+ 
+
+
+                                                  3
+
+Lemma 2.2 The sequence (Ri + αi ) is increasing and the sequence (−Ri+1 + αi ) is
+decreasing.
+
+    P roof.Let 1 ≤ i ≤ h ≤ n − 1. We have Ri + Ri+1 ≤ Rh + Rh+1 . From Definition 1
+we get Ri + αi = min({(Ri + Ri+1 )/2 + e} ∪ {Ri + Ri+1 − Rj + d(−aj aj+1 ) | 1 ≤ j ≤
+i} ∪ {Rj+1 + d(−aj aj+1 ) | i ≤ j < n}) and −Ri+1 + αi = min({−(Ri + Ri+1 )/2 + e} ∪
+{−Rj +d(−aj aj+1 ) | 1 ≤ j ≤ i}∪{Rj+1 −Ri −Ri+1 +d(−aj aj+1 ) | i ≤ j < n}). Similarly
+for Rh + αh and −Rh+1 + αh . In order to prove that Ri + αi ≤ Rh + αh we show that
+the elements in the set that has Ri + αi as its minimum are ≤ than the corresponding
+elements for Rh + αh . Same for −Ri+1 + αi ≥ −Rh+1 + αh .
+    The proof is straightforward and uses the fact that Rl +Rl+1 is an increasing sequence.
+For terms involving d(−aj aj+1 ) we consider the cases j ≤ i, i ≤ j ≤ h and h ≤ j and use
+the inequalities among Ri + Ri+1 , Rj + Rj+1 and Rh + Rh+1 that occur in each case. 
+
+
+Corollary 2.3 Suppose that 1 ≤ i ≤ j ≤ n − 1 and Ri + Ri+1 = Rj + Rj+1 . Then:
+    (i) Ri + αi = . . . = Rj + αj and −Ri+1 + αi = . . . = −Rj+1 + αj .
+    (ii) Rk = Rl for any k, l ∈ [i, j + 1] of the same parity and αk = αl for any k, l ∈ [i, j]
+of the same parity.
+    (iii) If αk = (Rk+1 − Rk )/2 + e for some i ≤ k ≤ j then αk = (Rk+1 − Rk )/2 + e for
+all i ≤ k ≤ j.
+    In the particular case when j = i + 1 we get the following statement:
+    If 1 ≤ i ≤ n−2 and Ri = Ri+2 then Ri +αi = Ri+1 +αi+1 , −Ri+1 +αi = −Ri+2 +αi+1
+and αi = (Ri+1 − Ri )/2 + e is equivalent to αi+1 = (Ri+2 − Ri+1 )/2 + e.
+
+P roof.For (i) we note that Ri + Ri+1 = (Ri + αi ) − (−Ri+1 + αi ) and Rj + Rj+1 =
+(Rj + αj ) − (−Rj+1 + αj ) and use Lemma 2.2. By using the fact that Rk + Rk+1 is an
+increasing sequence we get Ri +Ri+1 = Ri+1 +Ri+2 = . . . = Rj +Rj+1 , which is equivalent
+to (ii). Finally (iii) follows from Ri + αi = . . . = Rj + αj , Ri + Ri+1 = . . . = Rj + Rj+1
+and the fact that αk = (Rk+1 − Rk )/2 + e is equivalent to Rk + αk = (Rk + Rk+1 )/2 + e. 
+
+
+Lemma 2.4 Suppose that 1 ≤ i < n and 1 ≤ k ≤ h < l ≤ n. Then:
+
+Theorem 93:28 Let L, K be lattices with the same fundamental type such that F L ∼    =
+F K. Let L(1) ⊂ · · · ⊂ L(t) and K(1) ⊂ · · · ⊂ K(t) be Jordan chains for L and K. Then
+L∼= K if and only if the following conditions hold for 1 ≤ i ≤ t − 1
+   (i) det L(k) / det K(k) ∼
+                           = 1 (mod fk ).
+   (ii) F L(k) →−F K(k) ⊥ [ak+1] when fk ⊂ 4ak+1 w−1 k+1 .
+                                                −1
+   (iii) F L(k) →−F K(k) ⊥ [ak ] when fk ⊂ 4ak wk .
+
+    We state now our main result.
+
+Theorem 3.1 Let L, K be two lattices with F L ∼                 = F K and let L ∼ =≺ a1 , . . . , an ≻ and
+                                                                                        =≺ b1 , . . . , bn ≻
+relative to good BONGs, Ri = Ri (L) = ord ai , Si = Ri (K) = ord bi and F L ∼                      = F K.
+Then L ∼     = K if and only if the following conditions hold:
+     (i) Ri = Si for any 1 ≤ i ≤ n.
+     (ii) For any 1 ≤ i ≤ n − 1 we have a1 · · · ai b1 · · · bi ∈ Ḟ 2 ∪ ∆Ḟ 2 if Ri+1 − Ri = 2, and
+a1 · · · ai b1 · · · bi ∈ Ḟ 2 if Ri+1 − Ri > 2.
+     (iii) [b1 , . . . , bi−1 ]→−[a1 , . . . , ai ] for any 1 < i < n s.t. Ri−1 < Ri+1 and (Ri −
+Ri−1 , Ri+1 − Ri ) 6= (0, 1), (1, 0), (1, 1).
+
+
+5         Remarks
+1. The binary case
+   If L ∼=≺ α, β ≻ and η ∈ O× then [B, 3.12] states that L ∼      =≺ ηα, ηβ ≻ iff η ∈
+             β
+g(a(L)) = g( α ).
+                                           2
+   The function g : A −→ Sgp(O× /O× ) was introduced in [B, Definition 6]. Here
+Sgp H is the set of all subgroups of a group H. We recall the definition of g.1
+Definition If a = π R ε ∈ A and d(−a) = d then:
+                                2
+   I If R > 2e then g(a) = O× .
+   II If R ≤ 2e then:
+                          (
+                                            2
+                            (1 + pR/2+e )O×          if d > e − R/2
+                  g(a) =          R+d    ×2
+                            (1 + p )O ∩ N(−a) if d ≤ e − R/2.
+
+        The following lemma gives a more compact formula for g(a).
+                                                                                               2
+Lemma 5.1 If a ∈ A and ord a = R and d(−a) = d then g(a) = (1+pα(a) )O× ∩N(−a),
+where α(a) = min{R/2 + e, R + d}.
+
+P roof.By [B, 3.16] we have g(a) ⊆ N(−a). If η ∈ O× then η ∈ g(a) iff η ∈ N(−a) and
+                             2
+(I) If R > 2e then η ∈ O× ; (II) If R ≤ 2e then d(η) ≥ R + d, if d ≤ e − R/2, and
+d(η) ≥ R/2 + e, if d > e − R/2. (See [B, Definition 6].)
+    We have to prove that the conditions from (I) and (II) are equivalent to d(η) ≥ α(a).
+If R > 2e then R + d > 2e and R/2 + e > 2e/2 + e = 2e so α(a) > 2e. Thus d(η) ≥ α(a)
+                       2
+is equivalent to η ∈ O× . If R ≤ 2e then d ≤ e − R/2 is equivalent to R + d ≤ R/2 + e.
+Hence if d ≤ e − R/2 then α(a) = R + d and if d > e − R/2 then α(a) = R/2 + e.  
+
+    If n = 2 then from [B, 3.12] we have ≺ a1 , a2 ≻∼=≺ ηa1 , ηa2 ≻ iff η ∈ g(a2/a1 ). By
+Lemma 5.1 this is equivalent to η ∈ N(−a1 a2 ) and d(η) ≥ α(a2 /a1 ). The first condition
+is equivalent to the isometry of quadratic spaces [a1 , a2 ] ∼
+                                                             = [ηa1 , ηa2 ], while the second
+means d(η) ≥ α(a2 /a1 ) = min{(R2 − R1 )/2 + e, R2 − R1 + d(−a1 a2 )} = α1 (≺ a1 , a2 ≻),
+which is consistent with condition (iii) of the main theorem.
+formula αi = min{(Ri+1 −Ri )/2+e, Ri+1 −Ri +d(−ai ai+1 ), Ri+1 −Ri +αi−1 (≺ a1 , . . . , ai ≻
+), Ri+1 − Ri + α1 (≺ ai+1 , . . . , an ≻)} from Corollary 2.5(ii).
+     In the case i = 1 and n ≥ 3 the formula becomes α1 = min{(R2 − R1 )/2 + e, R2 −
+R1 + d(−a1 a2 ), R2 − R1 + α1 (≺ a2 , . . . , an ≻)}. In the case i = n − 1 and n ≥ 3 we
+have αn−1 = min{(Rn − Rn−1 )/2 + e, Rn − Rn−1 + d(−an−1 an ), Rn − Rn−1 + αn−2 (≺
+a1 , . . . , an−1 ≻)}. Finally if i = 1 and n = 2 then α1 = min{(R2 − R1 )/2 + e, R2 −
+R1 + d(−a1 a2 )}. Starting with the case n = 2 it is easy to prove by induction that
+α1 = min({(R2 − R1 )/2 + e} ∪ {Rj+1 − R1 + d(−aj aj+1 ) | 1 ≤ j < n}) and αn−1 =
+min({(Rn − Rn−1 )/2 + e} ∪ {Rn − Rj + d(−aj aj+1 ) | 1 ≤ j < n}). By plugging αi−1 (≺
+a1 , . . . , ai ≻) = min({(Ri − Ri−1 )/2 + e} ∪ {Ri − Rj + d(−aj aj+1) | 1 ≤ j < i}) and
+α1 (≺ ai+1 , . . . , an ≻) = min({(Ri+2 − Ri+1 )/2 + e} ∪ {Rj+1 − Ri+1 + d(−aj aj+1 ) | i + 1 ≤
+j < n}) in the recursive formula for αi we get the formula from Definition 1. (The extra
+terms Ri+1 − Ri + (Ri − Ri−1 )/2 + e and Ri+1 − Ri + (Ri+2 − Ri+1 )/2 + e that appear
+are ≥ (Ri+1 − Ri )/2 + e so they can be removed. )
+     Of course this is only a guess and does not constitute a proof. In fact the relation
+d(a1 · · · ai b1 · · · bi ) ≥ αi is only proved this way in the particular case when b1 , . . . , bn are
+obtained from a1 , . . . , an through of succession of “binary transformations” of the type
+a1 , . . . , an −→ a1 , . . . , ηaj , ηaj+1, . . . , an with 1 ≤ j ≤ n − 1 and η ∈ g(aj+1/aj ). It is not
+hard to prove that conditions (i)-(iv) of the main theorem are necessary if b1 , . . . , bn are
+obtained this way. However, for the proof of the necessity in the general case and for the
+proof of sufficiency the use of O’Meara’s theorem is necessary.
+3. In the view of the previous remark there is the natural question that asks whether,
+given that L ∼        =≺ a1 , . . . , an ≻∼
+                                          =≺ b1 , . . . , bn ≻ relative to good BONGs, there is always a
+
+                                                       19
+
+succession of binary transformations as defined above from a1 , . . . , an to b1 , . . . , bn . The
+answer to this question is YES but only if we make the assumption that F/Q2 is not
+totally ramified, i.e. that the residual field O/p has more than 2 elements.

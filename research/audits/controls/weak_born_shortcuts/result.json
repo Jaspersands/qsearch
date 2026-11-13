@@ -1,0 +1,325 @@
+{
+  "status": "PASS",
+  "scope": "Three prescribed exact shortcut controls only; no all-input sampler conclusion.",
+  "projected_partition": {
+    "status": "PASS",
+    "basis_order": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "lambda": "1/10",
+    "hamiltonian": [
+      [
+        "-2",
+        "0",
+        "0",
+        "1/10"
+      ],
+      [
+        "0",
+        "0",
+        "1/10",
+        "0"
+      ],
+      [
+        "0",
+        "1/10",
+        "0",
+        "0"
+      ],
+      [
+        "1/10",
+        "0",
+        "0",
+        "2"
+      ]
+    ],
+    "characteristic_polynomial": "t^4 - 201/50*t^2 + 401/10000",
+    "ground_energy": "-sqrt(401)/10",
+    "ground_vector_before_normalization": [
+      "1/10*sqrt401 + 2",
+      "0",
+      "0",
+      "-1/10"
+    ],
+    "ground_squared_norm": "2/5*sqrt401 + 401/50",
+    "first_bit_one_probability_exact": "-10/401*sqrt401 + 1/2",
+    "first_bit_one_probability_formula": "(1 - 20/sqrt(401))/2",
+    "first_bit_one_probability_strictly_positive": true,
+    "compressed_first_bit_one_hamiltonian": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "compressed_lowest_energy": "0",
+    "projected_partition_ratio": "(1+exp(-2*beta))/(2*cosh(sqrt(401)*beta/10)+2*cosh(beta/10))",
+    "ratio_upper_bound_for_beta_nonnegative": "2*exp(-sqrt(401)*beta/10)",
+    "ratio_limit_beta_to_infinity": "0",
+    "limit_justification": "The numerator is at most 2 and the denominator includes exp(sqrt(401)*beta/10).",
+    "scope": "Replacing the true projected Gibbs mass by the compressed-Hamiltonian partition ratio fails."
+  },
+  "negative_norm_polymer": {
+    "status": "PASS",
+    "a": "1/32",
+    "lambda": "1/8",
+    "unnormalized_psi": [
+      "1",
+      "-1/32",
+      "-1/32",
+      "0"
+    ],
+    "squared_norm_s": "513/512",
+    "normalized_state_convention": "psi/sqrt(s); the creation ansatz itself has vacuum amplitude 1.",
+    "normalized_density_matrix": [
+      [
+        "512/513",
+        "-16/513",
+        "-16/513",
+        "0"
+      ],
+      [
+        "-16/513",
+        "1/1026",
+        "1/1026",
+        "0"
+      ],
+      [
+        "-16/513",
+        "1/1026",
+        "1/1026",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "ground_energy": "-1024/513",
+    "w": [
+      "-2/513",
+      "-32/513",
+      "-32/513",
+      "0"
+    ],
+    "perturbation_V": [
+      [
+        "2048/263169",
+        "16352/263169",
+        "16352/263169",
+        "0"
+      ],
+      [
+        "16352/263169",
+        "-1024/263169",
+        "-1024/263169",
+        "0"
+      ],
+      [
+        "16352/263169",
+        "-1024/263169",
+        "-1024/263169",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "native_rational_h_equals_V_over_lambda": [
+      [
+        "16384/263169",
+        "130816/263169",
+        "130816/263169",
+        "0"
+      ],
+      [
+        "130816/263169",
+        "-8192/263169",
+        "-8192/263169",
+        "0"
+      ],
+      [
+        "130816/263169",
+        "-8192/263169",
+        "-8192/263169",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "V_operator_norm_squared": "2048/263169",
+    "h_operator_norm_squared": "131072/263169",
+    "h_operator_norm_strictly_below_one": true,
+    "H_times_psi_equals_E_times_psi": true,
+    "Weyl_unique_ground_certificate": "E < -||V|| <= second_eigenvalue(H)",
+    "Weyl_gap_lower_bound_exact": "(1024-32*sqrt(2))/513",
+    "exact_spectrum": [
+      "-1024/513",
+      "-2/513",
+      "0",
+      "2"
+    ],
+    "exact_spectral_gap": "1022/513",
+    "creation_coefficients": {
+      "C1": "1/32",
+      "C2": "1/32",
+      "C12": "1/1024"
+    },
+    "exp_minus_C_vacuum_exactly_equals_psi": true,
+    "paired_covers_on_12": [
+      {
+        "ket_partition": "one_block",
+        "bra_partition": "one_block",
+        "connected": true,
+        "weight": "1/1048576"
+      },
+      {
+        "ket_partition": "one_block",
+        "bra_partition": "two_singletons",
+        "connected": true,
+        "weight": "-1/1048576"
+      },
+      {
+        "ket_partition": "two_singletons",
+        "bra_partition": "one_block",
+        "connected": true,
+        "weight": "-1/1048576"
+      },
+      {
+        "ket_partition": "two_singletons",
+        "bra_partition": "two_singletons",
+        "connected": false,
+        "weight": "1/1048576"
+      }
+    ],
+    "connected_paired_cover_weight": "-1/1048576",
+    "complete_12_weight": "0",
+    "norm_reconstructed_from_connected_weights": "513/512",
+    "scope": "The direct connected paired-cover norm expansion need not have nonnegative polymer weights, even for this bounded rational perturbation."
+  },
+  "amplitude_damping_reset": {
+    "status": "PASS",
+    "parameter_domain": "0 < eta <= 1, theta > 0",
+    "choi_convention": "Unnormalized Choi matrix, input-major/output-minor order 00,01,10,11; partial trace over output is I.",
+    "amplitude_damping_choi": [
+      [
+        "1",
+        "0",
+        "0",
+        "sqrt(eta)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-eta + 1",
+        "0"
+      ],
+      [
+        "sqrt(eta)",
+        "0",
+        "0",
+        "eta"
+      ]
+    ],
+    "reset_to_zero_choi": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "residual_choi": [
+      [
+        "-theta + 1",
+        "0",
+        "0",
+        "sqrt(eta)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-eta - theta + 1",
+        "0"
+      ],
+      [
+        "sqrt(eta)",
+        "0",
+        "0",
+        "eta"
+      ]
+    ],
+    "principal_indices": [
+      0,
+      3
+    ],
+    "principal_minor": [
+      [
+        "-theta + 1",
+        "sqrt(eta)"
+      ],
+      [
+        "sqrt(eta)",
+        "eta"
+      ]
+    ],
+    "principal_minor_determinant": "-eta*theta",
+    "strictly_negative_on_parameter_domain": true,
+    "scope": "No positive reset-to-|0> fraction can be subtracted while retaining complete positivity; not a no-go for other decompositions or samplers."
+  },
+  "python_executable": "/opt/anaconda3/envs/qsearch-cas/bin/python",
+  "sage_version": "10.9",
+  "script_sha256": "c50ff09af12ef469da3031f5d9417be1efd8539dab033ff83a72387c4f24d92f",
+  "creation_ansatz_source": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/weak_ground.txt",
+  "creation_ansatz_source_lines": [
+    260,
+    324
+  ],
+  "creation_ansatz_source_sha256": "0a06cb8e0bb61a410ebd8f2705c8daddd6d24a6c5a93ae9a4be77a6d3d488808",
+  "elapsed_seconds": 1.222571
+}

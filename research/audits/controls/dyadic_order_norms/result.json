@@ -1,0 +1,234 @@
+{
+  "status": "passed",
+  "precision": 6,
+  "cases": [
+    {
+      "case": "unramified",
+      "T": 1,
+      "N": 1,
+      "norm_squareclasses": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "witnesses": [
+        {
+          "eta": 1,
+          "coefficients": [
+            1,
+            0
+          ]
+        },
+        {
+          "eta": 3,
+          "coefficients": [
+            31,
+            2
+          ]
+        },
+        {
+          "eta": 5,
+          "coefficients": [
+            57,
+            36
+          ]
+        },
+        {
+          "eta": 7,
+          "coefficients": [
+            1,
+            2
+          ]
+        }
+      ],
+      "tail_square_count": 64
+    },
+    {
+      "case": "split",
+      "T": 1,
+      "N": 0,
+      "norm_squareclasses": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "witnesses": [
+        {
+          "eta": 1,
+          "coefficients": [
+            1,
+            0
+          ]
+        },
+        {
+          "eta": 3,
+          "coefficients": [
+            1,
+            2
+          ]
+        },
+        {
+          "eta": 5,
+          "coefficients": [
+            1,
+            4
+          ]
+        },
+        {
+          "eta": 7,
+          "coefficients": [
+            3,
+            42
+          ]
+        }
+      ],
+      "tail_square_count": 64
+    },
+    {
+      "case": "ramified",
+      "T": 0,
+      "N": -2,
+      "norm_squareclasses": [
+        1,
+        7
+      ],
+      "witnesses": [
+        {
+          "eta": 1,
+          "coefficients": [
+            29,
+            14
+          ]
+        },
+        {
+          "eta": 7,
+          "coefficients": [
+            51,
+            25
+          ]
+        }
+      ],
+      "tail_square_count": 64
+    },
+    {
+      "case": "nonmaximal_ramified",
+      "T": 0,
+      "N": -8,
+      "norm_squareclasses": [
+        1
+      ],
+      "witnesses": [
+        {
+          "eta": 1,
+          "coefficients": [
+            61,
+            27
+          ]
+        }
+      ],
+      "tail_square_count": 64
+    },
+    {
+      "case": "nonmaximal_unramified",
+      "T": 0,
+      "N": -5,
+      "norm_squareclasses": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "witnesses": [
+        {
+          "eta": 1,
+          "coefficients": [
+            23,
+            28
+          ]
+        },
+        {
+          "eta": 3,
+          "coefficients": [
+            4,
+            13
+          ]
+        },
+        {
+          "eta": 5,
+          "coefficients": [
+            59,
+            18
+          ]
+        },
+        {
+          "eta": 7,
+          "coefficients": [
+            6,
+            21
+          ]
+        }
+      ],
+      "tail_square_count": 64
+    },
+    {
+      "case": "nonmaximal_split",
+      "T": 0,
+      "N": -4,
+      "norm_squareclasses": [
+        1,
+        5
+      ],
+      "witnesses": [
+        {
+          "eta": 1,
+          "coefficients": [
+            55,
+            10
+          ]
+        },
+        {
+          "eta": 5,
+          "coefficients": [
+            51,
+            45
+          ]
+        }
+      ],
+      "tail_square_count": 64
+    }
+  ],
+  "binary_move": {
+    "A": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "U": [
+      [
+        1,
+        -4
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "det": 5
+  },
+  "root_boundary_control": {
+    "e": 1,
+    "f": 2,
+    "c": -3,
+    "initial_y": 1,
+    "error_valuation": 2,
+    "root": "1+2w, w^2+w+1=0"
+  },
+  "scope": "exact finite norm-image and in-order root falsifiers; no asymptotic or general ternary proof"
+}

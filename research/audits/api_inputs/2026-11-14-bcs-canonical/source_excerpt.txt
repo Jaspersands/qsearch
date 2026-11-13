@@ -1,0 +1,440 @@
+Primary excerpts; source paper versions and LF locators are explicit.
+
+SOURCE xy_loops.txt LF265-375
+show fast-mixing of a QMC algorithm specialized for the
+                                                                                                                    n
+stoquastic isotropic Heisenberg model [TSC24] where the                        X                                    X
+authors were only able to prove fast mixing for graphs              H=               (−aij Xi Xj + bij Yi Yj ) +          di Zi   (3)
+with one side of the bipartition as O(log n). While the                    1≤i<j≤n                                  i=1
+
+successful application of the canonical path method by
+                                                               where |bij | ≤ aij ≤ 1/2 and |di | ≤ 1. Without loss of
+Jerrum and Sinclair to a practical QMC method, and a
+                                                               generality, we will assume that the inverse temperature
+super constant bipartition size was novel and nontrivial,
+                                                               β ≥ 1 since we can rescale the Hamiltonian otherwise.
+unfortunately the restriction to O(log n) sized sublattices
+makes the result not directly relevant to condensed matter
+physics models. On the contrary, the results in this work                   A.     Path integral formulation
+applies to all interaction graphs, including very commonly
+considered square lattices, triangular lattices, etc.
+                                                                 In the path-integral formulation, we begin by approx-
+                                                               imating the partition function using the Suzuki-Trotter
+   Turning our attention to other QMC fast-mixing proofs,      approximation. The following theorem, proved in [BG17,
+there has been a few results [CH21, CS25] on the fast          CST+ 21], gives a bound on the error due to the approx-
+mixing of QMC for stoquastic Hamiltonians restricted to        imation in terms of the number of Trotter steps in the
+1-dimension or high temperature. If we set the coefficients    Suzuki-Totter approximation.
+of our Hamiltonian to b = 0 (see eq. (3)), it is clear
+that our setup can handle transverse field Ising models        Theorem 1 ([BG17, CST+ 21]). Given a Hamiltonian H
+(TFIM) too (but with a basis rotation of X ↔ Z) as long        of the form in eq. (3) and a positive real number ϵ, we can
+as the TFIM Hamiltonian does not contain longitudinal          choose an integer L = O(n2 β 2 ϵ−1 ) and approximate the
+fields. While both works include longitudinal fields for       partition function Z(β, H) with the Trotterized partition
+the TFIM and therefore prohibits truly direct comparison,      function Z̃(β, H), defined as
+[CH21] is restricted to 1d geometry and relatively high
+inverse temperature β ∼ O(log n) and [CS25] where                                  Z̃(β, H) := Tr[(CC † )L ]                      (4)
+β ∼ O(1) is required. The fact that they only consider
+local update QMC heavily restricts what is even provable.      where
+Namely, path-integral QMC with only simple single-flip                           Y
+updates (no operator-loop updates) are empirically known                  C=             (I + δ (aij Xi Xj − bij Yi Yj ))
+to “freeze” in the classical limit with transverse field                       1≤i≤j≤n
+Γ → 0. Therefore, a general fast mixing proof must be
+                                                                                                      Y
+                                                                                                 ×           (I − δ di Zi )       (5)
+impossible and therefore is a fundamental limitation of                                              1≤i≤n
+these methods. On the other hand, since operator-loop
+update methods are one of the currently known state            and δ = β/2L, such that
+of the art QMC frameworks and does not suffer from
+such freezings, we believe our results ultimately should be                         e−ϵ/4 Z ≤ Z̃ ≤ eϵ/4 Z.                        (6)
+able to be extended to TFIM with longitudinal fields, or
+equivalently, stoquastic transverse fields in eq. (3). This       In [BG17], the operators I + δ (aij Xi Xj − bij Yi Yj ) are
+is left as an interesting open problem.                        approximated by matchgates. Here we do not need that
+                                                               approximation but instead approximate the operators
+  Finally, we note that fast-mixing results are also           only to first order in δ. Additionally, we don’t need the
+known for the classical 8-vertex and related models            strict guarantees on the partial operator sequences as is
+[CL21, CLL19] via variants of similar Jerrum-Sinclair          required in [BG17, lemma 1]. The proof of theorem 1 is
+chain. Although in some limiting parameter regime the          implicit from the proofs of corresponding approximation
+1-dimensional XY chain partition function is exactly           theorems and lemmas in [BG17, CST+ 21].
+mappable to that of the 8-vertex model of a 2-dimensional         Using eq. (5), let us rewrite (CC † )L as
+square lattice, this correspondence is restricted to special                                       M
+geometries and does not extend to general settings. In
+                                                                                                   Y
+                                                                                     (CC † )L =          Om                       (7)
+contrast to the inherently classical nature of the 6- and                                          m=1
+8-vertex models, the XY model is intrinsically quantum,
+and admits a wider range of natural extensions of QMC          where Om are one or two qubit operators from the product
+that remain amenable to fast-mixing analysis.                  in eq. (5). Let M1 be the number of one qubit operators
+
+                                                                                                                               6
+
+and M2 be the number of two qubit operators in the                   to the box representing the operator Om and the total
+         QM
+product m=1 Om and let M = M1 + M2 = O(n4 β 2 ϵ−1 )                  weight of a diagram is the product of weights of all the
+be the total number of operators. Substituting eq. (7)               boxes.
+back into eq. (4) and inserting resolutions of identities
+between the sequence of operators {Om }M   m=1 , we can
+rewrite the Trotterized partition function
+               X
+        Z̃ =          ⟨σ1 | (CC † )L |σ1 ⟩            (8)
+
+
+
+                                                                                           Imaginary time direction
+               σ1 ∈{0,1}n
+
+                     X             M
+                                   Y
+           =                            ⟨σm | Om |σm+1 ⟩ ,     (9)
+               σ1 ,σ2 ,...,σM     m=1
+                σM +1 :=σ1
+                     X
+           =                    W (σ1 , ..., σM )             (10)
+               σ1 ,σ2 ,...,σM
+
+as a summation of weights
+                                     M
+                                     Y                               FIG. 1: Diagrammatic representation of a slice in the
+          W (σ1 , ..., σM ) :=            ⟨σm | Om |σm+1 ⟩    (11)   imaginary time direction of a configuration for 3-qubits.
+                                    m=1                              The empty and filled circles represent |0⟩ and |1⟩ states
+                                                                     respectively. The rectangular boxes across the vertical
+on strings of computational basis states (σ1 , ..., σM ). The        lines represent operators. The operators shown in the
+extra dimension induced by the string of states (σ1 , ..., σM )      figure contribute ⟨101| Om−1 |101⟩ ⟨101| Om |011⟩
+is usually referred to as the imaginary time direction.              ⟨011| Om+1 |000⟩ as a factor towards the weight of the
+   We will refer to a single instance of a string of                 configuration.
+computational basis states (σ1 , ..., σM ) as a ‘path-integral
+configuration’. Given that the Hamiltonian H in eq. (3)
+is stoquastic, the weights W are non-negative for all                   We call two operators Ok and Ol ‘neighbors’ whenever
+configurations. Using these non-negative weights, let us             they share a qubit that they act on and no other operator
+define a probability distribution π0 over the path-integral          in between operators Ok and Ol act on that shared qubit.
+configuration space as                                               Diagrammatically, this means one of the legs from the box
+                                                                     representing Ok is directly connected to one of the legs of
+                                        W (σ1 , ..., σM )            the box representing Ol with a vertical line. In fig. 1, the
+             π0 (σ1 , ..., σM ) :=                        .   (12)
+                                               Z̃                    operator {Om , Om+1 } are neighbors, and {Om−1 , Om+1 }
+                                                                     are also neighbors.
+Using the counting-to-sampling reduction, as described
+
+SOURCE xy_loops.txt LF550-610
+                                                                  of paths Px,y that start at x and end at y in the graph G
+                                                                  such that
+                                                                                       X
+                                                                                              fx,y (p) = π(x)π(y)               (20)
+                     (a)          (b)     (c)        (d)                            p∈Px,y
+
+                                                                  where fx,y : Px,y → R≥0 is the distribution of probability
+ (i) Example of different ways a Pauli-X operator that is         mass flow. We define this weighted set of paths for all
+ present on a leg of a two qubit operator Om with weight          pairs x, y ∈ Ω and call them P = {Px,y }x,y altogether.
+ ⟨00| Om |00⟩ can be moved onto other legs or stay on the         The congestion q through an edge (z, z ′ ) ∈ EP is then
+ same leg of the operator Om while flipping the qubits            defined as
+ along the way.
+                                                                                        1          X    X
+                                                                     q(z, z ′ ) :=                               fx,y (p).
+                                                                                   π(z)P (z, z ′ )      ′
+                                                                                                x,y∈Ω p : (z,z )∈p∈Pxy
+                                                                                                                               (21)
+
+                                                                  Let q := max(z,z′ )∈E q(z, z ′ ) be the maximum congestion
+                                                                  of any edge which is dependent on P. In our case P (z, z ′ )
+                                                                  is lower bounded by a poly(n, β, ϵ−1 ) for all P (z, z ′ ) ̸= 0.
+                                                                  The following theorem, based on [Sin92], gives a bound on
+                                                                  the mixing time tmix in terms of the maximum congestion
+                                                                  q. In other words, the task of upper bounding the mixing
+                              (a)         (b)                     time can be transformed into a task of constructing a
+                                                                  clever (enough) P.
+ (ii) Example of different ways a Pauli-X operator that is        Theorem 4. For any lazy, ergodic Markov chain and any
+ present on a leg of a one qubit operator Om with weight          choice of flows, the initial state dependent mixing time
+ ⟨0| Om |0⟩ can be moved onto other legs or stay on the
+                                                                  tmix (x, δ) satisfies
+ same leg of the operator Om while flipping the qubits
+ along the way.
+                                                                            tmix (x, δ) ≤ ql 2 ln(δ −1 ) + ln π(x)−1
+                                                                                                                       
+                                                                                                                        (22)
+FIG. 5: Examples of moving a Pauli-X operator from                where l is the length of the longest path among P, and x
+one leg of an operator onto another leg of the operator.          is the initial state of the Markov chain.
+                                                                    In our case, the operator loop Markov chain M (defined
+ A.   Bound on mixing time using multicommodity                   in section III) is not lazy but we can make it lazy and
+                      flow                                        increase the mixing time by only a factor 2.
+
+  Let P denote the transition matrix of the Markov chain
+                                                                    B.   Congestion analysis of operator-loop update
+M with a state space Ω. The mixing time tmix (δ) is                      Markov chain for path-integral formalism
+defined as
+
+                tmix (δ) := max tmix (x, δ)                (18)      Let us make a few observations that are useful for
+                            x∈Ω                                   the construction of the probability mass flow P for
+  where    tmix (x, δ) := min{t : ||P t x − π||TV ≤ δ}, (19)      lower bounding the mixing time of the Markov chain
+                                                                  M. Given any two configurations, the difference between
+where we slightly abuse the notation to treat x on the right      them can be decomposed into a set of loops and open
+hand side to be the Kronecker distribution for the state          paths where flipping the qubits on the loops and paths
+x. π is the equilibrium probability distribution which the        takes one configuration to the other as shown in the
+Markov chain M converges to, which in our case can be             example in fig. 6. The two qubit operators Om of the
+proven to be unique because the operator-loop update              form I +δ (aij Xi Xj − bij Yi Yj ) will have either zero or two
+Markov chain satisfies the detailed balance condition, and        or four of its legs different between any two configurations
+it is aperiodic and ergodic.                                      with non-zero weights but never only one or three. If
+   We can upper bound the mixing time tmix using the              an operator Om has qubits on two of its legs different
+
+                                                                                                                                    10
+
+
+SOURCE xy_loops.txt LF780-842
+   on the non-zero probability of transition P (z, z ′ ) form
+                                                                                              P
+                                                                            π(x)π(y)π(w)/ ξ∈C0 π(ξ) amount of probability mass
+   z to z ′ when z ∈ C2 .                                                   from x to a configuration w ∈ C0 via the canonical path
+                                                                            we constructed previously from x to w and route the same
+  So far, we have constructed the flow of probability mass                  amount from w to y via the canonical path from w to
+between any two configurations where at least one of the                    y. Summing over the configurations in C0 will allow us
+configurations is in C0 . We are left to construct the flow                 to route π(x)π(y) amount of probability mass from x to
+between configurations in C2 . Our strategy is to distribute                y. We can bound the total amount of extra congestion
+the probability mass between any two configurations                         created at (z, z ′ ) from these additional flows as
+in C2 through the configurations in C0 . Specifically,
+consider two configurations x, y ∈ C2 . We will first route
+
+
+
+                                1                            X                 π(x)π(y)π(w)
+                           π(z)P (z, z ′ )
+                                                                                P
+                                               x,y,w : x,y∈C2 and w∈C0            ξ∈C0 π(ξ)
+                                             and (z,z ′ )∈cp(x,w) or cp(w,y)
+                                                                                                                
+                                                    P
+                                     1             y∈C2 π(y) 
+                                                                                      X                           
+                           =                    ·                                                        π(x)π(w)                 (40)
+                                π(z)P (z, z ′ )
+                                                  P
+                                                   ξ∈C0 π(ξ)
+                                                                                                                 
+                                                                               x,w : x∈C2 ,w∈C0
+                                                                         and (z,z ′ )∈cp(x,w) or cp(w,x)
+                                                                                                               
+                                P
+                                            π(y)     1
+                                 Py∈C2
+                                                                                     X                       
+                           =                                                                        π(x)π(w)                      (41)
+                                     ξ∈C0   π(ξ) π(z)P (z, z ′ )
+                                                                                                            
+                                                                              x,w : x∈C2 ,w∈C0
+                                                                        and (z,z ′ )∈cp(x,w) or cp(w,x)
+                                P                                                      −1
+                                     y∈C2 π(y)
+                                                    
+                           ≤     P                · min{aij − bij , aij + bij }             O(n6 β 3 ϵ−2 )                          (42)
+                                     ξ∈C0 π(ξ)
+                                                       i,j
+                                                                   −1
+                           ≤        min{aij − bij , aij + bij }           O(n10 β 5 ϵ−3 )                                           (43)
+                                     i,j
+
+
+
+
+where the first inequality is due to eq. (28) and eq. (36),                 each operator such that operator weights satisfy
+and the second inequality is due to lemma 2.
+  Considering the configuration σm = |0⟩
+                                              ⊗n
+                                                 for all 0 ≤                    ⟨σm (x)|Om |σm+1 (x)⟩ × ⟨σm (y)|Om |σm+1 (y)⟩
+m ≤ M as the initial state γinitial, PI to the Markov chain                         ≤ ⟨σm (z)|Om |σm+1 (z)⟩
+M where ln(π(γinitial, PI )) ≤ O(1)β||H||op ≤ O(1)n2 β,                                   × ⟨σm (ηz (x, y))|Om |σm+1 (ηz (x, y))⟩   (46)
+by theorem 4, we can bound the mixing time of the
+Markov chain M as                                                           for every operator Om .
+
+SOURCE xy_loops.txt LF1240-1330
+                                                                          Y    Z̃(βi , H)
+                                            Z̃(β, H) = Z̃(β0 , H)                                                             (B1)
+                                                                          i=1
+                                                                              Z̃(βi−1 , H)
+
+where β0 = 0 and βk = β. Each of the fractions Z̃(βi , H)/Z̃(βi−1 , H) in the product can be estimated separately as
+an observable
+                         
+        
+
+                            Wβi               X        Wβi (σ1 , ..., σM )
+                                         =                                   πβi−1 (σ1 , ..., σM )              (B2)
+                           Wβi−1 πβ         σ ,...σ
+                                                    W   βi−1 (σ1 , ..., σM )
+                                           i−1        1      M
+
+                                                       X         Wβi (σ1 , ..., σM ) Wβi−1 (σ1 , ..., σM )
+                                                 =                                                                            (B3)
+                                                     σ1 ,...σM
+                                                                 Wβi−1 (σ1 , ..., σM ) Z̃(βi−1 , H)
+                                                     P
+                                                          σ1 ,...σM Wβi (σ1 , ..., σM )        Z̃(βi , H)
+                                                 =                                        =                                   (B4)
+                                                                 Z̃(βi−1 , H)                 Z̃(βi−1 , H)
+if we have access to the samples from the distribution π0,βi−1 . The subscripts for π0 and W indicate their explicit
+dependence on the inverse temperature β for a fixed number of Trotter steps L. Choosing βi − βi−1 = 1/||H|| ensures
+that Z̃(βi , H)/Z̃(βi−1 , H) ≈ Z(βi , H)/Z(βi−1 , H) ∈ [e−1 , e]. To estimate Z̃(β, H) to within a exp(±ϵ) multiplicative
+precision, we want to estimate the ratio in eq. (B4) to within a exp(±ϵ/β||H||op ) precision since the telescoping product
+in eq. (B1) has β||H||op number of terms when we choose βi − βi−1 = 1/||H||. This implies, by Hoeffding’s inequality,
+we will need to take Õ(β 2 ||H||2op ϵ−2 ) = Õ(n4 β 2 ϵ−2 ) number of samples from the distribution πβi−1 to estimate the
+ratio in eq. (B4) to within a exp(±ϵ/β||H||op ) precision with high probability. In total, we need
+
+                                                 Õ(β 3 ||H||3op ϵ−2 ) = Õ(n6 β 3 ϵ−2 )                                      (B5)
+
+many samples to estimate the Trotterrized partition function Z̃(β, H).
+
+
+                                             Appendix C: Proof of lemma 2
+                                                                                 hQ       i
+                                                                                   M
+  Starting from theorem 1 with L = O(n2 β 2 ϵ−1 ), we have Z̃ = Tr (CC † )L = Tr
+                                                                            
+                                                                                   m=1 Om   which is equal to the
+sum of weights of all the configurations in C0 . The operator C is defined in eq. (5) as a product of O(n2 ) operators
+
+                                                                                                                               19
+
+and each such operator Om is of the form (I + δ (aij Xi Xj − bij Yi Yj )) or (I − δ di Zi ) with δ = β/2L. We use an
+observation from [BG17] that the sum of weights of configurations in C2 is bounded as
+                X                   X
+                   W (ξ) ≤ O(1)             Tr [O1 O2 ...Om1 Xa Om1 +1 ...Om2 Xb Om2 +1 ...OM −1 OM ]           (C1)
+                 ξ∈C2                 1≤m1 <m2 ≤M
+                                          X
+                             = O(1)                 Tr [B(m1 , m2 )Xa A(m1 , m2 )Xb ]                                       (C2)
+                                      1≤m1 <m2 ≤M
+
+where A(m1 , m2 ) = Om1 +1 Om1 +2 ...Om2 , B(m1 , m2 ) = Om2 +1 ...OM −1 OM O1 O2 ...Om1 , and Xa and Xb are the two
+additional Pauli-X operators inserted in between the operator sequence {Om }M       m=1 for C2 configurations. (see the
+definition of C2 configurations in the path-integral formalism in section III A ). We can bound a single summand from
+eq. (C2) which is of the form Tr [BXa AXb ] as follows
+                                                             X
+                                             Tr [BXa AXb ] ≤     sk (A)sk (B)                                      (C3)
+                                                                    k
+
+from von Neumann’s trace inequality. We denote by sk (X) the k th largest singular value of matrix X. Observing that
+the bulk of A and B are just CC † and ||CC † ||op ≤ 2, we can express them as
+
+                                         A = S(CC † )Ka T     and       B = S ′ (CC † )Kb T ′                               (C4)
+
+where Ka , Kb ≥ 0 are integers and ||S||op , ||T ||op , ||S ′ ||op , ||T ′ ||op ≤ 2, similarly to eq. (54) of [BG17]. Furthermore,
+although not explicitly stated in [BG17], we can also infer that
+
+                                                     L − 2 ≤ Ka + Kb ≤ L                                                    (C5)
+
+by construction. We can upper bound eq. (C4) with
+                                                                                           Ka
+                               sk (A) ≤ ||S||op · ||T ||op · sk (CC † )Ka ≤ O(1) sk CC †
+                                                                          
+                                                                                                                            (C6)
+                                           Kb
+and similarly sk (B) ≤ O(1) sk CC †             . Substituting these back into eq. (C3), we get
+                                                              X                Ka +Kb
+                                     Tr [BXa AXb ] ≤ O(1)         sk CC †                                                   (C7)
+                                                              k
+                                                              X                L
+                                                    ≤ O(1)        sk CC †                                                   (C8)
+                                                              k
+                                                                              X
+                                                    ≤ O(1) Tr (CC † )L = O(1)
+                                                                       
+                                                                                W (ξ)                                       (C9)
+
+SOURCE stability_semigroup.txt LF2515-2578
+
+46                                 DONGSHENG WEI
+
+
+Nonvanishing follows from Lemma 6.13; since a projector expectation is nonnegative,
+we obtain PS > 0.
+    Compute the logarithms with a fixed fraction of the requested error, using the
+constructive proof of Theorem 6.11. For (2), take the real part of the logarithmic
+difference before exponentiating; its error does not increase because the exact
+difference is real on the positive path. For either logarithmic difference use T0 =
+⌈2Kn + 2⌉ in that finite Taylor procedure. In case (2), the rational estimate is real
+and positive once its relative error is less than one, and the rationalQprobability
+normalization introduces no further error. For (1), the product R√s = i (1 + |si |2 )
+is a positive rational between 1 and 2n . Rational bisection for Rs , followed by
+inversion, computes its reciprocal square root to any required relative error with
+O(n + log ϵ−1 + Lin ) bits and polynomial arithmetic cost. Splitting the error budget
+between the two logarithms, exponentiation and this factor proves (1) and (2),
+including the phase assertion.
+    For (3), fix an already generated history, whose two extensions have true probabil-
+ities p+ , p− > 0, and apply (2) to obtain positive estimates pb± with relative error at
+most η = ϵ/(16n). Normalizing their sum gives a conditional probability with error
+at most 2η/(1 − η) < 4η, regardless of the probability of the parent history. Round it
+to a dyadic probability within ϵ/(4n) and draw the corresponding Bernoulli variable
+using O(log(n/ϵ)) unbiased random bits. On a fixed history, projectors on distinct
+sites commute, so its probability is exactly the product event in (2), even though
+the bases were chosen adaptively. Coupling the two processes at each step bounds
+their total variation distance by the sum of the at most n conditional errors, which
+is less than ϵ. There are at most 2n queries, whose accuracy and phase bit lengths
+give the displayed polynomial overhead, in addition to the strategy evaluation time
+Tstrategy .                                                                           □
+
+   For Lee–Yang states with a fixed spatial radius r > 1, [46, Section 4, Theorems 5–
+6] gives state-dependent quasipolynomial circuits for relative X-basis amplitudes,
+with probabilities and phases in the state-preparation proof; see also [45]. Corol-
+lary 6.16 takes the local Hamiltonian as input and obtains polynomial complexity
+at fixed positive field from the common reciprocal-field domain. The connected-
+coefficient and interpolation methods have antecedents in [28, 47, 43], including
+thermal product measurements in [47, Theorem 15].
+   The allowed projectors have stable kernels and nonzero vacuum entries, which
+gives the northern-hemisphere queries and equatorial sampling in the corollary. In
+particular, the projector onto |1⟩ is excluded. Positive field is used throughout the
+state-query argument; at zero field Section 6.3 gives energy values. The quantum
+algorithms of [15, 34] cover other parameter ranges and state-preparation tasks.
+
+                7. Sector growth and token-graph spectra
+   For evolutions preserving nonnegative coefficients and total degree, Newton’s
+inequalities constrain the coefficient sums in adjacent homogeneous sectors, whose
+long-time growth rates are the spectral bounds of the sector generators. This gives
+a concavity theorem for those bounds, which we apply to weighted token graphs.
+                                                                   P
+Theorem 7.1. Let Vκ be a finite real coordinate box and N = i κi . Suppose
+that A has nonnegative off-diagonal entries in the monomial basis, preserves every
+homogeneous subspace Vκ,k , and that etA preserves nonnegative real stability for
+
+           STABILITY GENERATORS, SPECTRAL GAPS, AND COMPUTATION                       47
+
+
+every t ≥ 0. Write
+                 sk = max{ℜλ : λ ∈ spec(A|Vκ,k )},                   0 ≤ k ≤ N.
+Then
+                         2sk ≥ sk−1 + sk+1    (1 ≤ k < N ).
+Neither irreducibility nor symmetry of A is assumed.
+Proof. The stable polynomial f0 (z) = i (1 + zi )κi has a strictly positive coefficient
+                                       Q
+
+SOURCE bbl.txt LF1617-1653
+   Negative correlation inequalities have played an important role in the develop-
+ment of the theory of symmetric exclusion processes. For example, Proposition 1.7
+of [52, Chap. VIII] implies that
+                                        Y
+                   P η (ηt ≡ 1 on A) ≤      P η (ηt (i) = 1), A ⊆ S.           (17)
+                                         i∈A
+
+This inequality was used in an essential way in the characterization of stationary
+distributions of the process, see Theorem 1.44 in op. cit and the end of this section.
+Inequality (17) was generalized by Andjel in [2] to
+             P η (ηt ≡ 1 on A ∪ B) ≤ P η (ηt ≡ 1 on A)P η (ηt ≡ 1 on B),
+                                                                                    (18)
+             A, B ⊆ S, A ∩ B = ∅,
+
+and used to prove an ergodic theorem. For further applications of correlation in-
+equalities in this setting, see the references and discussion in [55].
+
+32                    J. BORCEA, P. BRÄNDÉN, AND T. M. LIGGETT
+
+
+   In that paper, one of us conjectured that the distribution of ηt at time t with
+deterministic initial configuration η is negatively associated. Even the special case
+        P η (ηt ≡ 1 on A, ηt ≡ 0 on B) ≥ P η (ηt ≡ 1 on A)P η (ηt ≡ 0 on B),
+                                                                                     (19)
+        A, B ⊆ S, A ∩ B = ∅
+remained open (note that in (19), one of the events is increasing while the other is
+decreasing). Surprisingly, despite the similarity between (18) and (19), neither the
+proof of (18) in [2], nor a somewhat different one given in [55], extends to prove
+(19). We are now able to prove this conjecture, see Theorem 5.2 below. The latter
+is actually a consequence of a yet stronger property for finite symmetric exclusion
+processes that we will now establish.
+Proposition 5.1. Suppose that S is finite and the initial distribution η0 of a sym-
+metric exclusion process on {0, 1}S is strongly Rayleigh. Then so is the distribution
+of ηt for all t > 0.
+Proof. First, we observe that it suffices to prove the statement in case qi,j 6= 0 for
+only one pair i, j. To see this, suppose T1 (t) and T2 (t) are semigroups for finite state
+Markov chains on the same state space with generators L1 and L2 respectively, and

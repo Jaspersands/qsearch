@@ -1,11 +1,13 @@
 # Quartic-surface P2 from explicit torsion-cover twists
 
-Nov12 closure: the classical source's ordinary modular descent is refuted in
-both retained versions; a supplied-input finite parabolic filter is repaired.
-Full native classical reconstruction remains OPEN. See
-SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md; this quantum G0/Euler route is unaffected.
+Nov14 current comparator: SURFACE_CLASSICAL_QUARTIC_SPECIALIZATION.md gives
+the reviewed WRITTEN native classical polynomial-BIT match for this SAME
+all-smooth-quartic exact P2 endpoint. It specializes the later repaired
+Nov12 native pipeline, including the (4,3) atlas and boundary4940->56->22.
+The earlier native-classical OPEN statements below are superseded; the
+quantum G0/Euler theorem remains unchanged.
 
-2026-11-12 comparator update: see SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md.
+Historical 2026-11-12 comparator audit: see SURFACE_CLASSICAL_HEIGHT_UNIFORMITY.md.
 Saxena--Venkatesh2511.05272 claims a classical fixed-characteristic-zero
 surface algorithm. Native coefficient-height uniformity is not established
 by its cited bounds; a reviewed modular compact/open/parabolic dimension
@@ -17,7 +19,8 @@ and does not affect the written quantum G0/Euler-induction route below.
 smooth quartic overFp, polynomial(logp,log(1/eta)) BIT/gate time at FIXED degree.
 Independent geometry, readout and full-composition reviews are closed. No novelty, speedup, practical-cost,
 human/formal verification, full implementation or quantum-execution claim.
-The stronger Kuga–Satake classical comparison remains OPEN.
+The separate Kuga–Satake construction remains OPEN, but is no longer needed
+for a classical match of this endpoint.
 
 ## Scientific question and exact contract
 

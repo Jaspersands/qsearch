@@ -1,5 +1,9 @@
 # Native indefinite ternary isometry through spinor genera
 
+Current scope (Nov13): GENERAL native DECISION is reviewed WRITTEN under the
+retained complete GRH assumptions; see DYADIC_NONFULL_SPINOR_TRANSPORT.md.
+Historical OPEN paragraphs below are superseded for that decision contract.
+
 2026-11-07. Reviewed admission pass COMPLETE; full native route PARKED. No full algorithm,
 novelty, separation, hardness or quantum execution is established.
 

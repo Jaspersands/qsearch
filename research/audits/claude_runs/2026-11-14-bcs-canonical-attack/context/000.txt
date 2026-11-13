@@ -1,0 +1,173 @@
+# Attractive BCS ground Born sampling: canonical classical construction
+
+2026-11-14. Parent derivation, independent source/composition review pending.
+This is a CLASSICAL comparator for a proposed gap-based quantum preparation,
+not a quantum-state simulation or an all-eigenstate Gaudin gap theorem.
+
+## Selection and native hypothesis
+
+After general ternary decision closed, the pass restarted from STATE/TRAPS.
+Corpus been-tried and baselines preceded the literature. The catalogue named
+tensor-network simulation; the actual literature supplies a stronger rigorous
+ferromagnetic XY path-integral sampler. Compare this operation with fixed-
+contrast conductivity (no new cancellation-preserving contraction available)
+and projected-Slater ancilla feedback (no new paid branch reset). The present
+operation can decisively test whether stability-based BCS ground preparation
+would yield an unmatched Born readout, so it is selected before quantum code.
+
+Input: N distinct rational energies eps_i, rational g>=0, particle number
+0<=M<=N, error tau, and a PAID/PROMISED lower bound kappa on the FINAL
+fixed-M spectral gap of
+ H=D-g A_J, D(S,S)=sum_(i in S)eps_i,
+ A_J the Johnson adjacency (one occupied/unoccupied swap).
+Equivalently H=sum eps_i n_i-g sum_(i<j)(sigma_i^+sigma_j^-+h.c.).
+Target: a classical sample within TV tau of squared amplitudes of the
+unique fixed-M ground state. No Bethe roots, eigenvalues, amplitudes,
+prefixes, chemical potential, partition function or sampler is advice.
+Initially charge 1/g and 1/kappa as resources when g>0. The small-g clause
+below removes 1/g when the native energy spacing is polynomial conditioned.
+
+Proposed quantum mechanism had been stability of imaginary-time amplitudes,
+followed by a Doob-transform/internal-gap theorem and adiabatic preparation.
+Its potential exponential coordinate saving is not a separation: the same
+final-gap premise now appears sufficient for a classical Born sampler. This
+classical route does NOT output the coherent ground state and does NOT cover
+arbitrary interacting excited branches, whose joint-gap problem stays open.
+No unconditional polynomial gap, hardness, novelty or quantum speedup claim.
+
+## Actual sources and cheapest falsifier
+
+Primary PDFs/text/provenance: audits/sources/bcs_stability_selection/.
+BBL0707.2340v2 Proposition5.1 (physicalLF1617--1652) proves stability under
+symmetric exclusion. Positive external fields substitute z_i ->a_i*z_i,
+so also preserve stability. Trotter and closedness pay their sum.
+Wei2609.26802v2 Theorem7.1 (LF2520--2575) proves concavity of sector growth;
+the argument below checks it directly. Its full disk-space positive-damping
+gap and bounded-degree state-query theorem are NOT fixed-M internal-gap
+bounds. Braida etal2606.23614 addresses symmetry-reduced chains, not this
+arbitrary-site native gap. No theorem was inferred from its abstract.
+
+Anari log-concave-II coefficient power preservation uses 0<alpha<1, not2.
+An exact generic counterexample prevents squaring stable coefficients by
+fiat: take v1=(1,0),v2=(1,1),v3=(0,1),v4=(-1,1), and
+ f(z)=det(sum_i z_i v_i v_i^T).
+Its pair coefficients are all1 except w24=4. f is stable; its Hessian has
+inertia(1,2,1). Squaring each coefficient gives Hessian inertia(2,2,0), hence
+not Lorentzian. The positive subspace constant on pairs13/24 has matrix
+[[1,2],[2,16]], determinant12>0. This is NOT a native BCS ground counterexample.
+Exact Sage check controls/bcs_born_stability/{check.py,result.json} additionally
+found no Born-Lorentzian failure on three predeclared N4,M2 native instances;
+that finite result proves neither closure nor a gap and is not extended.
+
+## Sector curvature without an energy oracle
+
+Let L=sum_(i<j)(SWAP_ij-I) on the coefficient space of multiaffine polynomials.
+In degree m, L_m=A_J-m(N-m)I. The generator T=gL-D preserves nonnegative
+real stability by BBL and positive external-field Trotter products.
+Apply exp(tT) to product_i(1+z_i), and let c_m(t)>0 be its degree-m
+coefficient sum. The diagonal restriction is real-rooted with negative
+roots, so Newton gives c_m(t)^2>=c_(m-1)(t)c_(m+1)(t) times a fixed binomial
+factor. For each fixed N, positive initial coefficients and Perron growth
+give lim_(t->infinity) log(c_m(t))/t=r_m, the top eigenvalue of T_m.
+Thus 2r_m>=r_(m-1)+r_(m+1). Since
+ E_m=-r_m-g*m*(N-m),
+we obtain for EVERY rational energy list and g>=0
+ E_(m+1)+E_(m-1)-2E_m >= 2g.
+This is sector-energy convexity, NOT an internal fixed-M spectral gap.
+
+For g>0 choose a rational K>=||H||, e.g.
+ K=N*max_i|eps_i|+g*N^2.
+The interval [E_M-E_(M-1),E_(M+1)-E_M] has width>=2g (interiorM), and its
+endpoints lie in[-2K,2K]. A grid in[-2K-g,2K+g] with spacingg/4 has
+O(1+K/g) entries and contains a chemical potential mu at distance>=g/2
+from both endpoints. By convexity, H-mu*Nhat then has its unique global
+ground state in sectorM and every other sector's ground energy is at least
+g/2 above it. No unknown E_m is evaluated. For M=0,N output the unique
+configuration directly.
+
+Take rational beta>=C*(N+log(1/tau))/min(kappa,g) with a fixed sufficiently
+large numerical C. At that good grid point the grand-canonical Gibbs state
+has target ground weight>=1-O(tau). For EVERY other grid point, conditioning
+the unperturbed Gibbs diagonal on Nhat=M gives exactly the SAME canonical
+Gibbs law for H_M, independent ofmu. Its distance to the ground Born law is
+O(tau), by the final gap kappa and dimension<=2^N. Therefore a grid point
+with merely constant observed M probability is sufficient; no energy oracle
+or correctness test on unknown eigenstates is required.
+
+## Native grand-canonical sampler and two source repairs
+
+Rayudu--Takahashi2509.21683v1 Eq3 covers arbitrary rational Z-fields and
+ferromagnetic XY. Eq8--12 give positive path weights whose fixed-time-slice
+marginal is diag((CC^dagger)^L)/Tr((CC^dagger)^L), with
+ C=product_l(I-delta*h_l), delta=beta/(2L).
+The operator-loop chain samples an enlarged zero/two-defect space; Lemma2
+bounds the mass ratio polynomially, so capped rejection yields original
+zero-defect paths. Reading their first slice is the desired Trotter marginal.
+
+IMPORTANT: its mixing bound Eq44--45 contains
+ c_min^-1, c_min=min_(i<j){a_ij-b_ij,a_ij+b_ij}.
+For number-conserving XY a=g/2,b=-g/2, c_min=0. Do not import the printed
+bound directly. Instead perturb by -lambda sum_(i<j)X_iX_j, with positive
+rational lambda<=c*tau^2/(beta*N^2). The perturbed a=g/2+lambda,b=-g/2
+has c_min>=lambda; rescale all fields/couplings to the theorem's bounded
+range, scaling beta accordingly. All rescaling and inverse c_min costs are
+polynomial in the charged quantities. The perturbation norm is<=lambda*N^2.
+For Gibbs states, relative entropy is<=2beta||DeltaH||, so Pinsker gives
+trace/diagonal TV O(tau). This also controls the loss of exact number
+conservation in the implemented sampler; the IDEAL target remains unchanged.
+
+IMPORTANT: source Theorem1 explicitly bounds partition-function error only.
+For sampling, prove a state bound separately. Let B=sum_l||h_l|| and choose
+delta*B<=1/10. Product expansion gives
+ log(CC^dagger)=-2delta*H_pert+O(delta^2*B^2).
+Define H_eff=-log(CC^dagger)/(2delta). The symmetric product is positive
+definite and ||H_eff-H_pert||<=C0*delta*B^2. Choose L polynomially large
+so beta*C0*delta*B^2<=c*tau^2. Then (CC^dagger)^L=exp(-beta H_eff) and
+Gibbs relative entropy/Pinsker gives O(tau) normalized-state error.
+No exponential exp(beta||H||) approximation bound is used. This elementary
+log expansion follows in the ball ||CC^dagger-I||<1/2, so has absolute
+constants; extra numerical slack can be chosen before implementation.
+
+The loop chain uses polynomial-length paths and rational local weights,
+including the added lambda and finite delta. Hence exact weight ratios
+and random transition probabilities have polynomial BIT descriptions.
+Round random coins with a telescoping error budget or use capped exact
+rational sampling. Charge log inverse initial weight and the zero-defect
+rejection probability. No exact Boltzmann real-number oracle is used.
+
+## Selection, conditioning, and clock
+
+For each grid point use independent approximate Gibbs samples to estimate
+Pr(Nhat=M), with additive error e.g.1/16 and union-bounded failure probability.
+Use enough samples that any accepted empirical probability>=1/2 implies
+true ideal mass>=1/4, while the good grid point is accepted with high
+probability. A sampler at TV accuracy c*tau uniformly at every grid point
+pays these margins and the eventual conditioning amplification. Take fresh
+samples at an accepted point and reject unless their Hamming weight isM;
+cap the geometric repetitions. If none succeeds or no grid is admitted,
+return ABORT, charged to the same tau error budget. Conditioned sample
+error is at most a constant multiple of the unconditional sampler error.
+The mixture over accepted grid points remains the SAME canonical target.
+
+Runtime is polynomial in native coefficient bits,N,1/tau,1/g,1/kappa and
+explicit coefficient norm bounds, including the grid, beta, c_min^-1,
+Trotter length, chain mixing, path rejection and confidence amplification.
+No polynomial dependence on log inverse tau is claimed.
+
+At g=0, distinct sorted eps give the unique M-lowest-energy monomial.
+Let Delta=eps_(M+1)-eps_M>0. Since ||g A_J||<=g*N^2, when
+ g*N^2<=c*tau*Delta
+standard isolated-eigenvector perturbation makes that monomial an O(tau)
+Born approximation. Otherwise 1/g<=N^2/(c*tau*Delta), so polynomial native
+inverse spacing removes the explicit small-g resource. This needs no
+unverified final-gap value in the small-coupling branch.
+
+## Boundary and next decisive check
+
+Review the actual loop transition/mixing/defect-mass proof and the finite
+BIT composition, including c_min repair and Trotter state distance. If
+correct, Born readouts of any polynomial-gap ground-preparation route here
+are classically matched under the SAME (weaker final-only) gap premise.
+Neither quantum coherent-state preparation nor arbitrary excited Gaudin
+branches are classically matched by this argument. No all-input internal
+polynomial gap follows from sector convexity or the three finite controls.

@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "field": "F4",
+  "length": 3,
+  "ring": "Z8[w]/(w^2+w+1)",
+  "bijection_points": 64,
+  "operation_equalities": 8192,
+  "addition_degrees": [
+    1,
+    2,
+    4
+  ],
+  "multiplication_degrees": [
+    2,
+    3,
+    6
+  ],
+  "untwisted_negative_control": {
+    "left": [
+      "0",
+      "a",
+      "0"
+    ],
+    "right": [
+      "0",
+      "a",
+      "0"
+    ],
+    "sum": [
+      "0",
+      "0",
+      "a + 1"
+    ],
+    "wrong_image": [
+      4,
+      4
+    ],
+    "actual_sum": [
+      0,
+      4
+    ]
+  },
+  "scope": "finite arithmetic/interface falsifier, not length9 search implementation or asymptotic proof"
+}

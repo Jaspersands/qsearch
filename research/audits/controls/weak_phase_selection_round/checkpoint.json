@@ -1,0 +1,334 @@
+{
+  "captured_at_utc": "2026-11-13T14:22:20.803032+00:00",
+  "claim_gates": {
+    "advantage_claim": false,
+    "bookkeeping_only": true,
+    "empty_report_is_completed_review": false,
+    "empty_report_supplies_scientific_findings": false,
+    "finite_controls_prove_general_claim": false,
+    "further_paid_OpenAI_calls_authorized": false,
+    "general_full_sampler_or_hardness_claim": false,
+    "implementation_claim": false,
+    "novelty_claim": false,
+    "remaining_balance_computed_from_usage": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_invoice_or_balance": false
+  },
+  "control_session_accounting_per_parent": [
+    {
+      "exit_code": 0,
+      "reaped": true,
+      "session_id": 72226
+    },
+    {
+      "exit_code": 0,
+      "reaped": true,
+      "session_id": 79436
+    }
+  ],
+  "corpus_snapshot_artifacts": [
+    {
+      "bytes": 2433,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/csa_baselines.txt",
+      "sha256": "b7ab48476f66da6c09bfe2faeb9707d93b907463971db10ce1c65dd5549b00d1"
+    },
+    {
+      "bytes": 10591,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/csa_prior.txt",
+      "sha256": "0705cc6c2eb0c39593d2444fe4f045ef8f33cd225d730d195cb8dca73f544c7c"
+    },
+    {
+      "bytes": 1022,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/dissipative_baselines.txt",
+      "sha256": "30c1719e2b2f95fb49849447aa5553892a6dd1cc2dbd3da5ad843973efb8ae8e"
+    },
+    {
+      "bytes": 11302,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/dissipative_prior.txt",
+      "sha256": "20f4a82f68a433ff63eed32cc7cff9e84234f690fcaac15ec754231e392f26ff"
+    },
+    {
+      "bytes": 9444,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/hidden_field_refresh.txt",
+      "sha256": "edb9a151a231d9cd5859be38f65e8af9b797884954f93152a7a670a0f54984f7"
+    },
+    {
+      "bytes": 1537,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/weak_spin_baselines.txt",
+      "sha256": "67a82b2590a67b2bea9510184335269eb4f54b0fa1087fd960f4acd38deffad2"
+    },
+    {
+      "bytes": 11146,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/weak_spin_prior.txt",
+      "sha256": "b3e16ef4b67bb51ea8b483567f33e98eb77b51d701951544250304c825fdeab3"
+    }
+  ],
+  "dispatch_mutation_scope": "No dispatch mutation.",
+  "exclusions": [
+    {
+      "reason": "Copied exactly from frozen prior and excluded unchanged; none inferred zero.",
+      "scope": "Eight inherited UNKNOWN bills/partial counters"
+    },
+    {
+      "reason": "Only labelled current STATE snapshot pinned; no old evidence rehashes, prior edits or tests.",
+      "scope": "Live STATE/HANDOFF/MECHANICAL, active new work and unrelated evidence"
+    }
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 2513,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-14-weak-born/dispatch.json",
+      "sha256": "52f3db8653d4a2177f0f23e1668a5037735d52828f99c02f0a2bd9173d06db4d"
+    },
+    {
+      "bytes": 3111,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-14-weak-born/prompt.md",
+      "sha256": "545cfd494f29b03aab5170dcd33e38ea75ed8a8e2e0e3997cb1caba8c39f2642"
+    },
+    {
+      "bytes": 62801,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-14-weak-born/sources.md",
+      "sha256": "474c4d9d84763ac95f7984a11d565a0489f4907dcbd47e02d98f491f38562561"
+    },
+    {
+      "bytes": 358,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-14-weak-born/state.md",
+      "sha256": "72d68459b60c1cc9937eb882ed6fc98494d92d75f8770aa84653934190fdcf4a"
+    }
+  ],
+  "frozen_prior_checkpoint_snapshot": {
+    "bytes": 12617,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/ballistic_scattering_round/checkpoint.json",
+    "sha256": "f8b3590280c4f6bf4727c1b9e87cd14d14533d83efedc5efec2c91b54589b83e"
+  },
+  "frozen_prior_usage_snapshot": {
+    "bytes": 18336,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/ballistic_scattering_round/usage.json",
+    "sha256": "eee3e78f70f2a5b495e9280f945f1c1ea69888775806fc2b94491a4b3b2b6ed1"
+  },
+  "hash_verification": {
+    "method": "One final fresh byte/hash verification per unique current stable pin; preparation stopped before prior verification/freeze. No historical evidence scan, tests or post-freeze rehash.",
+    "passed": true,
+    "unique_artifacts_verified_once": 41
+  },
+  "labelled_snapshots": [
+    {
+      "bytes": 314691,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_phase_selection_round/state-snapshot.md",
+      "sha256": "6a7dbc2fe7b4f02807ad5b9fb2ab4b793f42ec0d50d5ac0da082f590551c191b",
+      "snapshot_label": "Exact labelled stable weak-phase milestone STATE snapshot; parent confirmed STATE unchanged through final topic clarification; live original not pinned",
+      "source_original_path": "/Users/jaspersands/Developer/qsearch/research/STATE.md"
+    }
+  ],
+  "new_primary_source_artifacts": [
+    {
+      "bytes": 489648,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/low_temperature.pdf",
+      "sha256": "09745caf572ec9144b4e25d827470617e4487a7251fa7f1a229304cc4e6d60e6"
+    },
+    {
+      "bytes": 79694,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/low_temperature.txt",
+      "sha256": "a1bd1a2d5f69336418a84dff7dbc8fcfd59e67e368b74a658a22c643ff62cd68"
+    },
+    {
+      "bytes": 79,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/low_temperature_source.json",
+      "sha256": "5dafa8ca4a3b840416de2891f28e942495333681a7c4105d9eb97cc609f10e9b"
+    },
+    {
+      "bytes": 1916153,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/rapid.pdf",
+      "sha256": "7250904c0de1021580b763c518fded2fcbae5acf7d48552a73bbdb2f6fcfea6a"
+    },
+    {
+      "bytes": 288053,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/rapid.txt",
+      "sha256": "8115a7a3f5a509cf003393b35eea3a6d68bbe0f6666da673905ad20e8ac429b9"
+    },
+    {
+      "bytes": 311,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/source.json",
+      "sha256": "ce33dfce474c772fb55956335631bb5485cf9ffb5ac41b0070f7c01d4f0fab98"
+    },
+    {
+      "bytes": 332107,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/weak_classical.pdf",
+      "sha256": "9752a6bd81be3b9da2eb37096531f5ea27ec27375c21a61a2a41dbe421837dc7"
+    },
+    {
+      "bytes": 40214,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/weak_classical.txt",
+      "sha256": "5469fc02a6ee1364d3ed7cddc742aeb3a32d66547c7b5c1602548a2f481b6173"
+    },
+    {
+      "bytes": 158,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/weak_classical_source.json",
+      "sha256": "efad96e6c397bc519c4181815d44f1c913536ee04af5fbbddf6298bfcb9ea45f"
+    },
+    {
+      "bytes": 339539,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/weak_ground.pdf",
+      "sha256": "7dd6ab0c6669b66681ea5703c5e5d3f3bcd59ce485c7f1c38eb66b160ada7982"
+    },
+    {
+      "bytes": 91287,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/weak_ground.txt",
+      "sha256": "0a06cb8e0bb61a410ebd8f2705c8daddd6d24a6c5a93ae9a4be77a6d3d488808"
+    },
+    {
+      "bytes": 78,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/dissipative_selection/weak_ground_source.json",
+      "sha256": "a58f401ae6af6b4cfd2f6776bca1f2b10dd8786db4ccea74d50940956688bd2e"
+    }
+  ],
+  "owner_reported_credit_update_separate": {
+    "Anthropic_remaining_usd": "20.59",
+    "OpenAI": "OUT_OF_CREDITS; no further paid OpenAI calls",
+    "note": "Owner-reported credit information, separate from runner estimates and historical ownerSPENT. No remaining balance was computed from cumulative usage.",
+    "source": "Owner report relayed by parent, also recorded in current dispatch"
+  },
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "prior_hash_policy": "Only immediate prior ledger continuity records; no old evidence pins traversed/reverified/modified.",
+  "scope": "Frozen ballistic_scattering_round plus exactly one terminal empty Anthropic weak-born request and specified new stable hidden-field/weak-phase selection evidence.",
+  "stable_control_artifacts": [
+    {
+      "bytes": 8568,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/hidden_field_jacobi/check.py",
+      "sha256": "2dc876dabe7a7cad79eeebcfe843925a8e3756f503d3ec02fdd18ecfcdcce8bb"
+    },
+    {
+      "bytes": 44881,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/hidden_field_jacobi/result.json",
+      "sha256": "942063b00107c8dae9b06b11b2650fbe15bcfc5c8988e4bcac17df37c6f4f735"
+    },
+    {
+      "bytes": 10508,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_born_shortcuts/check.py",
+      "sha256": "c50ff09af12ef469da3031f5d9417be1efd8539dab033ff83a72387c4f24d92f"
+    },
+    {
+      "bytes": 6975,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_born_shortcuts/result.json",
+      "sha256": "fe9b9516e2f56c946856bf92025509d46209da694eaad21eaf42722f889fee81"
+    }
+  ],
+  "stable_final_artifact_instruction": {
+    "STATE_unchanged_per_parent": true,
+    "final_topic_native_coupling": "lambda<=2^-24; retained BDL threshold pays stated endpoint; dissipative threshold separate/unused",
+    "observed_review_newline_count_used_without_scientific_edit": true,
+    "parent_confirmed_stable_after_scope_clarification": true
+  },
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 8334,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_line_count": 157,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-14-hidden-field-mechanism-selection.md",
+      "physical_LF_count": 157,
+      "sha256": "cff922dce9490692c20118e819f5d35ae776dff7955b57910a7627ab85daf132"
+    },
+    {
+      "bytes": 12800,
+      "parent_confirmed_stable_and_fully_read": true,
+      "parent_descriptor_line_count": 213,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-14-independent-physical-selection.md",
+      "physical_LF_count": 212,
+      "sha256": "b45c090500465f518b0b33fc16030da5d2c9faada5416e7e91b29544a7af4bd0"
+    }
+  ],
+  "stable_topic_artifacts": [
+    {
+      "bytes": 3997,
+      "path": "/Users/jaspersands/Developer/qsearch/research/HIDDEN_FIELD_JACOBI_SCREEN.md",
+      "sha256": "86351dd89cbd90d3d19014fbcc372757e3bfe2b546ef69ed5d6231565a5b711e"
+    },
+    {
+      "bytes": 9720,
+      "path": "/Users/jaspersands/Developer/qsearch/research/WEAK_PHASE_BORN_SAMPLING.md",
+      "sha256": "e98088d996aa7d68787b181a8671eb4ab1b337ce14c3523e88cc6eac137de42c"
+    }
+  ],
+  "status": "FINAL_FROZEN",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 358,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-weak-born/context/000.txt",
+      "sha256": "72d68459b60c1cc9937eb882ed6fc98494d92d75f8770aa84653934190fdcf4a"
+    },
+    {
+      "bytes": 62801,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-weak-born/context/001.txt",
+      "sha256": "474c4d9d84763ac95f7984a11d565a0489f4907dcbd47e02d98f491f38562561"
+    },
+    {
+      "bytes": 3111,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-weak-born/prompt.txt",
+      "sha256": "545cfd494f29b03aab5170dcd33e38ea75ed8a8e2e0e3997cb1caba8c39f2642"
+    },
+    {
+      "bytes": 72195,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-weak-born/request.json",
+      "sha256": "9dac66ef1bc08e880c5f5c01244586e2456b975ebeade68f723b944b2865fceb"
+    },
+    {
+      "bytes": 0,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-weak-born/response.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1638,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-weak-born/result.json",
+      "sha256": "fd63618b9bf1c1e9989e37f651ace34f6685a29b99700249659e64ff7091a42c"
+    }
+  ],
+  "terminal_results_and_responses": [
+    {
+      "billing_status": "usage_reported",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-weak-born",
+      "completed_review": false,
+      "failure_type": "MaxTokens",
+      "known_nonpartial_estimate": true,
+      "no_retry": true,
+      "obligation": "weak-born",
+      "parent_reported_exit_code": 1,
+      "provider": "Anthropic",
+      "report_classification": "EMPTY_MAX_TOKENS_NO_FINDINGS",
+      "response": {
+        "bytes": 0,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-weak-born/response.md"
+      },
+      "response_LF_count": 0,
+      "response_nonempty": false,
+      "result": {
+        "bytes": 1638,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-weak-born/result.json"
+      },
+      "scientific_findings": false,
+      "session_id": 78557,
+      "session_reaped_per_parent": true,
+      "status": "truncated",
+      "stop_reason": "max_tokens",
+      "terminal": true,
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 23021,
+        "output_tokens": 48000
+      },
+      "usage_cost_estimate_usd": "1.052084",
+      "usage_is_partial": false
+    }
+  ],
+  "unique_hashed_artifact_count": 41,
+  "usage_snapshot": {
+    "bytes": 18286,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_phase_selection_round/usage.json",
+    "sha256": "8dcfa0ae781499433166ae75e161a2e8049974ab6136558606f293095ee0afc1"
+  }
+}

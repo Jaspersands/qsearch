@@ -1,0 +1,152 @@
+{
+  "status": "PASS_exact_single_prime_control_only",
+  "execution_note": "Initial invocation passed the field/palette and explicit norm checks, then failed at maximal_order because the cached Sage API requires a tuple, not a list. Corrected that argument and reran the same p=43 control; no parameter scan.",
+  "prime": 43,
+  "quaternion_invariants": [
+    2,
+    3
+  ],
+  "quaternion_reduced_discriminant": 6,
+  "hilbert_symbols": {
+    "2": -1,
+    "3": -1,
+    "43": 1
+  },
+  "original_field_embeddings": [
+    "i",
+    "j",
+    "i + j"
+  ],
+  "field_records": [
+    {
+      "radicand": 2,
+      "field_discriminant": 8,
+      "kronecker_at_43": -1,
+      "prime_decomposition_ef": [
+        [
+          1,
+          2
+        ]
+      ],
+      "factorization_mod_43": [
+        [
+          "x^2 + 41",
+          1
+        ]
+      ]
+    },
+    {
+      "radicand": 3,
+      "field_discriminant": 12,
+      "kronecker_at_43": -1,
+      "prime_decomposition_ef": [
+        [
+          1,
+          2
+        ]
+      ],
+      "factorization_mod_43": [
+        [
+          "x^2 + 40",
+          1
+        ]
+      ]
+    },
+    {
+      "radicand": 5,
+      "field_discriminant": 5,
+      "kronecker_at_43": -1,
+      "prime_decomposition_ef": [
+        [
+          1,
+          2
+        ]
+      ],
+      "factorization_mod_43": [
+        [
+          "x^2 + 38",
+          1
+        ]
+      ]
+    },
+    {
+      "radicand": 6,
+      "field_discriminant": 24,
+      "kronecker_at_43": 1,
+      "prime_decomposition_ef": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "factorization_mod_43": [
+        [
+          "x + 7",
+          1
+        ],
+        [
+          "x + 36",
+          1
+        ]
+      ]
+    }
+  ],
+  "fixed_palette_valuation_obstruction": {
+    "palette": [
+      2,
+      3,
+      5
+    ],
+    "all_unramified_inert_at_43": true,
+    "every_nonzero_field_norm_valuation": "even (including negative valuations)",
+    "central_reduced_norm_valuation": "even",
+    "arbitrary_ordered_product_norm_valuation": "even by multiplicativity",
+    "target_reduced_norm_43_valuation": 1
+  },
+  "dependent_palette_limit": {
+    "palette": [
+      2,
+      3,
+      6
+    ],
+    "character_identity": "chi_6 = chi_2 * chi_3 away from 2,3",
+    "sqrt6_embedding": "2*j + k",
+    "sqrt6_square": "6",
+    "explicit_witness": "7 + 2*j + k",
+    "witness_reduced_norm": "43",
+    "field_norm_7_plus_sqrt6": "43",
+    "global_palette_completeness": "NOT CLAIMED"
+  },
+  "integral_witness_control": {
+    "maximal_order_basis": [
+      "1",
+      "i",
+      "1/2 + 1/2*i + 1/2*j",
+      "1/2*i + 1/2*k"
+    ],
+    "order_discriminant": "6",
+    "witness_coordinates": [
+      "5",
+      "-3",
+      "4",
+      "2"
+    ],
+    "inverse": "7/43 - 2/43*j - 1/43*k",
+    "43_times_inverse_is_integral": true,
+    "principal_right_ideal_basis": [
+      "7 + 2*j + k",
+      "7*i - 2*j - 2*k",
+      "13/2 + 5*i + 7/2*j - 1/2*k",
+      "-3 + 1/2*i - j + 5/2*k"
+    ],
+    "index_in_order": "1849",
+    "reduced_norm_ideal_generator": "43"
+  },
+  "scope": "Specified palette only; no all-finite-palette, adaptive-field, norm-one, or ternary-witness no-go.",
+  "source_sha256": "5b51a8786ae3aa591723f7724e61178adba0e441ac7d9e806bf9aafc8fcf57cc",
+  "script_sha256": "c3cd80a44b992f5372a23aaf29bf4deec6f320a946f8677241edbb71e103a706"
+}

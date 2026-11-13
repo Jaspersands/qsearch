@@ -1,0 +1,104 @@
+{
+  "scope": "Only Q2(sqrt2), R=(0,-2,0), then R=(0,-2,1) if first has no counterexample. No universal four-word inference.",
+  "hilbert_bits": [
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ]
+  ],
+  "unit_defects": {
+    "0": "infinity",
+    "2": 1,
+    "4": 3,
+    "6": 1,
+    "8": 4,
+    "10": 1,
+    "12": 3,
+    "14": 1
+  },
+  "results": [
+    {
+      "R": [
+        0,
+        -2,
+        0
+      ],
+      "valid_start_tuples": 32,
+      "isometric_ordered_endpoint_pairs": 640,
+      "max_minimal_word_length": 2,
+      "distance_counts": {
+        "0": 32,
+        "1": 224,
+        "2": 384
+      },
+      "extremal": {
+        "initial_masks": [
+          0,
+          0,
+          0
+        ],
+        "target_masks": [
+          2,
+          6,
+          4
+        ],
+        "x": 2,
+        "z": 4,
+        "distance": 2
+      }
+    },
+    {
+      "R": [
+        0,
+        -2,
+        1
+      ],
+      "valid_start_tuples": 32,
+      "isometric_ordered_endpoint_pairs": 512,
+      "max_minimal_word_length": 3,
+      "distance_counts": {
+        "0": 32,
+        "1": 192,
+        "2": 224,
+        "3": 64
+      },
+      "extremal": {
+        "initial_masks": [
+          0,
+          0,
+          1
+        ],
+        "target_masks": [
+          2,
+          10,
+          9
+        ],
+        "x": 2,
+        "z": 8,
+        "distance": 3
+      }
+    }
+  ],
+  "counterexample": null,
+  "PASS": true
+}

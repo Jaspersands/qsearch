@@ -1,0 +1,312 @@
+ball_permutations.txt, physical LF235--298; primary arxiv1610.06646
+of the quantum computer stores the label of the x’th particle, if the particles are listed in order from
+left to right. Whenever two particles meet, one of two things can happen: the particles can reflect, or
+they can pass through each other. The first happens with amplitude c, while the second happens with
+amplitude is.
+      We also consider a restricted version of this model, in which each particle 1 . . . n has its own velocity
+v1 . . . vn , and particles can only interact if they collide. For instance if particle 2 is initially moving
+to the right, and all other particles are stationary, then particle 2 will only interact with particles to
+its right, and cannot interact with particles to its left. This model captures the power of scattering
+experiments with n distinguishable particles and repulsive (hard-core) interactions. This is illustrated
+in Figure 1. Furthermore, as described in Appendix A, if one rigorously defines this model, one finds
+the parameter θ in the exchange interactions cannot be arbitrary. Suppose we define a new parameter
+z, called the rapidity, which is the relative velocity of the colliding particles. Then we find that the
+exchange interaction must have θ = tan−1 (z). Furthermore, if we let R(z,t) = X(tan−1 (z),t), then we
+additionally find our quantum operations must satisfy:
+
+                                 R(z1 , 1)R(z2 , 2)R(z3 , 1) = R(z′3 , 2)R(z′2 , 1)R(z′1 , 2).
+
+This is known as the parameter-dependent Yang-Baxter equation. We can confirm that the only nontrivial
+solution to this equation is, z1 = z′1 , z3 = z′3 , and z2 = z′2 = z1 + z2 . Therefore this equation constrains the
+values of z (and therefore the values of θ ) allowed in interactions in the model.
+    As a result, we will consider two types of models in this paper: one in which we imagine we can set
+θ to any value we choose for each interaction, and another based on the physics of colliding particles
+   5 We get the same model if we allow swaps between any pairs. This is because we can simulate general swaps with adjacent
+
+ones.
+   6 The operator L acts from left to right on the basis of the Hilbert space. We can also talk about right multiplications R(τ)
+
+which map |σ ⟩ ↦→ |σ ∘ τ −1 ⟩ for permutations σ and τ. The importance of these operators become clear in Section 3.2.2
+
+
+                                                               5
+3 The quantum ball permuting model
+
+
+
+
+Figure 1: Five particles with momenta p1 , p2 , . . . , p5 moving on a line. At each intersection between
+these lines there is an interaction modeled by a ball-permuting gate. No other interactions are allowed.
+
+
+
+in which the interactions are constrained by both their velocities and the Yang-Baxter equation. The
+former model is much simpler to define and work with, while the latter model is more directly related to
+the physics of interacting particles on a line.
+
+
+3     The quantum ball permuting model
+Based on the model introduced in Section 2, we will now formally define quantum ball-permuting
+complexity classes. We analyze their power with standard and arbitrary initial states in Sections 3.1 and
+3.2, respectively. These sections assume that one can set the amplitudes c and s to arbitrary values for
+each interaction. Then, in Section 3.3, we analyze the complexity of this model when the interactions
+are constrained to obey the velocity constraints and the Yang-Baxter equations introduced at the end of
+Section 2.
+
+Definition 3.1. QBall is the class of languages L ⊆ {0, 1}? for which there exists a polynomial time
+Turing machine M which on any input x ∈ {0, 1}? , outputs the description of a ball permuting quantum
+circuit C as a composition of X operators, and the description of a subset P ⊆ Sn of permutations, such
+                                                                                         1      1
+that if x ∈ L, then the probability that the sampled permutation from C is in P at least +          , and
+                                                                                         2 poly(n)
+                         1       1
+otherwise it is at most −             . Likewise, RQBall is defined to be the subclass of QBall where the
+                         2 poly(n)
+exchange gates of the ball permuting circuits are constrained to satisfy the Yang-Baxter equation.
+
+ball_permutations.txt, physical LF612--705; primary arxiv1610.06646
+find out whether or not the assumption was correct, and it will have been with probability 1/2.
+
+3.3   The power of RQBall
+In this section, we consider the complexity class RQBall, in which the partial swap interactions are
+constrained by the physics of distinguishable particles. In particular, as discussed briefly in Section 2
+and in detail in Appendix A, the amplitudes c and s are constrained by the relative velocities of the
+interacting particles, and only those particles which collide can interact. This physically corresponds to
+a two-dimensional integrable quantum field theory of n distinguishable particles on a line.
+    Before presenting these results, we first note that we do not expect this model to be capable of
+universal quantum computing, because the dimensionality of the space of unitary operations allowed in
+this model is too small:
+Theorem 3.9. Let Qn be the Lie group generated by planar Yang-Baxter quantum circuits over n labels,
+then Qn as a manifold is isomorphic to the union of n! manifolds, each with dimension at most n.
+Proof. (Sketch) This follows by noticing that if the operators satisfy the Yang-Baxter equation, then the
+final unitary operator only depends on n real parameters, namely the initial momenta of the particles.
+
+    In other words, if the interactions of the ball-permuting model satisfy the Yang-Baxter equation, then
+the group of unitary operators generated on n labels corresponds to a Lie group of linear dimension. In
+contrast the standard definition of BQP allows unitaries of dimension exponential in the number of
+qubits. This makes it unlikely that one could do universal quantum computation in this model; however,
+it does not imply efficient classical simulation.
+    To the contrary, in this section we establish some hardness results for classical simulation of the
+class RQBall following the strategy of Aaronson and Arkhipov [2], Bremner-Shephard-Josza [12] and
+others. In particular, we show that a classical computer cannot sample from the same distribution as
+these circuits unless the polynomial hierarchy collapses to the third level. Our argument makes use of
+two technical concepts. The first is intermediate demolition measurements. A demolition measurement
+is a measurement of the label at a particular location, where after the label is measured, it is removed
+from the computation (“demolished"), i.e. the Hilbert space becomes CSn−1 rather than CSn . The sec-
+ond is the concept of postselection (discussed in greater detail in Appendix B). Here postselection is the
+
+                                                    12
+3 The quantum ball permuting model                                          3.3   The power of RQBall
+
+
+(non-physical) ability to specify the outcome of a measurement in advance. We show that postselected
+RQBall circuits with intermediate demolition measurements are capable of universal postselected quan-
+tum computation. By the techniques of [2,12], this immediately implies that a classical computer cannot
+efficiently sample from the same probability distribution unless the polynomial hierarchy collapses. The
+basic reason is that postselected quantum computation (denoted by the complexity class PostBQP) is
+more powerful that postselected classical computation (denoted by the class PostBPP) assuming PH
+does not collapse. Therefore if a classical computer could sample from the same distribution, then by
+postselecting the simulation of the quantum device, that would solve a PostBQP problem in PostBPP,
+which causes PH to collapse.
+     More formally, we consider the following complexity class:
+
+Definition 3.5. PostRQBall is the class of decision problems that are solvable in polynomial-time using
+postselected Yang-Baxter ball collision circuits with intermediate demolition measurements, where in
+the input state is a special inital state described in Appendix N. That is, PostRQBall is the set of
+languages L such that there exists a postselected quantum RQBall circuit, and a poly-time-computable
+set of permutions P, such that if σ is the permutation measured at the end of the computation, and C is
+the event all intermediate measurments yield their postselected values, then
+
+      1) Pr[C] > 0.
+
+      2) if x ∈ L, Pr[σ ∈ P̃|C] ≥ 2/3.
+
+      3) if x ∈
+              / L, Pr[σ ∈ c̃|C] ≤ 1/3.
+
+    Likewise define MeasRQBall to be the class of sampling problems that are solvable by polynomial
+time uniform Yang-Baxter ball collision circuits on arbitrary initial states and intermediate demolition
+measurements.
+
+   The central observation is the following theorem, stating that although the ball scattering model
+might be strictly weaker than BQP, the postselected version is equal to PostBQP, which is equal to
+PP [1].
+
+Theorem 3.10. PostRQBall = PostBQP = PP.
+
+Proof. (sketch). In Appendix N we show how to use intermediate demolition measurements in RQBall
+circuits to simulate standard QBall circuits, assuming one can postselect the outcomes of the interme-
+diate demolition measurements. Since QBall = BQP this implies BQP ⊆ PostRQBall in an encoded
+sense. By postselecting this encoded BQP simulation we can simulate arbitrary PostBQP computations
+in PostRQBall as well.
+
+   From this, using the techniques of [2, 12], we immediately have the following corollary:
+
+Corollary 3.11. There is no polynomial time randomized algorithm to simulate MeasRQBall to within
+multiplicative constant error, unless PH collapses to its third level.
+
+Proof. (sketch). If a BPP machine could sample from the same distribution as a MeasRQBall circuit,
+then by postselecting the simulation, one could simulate PostRQBall = PP in PostBPP, and hence
+PostBPP = PP. But by [2, 12] this would imply the collapse of PH, because then PH ⊆ PPP =
+PPostBPP ⊆ ∆3 . Here the first containment is Toda’s theorem [37] and the third follows from the fact
+PostBPP ⊆ Σ3P [7].
+
+
+                                                  13
+4 Computational complexity of the classical ball permuting model
+
+
+    Therefore, despite the fact that the dimensionality of the space of unitaries in RQBall is small,
+RQBall computations cannot be efficiently simulated classically (up to multiplicative error) unless the
+polynomial hierarchy. Hence the RQBall model seems to be intermediate in power between BPP and
+
+ball_permutations.txt, physical LF1048--1084; primary arxiv1610.06646
+
+
+Figure 3: Pictorial demonstration of the Yang-Baxter equation. Both interactions give the same unitary
+operator as quantum circuits, if the input momenta are equal.
+
+
+θπ : Rn → {0, 1} is an indicator function which is set to 1 whenever its input x satisfies xπ(1) < xπ(2) <
+. . . < xπ(n) , and otherwise zero. p j for j ∈ [n] are constant parameters, and can be viewed as the mo-
+menta. The proposed solution must be a continuous function of the positions and also one can impose a
+boundary condition for xπ(t) = xπ(t+1) for t ∈ [n] on the derivative of the wave-function. Applying these
+boundary conditions, one can get linear relations between the amplitudes:
+
+                                                  −icAπτ +Vτ,t At∘π
+                                                                 τ
+                                        Aπt∘τ =
+                                                      ic +Vτ,t
+Here t ∘ π is a new permutation that results from the swapping of the t and t + 1’th labels in the permu-
+tation π, while Vτ,t = pτ(t) − pτ(t+1) . The above linear map has a simple interpretation: two particles
+                                                                                   −ic
+with relative velocity V collide with each other and reflect with amplitude              , or otherwise, with
+                                                                                  ic +V
+               V
+amplitude          they tunnel through without any interaction. In any case, the higher momentum passes
+            ic +V
+through the lower momentum and starting from a configuration x1 < x2 < . . . < xn for n particles with
+any momenta, the wave-function will end up in a configuration with momenta in the increasing order.
+     Each of these pairwise scatterings can be viewed as a local quantum gate, and the collection of
+scatterings can be viewed as a quantum circuit. To see this, consider an n! dimensional Hilbert space
+for n particles with orthonormal basis {|σ ⟩ : σ ∈ Sn }. Assume an initial state of |1, 2, 3, . . . , n⟩, with
+momenta p1 , p2 , . . . , pn . These momenta and the initial distances between the particles determine in
+what order the particles will collide. It is instructive to view the trajectory of the particles as n straight
+lines for each of these particles in an x/t plane. Time goes upwards and the intersection between any
+two lines is a collision. In each collision, either the labels of the two colliding particles are swapped or
+they are left unchanged. Particles with zero relative velocity do not interact, as lines with equal slope do
+not intersect. Suppose that the first collision corresponds to the intersection of line t with line t + 1. So
+
+                                                     21
+
+ball_permutations.txt, physical LF2945--2957; primary arxiv1610.06646
+
+
+
+P     Open Problems and Further Directions
+    1. In section 3.3 we showed that the model RQBall with intermediate measurements is universal
+       under postselection, and therefore RQBall cannot be efficiently simulated classically unless the
+       polynomial hierarchy collapses. Is this also true without intermediate measurements?
+
+    2. In section 3.1 we proved that single amplitudes can be efficiently approximated within additive
+       error by DQC1 computation. However it is unknown if an efficient DQC1 (approximate) sampling
+       scheme exists for this model. Also a lower-bound on the power of the ball permuting model on
+       standard initial states is not known.
+
+
+yang_baxter_classical.txt, physical LF25--32; primary arxiv1407.1361
+                                           in [21]. In this work, we will consider what is typically called the constant quantum Yang-Baxter
+                                           equation, and is defined as follows. Let V be a finite-dimensional complex Hilbert space and R a
+                                           linear operator on V ⊗ V . Then R satisfies the quantum Yang-Baxter equation (YBE) if
+
+                                                                        (R ⊗ I)(I ⊗ R)(R ⊗ I) = (I ⊗ R)(R ⊗ I)(I ⊗ R) ,
+
+                                           where I denotes the identity operator on V . In this case, we say that R is a Yang-Baxter operator.
+                                           The YBE bears a close resemblance to the relation
+
+yang_baxter_classical.txt, physical LF277--299; primary arxiv1407.1361
+    We are now ready to present the main classical simulation algorithm. When we refer to the
+matrix entries of operators in GL(C[d]) ∼ = GLd (C), it will always be in the computational basis.
+We say that such an operator is computable if its entries can be computed exactly by a classical
+algorithm in poly(d) time. Recall that T : a ⊗ b 7→ b ⊗ a is the swap operator, and that for a subset
+S of a group G, hSi denotes the subgroup of G generated by S.
+
+Theorem 1. Let R = {R1 , R2 , . . . , Rk } be a set of unitary 2-qudit gates, each one a composition
+
+                               Ri = (Q ⊗ Q)Di Pi (Ci ⊗ Ci )(Q ⊗ Q)−1                              (3)
+
+of computable, invertible operators. Suppose that for each i, Di is a diagonal unitary, Ci is a
+d × d permutation matrix, and Pi = I or Pi = T . Finally, let Q satisfy property (G) where
+G = h{Ci }ki=1 i ≤ Sd . Then there exists a classical probabilistic algorithm which, given an n-qudit
+R-circuit U and strings x, z ∈ [d]n and ǫ > 0, outputs a number r in time poly(n, |U |, 1/ǫ) such
+that |r − hx|U |zi| < ǫ except with probability exponentially small in n and 1/ǫ.
+
+
+
+
+                                                  6
+Proof. Set Si = Di Pi (Ci ⊗ Ci ). If we expand each Ri -gate to turn U into a circuit made from
+Si -gates and Q-gates, then all of the Q-gates except the initial and final ones are cancelled, as
+in the example below. We are thus left with a circuit of the form Q⊗n V (Q−1 )⊗n where V is an
+
+yang_baxter_classical.txt, physical LF631--690; primary arxiv1407.1361
+Theorem 3. Let R ∈ {R1 , R2 , R3 } be a unitary solution to the Yang-Baxter equation on qubits.
+Then I({R}) is in PromiseBPP.
+
+In particular, if one could perform (perhaps encoded) universal quantum computation with these
+circuits then PromiseBQP = PromiseBPP. We can also formulate the lack of universality for these
+solutions in the following terms.
+
+
+
+                                                     12
+Theorem 4. Let R ∈ {R1 , R2 , R3 } be a unitary solution to the Yang-Baxter equation on qubits,
+and let ρn : Bn → SU (2n ) be the corresponding unitary representation of the braid group. Then the
+image of ρn is not dense in SU (2n ) for any n ≥ 2, unless PromiseBQP = PromiseBPP.
+
+Proof. (Sketch) For a contradiction, suppose there exists an n ≥ 2 such that the image of ρn is
+dense. Let C be an arbitrary m-qubit quantum circuit. We can assume without loss of generality
+that C only consists of 2-qubit gates acting on adjacent qubits, and that n is even. For each of the
+m qubits, assign n/2 qubits from the space of ρn . By the density of the image of ρn , we can then
+simulate C inside ρmn/2 gate-by-gate via the Solovay-Kitaev theorem. Then we can use the classical
+algorithm from Theorem 1 to approximate the relevant matrix entry of the resulting R-circuit, thus
+solving the PromiseBQP-hard problem of approximating the corresponding entry of C.
+
+4.3   Family four is unlikely to be universal
+Recall that the fourth solution family is of the form R4 = k(Q ⊗ Q)S4 T (Q ⊗ Q)−1 . We begin by
+demonstrating a Clifford circuit which is equal to the gate S4 T .
+                                                
+                                   1    0 0 1
+                                0      1 1 0            Z     • X    H
+                     S4 T = √12 
+                                 0 −1 1 0
+                                                 =
+                                                          Z        Z
+                                  −1 0 0 1
+    We also note that, in this solution family, Q is a scaled unitary operator. To see this, note that
+                2
+                 |a| + |c|2 āb + c̄d
+                                          2
+                                               |a| + |c|2
+                                                                                           
+          †                                                     0             2     2
+                                                                                       1 0
+       Q Q=                               =                              = |a| + |b|
+                  ab̄ + cd¯ |b|2 + |d|2            0       |b|2 + |a|2                   0 1
+
+where we first applied the condition c = −ab̄/d¯ to the off-diagonal elements and the condition
+|a|2 = |d|2 to the diagonal ones; the last equality follows from combining these two conditions to
+get |c|2 = |b|2 . Now set α = (|a|2 + |b|2 )1/2 and Q1 = α−1 Q. Using the above, one easily checks
+that Q1 is unitary and that Q†1 = αQ−1 . It follows that
+
+        (Q ⊗ Q)A(Q ⊗ Q)−1 = (αQ1 ⊗ αQ1 )A(α−1 Q†1 ⊗ α−1 Q†1 ) = (Q1 ⊗ Q1 )A(Q1 ⊗ Q1 )†
+
+for any A. For us it will thus suffice to assume that Q is in fact unitary. This allows us to apply
+Theorem 2 and get the following result.
+
+Theorem 5. Let U be a {R4 }-circuit on n qubits, M a Hermitian operator on O(log(n)) qubits,
+and |ψi, |φi arbitrary n-qubit product states. Then hψ|U † (M ⊗ I)U |φi can be computed exactly in
+O(poly(n)) classical time.
+
+
+5     Some simple high-dimensional solutions

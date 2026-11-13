@@ -253,13 +253,23 @@ and other conductors are NOT covered; no implementation/novelty claim.
 ## Reviewed factoring-only quartic branch source (13 November)
 
 QUARTIC_RELATIVE_NORM_CLASSICAL.md now supplies complete native L(S,2)
-for quartic fields with quadratic F and odd S-class order, with polynomial
+for EVERY quartic field with a quadratic subfield F, with polynomial
 integer-factorization calls on polynomial-bit intermediates. All native,
 relative norm/conic and support corrections are independently reviewed and
-parent-read. The one-prime Galoisquartic branch family satisfies the class
-condition without advice. Combining rational/quadratic/quartic branch
+parent-read. Its later support-obstruction kernel removes the odd S-class
+condition; the one-prime Galoisquartic family is a contained subclass.
+Combining rational/quadratic/quartic branch
 bases with the retained native local compiler gives a polynomial-BIT
 classical reduction of this subclass's Selmer dimension to factoring.
 No quantum unit primitive or GRH needed in this subclass. Fixeddegree
 constants may be enormous; no implementation, novelty or speedup follows.
 General growing-degree quantum endpoint remains as previously scoped.
+
+The stronger supplied-tower comparator in QUADRATIC_TOWER_RECURRENCE.md
+also supplies complete squareclasses under relevant-Hecke ERH and charged
+factoring. Expanded tower/order tables and maps are input there; their
+native acquisition from arbitrary f is not free. This does not match the
+general native theorem or show that its scalar output requires class groups.
+Targeted Nov14 selection review found no new concrete reopening defect:
+audits/reviews/2026-11-14-positive-selmer-selection.md. A distinct constructive
+output is now screened in CASSELS_TATE_NATIVE_ADMISSION.md.

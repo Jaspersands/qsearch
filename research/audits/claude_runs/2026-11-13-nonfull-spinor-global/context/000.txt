@@ -1,0 +1,117 @@
+# Nonfull spinor image forces a two-move ternary transporter
+
+2026-11-13. Parent proof; independent local and global checks pending.
+This targets the native indefinite ternary integral-isometry DECISION gate.
+It does not claim universal bounded BONG connectivity or a global witness.
+
+## Contract and source check
+
+Input: expanded totally real number field K with its full maximal-order
+basis/table, and nonsingular integral ternary Gram matrices, indefinite at
+some real embedding. No transporter, spinor offset, class/unit basis or
+support advice is supplied. Retain the reviewed complete GRH quantum
+arithmetic backends from SPLIT_DYADIC_TERNARY_DECISION.md. The proposed
+mechanism is to compute the local stabilizer spinor image FIRST. A full
+image makes its relative-offset quotient trivial; a nonfull image forces
+a short actual transporter by the theorem below. This directly removes
+the growing-ramification seed requirement for DECISION, if verified.
+
+Expected upper bound: polynomial quantum bit complexity in native input
+and log(1/error), under precisely the retained arithmetic assumptions.
+No separation or novelty is asserted. Strongest classical competitor is
+the SAME reduction with classical class/unit/norm arithmetic; supplied
+quadratic towers retain the stronger ERH reduction to integer factoring.
+Local work is classical polynomial arithmetic, with no residue-field,
+squareclass, or growing-precision enumeration. No quantum code is proposed.
+
+Corpus been-tried/baselines and Beli/Kirschmer sources checked before this
+construction. The newly inspected actual Magma package has a Boolean
+IsLocallyIsometric and stabilizer SpinorNorm, not a nonnested transporter.
+Its OnePlusPowerOfP enumerates squareclasses; do NOT import a polynomial
+runtime claim from that implementation. Use the already charged native
+filtration/Hilbert basis algorithms instead. Sources retained under
+sources/dyadic_seed_selection/kirschmer_code/ with archive provenance.
+
+Critical primary source: Beli thesis, sources/spinor_genus_admission/.
+Printed pp67-69 (PDF78-80), Definition9 and Lemma1.4.11, use INCLUSIVE
+low-defect cutoff d<=e-gap/2. Actual PDF pages79,123 were visually checked;
+the OCR incorrectly loses the equality bars. Lemma1.7.1(i) characterizes
+binary G contained in units; Section1.7 says a lattice without property A
+has spinor image either all squareclasses or precisely the unit classes.
+Theorem3 at printedp112/PDF123 gives its exact test. PropertyA for an actual
+ternary good BONG is R1<R3. These are source theorems, not invented oracles.
+
+## Local theorem and proof
+
+Let F/Q2 have growing charged ramification e and residue degree f. Let
+L and M be isometric ternary lattices, with actual good BONG norms a_i,b_i,
+common R_i=v(a_i)=v(b_i), R1<=R3. Set
+ m=R2-R1, n=R3-R2, C=-a1*a2, D=-a2*a3,
+ x=b1/a1, z=b3/a3,
+ h=min(e+m/2,m+d(C)), k=min(e+n/2,n+d(D)),
+ alpha1=min(h,m+k), alpha2=min(k,n+h).
+Good-BONG validity gives m,n>=-2e, h,k>=0, m+n>=0. Unit squareclass
+filtration U_t has relative defect at least t, square defect infinity;
+C,D with even valuation are identified with their unit squareclasses.
+Let H=theta(O^+(L)) in F*/F*2.
+
+CLAIM: If H is PROPER, the word 12(x),23(z) is legal, up to final unit
+square rescaling. Its actual coordinates are polynomially constructible
+using the reviewed quadratic-order unit-norm compiler and sub-BONG lemma.
+
+1. If m>2e, h=e+m/2>2e and alpha1>2e. Thus x is a square. Also
+ n+h>=e+n/2>=k, since m+n>=0, so alpha2=k. The target second-pair
+ threshold equals k because x is square. The ternary Hasse identity
+ <C,x>+<D,z>+<x,z>=0 gives <D,z>=0, and d(z)>=k. The first move is
+ a square rescaling; the second is legal. If n>2e, the symmetric argument
+ gives z square and the first move legal. This case does not require H proper.
+
+2. Suppose m,n<=2e and R1<R3. Since H is proper, Beli Lemma1.4.11
+ forces property B. Its inclusive short-gap condition then forces m,n even
+ and d(C)>e-m/2, d(D)>e-n/2. Therefore h=e+m/2,k=e+n/2,
+ alpha1=h, alpha2=k, and alpha1+alpha2=2e+(m+n)/2>2e.
+ The reviewed strict high-alpha two-move proof applies: Beli classification
+ condition(iv) supplies <C,x>=0; target invariants and Hasse pay the second.
+
+3. Suppose R1=R3, so n=-m and property A fails. The source dichotomy and
+ properness imply H is precisely the unit squareclasses. Both adjacent binary
+ stabilizer images G are contained in H, as are the target's G images.
+ Lemma1.7.1(i) says m,n are even and, for the first pair,
+ d(C)=2e OR d(C)>e-m/2. The analogous condition holds for D and D*x at
+ the target. Hence h=e+m/2, k=e-m/2, alpha1=h,alpha2=k; target k(x)=k.
+ If h>0, then d(C)>k (including d(C)=2e when k<2e), so d(C)+d(x)>2e
+ and <C,x>=0 by Hilbert filtration orthogonality. If h=0, k=2e, and C is
+ square or the unramified quadratic class, whose norm character vanishes on
+ every unit x. The same conclusion follows. Hasse then gives <D*x,z>=0,
+ while d(z)>=k=k(x). Both moves are legal, including h=0,k=0 endpoints.
+ The parity clause in Theorem3 is consistent but is not needed for this proof.
+
+After these moves the norms are (a1*x,a2*x*z,a3*z). Determinant-square
+matching makes b2/(a2*x*z) a unit square; rescale that vector. Actual binary
+lattice reconstruction, order-unit norms, scalar roots and the sub-BONG
+replacement pay coordinates; no integral orthogonal summand is assumed.
+Use the reviewed finite seed verification/lift and relative trace spinor
+formula, with the global rational identification and orientation explicitly.
+
+## Proposed general native composition
+
+First check local isometry by the actual Beli invariants. A nonisometric
+place rejects. At an isometric dyadic place compute H. If H=F*/F*2, its
+relative spinor quotient is zero: record zero there without constructing
+any transporter. If H is proper, construct the two-move transporter above
+and compute the relative spinor offset modulo H by the retained guarded
+formula. Odd places and real signatures are handled as in the reviewed
+split/unramified composition. Complete S-unit ray membership then decides
+proper spinor genus; indefinite rank3 strong approximation and -I handle
+class and properness exactly as before. The dyadic quotient dimension is
+at most sum(ef+2)=O([K:Q]), with every precision and capped-root error charged.
+
+This shortcut needs no solution of universal FOUR-word completeness. The
+exact three-word falsifier has full stabilizer image, by property A and its
+failure of property B (gaps0,3, e2); it contributes no local offset quotient.
+No conclusion about a general local transporter algorithm follows from
+skipping that quotient. Falsifiers: an isometric pair with proper H and an
+illegal proposed move; a source exception to the dichotomy; or an unpaid
+native interface in the global composition. General DECISION stays pending
+independent verification; witnesses, practicality, novelty, hardness,
+separation and unconditional arithmetic claims stay unclaimed.

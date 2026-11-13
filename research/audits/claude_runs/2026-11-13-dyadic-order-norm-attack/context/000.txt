@@ -1,0 +1,120 @@
+# Constructive unit norms in dyadic quadratic orders
+
+2026-11-13. Parent derivation, focused review in progress. This pays a specific
+binary BONG operation; it does NOT yet prove a complete ternary transporter.
+The parent and one independent helper checked the algebra. A narrow paid
+attack and an exact finite control remain to be assessed.
+
+## Native contract and why this operation
+
+Let F be a finite extension of Q2, O its valuation ring, pi a uniformizer,
+e=v(2), and residue field k=F_(2^f). Local arithmetic comes from the charged
+expanded number-field/maximal-order input at a specified prime. Both e,f
+grow. Input T,N in O and the free quadratic algebra
+ R=O[theta]/(theta^2-T theta+N),
+with separable generic algebra F tensor R (field OR split), and eta in O^*.
+Decide whether eta is the norm of a UNIT OF THIS ORDER and, if yes, produce
+a preimage to arbitrary absolute precision L, in polynomial BIT cost in
+input,e,f,L. No maximal order, unit group, norm preimage or residue enumeration
+is supplied. An exact infinite p-adic expansion is not the output.
+
+This is a classical operation required by coupled BONG transformations in
+the native indefinite ternary integral-isometry route. Beli's actual2009
+classification source Section5.1 and Lemma5.1 give allowed binary scaling
+via g(a), but membership alone is not a computed lattice isometry. The
+separate growing-degree ternary seed and bounded coupled word remain OPEN.
+Corpus been-tried/baselines were checked; the catalogue points to ordinary
+class/unit and lattice algorithms, with no matching theorem implied. A
+primary-source search found mostly GLOBAL quadratic-order unit algorithms,
+which are not imported as local bounds. The proof below is elementary local
+unit filtration, with no novelty, speedup or absence-of-prior-art claim.
+
+## Explicit generators with recorded preimages
+
+Write U_j=1+pi^j R. For every j>=1,
+ U_j/U_(j+1) is the additive group R/piR.
+Choose an F2 basis beta_1,...,beta_f of k and arbitrary integral lifts. Include
+ 1+pi^j beta_i and 1+pi^j beta_i theta,
+for 1<=j<=2e and 1<=i<=f. Every listed element is a unit.
+
+The tail U_(2e+1) consists of squares INSIDE R. For X in pi^(2e+1)R,
+(1+X)^(1/2) converges in R by its binomial series: the j-th term has valuation
+at least j(2e+1)-(2j-1)e=j+e. This uses the free complete O-module R and
+integral multiplication, and remains valid for a nonmaximal order or a split
+algebra. It does not assume an integral basis of the maximal order.
+
+The residue algebra is either a separable quadratic field, k times k, or
+k[epsilon]/epsilon^2. In the separable cases its unit group has odd order,
+so squaring is onto and no residue-unit squareclass generators are required.
+In the double-root case, find r in k with X^2-Tbar X+Nbar=(X-r)^2,
+put epsilon=theta-r modulo pi, and add the units
+ 1+beta_i (theta-r_tilde), 1<=i<=f.
+Modulo pi these generate the factor 1+k epsilon; the scalar k^* factor again
+has odd order. Frobenius inversion computes r without residue enumeration.
+
+These <=(4e+1)f explicit units generate R^*/R^*2. Indeed first remove the
+residue-unit class, then remove the successive additive filtration layers;
+the remaining tail is a square in R. We need a generating set, not an
+independent basis or a discrete logarithm in an odd-order residue group.
+The same argument gives a finite matrix construction modulo pi^L; all
+filtration indices are O(e), not exponential in the residue-field size.
+
+## Norm-image membership and a preimage
+
+The algebra norm is N_R/F(p+q theta)=p^2+T p q+N q^2. Compute the norms of the
+listed units. Using the already paid local squareclass/Hilbert-pairing basis,
+represent these and eta in F^*/F^*2 and solve one F2 linear system. The local
+Hilbert algorithm is paid by Voight Theorem6.1 and the existing review
+`audits/reviews/2026-11-07-spinor-genus-sources.md`; no squareclass enumeration.
+
+If eta is outside the span, it is not a norm of an R-unit. If it is inside,
+multiply the recorded selected generators to obtain u in R^* with
+Norm(u)/eta=z^2 in F. Because Norm(u),eta are units, z is an O-unit. Thus
+ u/z is an R-unit and Norm(u/z)=eta.
+This scalar correction preserves the ORDER, unlike an arbitrary fractional
+global norm witness. At finite precision output coefficients modulo pi^L.
+Only polynomially many ring operations and O(e f) generators are involved.
+
+The scalar root is constructive. Start with a unit y whose residue is the
+Frobenius square root of c=Norm(u)/eta. If j=v(c-y^2)<2e, squarehood forces
+j=2r even; cancel the leading error by y+=pi^r d using one residue Frobenius
+root. Cross term valuation e+r>2r, so the error valuation increases. At j=2e,
+solve d^2+(2y/pi^e)d=(c-y^2)/pi^(2e) in k by F2 linear algebra and update
+y+=pi^e d. Squarehood guarantees solvability. Above2e, ordinary Newton
+iteration gives any requested precision, with e guard digits for division
+by2. At most O(e) initial lifts and polynomially many finite-precision
+operations are needed. If the requested precision is already reached, stop.
+All unit inversions preserve precision except the explicit division-by2
+guard; no unknown local inverse is assumed.
+
+## Binary lattice realization
+
+In a rank2 integral lattice choose a primitive norm generator x with q(x)=a,
+and extend it to a basis x,y. Put c=B(x,y)/a and b=q(y)-a c^2. Since a
+generates the norm ideal, T=2c and N=q(y)/a are integral. The quadratic order
+above has theta=c+sqrt(-b/a), trace T, norm N, and
+ q(p x+q y)/a=Norm(p+q theta).
+Hence an order-unit norm preimage of eta yields an integral primitive vector
+v of norm a eta. Primitivity follows because a unit norm cannot arise from
+piR. Extend v to a determinant-one lattice basis v,w using whichever of its
+two coordinates is a unit. Its orthogonal projection w_perp has norm b/eta;
+eta w_perp then has norm b eta and is a valid BONG vector (unit rescaling).
+Thus the permitted binary BONG replacement can be realized with coordinates,
+not merely recognized from a Hilbert symbol.
+
+For an ADJACENT sub-BONG in a ternary lattice this is not an asserted
+orthogonal integral direct summand. The sub-BONG replacement lemma and its
+coordinate lifting must be applied explicitly. A bounded complete sequence
+of replacements remains a separate obligation. Beli's actual final remark
+asserts binary connectivity for residue size>2, without a polynomial word
+bound, and gives a RANK4 obstruction for residue F2. That rank4 example does
+not settle ternary completeness in either direction.
+
+## Claim gates and next experiment
+
+No full native integral-isometry algorithm, all-rank constructor, quantum
+execution, separation or hardness result is established by this note.
+Next: attack the order-unit generator argument and scalar correction, then
+check exact finite nonmaximal, split, unramified and ramified examples against
+direct tiny-ring norm images. These controls can falsify the formulas only.
+Separately solve or refute the proposed three-binary-move ternary word.

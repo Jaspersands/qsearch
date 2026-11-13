@@ -1,0 +1,50 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 6961,
+      "path": "research/DYADIC_QUADRATIC_ORDER_NORMS.md",
+      "sha256": "d41a521060ac94f2940e2db34bc4e06a3f96b4738f188a63c50da8ad2ed22529",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 9698,
+      "path": "research/audits/reviews/2026-11-07-spinor-genus-sources.md",
+      "sha256": "93870262a6b435dac79ae4fceaf2dd3a42930bd3d268d6909a9f65b27ae1dfe4",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 7027,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-13T11:55:43.441253+00:00",
+  "input_token_allowance": 7283,
+  "max_budget_usd": 1.0,
+  "max_tokens": 24000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.509132,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-dyadic-order-norm-attack/prompt.md",
+    "sha256": "76b0f592a47e0027e06560548cdb8a554dabeacf69bf255675a41ce90f353b78",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261113T115131.432789Z-903a6a5d",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 7027,
+    "output_tokens": 24000
+  },
+  "usage_cost_estimate_usd": 0.508108
+}

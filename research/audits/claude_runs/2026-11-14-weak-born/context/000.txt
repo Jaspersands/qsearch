@@ -1,0 +1,1 @@
+2026-11-14 selection: hidden-field Jacobi labels exactly independent of hidden map; CSA endpoint already closed; prior BCS/scattering parked. Single new question: native constant weak-coupling full Born sampling. Owner authorizes selected research context through Anthropic; OpenAI exhausted. Full ground-state sampler classical UNKNOWN; no advantage claim.

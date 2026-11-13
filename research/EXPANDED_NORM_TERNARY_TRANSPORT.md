@@ -1,5 +1,9 @@
 # Expanded norm witnesses and native ternary transport
 
+Current scope (Nov13): GENERAL native DECISION is reviewed WRITTEN under the
+retained complete GRH assumptions; see DYADIC_NONFULL_SPINOR_TRANSPORT.md.
+Historical OPEN paragraphs below are superseded for that decision contract.
+
 2026-11-13. Reviewed WRITTEN global construction and local finite verifier;
 full integral isometry is NOT admitted. The coupled dyadic seed is still open. Start STATE/TRAPS after the closed native
 metabelian pass. Corpus been-tried/baselines for compact norm parity and

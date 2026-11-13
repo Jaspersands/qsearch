@@ -1,0 +1,56 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 6633,
+      "path": "research/BALLISTIC_SPIN_SAMPLING_ADMISSION.md",
+      "sha256": "7dfaa9f6309a1db9dd8bca5f225d39d3f3eef5437f8319c46b59886ed60bf1e5",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 20648,
+      "path": "research/audits/api_inputs/2026-11-14-ballistic-prefix/source_excerpt.txt",
+      "sha256": "0a70fb5303d98ed476b0102732a81a5c99cff9a3d97ce94f6685b88cb2343c8c",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 1489,
+      "path": "research/audits/controls/ballistic_scattering_baselines/result.json",
+      "sha256": "b09c590462051de55af37ab24ae15c0904ea4dfa8323aa4f1d49240c190fdc2f",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 11577,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-13T13:39:17.513829+00:00",
+  "input_token_allowance": 11833,
+  "max_budget_usd": 1.3,
+  "max_tokens": 48000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.007332,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-14-ballistic-prefix/prompt.md",
+    "sha256": "47926df7d9b787ba01c88434cabdc52ecc985c38a759bf7d38eff56685d418b5",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "constructive",
+  "run_id": "20261113T133111.578976Z-bb8743fb",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 11577,
+    "output_tokens": 48000
+  },
+  "usage_cost_estimate_usd": 1.006308
+}

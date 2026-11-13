@@ -1,0 +1,93 @@
+{
+  "captured_at_utc": "2026-11-13T15:18:12.696049+00:00",
+  "cost_note": "Final saved nonpartial runner estimate only; ceiling is not spend, invoice, balance or provider cap.",
+  "cumulative_totals": {
+    "known_terminal_nonpartial_usage_estimate_usd": "329.389110",
+    "known_terminal_nonpartial_usage_records": 252,
+    "new_unknown_bills": 0,
+    "unknown_total_bills_excluded": 8
+  },
+  "frozen_prior_usage_by_reference": {
+    "Anthropic_usd": "190.391602",
+    "OpenAI_usd": "138.120080",
+    "immediate_evidence_checkpoint_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/native_operation_selection_round/checkpoint.json",
+    "known_estimate_usd": "328.511682",
+    "policy": "Frozen prior usage, records and all eight UNKNOWN exclusions/partial counters inherited unchanged by reference. No old source/pin rescan or duplicate prior records; no prior hashes recomputed.",
+    "priced_records": 251,
+    "unknown_bills_excluded": 8,
+    "usage_checkpoint_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_phase_selection_round/checkpoint.json",
+    "usage_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_phase_selection_round/usage.json"
+  },
+  "local_request_ceiling_usd": "2.000000",
+  "no_duplicate_prior_records": true,
+  "owner_credit_anchor_separate": {
+    "Anthropic_remaining_usd": "20.59",
+    "OpenAI": "exhausted/disabled; no further paid calls",
+    "note": "Owner-reported anchor separate from runner estimates, invoices and measured balances; no remaining balance computed."
+  },
+  "positive_endpoint_pairing_round": {
+    "by_provider_usd": {
+      "Anthropic": "0.877428",
+      "OpenAI": "0.000000"
+    },
+    "completed_nonempty_reports": 1,
+    "jobs": 1,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent",
+        "failure_type": null,
+        "known_nonpartial_estimate": true,
+        "no_retry": true,
+        "obligation": "cassels-tate-descent",
+        "parent_fully_read": true,
+        "parent_reported_exit_code": 0,
+        "provider": "Anthropic",
+        "report_classification": "COMPLETED_NONEMPTY_ADVISORY; material claims independently checked and scoped disposition retained in topics/reviews",
+        "response": {
+          "bytes": 14916,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent/response.md"
+        },
+        "response_LF_count": 152,
+        "response_nonempty": true,
+        "session_id": 56155,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 31567,
+          "output_tokens": 37558
+        },
+        "usage_cost_estimate_usd": "0.877428",
+        "usage_is_partial": false
+      }
+    ],
+    "known_nonpartial_usage_records": 1,
+    "status_counts": {
+      "completed": 1
+    },
+    "terminal_jobs": 1,
+    "unknown_total_bill_records": 0,
+    "usage_estimate_usd": "0.877428"
+  },
+  "providers": {
+    "Anthropic": {
+      "cumulative_known_estimate_usd": "191.269030",
+      "frozen_prior_estimate_usd": "190.391602",
+      "new_estimate_usd": "0.877428",
+      "new_known_nonpartial_records": 1
+    },
+    "OpenAI": {
+      "cumulative_known_estimate_usd": "138.120080",
+      "frozen_prior_estimate_usd": "138.120080",
+      "new_estimate_usd": "0.000000",
+      "new_known_nonpartial_records": 0
+    }
+  },
+  "scope": "Exactly one new terminal Anthropic Cassels-Tate audit; prior usage inherited by reference through native_operation_selection_round.",
+  "status": "FINAL_FROZEN",
+  "unknown_billing_exclusions_policy": "All eight prior UNKNOWN bills and observed partial counters remain excluded exactly as frozen in referenced prior ledger. No rescan or reinterpretation as zero."
+}

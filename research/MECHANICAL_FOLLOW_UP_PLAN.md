@@ -1,3 +1,310 @@
+## 2026-11-14 Quaternion Global Norm Data and Compact Walk Falsifier
+
+COMPLETE:32newunique pins verifiedonce; frozenquaterniontopic/reviews/sources/corpus/API/control under
+controls/quaternion_multinorm_round; inherit polar_same_code_round without
+rescan. Add completed/reaped0 final0.923172 once: Anth192.916466,
+OpenAI138.120080,total331.036546USD/254priced;8UNKNOWNexcluded, owner20.59
+anchor separate. LabelSTATE/HANDOFF/queue snapshots, no movingpins.
+PriorFact2/backendfiles are reference-only; no oldrehashes/tests. Preserve
+compact-globalnorm scope and PARKEDintegralgenerator. No new code/APIretry. Snapshots explicitly precede these completionmarkers.
+
+## 2026-11-14 Quaternion Global Norm Bridge and Local Clock
+
+After frontend review stabilizes, freeze new quaternion evidence only;
+inherit polar_same_code_round, add0.923172USD once. Known totals become
+Anth192.916466/OpenAI138.120080,total331.036546USD/254priced;8UNKNOWNexcluded.
+No tests, oldpinrescan, quantum implementation, ideal-generatorpromotion or
+paidretry. Owner20.59anchor separate. PreservefailedBachPDF403 assourcelead,
+not evidence. Label finalSTATE snapshot afterparentclaims, no movingfiles.
+
+## 2026-11-14 Quaternion Multinorm Generator Screen
+
+Keep new topic, actualsources, paletteproof/control and activeClaude20599
+packet separate from completed polar freeze. No registry promotion, rerun,
+quantum code or benchmark. After parentdispositions and terminalusage,
+freeze only newstableevidence and add knowncharge once; UNKNOWN neverzero.
+OpenAIoff; owner20.59anchor is NOT remainingbalance measurement. Nextcommand
+poll20599 only; no restart. Norm-onlywords must never be labelled I-generator.
+
+## 2026-11-14 Polar Same Code Classical Sampler
+
+Freeze only new stable polar topic, two reviews, retained source/corpus files,
+API packet/bundle and exactcontrol; inherit positive_endpoint_pairing_round
+without rescanning prior pins. Add final0.724264USD once: cumulative
+Anth191.993294/OpenAI138.120080,total330.113374USD/253priced. EightUNKNOWN
+remain excluded; owner20.59anchor separate. Label STATE snapshot. No tests,
+quantum code, all-offset or arbitrarydecoder promotion. New quaternion
+selection source/work in progress must remain outside this freeze.
+
+## 2026-11-14 Polar Same Code Sampling and Decoder Screen
+
+Scientific work ACTIVE. Do notfreeze source/topic/report whileediting.
+Claude1300 pending; sourcecorpuspackets retained. Next only exacttinyjointlaw
+andheatbath conventionchecks ifparentneeds, no sweep. Atterminal/stable
+milestone freezeNEW evidence relativepositive_endpoint_pairing_round33pins,
+addonly actualterminalestimate; preserve8UNKNOWN/OpenAIoff andowneranchor.
+No APIretry, oldpinrescan, suite/registry/UI/Git orquantumimplementation.
+Native polar proof is averagedoveruniformoffset; fixedfrozen doesnotmean
+worstoffset. No automatic classicalConj6.7 or genericDQI no-go promotion.
+
+## 2026-11-14 Quartic Classical Match and Native Pairing Admission
+
+Milestone COMPLETE: positive_endpoint_pairing_round freezes33NEW unique
+pins verifiedonce; allreports terminal. Cumulative329.389110USD/252priced
+(Anth191.269030/OpenAI138.120080),8UNKNOWNexcluded. No rerun/oldrescan.
+Snapshot-before-completion labels retained; source-level selection is next.
+
+All scientific artifacts now stable and parent-read: surface141LF,
+Selmer124LF, goodness135LF, local144LF, Claude153LF. Two exact CAScontrols
+terminal0 once; Claude56155 completed/reaped0, estimate0.877428USD.
+Freeze only NEW evidence relative to native_operation_selection_round:
+new/modified topics, four reviews, two controls, source/provenance/corpus
+snapshots, exact paidpacket and terminalrun. Snapshot STATE/HANDOFF/thisqueue
+explicitly. Add only this one priced record; expected cumulative
+Anth191.269030/OpenAI138.120080,total329.389110USD/252priced. Preserve
+8UNKNOWN excluded; OpenAI disabled; owner20.59anchor is notmeasuredbalance.
+Verify each NEW unique pin once, no oldrescan or duplicatepriorledger.
+One workflowusage milestone may refer to this new freeze. No testsuite,
+registry/UI/Git, APIrepeat or quantumimplementation. Goodnesscounterexamples
+are inMWradical and prove neither badspan nor generalno-go. Cochaindescent
+proposal P1 unproved; arithmeticcircuits alone do not pay finiteprecision.
+Nextscientificpass compares independentconstructiveroutes, not morewrappers.
+
+## 2026-11-14 Finite Copy Clock and Independent Operation Screen
+
+Final arithmetic141LF/physical177LF reviews and exact mean_field_clock
+control are stable and parent-read; control terminal0, no reruns. Compact
+native_operation_selection_round checkpoint COMPLETE:16new unique pins
+verified once; prior usage inherited by reference. Do not rerun this freeze
+or create a new usage ledger. Next work is scientific selection.
+No paid calls this pass; cumulative328.511682USD/251priced,8UNKNOWN unchanged.
+New topic MEAN_FIELD_COPY_CLOCK_SCREEN.md; actual nonlinear source and
+withdrawn-v2 secure-curve source/provenance retained. Do not import withdrawn
+theorems or turn phase/copy controls into native PDE/cryptographic no-gos.
+At a clean milestone freeze only NEW evidence, never old pins; no tests,
+registry, CLI, site, quantum infrastructure, Git or speculative API batch.
+
+## 2026-11-14 Weak Phase Sampling Parked After Scoped Screen
+
+Milestone COMPLETE: weak_phase_selection_round/checkpoint.json freezes41
+unique pins verified once; cumulative328.511682USD/251priced, eightUNKNOWN
+excluded. Do not rerun the completed freeze described below. Next work is
+independent theorem selection, not mechanical or conditional expansion.
+
+Clean milestone ready. Freeze NEW stable evidence only relative to
+ballistic_scattering_round33pins/327.459598USD/250priced. Two topic notes,
+157-line hiddenfield and final213-line physical reviews, two exact controls
+(sessions72226/79436 reaped0), four primary PDF/text/provenance bundles,
+saved corpus snapshots, and weak-born paid packet/terminalbundle. API78557
+truncatedEMPTY0bytes/reaped1, estimate1.052084USD; no finding/review/retry.
+Add exactly this one Anthropic record, preserve eightUNKNOWN excluded and
+OpenAI disabled; owner20.59anchor separate. Verify every NEW unique pin
+once, snapshot STATE explicitly, append one workflow usage milestone.
+Expected artifact audits/controls/weak_phase_selection_round/checkpoint.json.
+No old pin rescan, tests, quantum code, registry, Git, site or extra API work.
+Next theory is independent constructive selection; scoped failures are
+not a full sampler no-go or hardness evidence.
+
+## 2026-11-14 Weak Phase Born Sampling Admission
+
+API78557 active; one new constructive request, no retries/OpenAI. Collect
+terminal request/result/fullresponse, record stopreason/bytes and billing
+estimate separately from owner20.59anchor; parent verifies science.
+Await stable weak_born_shortcuts exact control, inspect once, no reruns.
+Jacobi control completed/reaped0 and parent read; preserve its full result.
+At clean milestone freeze only NEW topics, both independent reviews, both
+controls, four primary PDF/text/provenance bundles, corpus snapshots and
+this paid packet relative to ballistic33pins/327.459598USD/250priced.
+EightUNKNOWN bills remain excluded. No registry, broad tests, quantum code,
+Git or site work. Claim gates and exact reopening condition are in topic.
+
+## 2026-11-14 Hidden Field Jacobi Readout Screen
+
+Theory checkpoint, no milestone freeze yet. Await single exact Sage control
+audits/controls/hidden_field_jacobi/{check.py,result.json}; inspect terminal
+result and preserve full157-line independent review/topic. Do not rerun
+or expand controls, implement quantum code or infer a decoder/no-go.
+Actual dissipative source/theorem selection remains with high reasoning.
+No new API bill since ballistic33-pin freeze. At the next clean milestone,
+freeze only NEW evidence, not old pins; no broad tests or registry changes.
+
+## 2026-11-14 Ballistic Spin Endpoint Parked
+
+Milestone COMPLETE: ballistic_scattering_round/checkpoint.json freezes33
+unique pins. Cumulative327.459598USD/250priced, eightUNKNOWN excluded.
+Do not rerun the completed freeze below. Next work is the independent
+theorem-level selection, not mechanical expansion of this endpoint.
+
+Freeze only NEW ballistic evidence relative to bcs_canonical_round31pins/
+326.453290/249priced. Include final topic,168-line selection,206-line final
+source/baseline/channel review, four new source PDF/text/provenance bundles,
+corpus snapshots, exact control script/result, and paid packet/request/
+result/fullresponse/context snapshots. One terminal Anthropic record adds
+estimate1.006308USD; eight priorUNKNOWN excluded unchanged; no paidOpenAI.
+Owner20.59balanceanchor remains separate. API13630 truncatedNONEMPTY/reaped1,
+controls22927/46795 reaped0, no retries. Expected artifact
+ audits/controls/ballistic_scattering_round/checkpoint.json.
+Verify every NEW unique pin once, label STATE snapshot, preserve old pins;
+append one usage milestone. No tests, scans, quantum code, registry, Git,
+site or broad suite. Next theory artifact is independent candidate selection
+with corpus then actual sources, not another arbitrary-prefix wish.
+
+## 2026-11-14 Ballistic Prefix Channel Under Review
+
+Await stable independent addendum; read it in full before updating scope.
+Paid request13630 terminal/reaped1, NONEMPTY4885bytes/fullread; estimate
+1.006308USD, no retry. Both exact controls reaped0. At final milestone
+freeze only new ballistic evidence/usage relative to BCS31pins/326.453290/
+249priced; eightUNKNOWN unchanged, OpenAI disabled, owner20.59anchor separate.
+Do not rerun controls, sweep sizes, implement quantum code, or infer a
+full sampler/hardness from the exact k-prefix recurrence.
+
+## 2026-11-14 Ballistic Spin Sampling Classical Screen
+
+Preserve ballistic topic,168-line independent selection, actual two primary
+PDF/text/provenance files, corpus snapshots, and exact baseline control.
+Both exact controls terminal/reaped0 (sessions22927 and46795).
+One NEW Claude constructive-prefix request runs as session13630; packet
+audits/api_inputs/2026-11-14-ballistic-prefix/dispatch.json records exact
+context provenance and local1.3USD ceiling (not charge/provider cap).
+Collect terminal result/fullresponse once; no retries, no paidOpenAI. No further size sweeps, quantum code,
+registry, Git or broad tests. Next artifact: one explicit classical-prefix
+recurrence/proof or a scoped failure from a bounded constructive attack.
+Acceptance: arbitrary extensive input spins and all prefixes, native bits,
+positive probabilities or bounded variance, and a complete fixed clock.
+A source label, finite success or failure of local coins is insufficient.
+BCS31-pin freeze complete; new scattering artifacts stay outside it.
+
+## 2026-11-14 BCS Ground Born Readout Classically Matched
+
+Freeze NEW stable BCS evidence relative to general_ternary_decision_round
+50pins/326.047366/248priced, leaving old pins untouched. Include topic,
+250-line independent review, exact bcs_born_stability control, five source
+PDF/text/provenance files, API input snapshots/request/result/fullresponse.
+One completed Anthropic estimate0.405924USD; eight priorUNKNOWN unchanged;
+OpenAI disabled; owner20.59anchor separate. Process gone with lost handle is
+not reaped. Expected artifact audits/controls/bcs_canonical_round/checkpoint.json.
+Acceptance: every new unique source/control/review/API pin verified once,
+current-state snapshot labelled, no inferred balance, no claim promotion.
+No control reruns, quantum implementation, broad suite, registry, Git or site.
+Next theory artifact: independent constructive selection review, then actual
+primary sources for a surviving native operation. A shortlist/abstract alone
+does not admit a candidate. Preserve all BCS scope guards above.
+
+## 2026-11-14 BCS Canonical Born Sampler Under Review
+
+Preserve the BCS topic, exact bcs_born_stability control, primary PDFs/text/
+provenance, API packet and complete terminal response. Do not rerun controls,
+retry paid calls or implement a quantum circuit. Await source/composition
+review before any claim change. At a clean milestone freeze only new stable
+BCS evidence relative to general_ternary_decision_round50pins/326.047366/
+248priced. One new completed Anthropic estimate0.405924USD; old eightUNKNOWN
+excluded unchanged. Process gone with handle lost is not reaped. No OpenAI,
+Git, registry or broad validation work. Mathematical acceptance and next
+source command are in the matching handoff; gap promise must remain explicit.
+
+## 2026-11-13 General Native Ternary Decision Written
+
+At this clean milestone freeze NEW stable evidence relative to
+unramified_seed_round22pins/322.311326/245priced. Three terminal Anthropic
+requests add estimates2.587180+0.691364+0.457496=3.736040USD; oneEMPTY,
+oneNONEMPTYtruncated and onecompleted. Eight priorUNKNOWN excluded unchanged;
+OpenAI disabled; owner20.59balanceanchor separate. Preserve all returned
+reports, exact packets, compiler/nonfull proofs, negative-gap reviews and
+controls, and new Kirschmer source provenance. Reference prior Beli/Voight/
+local-clock/177-line global proofs without rescanning frozen evidence.
+Do not rerun passing finite controls or add implementation, registry,
+Git, site or broad-suite work. Any registry later must say GENERAL native
+DECISION under retained complete GRH arithmetic; no global integral witness,
+practicality, novelty, hardness or separation. Universal FOUR-word remains
+OPEN but no longer blocks decision. Next high-reasoning action is an
+independent direction comparison and corpus-then-literature check; not
+another word-length scan or backend wrapper.
+
+## 2026-11-13 Nonfull Spinor Transport Shortcut Under Review
+
+Preserve the new shortcut topic, selected Beli excerpt with visual inequality
+correction, actual Kirschmer source provenance, and both NEW API packets.
+Await terminal nonfull-spinor-local/global result/report, then read ALL
+nonempty text and record source-checked dispositions. Never repeat an empty
+request. The preceding four-word call is EMPTY/max_tokens, usage estimate
+2.587180USD; it adds no evidence. Both focused negative-gap controls passed;
+no reruns, broader fields/gaps, quantum code, Git or site work.
+At a clean milestone freeze only new stable evidence/terminal usage relative
+to unramified_seed_round22pins/322.311326/245priced; prior eightUNKNOWN
+excluded, oldpins untouched. Do not infer balance from estimates.
+The next mathematical acceptance test is ALL-field nonfull-H two-move
+completeness plus proof that full-H quotient coordinates may be omitted
+without obtaining their transporters. Exact local isometry, global rational
+identification, proper orientation, complete GRH arithmetic and final S-unit
+membership still must be charged. Decision closure does not imply a witness.
+
+## 2026-11-13 Four Word Dyadic Compiler and Sharp Three Word Falsifier
+
+Preserve DYADIC_FOUR_WORD_COMPILER.md, the184-line compiler review, the150-line
+ramified-three-word review and controls/ramified_three_word/{verify.py,result.json}.
+The exact control is passed; do not rerun without changes. Read the complete
+terminal four-word API response/result before any disposition or deltafreeze;
+no duplicate launch or unknown-cost retry. The request is outside the prior
+unramified_seed_round22-pin freeze. At the next clean milestone add only NEW
+stable evidence and terminal usage, leaving eight UNKNOWN historical bills
+excluded. Estimates are not invoices or remaining balances. No broad tests,
+Git, site refresh, quantum implementation or more tiny-field scans.
+Next mathematical artifact: a proof for ALL low-alpha isometric ternary pairs,
+or a native integral isometric counterexample with both exact four-word tests
+empty. A report label, connectivity statement, or finite graph diameter is
+insufficient. To inspect the request without replaying it:
+/opt/anaconda3/bin/python -c "import json;from pathlib import Path;p=Path('research/audits/claude_runs/2026-11-13-four-word-completeness');d=json.loads((p/'result.json').read_text());print(d.get('status'),d.get('stop_reason'),(p/'response.md').stat().st_size)"
+Acceptance for a universal theorem requires actual source hypotheses,
+filtration/Hilbert feasibility, coordinates and native polynomial bit guards.
+
+## 2026-11-13 Unramified Dyadic Ternary Decision Written
+
+Preserve UNRAMIFIED_DYADIC_SEED.md, the176LF fixed-finite-field-point-search
+review, Kayal/Rabinoff primarysources, Wittcontrol/result and the completed
+WittAPIpacket/report. One deltafreeze may add0.431784 to prior321.879542;
+no newUNKNOWN (prior8excluded), nooldpinsrescan or providerbalance inference.
+No circuit/backendimplementation, broadsuite, Git or site refresh. The finite
+control is alreadypassed/reaped; do not repeat withoutnewchange. Next scientific
+artifact is the focused ramified-three-word attack; an actualcounterexample
+must have valid nativeBONG/lattice and verified isometry/actualBeli certificate,
+not merely a failed word or scan. Do not alter claim gates from that alone.
+
+## 2026-11-13 Unramified Witt Seed Reduction Under Review
+
+Keep new Kayal/Rabinoff sources, UNRAMIFIED_DYADIC_SEED.md, Wittcontrol and
+newAPIpacket outside completed55-pin dyadic_order_norm_round. Run targeted
+CAS control only; check the exact inverse-Frobenius interface and fixed-length
+polynomial degrees. No broadtests/registry/quantumcode. Mathematical admission
+requires verified SEARCH including singular/reducible and zero-dimensional
+cases, native conversion, finite seed and guarded lift. AgentACCEPT or a
+finite control alone must not move the unramified endpoint toCLOSED.
+
+## 2026-11-13 Split Dyadic Ternary Decision Written
+
+Preserve the two new topic notes, three constructive-selection/seed reviews,
+177LF split composition, six-case normcontrol with e1/f2 boundary control, and
+new dyadic/physical primary sources. One milestone ledger may add ONLY the
+two terminal requests (3.445408 total estimate) to slater_moment_round; eight
+historicalUNKNOWN bills remainexcluded, no newUNKNOWN. No broad suite, site,
+Git, repeatedoldhashes or quantumcode. Next source read is Kayal chapter6
+SEARCH adaptation and Rabinoff's fixed-length Witt formulas; do not register
+an unramified endpoint from the deterministic DECISION theorem alone.
+Acceptance: actual rational point, native mod512 matrix seed, fixed variable/
+degree bounds independentoff, and all finite precision costs charged.
+
+## 2026-11-13 Dyadic Order Norm Construction Under Review
+
+After the norm-unit proof review, preserve the source bundle dyadic_seed_selection,
+full constructive selection reports and DYADIC_QUADRATIC_ORDER_NORMS.md. Exact
+finite control should compare generated norm-image squareclasses/preimages
+with all units of tiny quadratic rings over Z/2^k in split, unramified,
+ramified and nonmaximal cases. Acceptance: exact norm equality and no claimed
+all-input conclusion from enumeration. Parent will supply the scientific
+control; do not implement a quantum backend or general ternary constructor.
+Paid bundle2026-11-13-coupled-dyadic-seed is pending; reconcile only terminal
+usage, no retry or inferred remaining balance. No broad validation/freeze yet.
+
 ## 2026-11-13 Paired DPP Classical Scope Checked
 
 Preserve PAIRED_PARTITION_DPP_BASELINES.md, the two primary source bundles
@@ -23,7 +330,8 @@ No general sampling hardness or missing-algorithm claim from these sources.
 9. headline-20 referee fixes: G1 tables store B(y) = C_y/z^y (state it in Proposition ell-tables);
    fix ξ = least primitive root; add κ = 6 row to tab:sm-thresholds and band cost (~9e13 class tests);
    G4 wording (reproduces 1H+, not core 1H).
-8. (73, 9) three-level kissat/cadical runs: record outcome (cannot change any maximum).
+8. DONE: (73, 9) three-level kissat and cadical both hit the 12 h cap (NOT computed; sat_runs.log,
+   long-runs/cadical_73_9_0.out). Cannot change any maximum.
 
 ## 2026-11-13 Projected Slater Gaussian Feedback Falsified
 

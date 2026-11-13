@@ -1,0 +1,91 @@
+{
+  "captured_at_utc": "2026-11-13T16:02:38.921770+00:00",
+  "cost_note": "Saved final nonpartial runner estimate; ceiling not charge/invoice/balance/provider cap.",
+  "cumulative_totals": {
+    "known_terminal_nonpartial_usage_estimate_usd": "330.113374",
+    "known_terminal_nonpartial_usage_records": 253,
+    "new_unknown_bills": 0,
+    "unknown_total_bills_excluded": 8
+  },
+  "frozen_prior_usage_by_reference": {
+    "Anthropic_usd": "191.269030",
+    "OpenAI_usd": "138.120080",
+    "checkpoint_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/positive_endpoint_pairing_round/checkpoint.json",
+    "known_estimate_usd": "329.389110",
+    "policy": "All prior records, exclusions and pins inherited by reference unchanged; no duplicate historical records or old evidence/hash rescan.",
+    "priced_records": 252,
+    "unknown_bills_excluded": 8,
+    "usage_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/positive_endpoint_pairing_round/usage.json"
+  },
+  "local_request_ceiling_usd": "2.000000",
+  "no_duplicate_prior_records": true,
+  "owner_credit_anchor_separate": {
+    "Anthropic_remaining_usd": "20.59",
+    "OpenAI": "exhausted/disabled; no further paid calls",
+    "note": "Owner anchor separate from runner estimates/invoices/measured balances; no remaining balance computed."
+  },
+  "polar_same_code_round": {
+    "by_provider_usd": {
+      "Anthropic": "0.724264",
+      "OpenAI": "0.000000"
+    },
+    "completed_nonempty_reports": 1,
+    "jobs": 1,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-polar-dqi-match",
+        "known_nonpartial_estimate": true,
+        "no_retry": true,
+        "obligation": "polar-dqi-match",
+        "parent_fully_read": true,
+        "parent_reported_exit_code": 0,
+        "provider": "Anthropic",
+        "report_classification": "COMPLETED_NONEMPTY_ADVISORY; source/index corrections independently checked in stable proof/topic",
+        "response": {
+          "bytes": 15929,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-polar-dqi-match/response.md"
+        },
+        "response_LF_count": 215,
+        "response_nonempty": true,
+        "session_id": 1300,
+        "session_reaped_per_parent": true,
+        "status": "completed",
+        "stop_reason": "end_turn",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 18541,
+          "output_tokens": 32505
+        },
+        "usage_cost_estimate_usd": "0.724264",
+        "usage_is_partial": false
+      }
+    ],
+    "known_nonpartial_usage_records": 1,
+    "status_counts": {
+      "completed": 1
+    },
+    "terminal_jobs": 1,
+    "unknown_total_bill_records": 0,
+    "usage_estimate_usd": "0.724264"
+  },
+  "providers": {
+    "Anthropic": {
+      "cumulative_known_estimate_usd": "191.993294",
+      "frozen_prior_estimate_usd": "191.269030",
+      "new_estimate_usd": "0.724264",
+      "new_known_nonpartial_records": 1
+    },
+    "OpenAI": {
+      "cumulative_known_estimate_usd": "138.120080",
+      "frozen_prior_estimate_usd": "138.120080",
+      "new_estimate_usd": "0.000000",
+      "new_known_nonpartial_records": 0
+    }
+  },
+  "scope": "Exactly one new completed Anthropic polar audit; previous usage/pins inherited by reference.",
+  "status": "FINAL_FROZEN",
+  "unknown_billing_exclusions_policy": "Eight inherited UNKNOWN bills and observed partial counters remain excluded exactly as in referenced ledger; no missing bill interpreted zero."
+}

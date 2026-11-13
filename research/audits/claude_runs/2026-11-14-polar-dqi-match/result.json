@@ -1,0 +1,49 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 643,
+      "path": "research/audits/api_inputs/2026-11-14-polar-dqi-match/state_excerpt.md",
+      "sha256": "45c23eec524ffd501f9f8606a0dc6a9308bbac0f782e298c25002e2b844cd6c0",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 36812,
+      "path": "research/audits/api_inputs/2026-11-14-polar-dqi-match/sources.md",
+      "sha256": "f8475b73568f8ad52e52a0bd451bdacef169a6f58514c0d44d1bc68c8e1767da",
+      "snapshot": "context/001.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 18541,
+  "effort": "high",
+  "finished_at": "2026-11-13T15:43:45.330560+00:00",
+  "input_token_allowance": 18912,
+  "max_budget_usd": 2.0,
+  "max_tokens": 48000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 1.035648,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-14-polar-dqi-match/prompt.md",
+    "sha256": "09f984c46243f220a66b6da7ca7a0c50f9f7b698321771f7944f48b1ceb7096a",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261113T153819.249411Z-27b004c3",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 18541,
+    "output_tokens": 32505
+  },
+  "usage_cost_estimate_usd": 0.724264
+}

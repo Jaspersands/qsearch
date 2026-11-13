@@ -1,0 +1,56 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 6934,
+      "path": "research/DYADIC_NONFULL_SPINOR_TRANSPORT.md",
+      "sha256": "699cbcf8f98816e1d57a873e8fe996bbdf35866ab9b83841cbb27a4cfada4396",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 10382,
+      "path": "research/audits/api_inputs/2026-11-13-nonfull-spinor/beli_excerpt.txt",
+      "sha256": "d29d0c30067fcd2a7c91235f326ccc6a3afba5be2d703674e5d11bf1fdba8d2f",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 8864,
+      "path": "research/audits/reviews/2026-11-13-four-word-dyadic-compiler.md",
+      "sha256": "d33db54f80ce706af4bf9eb1fb261854d61412764eb572f5f2ee4f60a9f76ed8",
+      "snapshot": "context/002.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 12841,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-13T12:47:45.562434+00:00",
+  "input_token_allowance": 13098,
+  "max_budget_usd": 1.0,
+  "max_tokens": 32000,
+  "model": "claude-opus-5-5",
+  "preflight_cost_estimate_usd": 0.692392,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-nonfull-spinor/local_prompt.md",
+    "sha256": "3317bc738a5a9898b40ada19d744960ef361c789a2344c92af7d3adf87768a82",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 4,
+    "output": 20
+  },
+  "role": "adversarial",
+  "run_id": "20261113T124159.216594Z-a4e185cb",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 12841,
+    "output_tokens": 32000
+  },
+  "usage_cost_estimate_usd": 0.691364
+}

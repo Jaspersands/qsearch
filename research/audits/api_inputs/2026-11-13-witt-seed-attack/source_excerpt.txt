@@ -1,0 +1,129 @@
+Source https://arxiv.org/pdf/1409.7445, actual retained text.
+
+Theorem 1.2.      Let K be a perfect ring of characteristic p.
+    1.   There is a strict p-ring R with residue ring K , which is unique up to canonical isomorphism.
+    2.   There exists a unique system of representatives τ : K → R, called the Teichmüller represen-
+         tatives, such that τ (xy) = τ (x)τ (y) for all x, y ∈ K .
+                                                                             P
+    3.   Every element x of R can be written uniquely in the form x = ∞                      n
+                                                                                n=0 τ (xn ) p for xn ∈ K .
+    4.   The formation of R and τ is functorial in K , in that if f : K → K ′ is a homomorphism of
+         perfect rings of characteristic p, and R′ is the strict p-ring with residue ring K ′ and section τ ′ ,
+         then there is a unique homomorphism F : R → R′ making the following squares commute:
+                                             F                                         F
+                                       R          R′                            R            R′
+                                                                               τ           τ′
+                                             f                                         f
+                                       K          K′                            K           K′
+         The map F is given by                                   !
+                                           ∞
+                                           X                             ∞
+                                                                         X
+                                       F         τ (xn ) p   n
+                                                                     =         τ ′ (f (xn )) pn .
+                                           n=0                           n=0
+
+Example 1.3. Let R be an unramified extension of Zp , with residue field K = R/p ∼         = Fq . Then
+   R is a strict p-ring, and is hence the unique strict p-ring with residue field Fq . The Teichmüller
+   representatives are constructed as follows: we have F×   ∼
+                                                          q = Z/(q−1)Z, so that the nonzero elements
+                                              q−1
+   of Fq are the roots of the polynomial X        − 1. By Hensel’s Lemma, each element x of F×  q has a
+                                              q−1
+   unique lift τ (x) ∈ R also satisfying τ (x)    − 1 = 0. Setting τ (0) = 0 completes the definition of
+   the map τ . In other words, the Teichmüller representatives are exactly the (q − 1)st roots of unity
+   in R, union {0}.
+  Theorem 1.2 is an abstract fact, which may be proved without yielding a useful construction of
+                                                       6
+
+and let X = (Xn )n∈P , Y = (Yn )n∈P ∈ WP (R). Let S = X + Y be the sum in the ring WP (R). By
+definition,
+                                    wn (S) = wn (X) + wn (Y )
+for n ∈ P , so the solutions Sn to the polynomial equations
+
+                               wn ((Sn )n∈P ) = wn ((Xn )n∈P ) + wn ((Yn )n∈P )
+
+are contained in Z[{Xi , Yi : i ∈ P }]. A similar result holds for multiplication: namely, if Z = X · Y ,
+then
+                                        wn (Z) = wn (X) · wn (Y ),
+and Zn ∈ Z[{Xi , Yi : i ∈ P }]. These polynomials in fact give the ring laws for WP (A) for any ring A
+(and any P , for that matter), as the following corollary shows:
+Corollary 2.10. Let R, P , X , Y , Z , and S be as above. The polynomials Sn and Zn do not depend
+   on the choice of P , and in addition,
+
+                                               Sn , Zn ∈ Z[{Xi , Yi : i | n}].
+
+   Let A be an arbitrary ring, and let x, y ∈ WP (A). Let sn = Sn evaluated at the xi and yi , and
+   similarly for zn . Then
+
+                            s = (sn )n∈P = x + y             and        z = (zn )n∈P = x · y,
+
+   where the addition and multiplication takes place in WP (A).
+Proof.
+    Solving the equation wn (S) = wn (X) + wn (Y ) explicitly for Sn shows that Sn only depends on
+  reduces to the characteristic-0 case. We will make extensive use of this strategy; for instance, in
+  Section 7 we will define a kind of characteristic-p exponential map.
+Example 2.12.     Let p be a prime number, and let P = Pp = {1, p, p2, p3 , . . .}. Note that
+                             n
+                             X           n−i         n          n−1
+                    wpn =           pi Xip     = X1p + pXpp           + · · · + pn−1 Xppn−1 + pn Xpn ,
+                              i=0
+
+   which agrees with our previous definition of wpn , except that we have renamed the variable Xn to
+   Xpn (cf. Remark 2.8). By Corollary 2.10, if the Spn are defined such that
+
+                   wpn (S1 , Sp , . . . , Spn ) = wpn (X1 , Xp , . . . , Xpn ) + wpn (Y1 , Yp , . . . , Ypn )
+
+                                                            7
+
+   for all n, then Spn ∈ Z[Xpi , Ypi ]i=0,1,2,...,n , and similarly for Zpn and multiplication, thus verifying
+   a claim that we made in Section 1. In this sense, for any ring R, the ring laws of Wp (R) are given
+   by the same algebra as the ring laws of a strict p-ring.
+     To be explicit, we calculated in Section 1 that
+                                                                                            p−1
+                                                                                            X        
+                                                                                                1 p
+                        S1 = X1 + Y1             and       Sp = Xp + Yp −                            X1n Y1p−n .
+                                                                                            n=1
+                                                                                                p  n
+
+   As for multiplication, we have
+
+                                       Z1 = w1 (Z1 ) = w1 (X1 )w1 (Y1 ) = X1 Y1
+
+   and
+                Z1p + pZp = wp (Z1 , Zp ) = wp (X1 , Xp )wp (Y1 , Yp ) = (X1p + pXp )(Y1p + pYp )
+                        = (X1 Y1 )p + pX1p Yp + pXp Y1p + p2 Xp Yp
+                  =⇒ Zp = X1p Yp + Xp Y1p + pXp Yp .
+
+  Given the above example, we can show how the Witt rings offer a construction of the strict p-ring
+with a given perfect residue ring of characteristic p.
+Theorem 2.13. Let K be a perfect ring of characteristic p, and let R be the strict p-ring with residue
+   ring K , with Teichmüller reprsentatives τ : K → R. Then the map f : Wp (K) → R given by
+                                                                             ∞
+                                                                             X              1/pn
+                                        f (x1 , xp , xp2 , . . .) =                   τ (xpn ) pn
+                                                                            n=0
+
+   is a ring isomorphism.
+Proof.
+    It is clear that f is a well-defined bijection, and that f (1) = τ (1) = 1. Let x, y ∈ Wp (K),
+    and let s = x + y. We will show that f (s) = f (x) + f (y), and leave the analogous proof that
+    f (xy) = f (x)f (y) to the reader. By Corollary 2.10,
+
+                                            spi = Spi (x1 , y1 , xp , yp , . . . , xpi , ypi ),
+
+    and hence, since Spi is a polynomial with integer coefficients,
+
+                              1/pi                 1/pi        1/pi         i           i            1/pi   1/pi  
+                             spi     = Spi x1             , y1        , x1/p
+                                                                         p   , yp1/p , . . . , xpi , ypi          .
+
+               1/pj
+        ej = xpj , and similarly for yej and sej . Substituting into the above equation, we have
+    Let x
+
+                                                1/pi      1/pi         1/pi−1      1/pi−1                     
+                               sei = Spi x
+                                         e0            , ye0      e1
+                                                                 ,x             , ye1              epi , yepi ,

@@ -1,0 +1,68 @@
+{
+  "billing_status": "usage_reported",
+  "budget_check": "passed",
+  "context": [
+    {
+      "bytes": 452,
+      "path": "research/audits/api_inputs/2026-11-13-four-word-completeness/state_excerpt.md",
+      "sha256": "fe0b7fedd81f358e6f2b5d2784a7d172994593a24bbc4782fb1c75c3b27f9b90",
+      "snapshot": "context/000.txt"
+    },
+    {
+      "bytes": 5409,
+      "path": "research/DYADIC_FOUR_WORD_COMPILER.md",
+      "sha256": "108bc0b46ef841e669ad6450be4cc47bc4463ef86e3a01828fb95e225b27f887",
+      "snapshot": "context/001.txt"
+    },
+    {
+      "bytes": 7499,
+      "path": "research/audits/reviews/2026-11-13-ramified-three-word-attack.md",
+      "sha256": "cc51c6bb683a43c4ef10796864f9832ad0a13e6c62eee5d6ea980bba7ba8f8c1",
+      "snapshot": "context/002.txt"
+    },
+    {
+      "bytes": 9375,
+      "path": "research/DYADIC_QUADRATIC_ORDER_NORMS.md",
+      "sha256": "66a1b5a26bdfec7f812972c34b4a1fe10c6869d91e0ee3f2a7ea5f7b66bc0316",
+      "snapshot": "context/003.txt"
+    },
+    {
+      "bytes": 14806,
+      "path": "research/audits/api_inputs/2026-11-13-four-word-completeness/beli_excerpt.txt",
+      "sha256": "4ccaef9b1bc2399ad8d5ac7dd793a383f7208ed3069495a904419cb0c84152d6",
+      "snapshot": "context/004.txt"
+    }
+  ],
+  "cost_note": "Estimates only, not an invoice or provider-enforced hard cap. No automatic retries.",
+  "counted_input_tokens": 18718,
+  "effort": "high",
+  "failure_type": "MaxTokens",
+  "finished_at": "2026-11-13T12:36:22.703996+00:00",
+  "input_token_allowance": 19093,
+  "max_budget_usd": 3.5,
+  "max_tokens": 48000,
+  "model": "claude-fable-5-1",
+  "preflight_cost_estimate_usd": 2.59093,
+  "pricing_checked": "2026-11-06",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "prompt": {
+    "path": "research/audits/api_inputs/2026-11-13-four-word-completeness/prompt.md",
+    "sha256": "f8ea3d0fd4a73c1badfd5549815f50c62d87ea7b7a3ff67d101a6c74c817e695",
+    "snapshot": "prompt.txt"
+  },
+  "rates_usd_per_million": {
+    "input": 10,
+    "output": 50
+  },
+  "role": "constructive",
+  "run_id": "20261113T122652.109049Z-5d76d58b",
+  "status": "truncated",
+  "stop_reason": "max_tokens",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 18718,
+    "output_tokens": 48000
+  },
+  "usage_cost_estimate_usd": 2.58718
+}

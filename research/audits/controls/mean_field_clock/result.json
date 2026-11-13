@@ -1,0 +1,65 @@
+{
+  "status": "passed_exact_single_convention_control",
+  "copies": 3,
+  "field": "Q(zeta_8), zeta_8=exp(i*pi/4)",
+  "hamiltonian": "kappa/(M-1) * sum_{i<j} Zi Zj, arbitrary kappa>0",
+  "time": "pi/(2*kappa)",
+  "pair_phase": "pi/4",
+  "basis_order": [
+    "000",
+    "001",
+    "010",
+    "011",
+    "100",
+    "101",
+    "110",
+    "111"
+  ],
+  "evolved_amplitudes": [
+    "-1/4*zeta8^2 - 1/4",
+    "1/4*zeta8^2 + 1/4",
+    "1/4*zeta8^2 + 1/4",
+    "1/4*zeta8^2 + 1/4",
+    "1/4*zeta8^2 + 1/4",
+    "1/4*zeta8^2 + 1/4",
+    "1/4*zeta8^2 + 1/4",
+    "-1/4*zeta8^2 - 1/4"
+  ],
+  "reduced_density": [
+    [
+      "1/2",
+      "0"
+    ],
+    [
+      "0",
+      "1/2"
+    ]
+  ],
+  "hartree_density": [
+    [
+      "1/2",
+      "1/2"
+    ],
+    [
+      "1/2",
+      "1/2"
+    ]
+  ],
+  "source_f_divided_by_kappa": [
+    [
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0"
+    ]
+  ],
+  "X_expectation": "0",
+  "difference_eigenvalues": [
+    "-1/2",
+    "1/2"
+  ],
+  "trace_distance": "1/2",
+  "scope": "M=3 phase/partial-trace convention only; all-M claim is analytic. No native PDE or box-mass lower bound."
+}

@@ -1,0 +1,101 @@
+# Fixed-length Witt seed for unramified dyadic ternaries
+
+2026-11-13. Constructive candidate under review, no full endpoint admission yet.
+Start STATE/TRAPS at the completed split-dyadic milestone. Corpus been-tried
+and baselines for Witt finite-precision seeds were checked before this proposal;
+Groebner/finite-field solving is the direct classical baseline and intended
+operation, not an alleged source of quantum advantage.
+
+## Native question and single mechanism
+
+Given expanded K/O_K and a prime P above2 with ramification index e=1, residue
+field k=F_(2^f), and integral nonsingular ternary A,B, compute a finite local
+integral isometry seed or localNO in polynomial BIT time in all input bits,
+f, requested precision and log(1/eta). No local map, residue-point oracle,
+unit basis, normalized cluster or Witt coordinates are advice. f grows.
+This would remove the remaining dyadic seed gate for the native indefinite
+ternary decision family with2 UNRAMIFIED, not necessarily completely split.
+The global arithmetic backends remain the already stated GRH assumptions.
+General growing ramification, witnesses, novelty and speedup stay unclaimed.
+
+The previously parent-checked Jordan cluster separation proof uses e=1,
+not f=1: split occupied scales at gaps>=3. Each rank<=3 normalized cluster
+has diameter<=4 and inverse poles<=4. Thus an invertible solution
+ X^t C X=D modulo2^9
+lifts by the existing square-root verifier. The old Q2 algorithm enumerated
+at most2^81 matrices; enumeration overk would instead cost2^(81f), forbidden.
+The NEW operation expresses this seed as a fixed-dimensional bounded-degree
+polynomial system overk, then constructs a k-point using actual finite-field
+SEARCH. A decision or approximate-counting oracle alone does not pay X.
+
+## Actual Witt source and polynomial reduction
+
+Primary Rabinoff, The Theory of Witt Vectors, arXiv1409.7445, retained under
+sources/dyadic_seed_selection/rabinoff_witt.{pdf,txt,source.json}.
+Actual Theorem1.2/Example1.3 give the unramified strict2-ring/Teichmuller
+identification; Corollary2.10 and Example2.12 give universal INTEGER addition
+and multiplication polynomials; Theorem2.13 gives the explicit isomorphism.
+With ordinary zero-based2-typical coordinates, it is
+ Phi(a0,...,a8)=sum_(i=0)^8 2^i tau(a_i^(2^(-i))) modulo2^9.       (1)
+The inverse-Frobenius twist is REQUIRED. Untwisted Teichmuller digits are
+not Witt coordinates; using them in universal polynomial formulas is false.
+
+Generate the universal polynomials once overZ by ghost recurrences
+ w_j(x)=sum_(i=0)^j 2^i x_i^(2^(j-i)),
+ w_j(S)=w_j(x)+w_j(y),   w_j(M)=w_j(x)*w_j(y).
+Solve for S_j,M_j by subtracting lower components and dividing by2^j OVER Z,
+then reduce their integral coefficients modulo2. Do not divide by2 insidek.
+There are nine components. Weighted homogeneity gives total degrees at most
+2^j for S_j and2^(j+1) for M_j. A fixed number of matrix ring operations
+therefore gives fixed-degree polynomials independent of f. Dense expansion
+may have an enormous ABSOLUTE size, which is honest at fixed rank/length.
+
+Use9r^2 variables for entries of an r-by-r Witt matrix X, r<=3. The six or
+fewer upper-triangular congruences each have9 coordinate equations. Add one
+scalar variable h with h*det(X_0)-1=0, where X_0 is the matrix of zeroth
+components. Thus at most82 variables and55 equations, with fixed degree.
+The determinant constraint ensures a unit determinant in the local ring.
+Every solution is a genuine mod2^9 seed, and every seed gives a solution.
+Singular or reducible seed varieties are permitted; no smoothness promise.
+
+## Paid native coordinates and lifting
+
+Compute O_K/P^L and k from the charged maximal-order/prime data by finite
+ring and HNF arithmetic; verify e=1. This quotient is the truncated strict
+2-ring with residuek. It has polynomial bit size O(fL) in its local encoding.
+Residue field elements have native lifts obtained by linear algebra.
+For a in k choose a lift and Hensel-solve t^(2^f)=t moduloP^L. The derivative
+is -1 modP. Exponentiation uses f squarings per step, and the number of
+Newton precision-doubling steps is O(log L). No enumeration of2^f elements.
+Units are inverted by residue-field inversion and Newton lifting.
+
+Extract successive Teichmuller digits c_i by subtracting tau(c_i) and
+dividing by2 with a corresponding loss of one known precision digit.
+Solve this division in the native finite quotient by HNF; solutions agree
+modulo the remaining precision because e=1. Set Witt coordinate a_i=c_i^(2^i).
+Conversely inverse Frobenius in (1) uses at mostf squarings per coordinate.
+All conversions have polynomial BIT cost. Denominators and normalization
+powers from the exact fixed-rank Jordan decomposition are charged as guard
+digits before this conversion, not hidden inputs. The input valuations are
+polynomially bounded by expanded coefficient norms/heights.
+
+Map a returned k-point through (1), verify detX unit and X^t C X=D mod2^9,
+then run the existing matrix square-root lift to the requested precision.
+The local congruence is checked before any spinor calculation. A falseNO or
+an exhausted finite-field search clock consumes its assigned failure budget;
+passing a finite control never proves completeness of SEARCH.
+
+## Remaining source gate
+
+Kayal's actual thesis chapter6, Theorem6.3.8, proves deterministic fixed-n
+finite-field SOLVABILITY in poly(d^c_n*m*log q), but this is a decision theorem.
+Its explicit hypersurface charts, singular-locus recursion and quantitative
+point bounds may support a randomized SEARCH adaptation: sample projected
+coordinates, find univariate roots, reject singular/undefined chart points,
+and verify mapped points in the original system. The required source proof
+must include every component and zero-dimensional case, a computable fixed
+large-q threshold, constant success bound and capped all-branch cost.
+Until that full search proof is checked, the native unramified endpoint is
+CONDITIONAL, not claimed solved. Next exact falsifier: universal length3
+Witt arithmetic overF4 versus its actual unramified quotient modulo8,
+including an untwisted-digit negative control. No quantum code is queued.

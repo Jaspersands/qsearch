@@ -1,0 +1,275 @@
+{
+  "captured_at_utc": "2026-11-13T15:18:12.696049+00:00",
+  "claim_gates": {
+    "advantage_claim": false,
+    "agent_label_proves_theorem": false,
+    "bookkeeping_only": true,
+    "cochain_descent_P1_proved_by_report": false,
+    "finite_controls_prove_general_claim": false,
+    "goodness_counterexample_is_general_no_go": false,
+    "implementation_claim": false,
+    "novelty_claim": false,
+    "remaining_balance_computed_from_usage": false,
+    "unknown_bill_equals_zero": false,
+    "usage_equals_invoice_or_balance": false
+  },
+  "control_execution_policy": "Two exact controls terminal0 once per parent; no rerun or additional implementation.",
+  "exclusions": [
+    "Old evidence pins and prior record bodies; inherited accounting referenced without duplication",
+    "Live STATE/HANDOFF/MECHANICAL and unrelated new work; only labelled snapshots pinned"
+  ],
+  "explicit_packet_artifacts": [
+    {
+      "bytes": 485,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-14-cassels-tate-descent/dispatch.json",
+      "sha256": "14283f5861abeeaa3eb6d071914294ce46884ebcaf42a1a302f97aebfd0c820e"
+    },
+    {
+      "bytes": 3740,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-14-cassels-tate-descent/native_interface.md",
+      "sha256": "69a0d37d8e1f2379dc06380bb86b3d59b1cec1ee625963aee5644551bd26581b"
+    },
+    {
+      "bytes": 2400,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-14-cassels-tate-descent/prompt.md",
+      "sha256": "21cb8e00a6d045eb729c748a7f42603c09e1248f56ef9e99cb4992718c7213cc"
+    },
+    {
+      "bytes": 74442,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-14-cassels-tate-descent/source_excerpt.md",
+      "sha256": "489c60c407dc687868504572883f46d787d4dd4d36957b17b1da3228c0219899"
+    }
+  ],
+  "frozen_prior_usage_by_reference": {
+    "Anthropic_usd": "190.391602",
+    "OpenAI_usd": "138.120080",
+    "immediate_evidence_checkpoint_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/native_operation_selection_round/checkpoint.json",
+    "known_estimate_usd": "328.511682",
+    "policy": "Frozen prior usage, records and all eight UNKNOWN exclusions/partial counters inherited unchanged by reference. No old source/pin rescan or duplicate prior records; no prior hashes recomputed.",
+    "priced_records": 251,
+    "unknown_bills_excluded": 8,
+    "usage_checkpoint_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_phase_selection_round/checkpoint.json",
+    "usage_path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/weak_phase_selection_round/usage.json"
+  },
+  "hash_verification": {
+    "method": "Exactly one final byte/hash verification per unique new/updated stable artifact. All prior evidence and ledger hashes reference-only; no rescan/tests/post-freeze rehash.",
+    "passed": true,
+    "unique_artifacts_verified_once": 33
+  },
+  "labelled_snapshots": [
+    {
+      "bytes": 316333,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/positive_endpoint_pairing_round/state-snapshot.md",
+      "sha256": "5f41aba3b5ecfe3ff66b17658bc5712664fefa31c11901f0fdcc4de5090753af",
+      "snapshot_label": "Exact explicitly authorized stable milestone snapshot; live original not pinned",
+      "source_original_path": "/Users/jaspersands/Developer/qsearch/research/STATE.md"
+    },
+    {
+      "bytes": 3723046,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/positive_endpoint_pairing_round/handoff-snapshot.md",
+      "sha256": "b551adf6a06c46e66bd3bd340d93b1fdb7ba2ac99a98176d7763296f33a4d88a",
+      "snapshot_label": "Exact explicitly authorized stable milestone snapshot; live original not pinned",
+      "source_original_path": "/Users/jaspersands/Developer/qsearch/research/AGENT_HANDOFF.md"
+    },
+    {
+      "bytes": 1002887,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/positive_endpoint_pairing_round/mechanical-snapshot.md",
+      "sha256": "9bedc9b2f2f9a97c0633b24da6b973a82f40e84d5468861e27320f01705088c4",
+      "snapshot_label": "Exact explicitly authorized stable milestone snapshot; live original not pinned",
+      "source_original_path": "/Users/jaspersands/Developer/qsearch/research/MECHANICAL_FOLLOW_UP_PLAN.md"
+    }
+  ],
+  "new_source_and_corpus_artifacts": [
+    {
+      "bytes": 997,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/cassels_tate_selection/corpus_baselines.txt",
+      "sha256": "96f5344a1169267069730a4362930e9c3a14103ab2f9de22d3a81353748f8d5c"
+    },
+    {
+      "bytes": 9955,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/cassels_tate_selection/corpus_prior.txt",
+      "sha256": "35ab7c35e02aa01788a98231e4d3b136e5cae3158fb2b698091373c41d5abf3d"
+    },
+    {
+      "bytes": 817631,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/cassels_tate_selection/shukla_thesis.pdf",
+      "sha256": "c6afc4426b35588efa47780876a70c3fab93a2788382ccbe96e1c671f869c41e"
+    },
+    {
+      "bytes": 486454,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/cassels_tate_selection/shukla_thesis.txt",
+      "sha256": "6d2e33b99e9755673caf826fa0bf331d0799721c056ba5789a874f15ab549199"
+    },
+    {
+      "bytes": 438,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/cassels_tate_selection/source.json",
+      "sha256": "3f9169c49d8abc0420ee09e531bdf53d2b4884caf8311db698494c02f5ca68aa"
+    },
+    {
+      "bytes": 1052,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/positive_endpoint_selection/selmer_baselines.txt",
+      "sha256": "d843350b282d4a23abb870ca95695b823ca9b704140e3a2a431620b8c81be002"
+    },
+    {
+      "bytes": 11101,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/positive_endpoint_selection/selmer_prior.txt",
+      "sha256": "2dccfb2856552ca54d7f426de700658309f80254a4a2694cab4278b34c496e65"
+    },
+    {
+      "bytes": 1036,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/positive_endpoint_selection/surface_baselines.txt",
+      "sha256": "7de301142f1afb81eb7201a57aaad5dec046d6f10b841280d418fb8c81ab1e18"
+    },
+    {
+      "bytes": 9647,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/positive_endpoint_selection/surface_prior.txt",
+      "sha256": "ee6e79feeecf623bc85a5a3c36637215e9b70ea3a7118e1dbfdb596dcc397b0e"
+    }
+  ],
+  "owner_credit_anchor_separate": {
+    "Anthropic_remaining_usd": "20.59",
+    "OpenAI": "exhausted/disabled; no further paid calls",
+    "note": "Owner-reported anchor separate from runner estimates, invoices and measured balances; no remaining balance computed."
+  },
+  "scope": "Only new/updated positive-endpoint pairing evidence since native_operation_selection_round, plus one new paid record.",
+  "stable_control_artifacts": [
+    {
+      "bytes": 698,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/cassels_tate_good_obstruction/result.json",
+      "sha256": "c9675b1fa24741cb91d2e805cca730bf2cd5af7876a87646345c166782d912e5"
+    },
+    {
+      "bytes": 600,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/cassels_tate_good_obstruction/nonlinear.json",
+      "sha256": "3555afda964a4a46837db812a130a59e0ad2efbdd2b4a9c5a4f21d541675a016"
+    }
+  ],
+  "stable_independent_review_artifacts": [
+    {
+      "bytes": 8416,
+      "parent_confirmed_stable_and_read": true,
+      "parent_descriptor_line_count": 141,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-14-positive-surface-selection.md",
+      "physical_LF_count": 140,
+      "sha256": "a6fcc6703e5345a8b7d85f22023df0e3eb745e25f5d62df52820aa014467759e"
+    },
+    {
+      "bytes": 7194,
+      "parent_confirmed_stable_and_read": true,
+      "parent_descriptor_line_count": 124,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-14-positive-selmer-selection.md",
+      "physical_LF_count": 124,
+      "sha256": "f255315074c80ccc48fc7baa7e9beb400cb9ac07dc8174ba3248c910a869d024"
+    },
+    {
+      "bytes": 6517,
+      "parent_confirmed_stable_and_read": true,
+      "parent_descriptor_line_count": 135,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-14-cassels-tate-good-obstruction.md",
+      "physical_LF_count": 135,
+      "sha256": "6686031b6aa0b98ff037c3581e8aa5781d89d0f486a93e3988d0db1136c66f00"
+    },
+    {
+      "bytes": 8482,
+      "parent_confirmed_stable_and_read": true,
+      "parent_descriptor_line_count": 144,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-14-cassels-tate-local-readout.md",
+      "physical_LF_count": 143,
+      "sha256": "0934ee204c304bf803a9deda868cbc55e0c2dc686a2d51a8588a2a5f9b5a3c59"
+    }
+  ],
+  "stable_topic_artifacts": [
+    {
+      "bytes": 13532,
+      "path": "/Users/jaspersands/Developer/qsearch/research/CASSELS_TATE_NATIVE_ADMISSION.md",
+      "sha256": "2d24b7fab2420a630ec88809b2038936a912aa2e0319604afd37291943207d52"
+    },
+    {
+      "bytes": 3781,
+      "path": "/Users/jaspersands/Developer/qsearch/research/SURFACE_CLASSICAL_QUARTIC_SPECIALIZATION.md",
+      "sha256": "3fb69a7f8c2586aabed69a663a50f13f345c9be08debae0255a9b061f702c98a"
+    },
+    {
+      "bytes": 15814,
+      "path": "/Users/jaspersands/Developer/qsearch/research/GENERAL_NATIVE_SELMER_COMPOSITION.md",
+      "sha256": "b8f43d312b5fd7d3694b429dba28837d045e2e4d8d8b18b8cc6e80dc13902e13"
+    },
+    {
+      "bytes": 15480,
+      "path": "/Users/jaspersands/Developer/qsearch/research/SURFACE_TORSION_COVER_RECONSTRUCTION.md",
+      "sha256": "99933c7113236bf1d3a3201a1dd8f476420a9190a3be2859be4645b9beeff9b2"
+    }
+  ],
+  "status": "FINAL_FROZEN",
+  "terminal_bundle_artifacts": [
+    {
+      "bytes": 3740,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent/context/000.txt",
+      "sha256": "69a0d37d8e1f2379dc06380bb86b3d59b1cec1ee625963aee5644551bd26581b"
+    },
+    {
+      "bytes": 74442,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent/context/001.txt",
+      "sha256": "489c60c407dc687868504572883f46d787d4dd4d36957b17b1da3228c0219899"
+    },
+    {
+      "bytes": 2400,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent/prompt.txt",
+      "sha256": "21cb8e00a6d045eb729c748a7f42603c09e1248f56ef9e99cb4992718c7213cc"
+    },
+    {
+      "bytes": 94450,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent/request.json",
+      "sha256": "3f9b55006340d757f836aa913e0af7b32ffbf364863616cbef9909504a6d6515"
+    },
+    {
+      "bytes": 14916,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent/response.md",
+      "sha256": "cb47e6280d57424ac82aa0faa25cc3d536075733f1f9f7624a6f31d579e79447"
+    },
+    {
+      "bytes": 1656,
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent/result.json",
+      "sha256": "ce9e2ba7613ebf20e9c0d079ed0eb3a6d67ec97189b50926332913d3690bb722"
+    }
+  ],
+  "terminal_results_and_responses": [
+    {
+      "billing_status": "usage_reported",
+      "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent",
+      "failure_type": null,
+      "known_nonpartial_estimate": true,
+      "no_retry": true,
+      "obligation": "cassels-tate-descent",
+      "parent_fully_read": true,
+      "parent_reported_exit_code": 0,
+      "provider": "Anthropic",
+      "report_classification": "COMPLETED_NONEMPTY_ADVISORY; material claims independently checked and scoped disposition retained in topics/reviews",
+      "response": {
+        "bytes": 14916,
+        "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-14-cassels-tate-descent/response.md"
+      },
+      "response_LF_count": 152,
+      "response_nonempty": true,
+      "session_id": 56155,
+      "session_reaped_per_parent": true,
+      "status": "completed",
+      "stop_reason": "end_turn",
+      "terminal": true,
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 31567,
+        "output_tokens": 37558
+      },
+      "usage_cost_estimate_usd": "0.877428",
+      "usage_is_partial": false
+    }
+  ],
+  "unique_hashed_artifact_count": 33,
+  "usage_snapshot": {
+    "bytes": 4056,
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/positive_endpoint_pairing_round/usage.json",
+    "sha256": "1b254eef966844ac1898aaebfd056000c5d4c43e5740037da95f7d0ab7bced70"
+  }
+}
