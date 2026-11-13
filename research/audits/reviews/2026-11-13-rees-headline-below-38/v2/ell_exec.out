@@ -1,0 +1,24 @@
+B3_13_4.json p=13 k=4 a=1 uniform: ok 5/5; columns [120, 174, 154, 120, 162], support [22, 14, 23, 29, 25], cells with T!=0 [24, 16, 16, 22, 16], discarded [17, 32, 28, 20, 32]
+B3_13_4.json p=13 k=4 a=1 degenerate: ok 5/5; columns [80, 80, 80, 80, 80], support [25, 23, 47, 17, 31], cells with T!=0 [8, 8, 0, 0, 0], discarded [0, 0, 0, 0, 0]
+B3_13_4.json p=13 k=4 a=2 uniform: ok 5/5; columns [498, 486, 507, 495, 486], support [186, 154, 148, 171, 18], cells with T!=0 [57, 55, 41, 52, 8], discarded [27, 23, 18, 20, 23]
+B3_13_4.json p=13 k=4 a=2 degenerate: ok 5/5; columns [399, 399, 399, 399, 399], support [166, 149, 176, 177, 140], cells with T!=0 [28, 26, 28, 24, 40], discarded [0, 0, 0, 0, 0]
+B3_13_4.json p=13 k=4 a=3 uniform: ok 5/5; columns [1160, 1184, 1156, 1160, 1152], support [503, 505, 530, 544, 483], cells with T!=0 [63, 62, 64, 64, 62], discarded [10, 16, 9, 10, 8]
+B3_13_4.json p=13 k=4 a=3 degenerate: ok 5/5; columns [1120, 1120, 1120, 1120, 1120], support [479, 526, 500, 450, 581], cells with T!=0 [56, 55, 56, 56, 61], discarded [0, 0, 0, 0, 0]
+B3_13_6.json p=13 k=6 a=1 uniform: ok 5/5; columns [490, 546, 470, 452, 462], support [53, 67, 57, 61, 54], cells with T!=0 [72, 82, 64, 72, 56], discarded [84, 97, 74, 60, 75]
+B3_13_6.json p=13 k=6 a=1 degenerate: ok 5/5; columns [312, 312, 312, 312, 312], support [81, 80, 87, 91, 72], cells with T!=0 [0, 0, 0, 0, 0], discarded [0, 0, 0, 0, 0]
+B3_13_6.json p=13 k=6 a=2 uniform: ok 5/5; columns [1836, 1809, 1875, 1818, 1851], support [393, 427, 378, 345, 387], cells with T!=0 [187, 172, 175, 176, 177], discarded [51, 42, 54, 45, 56]
+B3_13_6.json p=13 k=6 a=2 degenerate: ok 5/5; columns [1683, 1683, 1683, 1683, 1683], support [426, 418, 398, 464, 523], cells with T!=0 [0, 0, 0, 0, 0], discarded [0, 0, 0, 0, 0]
+B3_13_6.json p=13 k=6 a=3 uniform: ok 5/5; columns [4952, 4920, 4980, 4960, 4984], support [1558, 1406, 1655, 1589, 1491], cells with T!=0 [215, 216, 216, 216, 216], discarded [22, 14, 29, 24, 30]
+B3_13_6.json p=13 k=6 a=3 degenerate: ok 5/5; columns [4864, 4864, 4864, 4864, 4864], support [1193, 1104, 1281, 1184, 1198], cells with T!=0 [0, 0, 0, 0, 0], discarded [0, 0, 0, 0, 0]
+B4_19.json p=19 k=9 a=1 uniform: ok 2/2; columns [757906, 762424], support [134928, 137296], cells with T!=0 [6221, 6228], discarded [76520, 77211]
+B4_19.json p=19 k=9 a=1 degenerate: ok 2/2; columns [600210, 600210], support [163653, 162045], cells with T!=0 [0, 0], discarded [0, 0]
+B4_37.json p=37 k=9 a=1 uniform: ok 2/2; columns [715848, 719612], support [160065, 156376], cells with T!=0 [6380, 6381], discarded [56803, 57197]
+B4_37.json p=37 k=9 a=1 degenerate: ok 2/2; columns [600210, 600210], support [186254, 184105], cells with T!=0 [0, 0], discarded [0, 0]
+B4_73.json p=73 k=9 a=1 uniform: ok 2/2; columns [698558, 698056], support [222077, 217699], cells with T!=0 [6487, 6463], discarded [47518, 47371]
+B4_73.json p=73 k=9 a=1 degenerate: ok 2/2; columns [600210, 600210], support [284997, 286967], cells with T!=0 [0, 0], discarded [0, 0]
+negative controls (perturbed tables; uniform banks):
+  B3_13_4_perturbed.json: ok 1/3 (must be 0)
+  B3_13_6_perturbed.json: ok 0/3 (must be 0)
+  B4_37_perturbed.json: ok 0/2 (must be 0)
+B3_13_4_perturbed.json a=3: ok 0 /5 (must be 0); cells with T!=0 [62, 62, 64, 63, 63]
+B3_13_6_perturbed.json a=3: ok 0 /5 (must be 0); cells with T!=0 [216, 216, 216, 216, 215]

@@ -1,0 +1,29 @@
+{
+  "status": "terminal_empty_both_reaped",
+  "tasks": [
+    "native-analytic",
+    "block-attack"
+  ],
+  "provider": "anthropic_only",
+  "owner_remaining_usd": 20.59,
+  "native_analytic_session": 8399,
+  "block_attack_session": 67507,
+  "model": "claude-fable-5-1",
+  "effort": "max",
+  "local_ceiling_each_usd": 5,
+  "native_analytic": {
+    "session": 8399,
+    "status": "truncated/max_tokens",
+    "response_bytes": 0,
+    "estimate_usd": "3.322940",
+    "disposition": "No evidence; no retry"
+  },
+  "block_attack": {
+    "session": 67507,
+    "status": "truncated/max_tokens",
+    "response_bytes": 0,
+    "estimate_usd": "3.323240",
+    "disposition": "No evidence; no retry"
+  },
+  "round_known_estimate_usd": "6.646180"
+}

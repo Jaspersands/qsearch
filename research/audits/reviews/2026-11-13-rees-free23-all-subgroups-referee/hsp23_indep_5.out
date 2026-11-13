@@ -1,0 +1,33 @@
+p=5 subalgebras=1901 (1.0s)
+type counts: {1: 1, 2: 6, 3: 25, 4: 1, 5: 30, 6: 1, 7: 750, 8: 750, 9: 150, 10: 30, 11: 150, 12: 6, 13: 1}
+.. 0 1s
+WRONG 7 RouteA ((1, 0, 3, 3, 1),) () {'A_calls': 1, 'A_hard': 1}
+WRONG 7 RouteA ((1, 0, 3, 2, 1),) () {'A_calls': 1, 'A_hard': 1}
+WRONG 7 RouteA ((1, 3, 0, 0, 1),) () {'A_calls': 1, 'A_hard': 1}
+WRONG 7 RouteA ((1, 2, 4, 2, 3),) () {'A_calls': 1, 'A_hard': 1}
+WRONG 7 RouteA ((1, 4, 0, 0, 1),) () {'A_calls': 1, 'A_hard': 1}
+WRONG 7 RouteA ((1, 3, 3, 3, 1),) () {'A_calls': 1, 'A_hard': 1}
+.. 500 2s
+WRONG 7 RouteA ((0, 1, 4, 3, 4),) () {'A_calls': 1, 'A_hard': 1}
+WRONG 7 RouteA ((1, 1, 4, 2, 4),) () {'A_calls': 1, 'A_hard': 1}
+WRONG 7 RouteA ((0, 1, 1, 0, 2),) () {'A_calls': 1, 'A_hard': 1}
+WRONG 7 RouteA ((0, 1, 2, 2, 1),) () {'A_calls': 1, 'A_hard': 1}
+.. 1000 7s
+.. 1500 20s
+group_check failures: 0
+SUMMARY (type, branch): n ok mean_quantum mean_classical extra
+(1, 'RouteA') 1 1 3.0 8.0 {'A_calls': 1, 'A_hard': 0}
+(2, 'IS-fil4') 6 6 158.0 5.8 {'is_calls': 6, 'is_promise': 0, 'is_nonpromise_trivial': 6, 'is_nonpromise_other': 0, 'is_copies': 914}
+(3, 'P1') 25 25 2.4 2.5 {}
+(4, 'IS-heis') 1 1 42.0 6.0 {'is_calls': 1, 'is_promise': 0, 'is_nonpromise_trivial': 1, 'is_nonpromise_other': 0, 'is_copies': 37}
+(5, 'plane') 30 30 3.8 5.1 {}
+(6, 'G/gamma2') 1 1 3.0 4.0 {}
+(7, 'RouteA') 750 740 3.3 4.3 {'A_calls': 750, 'A_hard': 750}
+(8, 'IS-fil4') 750 750 167.5 5.7 {'is_calls': 750, 'is_promise': 750, 'is_form_checked': 121475, 'is_form_fail': 0, 'is_copies': 121475}
+(9, 'M/q') 150 150 4.6 5.0 {}
+(10, 'IS-heis') 29 29 38.3 4.6 {'is_calls': 29, 'is_promise': 29, 'is_form_checked': 1008, 'is_form_fail': 0, 'is_copies': 1008}
+(10, 'M/gamma3') 1 1 2.0 3.0 {}
+(11, 'M/q') 150 150 2.5 4.6 {}
+(12, 'G/gamma2') 6 6 2.5 4.5 {}
+(13, 'G/gamma2') 1 1 2.0 5.0 {}
+WRONG total: 10  time 23s

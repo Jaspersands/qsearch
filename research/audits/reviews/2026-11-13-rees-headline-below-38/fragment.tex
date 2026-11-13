@@ -1,0 +1,148 @@
+% fragment.tex -- standalone draft, NOT part of the paper (2026-11-13, AI-written, pending human review).
+% Intended place: after Remark rem:kappa-two in core/main-core.tex, Section sec:halving, as a new
+% subsection "Schedule 1H+: refinement chains", replacing Lemma lem:halved-exponent by
+% Lemma lem:chain-exponent below.  Uses only macros of main-core.tex.  Imports: Weil's bound for
+% two-variable diagonal equations [LN, Chapter 6] (as in Lemma lem:zero-sum-length(iii) and
+% Lemma lem:two-term) and Las Vegas root finding [Rabin1980]; nothing else.
+% Finite computations: research/audits/reviews/2026-11-13-rees-headline-below-38/.
+
+\subsection{Schedule~1H$^+$: Refinement Chains}
+\label{sec:chains}
+
+Throughout, $p$ is an odd prime, $\kappa \ge 2$ divides $p-1$, $h = (p-1)/\kappa$ and $P = P_\kappa$ as in Section~\ref{sec:halving}. Fix $\xi \in \Fp^\times$ such that $\xi^h$ has order exactly $\kappa$ (a uniform element of $\Fp^\times$ has this property with probability $\varphi(\kappa)/\kappa$, and the test costs $O(\log p)$ operations). For $D \mid \kappa$ let $P_D = \{x^D : x \in \Fp^\times\}$. The image of $\xi$ generates the cyclic group $\Fp^\times/P_D$ of order $D$, so every $x \in \Fp^\times$ lies in $\xi^{\,i}P_D$ for a unique \emph{$D$-class} $\operatorname{cl}_D(x) = i \in \mathbb{Z}_D$; it is found from $x^{(p-1)/D}$ by comparison with the powers of $\xi^{(p-1)/D}$, and $\operatorname{cl}_D(x) \equiv \operatorname{cl}_\kappa(x) \pmod D$. In particular $x \in P_D$ exactly when $\operatorname{cl}_D(x) = 0$, and $\operatorname{cl}_D(xy) = \operatorname{cl}_D(x) + \operatorname{cl}_D(y)$. For $D' \mid D$ and $K' \subseteq \mathbb{Z}_{D'}$ put $\operatorname{lift}_D(K') = \{x \in \mathbb{Z}_D : x \bmod D' \in K'\}$.
+
+\begin{definition}[Class-restricted relations]
+\label{def:k-node}
+Let $D \mid \kappa$ and $0 \in K \subseteq \mathbb{Z}_D$ (for $D = 1$, $K = \mathbb{Z}_1$). For columns $\lambda_1,\dots,\lambda_M \in \Fp^a$, a \emph{$K$-relation at modulus $D$} is a vector $w \in \Fp^M$ with $\sum_b w_b\lambda_b = 0$, every nonzero $w_b$ of $D$-class in $K$, and at least one $w_b$ nonzero of $D$-class $0$. A \emph{$K$-node of arity $N(a)$ at modulus $D$} is an algorithm that returns a $K$-relation on any $N(a)$ columns in $\Fp^a$, for every $a \ge 0$; further columns get weight $0$. Its \emph{degree} is $e$ if $N(a) \le C(a+1)^e$ for a constant $C$.
+\end{definition}
+
+Gaussian elimination, normalised so that one coefficient is $1$, is a $\mathbb{Z}_1$-node of arity $a+1$ at modulus $1$, and also a $\mathbb{Z}_\kappa$-node at modulus $\kappa$. If $D \mid \kappa$, a $D$-solver in the sense of Section~\ref{sec:halving} is a $\{0\}$-node at modulus $D$ (its weights lie in $P_D$), and hence a $D\mathbb{Z}_\kappa$-node at modulus $\kappa$. Conversely, a $\{0\}$-node at modulus $\kappa$ followed by $\kappa$-th roots of its weights, by Las Vegas root finding~\cite{Rabin1980}, is a $\kappa$-solver.
+
+\begin{definition}[Refinement contractions]
+\label{def:rc}
+Let $D \mid \kappa$, $D \ge 2$, and $0 \in R \subseteq \mathbb{Z}_D$, $0 \in K \subseteq \mathbb{Z}_D$. An $\mathrm{RC}(D;R\to K)$ contraction is a pair $\alpha \in \Fp^{\mathbb{Z}_D}$, $\beta \in \Fp^R$ such that $\alpha_0+\beta_0 \in P_D$ and, for all $i \in R$ and $j \in \mathbb{Z}_D$, either $\alpha_j+\beta_i = 0$ or $\operatorname{cl}_D(\alpha_j+\beta_i) + i + j \in K$.
+\end{definition}
+
+For $R = \mathbb{Z}_D$ and $K = \{0\}$ this is a two-level contraction at $(p,D)$ in the normal form of~\cite{IvanyosSantha2015}'s two-level collision tensor (\fullv, Appendix on Schedule~2); we use only the definition above.
+
+\begin{lemma}[Refinement step]
+\label{lem:refine}
+Let $D' \mid D \mid \kappa$, $D \ge 2$, $0 \in K' \subseteq \mathbb{Z}_{D'}$, and let $(\alpha,\beta)$ be an $\mathrm{RC}(D;R\to K)$ contraction with $R \supseteq \operatorname{lift}_D(K')$; put $r = |R|$. If $\mathcal N$ is a $K'$-node of arity $N(a)$ at modulus $D'$, then the following is a $K$-node of arity $N(a)\bigl((r-1)a+1\bigr)$ at modulus $D$. Split the columns into $n = (r-1)a+1$ blocks of $N(a)$ and let $c^1,\dots,c^n$ be the relations $\mathcal N$ returns on them. For $i \in R$ put $U^\nu_i = \sum c^\nu_b\lambda_b$, the sum over the $b$ with $c^\nu_b \ne 0$ and $\operatorname{cl}_D(c^\nu_b) = i$. Let $\eta \in \Fp^n$ be nonzero with $\sum_\nu\eta_\nu U^\nu_i = 0$ for every $i \in R\setminus\{0\}$, normalised so that $\eta_{\nu^\ast} = 1$ for some $\nu^\ast$. Output
+\[
+  w_b = \eta_\nu\bigl(\alpha_{\operatorname{cl}_D(\eta_\nu)} + \beta_{\operatorname{cl}_D(c^\nu_b)}\bigr)c^\nu_b \quad (b \text{ in block } \nu,\ \eta_\nu c^\nu_b \ne 0), \qquad w_b = 0 \text{ otherwise}.
+\]
+Beyond the calls of $\mathcal N$ it uses one Gaussian elimination of size $(r-1)a \times n$, one coset test per nonzero coefficient, and $O(raN(a)n)$ further operations.
+\end{lemma}
+
+\begin{proof}
+Every nonzero $c^\nu_b$ has $D'$-class in $K'$, so its $D$-class lies in $\operatorname{lift}_D(K') \subseteq R$ and $U^\nu_i$ is defined for each $b$; as $c^\nu$ is a relation, $\sum_{i\in R}U^\nu_i = 0$. The $n$ vectors $(U^\nu_i)_{i \in R\setminus\{0\}} \in \Fp^{(r-1)a}$ have a nonzero dependence $\eta$; then $\sum_\nu\eta_\nu U^\nu_i = 0$ also for $i = 0$, since $U^\nu_0 = -\sum_{i\ne0}U^\nu_i$. Writing $j(\nu) = \operatorname{cl}_D(\eta_\nu)$ and summing over the $\nu$ with $\eta_\nu \ne 0$,
+\[
+  \sum_b w_b\lambda_b = \sum_\nu\eta_\nu\alpha_{j(\nu)}\sum_{i\in R}U^\nu_i + \sum_{i\in R}\beta_i\sum_\nu\eta_\nu U^\nu_i = 0 .
+\]
+A nonzero $w_b$ with $i = \operatorname{cl}_D(c^\nu_b)$ and $j = j(\nu)$ has $\alpha_j + \beta_i \ne 0$, so its $D$-class is $j + \operatorname{cl}_D(\alpha_j+\beta_i) + i \in K$ by Definition~\ref{def:rc}. Finally let $b^\ast$ be a coefficient of $c^{\nu^\ast}$ of $D'$-class $0$; its $D$-class $i^\ast$ lies in $\operatorname{lift}_D(\{0\}) = D'\mathbb{Z}_D$, and we may and do require of $\mathcal N$ (all nodes below satisfy this) that the designated coefficient have $D$-class $0$, i.e.\ lie in $P_D$ when $D' < D$. Then $w_{b^\ast} = 1\cdot(\alpha_0+\beta_0)c^{\nu^\ast}_{b^\ast}$ is nonzero of $D$-class $0$. The blocks are disjoint, so $w$ is well defined.
+\end{proof}
+
+\begin{remark}[The designated coefficient]
+\label{rem:designated}
+The normalisation required in the last step holds for every node used below: Gaussian elimination may scale one coefficient to $1$; a $D'$-solver has all weights in $P_{D'}$, and a weight $x \in P_{D'}$ can be replaced, after scaling the whole relation by $x^{-1}$, by $1$; and the output of Lemma~\ref{lem:refine} has the designated coefficient $(\alpha_0+\beta_0)c^{\nu^\ast}_{b^\ast}$, which becomes $1$ after scaling by its inverse (an element of $P_D$, so classes are unchanged). We therefore always scale so that the designated coefficient is $1$.
+\end{remark}
+
+\begin{corollary}[Chains]
+\label{cor:chain}
+Let $D_0 \mid D_1 \mid \cdots \mid D_L$ divide $\kappa$, let $\mathcal N_0$ be a $K_0$-node of degree $e_0$ at modulus $D_0$ (Gaussian elimination with $D_0 = 1$, $e_0 = 1$, or a $D_0$-solver with $K_0 = \{0\}$), and for $t = 1,\dots,L$ let an $\mathrm{RC}(D_t;R_t\to K_t)$ contraction be given with $R_t = \operatorname{lift}_{D_t}(K_{t-1})$ and $|R_t| \ge 2$. Then $L$ applications of Lemma~\ref{lem:refine} give a $K_L$-node at modulus $D_L$ of arity $N_0(a)\prod_{t=1}^L((|R_t|-1)a+1)$, hence of degree $e_0 + L$; it is deterministic given the contractions, $\xi$ and $\mathcal N_0$. If $D_L = \kappa$ and $K_L = \{0\}$, $\kappa$-th roots of its weights make it a $\kappa$-solver.
+\end{corollary}
+
+The case $L = 1$, $D_0 = 1$, $R_1 = \mathbb{Z}_\kappa$, $K_1 = \{0\}$ is the two-level construction, of arity $(a+1)((\kappa-1)a+1)$ and degree $2$. The case $\kappa = 9$, $D_1 = 3$, $D_2 = 9$, $R_2 = \{0,3,6\}$, $K_1 = K_2 = \{0\}$, is a tower of degree $3$.
+
+\begin{lemma}[Two-class stage]
+\label{lem:stage2}
+Let $m \in \mathbb{Z}_\kappa\setminus\{0\}$, $q = \xi^m$ and $\varepsilon = -q^{-1}$. Let $\mathcal N$ be a $\{0,m\}$-node of arity $N$ at modulus $\kappa$, and let $o_1,\dots,o_N$ be objects of a common type $c = (c_1,\dots,c_r)$ (Section~\ref{sec:halving}) with vectors $v_\nu$ and pairwise disjoint supports. One call of $\mathcal N$ on $v_1,\dots,v_N$, at most $N$ root extractions and $O(rM')$ further operations return either a $\kappa$-solution supported in the union of the supports or an object of type $(c,\varepsilon c)$ supported there.
+\end{lemma}
+
+\begin{proof}
+This is the proof of Lemma~\ref{lem:stage} with $P_D = P \cup qP$ replaced by $P \cup qP$ for the present $q$; that proof uses of $\mathcal N$ only that its output $x \ne 0$ satisfies $\sum_\nu x_\nu v_\nu = 0$ with every nonzero $x_\nu \in P \cup qP$, which is what a $\{0,m\}$-node returns. In detail: let $I = \{\nu : \operatorname{cl}_\kappa(x_\nu) = 0\}$ and $J = \{\nu : \operatorname{cl}_\kappa(x_\nu) = m\}$, so $I \ne \emptyset$ by the designated coefficient, and put $x'_\nu = x_\nu/q \in P$ for $\nu \in J$. If $J = \emptyset$, the representations $x_\nu R_1(o_\nu)$, $\nu \in I$, form a $\kappa$-solution. Otherwise $u = \sum_{\nu\in I}x_\nu v_\nu$ satisfies $\sum_{\nu\in J}x'_\nu v_\nu = -q^{-1}u = \varepsilon u$, and the unions of the $x_\nu R_k(o_\nu)$ over $I$ and of the $x'_\nu R_k(o_\nu)$ over $J$ are $2r$ pairwise disjoint nonempty representations of $c_ku$ and $c_k\varepsilon u$.
+\end{proof}
+
+With this $\varepsilon$, define $c^{(j)}$ and $T_j$ as in Section~\ref{sec:halving}; the recursion for $T_j$ and its computation by class sumsets are unchanged, and by Lemma~\ref{lem:two-term} (which holds for every $\varepsilon \in \Fp^\times$), $T_1 \supseteq \Fp^\times$ when $p \ge 4\kappa^4$.
+
+\begin{lemma}[Finish by a class-restricted relation]
+\label{lem:finishK}
+Let $o_1,\dots,o_N$ be objects of type $c$ with vectors $v_\nu$ and disjoint supports, let $\mathcal K$ be a $K$-node of arity $N$ at modulus $\kappa$, and let $u \in \mathbb{Z}_\kappa$ satisfy $\xi^{u+k}P \subseteq T(c)$ for every $k \in K$. Let $\eta$ be the relation $\mathcal K$ returns on $v_1,\dots,v_N$, put $\eta' = \xi^u\eta$, and for each $\eta'_\nu \ne 0$ let $y^{(\nu)} \in (P\cup\{0\})^r$, $y^{(\nu)} \ne 0$, satisfy $\sum_ky^{(\nu)}_kc_k = \eta'_\nu$. Then the representations $y^{(\nu)}_kR_k(o_\nu)$ with $y^{(\nu)}_k \ne 0$ form a $\kappa$-solution supported in the union of the supports.
+\end{lemma}
+
+\begin{proof}
+Each nonzero $\eta'_\nu$ has class $u + k$ with $k \in K$, so it lies in $T(c)$ and $y^{(\nu)}$ exists. As $\sum_\nu\eta'_\nu v_\nu = 0$ and $\eta' \ne 0$, the proof of Lemma~\ref{lem:finish}(ii) applies verbatim.
+\end{proof}
+
+For $K = \mathbb{Z}_\kappa$ (Gaussian elimination) this is Lemma~\ref{lem:finish}(ii); for a $D'$-solver, $K = D'\mathbb{Z}_\kappa$.
+
+\begin{lemma}[Contractions exist for large $p$]
+\label{lem:sm}
+Let $D \ge 2$ divide $p-1$, $0 \in R \subseteq \mathbb{Z}_D$ with $r = |R| \ge 2$, and $0 \in K \subseteq \mathbb{Z}_D$ with $k = |K|$. Put $h_D = (p-1)/D$,
+\[
+  \gamma = \Bigl(1 + \frac{(D-1)^2}{\sqrt p}\Bigr)\frac{p^2}{(p-1)^2},\qquad
+  \mu_0 = h_D\Bigl(\frac{kh_D}{p}\Bigr)^{r-1},\qquad \mu_1 = kh_D\Bigl(\frac{kh_D}{p}\Bigr)^{r-1},
+\]
+$\rho_\iota = 1/\mu_\iota + \gamma^{r-1}$ and $\Phi(p) = (1 - 1/\rho_0) + (D-1)(1-1/\rho_1)$. If $\Phi(p) < 1$, an $\mathrm{RC}(D;R\to K)$ contraction exists, with every $\alpha_j + \beta_i$ nonzero, for every coset generator $\xi$. The function $\Phi$ is decreasing in $p$. If moreover $\Psi(p) = 4(\rho_0-1) + 4(D-1)(\rho_1-1) \le 1/2$, then one \emph{round}, a uniform $\beta$ (with $\beta_0 = 0$) followed by $\lceil (2p/\mu_0)\ln(4D)\rceil$ uniform draws of $x \in \Fp$ per column, each tested with $r$ coset tests, finds a contraction with probability at least $3/8$, and $p/\mu_0 \le (2D)^r$.
+\end{lemma}
+
+\begin{proof}
+Let $Q_\ell = \xi^\ell P_D$. For $(i,j) \in R\times\mathbb{Z}_D$ let $A_{ij} = \bigcup_{k'\in K}Q_{k'-i-j}$ if $(i,j) \ne (0,0)$ and $A_{00} = Q_0$; then $|A_{00}| = h_D$ and $|A_{ij}| = kh_D$ otherwise. Draw $\beta_i$, $i \in R\setminus\{0\}$, independently and uniformly from $\Fp$, put $\beta_0 = 0$, and let $X_j = \{x \in A_{0j} : x + \beta_i \in A_{ij}\ \forall i \in R\setminus\{0\}\}$, $n_j = |X_j|$. If every $n_j \ge 1$, any $\alpha_j \in X_j$ give the required contraction (with $\alpha_0 + \beta_0 = \alpha_0 \in P_D$). For fixed $x$, exactly $|A_{ij}|$ values of $\beta_i$ put $x + \beta_i$ in $A_{ij}$, so $\mathbb{E}[n_j] = |A_{0j}|\prod_{i\ne0}(|A_{ij}|/p)$, which is $\mu_0$ for $j = 0$ and $\mu_1$ otherwise. For $x \ne x'$ in $A_{0j}$, with $\delta = x'-x$, the number of $\beta_i$ with $x + \beta_i, x' + \beta_i \in A_{ij}$ is $N_{ij}(\delta) = \#\{y \in A_{ij} : y + \delta \in A_{ij}\} = \sum_{\ell,\ell'}\#\{y \in Q_\ell : y + \delta \in Q_{\ell'}\}$, the sum over the $|A_{ij}|^2/h_D^2$ pairs of cosets in $A_{ij}$. Each $y \in Q_\ell$ with $y + \delta \in Q_{\ell'}$ gives exactly $D^2$ pairs $(s,z) \in (\Fp^\times)^2$ with $\xi^{\ell}s^D = y$, $\xi^{\ell'}z^D = y + \delta$, hence with $\xi^{\ell'}z^D - \xi^\ell s^D = \delta$. By Weil's bound for diagonal equations with nonzero right side~\cite[Chapter~6]{LidlNiederreiter1997}, as in Lemma~\ref{lem:zero-sum-length}(iii), this equation has at most $p + (D-1)^2\sqrt p$ solutions in $\Fp^2$. So $N_{ij}(\delta) \le (|A_{ij}|/h_D)^2(p + (D-1)^2\sqrt p)/D^2 = \gamma|A_{ij}|^2/p$. Summing over the at most $|A_{0j}|^2$ ordered pairs,
+\[
+  \mathbb{E}[n_j^2] \le \mathbb{E}[n_j] + |A_{0j}|^2\prod_{i\ne0}\frac{\gamma|A_{ij}|^2}{p^2} = \mathbb{E}[n_j] + \gamma^{r-1}\mathbb{E}[n_j]^2 ,
+\]
+so $\mathbb{E}[n_j^2]/\mathbb{E}[n_j]^2 \le \rho_0$ or $\rho_1$. By the Cauchy--Schwarz inequality, $\Pr[n_j = 0] \le 1 - \mathbb{E}[n_j]^2/\mathbb{E}[n_j^2]$, and the union bound over the $D$ columns gives $\Pr[\exists j: n_j = 0] \le \Phi(p) < 1$. Monotonicity: $\mu_0,\mu_1$ have logarithmic derivative $r/(p-1) - (r-1)/p > 0$, and $\gamma$ is decreasing, so $\rho_0,\rho_1$ and $\Phi$ decrease. For the sampler, Chebyshev's inequality gives $\Pr[n_j < \mathbb{E}[n_j]/2] \le 4(\mathbb{E}[n_j^2]/\mathbb{E}[n_j]^2 - 1)$, so with probability at least $1/2$ every $n_j \ge \mathbb{E}[n_j]/2 \ge \mu_0/2$. Then a uniform $x$ lies in $X_j$ with probability at least $\mu_0/(2p)$, so the draws for column $j$ all miss with probability at most $e^{-\ln 4D} = 1/(4D)$, and some column is missed with probability at most $1/4$; a round succeeds with probability at least $\frac12\cdot\frac34$. Finally $h_D \ge p/(2D)$ and $k \ge 1$ give $\mu_0 \ge p/(2D)^r$.
+\end{proof}
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{llrr}
+\toprule
+step & $(D,r,k)$ & $T_{\mathrm{exist}}$ ($\Phi < 1$) & $T_{\mathrm{samp}}$ ($\Psi \le 1/2$)\\
+\midrule
+two-level, $\kappa = 3$ & $(3,3,1)$ & $430$ & $39096$\\
+two-level, $\kappa = 4$ & $(4,4,1)$ & $9395$ & $778545$\\
+two-level, $\kappa = 5$ & $(5,5,1)$ & $99745$ & $6922583$\\
+tower step $\mathrm{RC}(9;\{0,3,6\}\to\{0\})$ & $(9,3,1)$ & $1124521$ & $85628629$\\
+union step $\mathrm{RC}(7;\mathbb{Z}_7\to\{0,m\})$ & $(7,7,2)$ & $1995734$ & $149308802$\\
+\bottomrule
+\end{tabular}
+\caption{Thresholds of Lemma~\ref{lem:sm} (bisection on the decreasing closed forms, checked at the integer in $50$-digit arithmetic; \file{thresholds.py}).}
+\label{tab:sm-thresholds}
+\end{table}
+
+\begin{definition}[Schedule~1H$^+$]
+\label{def:schedule1hplus}
+Define $\kappa$-solvers $\mathcal H^+_\kappa$, by induction on $\kappa \mid p-1$, $\kappa \le 9$, with arity $A^+_\kappa(a)$ and degree $e^+_\kappa$, exactly as $\mathcal H_\kappa$ in Definition~\ref{def:schedule1h}, with these additional candidates:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2em,start=3]
+  \item \textup{(TL)} for $\kappa \in \{3,4,5\}$, the two-level chain of Corollary~\ref{cor:chain} (degree $2$), when an $\mathrm{RC}(\kappa;\mathbb{Z}_\kappa\to\{0\})$ contraction is available;
+  \item \textup{(TW)} for $\kappa = 9$, the tower over $\mathcal H^+_3$, of degree $e^+_3+1$, when an $\mathrm{RC}(9;\{0,3,6\}\to\{0\})$ contraction is available;
+  \item \textup{(S$^+$)} the plans $(s,F)$ of Definition~\ref{def:schedule1h}(b) with the $\{0,m\}$-node in place of $\mathcal H_{\kappa/2}$: for $\kappa = 7$ the union-step chain $\mathrm{RC}(7;\mathbb{Z}_7\to\{0,m\})$ (degree $2$) when available, and for even $\kappa$ the solver $\mathcal H^+_{\kappa/2}$ itself (Lemma~\ref{lem:stage} is the case $m = \kappa/2$); finishes $\mathrm{F0}$ and, by Lemma~\ref{lem:finishK}, $\mathrm{F}_K$ for the $D'\mathbb{Z}_\kappa$-nodes $\mathcal H^+_{D'}$ ($D' \mid \kappa$, $D' < \kappa$; $D' = 1$ is $\mathrm{F1}$) and for the chain nodes of~(f), of degree $s e + e_K$; for $p \ge 4\kappa^4$ only $(1,\mathrm{F1})$;
+  \item \textup{(B)} at the $28$ primes $p \le 523$ listed in \file{tierB.json}, the chains of Corollary~\ref{cor:chain} of length at most $3$ with $|K_t| \le 3$ recorded there, used as $\{0\}$-nodes (solvers), $\{0,m\}$-nodes (in~(e)) and $K$-nodes (finishes in~(e)).
+\end{enumerate}
+A contraction is \emph{available} at $p$ if $p \ge T_{\mathrm{exist}}$ of Table~\ref{tab:sm-thresholds} (Lemma~\ref{lem:sm}) or $p$ lies in the certificate table of the artifact (contractions for the least primitive root $\xi$, each checked from Definition~\ref{def:rc} by two separately written programs). The preprocessing of $\mathcal H^+_\kappa$, which depends only on $(p,\kappa)$, finds the contractions: from the table for $p < T_{\mathrm{exist}}$; by repeated uniform trials of $\beta$ followed by scanning $\Fp$ for each $\alpha_j$ for $T_{\mathrm{exist}} \le p < T_{\mathrm{samp}}$ (each trial succeeds with probability at least $1 - \Phi(p)$, and $p$ is bounded, so the expected cost is a constant depending only on $\kappa$); and by the sampler of Lemma~\ref{lem:sm} for $p \ge T_{\mathrm{samp}}$.
+\end{definition}
+
+\begin{theorem}[Schedule~1H$^+$]
+\label{thm:halving-plus}
+Theorem~\ref{thm:halving} holds for $\mathcal H^+_\kappa$, $A^+_\kappa$ and $e^+_\kappa$, with $A^+_\kappa(a) \le A_\kappa(a)$, and with~(iii) for some constant $K^+_\kappa$ depending only on $\kappa$.
+\end{theorem}
+
+\begin{proof}
+Every new candidate is a $\kappa$-solver of the stated arity: (c) and (d) by Corollary~\ref{cor:chain}; (e) by the proof of Theorem~\ref{thm:halving}(ii), with Lemma~\ref{lem:stage2} in place of Lemma~\ref{lem:stage} and Lemma~\ref{lem:finishK} in place of Lemma~\ref{lem:finish}(ii); (f) by Corollary~\ref{cor:chain}. Their outputs are checked before use, their random steps (roots, draws of $u$, the preprocessing) are Las Vegas with the bounds of Lemma~\ref{lem:two-term}, Lemma~\ref{lem:sm} and~\cite{Rabin1980}, and availability, hence the arity, is decided from $(p,\kappa)$ before any query. A chain of length $L$ over a node of arity $C(a+1)^e$ has arity at most $C\kappa^L(a+1)^{e+L}$, and the plans multiply constants as in Theorem~\ref{thm:halving}(iii); there are finitely many candidate types, and above $2\cdot10^6$ the candidates do not depend on $p$, which gives $K^+_\kappa$. Candidate~(a) and the plans of Definition~\ref{def:schedule1h} remain available, so $A^+_\kappa \le A_\kappa$.
+\end{proof}
+
+\begin{lemma}[The chain exponent; partly an exact computation]
+\label{lem:chain-exponent}
+For a prime $p > c$ put $e^+_{p,d} = e^+_{\kappa_d}$ and $E_+(c) = 1 + \max_{p>c}\sum_{d=2}^ce^+_{p,d}$. Then $E_+(c) \le E_H(c)$, and
+\[
+  E_+(c) = 3,\ 5,\ 9,\ 10,\ 14,\ 16,\ 19,\ 21 \qquad (c = 2,\dots,9).
+\]
+$E_+(9) = 21$ is attained exactly at $p = 13, 19, 37, 73$ and at the primes $p \equiv 1 \pmod{2520}$.
+\end{lemma}
+
+\begin{proof}
+Let $p > 2\cdot10^6$. Then $p > T_{\mathrm{exist}}$ for every step of Table~\ref{tab:sm-thresholds} and $p > 4\cdot9^4$, so every contraction of~(c)--(e) is available, (f) does not occur, only the plans $(1,\mathrm{F1})$ are admissible, and $t_{p,\kappa} \le 3$. Hence $e^+_1,\dots,e^+_9 = 1, 2, 2, 2, 2, 3, 3, 3, 3$: for $\kappa = 2$ the value $2$ of Remark~\ref{rem:kappa-two}; for $\kappa = 3,4,5$ the chain~(c), and no candidate has degree below $2$ (Remark~\ref{rem:kappa-two} for even $\kappa$; for odd $\kappa$ every candidate is (a), of degree $\kappa$, or a chain, of degree at least $2$); for $\kappa = 6$ and $8$ the plan $(1,\mathrm{F1})$ over $\mathcal H^+_3$ and $\mathcal H^+_4$, degree $3$, against at least $6$ for~(a); for $\kappa = 7$ the plan $(1,\mathrm{F1})$ over the union step, degree $3$, against $7$; for $\kappa = 9$ the tower~(d), degree $e^+_3 + 1 = 3$, against $9$ or $18$ for~(a), the only other candidate at $\kappa = 9$ there. These values are nondecreasing along divisibility ($\kappa \mid d \le 9$ implies $e^+_\kappa \le e^+_d$), with equality for $d \in \{3,5,6,7,8,9\}$ only when $\kappa = d$. So $\sum_{d=2}^9e^+_{p,d} \le 2+2+2+2+3+3+3+3 = 20$, with equality exactly when $2520 \mid p-1$; the bounds for $c \le 8$ follow in the same way ($3,5,7,9,12,15,18$). An exact computation for every prime $p < 2\cdot10^6$, with the class sumsets of Section~\ref{sec:halving} below $4\cdot 9^4$, the certificate tables, and the formula of Lemma~\ref{lem:zero-sum-length} above $4\cdot9^4$, gives the listed values, and at $c = 9$ the maximum $21$ exactly at $p = 13, 19, 37, 73$ and the primes $\equiv 1 \pmod{2520}$ below $2\cdot10^6$. With the new candidates switched off the same computation reproduces Lemma~\ref{lem:halved-exponent}(ii) at every prime below $4\cdot9^4$.
+\end{proof}
+
+At $p \equiv 1 \pmod{2520}$ the grade exponents are now $e^+_{p,d} = 2,2,2,2,3,3,3,3$ for $d = 2,\dots,9$, against $2,3,3,5,4,7,4,9$ for Schedule~1H. At $p = 13$ they are $2,2,4,1,4,1,4,2$ (the grades $\kappa_4 = 4$ and $\kappa_6 = 6$, where $13$ admits neither a two-level contraction nor a chain), at $p = 37$ they are $2,2,3,1,3,1,3,5$ (for $\kappa = 9$: a stage over the chain $(1,\{0\})\to(3,\{0\})\to(9,\{0,4\})$, then a finish by a union step to $\{0,2,5\}$), at $p = 73$ they are $2,2,2,1,3,1,4,5$, and at $p = 19$ they are $2,2,2,1,4,1,2,6$.

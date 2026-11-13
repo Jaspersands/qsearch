@@ -1,0 +1,95 @@
+% fragment-v2.tex -- standalone draft, NOT part of the paper (2026-11-13, AI-written, pending human review).
+% New material only.  It extends fragment.tex (Schedule 1H+, refereed PROVED WITH FIXES in
+% research/audits/reviews/2026-11-13-rees-headline-21-referee.md); fragment.tex is unchanged and its
+% fixes F1--F7 are still to be applied there.  Intended place: right after Definition
+% def:schedule1hplus of fragment.tex; Lemma lem:chain-exponent-v2 replaces lem:chain-exponent.
+% Imports: none beyond fragment.tex (Weil's two-variable diagonal bound, Rabin root finding).
+% Finite computations: research/audits/reviews/2026-11-13-rees-headline-below-38/v2/ and the tables
+% B4_19.json, B4_37.json, B4_73.json, B3_13_4.json, B3_13_6.json of
+% research/audits/reviews/2026-11-13-rees-k9-below-21/ (found there by SAT; re-verified in v2/).
+% Lemmas T_l and W_l are those of 2026-11-13-rees-k9-below-21.md, Sec. 2, rewritten in the notation
+% of fragment.tex; no priority is claimed (it is the collision recursion of [IvanyosSantha2015] at depth l).
+
+\subsubsection*{Multi-level contractions}
+
+Notation of Section~\ref{sec:chains}: $\xi$ is the fixed coset generator, $z_m = \xi^m$ for $m \in \mathbb{Z}_\kappa$ (representatives $0,\dots,\kappa-1$), $Q_m = z_mP$, and $\operatorname{cl} = \operatorname{cl}_\kappa$. For $y \in \mathbb{Z}_\kappa^\ell$ write $|y| = y_1 + \dots + y_\ell \in \mathbb{Z}_\kappa$ and $z^y = \prod_r z_{y_r}$, so $\operatorname{cl}(z^y) = |y|$. A family $(T_y)_{y \in \mathbb{Z}_\kappa^\ell}$ of vectors of $\Fp^a$ satisfies the \emph{axis relations} if $\sum_{m \in \mathbb{Z}_\kappa} z_m T_{y[r := m]} = 0$ for every axis $r \le \ell$ and every $y$, where $y[r:=m]$ replaces the $r$-th coordinate by $m$. Put $M_\ell(a) = \prod_{t=0}^{\ell-1}\bigl((\kappa-1)^ta+1\bigr)$.
+
+\begin{lemma}[$\ell$-level tensor]
+\label{lem:ell-tensor}
+Let $\ell \ge 1$. From any $M_\ell(a)$ columns $\lambda_b \in \Fp^a$ one computes deterministically, with $\mathrm{poly}(a,\kappa^\ell)$ field operations and $O(M_\ell(a))$ class computations, pairwise disjoint sets $S_y$ of column indices ($y \in \mathbb{Z}_\kappa^\ell$) and weights $w_b \in P$ for $b \in \bigcup_yS_y$, with an index $b^\ast \in S_0$ of weight $w_{b^\ast} = 1$, such that $T_y = \sum_{b \in S_y}w_b\lambda_b$ satisfy the axis relations.
+\end{lemma}
+
+\begin{proof}
+Induction on $\ell$. For $\ell = 1$ take a nonzero $c$ with $\sum_bc_b\lambda_b = 0$ on $a+1$ columns, scaled so that some $c_{b^\ast} = 1$; put $b$ with $c_b \ne 0$ into $S_{\operatorname{cl}(c_b)}$ with $w_b = c_b/z_{\operatorname{cl}(c_b)} \in P$. Then $\sum_mz_mT_m = \sum_bc_b\lambda_b = 0$, and $b^\ast \in S_0$, $w_{b^\ast} = 1$ since $z_0 = 1$.
+
+For $\ell \ge 2$ let $N = (\kappa-1)^{\ell-1}a + 1$ and split the columns into $N$ blocks of $M_{\ell-1}(a)$; this is possible since $M_\ell(a) = N\,M_{\ell-1}(a)$. By induction each block $\mu$ gives cells $S^\mu_y$, weights and vectors $T^\mu_y$ ($y \in \mathbb{Z}_\kappa^{\ell-1}$) with the axis relations and a distinguished index $b^\ast_\mu$. The $N$ vectors $(T^\mu_y)_{y \in (\mathbb{Z}_\kappa\setminus0)^{\ell-1}}$ lie in a space of dimension $N-1$, so there is $\theta \ne 0$ with $\sum_\mu\theta_\mu T^\mu_y = 0$ for every $y$ without zero coordinate; scale it so that $\theta_{\mu^\ast} = 1$ for some $\mu^\ast$.
+
+\emph{Claim: $\sum_\mu\theta_\mu T^\mu_y = 0$ for every $y \in \mathbb{Z}_\kappa^{\ell-1}$.} Induction on the number of zero coordinates of $y$: if $y_r = 0$, the axis relation of each $\mu$ along $r$ gives $T^\mu_y = -\sum_{m \ne 0}z_mT^\mu_{y[r:=m]}$ ($z_0 = 1$), and each $y[r:=m]$ has one zero coordinate fewer; the identity is linear in $\mu$.
+
+For $\theta_\mu \ne 0$ put $j_\mu = \operatorname{cl}(\theta_\mu)$ and $w'_\mu = \theta_\mu/z_{j_\mu} \in P$, and let $S_{(y,j)} = \bigcup_{\mu:\,\theta_\mu \ne 0,\ j_\mu = j}S^\mu_y$, with the weight $w'_\mu w_b \in P$ on $b \in S^\mu_y$. The cells are disjoint because the blocks are, and $T_{(y,j)} = \sum_{\mu: j_\mu = j}w'_\mu T^\mu_y$. Along the new axis, $\sum_jz_jT_{(y,j)} = \sum_\mu\theta_\mu T^\mu_y = 0$ by the claim; along an old axis $r$, $\sum_mz_mT_{(y[r:=m],j)} = \sum_{\mu: j_\mu = j}w'_\mu\sum_mz_mT^\mu_{y[r:=m]} = 0$. Finally $j_{\mu^\ast} = 0$, $w'_{\mu^\ast} = 1$, so $b^\ast = b^\ast_{\mu^\ast} \in S_{(0,0)}$ has weight $1$. Each level costs one linear dependence among at most $N$ vectors of length $(N-1)$ per block, and one class computation per nonzero coefficient.
+\end{proof}
+
+\begin{definition}[$\ell$-level contraction]
+\label{def:ell-contraction}
+Let $0 \in K \subseteq \mathbb{Z}_\kappa$. An \emph{$\ell$-level $K$-contraction at $(p,\kappa)$} (for $\xi$) is a table $C\colon\mathbb{Z}_\kappa^\ell \to \Fp$ with
+\textup{(i)} every nonzero $C_y$ of class in $K$; \textup{(ii)} $C_0 \in P$; \textup{(iii)} $\sum_yC_yX_y = 0$ for every family of scalars $(X_y)$ satisfying the axis relations (with $a = 1$).
+\end{definition}
+
+Condition~(iii) is a finite linear condition: the families satisfying the axis relations form the $\ell$-fold tensor power of $W = \{x \in \Fp^{\kappa} : \sum_mz_mx_m = 0\}$, and $W$ has the basis $e_m - z_me_0$ ($m \ne 0$), so~(iii) says that the tensor $C$, contracted on every axis with the map $x \mapsto (x_m - z_mx_0)_{m \ne 0}$, vanishes.
+
+\begin{lemma}[Contraction gives a relation]
+\label{lem:ell-node}
+Let $C$ be an $\ell$-level $K$-contraction at $(p,\kappa)$. Apply Lemma~\ref{lem:ell-tensor} to $M_\ell(a)$ columns and put $x_b = C_yw_b$ for $b \in S_y$, and $x_b = 0$ for $b$ in no cell. Then $\sum_bx_b\lambda_b = 0$, $x_{b^\ast} = C_0 \in P$, and every nonzero $x_b$ has class in $K$. In particular an $\ell$-level $\{0\}$-contraction gives a deterministic $\{0\}$-node at modulus $\kappa$ of arity $M_\ell(a) \le \kappa^{\ell(\ell-1)/2}(a+1)^\ell$, hence of degree $\ell$, and, followed by $\kappa$-th roots of its weights, a $\kappa$-solver of degree $\ell$.
+\end{lemma}
+
+\begin{proof}
+$\sum_bx_b\lambda_b = \sum_yC_yT_y$, and each coordinate of $(T_y)_y$ is a family of scalars satisfying the axis relations, so the sum vanishes by~(iii). The other two statements hold because $w_b \in P$, $w_{b^\ast} = 1$ and the cells are disjoint. The arity bound uses $(\kappa-1)^ta + 1 \le \kappa^t(a+1)$.
+\end{proof}
+
+An $\mathrm{RC}(\kappa;\mathbb{Z}_\kappa\to\{0\})$ contraction gives the $2$-level table $C_{(i,j)} = z_iz_j(\alpha_j+\beta_i)$, but Lemma~\ref{lem:ell-node} is not used for these: they enter through Corollary~\ref{cor:chain}. Lemma~\ref{lem:ell-node} is used only for the following five tables, at five fixed pairs.
+
+\begin{proposition}[Finite tables]
+\label{prop:ell-tables}
+With $\xi$ the least primitive root, there are $\{0\}$-contractions at the levels $\ell = 4$ for $(p,\kappa) = (19,9), (37,9), (73,9)$ and $\ell = 3$ for $(p,\kappa) = (13,4), (13,6)$. Hence $e^{++}_9 \le 4$ at $p \in \{19,37,73\}$, and $e^{++}_4, e^{++}_6 \le 3$ at $p = 13$, for the schedule of Definition~\ref{def:schedule1hplus2}.
+\end{proposition}
+
+\begin{proof}
+The tables are listed in the artifact. Each one is checked from Definition~\ref{def:ell-contraction} by three separately written programs, using exact arithmetic in $\Fp$. The first two are in \file{2026-11-13-rees-k9-below-21}: \file{build\_nodes.py}, which uses the mixed-difference normal form, and \file{verify\_full\_basis.py}, which checks all $(\kappa-1)^\ell$ basis tensors of $W^{\otimes\ell}$ and uses discrete logarithms. The third is \file{v2/verify\_ell.py}, which contracts on every axis and tests classes by the power character.
+\end{proof}
+
+The $\ell = 4$ tables at $\kappa = 9$ arise as products: the two-level contraction $\mathrm{RC}(3;\mathbb{Z}_3\to\{0\})$ followed by a three-level step $\mathrm{RC}_3(9;\{0,3,6\}\to\{0\})$, which was found by SAT. The proposition uses only the composed tables, so no composition lemma is needed.
+
+\begin{definition}[Schedule~1H$^{++}$]
+\label{def:schedule1hplus2}
+$\mathcal H^{++}_\kappa$ is $\mathcal H^+_\kappa$ of Definition~\ref{def:schedule1hplus} with two additional candidates.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2em,start=7]
+  \item \textup{(TL$_6$)} For $\kappa = 6$: the two-level chain of Corollary~\ref{cor:chain} over an $\mathrm{RC}(6;\mathbb{Z}_6\to\{0\})$ contraction, of degree $2$. It is available for $p \ge 837384$, by Lemma~\ref{lem:sm} with $(D,r,k) = (6,6,1)$ and $T_{\mathrm{samp}} = 40924516$. Below that bound it is available at the primes of the certificate table \file{v2/certs\_tl6\_all.json}, which contains every prime $p \equiv 1 \pmod{2520}$ below $837384$.
+  \item \textup{(L)} At the five pairs of Proposition~\ref{prop:ell-tables}: the $\kappa$-solver of Lemma~\ref{lem:ell-node}.
+\end{enumerate}
+\end{definition}
+
+Preprocessing works as in Definition~\ref{def:schedule1hplus}. In the band $837384 \le p < 40924516$, one trial costs at most $6\cdot6\cdot p$ class tests. It succeeds with probability at least $1-\Phi(p) \ge 1-\Phi(837409) > 1.6\cdot10^{-5}$, where $837409$ is the least prime $\equiv 1 \pmod 6$ above the threshold (exact rational check in \file{v2/tl6\_threshold.out}). So the expected cost is a constant. Neither candidate is used as a node in later grades: $6$ and $9$ divide no other $\kappa \le 9$, and at $p = 13$ the grade $\kappa = 8$ does not occur. Theorem~\ref{thm:halving-plus} therefore holds for $\mathcal H^{++}$ with the same proof. Every candidate is a $\kappa$-solver whose arity is decided from $(p,\kappa)$, and $A^{++}_\kappa \le A^+_\kappa$.
+
+\begin{lemma}[The exponent of Schedule~1H$^{++}$; partly an exact computation]
+\label{lem:chain-exponent-v2}
+With $e^{++}$ in place of $e^+$ in Lemma~\ref{lem:chain-exponent}, $E_{++}(c) \le E_+(c)$ and
+\[
+  E_{++}(c) = 3,\ 5,\ 9,\ 10,\ 14,\ 16,\ 18,\ 20 \qquad (c = 2,\dots,9).
+\]
+$E_{++}(9) = 20$ is attained exactly at the primes $p \equiv 1 \pmod{2520}$ and at $p = 37, 43, 73, 127, 181, 631$.
+\end{lemma}
+
+\begin{proof}
+Let $p > 2\cdot10^6$. As in the proof of Lemma~\ref{lem:chain-exponent}, $e^{++}_1,\dots,e^{++}_9 = 1,2,2,2,2,2,3,3,3$. The value at $\kappa = 6$ is now $2$, from~(g), since $p > 837384$; no candidate has smaller degree (Remark~\ref{rem:kappa-two}). Candidate~(h) does not occur. The values at $\kappa = 7, 8, 9$ are unchanged. For $\kappa = 7$ every candidate is (a), of degree $7$, or a plan over the union step, of degree at least $3$. For $\kappa = 8$ it is (a), of degree at least $8$, or a plan over $\mathcal H^{++}_4$, of degree at least $e^{++}_4 + 1 = 3$. For $\kappa = 9$ it is (a) or the tower, of degree $e^{++}_3 + 1 = 3$.
+
+For $d \in \{2,4,6\}$ the grade $e^{++}_{\kappa_d}$ equals $2$, since $\kappa_d$ is even. For $d \in \{3,5\}$ it is $2$ if $d \mid p-1$ and $1$ otherwise. For $d \in \{7,8,9\}$ it is $3$ exactly when $\kappa_d = d$, and at most $2$ otherwise. So $\sum_{d=2}^9e^{++}_{p,d} \le 5\cdot2 + 3\cdot3 = 19$, with equality exactly when $2520 \mid p-1$. The bounds for $c \le 8$ are $3,5,7,9,11,14,17$.
+
+For $p < 2\cdot10^6$, the computation of Lemma~\ref{lem:chain-exponent} is rerun with the candidates (g) and (h) added (\file{v2/rule\_v2.py}). Switching the new candidates off reproduces the core Schedule~1H below $4\cdot9^4$, and the run gives the listed values. At $c = 9$ the value $20$ occurs below $2\cdot10^6$ exactly at the $260$ primes $\equiv 1 \pmod{2520}$ and at $37, 43, 73, 127, 181, 631$. At $p \equiv 1 \pmod{2520}$ the grade exponents for $d = 2,\dots,9$ are $2,2,2,2,2,3,3,3$. At $p = 13, 19, 37, 73$ they are $2,2,3,1,3,1,3,2$, $2,2,2,1,4,1,2,4$, $2,2,3,1,3,1,3,4$ and $2,2,2,1,3,1,4,4$, so $E = 18, 19, 20, 20$.
+\end{proof}
+
+\begin{remark}[What a value below $20$ would need]
+\label{rem:below-20}
+At $p \equiv 1 \pmod{2520}$ one of the grades $\kappa = 7, 8, 9$ would have to drop from $3$ to $2$. That needs a degree-$2$ $\{0\}$-node at $\kappa = 7$, $8$ or $9$ for all large $p$ in this class, for example two-level contractions. Lemma~\ref{lem:sm} gives these only above $T_{\mathrm{exist}} = 8933473$, $146896259$ and $3336892478$ respectively, with certificates needed below. Multi-level steps cannot help here, because an $\ell$-level node has degree $\ell \ge 3$.
+
+The same drop is needed at the small primes that attain $20$. At $p = 37$, the $\kappa = 9$ node of degree $4$ is optimal among $\ell$-level contractions and two-level chains, conditional on the certified UNSAT 3-level search recorded in \file{2026-11-13-rees-k9-below-21.md}, \S4. The grades $\kappa = 4, 6$ at $37$ would need a degree-$2$ node at a prime that admits no two-level contraction.
+\end{remark}

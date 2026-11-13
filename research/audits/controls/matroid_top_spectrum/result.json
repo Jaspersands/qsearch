@@ -1,0 +1,39 @@
+{
+  "scope": "EXACT_FINITE_CONTROL_ONLY; proof uses KRS and ALOV, not finite spectra",
+  "cases": [
+    {
+      "name": "U_2_4",
+      "rank": 2,
+      "n": 4,
+      "basis_count": 6,
+      "exact_spectrum_multiplicities": {
+        "0": 3,
+        "4": 3
+      },
+      "greedy_decomposition_multiplicities": {
+        "0": 3,
+        "4": 3
+      },
+      "top_betti": 3
+    },
+    {
+      "name": "graphic_K4",
+      "rank": 3,
+      "n": 6,
+      "basis_count": 16,
+      "exact_spectrum_multiplicities": {
+        "0": 6,
+        "3": 4,
+        "6": 6
+      },
+      "greedy_decomposition_multiplicities": {
+        "0": 6,
+        "3": 4,
+        "6": 6
+      },
+      "top_betti": 6
+    }
+  ],
+  "quantum_advantage": false,
+  "arbitrary_input_spectral_measure": false
+}

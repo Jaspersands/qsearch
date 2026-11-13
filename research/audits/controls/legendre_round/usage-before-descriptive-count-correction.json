@@ -1,0 +1,524 @@
+{
+  "captured_at_utc": "2026-11-13T10:07:19.680320+00:00",
+  "ceiling_note": "Local request ceilings are not charges, invoices, balances or provider-enforced billing caps.",
+  "checkpoint_status": "FINALIZED_TERMINAL_USAGE_SNAPSHOT",
+  "cost_note": "Stored final nonpartial runner estimates only; both empty max_tokens final usages counted. EIGHT inherited UNKNOWN bills and partial counters remain excluded unchanged. Owner20.59 remaining anchor is separate and NOT reduced by this estimated round; OpenAI exhausted/no further paid calls.",
+  "cumulative_totals": {
+    "completed_nonempty_reports": 151,
+    "excluded_observed_partial_runner_estimates_usd": "0.716424",
+    "known_terminal_nonpartial_usage_estimate_usd": "318.287378",
+    "known_terminal_nonpartial_usage_records": 241,
+    "unknown_api_error_without_usage_bills_excluded": 1,
+    "unknown_generation_failure_bills_excluded": 1,
+    "unknown_partial_failure_bills_excluded": 5,
+    "unknown_protocol_failure_bills_excluded": 1,
+    "unknown_read_error_without_usage_bills_excluded": 1,
+    "unknown_timeout_bills_excluded": 4,
+    "unknown_total_bills_excluded": 8
+  },
+  "current_round_unknown_total_bill_count": 0,
+  "dispatch_manifests": [
+    "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-legendre-kernel/dispatch.json"
+  ],
+  "exclusions": [
+    {
+      "reason": "Preserved exactly and excluded from known estimates.",
+      "scope": "Eight inherited UNKNOWN bills and observed partial counters"
+    },
+    {
+      "reason": "Outside new unique hash set. Only supplied final topic/STATE snapshots; reused evidence reference-only, no old pin rescan or test.",
+      "scope": "Pending-parent-read post-legendre-selection, live changing originals/new work, reused old QSVT/Prakash/Jack hash pins"
+    }
+  ],
+  "finalized_at_utc": "2026-11-13T10:07:19.680320+00:00",
+  "frozen_prior_usage_snapshot": {
+    "bytes": 21398,
+    "note": "Immutable baseline; no historical source/run/hash rescan or repinning.",
+    "path": "/Users/jaspersands/Developer/qsearch/research/audits/controls/gram_defect_round/usage.json"
+  },
+  "legendre_round": {
+    "by_provider_usd": {
+      "Anthropic": "6.646180",
+      "OpenAI": "0.000000"
+    },
+    "completed_nonempty_reports": 0,
+    "empty_refusal_reports": 0,
+    "failed_empty_reports": 0,
+    "jobs": 2,
+    "jobs_detail": [
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-legendre-native-analytic",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "findings_imported": false,
+        "known_nonpartial_estimate": true,
+        "no_retry": true,
+        "obligation": "legendre-native-analytic",
+        "parent_reported_exit_code": 1,
+        "provider": "Anthropic",
+        "report_authority": "Independent parent-checked proof chain is separate from the two empty paid reports.",
+        "report_classification": "EMPTY_MAX_TOKENS_TRUNCATION;final reported nonpartial usage counted, no evidence/no retry",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-legendre-native-analytic/response.md"
+        },
+        "response_LF_count": 0,
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1916,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-legendre-native-analytic/result.json"
+        },
+        "session_id": 8399,
+        "session_reaped_per_parent": true,
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 12294,
+          "output_tokens": 64000
+        },
+        "usage_cost_estimate_usd": "3.322940",
+        "usage_is_partial": false
+      },
+      {
+        "billing_status": "usage_reported",
+        "bundle": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-legendre-block-attack",
+        "completed_review": false,
+        "failure_type": "MaxTokens",
+        "findings_imported": false,
+        "known_nonpartial_estimate": true,
+        "no_retry": true,
+        "obligation": "legendre-block-attack",
+        "parent_reported_exit_code": 1,
+        "provider": "Anthropic",
+        "report_authority": "Independent parent-checked proof chain is separate from the two empty paid reports.",
+        "report_classification": "EMPTY_MAX_TOKENS_TRUNCATION;final reported nonpartial usage counted, no evidence/no retry",
+        "response": {
+          "bytes": 0,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-legendre-block-attack/response.md"
+        },
+        "response_LF_count": 0,
+        "response_characters": 0,
+        "response_nonempty": false,
+        "result": {
+          "bytes": 1912,
+          "path": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-legendre-block-attack/result.json"
+        },
+        "session_id": 67507,
+        "session_reaped_per_parent": true,
+        "status": "truncated",
+        "stop_reason": "max_tokens",
+        "terminal": true,
+        "usage": {
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "input_tokens": 12324,
+          "output_tokens": 64000
+        },
+        "usage_cost_estimate_usd": "3.323240",
+        "usage_is_partial": false
+      }
+    ],
+    "known_nonpartial_usage_records": 2,
+    "status_counts": {
+      "truncated": 2
+    },
+    "terminal_jobs": 2,
+    "truncated_empty_reports": 2,
+    "truncated_nonempty_reports": 0,
+    "unknown_total_bill_records": 0,
+    "usage_estimate_usd": "6.646180"
+  },
+  "local_request_ceiling_total_usd": "10.000000",
+  "owner_reported_credit_update_separate": {
+    "Anthropic_remaining_usd": "20.59",
+    "OpenAI": "OUT_OF_CREDITS; no further paid OpenAI calls",
+    "note": "Owner-reported credit information, separate from runner estimates and historical ownerSPENT. No remaining balance was computed from cumulative usage.",
+    "source": "Owner report relayed by parent, also recorded in current dispatch"
+  },
+  "owner_reported_spent_separate": {
+    "Anthropic_usd": "155.99",
+    "OpenAI_usd": "101.71",
+    "note": "Separate from runner estimates; no inferred balance, invoice reconciliation, subtraction or unexplained-delta claim.",
+    "source": "Parent/owner-reported spent totals, separately recorded verbatim."
+  },
+  "providers": {
+    "Anthropic": {
+      "completed_and_nonempty": 85,
+      "empty_response_count": 17,
+      "frozen_prior_estimate_usd": "173.521118",
+      "frozen_prior_known_terminal_records": 172,
+      "incomplete_and_empty": 0,
+      "incomplete_and_nonempty": 1,
+      "inherited_result_files_plus_two_explicit_jobs": 181,
+      "known_estimate_by_status_usd": {
+        "completed": "70.858176",
+        "empty_response": "3.767794",
+        "incomplete": "0.961528",
+        "truncated": "104.579800"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "180.167298",
+      "known_terminal_nonpartial_usage_records": 174,
+      "legendre_round": {
+        "completed_nonempty_reports": 0,
+        "empty_refusal_reports": 0,
+        "failed_empty_reports": 0,
+        "jobs": 2,
+        "known_nonpartial_usage_records": 2,
+        "status_counts": {
+          "truncated": 2
+        },
+        "terminal_jobs": 2,
+        "truncated_empty_reports": 2,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 0,
+        "usage_estimate_usd": "6.646180"
+      },
+      "not_started_count": 2,
+      "other_terminal_billing_UNKNOWN": [],
+      "partial_generation_failure_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.485230",
+          "failure_stage": "generation",
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "obligation": "quadratic-composition",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 48498,
+            "output_tokens": 5
+          },
+          "provider": "Anthropic",
+          "response_bytes": 7862,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ],
+      "partial_timeout_totals_UNKNOWN": [
+        {
+          "excluded_partial_runner_estimate_usd": "0.0276",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 6875,
+            "output_tokens": 5
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.00625",
+          "failure_type": "ReadTimeout",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 585,
+            "output_tokens": 8
+          },
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+          "total_cost_usd": "UNKNOWN"
+        },
+        {
+          "excluded_partial_runner_estimate_usd": "0.070644",
+          "failure_stage": "generation",
+          "failure_type": "ReadTimeout",
+          "no_retry": true,
+          "obligation": "unit-lattice-phase",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 17621,
+            "output_tokens": 8
+          },
+          "provider": "Anthropic",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        },
+        {
+          "billing_status": "unknown",
+          "excluded_partial_runner_estimate_usd": "0.126700",
+          "failure_stage": "generation",
+          "failure_type": "ReadTimeout",
+          "no_retry": true,
+          "obligation": "tower-one-tag-gluing-audit",
+          "partial_usage_observed": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 12660,
+            "output_tokens": 2
+          },
+          "provider": "Anthropic",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-one-tag-gluing-audit/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": true
+        }
+      ],
+      "status_counts_through_legendre": {
+        "completed": 85,
+        "dry_run": 1,
+        "empty_response": 17,
+        "failed": 6,
+        "incomplete": 1,
+        "truncated": 71
+      },
+      "terminal_results": 180,
+      "truncated_and_empty": 55,
+      "truncated_and_nonempty": 16,
+      "unknown_partial_failure_bill_count": 5,
+      "unknown_total_bill_count": 5
+    },
+    "OpenAI": {
+      "completed_and_nonempty": 66,
+      "empty_response_count": 0,
+      "frozen_prior_estimate_usd": "138.120080",
+      "frozen_prior_known_terminal_records": 67,
+      "incomplete_and_empty": 1,
+      "incomplete_and_nonempty": 0,
+      "inherited_result_files_plus_two_explicit_jobs": 70,
+      "known_estimate_by_status_usd": {
+        "completed": "135.616570",
+        "incomplete": "2.503510"
+      },
+      "known_terminal_nonpartial_usage_estimate_usd": "138.120080",
+      "known_terminal_nonpartial_usage_records": 67,
+      "legendre_round": {
+        "completed_nonempty_reports": 0,
+        "empty_refusal_reports": 0,
+        "failed_empty_reports": 0,
+        "jobs": 0,
+        "known_nonpartial_usage_records": 0,
+        "status_counts": {},
+        "terminal_jobs": 0,
+        "truncated_empty_reports": 0,
+        "truncated_nonempty_reports": 0,
+        "unknown_total_bill_records": 0,
+        "usage_estimate_usd": "0.000000"
+      },
+      "not_started_count": 0,
+      "other_terminal_billing_UNKNOWN": [
+        {
+          "billing_status": "unknown",
+          "failure_type": "RemoteProtocolError",
+          "no_retry": true,
+          "note": "No final usage or cost reported; excluded, never interpreted as zero.",
+          "obligation": "wave-classical-superposition",
+          "partial_usage_observed": null,
+          "provider": "OpenAI",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": false,
+          "usage_reported": false
+        },
+        {
+          "billing_status": "unknown",
+          "failure_stage": null,
+          "failure_type": "ReadError",
+          "no_retry": true,
+          "note": "No final usage or cost reported; absent counter is not a zero charge.",
+          "obligation": "kerr-cdf-construction",
+          "partial_usage_observed": null,
+          "provider": "OpenAI",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-kerr-cdf-construction/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": false,
+          "usage_reported": false
+        },
+        {
+          "billing_status": "unknown",
+          "failure_stage": null,
+          "failure_type": "APIError",
+          "no_retry": true,
+          "note": "No final usage/cost or partial counter reported; absent estimate is not a zero charge.",
+          "obligation": "gram-defect-clock",
+          "partial_usage_observed": null,
+          "provider": "OpenAI",
+          "response_bytes": 0,
+          "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-gram-defect-clock/result.json",
+          "total_cost_usd": "UNKNOWN",
+          "usage_is_partial": false,
+          "usage_reported": false
+        }
+      ],
+      "partial_generation_failure_totals_UNKNOWN": [],
+      "partial_timeout_totals_UNKNOWN": [],
+      "status_counts_through_legendre": {
+        "completed": 66,
+        "failed": 3,
+        "incomplete": 1
+      },
+      "terminal_results": 70,
+      "truncated_and_empty": 0,
+      "truncated_and_nonempty": 0,
+      "unknown_partial_failure_bill_count": 0,
+      "unknown_total_bill_count": 3
+    }
+  },
+  "reconciliation_unexplained_delta_usd": "0.000000",
+  "report_note": "Both Claude reports zero bytes/reapedexit1/no evidence/no retry. Parent fully checked scalar186-LF/coherent338-LF/admission186-LF proof chain. Native clean Gauss-Legendre transform is the scoped written claim; bookkeeping imports no Hahn/CG/Jacobi-family/differential-equation, implementation/novelty/speedup claim.",
+  "reused_evidence_references_not_rehashed": [
+    {
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/periodic_conduction/qsvt.txt",
+      "pin_policy": "Reference only; reused source not reopened/hashed or historical pin rescanned.",
+      "source_locator": "LF745--759,1150--1215 in coherent review"
+    },
+    {
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/sources/binary_fock_kerr/prakash.txt",
+      "pin_policy": "Reference only; reused source not reopened/hashed or historical pin rescanned.",
+      "source_locator": "Definition3.13 in admission review"
+    },
+    {
+      "path": "/Users/jaspersands/Developer/qsearch/research/audits/reviews/2026-11-13-jack-logprecision-independent.md",
+      "pin_policy": "Reference only; old finite-gate review and its checkpoint pins not rescanned.",
+      "source_locator": "Finite-gate rule referenced by coherent review LF296"
+    }
+  ],
+  "scope": "Frozen Gram-defect ledger plus ONLY two terminal EMPTY Claude Legendre requests, selected immutable packet/bundles, stable scalar/coherent/admission proof chain, three new binary-recoupling primary sources and labelled final topic/STATE snapshots. Reused QSVT/Prakash/Jack evidence is reference-only.",
+  "stable_final_artifact_instruction": {
+    "captured_at_utc": "2026-11-13T10:07:19.680320+00:00",
+    "labelled_snapshots": [
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/legendre_round/state-final-snapshot.md",
+      "/Users/jaspersands/Developer/qsearch/research/audits/controls/legendre_round/topic-final-snapshot.md"
+    ],
+    "live_STATE_and_topic_not_hashed": true,
+    "parent_confirmed_stable_and_fully_read": true,
+    "state_snapshot_authority": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-legendre-kernel/state-final.md",
+    "topic_snapshot_authority": "/Users/jaspersands/Developer/qsearch/research/audits/api_inputs/2026-11-13-legendre-kernel/topic-final.md"
+  },
+  "unknown_billing_exclusions": [
+    {
+      "excluded_partial_runner_estimate_usd": "0.0276",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 6875,
+        "output_tokens": 5
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-bethe-prefix-repair/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.00625",
+      "failure_type": "ReadTimeout",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 585,
+        "output_tokens": 8
+      },
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-07-relative-norm-support/result.json",
+      "total_cost_usd": "UNKNOWN"
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.485230",
+      "failure_stage": "generation",
+      "failure_type": "ReadError",
+      "no_retry": true,
+      "obligation": "quadratic-composition",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 48498,
+        "output_tokens": 5
+      },
+      "provider": "Anthropic",
+      "response_bytes": 7862,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-quadratic-composition/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    },
+    {
+      "excluded_partial_runner_estimate_usd": "0.070644",
+      "failure_stage": "generation",
+      "failure_type": "ReadTimeout",
+      "no_retry": true,
+      "obligation": "unit-lattice-phase",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 17621,
+        "output_tokens": 8
+      },
+      "provider": "Anthropic",
+      "response_bytes": 0,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-unit-lattice-phase/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    },
+    {
+      "billing_status": "unknown",
+      "failure_type": "RemoteProtocolError",
+      "no_retry": true,
+      "note": "No final usage or cost reported; excluded, never interpreted as zero.",
+      "obligation": "wave-classical-superposition",
+      "partial_usage_observed": null,
+      "provider": "OpenAI",
+      "response_bytes": 0,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-wave-classical-superposition/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": false,
+      "usage_reported": false
+    },
+    {
+      "billing_status": "unknown",
+      "excluded_partial_runner_estimate_usd": "0.126700",
+      "failure_stage": "generation",
+      "failure_type": "ReadTimeout",
+      "no_retry": true,
+      "obligation": "tower-one-tag-gluing-audit",
+      "partial_usage_observed": {
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "input_tokens": 12660,
+        "output_tokens": 2
+      },
+      "provider": "Anthropic",
+      "response_bytes": 0,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/claude_runs/2026-11-13-tower-one-tag-gluing-audit/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": true
+    },
+    {
+      "billing_status": "unknown",
+      "failure_stage": null,
+      "failure_type": "ReadError",
+      "no_retry": true,
+      "note": "No final usage or cost reported; absent counter is not a zero charge.",
+      "obligation": "kerr-cdf-construction",
+      "partial_usage_observed": null,
+      "provider": "OpenAI",
+      "response_bytes": 0,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-kerr-cdf-construction/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": false,
+      "usage_reported": false
+    },
+    {
+      "billing_status": "unknown",
+      "failure_stage": null,
+      "failure_type": "APIError",
+      "no_retry": true,
+      "note": "No final usage/cost or partial counter reported; absent estimate is not a zero charge.",
+      "obligation": "gram-defect-clock",
+      "partial_usage_observed": null,
+      "provider": "OpenAI",
+      "response_bytes": 0,
+      "result": "/Users/jaspersands/Developer/qsearch/research/audits/openai_runs/2026-11-13-gram-defect-clock/result.json",
+      "total_cost_usd": "UNKNOWN",
+      "usage_is_partial": false,
+      "usage_reported": false
+    }
+  ]
+}

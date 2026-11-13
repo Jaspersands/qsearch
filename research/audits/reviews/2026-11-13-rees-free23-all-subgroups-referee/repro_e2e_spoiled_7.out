@@ -1,0 +1,42 @@
+p=7, m=144 triples per level-2 state, hidden eta=[2, 1, 2, 2, 1] (one H for the whole experiment)
+   run: supp [1, 1, 1], |B| = 5, spoiled False, eq [3, 3, 6] holds 1, mass on predicted line 1.000000
+   run: supp [7, 14, 1], |B| = 8, spoiled True, eq [1, 1, 2] holds 1, mass on predicted line 1.000000
+  attempt 0: no output
+   run: supp [7, 1, 1], |B| = 8, spoiled True, eq [6, 4, 6] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 1], |B| = 6, spoiled True, eq [4, 0, 3] holds 1, mass on predicted line 1.000000
+  attempt 1: candidate [5, 6, 5, 5, 6] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [1, 1, 1], |B| = 7, spoiled True, eq [1, 2, 5] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 1], |B| = 6, spoiled False, eq [0, 1, 3] holds 1, mass on predicted line 1.000000
+  attempt 2: candidate [1, 4, 1, 1, 4] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [8, 1, 1], |B| = 8, spoiled True, eq [1, 2, 5] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 10], |B| = 8, spoiled True, eq [1, 4, 4] holds 1, mass on predicted line 1.000000
+  attempt 3: candidate [2, 1, 2, 2, 1] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [1, 1, 10], |B| = 8, spoiled True, eq [3, 3, 6] holds 1, mass on predicted line 1.000000
+     debug D=[2, 0, 3] c=[1, 0, 2] supp=[1, 1, 1]
+   run: C forced 0 (spoiled True)
+  attempt 4: no output
+   run: supp [4, 1, 1], |B| = 7, spoiled True, eq [1, 4, 4] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 1], |B| = 6, spoiled True, eq [3, 6, 1] holds 1, mass on predicted line 1.000000
+  attempt 5: candidate [1, 4, 1, 1, 4] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [1, 1, 1], |B| = 5, spoiled True, eq [6, 6, 5] holds 1, mass on predicted line 1.000000
+   run: supp [1, 2, 1], |B| = 8, spoiled True, eq [6, 1, 4] holds 1, mass on predicted line 1.000000
+  attempt 6: candidate [5, 6, 5, 5, 6] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [1, 1, 1], |B| = 6, spoiled False, eq [1, 3, 1] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 1], |B| = 7, spoiled True, eq [4, 0, 3] holds 1, mass on predicted line 1.000000
+  attempt 7: candidate [2, 1, 2, 2, 1] correct True, verification pass-prob max 1.0000, passed True
+   run: supp [2, 1, 1], |B| = 5, spoiled False, eq [1, 0, 6] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 1], |B| = 5, spoiled True, eq [1, 0, 6] holds 1, mass on predicted line 1.000000
+  attempt 8: no output
+   run: supp [1, 1, 8], |B| = 8, spoiled True, eq [6, 4, 6] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 5], |B| = 8, spoiled True, eq [4, 1, 6] holds 1, mass on predicted line 1.000000
+  attempt 9: candidate [4, 2, 4, 4, 2] correct True, verification pass-prob max 1.0000, passed True
+     debug D=[3, 0, 4] c=[4, 0, 2] supp=[1, 1, 1]
+   run: C forced 0 (spoiled True)
+     debug D=[2, 0, 0] c=[5, 0, 5] supp=[11, 1, 13]
+   run: C forced 0 (spoiled True)
+  attempt 10: no output
+   run: supp [1, 1, 1], |B| = 7, spoiled True, eq [5, 1, 5] holds 1, mass on predicted line 1.000000
+   run: supp [1, 1, 5], |B| = 8, spoiled True, eq [2, 5, 6] holds 1, mass on predicted line 1.000000
+  attempt 11: candidate [2, 1, 2, 2, 1] correct True, verification pass-prob max 1.0000, passed True
+SUMMARY p=7: {'attempts': 12, 'success': 8, 'wrong_output': 0, 'no_output': 4, 'runs': 24, 'run_ok': 21, 'run_holds': 21, 'run_spoiled': 20, 'run_unspoiled_holds': 4, 'run_unspoiled': 4, 'run_spoiled_holds': 17, 'C_forced0': 3, 'prop': 2, 'verif_reject_correct': 0, 'mass_on_unspoiled_min': 0.9999999999999999}; copies {'copies': 51101, 'inadmissible_batches': 6655, 'spoiled_copies': 62, 'C0_closed_form_fail': 0, 'n_clean_states': 36, 'D0_clean': 4, 'full_support_fail': 0, 'n_spoiled_states': 36, 'D0_spoiled': 7, 'n_allspoiled_states': 24, 'D0_allspoiled': 4, 'spoiled_runs_checked': 16, 'line_fail': 0, 'phase_fail': 0, 'etac_maxprob': 1.0}; wall 122 s
+nice -n 19 /opt/anaconda3/bin/python $S 7 12 9107  103.15s user 9.00s system 91% cpu 2:02.41 total

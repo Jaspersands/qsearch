@@ -1,3 +1,204 @@
+## 2026-11-13 Rees Headline 38 → 21 Proved (20 Pending Referee), free23 HSP Cover-Free For All H, Lean Schedule 1H (AI only)
+
+Claude session; all AI-checked, pending human review; no posting; paper files NOT edited.
+- Headline: Schedule 1H+ (new nodes: refinement/chains Lemma R, two-class stage, class-restricted finish,
+  second-moment existence Lemma SM from the two-variable Weil bound; finite certificates below 2e6 plus a
+  mod-2520 residue argument) gives class-9 E = 21 (c = 2..9: 3,5,9,10,14,16,19,21). PROVED WITH FIXES
+  given Weil + Rabin + exact computation (proof referee) and reproduced by an independent recompute.
+  Uses none of R8, Lemmas S/F/HC, IS Lemma 12. v2 adds RC(6; Z_6 → {0}) for the whole 2520 class and
+  ℓ-level tables (κ = 9 degree 4 at 19, 37, 73; κ = 4, 6 degree 3 at 13): E = 20 (…,18,20), attained at
+  p ≡ 1 mod 2520 and 37, 43, 73, 127, 181, 631. 20 is NOT yet refereed (referee running).
+  Side finding (two independent codes): with Tier B chains, Lemma rounds (thm:is-import) is never needed
+  for κ ≤ 9 below 2e6 and maxima are unchanged; removing the import from thm:main at c ≤ 9 is UNKNOWN
+  until written (list of affected core items in …-headline-21-recompute.md §7).
+- Linear arity: OPEN. Lemma K (explicit κ = 3 contraction at every p ≡ 1 mod 3; triangular arity
+  (a+1)(a+2)/2) PROVED; Lemma D (coset-doubling tower, (a+1)^{⌈log2 κ⌉+1} for p ≥ 4κ^4) PROVED given
+  lem:two-term; reductions to F_3 subset sum / BIS_q; lattice barrier Lemma W. Referee: none refuted.
+- free23: Theorem HSP23, the HSP for EVERY H ≤ free23 over F_p, p ≥ 5, poly(log p), cover-free, given IS
+  Cor 8, abelian HSP and exact QFT_p; spoiled copies harmless (Lemmas 0′, S, C′; threshold 5000 gone).
+  Referee PROVED WITH FIXES (Δ_tot ≡ μτ as a formal identity; certification needs exact QFT; IS Thm 5
+  only sketched). Only H-dependent quotient is by H ∩ γ_3, central and certified. 3-generator class-3:
+  Route A fails at step 1. Gates "cover unnecessary", novelty, speedup stay false.
+- Lean: formal/Formal/Schedule1H/ (8 files, no sorry, standard axioms) checks correctness of Schedule 1H
+  and lem:rounds; review FAITHFUL (with caveats), nothing vacuous; the IS hypothesis is provable
+  (Chevalley–Warning), so it rests on WeilLower only. No running time; supports neither 38 nor 53.
+- κ = 9 conditional route: 21 → 20 (R9, three-level chain step RC3 by SAT with a symmetry ansatz at 73);
+  IS Lemma 12 now proved for every ℓ. Superseded as a headline by the proved 20.
+- Next hard question: does the proved 20 survive its referee; then owner decision whether the core
+  adopts Schedule 1H+ (≈ 3–4 pp.) and/or a free23 HSP23 remark. Next command: read
+  audits/reviews/2026-11-13-rees-headline-20-referee.md; acceptance: PROVED (WITH FIXES) with an
+  independent recompute of 20 and its attaining set.
+- Reports: audits/reviews/2026-11-13-rees-{headline-below-38,headline-below-38-v2,headline-21-referee,
+  headline-21-recompute,linear-arity,linear-arity-referee,free23-all-subgroups,free23-all-subgroups-referee,
+  lean-schedule1h,lean-schedule1h-review,k9-below-21}.md. Mechanical items: MECHANICAL_FOLLOW_UP_PLAN.md,
+  same heading.
+
+## 2026-11-13 Projected Slater Gaussian Feedback Falsified
+
+REVIEWED WRITTEN: opposite-angle rational four-mode Slater input forces
+TV>=1008/8425 after coarse pair-parity measurement, ANY randomized
+record-conditioned SAME-mode Gaussian unitaries, and occupation readout.
+Unconditioned one-mode covariance bound includes pairing, both-record
+feedback and Gaussian-rotated readout. No ancillas/channels/further
+measurements/rejection/arbitrary classical remapping in this architecture.
+General projected Born sampling, classical hardness, novelty and speedup
+remain OPEN/not claimed. Topic PROJECTED_SLATER_GAUSSIAN_FEEDFORWARD.md.
+Equal-angle control was REPAIRED: randomized Gaussian permutations sample
+its target exactly; coherent-state obstruction alone was insufficient.
+Exact16-state Sage covariance calculation checked the opposite-angle values.
+Full Claude report checked: covariance proof accepted; rotated-readout/
+classical-relabeling scope mistakes and reset-channel explanation repaired.
+Completed/end_turn/reaped0, estimate0.146756USD, not billing or balance.
+No paid OpenAI or retry. Packet/bundle slater-moment contains exact context.
+Full176-line independent selection also checked: tensor nonidentifiability
+and r^(1-q) filter cost are scoped mechanism failures, not general no-gos.
+Next hard question is the strongest classical sampler for partitioned DPPs
+with growing size-two parts, rank-s projection input and exact-one-per-part.
+Next command: corpus been-tried/baselines for partition DPP rank-two mixed
+discriminants, then inspect actual primary algorithm/accuracy theorem.
+Expected artifact is a same-native-input comparator or explicit unmatched
+scope; no source premise from an abstract. No new quantum subsystem is
+admitted without a concrete correction operation and that baseline check.
+Mechanical items at matching top entry; no broad tests or old ledger rescan.
+
+## 2026-11-13 Projected Slater Feedback Moment Test
+
+Historical in-progress checkpoint, superseded by the terminal entry above.
+Parent derived the opposite-angle four-mode TV>=1008/8425 architecture
+falsifier and recorded it while independent Opus/high attack session3527
+was pending. Scope: coarse pair parities, randomized record-dependent
+same-mode Gaussian unitary feedback, physical occupation readout. No
+ancillas, further measurements, rejection or arbitrary classical remapping.
+The equal-angle example had been repaired: physical Gaussian permutations
+and a coin sample its Born law, despite failure of coherent state correction.
+The exact covariance control was running; no conclusion depended on a scan
+of unitaries. Local ceiling0.75USD/max16384 was not a charge. Next action
+at this checkpoint was full terminal report and control read, now completed
+and dispositioned above. Topic PROJECTED_SLATER_GAUSSIAN_FEEDFORWARD.md.
+
+## 2026-11-13 Matroid Top Spectrum Classically Matched
+
+REVIEWED WRITTEN classical polynomial-BIT sampler for the full normalized
+TOP-chain Laplacian spectrum of every explicitly represented Q/finite-field
+matroid. Native rank tests pay ALOV basis mixing; KRS's greedy decomposition
+maps a sampled basis to lambda=n-|cl(B1)| with the exact multiplicity law.
+TV epsilon costs polynomial log(1/epsilon), with capped coins and all-branch
+clock. Betti/#bases additive estimation costs poly(1/epsilon,log1/eta).
+Full145-line independent report and actual KRS/ALOV statements parent checked.
+Topic MATROID_TOP_SPECTRUM_CLASSICAL_SAMPLER.md. Exact Sage U_2_4 and K4
+controls test shift/normalization, not the theorem. No novelty, speedup,
+exact Betti, tiny relative error, arbitrary-state spectral measure, coherent
+state preparation/evolution or general-complex claim. This is a direct
+published-theorem classical baseline, so no quantum implementation is queued.
+Independent Boolean Macaulay candidate repeats grounded-cube exponential
+conditioning even on x_i=1; no general preconditioner no-go follows.
+No paid calls this pass, no OpenAI calls, and no balance inferred. Next hard
+question: identify a concrete unmatched native operation from independent
+directions; many-body/tensor selection remains under review. Next command:
+read the stable independent-high-upside-selection.md report, then actual
+sources for any surviving claim. Expected artifact is one scoped admission
+or rejection with all costs paid, not another generic proposal. Matching
+mechanical entry preserves the two-case exact control and source locators.
+
+## 2026-11-13 Sparse Constant Leading Height Lemma
+
+REVIEWED WRITTEN, proof-only: for the full native sparse characteristic-zero
+input with growing s, delta, k and binary monomial exponents, original atoms
+admit simultaneous compatible Puiseux leading coefficients in ONE number
+field of degree<=delta and logarithmic height polynomial in native input.
+Constants specialize faithfully; Rel=Alg intersect Rel(leading tuple).
+No place, field, edge or leading coefficient is computed or supplied.
+Topic SPARSE_CONSTANT_LEADING_HEIGHT.md; full 192-line independent report
+parent checked. The general classical fullRel and one-place polynomial
+precision gates remain OPEN. Explicit finite-Q-algebra Lenstra-Silverberg
+is the strongest comparator, with construction charged; fixed-delta native
+classical fullRel was already closed. No novelty, speedup or hardness claim.
+Exact Sage control in audits/controls/sparse_constant_local_logs verifies
+Alg rank3 versus Rel rank2 and shows residue degree1 can require compatible
+leading field degree2. Modular controls at p=1093,3511 refute a two-digit
+principal-log torsion test for constant2, not polynomial precision in general.
+No paid call this pass; no OpenAI calls. Next hard gate: COMPUTE one aligned
+small-height leading tuple in sparse BIT time, or provide an actually proved
+uniform polynomial finite-place relation extraction. An existential tuple
+is not advice. Before any new operation, compare independent directions;
+do not repeat the EMPTY constant-map prompt or generic Baker requests.
+Actual Yu1994 pages241-242 and Theorem1' page246 visually checked: its
+exponential generator dependence/product of heights does not supply the
+growing-parameter polynomial precision guard. This is not a general no-go.
+Next command for a genuinely new operation: corpus been-tried then baselines;
+expected artifact is one explicit admission or cheapest decisive falsifier.
+The order-M cancellation family remains the cheapest operation falsifier.
+Mechanical items are at the matching top entry; no sweep or quantum code.
+
+## 2026-11-13 Native Gauss Legendre Coherent Transform Closed
+
+REVIEWED WRITTEN: every binary N>=1, exact Gauss-Legendre orthogonal matrix,
+arbitrary entangled input on valid N labels, clean operator error<=epsilon,
+gates/workspace poly(log N,log(1/epsilon)); classical generation additionally
+charges the rational-accuracy encoding. Full 186-line scalar and 337-line
+coherent proofs parent checked. Native per-index nodes/weights, fixed complex
+Mehler domain, polynomial coefficient list, dyadic normalization alpha=O(H^5),
+explicit QSVT degree O(H^11), finite gates and ACTUAL inverses are paid. No
+N-table, source/state advice, postselection or finite-size extrapolation.
+Topic: GAUSS_LEGENDRE_DYADIC_TRANSFORM.md. Near-linear classical full-vector
+Jacobi is the comparator, with different input/output; integer QUT/Hahn
+prior art does not transfer automatically. No novelty, speedup, Shor claim,
+implementation, practical, human/formal verification or broader-family claim.
+Both Claude calls EMPTY/max_tokens, terminal/reaped, estimates 3.322940 and
+3.323240, no evidence/retry. OpenAI exhausted. Owner Anthropic20.59 balance
+anchor stays separate from estimates. Next: finish independent selection;
+class-four HSP was superseded by prior Rees endpoint, no generic paid redo.
+The subsequent164-line independent selection is now fully parent checked:
+Gaussian cooling on Z^d has raw acceptance at most (0.501)^d (generic
+amplification remains exponential), and the
+local Metropolis gap rationale fails on an easy commuting Curie-Weiss family.
+Neither is a general no-go or hardness claim. No new paid batch is justified
+without a new operation; no remaining balance is inferred. Selection report:
+audits/reviews/2026-11-13-post-legendre-selection.md (outside this freeze).
+Milestone legendre_round completed from gram_defect_round:39 unique pins;
+the337-line descriptive correction is preserved with its initial versions,
+only changed snapshot/usage files reverified. Round6.646180 and cumulative
+318.287378 across241 priced records (Anth180.167298/OpenAI138.120080), eight
+UNKNOWN excluded. Workflow appended once; no older milestone rescan or tests.
+Next hard action: find a genuinely new native-input operation before any paid
+construction request. The three rejected mechanisms have no authorized
+numerical/implementation follow-up. For a concrete new candidate, next command
+is corpus been-tried on its exact operation, then baselines and actual primary
+sources; expected artifact is a scoped admission or decisive falsifier, with
+all source, normalization and output costs paid. Research goal remains active.
+
+
+## 2026-11-13 Legendre Clean Completion Error Ledger
+
+Conditional on a native block A/alpha approximating the padded Gauss-Legendre
+unitary to eta=epsilon^2/4096, the explicit bounded odd integral polynomial
+has polynomial degree and pays clean completion. The unitary identity gives
+whole-isometry error from successful-block error without postselection;
+finite gate errors use a hybrid and ACTUAL inverse words. Details:
+GAUSS_LEGENDRE_DYADIC_TRANSFORM.md, parent clean-completion lemma. This closes
+no kernel claim: independent analytic/normalization review remains pending.
+Scalar per-index access is already reviewed written. No novelty, speedup,
+Hahn transfer, implementation or Shor claim. Both paid reports remain empty,
+terminal, no retry; OpenAI disabled. Next: fully read stable coherent-blocks
+review, check its explicit alpha and all-branch bit caps, then update status.
+Acceptance: every native preparation and error contributes polynomial in
+log N and log(1/epsilon), with no table of size N. Mechanical items are at
+the top of MECHANICAL_FOLLOW_UP_PLAN.md.
+
+## 2026-11-13 Legendre Per Index Scalar Gate Closed
+
+CLOSED WRITTEN scalaronly: everybinaryN,indexj,precisionp, Gauss-Legendretheta/x andrelativeweight to2^-p inpoly(logN,p)BIT, allbranches, noallroottable/Petrasoracle. Full186LF legendre-scalar-source.md parentread/checked: exactJMone-termindexbrackets, Prueferstopbound, energy(4/5)sinθ/N<=w<=4sinθ/N, endpoint/asymptoticcaps andshiftedlogGamma. FullcoherentGauss-LegendretransformstillOPEN, topicGAUSS_LEGENDRE_DYADIC_TRANSFORM.md. ActualQSVTCor10/18andLemma19sourcecheckedforstandardcleancompletionIFkernelalpha/proximityproved. ClaudeFable8399/67507stillpending; noACCEPTpromotion/retry/OpenAI. Nextcommandreadstablelegendre-coherent-blocks.md thenFULLterminalreports; acceptancepolylogcoefficientl1/LCUnorm/globaloperatorprecision/cleanfixedgateclock. MechanicalqueueLegendreadmission, nostatusfromfiniteexamples/quantumcode/novelty/Shor/Hahnclaim.
+
+## 2026-11-13 Legendre Native Root And Weight Bounds Derived
+
+Additional parent construction: topic finalsection gives exact rational power2-QFT row injection/inverse with |NDelta|<2 and constant Taylor-LCU norm, plus lowphase periodic Mehler quadrature/Chebyshev coefficients with O(p*degree²) normalization. Both still under independent compiler review; no full algorithm promoted.
+
+HardderivationinGAUSS_LEGENDRE_DYADIC_TRANSFORM.md: exactindexedGaussanglebrackets[(j-.5)pi/(N+.5),j*pi/(N+.5)]fromACTUALJMone-termremainder<1/4versusleading+/-1/sqrt2, reflectionandrootcount. Gap>=pi/(2N+1), nearuniformshiftNdelta<=pi/4. LegendrewaveenergyE'=q'u²withq=nu²+1/(4sin²θ)andWallisgives(2/5)sinθ/N<=w<=4sinθ/N. Parentandindependentreviewagree; finiteBITbisection/valueerrorproofbeingfinalized. ScalarStieltjes/endpointseriesbrancheslookpoly(logN,p), noPetras/freeoracle. FullcoherentdyadictransformstillOPEN: lowphaseanalyticcoefficients/globalLCUnorm/cleanunitarygate. ClaudeFablemaxnative8399+block67507running, localceilings5eachNOTcharges; noretry/OpenAI. Nextcommandreadstablelegendre-scalar-source.mdandlegendre-coherent-blocks.md; acceptanceexplicitallbranchBIT/circuitproofplusfullreportdispositions. MechanicalqueuepreviousLegendreheading; noimplementation/sweep/novelty/Shor/Hahnclaim.
+
+## 2026-11-13 Dyadic Gauss Legendre Transform Admitted For One Test
+
+Native coherentGauss-Legendre unitary, binaryN/epsilon, arbitraryreferenceentangledinput; targetpoly(logN,log1epsilon), no table/QRAM. Corpus thenactualQUT/fastJacobi/JohanssonMezzarobba priorchecked. PublishedintegerGegenbauer QUT excludesLegendre; noHahntransfer. NEWoperation: dyadicj~J,k~K rectangles p=JK/N; lowphaseMehler/Chebyshev rankoneblockcostO(p), highphaseactualStieltjes separatesQFT+diagonals beforeendpointnormalization, O(log²N)LCUs. Stillconditionalnativeperindexroot/weight/gap/clock andanalyticcoefficient/globalnormproof. TopicGAUSS_LEGENDRE_DYADIC_TRANSFORM.md, packetapi_inputs/2026-11-13-legendre-kernel. StrongclassicalfastJacobi needsdensepreprocessing anditsrankboundisheuristic; scalarFLINTdocsLLMmarkedprefactorsuspect, useactualpaperEq17-21. Noquantumimplementation/novelty/speedup/Shor/Hahn/ODEclaim. Nextpaidtasksdistinctnativeanalyticconstruction andcoherentblockattack; acceptonlyexplicitpolylogallbranchclockorspecificfalsifier, notACCEPTlabel. Mechanicalqueuebelow. PriorGramfreeze47newhashes, known311.641198/239priced,8UNKNOWNexcluded; OpenAIout, ownerAnth20.59remainingseparate.
+
 ## 2026-11-13 Arbitrary Gram Full TV Sampler Closed
 
 CLOSED WRITTEN for every explicit rational m-by-N isometry U and PSD unit-diagonal product-pure complex Gram G, distinct occupied inputs: always-legal full collision-allowing occupation sample within TVepsilon in exp(O(N(1-lambda_minG))))poly(inputbits,N,m,1/epsilon), all branches. Topic GRAM_DEFECT_BOSON_SAMPLER.md; full219LF mixture/prefix/bit proof and130LF scope audit parentchecked. Exact private-sector mixture,4^s active DP, polynomial-height integer conditionals, zero-safe capped coins, legal tail fallback. Separate ABORTeta would generally costpoly1/eta; no polylogeta claim. Moylett already has uniform mixture/worstU/collisions; five actual sources do not state the full arbitrary-Gram interface. No novelty, advantage, all-noisy-device, mixed/correlated input or implementation claim. Phase-magnitude simplification refuted analytically by49/531441;4 finite Sagecases onlyconsistency. Claude25779 EMPTY/max_tokens0.988120 reaped1; OpenAI29879 EMPTY/APIError UNKNOWN reaped1, neitherretried. EIGHTUNKNOWN cumulative, expectedknown311.641198/239priced, Anth173.521118/OAI138.120080. Ownerupdated OpenAIexhausted(no morepaidcalls), Anth20.59remaining, separate. Stable freeze next per mechanicalqueue. Next hard question is a NEW constructive quantum operation; LWE/Hubbard/Betti have no survivor, hiddenCliffordcubic exactlypriorparked. Next command: read stable audits/reviews/2026-11-13-post-gram-selection.md then sourcecheck beforeadmission; expected genuineoperation or honestnoadmission, never paidgenericbarrierreproof.

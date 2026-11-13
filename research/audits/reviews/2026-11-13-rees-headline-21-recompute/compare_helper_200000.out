@@ -1,0 +1,6 @@
+compared primes <= 200000 disagreements: 8
+at helper tier-B primes: []
+elsewhere (first 40): [(79, 6, 3, 4), (139, 6, 3, 4), (223, 6, 3, 4), (229, 6, 2, 3), (313, 6, 2, 3), (337, 6, 2, 3), (397, 6, 2, 3), (457, 6, 2, 3)]
+all disagreements have mine <= helper: True
+primes > 523 with disagreement: []
+nice -n 19 /opt/anaconda3/bin/python compare_helper.py 200000  9.93s user 0.20s system 97% cpu 10.343 total

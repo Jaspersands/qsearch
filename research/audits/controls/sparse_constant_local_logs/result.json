@@ -1,0 +1,49 @@
+{
+  "scope": "EXACT_FINITE_CONTROL_ONLY; no asymptotic precision lower bound or classical hardness",
+  "M": 3,
+  "alg_rank": 3,
+  "rel_rank": 2,
+  "rel_basis": [
+    [
+      1,
+      0,
+      3,
+      -7
+    ],
+    [
+      0,
+      1,
+      1,
+      -2
+    ]
+  ],
+  "residue_degree": 1,
+  "compatible_Puiseux_LC_field_degree": 2,
+  "non_torsion_constant": 2,
+  "prime_controls": [
+    {
+      "prime": 3,
+      "two_power_p_minus_one_mod_p2": 4,
+      "mod_p3": 4,
+      "mod_p2_false_torsion": false
+    },
+    {
+      "prime": 1093,
+      "two_power_p_minus_one_mod_p2": 1,
+      "mod_p3": 581794064,
+      "mod_p2_false_torsion": true
+    },
+    {
+      "prime": 3511,
+      "two_power_p_minus_one_mod_p2": 1,
+      "mod_p3": 628683172,
+      "mod_p2_false_torsion": true
+    }
+  ],
+  "claim_gates": {
+    "full_classical_Rel_closed": false,
+    "polynomial_precision_refuted": false,
+    "quantum_speedup": false,
+    "no_go_for_all_local_logs": false
+  }
+}

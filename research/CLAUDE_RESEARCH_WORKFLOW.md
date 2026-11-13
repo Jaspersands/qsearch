@@ -598,3 +598,34 @@ OpenAI exhausted, NO FURTHER PAID OPENAI CALLS; owner-reported Anthropic
 20.59USD remains, separate from runner estimates/no inferred subtraction.
 Final supplied snapshots/sources/control frozen, no test rerun; live
 post-gram-selection and oldpins untouched.
+
+
+API allocation lesson, Nov13: Gram Opusmax48k and two new Legendre
+Fablemax64k tasks all ended max_tokens with EMPTY responses. The latter
+two costestimated6.646180USD combined and suppliednoevidence. Do not
+repeat/enlarge/rephrase these calls. Future DISTINCT researchquestions
+shouldbe substantially narrower, with an explicit short deliverable and
+verified premises; the main Codex/local independent work carries core
+reasoning. High reasoning ceilings are not a substitute for a returned
+proof. No more paidOpenAI, perowner exhaustedcredit. Preserve actual
+ownerbalanceanchors separately from all runner estimates.
+
+Legendre terminal usage milestone13November: two ClaudeEMPTY/max_tokens/
+reapedexit1/no evidence/no retry. Final estimates3.322940+3.323240=6.646180USD.
+Frozen39newuniquehash controls/legendre_round: cumulative knownAnth180.167298/
+OpenAI138.120080,total318.287378USD/241priced; EIGHT UNKNOWN bills/partial
+counters excluded unchanged. Runner estimates not invoices/balances. Owner
+20.59remaining anchor/historicalSPENT are separate, no estimated subtraction.
+OpenAI exhausted, no further paid calls. Reused QSVT/Prakash/Jack reference-only;
+post-Legendre selection excluded. Prior pins unchanged; no tests rerun.
+
+
+Slater moment terminal usage milestone13November: three stable science passes, exactly one new
+Claude completed/end_turn/nonempty/parent-read/reapedexit0 audit. Final runner
+estimate0.146756USD; frozen37uniquehash controls/slater_moment_round, verified
+once. Cumulative knownAnth180.314054/OpenAI138.120080,total318.434134USD/
+242priced; EIGHT UNKNOWN bills and partial counters excluded unchanged.
+Three topics/STATE retained only as labelled stable snapshots; Bravyi/LS
+reference-only, no prior evidence rescan or test rerun. Owner20.59 anchor and
+historicalSPENT remain separate; estimates are not invoices/balances. OpenAI
+exhausted/disabled. Shared status/topic/handoff/queue and prior pins unchanged.

@@ -72,4 +72,12 @@ import Formal.ReesS2Local
 import Formal.DixmierListerScalars
 import Formal.DixmierListerGroup
 import Formal.UnitriangularExpLog
+import Formal.Schedule1H.Objects
+import Formal.Schedule1H.Levels
+import Formal.Schedule1H.Stage
+import Formal.Schedule1H.Halving
+import Formal.Schedule1H.TwoTerm
+import Formal.Schedule1H.Paper
+import Formal.Schedule1H.Extras
+import Formal.Schedule1H.Audit
 import Formal.Audit

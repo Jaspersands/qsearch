@@ -1,0 +1,26 @@
+Source https://arxiv.org/pdf/quant-ph/0404180v2
+SHA256 d59b7c1543c7e6f0ecbc76716e3ac95ffe917151ec14f0e8a7cac9643783a968
+Actual Eq4/5 LF117-139, primary PDF checked by parent.
+                                                                                                      4
+according to the Pauli principle. An arbitrary state of                                                 a,b=1
+
+the system can be written as a superposition of the Fock           where {Hab } may be an arbitrary antisymmetric real 2n×
+basis states.                                                      2n matrix. Unitary elements of FLO constitute a group
+   Quantum computation with FLO starts from a Fock                 of canonical transformations Gc ⊂ U (2n ), that is V ∈ Gc
+basis state (w.l.o.g. from the vacuum state). It is acted          iff V = exp (iH) with H from Eq. [4]. Adjoint action of a
+on by a sequence of “linear optical” elements. Unitary             canonical transformation V ∈ Gc on the operators {ĉa }
+elements describe an evolution under quadratic (in cre-            is just a rotation:
+ation/annihilation operators) Hamiltonians, that is
+                                                                                    2n
+                        n                                                           X
+                  H=
+                        X
+                              ǫj â†j âj + Ht + Hs         (1)       V ĉa V † =         Rab ĉb ,      RRT = I,         det (R) = 1.            (5)
+                                                                                    b=1
+                        j=1
+
+where ǫj represent individual energies of the modes,               By choosing appropriate H one can implement an arbi-
+                     X                                             trary rotation R ∈ SO(2n).
+            Ht =          tjk â†j âk + tjk â†k âj
+                      1≤j<k≤n
+                                                                         III.    ANTICOMMUTING VARIABLES

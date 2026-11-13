@@ -1,0 +1,27 @@
+(1) kappa=3: 3014 primes p=1 mod 3 <= 60000, both generators; failures [] (count 0); min N/(p-1) = 0.0833 at p = 13
+(1) kappa=2: 6056 odd primes <= 60000; least non-residue nu with nu-1 not a square: []
+(3) kappa=3 p=7: shifts [1, 1], degree 3
+(3) kappa=3 p=13: shifts [1, 1], degree 3
+(3) kappa=5 p=31: shifts [1, 1, 2], degree 4
+(3) kappa=5 p=41: shifts [1, 1, 2], degree 4
+(3) kappa=5 p=61: shifts [1, 1, 2], degree 4
+(3) kappa=5 p=2521: shifts [1, 1, 2], degree 4
+(3) kappa=7 p=113: shifts [1, 2, 3], degree 4
+(3) kappa=7 p=9661: shifts [1, 2, 3], degree 4
+(3) kappa=9 p=199: shifts [1, 1, 2, 4], degree 5
+(3) kappa=6 p=67: shifts [1, 2, 2], degree 4
+(3) kappa=4 p=37: shifts [1, 2], degree 3
+(3) kappa=8 p=1009: shifts [1, 2, 4], degree 4
+(3) Lemma D tower runs 96, failures 0
+(2) kappa=2: primes<4k^4 = 17; doubling degree 2; exceptions (p, degree|None) []; all shifts good at [67, 71]: True
+(2) kappa=3: primes<4k^4 = 30; doubling degree 3; exceptions (p, degree|None) []; all shifts good at [331, 337]: True
+(2) kappa=4: primes<4k^4 = 83; doubling degree 3; exceptions (p, degree|None) [(5, None), (13, None), (29, 4)]; all shifts good at [1033, 1049]: True
+(2) kappa=5: primes<4k^4 = 89; doubling degree 4; exceptions (p, degree|None) [(11, None)]; all shifts good at [2521, 2531]: True
+(2) kappa=6: primes<4k^4 = 340; doubling degree 4; exceptions (p, degree|None) [(7, None), (13, None), (19, None), (31, None), (43, None)]; all shifts good at [5197, 5209]: True
+(2) kappa=7: primes<4k^4 = 195; doubling degree 4; exceptions (p, degree|None) [(29, None), (43, 7), (71, None)]; all shifts good at [9619, 9661]: True
+(2) kappa=8: primes<4k^4 = 464; doubling degree 4; exceptions (p, degree|None) [(17, None), (41, None), (73, None), (89, None), (97, None), (137, None), (233, 5), (761, 5)]; all shifts good at [16417, 16433]: True
+(2) kappa=9: primes<4k^4 = 480; doubling degree 5; exceptions (p, degree|None) [(19, None), (37, None), (73, None), (109, 9), (163, 9)]; all shifts good at [26263, 26317]: True
+(2) kappa=10: primes<4k^4 = 1044; doubling degree 5; exceptions (p, degree|None) [(11, None), (31, None), (41, None), (61, None), (71, None), (101, None), (131, 10), (151, None), (181, None), (191, 6), (211, 6), (251, 6), (281, 6), (331, 6)]; all shifts good at [40031, 40111]: True
+(2) kappa=11: primes<4k^4 = 586; doubling degree 5; exceptions (p, degree|None) [(23, None), (67, None), (89, None), (199, 11), (419, 6)]; all shifts good at [58631, 58741]: True
+(2) kappa=12: primes<4k^4 = 1996; doubling degree 5; exceptions (p, degree|None) [(13, None), (37, None), (61, None), (73, None), (97, None), (109, None), (157, None), (181, None), (193, None), (229, None), (241, None), (277, None), (349, 6), (373, 6), (541, 6)]; all shifts good at [82981, 83077]: True
+nice -n 19 /opt/anaconda3/bin/python ref_counts_tower.py 60000 12  40.56s user 1.16s system 94% cpu 44.228 total

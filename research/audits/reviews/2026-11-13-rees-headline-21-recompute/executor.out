@@ -1,0 +1,14 @@
+p=5 k=4 a=2 plan_deg=5 e+=5 arity=243 plan=(H2)x1,FB:H2->(4,[0, 1]) : 40/40 banks OK {'k4:finish-FK': 8, 'k4:stage-early-exit': 32, 'k4:stage-object': 242}
+p=7 k=3 a=2 plan_deg=2 e+=2 arity=15 plan=TL : 40/40 banks OK {}
+p=13 k=3 a=2 plan_deg=2 e+=2 arity=15 plan=TL : 40/40 banks OK {}
+p=31 k=3 a=3 plan_deg=2 e+=2 arity=28 plan=TL : 30/30 banks OK {}
+p=13 k=4 a=2 plan_deg=4 e+=4 arity=81 plan=(H2)x1,FH2 : 40/40 banks OK {'k4:finish-FK': 9, 'k4:stage-early-exit': 31, 'k4:stage-object': 97}
+p=37 k=4 a=2 plan_deg=3 e+=3 arity=27 plan=B:H2->(4,[0]) : 40/40 banks OK {}
+p=73 k=4 a=2 plan_deg=2 e+=2 arity=21 plan=TL : 30/30 banks OK {}
+p=7 k=6 a=1 plan_deg=6 e+=6 arity=144 plan=(H3)x2,FH2 : 40/40 banks OK {'k6:finish-FK': 8, 'k6:stage-early-exit': 32, 'k6:stage-object': 248}
+p=19 k=9 a=1 plan_deg=6 e+=6 arity=324 plan=(B:H3->(9,[0, 1]))x1,FB:H3->(9,[0, 1]) : 40/40 banks OK {'k9:stage-early-exit': 40, 'k9:stage-object': 2}
+p=37 k=9 a=1 plan_deg=5 e+=5 arity=324 plan=(B:H3->(9,[0, 4]))x1,FB:GE->(9,[0, 2, 5]) : 20/20 banks OK {'k9:stage-early-exit': 20, 'k9:stage-object': 1}
+p=73 k=9 a=1 plan_deg=5 e+=5 arity=108 plan=(B:H3->(9,[0, 1]))x1,FH3 : 30/30 banks OK {'k9:stage-early-exit': 30, 'k9:stage-object': 3}
+p=181 k=9 a=2 plan_deg=4 e+=4 arity=225 plan=B:H3->(9,[0, 1])->(9,[0]) : 20/20 banks OK {}
+p=397 k=9 a=2 plan_deg=3 e+=3 arity=75 plan=TW/H3 : 20/20 banks OK {}
+p=433 k=9 a=2 plan_deg=4 e+=4 arity=225 plan=B:H3->(9,[0, 1])->(9,[0]) : 20/20 banks OK {}

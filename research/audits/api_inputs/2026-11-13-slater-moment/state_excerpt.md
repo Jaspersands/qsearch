@@ -1,0 +1,1 @@
+OpenAI paid calls disabled by owner. Anthropic owner balance anchor20.59, separate from estimates. Latest matroid top-spectrum endpoint classically matched; no quantum implementation. This is a distinct narrow Gaussian-feedforward moment counterexample, not a retry of empty Legendre or constant-map requests. Advisory report requires parent verification.

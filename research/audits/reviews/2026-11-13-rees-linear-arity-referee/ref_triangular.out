@@ -1,0 +1,8 @@
+random/adversarial runs: 9900, failures: 0
+every valid b, both coset generators, p<=103, a in (2,4): runs 288, failures 0
+exhaustive a=1 (all p^3 banks, kappa=3 p<=43, kappa=2 p<=23): runs 700282, failures 0
+exhaustive a=2 p=7 kappa=3 over 9^6 tuples from a fixed 9-set: runs 531441, failures 0
+random a=2, p in (7,13), both generators: runs 40000, failures 0
+NEGATIVE CONTROL (invalid b): runs 1590, detected failures 1231 (must be > 0)
+per-family run counts: {'2:dead_cycle': 468, '2:echelon': 468, '2:pm1': 468, '2:random': 468, '2:rank1_coset1': 468, '2:rank1_rand': 468, '2:rank2_cosets': 468, '2:repeated': 468, '2:sparse': 468, '2:units_C1': 468, '2:zero': 468, '3:dead_cycle': 432, '3:echelon': 432, '3:pm1': 432, '3:random': 432, '3:rank1_coset1': 432, '3:rank1_rand': 432, '3:rank2_cosets': 432, '3:repeated': 432, '3:sparse': 432, '3:units_C1': 432, '3:zero': 432}
+nice -n 19 /opt/anaconda3/bin/python ref_triangular.py 3  24.48s user 0.21s system 97% cpu 25.378 total

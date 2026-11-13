@@ -1,3 +1,87 @@
+## 2026-11-13 Rees Headline 38 → 21 Proved (20 Pending Referee), free23 HSP Cover-Free For All H, Lean Schedule 1H (AI only)
+
+1. Apply headline-21 referee fixes F1–F7 and recompute fixes F1–F6 to fragment.tex (define candidate (f)
+   explicitly instead of pointing at tierB.json; least primitive root as ξ; stage2 typo).
+2. Reproduce the κ = 6 Lemma SM threshold row (T_exist 837384, T_samp 40924516) with a third script.
+3. Run the ℓ = 4 executor at a ≥ 2 (headline-below-38/v2 and k9-below-21 folders).
+4. Rerun the 3-level UNSAT at 37 (LRAT) cited by k9-below-21 §5.
+5. Update formal/README.md for Schedule1H (and say Schedule1HReview is not in the default build).
+6. Linear-arity referee fixes: §1(1e) 2a → 2a+1; Lemma W count |W|^n/p^a; BIS_p bound a(p−1)+1.
+7. free23 HSP23 fixes: state Δ_tot ≡ μτ as a polynomial identity; IS candidate form n_v·b; IS time cut-off
+   for types 2, 4; left vs right cosets.
+8. (73, 9) three-level kissat/cadical runs: record outcome (cannot change any maximum).
+
+## 2026-11-13 Projected Slater Gaussian Feedback Falsified
+
+Stable topic, full completed API report/result, selected packet and exact
+covariance control can be pinned once as new evidence after legendre_round.
+New Anthropic estimate0.146756, one priced record; no UNKNOWN added, no paid
+OpenAI. Owner20.59 is an independent balance anchor. Preserve the176-line
+corrected selection and its explicit singlet Born-sampling repair; do not
+retain the original overbroad Gaussian sampling inference. No circuit
+implementation, numeric sweep, repeated old hashes, paid retry or broad tests.
+Next primary-source comparison is a mathematical scope check, not a generic
+new sampler implementation. Registry must retain SAME-mode/unitary/readout
+limits and distinguish the general projected sampler from this architecture.
+
+## 2026-11-13 Projected Slater Feedback Moment Test
+
+Historical pending queue, now superseded by the terminal entry above.
+Preserve packet and exact control; read the full terminal report before
+claim disposition and separate usage estimates from owner balance.
+No empty retries, paid OpenAI, quantum expansion, sweep or old ledger rescan.
+
+## 2026-11-13 Matroid Top Spectrum Classically Matched
+
+Preserve MATROID_TOP_SPECTRUM_CLASSICAL_SAMPLER.md, the145-line independent
+native-input selection report, KRS/ALOV PDFs/text/metadata, and the exact
+control script/result under audits/controls/matroid_top_spectrum. No quantum
+implementation, parameter sweep, broad tests, paid confirmation or old
+checkpoint rescan. A later registry entry must say MAXIMALLY MIXED TOP-chain
+spectral law, not arbitrary-state spectral sampling. No API ledger change.
+The outstanding independent many-body/tensor report requires parent theory
+review before its disposition, not Gemini claim promotion.
+
+## 2026-11-13 Sparse Constant Leading Height Lemma
+
+Preserve the topic, complete 192-line independent review and exact control
+script/result. No expanded tests, paid retries or quantum implementation.
+Actual Yu1994 pages241-242/246 checked; PDF/text/URL metadata retained.
+At the stable milestone check only the new artifact links and claim boundaries. No API usage change, old hash rescan or
+balance inference is warranted. A future extraction operation must pass the
+binary-M cancellation and common-embedding contract before implementation.
+
+## 2026-11-13 Native Gauss Legendre Coherent Transform Closed
+
+COMPLETED: legendre_round has39 unique pins; initial and corrected337-line
+count provenance retained. Workflow appended; no repeated freeze is queued.
+No implementation or broad tests are warranted. Preserve the separate164-line
+selection report and its mechanism-specific boundaries. Next mechanical work
+requires a newly admitted scientific operation; do not generate nearby variants.
+
+Freeze stable new evidence once into audits/controls/legendre_round, starting
+from gram_defect_round. Include the 186-line scalar, 337-line coherent and
+186-line admission reviews; retained new source files; current API packet and
+two terminal EMPTY bundles; topic-final/state-final snapshots. Include the
+reused Jack/QSVT sources only as references or new unique pins if not already
+in the parent ledger; do not rescan old pins. Exclude the separately completed post-Legendre
+selection from this snapshot milestone; preserve its164-line review. No
+source fetch or numerical experiment is queued for its rejected mechanisms. Expected round6.646180, cumulative318.287378/241 priced,
+Anth180.167298 and OpenAI138.120080; eight UNKNOWN bills remain excluded.
+No paid OpenAI, empty-call retry, balance subtraction, implementation or
+broad tests. Append the usage workflow once after successful freeze.
+
+## 2026-11-13 Legendre Clean Completion Error Ledger
+
+No implementation or tests for the conditional error lemma. Preserve the
+current topic and await the stable independent kernel proof and parent
+review. Freeze only at the terminal research milestone, starting from
+controls/gram_defect_round; do not rescan old evidence or retry empty calls.
+
+## 2026-11-13 Dyadic Gauss Legendre Transform Admitted For One Test
+
+Preserveexplicitpackets/sources. No quantumcodeorparameter sweep. Afterterminalresponses readFULLreports andrecordeachmaterialclaim; unknowncost/empty/refusalnoretry. Root/weightcertificate anduniformanalyticnormareCodextheorygates. Atstablemilestonefreezeonlynewuniqueevidencefromgram_defect_round; nooldrescan/fulltests. OpenAIpaidcallsdisabledbyowner; Anthropicresearchonly.
+
 ## 2026-11-13 Arbitrary Gram Full TV Sampler Closed
 
 Freeze NEW unique evidence once into audits/controls/gram_defect_round from community_recovery_round. Include5 sources(pdf/txt/metadata), exactcontrolscript/result, stable219LF prefixproof and130LF literaturereview, topic-final/state-final snapshots, APIpackets and two terminalbundles. Claudeestimate0.988120; OpenAIAPIErrorUNKNOWN; EIGHTUNKNOWNtotal. Exclude ongoing post-gram selection. Do not scan oldpins, rerun broadtests, implementvariants, changebounds or inferbalance. Afterfreeze append workflow and reporthashcount. Native always-legal TV law has no ABORTeta parameter.

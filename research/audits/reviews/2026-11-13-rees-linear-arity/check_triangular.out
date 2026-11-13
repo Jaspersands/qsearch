@@ -1,0 +1,17 @@
+(T) triangular runs: 5184, failures: 0
+    kappa=2 deadpairs+fill  600
+    kappa=2 lowrank         600
+    kappa=2 proportional    600
+    kappa=2 random          600
+    kappa=2 sparse          600
+    kappa=2 zeros           600
+    kappa=3 deadpairs+fill  264
+    kappa=3 lowrank         264
+    kappa=3 proportional    264
+    kappa=3 random          264
+    kappa=3 sparse          264
+    kappa=3 zeros           264
+(D) dead-pair banks of 2a columns unsolvable (p, a, True=unsolvable): [(3, 1, True), (3, 2, True), (3, 3, True), (5, 1, True), (5, 2, True), (5, 3, True), (7, 1, True), (7, 2, True), (7, 3, True), (11, 1, True), (11, 2, True), (11, 3, True), (13, 1, True), (13, 2, True), (13, 3, True)]
+(D) every 3-column bank in F_p^1 (kappa=2, p<=13) solvable: True
+(D) 3000 random 5-column banks in F_p^2, p in {5,7,11}, all solvable: True
+(C) collision(kappa) == solvable(kappa'): 780/780

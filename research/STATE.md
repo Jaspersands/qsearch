@@ -1,11 +1,96 @@
 # Research State
 
 Read STATE and TRAPS at each pass; GOAL is binding. Latest Codex handoff:
-"2026-11-13 Arbitrary Gram Full TV Sampler Closed".
+"2026-11-13 Projected Slater Gaussian Feedback Falsified".
 
-Owner credit update: OpenAI exhausted; no further paid OpenAI calls. Anthropic owner-reported USD20.59 remains for useful research, separate from runner estimates.
+Ownercreditupdate: OpenAIexhausted, no furtherpaidcalls. Anthropicowner-reported20.59remainingdedicatedresearch, separatefromrunnerestimates.
 
-NOW: Arbitrary-Gram positive boson full-TV sampler CLOSED WRITTEN. Every explicit rational isometry and product-pure complex PSD unit-diagonal Gram, distinct occupied inputs, full collisions: exp(O(N(1-lambda_minG))))poly(inputbits,N,m,1/epsilon), allbranch fixed BITclock. Exact private-sector mixture,4^s activeprefixDP, polynomial integerheight and zero-safe finitecoins, legal tailfallback. No separate ABORTeta guarantee, no polylogaccuracy claim. Full219LF proof+130LF scope independently parentchecked,4 exactfinitecases. Moylett uniform mixture/worstU/collisions are priorart. Topic GRAM_DEFECT_BOSON_SAMPLER.md. No novelty, quantum advantage/hardness, implementation or mixed/correlated/generalnoise extension.
+## Now
+
+Projected Slater Gaussian-feedback architecture REFUTED, reviewed written.
+Opposite-angle rational four-mode input forces TV>=1008/8425 for coarse pair
+parities, arbitrary randomized record-dependent SAME-mode Gaussian unitaries,
+and occupation readout. Includes pairing and Gaussian-rotated mode readout;
+excludes ancillas/channels/additional measurements/rejection/classical output
+remapping. General projected Born sampling remains OPEN; no hardness or
+speedup claim. Equal-angle control REPAIRED: Gaussian permutations and a coin
+DO sample its Born law, so coherent correction failure was insufficient.
+Topic PROJECTED_SLATER_GAUSSIAN_FEEDFORWARD.md. Exact Sage covariance control
+and full Claude proof checked; two report scope errors explicitly repaired.
+API completed/end_turn/reaped0, estimate0.146756USD, no new UNKNOWN. OpenAI
+paid calls disabled; owner20.59 Anthropic anchor remains separate from estimates.
+Matroid normalized top-spectrum is already classically matched. Independent
+176-line tensor screen only rejects latent-moment identification without a
+uniqueness promise and the literal r^(1-q) equality filter; no general no-go.
+Next concrete check: actual algorithms for partition-conditioned DPPs with
+growing size-two parts/rank-two mixed discriminants, matching input and error
+scope. No new quantum correction or generic paid sampler prompt is admitted.
+
+## Earlier completed passes (historical)
+
+Previous matroid spectrum pass:
+Native matroid TOP-spectrum CLASSICALLY MATCHED, reviewed written. For every
+explicit Q/finite-field matrix, native rank tests pay uniform-basis mixing;
+KRS greedy decomposition returns n-|cl(B1)| with the multiplicity-normalized
+top-Laplacian law. Polynomial BIT in input and log1/TV error, capped coins,
+all branches charged. Additive normalized Betti estimation also polynomial.
+Full145-line independent proof and actual primary KRS/ALOV statements parent
+checked; two exact Sage spectra verify the shift, not asymptotic claims.
+Topic MATROID_TOP_SPECTRUM_CLASSICAL_SAMPLER.md. No arbitrary-state spectral
+measure, eigenvector/coherent dynamics, exact Betti, tiny relative error,
+novelty, separation or quantum execution claim. No quantum code is queued.
+The independent Macaulay inverse screen repeats prior exponential grounding
+conditioning; no new preconditioner is admitted. No paid calls this pass;
+OpenAI disabled. Owner Anthropic20.59 anchor remains separate from estimates.
+Next: complete independent many-body/tensor selection and compare its actual
+operation with this baseline before any new paid task. No generic retry.
+
+Previous sparse leading-height pass:
+Sparse constant leading-height lemma CLOSED WRITTEN, proof-only. Every native
+growing-parameter sparse characteristic-zero tuple admits aligned compatible
+Puiseux leading atoms in a common field degree<=delta, with polynomial
+logarithmic height. Constants embed faithfully and Rel=Alg intersect Rel_LC.
+The full 192-line independent proof was parent checked. No algorithm computes
+the field, place or leading atoms; growing-delta classical fullRel and local
+polynomial-precision extraction remain OPEN. Topic:
+SPARSE_CONSTANT_LEADING_HEIGHT.md. Exact Sage control separates Alg/Rel,
+residue/LC fields, and refutes only a two-digit p-adic torsion shortcut at
+1093 and 3511. No classical hardness, speedup, novelty or quantum claim.
+No paid calls this pass; OpenAI disabled. Anthropic owner20.59 balance anchor
+is separate from estimates. Actual Yu1994 theorem inspected: its bound does not supply the growing-k
+polynomial digit guard; no absence-of-better-bound claim. Do not
+repeat generic constant-map/derivative prompts or turn the height lemma into
+an oracle. A new operation must skip the order-M cancellation and preserve
+one embedding. Compare independent high-upside directions before extending.
+
+Previous Legendre pass:
+Native Gauss-Legendre coherent transform CLOSED WRITTEN. Every binary N>=1,
+arbitrary reference-entangled valid input, exact orthogonal target, clean
+error<=epsilon, gates/workspace poly(log N,log(1/epsilon)); reading arbitrary
+rational accuracy is separately charged. Parent checked the full 186-line
+scalar and 337-line coherent proofs. Per-index nodes/weights, finite Mehler
+coefficients, dyadic normalization, QFT injection, QSVT leakage and finite
+ACTUAL inverses are paid. Topic GAUSS_LEGENDRE_DYADIC_TRANSFORM.md. No N-table,
+postselection, implementation, novelty, speedup, Shor, human/formal verification,
+Hahn/CG/Jacobi-family or differential-equation claim.
+
+Both Claude calls EMPTY/max_tokens/reaped1: 8399 estimated3.322940 and 67507
+estimated3.323240; total6.646180, no evidence/no retry. OpenAI paid calls remain
+disabled. Owner Anthropic20.59 balance anchor is separate from estimates.
+Milestone legendre_round frozen from gram_defect_round:39 unique pins,
+with the descriptive337-line correction recorded separately. Cumulative
+runner estimates318.287378/241 priced (Anth180.167298/OpenAI138.120080),
+eight UNKNOWN bills excluded. These are not invoices or balances. Full164-line independent
+next-direction selection parent checked: class-four HSP duplicates Rees;
+Gaussian cooling retains exponential normalization cost even on Z^d; local
+Metropolis gap rationale fails on a classically easy commuting family.
+These reject the named mechanisms, not the problems. No new paid batch or
+nearby transform variant is admitted. See audits/reviews/2026-11-13-post-
+legendre-selection.md; fresh source checks are required before any new
+operation is admitted. The research goal remains active.
+
+
+Previous Gram pass: Arbitrary-Gram positive boson full-TV sampler CLOSED WRITTEN. Every explicit rational isometry and product-pure complex PSD unit-diagonal Gram, distinct occupied inputs, full collisions: exp(O(N(1-lambda_minG))))poly(inputbits,N,m,1/epsilon), allbranch fixed BITclock. Exact private-sector mixture,4^s activeprefixDP, polynomial integerheight and zero-safe finitecoins, legal tailfallback. No separate ABORTeta guarantee, no polylogaccuracy claim. Full219LF proof+130LF scope independently parentchecked,4 exactfinitecases. Moylett uniform mixture/worstU/collisions are priorart. Topic GRAM_DEFECT_BOSON_SAMPLER.md. No novelty, quantum advantage/hardness, implementation or mixed/correlated/generalnoise extension.
 
 Claude25779 EMPTY/max_tokens estimated0.988120; OAI29879 EMPTY/APIError UNKNOWN, bothterminal/reaped1, noretry. Freezecompleted47uniquehashes verifiedonce from community_recovery_round:311.641198/239priced, Anth173.521118/OAI138.120080, EIGHTUNKNOWNexcluded. OwnerOpenAIexhausted/Anth20.59remaining separate; no furtherpaidOpenAI. Next independent selection has no new constructive survivor yet; hiddenCliffordcubic was exactlypriorparked and is not reopened. No nearby Gramvariant by inertia.
 
@@ -1845,7 +1930,7 @@ split-support reweighting/rephasing. This route is independent of the older
 quadratic GL2 route. No poly(d) efficiency, quantum execution, novelty
 or separation is claimed.
 
-## Now
+## Earlier checkpoints (historical)
 
 - **Codex balanced Kerr output-dependent candidate:** generalCDF OPEN;
   new central-kernel/endpoint/joint-parity construction under proof, no native
@@ -1869,6 +1954,20 @@ or separation is claimed.
   coprime and normal-field constructive reductions retained. See the front
   checkpoint and SIMULTANEOUS_NORM_SUPPORT.md. General joint solving is open.
 
+
+- **Rees headline 38 → 21 proved, 20 pending referee; free23 HSP cover-free for all H; Lean 1H (11-13 night, Claude, AI only, pending human review).**
+  - Schedule 1H+ (audits/reviews/2026-11-13-rees-headline-below-38{,-v2}.md, fragment.tex / fragment-v2.tex):
+    class-9 E = 21 PROVED WITH FIXES given Weil + Rabin + exact computation (…-headline-21-referee.md),
+    independently recomputed (…-headline-21-recompute.md). v2: E = 20 (c = 2..9: 3,5,9,10,14,16,18,20;
+    attained at p ≡ 1 mod 2520 and 37, 43, 73, 127, 181, 631), referee RUNNING (…-headline-20-referee.md).
+    Paper NOT edited; core still says 38. Lemma rounds unneeded for κ ≤ 9 with Tier B (two codes): import
+    removal at c ≤ 9 UNKNOWN until written.
+  - free23: Theorem HSP23 (every H, p ≥ 5, cover-free, given IS Cor 8, exact QFT_p) PROVED WITH FIXES
+    (…-free23-all-subgroups{,-referee}.md). Core DRAFT F23 remark is now outdated. Gates stay false.
+  - Lean formal/Formal/Schedule1H/: correctness of Schedule 1H and lem:rounds, rests on WeilLower only;
+    review FAITHFUL WITH CAVEATS (…-lean-schedule1h{,-review}.md).
+  - Linear arity OPEN; Lemma K (κ = 3 explicit contraction) and Lemma D proved (…-linear-arity{,-referee}.md).
+  - κ = 9 conditional R9 = 20 (…-k9-below-21.md); superseded as headline by the proved route.
 
 - **Rees κ = 9 bottleneck removed, square gap attacked, free23 cover-free candidate (11-13 afternoon, Claude, AI only, pending human review).**
   - κ = 9 bottleneck: conditional class-9 rule R8 gives 21 (was R7 = 25). Degree-4 chain nodes at
@@ -3413,6 +3512,8 @@ or separation is claimed.
 
 | Direction | Established result and scope | File |
 |---|---|---|
+| Native matroid top-spectrum and Betti density | Reviewed WRITTEN classical polynomial-BIT sampler for the multiplicity-normalized TOP-Laplacian spectrum using native rank tests, ALOV mixing and KRS greedy decomposition. TV error costs polylog inverse error; normalized top Betti additive estimation polynomial. Full145-line review/source checks/two exact controls. No arbitrary-state measure, coherent dynamics, exact/tiny-relative Betti, novelty or separation claim. | `MATROID_TOP_SPECTRUM_CLASSICAL_SAMPLER.md` |
+| Native Gauss-Legendre coherent transform | Reviewed WRITTEN clean circuit for every binary N, arbitrary entangled valid input, exact Gauss target, poly(log N,log(1/epsilon)) gates/workspace and charged accuracy reading. Native scalar access, dyadic analytic/Fourier blocks, alpha=O(H^5), explicit QSVT and finite actual inverses paid. Full186/337-line proofs parent checked. No implementation, novelty, separation, broader-family, practical or human/formal verification claim. | `GAUSS_LEGENDRE_DYADIC_TRANSFORM.md` |
 | Balanced expanded Witt decomposition and rational isometry | Reviewed WRITTEN quantum polynomial native BIT/gates/output under explicit GRH, arbitrary charged totallyimaginary K and growing rank. Full expanded basis, bounded anisotropic core and expanded isometry map/NO; absolute-affine rank8 compiler, balanced maximum-coordinate recurrence, trace-dual/bad-branch/error caps paid. Full337/250LF independent proofs,651LF paid alternative and finite CRT controls. Classical norm/class-unit/LLL and stronger quadratic-tower factoring baseline retained. No real/integral extension, novelty, separation, practicality, implementation, human/formal verification or execution. | `BALANCED_WITT_EXPANDED_DECOMPOSITION.md` |
 | Joint number-field norms | Reviewed coprime-degree reduction to two scalar calls; normal-field enlarged complete support under GRH. Full nonnormal/shared-degree problem open. Fixed finite full-local-kernel field/signed-permutation transfers require factorial rank on explicit small inputs; no global support/hardness no-go or new advantage. | `SIMULTANEOUS_NORM_SUPPORT.md` |
 | Surface classical reconstruction and boundary repair | Reviewed ordinary compact=parabolic descent REFUTED in both source versions (Legendre2 vs0, quintic13516 vs96). Native frame, complete auxiliary module, normalization/RR, uniform heights, canonical closed encoding, finite coordinate algebra and original-prime Frobenius now proved under stated geometry. Exact boundary determinant bypasses parabolic transport. Whole native quintic composition now reviewed WRITTEN classical poly(logp,log1eta) BIT match, every prime. Enormous fixed exponents; no implementation, practicality, novelty, hardness, separation or execution. | `SURFACE_CLASSICAL_NATIVE_RECONSTRUCTION.md`, `SURFACE_FINITE_ETALE_RECONSTRUCTION.md`, `SURFACE_BOUNDARY_DETERMINANT.md` |
@@ -3432,7 +3533,7 @@ or separation is claimed.
 | General number-field compact isotropy | Reviewed WRITTEN bounded-error quantum polynomial-BIT NO or nonzero compact isotropic point under explicit GRH; arbitrary charged field degree/form dimension, expanded compatible maximal-order input. Single5plane, paid quadratic ideal norms/weakapprox, arbitrary-splitting descent and fresh-prime compact verifier. Known Amitsur splitting reused; four reviews/seven sources/one classical exact control. No novelty/separation, human/formal review, expanded/short/integral point, compact Witt decomposition, GRH removal or full/quantum execution. | `GLOBAL_COMPACT_ISOTROPY.md` |
 | Arbitrary even Gaussian-rank-two learning | Reviewed WRITTEN uniform polynomial-copy/BIT learner from exact IID copies, knownMajoranas, no branch/frame/weight/gap/overlap advice. Covariance grouping, cancellation-safe merge/fourmode dichotomy, positive R2 pairing/catfallback, low-nu orientation, known coherent MPS endpoint and fresh validation. Four reviews/sixsources/one exact8mode control. No noisy/generalrank, novelty/separation, human/formal review or full/quantum execution. | `TWO_GAUSSIAN_PAIR_LEARNING.md` |
 | Two-Fock Gaussian basis learning | Reviewed WRITTEN polynomial-copy/BIT learner for all exact parity-definite sharedGaussian two-Fock states, known physical Majoranas, no weight/frame advice. Connectedquartic isolated eigenvector, uniform polar rounding, fixed4 fallback, fresh phase/readout validation. Actualsource/core reviews and one exact7mode/6active control. No general sparsity/noise/unknownMajoranas, novelty, separation or quantum execution. | `TWO_FOCK_GAUSSIAN_LEARNING.md` |
-| General sparse algebraic-constant lattice | Reviewed WRITTEN classical polynomial sparse-BIT FULL Alg for arbitrary charged growingdelta, s,k,binaryTdegrees; implicit derivativebounds, prime/congruence/LLL fullrecovery. Direct-specialization/naiveLC falsifiers scoped; one quarticcontrol. FullRel constants remain OPEN; no genericmap, novelty, separation or full/quantum execution. | `GENERAL_SPARSE_CONSTANTS_ATTACK.md` |
+| General sparse algebraic-constant lattice | Reviewed WRITTEN classical polynomial sparse-BIT FULL Alg for arbitrary growing delta,s,k,binary T degrees. NEW proof-only aligned leading atoms have common field degree<=delta and polynomial logarithmic height; no extraction algorithm. Two-digit p-adic shortcut refuted, actual Yu bound does not supply growing-k precision. FullRel constants remain OPEN; no generic map, novelty, separation or execution. | `GENERAL_SPARSE_CONSTANTS_ATTACK.md`, `SPARSE_CONSTANT_LEADING_HEIGHT.md` |
 | Cyclic-support monomial Galois descent | Reviewed WRITTEN quantum polynomial-BIT compact torus-torsor trivialization under GRH, explicitly charged Galois field/group/action/cocycle. Primitive cyclic support; complete S-units; existing LS full atom relations, torsion and integer solving; deterministic positive verifier. Four reviews/one classical finite control. No novelty/separation, succinct splitting-field construction, expanded/integral/short output, GRH removal or full/quantum execution. | `CYCLIC_SUPPORT_MONOMIAL_DESCENT.md` |
 | Tensor-square rational norm equations | Reviewed WRITTEN quantum polynomial-BIT compact rational norm solver under explicit GRH, arbitrary growing degree and supplied maximal-order table. Unconditional paired-norm support lemma; tensor discriminant pays polynomial support without auxiliary fields/closure. Complete compact S-units and exact gcd-free/sign/HNF endpoint. Prior support methods and HNP existence baselines retained; one exact control only. No novelty, separation, integral/short output, GRH removal or full/quantum execution. | `TENSOR_SQUARE_RATIONAL_NORMS.md` |
 | Arbitrary-Pauli Clifford-hidden magic learning | Reviewed WRITTEN polynomial copy learner for all exact C exp(-i*pi*P/8)H^n, arbitrary signed Pauli/support. Largew deletion/K3 gap and old cubic axes; smallw uniform gap and direct tomography; complete source/error review. Crude structural gap inverse ~1.35e16, not practical. Four finite controls, no full/quantum execution, novelty, separation, noisy/angle/MPS/channel claim. | `ARBITRARY_PAULI_MAGIC_LEARNING.md` |
@@ -3476,6 +3577,7 @@ or separation is claimed.
 
 | Direction | Why parked | File |
 |---|---|---|
+| Projected Slater Born sampling | General native sampler OPEN; same-mode Gaussian unitary feedback after coarse pair parities REFUTED by TV>=1008/8425 four-mode marginal bound. Includes randomized/both-record feedback and pairing; excludes ancillas/channels/further measurements/arbitrary output remapping. Equal-angle singlet control is samplable by Gaussian permutations. Full API proof checked with scope repairs; one exact covariance control. Next compare size-two partition-conditioned DPP classical algorithms. | `PROJECTED_SLATER_GAUSSIAN_FEEDFORWARD.md` |
 | Native indefinite ternary integral isometry | Nov13 expanded norm/global rational transporter and factorable support WRITTEN closed under GRH. Local finite seed verifier and four-chart spinor extraction paid; coupled dyadic seed remains OPEN, full integral decision UNADMITTED. All-m cross-scale counterfamily and exact place3 neighbor offset checked. No integrality of norm postprocessor, novelty, hardness, separation or execution. | `EXPANDED_NORM_TERNARY_TRANSPORT.md`, `INDEFINITE_TERNARY_SPINOR_ADMISSION.md` |
 | Rational Gaudin determinant-prefix preparation | Direct on-shell determinant deletion refuted on a valid rational eigenstate; same-prefix single Cauchy dual also impossible. Cauchy amplitudes are paid, ALL-prefix norms are not. Any classical prefix routine also pays Born sampling and sparse readout. Two CLOSED reviews and exact classical control; Claude repair timed out EMPTY, billingUNKNOWN/no retry. No full preparation, hardness, general no-go, novelty or separation. | `RATIONAL_GAUDIN_PREFIX_ADMISSION.md` |
 | General growing-genus two-Selmer dimension | Nov13 reviewed WRITTEN quantum polynomial-BIT composition under explicit GRH for native monic squarefree odd-degree f over Z. Complete all-prime local images now paid classically; global compact class/unit arithmetic and local conditions composed. Earlier conditioning OPEN is stale. No MW rank/point, implementation, novelty, classical lower bound or speedup claim. | `GENERAL_NATIVE_SELMER_COMPOSITION.md`, `LOCAL_KUMMER_ALL_PRIMES.md` |

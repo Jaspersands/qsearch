@@ -1,0 +1,13 @@
+kappa  p-range       primes  tower-ok  m*-histogram   (degree = m*+1; ceil(log2 k)+1 shown)
+    2  <= 64            17  {1: 17}   ceil(log2)=1  primes with m* > ceil(log2) or impossible: 0; largest: []
+    3  <= 324           30  {2: 30}   ceil(log2)=2  primes with m* > ceil(log2) or impossible: 0; largest: []
+    4  <= 1024          83  {None: 2, 2: 80, 3: 1}   ceil(log2)=2  primes with m* > ceil(log2) or impossible: 3; largest: [(5, None), (13, None), (29, 3)]
+    5  <= 2500          89  {None: 1, 3: 88}   ceil(log2)=3  primes with m* > ceil(log2) or impossible: 1; largest: [(11, None)]
+    6  <= 5184         340  {None: 5, 3: 335}   ceil(log2)=3  primes with m* > ceil(log2) or impossible: 5; largest: [(7, None), (13, None), (19, None), (31, None), (43, None)]
+    7  <= 9604         195  {None: 2, 6: 1, 3: 192}   ceil(log2)=3  primes with m* > ceil(log2) or impossible: 3; largest: [(29, None), (43, 6), (71, None)]
+    8  <= 16384        464  {None: 6, 3: 456, 4: 2}   ceil(log2)=3  primes with m* > ceil(log2) or impossible: 8; largest: [(89, None), (97, None), (137, None), (233, 4), (761, 4)]
+    9  <= 26244        480  {None: 3, 8: 2, 4: 475}   ceil(log2)=4  primes with m* > ceil(log2) or impossible: 5; largest: [(19, None), (37, None), (73, None), (109, 8), (163, 8)]
+   10  <= 40000       1044  {None: 8, 9: 1, 5: 5, 4: 1030}   ceil(log2)=4  primes with m* > ceil(log2) or impossible: 14; largest: [(191, 5), (211, 5), (251, 5), (281, 5), (331, 5)]
+   11  <= 58564        586  {None: 3, 10: 1, 4: 581, 5: 1}   ceil(log2)=4  primes with m* > ceil(log2) or impossible: 5; largest: [(23, None), (67, None), (89, None), (199, 10), (419, 5)]
+   12  <= 82944       1996  {None: 12, 4: 1981, 5: 3}   ceil(log2)=4  primes with m* > ceil(log2) or impossible: 15; largest: [(241, None), (277, None), (349, 5), (373, 5), (541, 5)]
+nice -n 19 /opt/anaconda3/bin/python tower.py coverage 12 0  134.17s user 3.40s system 75% cpu 3:01.68 total

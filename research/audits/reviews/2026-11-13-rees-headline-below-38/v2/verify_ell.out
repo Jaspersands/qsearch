@@ -1,0 +1,19 @@
+B4_37.json: p=37 k=9 l=4 g=2: nonzero entries of A^(x)l C: 0/4096, non-k-th-power entries 0, C(0)=1, nonzero 3600/6561 -> VERIFIED
+B4_19.json: p=19 k=9 l=4 g=2: nonzero entries of A^(x)l C: 0/4096, non-k-th-power entries 0, C(0)=1, nonzero 3456/6561 -> VERIFIED
+B4_73.json: p=73 k=9 l=4 g=5: nonzero entries of A^(x)l C: 0/4096, non-k-th-power entries 0, C(0)=1, nonzero 4374/6561 -> VERIFIED
+B3_13_4.json: p=13 k=4 l=3 g=2: nonzero entries of A^(x)l C: 0/27, non-k-th-power entries 0, C(0)=1, nonzero 43/64 -> VERIFIED
+B3_13_6.json: p=13 k=6 l=3 g=2: nonzero entries of A^(x)l C: 0/125, non-k-th-power entries 0, C(0)=1, nonzero 96/216 -> VERIFIED
+negative controls (each must FAIL):
+  B4_37_perturbed.json: ann 4096, cls 8 -> FAILED (good)
+  B3_13_4_perturbed.json: ann 27, cls 2 -> FAILED (good)
+  B3_13_6_perturbed.json: ann 125, cls 5 -> FAILED (good)
+  B4_37.json with generator 5 instead of 2: ann 0, cls 3204 -> FAILED (good)
+  B4_19.json with generator 3 instead of 2: ann 0, cls 2322 -> FAILED (good)
+  B4_73.json with generator 11 instead of 5: ann 0, cls 0 -> VERIFIED (BAD CONTROL)
+  B3_13_4.json with generator 6 instead of 2: ann 0, cls 0 -> VERIFIED (BAD CONTROL)
+  B3_13_6.json with generator 6 instead of 2: ann 0, cls 60 -> FAILED (good)
+  B4_37.json as class-1 test: cls violations 3600 -> FAILED (good)
+  B4_19.json as class-1 test: cls violations 3456 -> FAILED (good)
+  B4_73.json as class-1 test: cls violations 4374 -> FAILED (good)
+  B3_13_4.json as class-1 test: cls violations 43 -> FAILED (good)
+  B3_13_6.json as class-1 test: cls violations 96 -> FAILED (good)

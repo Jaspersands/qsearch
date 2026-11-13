@@ -1,0 +1,19 @@
+core Schedule 1H (control)
+   c=2: E_H = 3   attained at (first few) [3, 5, 7, 11, 26249, 26251]
+   c=3: E_H = 6   attained at (first few) [7, 13, 19, 31, 26251, 26263]
+   c=4: E_H = 10   attained at (first few) [13]
+   c=5: E_H = 14   attained at (first few) [61, 181, 241, 421, 26641, 26701]
+   c=6: E_H = 20   attained at (first few) [31]
+   c=7: E_H = 25   attained at (first few) [421, 2521, 3361, 4201, 26881, 29401]
+   c=8: E_H = 29   attained at (first few) [2521, 3361, 4201, 5881, 26881, 29401]
+   c=9: E_H = 38   attained at (first few) [2521, 7561, 12601, 15121, 30241, 42841]
+with Lemma K (kappa=3 degree 2)
+   c=2: E_H = 3   attained at (first few) [3, 5, 7, 11, 26249, 26251]
+   c=3: E_H = 5   attained at (first few) [7, 13, 19, 31, 26251, 26263]
+   c=4: E_H = 9   attained at (first few) [5, 13]
+   c=5: E_H = 13   attained at (first few) [61, 181, 241, 421, 26641, 26701]
+   c=6: E_H = 17   attained at (first few) [31]
+   c=7: E_H = 23   attained at (first few) [421, 2521, 3361, 4201, 26881, 29401]
+   c=8: E_H = 27   attained at (first few) [2521, 3361, 4201, 5881, 26881, 29401]
+   c=9: E_H = 36   attained at (first few) [2521, 7561, 12601, 15121, 30241, 42841]
+nice -n 19 /opt/anaconda3/bin/python eh_with_lemmaK.py  55.36s user 0.89s system 92% cpu 1:01.05 total
