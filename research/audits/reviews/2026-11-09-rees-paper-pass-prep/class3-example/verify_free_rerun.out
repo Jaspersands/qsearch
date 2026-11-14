@@ -1,0 +1,9 @@
+[F1a] PASS: p=5: cover brackets: [tx,ty]=t2z, [tx,tz]=t2u, [ty,tz]=t2w, [tx,t2z]=t3u, [ty,t2z]=t3w, others 0
+[F1b] PASS: p=5: Jacobi on L and on A
+[F1c] PASS: p=5: gamma_2 = span(z,u,w), gamma_3 = span(u,w), gamma_4 = 0: (g1,g2,g3) = (5,3,2), n = 10
+[F1d] PASS: p=5: Z(L) = gamma_3 = span(u,w)
+[F1e] PASS: p=5: Z(A) = span(tu, tw, t2u, t2w, t3u, t3w) (15625 elements)
+[F1f] PASS: p=5: E_s Lie homomorphisms, delta_theta Lie automorphisms
+[F1g] PASS: p=5: [[tx,ty],tx] = -t3u != 0: A has class 3
+[F5h] PASS: p=5: psi_theta = phi delta_theta phi^-1: x -> theta x + (theta-theta^2) z + (theta-theta^3) u + (theta^2-theta^3) w, y -> theta y, z -> theta^2 z + (theta^3-theta^2) w, u -> theta^3 u, w -> theta^3 w; an automorphism preserving h, central scalar theta^3, every theta
+FAILURES: none

@@ -1,0 +1,26 @@
+table 19 9 ok (True, True, True, 'raw-as-C fails:True')
+table 37 9 ok (True, True, True, 'raw-as-C fails:True')
+table 73 9 ok (True, True, True, 'raw-as-C fails:True')
+table 13 4 ok (True, True, True, 'raw-as-C fails:True')
+table 13 6 ok (True, True, True, 'raw-as-C fails:True')
+primes: 1152 from 2000003 to 2093863 tail
+== N 0 tail time 1s
+(p,kappa) pairs checked, kappa in 2..9: 3840
+full E(c), c=2..9: [3, 5, 7, 9, 11, 14, 17, 20] | c=9 attainers: 2 non-2520: []
+IS-free E(c), c=2..9: [3, 5, 7, 9, 11, 14, 17, 20] | c=9 attainers: 2 non-2520: []
+A  primes/kappa with NO IS-free candidate: [] 0
+B  per-(p,kappa) degree differences e^+ != e°: [] 0
+C  K° > c_kappa: [] 0
+D  dominance failures: [] 0
+D1 dominance failures with L = 1 (t-free): [] 0
+   pairs where S1 ties the least degree (info): 576 [(2000029, 2), (2000081, 2), (2000093, 2), (2000113, 2), (2000153, 2), (2000177, 2), (2000209, 2), (2000221, 2), (2000249, 2), (2000261, 2), (2000269, 2), (2000281, 2), (2000293, 2), (2000309, 2), (2000321, 2), (2000329, 2), (2000353, 2), (2000381, 2), (2000389, 2), (2000393, 2)]
+   tightest dominance margin K_S1/K_Z per kappa (ratio, p, candidate):
+     kappa 2 2 2000029 P(H1,1,F1)
+     kappa 3 13.5 2000029 TL3
+     kappa 4 4.1e+03 2000081 P(H2,1,F1)
+     kappa 5 2.44e+06 2000081 TL5
+     kappa 6 2.35e+11 2000029 P(H3,1,F1)
+     kappa 7 9.31e+16 2000083 P(U1,1,F1)
+     kappa 8 6.45e+24 2000081 P(H4,1,F1)
+     kappa 9 5.63e+33 2000107 TW
+STATS {'dfs': 0, 'dfs_none': 0, 'cap': 0, 'cert_ok': 0, 'cert_bad': 0, 'lemma': 2400, 'missing': 0} UNKNOWN [] 0

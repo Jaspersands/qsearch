@@ -1,0 +1,14 @@
+#I  packagemanager package is not available. Check that the name is correct
+#I  and it is present in one of the GAP root directories (see '??RootPaths')
+|G| = 3125 exponent 5 class 3
+Z(G) = <exp u, exp w>: true; |G'| = 125
+maximal subgroups: 6, all of index p: true, abelian ones: 0
+subgroups of index p (all normal): 6, abelian: 0
+normal subgroups: 16; abelian N with G/N cyclic: 0 (abelian-by-cyclic: false)
+|<exp x><exp y>| = 25, |<exp x, exp y>| = 3125: permute = false
+|Aut(G)| = 7500000 = |GL_2(F_5)| 5^6: true
+H = <exp(x+z+u)>: |Stab| = 10000, central scalars [ 1, 2, 3, 4 ]
+H' = <exp(z+u)>: |Stab| = 300000, central scalars [ 1, 2, 3, 4 ]
+joint stabilizer of all <exp(x + c)>, c in [L,L]: |S| = 25, central scalars 
+[ 1 ], acts trivially on Z(G): true
+nice -n 19 /opt/anaconda3/envs/qsearch-cas/bin/gap -q gap_free_p5.g <   93.50s user 0.73s system 99% cpu 1:35.13 total

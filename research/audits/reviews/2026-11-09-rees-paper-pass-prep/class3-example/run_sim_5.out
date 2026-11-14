@@ -1,0 +1,20 @@
+p=5: cover dims (g1,g2,g3) = (4, 2, 1), order 78125, points (1, 2, 3)
+  series bases: [[[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]], [[0, 0, 1, 0], [0, 0, 0, 1]], [[0, 0, 0, 1]]]
+  <x1+x2+x3+x4> seed 20261112: recovered=True basis=[[1, 1, 1, 1]] truth=[[1, 1, 1, 1]] flags(normal=False, order=5) fibres={'fibres': 15625, 'lifted_order': 5} states_exact=True queries=240 1.5s
+    stage 3: |K_d^perp|=5 arity(CW)=2 B_d(g_d)=46656 law_exact_uniform=True labels_in_support=True blocks=40 min#witnesses=4
+    stage 2: |K_d^perp|=25 arity(CW)=5 B_d(g_d)=324 law_exact_uniform=True labels_in_support=True blocks=8 min#witnesses=104
+    label examples {3: [[1], [2], [4], [4], [1], [1]], 2: [[4, 0], [4, 2], [2, 3], [0, 0], [3, 1], [3, 0]]}  witness examples {3: [((4, 2), 4), ((1, 4), 4), ((4, 1), 4)], 2: [((1, 1, 1, 3, 0), 164), ((0, 3, 4, 2, 3), 144), ((0, 3, 1, 3, 1), 104)]}
+  <x1+x2+x3+x4> seed 20261113: recovered=True basis=[[1, 1, 1, 1]] truth=[[1, 1, 1, 1]] flags(normal=False, order=5) fibres={'fibres': 15625, 'lifted_order': 5} states_exact=True queries=240 0.9s
+    stage 3: |K_d^perp|=5 arity(CW)=2 B_d(g_d)=46656 law_exact_uniform=True labels_in_support=True blocks=40 min#witnesses=4
+    stage 2: |K_d^perp|=25 arity(CW)=5 B_d(g_d)=324 law_exact_uniform=True labels_in_support=True blocks=8 min#witnesses=104
+    label examples {3: [[0], [4], [4], [2], [1], [2]], 2: [[4, 2], [0, 2], [0, 0], [2, 2], [2, 2], [4, 2]]}  witness examples {3: [((3, 0), 4), ((2, 4), 4), ((3, 4), 4)], 2: [((4, 4, 2, 3, 3), 204), ((0, 3, 4, 1, 2), 144), ((4, 4, 4, 2, 4), 184)]}
+  Z(G)=<x4> seed 20261112: recovered=True basis=[[0, 0, 0, 1]] truth=[[0, 0, 0, 1]] flags(normal=True, order=5) fibres={'fibres': 625, 'lifted_order': 125} states_exact=True queries=240 0.9s
+    stage 3: |K_d^perp|=1 arity(CW)=2 B_d(g_d)=46656 law_exact_uniform=True labels_in_support=True blocks=40 min#witnesses=24
+    stage 2: |K_d^perp|=5 arity(CW)=5 B_d(g_d)=324 law_exact_uniform=True labels_in_support=True blocks=8 min#witnesses=124
+    label examples {3: [[0], [0], [0], [0], [0], [0]], 2: [[4, 0], [4, 0], [2, 0], [0, 0], [4, 0], [0, 0]]}  witness examples {3: [((2, 3), 24), ((0, 4), 24), ((3, 1), 24)], 2: [((2, 1, 0, 1, 0), 524), ((3, 1, 1, 2, 2), 624), ((4, 0, 2, 0, 2), 124)]}
+  Z(G)=<x4> seed 20261113: recovered=True basis=[[0, 0, 0, 1]] truth=[[0, 0, 0, 1]] flags(normal=True, order=5) fibres={'fibres': 625, 'lifted_order': 125} states_exact=True queries=240 0.9s
+    stage 3: |K_d^perp|=1 arity(CW)=2 B_d(g_d)=46656 law_exact_uniform=True labels_in_support=True blocks=40 min#witnesses=24
+    stage 2: |K_d^perp|=5 arity(CW)=5 B_d(g_d)=324 law_exact_uniform=True labels_in_support=True blocks=8 min#witnesses=524
+    label examples {3: [[0], [0], [0], [0], [0], [0]], 2: [[4, 0], [0, 0], [3, 0], [3, 0], [3, 0], [1, 0]]}  witness examples {3: [((2, 2), 24), ((3, 2), 24), ((0, 4), 24)], 2: [((4, 1, 0, 1, 1), 524), ((2, 1, 3, 3, 2), 524), ((2, 0, 3, 1, 2), 624)]}
+ALL RUNS OK: True
+nice -n 19 /opt/anaconda3/bin/python run_sim.py 5  5.61s user 0.33s system 134% cpu 4.421 total

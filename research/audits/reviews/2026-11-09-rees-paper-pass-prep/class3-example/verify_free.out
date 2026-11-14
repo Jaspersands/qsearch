@@ -1,0 +1,83 @@
+[F2a] PASS: symbolic over Q: E_s(a*b) = E_s(a)*E_s(b), generic a, b in A and s (class-3 BCH)
+[F2b] PASS: symbolic over Q: delta_theta is a BCH homomorphism
+[F2c] PASS: symbolic over Q: BCH_3 on A is associative
+=== p = 5 ===
+[F1a] PASS: p=5: cover brackets: [tx,ty]=t2z, [tx,tz]=t2u, [ty,tz]=t2w, [tx,t2z]=t3u, [ty,t2z]=t3w, others 0
+[F1b] PASS: p=5: Jacobi on L and on A
+[F1c] PASS: p=5: gamma_2 = span(z,u,w), gamma_3 = span(u,w), gamma_4 = 0: (g1,g2,g3) = (5,3,2), n = 10
+[F1d] PASS: p=5: Z(L) = gamma_3 = span(u,w)
+[F1e] FAIL: p=5: Z(A) = span(tu, tw, t3u, t3w) (15625 elements)
+[F1f] PASS: p=5: E_s Lie homomorphisms, delta_theta Lie automorphisms
+[F1g] PASS: p=5: [[tx,ty],tx] = -t3u != 0: A has class 3
+[F2d] PASS: p=5: 20000 random pairs, E_s respects BCH mod p for all s
+[F4a] PASS: p=5 H: three-point pullback = hlift = intersection over all s in F_p^x
+[F4b] PASS: p=5 H: two-point pullback = hlift + span(e_u, e_w), e_u = 2tu-3t^2u+t^3u, e_w = 2tw-3t^2w+t^3w (dim 3 vs 1)
+[F4c] PASS: p=5: E_s(e_u) = s(s-1)(s-2) u: E_1 = E_2 = 0, E_3(e_u) = 6u, not in h
+[F4d] PASS: p=5 H: dilations theta != 1 preserving: E_1^-1(h): []; two-point pullback: []; hlift: [2, 3, 4]
+[F4a] PASS: p=5 H': three-point pullback = hlift = intersection over all s in F_p^x
+[F4b] PASS: p=5 H': two-point pullback = hlift + span(e_u, e_w), e_u = 2tu-3t^2u+t^3u, e_w = 2tw-3t^2w+t^3w (dim 4 vs 2)
+[F4d] PASS: p=5 H': dilations theta != 1 preserving: E_1^-1(h): []; two-point pullback: []; hlift: [2, 3, 4]
+[F6a] PASS: B_3(2) = G(3,2)^2 = 729^2 = 531441; B_2(3) = G(2,3)^2 = 32^2 = 1024
+[F6b] PASS: Q_q = 3(5+1) B_2(3) B_3(2) = 9795520512 = 2^33.1895 (Table 1: 33.19)
+      p=5: kappa_3 = 1, kappa_2 = 2; Chevalley-Warning arities: stage 3 3, stage 2 7
+[F6c] PASS: p=5: stage 2 (three quadratic equations, labels in F_p^3): the 6 labels [(1, 0, 0), (3, 0, 0), (0, 1, 0), (0, 3, 0), (0, 0, 1), (0, 0, 3)] (nu = 2 a nonsquare) admit no nonzero solution, so with Chevalley-Warning the exact minimum arity is 7
+[F6d] PASS: p=5: stage 3 (two cubic equations, labels in F_p^2): longest zero-free label sequence has length 2 (e.g. [(0, 1), (1, 0)]), so the exact minimum arity is 3 (Chevalley-Warning: 3)
+[F6e] PASS: p=5 H: K_3 = 0, K_2 = 0: stage-3 labels range over F_p^2, stage-2 labels over F_p^3
+[F6f] PASS: p=5 H': K_3 = 0 (labels F_p^2); K_2 = F_p t^2(z+u), stage-2 labels in K_2^perp = {lambda : lambda_z + lambda_u = 0} (dim 2)
+[F6g] PASS: p=5: A^(2) = A/span(t3u,t3w) has brackets [('tx', 'ty', 't2z'), ('tx', 'tz', 't2u'), ('ty', 'tz', 't2w')]; Z_2 = span(t2z,t2u,t2w) central in A^(2) (t2z is not central in A)
+[F6h] PASS: p=5 H: grade-one samples are uniform on h^perp = {y : y_x + y_z + y_u = 0} (p^4 points); the image of H in G/[G,G] is F_p x
+=== p = 7 ===
+[F1a] PASS: p=7: cover brackets: [tx,ty]=t2z, [tx,tz]=t2u, [ty,tz]=t2w, [tx,t2z]=t3u, [ty,t2z]=t3w, others 0
+[F1b] PASS: p=7: Jacobi on L and on A
+[F1c] PASS: p=7: gamma_2 = span(z,u,w), gamma_3 = span(u,w), gamma_4 = 0: (g1,g2,g3) = (5,3,2), n = 10
+[F1d] PASS: p=7: Z(L) = gamma_3 = span(u,w)
+[F1f] PASS: p=7: E_s Lie homomorphisms, delta_theta Lie automorphisms
+[F1g] PASS: p=7: [[tx,ty],tx] = -t3u != 0: A has class 3
+[F2d] PASS: p=7: 20000 random pairs, E_s respects BCH mod p for all s
+[F4a] PASS: p=7 H: three-point pullback = hlift = intersection over all s in F_p^x
+[F4b] PASS: p=7 H: two-point pullback = hlift + span(e_u, e_w), e_u = 2tu-3t^2u+t^3u, e_w = 2tw-3t^2w+t^3w (dim 3 vs 1)
+[F4c] PASS: p=7: E_s(e_u) = s(s-1)(s-2) u: E_1 = E_2 = 0, E_3(e_u) = 6u, not in h
+[F4d] PASS: p=7 H: dilations theta != 1 preserving: E_1^-1(h): []; two-point pullback: []; hlift: [2, 3, 4, 5, 6]
+[F4a] PASS: p=7 H': three-point pullback = hlift = intersection over all s in F_p^x
+[F4b] PASS: p=7 H': two-point pullback = hlift + span(e_u, e_w), e_u = 2tu-3t^2u+t^3u, e_w = 2tw-3t^2w+t^3w (dim 4 vs 2)
+[F4d] PASS: p=7 H': dilations theta != 1 preserving: E_1^-1(h): []; two-point pullback: []; hlift: [2, 3, 4, 5, 6]
+[F6a] PASS: B_3(2) = G(3,2)^2 = 729^2 = 531441; B_2(3) = G(2,3)^2 = 32^2 = 1024
+[F6b] PASS: Q_q = 3(5+1) B_2(3) B_3(2) = 9795520512 = 2^33.1895 (Table 1: 33.19)
+      p=7: kappa_3 = 3, kappa_2 = 2; Chevalley-Warning arities: stage 3 7, stage 2 7
+[F6c] PASS: p=7: stage 2 (three quadratic equations, labels in F_p^3): the 6 labels [(1, 0, 0), (4, 0, 0), (0, 1, 0), (0, 4, 0), (0, 0, 1), (0, 0, 4)] (nu = 3 a nonsquare) admit no nonzero solution, so with Chevalley-Warning the exact minimum arity is 7
+[F6d] PASS: p=7: stage 3 (two cubic equations, labels in F_p^2): longest zero-free label sequence has length 5 (e.g. [(0, 1), (1, 0), (1, 2), (1, 4), (3, 1)]), so the exact minimum arity is 6 (Chevalley-Warning: 7)
+[F6e] PASS: p=7 H: K_3 = 0, K_2 = 0: stage-3 labels range over F_p^2, stage-2 labels over F_p^3
+[F6f] PASS: p=7 H': K_3 = 0 (labels F_p^2); K_2 = F_p t^2(z+u), stage-2 labels in K_2^perp = {lambda : lambda_z + lambda_u = 0} (dim 2)
+[F6g] PASS: p=7: A^(2) = A/span(t3u,t3w) has brackets [('tx', 'ty', 't2z'), ('tx', 'tz', 't2u'), ('ty', 'tz', 't2w')]; Z_2 = span(t2z,t2u,t2w) central in A^(2) (t2z is not central in A)
+[F6h] PASS: p=7 H: grade-one samples are uniform on h^perp = {y : y_x + y_z + y_u = 0} (p^4 points); the image of H in G/[G,G] is F_p x
+=== p = 5: fibres, all-subalgebra checks, automorphisms ===
+[F3a] PASS: p=5 H: h is a subalgebra and sum_k t^k (h cap gamma_k) = span[[1, 0, 1, 1, 0, 0, 0, 0, 0, 0]]
+[F3b] PASS: p=5 H: h is not an ideal (H not normal)
+[F3c] PASS: p=5 H: f hides H (20000 random pairs)
+[F3d] PASS: p=5 H: EXHAUSTIVE over all 9765625 points of A: hat f is constant on every left coset a*exp(hlift) (invariant under right multiplication by the generators of hlift) and every fibre has exactly p^1 points, so the fibres are exactly these cosets (1953125 fibres)
+      p=5 H: two-point oracle (f E_1, f E_2): 78125 fibres, sizes [125]
+[F3e] PASS: p=5 H: fibre of hat f over 0 is exactly hlift (5 points)
+[F3a] PASS: p=5 H': h is a subalgebra and sum_k t^k (h cap gamma_k) = span[[0, 0, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0, 0]]
+[F3b] PASS: p=5 H': h is not an ideal (H not normal)
+[F3c] PASS: p=5 H': f hides H (20000 random pairs)
+[F3d] PASS: p=5 H': EXHAUSTIVE over all 9765625 points of A: hat f is constant on every left coset a*exp(hlift) (invariant under right multiplication by the generators of hlift) and every fibre has exactly p^2 points, so the fibres are exactly these cosets (390625 fibres)
+      p=5 H': two-point oracle (f E_1, f E_2): 15625 fibres, sizes [625]
+[F3e] PASS: p=5 H': fibre of hat f over 0 is exactly hlift (25 points)
+[F4e] PASS: p=5: for k = 1, 2, 3 and EVERY one of the 1901 subalgebras h: the pullback at 1..k is preserved by every dilation iff gamma_(k+1) in h, and then equals hlift (otherwise strictly larger). bad: []
+[F5a] PASS: p=5: |Aut(L)| = 7500000 = |GL_2(F_p)| p^6 (exhaustive over images of x, y)
+[F5b] PASS: p=5: Aut(L) acts on Z(L) = span(u,w) by det(A) A, A = action on L/[L,L]
+[F5c] PASS: p=5: an automorphism acts on the centre by a scalar zeta iff A = a I, and then zeta = a^3; scalars occurring: [1, 2, 3, 4] (the cubes)
+      p=5 H: |Stab(h)| = 10000, acts on the centre through 80 matrices, scalars [1, 2, 3, 4]
+      p=5 H': |Stab(h)| = 300000, acts on the centre through 480 matrices, scalars [1, 2, 3, 4]
+[F5d] PASS: p=5: Stab(h) acts on the centre by every cube scalar, for h = F_p(x+z+u) (|Stab| = 10000) and h' = F_p(z+u) (|Stab| = 300000)
+[F5e] PASS: p=5 H: torus elements x->ax, y->by preserving h: [(1, 1)]
+[F5f] PASS: p=5 H: of the 480 graded automorphisms, 5 preserve h (x->x, y->y+cx); their central scalars: [1]
+[F5g] PASS: p=5: phi(x) = x+z+u, phi(y) = y extends to the automorphism z -> z-w, u -> u, w -> w
+[F5h] FAIL: p=5: psi_theta: x -> theta x + (theta-theta^2) z + (theta-theta^3) u, y -> theta y, z -> theta^2 z + (theta^3-theta^2) w, u, w -> theta^3 u, theta^3 w is an automorphism preserving h, central scalar theta^3
+      p=5 family 'conjugates of H' (25 lines): joint stabilizer 25, central scalars [1], acts on the centre through 1 matrices
+      p=5 family 'lines F_p(v + q), q in gamma_3' (25 lines): joint stabilizer 250, central scalars [1, 4], acts on the centre through 2 matrices
+      p=5 family 'lines F_p(x + c), c in gamma_2' (125 lines): joint stabilizer 25, central scalars [1], acts on the centre through 1 matrices
+[F5i] PASS: p=5: no H-independent family scales the centre: the joint stabilizers of the 25 conjugates of H, of the 25 lines F_p(v+q) (q central) and of the 125 lines F_p(x+c) (c in [L,L]) act on the centre with scalars [1], [1, 4], [1]
+[F5j] PASS: p=5: each of the 1901 subalgebras is Aut(L)-conjugate to one of the 21 coordinate subalgebras; so Stab(h) acts on the centre by every cube scalar, for EVERY subgroup
+FAILURES: ['F1e', 'F5h']
+nice -n 19 /opt/anaconda3/bin/python verify_free.py  460.46s user 88.68s system 97% cpu 9:25.01 total

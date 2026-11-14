@@ -1,0 +1,26 @@
+table 19 9 ok (True, True, True, 'raw-as-C fails:True')
+table 37 9 ok (True, True, True, 'raw-as-C fails:True')
+table 73 9 ok (True, True, True, 'raw-as-C fails:True')
+table 13 4 ok (True, True, True, 'raw-as-C fails:True')
+table 13 6 ok (True, True, True, 'raw-as-C fails:True')
+primes: 148932 from 3 to 1999993 
+== N 2000000  time 134s
+(p,kappa) pairs checked, kappa in 2..9: 496058
+full E(c), c=2..9: [3, 5, 9, 10, 14, 16, 18, 20] | c=9 attainers: 266 non-2520: [37, 43, 73, 127, 181, 631]
+IS-free E(c), c=2..9: [3, 5, 9, 10, 14, 16, 18, 20] | c=9 attainers: 266 non-2520: [37, 43, 73, 127, 181, 631]
+A  primes/kappa with NO IS-free candidate: [] 0
+B  per-(p,kappa) degree differences e^+ != e°: [] 0
+C  K° > c_kappa: [] 0
+D  dominance failures: [] 0
+D1 dominance failures with L = 1 (t-free): [(5, 4)] 1
+   pairs where S1 ties the least degree (info): 74416 [(5, 2), (13, 2), (17, 2), (29, 2), (37, 2), (41, 2), (53, 2), (61, 2), (73, 2), (89, 2), (97, 2), (101, 2), (109, 2), (113, 2), (137, 2), (149, 2), (157, 2), (173, 2), (181, 2), (193, 2)]
+   tightest dominance margin K_S1/K_Z per kappa (ratio, p, candidate):
+     kappa 2 2 5 TB:GE;(2,(0, 1),(0,))
+     kappa 3 13.5 7 TL3
+     kappa 4 4.1e+03 17 TB:GE;(2,(0, 1),(0,));(4,(0, 2),(0,))
+     kappa 5 6.1e+05 11 P(TBn:GE;(5,(0, 1, 2, 3, 4),(0, 1)),1,FTB:GE;(5,(0, 1, 2, 3, 4),(0, 1)))
+     kappa 6 2.35e+11 13 P(TBn:GE;(2,(0, 1),(0,));(6,(0, 2, 4),(0, 1));(6,(0, 1),(0, 2)),1,FH2)
+     kappa 7 7.76e+15 29 P(TBn:GE;(7,(0, 1, 2, 3, 4, 5, 6),(0, 1, 2));(7,(0, 1, 2),(0, 1)),1,FTB:GE;(7,(0, 1, 2, 3, 4, 5, 6),(0, 1, 2)))
+     kappa 8 6.45e+24 577 P(H4,1,F1)
+     kappa 9 1.41e+33 19 P(TBn:GE;(3,(0, 1, 2),(0,));(9,(0, 3, 6),(0, 1)),1,FTB:GE;(3,(0, 1, 2),(0,));(9,(0, 3, 6),(0, 1)))
+STATS {'dfs': 68852, 'dfs_none': 3744, 'cap': 3, 'cert_ok': 75391, 'cert_bad': 0, 'lemma': 234411, 'missing': 0} UNKNOWN [(307, (9, (0, 1, 2, 3, 4, 5, 6, 7, 8), (0, 1, 3))), (307, (9, (0, 1, 2, 3, 4, 5, 6, 7, 8), (0, 2, 8))), (307, (9, (0, 1, 2, 3, 4, 5, 6, 7, 8), (0, 6, 7)))] 3
