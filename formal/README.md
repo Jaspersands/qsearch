@@ -524,6 +524,20 @@ AI-run, pending human review).
 | `Formal.Schedule1H.Objects`, `Levels`, `Stage`, `Halving`, `TwoTerm`, `Paper`, `Extras`, `Audit` | Algebraic core of Section 5.1 (`Schedule 1H`) of `docs/papers/rees-hsp/core/main-core.tex`: representations `Rep`, objects `Obj`, recursion and stabilization of `T(c)` (`Tset`, `Tset_stabilizes`), the halving stage (`lem:stage`, `stage`) and finishes (`lem:finish`, `finishF0`, `finishF1`), conditional `κ`-solvers `H_κ` (`thm:halving`) and `H^cd_κ` (`cor:hcd`) given abstract preprocessing and inner-solver records, elementary algebraic pieces of `lem:two-term`, and executable computational checks for `κ ∈ {1, …, 7}`. The Weil diagonal bound (`p ≥ 4κ⁴`), randomized root extraction, runtime, and the numerical exponent `E_H(9) = 38` are not formalized. |
 | `Formal.Schedule1HReview.Probes`, `KappaTwo7`, `QIndep`, `Audit` | Reviewer probes verifying non-vacuity and concrete instantiation: a choice-free constructive `κ = 2` solver over `𝔽_7` (`KappaTwo7`), independence of `T_j` from the coset generator `q` (`QIndep`), and witness probes (`Probes`). |
 
+### Schedule 1H+ Correctness Core and Review Probes (2026-11-14)
+
+Seven modules in `Formal/Schedule1HPlus/` (imported by `Formal.lean`; report
+`research/audits/reviews/2026-11-14-rees-lean-schedule1hplus.md`) and review modules in
+`Formal/Schedule1HPlusReview/` (not imported by `Formal.lean`; report
+`research/audits/reviews/2026-11-14-rees-lean-schedule1hplus-review.md`, verdict sound with
+fixes; machine-checked in Lean, AI-run, pending human review). No `sorry`, no
+`native_decide`; the axioms are `propext`, `Classical.choice` and `Quot.sound`.
+
+| Module | Checked content |
+|---|---|
+| `Formal.Schedule1HPlus.Classes`, `Refine`, `Stage`, `Tensor`, `SecondMoment`, `Guards`, `Audit` | Correctness (not running time, Las Vegas behaviour or determinism) of Section 5.2 (`Schedule 1H+`) of the core: refinement with union targets (`lem:plus-refine`, `refine_spec`) and chains (`cor:plus-chain`, `chain_spec`, `card_chainIdx`), the two-class stage and class-restricted finish (`plusStage_spec`, `plusFinish_spec`, plans `plusPlanF0_spec`, `plusPlanFK_spec`), tensor and ℓ-level nodes (`tensor_spec`, `ellNode_spec`, `ellSolver_spec`, constant `(κ-1)^{ℓ(ℓ-1)/2}`), and `lem:plus-sm`(i) conditional on a stated pair-count hypothesis (where Weil's bound enters; `plus_sm_i`). Guards by `decide`: the `TL_6` certificate at `p = 229` and `TL_3` at `p = 7`, and a concrete chain built from `TL_6`. Correctness is proved for the dependence chosen by `depOf`, not for every dependence. Not formalized: `lem:plus-sm`(ii), the Weil-to-pair-count step, the threshold table, the assembled schedule `def:plus-schedule`, `thm:plus`(i), (iii), (iv) and the exponent `E_+(9) = 20`. |
+| `Formal.Schedule1HPlusReview.Probes`, `EllTable`, `EllCheck`, `EllCheck19`, `EllCheck37`, `EllCheck73`, `Audit` | Reviewer probes: non-vacuity of every hypothesis on concrete instances, rejection of perturbed instances, the bridge from `Fin A` nodes to chain and table nodes (`isNode_reindex`, `isRel_mono`), and the five level-3/4 tables of the paper at `(13,4)`, `(13,6)`, `(19,9)`, `(37,9)`, `(73,9)` checked against `IsEllContraction` by `decide +kernel` (that each generator is the least primitive root is checked in Python only). |
+
 ## General Induced-Cocycle Operator Algebra
 
 ### Bounded Label-Dependent Policies

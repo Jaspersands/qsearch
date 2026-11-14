@@ -1,6 +1,6 @@
 # Referee review: AFFINE_CLUSTER_NATIVE_PROBE
 
-Note: `research/AFFINE_CLUSTER_NATIVE_PROBE.md`. Reviewed 2026-11-14 by claude-opus-5.5-two-judges-reconciled-2026-10-21. Overall: **sound**.
+Note: `research/AFFINE_CLUSTER_NATIVE_PROBE.md`. Reviewed 2026-11-14 by claude-subagent-refresh-2026-11-14. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 

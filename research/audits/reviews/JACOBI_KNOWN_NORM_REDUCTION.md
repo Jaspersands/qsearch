@@ -1,6 +1,6 @@
 # Referee review: JACOBI_KNOWN_NORM_REDUCTION
 
-Note: `research/JACOBI_KNOWN_NORM_REDUCTION.md`. Reviewed 2026-11-14 by claude-subagent-refresh-2026-11-13. Overall: **sound**.
+Note: `research/JACOBI_KNOWN_NORM_REDUCTION.md`. Reviewed 2026-11-14 by claude-subagent-refresh-2026-11-14. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 

@@ -80,4 +80,11 @@ import Formal.Schedule1H.TwoTerm
 import Formal.Schedule1H.Paper
 import Formal.Schedule1H.Extras
 import Formal.Schedule1H.Audit
+import Formal.Schedule1HPlus.Classes
+import Formal.Schedule1HPlus.Refine
+import Formal.Schedule1HPlus.Stage
+import Formal.Schedule1HPlus.Tensor
+import Formal.Schedule1HPlus.SecondMoment
+import Formal.Schedule1HPlus.Guards
+import Formal.Schedule1HPlus.Audit
 import Formal.Audit

@@ -1,6 +1,6 @@
 # Referee review: POLAR_CONDITIONAL_SAMPLER
 
-Note: `research/POLAR_CONDITIONAL_SAMPLER.md`. Reviewed 2026-11-14 by claude-opus-5.5-subagent-2026-10-21-calibration-r2-judge-d. Overall: **sound**.
+Note: `research/POLAR_CONDITIONAL_SAMPLER.md`. Reviewed 2026-11-14 by claude-subagent-refresh-2026-11-14. Overall: **sound**.
 
 An in-session model judge read the note and quoted each claim from it; this is a triage, not peer review.
 

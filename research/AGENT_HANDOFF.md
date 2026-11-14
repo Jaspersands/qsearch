@@ -1,3 +1,100 @@
+## 2026-11-14 Rees Core Slimmed to 43 pp., Full Version Made a Superset, IS-Free for c ≤ 9, Lean 1H+, 19 Refuted Within the Core's Mechanisms (AI only)
+
+All of this is AI-checked and pending human review. Claim gates are unchanged.
+
+- **PROVED, given cited theorems plus an exact computation; refereed by AI** (`research/audits/reviews/2026-11-14-rees-is-free{,-referee}.md`, verdict PROVED WITH FIXES):
+  - Claim: for every c ≤ 9, Theorem main of the core holds without `thm:is-import` (no Lemma rounds, no IS Theorem 11, no zero sums), with the same Q_q and E_+(9) = 20.
+  - Imports: Weil (two variables), Rabin root finding and Chevalley–Warning, plus the exact degree table for p < 2·10^6. Three independent programs agree on all 496,058 (p, κ) pairs.
+  - The import is still needed for c ≥ 10 (c = 10 is treated in a remark in the full version) and for the stand-alone comparison values 53, 38, 145 and 95.
+- **REFUTED within mechanism class X** (`2026-11-14-rees-below-20.md`):
+  - X is the 1H+ candidates with all finite restrictions removed.
+  - E(9) = 19 is impossible within X. p = 631 has no TL6, TL7 or TL9 (DFS and SAT). At p = 37 the 3-level case is UNSAT, with an LRAT proof checked (`c VERIFIED`) and a new encoding.
+  - Strongest open alternative: a mechanism outside X that breaks both 37 and 631.
+- **Lean, correctness only, machine-checked**:
+  - The new modules `formal/Formal/Schedule1HPlus/` (7 files) cover refinement and chains, the two-class stage and finish, the plans, the tensor and ℓ-level nodes, and `lem:plus-sm`(i), conditional on a pair-count hypothesis.
+  - Review: SOUND WITH FIXES (`2026-11-14-rees-lean-schedule1hplus-review.md`). Its probes in `formal/Formal/Schedule1HPlusReview/` (not imported) check all five level-3/4 tables against `IsEllContraction` by `decide +kernel`.
+  - No sorry or native_decide; axioms are standard. `formal/README.md` is updated.
+- **Paper (local, gitignored, nothing posted)**:
+  - **Core:** `core/main-core.tex` is now the slimmed version, 43 pp. (was 68), abstract 1,808 characters. It went through seven slimming rounds (`2026-11-14-rees-core-slim.md`, cut manifest local) and four AI referees: slim-referee, final-referee and round56-referee, all ACCEPT WITH FIXES, with every fix applied.
+    - The 68-pp. version is backed up in `research/audits/reviews/2026-11-09-rees-paper-pass-prep/backup-pre-schedule1hplus-2026-11-14/main-core.68pp-final.tex`.
+    - The 38/53 values now sit in a remark after thm:main (`rem:main-comparison`). The proof of uniform-compilation(i) was rewritten (round56-referee: correct).
+  - **Full version:** `main.tex` and its appendices are 281 pp. and a superset of the 68-pp. core (map `2026-11-14-rees-full-sync/superset_map.md`, local; 0 MISSING).
+    - It now includes sec:halving, sec:plus, the IS-free results, a "Class ten and beyond" remark, an HSP23 appendix (`appendix-free23.tex`) and a classical-proof appendix.
+    - Full-sync referee: ACCEPT WITH FIXES, fixes applied (`2026-11-14-rees-full-sync{,-referee}.md`).
+  - **Pointers:** all 14 pointers in the core to full-version titles resolve.
+  - **Reviewer's guide:** `core/REVIEWERS-GUIDE.md` (local).
+- **False sentence fixed:** a sentence hidden by a LaTeX comment since 11-09 ("does not lower the query count") was false as p → ∞. Both versions now state the p-independence of the bound correctly.
+- **Earlier foreign edits:** the 09:02–09:11 edits to main-core.tex and main.tex were the Codex consistency pass recorded below.
+
+Next hard question: the human read of exact homogenization composed with all-record descent (the core's Sections 3–4). Mathematically: a mechanism outside X at p = 37 and 631, or a proof that none exists.
+
+Next command:
+- Owner action: edit or approve the "Use of AI" paragraph. Then run `docs/papers/rees-hsp/arxiv/build_package.sh` after setting `\ReesArtifactCommit` in `core/main-core.tex` to the pushed commit.
+- Acceptance: the package compiles, has 0 undefined references, and the anc PDF is the 281-pp. full version.
+
+Mechanical items: see `research/MECHANICAL_FOLLOW_UP_PLAN.md`, entry of the same date.
+
+## 2026-11-14 Repo-Wide Theoretical, Formal, Registry, Referee, and Paper Consistency Pass
+
+Repository-wide theoretical, formal, registry, referee, and paper consistency
+audit and repair pass (no new paid API calls; all claim gates kept false):
+- **Lean 4 formalization (`formal/`)**: Fixed all 49 compiler/linter warnings across
+  `formal/Formal/Schedule1H/*.lean` and `formal/Formal/Schedule1HReview/*.lean`.
+  `lake --dir formal build --wfail` and
+  `lake --dir formal build Formal.Schedule1HReview.Audit --wfail` both pass with
+  0 warnings, 0 `sorry`/`axiom`/`admit`/`native_decide`, and 575 `#print axioms`
+  guards (`Formal/Audit.lean`).
+- **Registries, reductions, certificates & theorems**: Moved 3 retracted negative
+  records (`NEG-SINGER-CYCLE-TORAL-HSP-BARRIER`,
+  `NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND`,
+  `NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER`) from
+  `research/registry/negative_results.json` (`969 -> 966`) to
+  `research/registry/quarantined_campaign_negatives.json` (`18 -> 21`). Replaced
+  the refuted `dcp_subset_sum_euclidean_volume_inflation_barrier` theorem/test/JS
+  certificate with the verified 1D integer lattice counterexample (`v=a+dZ`,
+  `TV=0`, exact `Z_d` coset recovery) and marked
+  `native_history_erasure_dequantization_crosscheck.js` retracted (`2x2` identity
+  block counterexample). Synced `dcp_babai_lattice_rounding_witness_obstruction.py`,
+  `dcp_clean_linear_witness_carry_obstruction.py`, `dcp_quantum_walk_source_audit`
+  (`.py` + `.json` SHA-256), `native_nil3_conditional_phase_lift_contract.json`,
+  `native_source_refresh_working_contract.json`,
+  `dcp_coordinate_rounding_native_controls.json`, and added unit tests
+  `tests/test_lattice_product_phase_source.py` and
+  `tests/test_product_channel_erasure_ceiling.py`.
+- **Referee queue & corpus classifier (`tools/corpus/sources/markdown.py`, `research/*.md`, `research/audits/`)**:
+  Applied every mathematical, quantifier, threshold, and scope correction across
+  all 27 `needs-work` referee notes (`research/audits/REFEREE_QUEUE.md` now
+  `34 reviewed, 0 flagged, 0 stale`). Fixed `note_status(lines)` in
+  `tools/corpus/sources/markdown.py` (20-line header scan, `OVERRIDING CORRECTION`
+  / `withdrawn` -> `retracted`, strict status syntax for `proved`, uppercase
+  `PROVED` header support). Added explicit retraction/scope banners to 5
+  unrefereed overclaiming notes (`PROOF_FIRST_RESEARCH_CAMPAIGN_20.md`,
+  `DIHEDRAL_COSET_CHIRP_ALIASING_SPECTRAL_FLATNESS_BARRIER.md` + baseline JSON,
+  `DCP_BABAI_DEVIATION_DEPTH_BARRIER.md`, `DCP_BINARY_ERROR_SOURCE_BRIDGE.md`,
+  `DCP_MASTER_VERIFICATION_82_SUBSYSTEM_COMPREHENSIVE_LEDGER_BRIDGE.md`) and
+  refreshed all stale audit digests (`FAILURE_MODE_META_ANALYSIS.md`,
+  `REDISCOVERY_AUDIT.md`, `SPEND_REPORT.md`, `AGENT_BRIEF.md`,
+  `REGISTRY_DUPLICATES.md`).
+- **Papers & outreach (`docs/papers/`, `docs/outreach/`, `formal/README.md`)**:
+  Updated `docs/papers/classical-competitors/{main.tex,numbers_map.json,numbers.tex}`
+  and `docs/outreach/02-polar-gibbs.md` with the analytical proofs of polar
+  duality and the joint hybrid bound (`research/DQI_POLAR_SAME_CODE_GIBBS.md`)
+  plus the `N=16` coarse polar row (`CoarseNZ..CoarseHalfZ`). Updated
+  `docs/papers/rees-hsp/{core/main-core.tex,main.tex,appendix-provenance.tex}`,
+  `formal/README.md`, `docs/outreach/04-rees-hsp.md`, and
+  `docs/outreach/05-rees-personalized-emails.md` (`prop:triangular-sde` cite,
+  second AI-refereed no-`S1` check `run2_allB_noS1.out`, `Schedule 1H+` exponent
+  `20` remark in `main.tex`, `575` Lean guards, and removal of the destructive
+  `make_numbers.py --check` command from `04-rees-hsp.md`).
+- **Claim gates**: All claim gates stay false (`AI-checked, pending human review`
+  preserved on Rees notes/manuscript; no finite control promoted to asymptotic
+  separation; no GRH-conditional note promoted to unconditional).
+- **Next hard question & command**: Await owner decisions on the Rees manuscript
+  (`Schedule 1H+` adoption in full `main.tex`, AI-use paragraph, arXiv endorser)
+  or next independent mechanism comparison from corpus/primary sources.
+  Verification command: `/opt/anaconda3/bin/python preflight.py --imports --validate && PATH="$HOME/.elan/bin:$PATH" /Users/jaspersands/.elan/bin/lake --dir formal build --wfail`.
+  Mechanical items: `MECHANICAL_FOLLOW_UP_PLAN.md`, same heading.
+
 ## 2026-11-14 Rees Core Draft: Schedule 1H+ (Headline 20) and HSP23 Remark Integrated (AI only)
 
 Claude session; local paper edit only (core is gitignored); not posted; all AI-checked, pending human review.

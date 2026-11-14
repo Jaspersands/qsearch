@@ -1,0 +1,18 @@
+TL4 at 37: p=37 xi=2 step=(4,[0, 1, 2, 3],[0]) -> NONE (DFS nodes 109)
+TL6 at 37: p=37 xi=2 step=(6,[0, 1, 2, 3, 4, 5],[0]) -> NONE (DFS nodes 37)
+TW at 37: p=37 xi=2 step=(9,[0, 3, 6],[0]) -> NONE (DFS nodes 1)
+TL9 at 37: p=37 xi=2 step=(9,[0, 1, 2, 3, 4, 5, 6, 7, 8],[0]) -> NONE (DFS nodes 1)
+control TL4 at 41 (expect available): p=41 xi=6 step=(4,[0, 1, 2, 3],[0]) -> AVAILABLE (DFS nodes 4) witness beta={0: 0, 1: 1, 2: 10, 3: 9} alpha=[10, 7, 21, 24] verified
+control TL6 at 229 (expect available): p=229 xi=6 step=(6,[0, 1, 2, 3, 4, 5],[0]) -> AVAILABLE (DFS nodes 6) witness beta={0: 0, 1: 1, 2: 38, 3: 196, 4: 136, 5: 91} alpha=[228, 191, 33, 93, 138, 0] verified
+control TL6 at 43 (expect none): p=43 xi=3 step=(6,[0, 1, 2, 3, 4, 5],[0]) -> NONE (DFS nodes 1)
+control TW at 397 (not in the paper list; expect available): p=397 xi=5 step=(9,[0, 3, 6],[0]) -> AVAILABLE (DFS nodes 3) witness beta={0: 0, 3: 1, 6: 35} alpha=[396, 368, 143, 362, 11, 97, 0, 186, 121] verified
+control TW at 73 (listed; expect none): p=73 xi=5 step=(9,[0, 3, 6],[0]) -> NONE (DFS nodes 1)
+two-class F1 counting at (37,9): need |T_1 \ 0| >= 36 = p-1
+  m=1: |T_1\0|=20 (|P|=4, bound 2h+h^2=24), 0 in T_1: False
+  m=2: |T_1\0|=24 (|P|=4, bound 2h+h^2=24), 0 in T_1: False
+  m=3: |T_1\0|=24 (|P|=4, bound 2h+h^2=24), 0 in T_1: False
+  m=4: |T_1\0|=16 (|P|=4, bound 2h+h^2=24), 0 in T_1: False
+  m=5: |T_1\0|=16 (|P|=4, bound 2h+h^2=24), 0 in T_1: False
+  m=6: |T_1\0|=24 (|P|=4, bound 2h+h^2=24), 0 in T_1: False
+  m=7: |T_1\0|=24 (|P|=4, bound 2h+h^2=24), 0 in T_1: False
+  m=8: |T_1\0|=20 (|P|=4, bound 2h+h^2=24), 0 in T_1: False

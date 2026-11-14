@@ -1,3 +1,20 @@
+## 2026-11-14 Rees Core Slimmed to 43 pp., Full Version Made a Superset, IS-Free for c ≤ 9, Lean 1H+, 19 Refuted Within the Core's Mechanisms (AI only)
+
+1. OPEN (owner): edit or approve the "Use of AI" paragraph (core acknowledgements; full version main.tex near the end).
+2. OPEN (at release): set `\ReesArtifactCommit` in the preamble of `docs/papers/rees-hsp/core/main-core.tex` to the pushed commit that contains every folder Appendix A cites. Then rerun `arxiv/build_package.sh`, which needs the full version as `anc/rees-hsp-full.pdf` (281 pp.).
+3. OPEN: the full version's class-nine profile paragraph still uses the Schedule 1 profile data, because `make_numbers.py` is off-limits (TRAPS 17). An owner-approved regeneration would be needed to state a 1H+ profile.
+4. OPEN (optional): the full-sync referee's finding 10 (notation sweep: δ_θ vs δ_λ) and finding 11 (test-file change for `\bigcup`).
+5. OPEN (optional): the restriction argument (wider Δ_t ⊇ lift chains change no arity), from the final referee (M3). The full version states it after def:plus-schedule. It has not been refereed separately.
+6. OPEN (optional): the Lean review's bridge lemmas `isNode_reindex` and `isRel_mono` live only in `Formal/Schedule1HPlusReview/Probes.lean`. Move them into `Formal/Schedule1HPlus/Stage.lean` if the plan theorems should cover chain and table nodes directly.
+7. COMPLETE: the core is slimmed and adopted (43 pp.); the full version is a superset (281 pp.); Lean 1H+ and its review are done; the README is updated; the below-20 attempt is done (REFUTED within X); METADATA is updated (43 pages, new abstract, 1,822 characters in plain text).
+
+## 2026-11-14 Repo-Wide Theoretical, Formal, Registry, Referee, and Paper Consistency Pass
+
+1. COMPLETE: All 49 Lean 4 warnings fixed (`lake --dir formal build --wfail` and `lake --dir formal build Formal.Schedule1HReview.Audit --wfail` exit 0); `formal/README.md`, `docs/papers/rees-hsp/main.tex`, `docs/papers/rees-hsp/core/main-core.tex`, and `docs/papers/rees-hsp/appendix-provenance.tex` synced to 575 `#print axioms` guards (`537` in `Formal` + `38` in `Formal.Schedule1H`).
+2. COMPLETE: 3 retracted active negative records quarantined (`966` active in `negative_results.json`, `21` in `quarantined_campaign_negatives.json`); all 27 `needs-work` referee reviews resolved (`REFEREE_QUEUE.md`: `34 reviewed, 0 flagged, 0 stale`); `tools/corpus/sources/markdown.py` status classifier fixed; audit digests refreshed.
+3. COMPLETE: `docs/papers/classical-competitors/{main.tex,numbers_map.json,numbers.tex}` and `docs/outreach/{02-polar-gibbs.md,04-rees-hsp.md,05-rees-personalized-emails.md}` synced to Nov 14 theorems and manuscript state.
+4. Standing guards: never run `docs/papers/rees-hsp/make_numbers.py` (TRAPS #17); keep `AI-checked, pending human review` gates intact until owner sign-off; no new paid API calls.
+
 ## 2026-11-14 Rees Core Draft: Schedule 1H+ (Headline 20) and HSP23 Remark Integrated (AI only)
 
 1. Full version (main.tex + appendices) is now behind the core: add Schedule 1H+, headline 20, HSP23 remark.
