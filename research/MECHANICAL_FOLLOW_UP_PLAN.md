@@ -1,7 +1,7 @@
 ## 2026-11-14 Rees Core Slimmed to 43 pp., Full Version Made a Superset, IS-Free for c ≤ 9, Lean 1H+, 19 Refuted Within the Core's Mechanisms (AI only)
 
 1. OPEN (owner): edit or approve the "Use of AI" paragraph (core acknowledgements; full version main.tex near the end).
-2. OPEN (at release): set `\ReesArtifactCommit` in the preamble of `docs/papers/rees-hsp/core/main-core.tex` to the pushed commit that contains every folder Appendix A cites. Then rerun `arxiv/build_package.sh`, which needs the full version as `anc/rees-hsp-full.pdf` (281 pp.).
+2. DONE (2026-11-14): `\ReesArtifactCommit` in the core, and the commit in the full version's `appendix-core-artifacts.tex`, are set to `69299054`. That commit publishes every folder that Appendix A cites; the paper text stays local. OPEN at release: rerun `arxiv/build_package.sh`, using the 281-pp. full version as `anc/rees-hsp-full.pdf`. Bump the commit if later artifacts are cited.
 3. OPEN: the full version's class-nine profile paragraph still uses the Schedule 1 profile data, because `make_numbers.py` is off-limits (TRAPS 17). An owner-approved regeneration would be needed to state a 1H+ profile.
 4. OPEN (optional): the full-sync referee's finding 10 (notation sweep: δ_θ vs δ_λ) and finding 11 (test-file change for `\bigcup`).
 5. OPEN (optional): the restriction argument (wider Δ_t ⊇ lift chains change no arity), from the final referee (M3). The full version states it after def:plus-schedule. It has not been refereed separately.

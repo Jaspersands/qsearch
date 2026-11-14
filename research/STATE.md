@@ -18,7 +18,7 @@ Rees (2026-11-14, AI only, pending human review; claim gates unchanged; nothing 
   - the "Use of AI" paragraph;
   - the endorser;
   - human reads of the core's Sections 3–4;
-  - setting `\ReesArtifactCommit` and rebuilding the arXiv package at release.
+  - rebuilding the arXiv package at release (artifact commit pinned at `69299054`).
 
 
 Repo-wide theoretical, formal, registry, referee, and paper consistency pass

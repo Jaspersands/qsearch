@@ -29,7 +29,7 @@ All of this is AI-checked and pending human review. Claim gates are unchanged.
 Next hard question: the human read of exact homogenization composed with all-record descent (the core's Sections 3–4). Mathematically: a mechanism outside X at p = 37 and 631, or a proof that none exists.
 
 Next command:
-- Owner action: edit or approve the "Use of AI" paragraph. Then run `docs/papers/rees-hsp/arxiv/build_package.sh` after setting `\ReesArtifactCommit` in `core/main-core.tex` to the pushed commit.
+- Owner action: edit or approve the "Use of AI" paragraph. Then run `docs/papers/rees-hsp/arxiv/build_package.sh`. `\ReesArtifactCommit` is already set to `69299054`, which publishes every folder Appendix A cites.
 - Acceptance: the package compiles, has 0 undefined references, and the anc PDF is the 281-pp. full version.
 
 Mechanical items: see `research/MECHANICAL_FOLLOW_UP_PLAN.md`, entry of the same date.
